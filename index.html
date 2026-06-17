@@ -331,8 +331,18 @@
       current = i;
       updateCarousel();
     }
-    // Auto-advance every 5s
     setInterval(function() { moveCarousel(1); }, 5000);
+
+    // Swipe support
+    var carousel = document.getElementById('testimonialCarousel');
+    var startX = 0;
+    carousel.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) moveCarousel(diff > 0 ? 1 : -1);
+    }, { passive: true });
   </script>
 
   <div class="cta-banner" id="contact">
