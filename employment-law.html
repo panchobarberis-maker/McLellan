@@ -11,12 +11,39 @@
 
   .nav {
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 20px; background:#1b2a35;
+    padding:16px 28px; background:#1b2a35;
     position:sticky; top:0; z-index:100;
   }
-  .nav .logo { font-weight:900; color:#fff; font-size:15px; letter-spacing:1px; }
+  .nav .logo { font-weight:900; color:#fff; font-size:15px; letter-spacing:1px; flex-shrink:0; }
   .nav .logo small { display:block; font-size:9px; font-weight:normal; letter-spacing:2px; color:rgba(255,255,255,0.6); }
-  .nav .contact-btn { background:#b9986a; color:#fff; border-radius:20px; padding:8px 18px; font-size:12px; font-weight:bold; text-decoration:none; }
+  .nav-links { display:flex; gap:24px; align-items:center; list-style:none; margin:0 auto 0 40px; }
+  .nav-links > li { position:relative; }
+  .nav-links > li > a {
+    color:rgba(255,255,255,0.85); text-decoration:none; font-size:12px;
+    font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
+    white-space:nowrap; padding:6px 0; display:block; transition:color 0.15s;
+  }
+  .nav-links > li > a:hover { color:#b9986a; }
+  .dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.65; }
+  .dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+  .dropdown-menu {
+    display:none; position:absolute; top:calc(100% + 12px); left:50%;
+    transform:translateX(-50%);
+    background:#1b2a35; border-top:2px solid #b9986a;
+    min-width:240px; padding:8px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4); list-style:none;
+  }
+  .dropdown:hover .dropdown-menu { display:block; }
+  .dropdown-menu li a {
+    display:block; padding:11px 24px;
+    color:rgba(255,255,255,0.7); text-decoration:none;
+    font-size:12px; font-weight:400; transition:background 0.15s, color 0.15s;
+  }
+  .dropdown-menu li a:hover { background:rgba(185,152,106,0.15); color:#b9986a; }
+  .dropdown-menu li a.featured { font-weight:800; color:#fff; }
+  .dropdown-menu li a.featured:hover { color:#b9986a; }
+  .dropdown-divider { height:1px; background:rgba(255,255,255,0.08); margin:5px 0; }
+  .nav .contact-btn { background:#b9986a; color:#fff; border-radius:20px; padding:8px 18px; font-size:12px; font-weight:bold; text-decoration:none; flex-shrink:0; }
 
   .hero { position:relative; height:380px; overflow:hidden; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; padding:0 24px 32px; }
   .hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; }
@@ -56,6 +83,25 @@
 
   <nav class="nav">
     <div class="logo">MCLELLAN<small>LAW GROUP</small></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Practice Areas</a>
+        <ul class="dropdown-menu">
+          <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+          <li><a href="#business-litigation" class="featured">Business Litigation</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="#appeals">Appeals</a></li>
+          <li><a href="#real-estate">Real Estate Litigation</a></li>
+          <li><a href="#contract-disputes">Contract Disputes</a></li>
+          <li><a href="#elder-abuse">Financial Elder Abuse</a></li>
+          <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
+        </ul>
+      </li>
+      <li><a href="#team">Your Team</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
     <a href="#contact" class="contact-btn">CONTACT</a>
   </nav>
 
