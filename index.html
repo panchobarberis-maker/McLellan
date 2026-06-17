@@ -66,12 +66,36 @@
   .practice-item .arrow { color:#b9986a; font-size:18px; font-weight:bold; }
   .badge { display:inline-block; background:#b9986a; color:#fff; font-size:9px; font-weight:700; letter-spacing:1px; padding:2px 7px; border-radius:10px; margin-left:8px; vertical-align:middle; text-transform:uppercase; }
 
-  .testimonials { padding:28px 24px; background:#f7f5f0; }
+  .testimonials { padding:36px 24px; background:#f7f5f0; }
   .testimonials h2 { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:6px; }
-  .testimonials .sub { font-size:13px; color:#777; margin-bottom:20px; }
-  .testimonial-card { background:#fff; border-radius:8px; padding:20px; margin-bottom:16px; box-shadow:0 1px 6px rgba(0,0,0,0.07); }
-  .testimonial-card .quote { font-size:13.5px; line-height:1.6; color:#444; font-style:italic; margin-bottom:10px; }
+  .testimonials .sub { font-size:13px; color:#777; margin-bottom:24px; }
+
+  /* Carousel */
+  .carousel { position:relative; overflow:hidden; }
+  .carousel-track {
+    display:flex; transition:transform 0.4s ease;
+  }
+  .testimonial-card {
+    min-width:100%; background:#fff; border-radius:8px; padding:24px;
+    box-shadow:0 1px 6px rgba(0,0,0,0.07); box-sizing:border-box;
+  }
+  .testimonial-card .quote { font-size:14px; line-height:1.7; color:#444; font-style:italic; margin-bottom:14px; }
   .testimonial-card .author { font-size:12px; font-weight:700; color:#b9986a; }
+
+  /* Dots */
+  .carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:18px; }
+  .carousel-dot {
+    width:8px; height:8px; border-radius:50%; background:#ccc;
+    border:none; cursor:pointer; padding:0; transition:background 0.2s;
+  }
+  .carousel-dot.active { background:#b9986a; }
+
+  /* Arrows */
+  .carousel-arrows { display:flex; justify-content:space-between; margin-top:16px; }
+  .carousel-arrow {
+    background:none; border:none; font-size:22px; color:#b9986a;
+    cursor:pointer; padding:4px 10px; font-weight:bold;
+  }
 
   .cta-banner { background:#1b2a35; color:#fff; padding:32px 24px; text-align:center; }
   .cta-banner p { font-size:13px; color:rgba(255,255,255,0.8); margin-bottom:16px; line-height:1.6; }
@@ -263,19 +287,53 @@
   <div class="testimonials">
     <h2>Hear From Our Clients</h2>
     <p class="sub">Trusted by businesses, executives, and families across Silicon Valley and the Bay Area.</p>
-    <div class="testimonial-card">
-      <p class="quote">"Claire and Steven were quick to get all the facts and helped us get a clear game plan. It is reassuring to know we can always reach out to them."</p>
-      <span class="author">— Wendy</span>
+    <div class="carousel" id="testimonialCarousel">
+      <div class="carousel-track" id="testimonialTrack">
+        <div class="testimonial-card">
+          <p class="quote">"Claire and Steven were quick to get all the facts and helped us get a clear game plan. It is reassuring to know we can always reach out to them."</p>
+          <span class="author">— Wendy</span>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</p>
+          <span class="author">— Benjamin</span>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</p>
+          <span class="author">— Pete</span>
+        </div>
+      </div>
     </div>
-    <div class="testimonial-card">
-      <p class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</p>
-      <span class="author">— Benjamin</span>
-    </div>
-    <div class="testimonial-card">
-      <p class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</p>
-      <span class="author">— Pete</span>
+    <div class="carousel-arrows">
+      <button class="carousel-arrow" onclick="moveCarousel(-1)">‹</button>
+      <div class="carousel-dots" id="carouselDots">
+        <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+        <button class="carousel-dot" onclick="goToSlide(1)"></button>
+        <button class="carousel-dot" onclick="goToSlide(2)"></button>
+      </div>
+      <button class="carousel-arrow" onclick="moveCarousel(1)">›</button>
     </div>
   </div>
+
+  <script>
+    var current = 0;
+    var total = 3;
+    function updateCarousel() {
+      document.getElementById('testimonialTrack').style.transform = 'translateX(-' + (current * 100) + '%)';
+      document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+    function moveCarousel(dir) {
+      current = (current + dir + total) % total;
+      updateCarousel();
+    }
+    function goToSlide(i) {
+      current = i;
+      updateCarousel();
+    }
+    // Auto-advance every 5s
+    setInterval(function() { moveCarousel(1); }, 5000);
+  </script>
 
   <div class="cta-banner" id="contact">
     <p>Based in Saratoga and serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
