@@ -26,6 +26,11 @@
   }
   .nav-links > li > a:hover { color:#b9986a; }
   .dropdown-toggle::after { content:' ▾'; font-size:10px; opacity:0.65; }
+  /* bridge the gap so moving mouse down doesn't lose hover */
+  .dropdown::after {
+    content:''; position:absolute; top:100%; left:0;
+    width:100%; height:16px;
+  }
   .dropdown-menu {
     display:none; position:absolute; top:calc(100% + 12px); left:50%;
     transform:translateX(-50%);
