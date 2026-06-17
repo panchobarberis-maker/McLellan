@@ -175,6 +175,55 @@
     .nav-logo-center { display:none; }
     .mobile-menu { display:none !important; }
   }
+
+  /* ── YOUR TEAM CAROUSEL ── */
+  .team { padding:36px 24px; background:#fff; }
+  .team .section-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#b9986a; font-weight:700; border-left:3px solid #b9986a; padding-left:8px; margin-bottom:14px; }
+  .team h2 { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:24px; }
+
+  .team-carousel { position:relative; display:flex; align-items:center; gap:12px; }
+  .team-track-wrap { overflow:hidden; flex:1; }
+  .team-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+
+  .team-card {
+    min-width:100%; box-sizing:border-box;
+    display:flex; flex-direction:column; align-items:center;
+    background:#f7f5f0; border-radius:16px; overflow:hidden;
+    box-shadow:0 4px 20px rgba(0,0,0,0.10);
+  }
+  .team-card-img {
+    width:100%; height:320px; object-fit:cover; object-position:center top;
+    display:block;
+  }
+  .team-card-info {
+    width:100%; padding:20px 24px 24px;
+    background:linear-gradient(to bottom, #1b2a35, #243647);
+    text-align:center; color:#fff;
+  }
+  .team-card-info h3 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; text-transform:uppercase; margin-bottom:4px; }
+  .team-card-info .role { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:16px; }
+  .team-card-info .view-profile {
+    display:inline-block; background:#b9986a; color:#fff;
+    font-weight:700; font-size:13px; padding:10px 24px;
+    border-radius:24px; text-decoration:none; letter-spacing:0.5px;
+    transition:background 0.2s;
+  }
+  .team-card-info .view-profile:hover { background:#a8885a; }
+
+  .team-arrow {
+    background:none; border:2px solid #b9986a; color:#b9986a;
+    width:36px; height:36px; border-radius:50%; font-size:20px; font-weight:bold;
+    cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    transition:background 0.2s, color 0.2s;
+  }
+  .team-arrow:hover { background:#b9986a; color:#fff; }
+
+  .team-dots { display:flex; justify-content:center; gap:8px; margin-top:18px; }
+  .team-dot {
+    width:8px; height:8px; border-radius:50%; background:#ddd;
+    border:none; cursor:pointer; padding:0; transition:background 0.2s;
+  }
+  .team-dot.active { background:#b9986a; }
 </style>
 </head>
 <body>
@@ -342,6 +391,67 @@
     carousel.addEventListener('touchend', function(e) {
       var diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) moveCarousel(diff > 0 ? 1 : -1);
+    }, { passive: true });
+  </script>
+
+  <div class="team" id="team">
+    <div class="section-label">Our Attorneys</div>
+    <h2>Your Team</h2>
+    <div class="team-carousel">
+      <button class="team-arrow" onclick="moveTeam(-1)">&#8249;</button>
+      <div class="team-track-wrap">
+        <div class="team-track" id="teamTrack">
+
+          <div class="team-card">
+            <img class="team-card-img" src="steven.jpg" alt="Steven McLellan">
+            <div class="team-card-info">
+              <h3>Steven McLellan</h3>
+              <p class="role">Partner</p>
+              <a href="#contact" class="view-profile">View Profile</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img class="team-card-img" src="claire.jpg" alt="Claire McLellan">
+            <div class="team-card-info">
+              <h3>Claire McLellan</h3>
+              <p class="role">Partner</p>
+              <a href="#contact" class="view-profile">View Profile</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="team-arrow" onclick="moveTeam(1)">&#8250;</button>
+    </div>
+    <div class="team-dots" id="teamDots">
+      <button class="team-dot active" onclick="goToTeam(0)"></button>
+      <button class="team-dot" onclick="goToTeam(1)"></button>
+    </div>
+  </div>
+
+  <script>
+    var teamCurrent = 0;
+    var teamTotal = 2;
+    function updateTeam() {
+      document.getElementById('teamTrack').style.transform = 'translateX(-' + (teamCurrent * 100) + '%)';
+      document.querySelectorAll('.team-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === teamCurrent);
+      });
+    }
+    function moveTeam(dir) {
+      teamCurrent = (teamCurrent + dir + teamTotal) % teamTotal;
+      updateTeam();
+    }
+    function goToTeam(i) { teamCurrent = i; updateTeam(); }
+
+    // Swipe
+    var tw = document.querySelector('.team-track-wrap');
+    var tStartX = 0;
+    tw.addEventListener('touchstart', function(e) { tStartX = e.touches[0].clientX; }, { passive: true });
+    tw.addEventListener('touchend', function(e) {
+      var diff = tStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) moveTeam(diff > 0 ? 1 : -1);
     }, { passive: true });
   </script>
 
