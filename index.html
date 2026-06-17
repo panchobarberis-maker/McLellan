@@ -133,6 +133,19 @@
       text-transform:uppercase; margin:16px 0 8px;
     }
   }
+
+    .mobile-accordion-btn {
+      display:flex; justify-content:space-between; align-items:center;
+      width:100%; background:none; border:none; padding:16px 0;
+      color:#fff; font-size:18px; font-weight:700; text-transform:uppercase;
+      letter-spacing:1px; cursor:pointer; text-align:left;
+    }
+    .mobile-accordion-arrow { transition:transform 0.2s; font-size:20px; color:#b9986a; }
+    .mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+    .mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+    .mobile-accordion.open .mobile-accordion-menu { display:block; }
+    .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.05); }
+    .mobile-accordion-menu li a { padding:12px 0; font-size:15px; font-weight:500; letter-spacing:0.5px; }
   @media(min-width:769px) {
     .nav-hamburger { display:none; }
     .nav-logo-center { display:none; }
@@ -181,15 +194,21 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
     <ul>
-      <li><a href="#" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a></li>
-      <div class="mobile-menu-label">Practice Areas</div>
-      <li><a href="employment-law.html" class="featured">Employment Law</a></li>
-      <li><a href="#business-litigation">Business Litigation</a></li>
-      <li><a href="#appeals">Appeals</a></li>
-      <li><a href="#real-estate">Real Estate Litigation</a></li>
-      <li><a href="#contract-disputes">Contract Disputes</a></li>
-      <li><a href="#elder-abuse">Financial Elder Abuse</a></li>
-      <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li class="mobile-accordion">
+        <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+          Practice Areas <span class="mobile-accordion-arrow">›</span>
+        </button>
+        <ul class="mobile-accordion-menu">
+          <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+          <li><a href="#business-litigation" class="featured">Business Litigation</a></li>
+          <li><a href="#appeals">Appeals</a></li>
+          <li><a href="#real-estate">Real Estate Litigation</a></li>
+          <li><a href="#contract-disputes">Contract Disputes</a></li>
+          <li><a href="#elder-abuse">Financial Elder Abuse</a></li>
+          <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
+        </ul>
+      </li>
       <li><a href="#team">Your Team</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#contact">Contact Us</a></li>
