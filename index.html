@@ -304,7 +304,7 @@
     /* Show both cards side by side */
     .team-track-wrap { overflow:visible; }
     .team-track { transform:none !important; gap:24px; }
-    .team-card { min-width:calc(50% - 12px); height:420px; }
+    .team-card { min-width:calc(33.333% - 16px); height:420px; }
     .team-arrow { display:none; }
     .team-dots { display:none; }
 
@@ -518,6 +518,15 @@
             </div>
           </div>
 
+          <div class="team-card">
+            <img class="team-card-img" src="IMG_7169.jpg" alt="Elizabeth">
+            <div class="team-card-info">
+              <h3>Elizabeth</h3>
+              <p class="role">Attorney</p>
+              <a href="#contact" class="view-profile">View Profile</a>
+            </div>
+          </div>
+
         </div>
       </div>
       <button class="team-arrow" onclick="moveTeam(1)">&#8250;</button>
@@ -525,12 +534,13 @@
     <div class="team-dots" id="teamDots">
       <button class="team-dot active" onclick="goToTeam(0)"></button>
       <button class="team-dot" onclick="goToTeam(1)"></button>
+      <button class="team-dot" onclick="goToTeam(2)"></button>
     </div>
   </div>
 
   <script>
     var teamCurrent = 0;
-    var teamTotal = 2;
+    var teamTotal = 3;
     function updateTeam() {
       document.getElementById('teamTrack').style.transform = 'translateX(-' + (teamCurrent * 100) + '%)';
       document.querySelectorAll('.team-dot').forEach(function(d, i) {
