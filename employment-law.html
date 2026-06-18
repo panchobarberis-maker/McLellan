@@ -106,35 +106,48 @@
   .logo-img-mobile { height:30px; width:auto; display:block; }
   .logo-link { display:none; }
   .nav .logo { font-weight:900; color:#fff; font-size:15px; letter-spacing:1px; flex-shrink:0; }
-  .nav .logo small { display:block; font-size:9px; font-weight:normal; letter-spacing:2px; color:rgba(255,255,255,0.6); }
-  .nav-links { display:flex; gap:24px; align-items:center; list-style:none; margin:0 auto 0 40px; }
-  .nav-links > li { position:relative; }
-  .nav-links > li > a {
-    color:rgba(255,255,255,0.85); text-decoration:none; font-size:12px;
-    font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
-    white-space:nowrap; padding:6px 0; display:block; transition:color 0.15s;
-  }
-  .nav-links > li > a:hover { color:#b9986a; }
-  .dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.65; }
-  .dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
-  .dropdown-menu {
-    display:none; position:absolute; top:calc(100% + 12px); left:50%;
-    transform:translateX(-50%);
-    background:#1b2a35; border-top:2px solid #b9986a;
-    min-width:240px; padding:8px 0;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4); list-style:none;
-  }
-  .dropdown:hover .dropdown-menu { display:block; }
-  .dropdown-menu li a {
-    display:block; padding:11px 24px;
-    color:rgba(255,255,255,0.7); text-decoration:none;
-    font-size:12px; font-weight:400; transition:background 0.15s, color 0.15s;
-  }
-  .dropdown-menu li a:hover { background:rgba(185,152,106,0.15); color:#b9986a; }
-  .dropdown-menu li a.featured { font-weight:800; color:#fff; }
-  .dropdown-menu li a.featured:hover { color:#b9986a; }
-  .dropdown-divider { height:1px; background:rgba(255,255,255,0.08); margin:5px 0; }
+  .nav-links { display:none; }
   .nav .contact-btn { background:#b9986a; color:#fff; border-radius:20px; padding:8px 18px; font-size:12px; font-weight:bold; text-decoration:none; flex-shrink:0; }
+
+  /* Mobile hamburger */
+  .nav-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
+  .nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+  .nav-logo-center { position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px; white-space:nowrap; text-decoration:none; }
+
+  /* Mobile slide-out menu */
+  .mobile-menu { display:none; position:fixed; inset:0; background:#1b2a35; z-index:200; flex-direction:column; padding:24px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu-close { align-self:flex-end; background:none; border:none; color:#fff; font-size:28px; cursor:pointer; margin-bottom:24px; line-height:1; }
+  .mobile-menu ul { list-style:none; }
+  .mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.08); }
+  .mobile-menu ul li a { display:block; padding:16px 0; color:#fff; text-decoration:none; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+  .mobile-menu ul li a.featured { color:#b9986a; }
+  .mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:16px 0; color:#fff; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px; cursor:pointer; text-align:left; }
+  .mobile-accordion-arrow { transition:transform 0.2s; font-size:20px; color:#b9986a; }
+  .mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+  .mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+  .mobile-accordion.open .mobile-accordion-menu { display:block; }
+  .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.05); }
+  .mobile-accordion-menu li a { padding:12px 0; font-size:15px; font-weight:500; letter-spacing:0.5px; }
+
+  @media(min-width:769px) {
+    .nav-hamburger { display:none; }
+    .nav-logo-center { display:none; }
+    .logo-link { display:flex; }
+    .mobile-menu { display:none !important; }
+    .nav-links { display:flex; gap:24px; align-items:center; list-style:none; margin:0 auto 0 40px; }
+    .nav-links > li { position:relative; }
+    .nav-links > li > a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:12px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; white-space:nowrap; padding:6px 0; display:block; transition:color 0.15s; }
+    .nav-links > li > a:hover { color:#b9986a; }
+    .dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.65; }
+    .dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+    .dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#1b2a35; border-top:2px solid #b9986a; min-width:240px; padding:8px 0; box-shadow:0 10px 30px rgba(0,0,0,0.4); list-style:none; }
+    .dropdown:hover .dropdown-menu { display:block; }
+    .dropdown-menu li a { display:block; padding:11px 24px; color:rgba(255,255,255,0.7); text-decoration:none; font-size:12px; font-weight:400; transition:background 0.15s, color 0.15s; }
+    .dropdown-menu li a:hover { background:rgba(185,152,106,0.15); color:#b9986a; }
+    .dropdown-menu li a.featured { font-weight:800; color:#fff; }
+    .dropdown-divider { height:1px; background:rgba(255,255,255,0.08); margin:5px 0; }
+  }
 
   .hero { position:relative; height:420px; overflow:hidden; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; padding:0 24px 36px; }
   .hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 25%; filter:brightness(0.88) saturate(1.1) sepia(0.1); }
@@ -218,6 +231,10 @@
 <body>
 
   <nav class="nav">
+    <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
     <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -234,12 +251,36 @@
           <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
         </ul>
       </li>
-      <li><a href="#team">Your Team</a></li>
+      <li><a href="index.html#team">Your Team</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
     <a href="#contact" class="contact-btn">CONTACT</a>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="mobile-accordion">
+        <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+          Practice Areas <span class="mobile-accordion-arrow">›</span>
+        </button>
+        <ul class="mobile-accordion-menu">
+          <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+          <li><a href="#business-litigation" class="featured">Business Litigation</a></li>
+          <li><a href="#appeals">Appeals</a></li>
+          <li><a href="#real-estate">Real Estate Litigation</a></li>
+          <li><a href="#contract-disputes">Contract Disputes</a></li>
+          <li><a href="#elder-abuse">Financial Elder Abuse</a></li>
+          <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#team">Your Team</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
 
   <div class="hero">
     <img class="hero-img" src="employment-vertical.jpg" alt="California employment law attorneys in Saratoga">
