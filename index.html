@@ -249,6 +249,11 @@
   }
 
   /* ── YOUR TEAM CAROUSEL ── */
+  .mid-cta { background:#1b2a35; padding:36px 24px; text-align:center; }
+  .mid-cta p { font-size:15px; color:rgba(255,255,255,0.8); margin-bottom:18px; font-family:'Cormorant Garamond',serif; font-style:italic; }
+  .mid-cta-btn { display:inline-block; background:#b9986a; color:#fff; font-weight:700; font-size:14px; padding:13px 28px; border-radius:6px; text-decoration:none; }
+  .mid-cta-btn:hover { background:#a8885a; }
+
   .team { padding:36px 24px; background:#fff; }
   .team .section-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#b9986a; font-weight:700; border-left:3px solid #b9986a; padding-left:8px; margin-bottom:14px; }
   .team h2 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:24px; }
@@ -567,6 +572,11 @@
       if (Math.abs(diff) > 40) moveCarousel(diff > 0 ? 1 : -1);
     }, { passive: true });
   </script>
+
+  <div class="mid-cta">
+    <p>Ready to protect what matters most?</p>
+    <a href="#contact" class="mid-cta-btn">Request a Free Consultation</a>
+  </div>
 
   <div class="team" id="team">
     <div class="section-label">Our Attorneys</div>
