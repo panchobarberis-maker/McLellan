@@ -204,10 +204,15 @@
   .emp-testimonials { padding:36px 24px; background:#f7f5f0; }
   .emp-testimonials .section-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#b9986a; font-weight:700; border-left:3px solid #b9986a; padding-left:8px; margin-bottom:12px; }
   .emp-testimonials h2 { font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:700; color:#1b2a35; margin-bottom:20px; }
-  .emp-test-card { background:#fff; border-radius:8px; padding:20px; margin-bottom:14px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+  .emp-carousel { overflow:hidden; }
+  .emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+  .emp-test-card { min-width:100%; box-sizing:border-box; background:#fff; border-radius:8px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
   .emp-test-card .review-label { display:block; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#b9986a; margin-bottom:10px; }
   .emp-test-card .quote { font-size:14px; line-height:1.7; color:#444; font-style:italic; margin-bottom:12px; display:block; }
   .emp-test-card .author { font-size:12px; font-weight:700; color:#1b2a35; }
+  .emp-carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:16px; }
+  .emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(27,42,53,0.2); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
+  .emp-dot.active { background:#b9986a; }
   @media(min-width:769px) { .emp-testimonials { padding:60px 60px; max-width:900px; margin:0 auto; } }
 
   /* FAQ Section */
@@ -322,7 +327,7 @@
       <li>Employment contracts &amp; severance agreements</li>
     </ul>
     <p class="employers-highlight">Received a PAGA notice? Time is critical — the 65-day response window starts immediately. <strong>Call us before you respond.</strong></p>
-    <a href="#contact" class="cta-inline">Get a Free Consultation</a>
+    <div style="text-align:center; margin-top:8px;"><a href="#contact" class="cta-inline">Get a Free Consultation</a></div>
 
     <section class="faq-section" style="padding:32px 0 0; background:transparent;">
       <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; color:#1b2a35; margin-bottom:20px; text-align:left;">Employer FAQs</h2>
@@ -382,24 +387,61 @@
       <span>Unpaid wages &amp; overtime</span>
       <span>PAGA claims</span>
     </div>
-    <a href="#contact" class="cta-inline">Free Case Evaluation</a>
+    <div style="text-align:center; margin-top:8px;"><a href="#contact" class="cta-inline">Free Case Evaluation</a></div>
   </div>
 
   <!-- Testimonials -->
   <div class="emp-testimonials">
     <div class="section-label">Client Reviews</div>
     <h2>What Our Clients Say</h2>
-    <div class="emp-test-card">
-      <span class="review-label">Employment Law · Saratoga</span>
-      <p class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</p>
-      <span class="author">— Benjamin</span>
+    <div class="emp-carousel" id="empCarousel">
+      <div class="emp-carousel-track" id="empTrack">
+        <div class="emp-test-card">
+          <span class="review-label">Employment Law · Saratoga</span>
+          <p class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</p>
+          <span class="author">— Benjamin</span>
+        </div>
+        <div class="emp-test-card">
+          <span class="review-label">Employment Law · Saratoga</span>
+          <p class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</p>
+          <span class="author">— Pete</span>
+        </div>
+        <div class="emp-test-card">
+          <span class="review-label">Employment Law · Saratoga</span>
+          <p class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Throughout her personal and team efforts, Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution to an unfolding disruptive and stressful situation. Much appreciation and gratitude."</p>
+          <span class="author">— Anonymous</span>
+        </div>
+      </div>
     </div>
-    <div class="emp-test-card">
-      <span class="review-label">Employment Law · Saratoga</span>
-      <p class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</p>
-      <span class="author">— Pete</span>
+    <div class="emp-carousel-dots" id="empDots">
+      <button class="emp-dot active" onclick="goToEmp(0)"></button>
+      <button class="emp-dot" onclick="goToEmp(1)"></button>
+      <button class="emp-dot" onclick="goToEmp(2)"></button>
     </div>
   </div>
+
+  <script>
+    (function(){
+      var track = document.getElementById('empTrack');
+      var dots = document.querySelectorAll('#empDots .emp-dot');
+      var current = 0, total = 3, startX = 0, timer;
+      function goToEmp(n){
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+      }
+      window.goToEmp = goToEmp;
+      function next(){ goToEmp(current+1); }
+      timer = setInterval(next, 5000);
+      var el = document.getElementById('empCarousel');
+      el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+      el.addEventListener('touchend', function(e){
+        var dx = e.changedTouches[0].clientX - startX;
+        if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+        timer = setInterval(next, 5000);
+      }, {passive:true});
+    })();
+  </script>
 
   <!-- Employee FAQ Section -->
   <section class="faq-section">
