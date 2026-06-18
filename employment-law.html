@@ -194,10 +194,9 @@
   .employees-section { padding:28px 24px; background:#fff; border-bottom:1px solid #e5e0d8; }
   .employees-section h2 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:14px; }
   .employees-section p { font-size:14px; line-height:1.65; color:#444; margin-bottom:16px; }
-  .employees-list { list-style:none; margin:14px 0 16px; }
-  .employees-list li { padding:9px 0; border-bottom:1px solid #eee; font-size:14px; color:#333; display:flex; align-items:center; gap:10px; }
-  .employees-list li:last-child { border-bottom:none; }
-  .employees-list li::before { content:"→"; color:#b9986a; font-weight:900; font-size:14px; flex-shrink:0; }
+  .employees-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; margin:14px 0 16px; }
+  .employees-grid span { padding:9px 8px 9px 0; border-bottom:1px solid #eee; font-size:13px; color:#333; display:flex; align-items:center; gap:8px; }
+  .employees-grid span::before { content:"→"; color:#b9986a; font-weight:900; font-size:12px; flex-shrink:0; }
 
   .cta-inline { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:13px; padding:11px 20px; border-radius:6px; text-decoration:none; margin-top:4px; }
 
@@ -365,14 +364,14 @@
     <div class="section-label">For Employees</div>
     <h2>We Fight for Employee Rights</h2>
     <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley on a contingency basis — you pay nothing unless we win.</p>
-    <ul class="employees-list">
-      <li>Wrongful termination</li>
-      <li>Workplace discrimination</li>
-      <li>Sexual harassment</li>
-      <li>Retaliation for reporting violations</li>
-      <li>Unpaid wages &amp; overtime</li>
-      <li>PAGA claims</li>
-    </ul>
+    <div class="employees-grid">
+      <span>Wrongful termination</span>
+      <span>Workplace discrimination</span>
+      <span>Sexual harassment</span>
+      <span>Retaliation for reporting violations</span>
+      <span>Unpaid wages &amp; overtime</span>
+      <span>PAGA claims</span>
+    </div>
     <a href="#contact" class="cta-inline">Free Case Evaluation</a>
   </div>
 
