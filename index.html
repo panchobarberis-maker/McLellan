@@ -18,9 +18,11 @@
     padding:16px 28px; background:#1b2a35;
     position:sticky; top:0; z-index:100;
   }
+
   .logo-link { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
   .logo-img { height:36px; width:auto; display:block; }
   .logo-img-mobile { height:30px; width:auto; display:block; }
+  .logo-link { display:none; }
   .nav .logo { font-weight:900; color:#fff; font-size:15px; letter-spacing:1px; flex-shrink:0; }
   .nav .logo small { display:block; font-size:9px; font-weight:normal; letter-spacing:2px; color:rgba(255,255,255,0.6); }
   .nav-links { display:flex; gap:24px; align-items:center; list-style:none; margin:0 auto 0 40px; }
@@ -147,9 +149,7 @@
       display:flex; align-items:center; justify-content:center;
       font-weight:900; font-size:14px; color:#fff; border-radius:2px;
     }
-    .logo-link { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
-  .logo-img { height:36px; width:auto; display:block; }
-  .logo-img-mobile { height:30px; width:auto; display:block; }
+  
   .nav .logo { display:none; }
 
     /* Slide-out mobile menu */
@@ -190,6 +190,7 @@
   @media(min-width:769px) {
     .nav-hamburger { display:none; }
     .nav-logo-center { display:none; }
+    .logo-link { display:flex; }
     .mobile-menu { display:none !important; }
   }
 
@@ -276,9 +277,7 @@
 
     /* NAV */
     .nav { padding:18px 60px; }
-    .logo-link { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
-  .logo-img { height:36px; width:auto; display:block; }
-  .logo-img-mobile { height:30px; width:auto; display:block; }
+  
   .nav .logo { font-size:17px; }
     .nav-links { gap:32px; margin-left:60px; }
     .nav-links > li > a { font-size:12px; }
