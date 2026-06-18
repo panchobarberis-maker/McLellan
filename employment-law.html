@@ -140,6 +140,22 @@
 
   .cta-inline { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:13px; padding:11px 20px; border-radius:6px; text-decoration:none; margin-top:4px; }
 
+  /* FAQ Section */
+  .faq-section { padding:40px 24px; background:#fff; }
+  .faq-section h2 { font-family:'Cormorant Garamond',Georgia,serif; font-size:26px; font-weight:700; color:#1b2a35; text-align:center; margin-bottom:28px; }
+  .faq-item { border-bottom:1px solid #e5e0d8; }
+  .faq-question { width:100%; background:none; border:none; text-align:left; padding:18px 0; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; color:#1b2a35; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .faq-question .faq-icon { font-size:20px; color:#b9986a; flex-shrink:0; transition:transform 0.3s; }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .faq-answer p { font-size:14px; line-height:1.7; color:#444; padding-bottom:18px; margin:0; }
+  .faq-item.open .faq-icon { transform:rotate(45deg); }
+  @media(min-width:769px){
+    .faq-section { max-width:800px; margin:0 auto; padding:60px 40px; }
+    .faq-section h2 { font-size:32px; }
+    .faq-question { font-size:16px; }
+    .faq-answer p { font-size:15px; }
+  }
+
   .cta-banner { background:#1b2a35; color:#fff; padding:32px 24px; text-align:center; }
   .cta-banner p { font-size:13px; color:rgba(255,255,255,0.8); margin-bottom:16px; line-height:1.6; }
   .cta-banner .btn { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:14px; padding:13px 26px; border-radius:6px; text-decoration:none; }
@@ -212,6 +228,62 @@
     <a href="#contact" class="cta-inline">Request a Free Consultation</a>
   </div>
 
+  <!-- Visible FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do you handle employment cases in Saratoga, California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. McLellan Law Group is based in Saratoga, CA and represents employees and employers throughout Silicon Valley, Santa Clara County, and the Bay Area.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What employment law cases do you handle?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We handle wrongful termination, workplace discrimination, sexual harassment, retaliation, wage and hour violations, PAGA claims, and other employment disputes under California and federal law.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do you represent both employers and employees?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. We represent both employers defending against claims and employees pursuing their rights under California employment law.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What is a PAGA claim in California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>PAGA (Private Attorneys General Act) allows employees to sue employers for labor code violations on behalf of themselves and other employees. McLellan Law Group defends California employers against PAGA claims — advising on notice responses, asserting available defenses, and pursuing early resolution strategies to minimize per-violation penalties.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How much does it cost to speak with an employment attorney?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We offer a free initial consultation. Many employee-side cases are handled on a contingency fee basis, meaning you pay nothing unless we recover for you. Contact us to discuss your situation.</p>
+      </div>
+    </div>
+
+  </section>
+
   <div class="cta-banner" id="contact">
     <p>Based in Saratoga and serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
     <a href="https://www.mclellanlawgroup.com/contact" class="btn">Request a Free Consultation</a>
@@ -226,5 +298,21 @@
       referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group — 20665 4th St #202, Saratoga, CA 95070">
     </iframe>
   </div>
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+</script>
 </body>
 </html>
