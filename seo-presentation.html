@@ -110,7 +110,7 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
 
 <div class="top-bar">
   <div class="wm d" id="wm">McLellan Law Group</div>
-  <div class="ct d" id="ct">1 / 24</div>
+  <div class="ct d" id="ct">1 / 25</div>
 </div>
 <button class="arr p" onclick="go(-1)">‹</button>
 <button class="arr n" onclick="go(1)">›</button>
@@ -166,7 +166,43 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
   </div>
 </div>
 
-<!-- 4. PRIMARY + LOCATION -->
+<!-- 4. PAGESPEED — OLD SITE -->
+<div class="slide dark">
+  <div class="sl" style="border-color:rgba(185,152,106,0.6);color:#b9986a;">Brand Keywords · Performance</div>
+  <div class="sh" style="color:#fff;margin-bottom:6px;">Old Site — Page Speed</div>
+  <p class="sd" style="color:rgba(255,255,255,0.5);margin-bottom:20px;">Google PageSpeed Insights on the previous mclellanlawgroup.com. Mobile performance was a critical weakness.</p>
+  <div class="g2" style="align-items:start;gap:28px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:rgba(255,255,255,0.07);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:14px;">
+        <span style="font-size:48px;font-weight:700;color:#e74c3c;font-family:'Barlow',sans-serif;line-height:1;">56</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#e74c3c;letter-spacing:1px;text-transform:uppercase;">Mobile Performance</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:2px;">Failing — slow load kills conversions &amp; rankings</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:14px;">
+        <span style="font-size:48px;font-weight:700;color:#e67e22;font-family:'Barlow',sans-serif;line-height:1;">76</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#e67e22;letter-spacing:1px;text-transform:uppercase;">Desktop Performance</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:2px;">Needs improvement — room to optimize</div>
+        </div>
+      </div>
+      <div style="background:rgba(185,152,106,0.12);border:1px solid rgba(185,152,106,0.3);border-radius:12px;padding:14px 16px;">
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;">Google penalizes slow sites in rankings — especially on mobile, where <strong style="color:#fff;">over 60% of legal searches happen</strong>. A score of 56 is a direct SEO handicap.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:16px;">
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.4);">
+        <img src="presentation-imgs/Brand_Keywords_1.png" alt="PageSpeed Mobile 56" style="width:100%;display:block;">
+      </div>
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.4);">
+        <img src="presentation-imgs/Brand_Keywords_3.png" alt="PageSpeed Desktop 76" style="width:100%;display:block;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. PRIMARY + LOCATION -->
 <div class="slide light">
   <div class="sl">Brand Keywords</div>
   <div class="sh">Primary & Location Keywords</div>
@@ -490,7 +526,7 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
 var slides = Array.from(document.querySelectorAll('.slide'));
 var total = slides.length;
 var cur = 0;
-var darkSlides = new Set([0,1,5,10,16,23]);
+var darkSlides = new Set([0,1,3,6,11,17,24]);
 
 function updateUI() {
   document.getElementById('ct').textContent = (cur+1) + ' / ' + total;
