@@ -110,7 +110,7 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
 
 <div class="top-bar">
   <div class="wm d" id="wm">McLellan Law Group</div>
-  <div class="ct d" id="ct">1 / 24</div>
+  <div class="ct d" id="ct">1 / 25</div>
 </div>
 <button class="arr p" onclick="go(-1)">‹</button>
 <button class="arr n" onclick="go(1)">›</button>
@@ -134,7 +134,36 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
   <div class="ss">How clients find McLellan Law Group on Google and AI search</div>
 </div>
 
-<!-- 3. PRIMARY + LOCATION -->
+<!-- 3. WHY SARATOGA -->
+<div class="slide white">
+  <div class="sl">Brand Keywords · Strategy</div>
+  <div class="sh">Why "Employment Attorney in Saratoga, CA"?</div>
+  <p class="sd">Low volume, maximum intent — and zero real competition.</p>
+  <div class="g2" style="margin-top:4px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="background:#f7f5f0;border-radius:10px;padding:18px 20px;border-left:4px solid #b9986a;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b9986a;margin-bottom:6px;">Higher-Quality Intent</div>
+        <p style="font-size:13px;color:#333;line-height:1.6;">Someone searching <strong>"employment attorney Saratoga"</strong> is almost certainly a high-net-worth individual or local business owner — exactly McLellan's ideal client. Lower volume, but significantly better conversion rate.</p>
+      </div>
+      <div style="background:#f7f5f0;border-radius:10px;padding:18px 20px;border-left:4px solid #b9986a;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b9986a;margin-bottom:6px;">Almost No Competition</div>
+        <p style="font-size:13px;color:#333;line-height:1.6;">Very few firms are actively optimizing for <strong>"attorney Saratoga CA."</strong> Compare that to "attorney San Jose," where dozens of firms compete for the same keywords with far larger budgets.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="background:#1b2a35;border-radius:10px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b9986a;margin-bottom:8px;">The Advantage</div>
+        <p style="font-size:14px;color:#fff;line-height:1.6;font-weight:600;">McLellan is the <em>only</em> employment attorney in Saratoga. That's a monopoly position most firms would pay anything for.</p>
+      </div>
+      <div style="background:#fff3f3;border:1px solid #e8c4c4;border-radius:10px;padding:18px 20px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c0392b;margin-bottom:6px;">The Risk Without This Strategy</div>
+        <p style="font-size:13px;color:#555;line-height:1.6;">Without Saratoga-optimized SEO, competitors from San Jose could still outrank McLellan for local searches — even though none of them are actually located there.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. PRIMARY + LOCATION -->
 <div class="slide light">
   <div class="sl">Brand Keywords</div>
   <div class="sh">Primary & Location Keywords</div>
@@ -467,7 +496,7 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
 var slides = Array.from(document.querySelectorAll('.slide'));
 var total = slides.length;
 var cur = 0;
-var darkSlides = new Set([0,1,5,10,16,23]);
+var darkSlides = new Set([0,1,6,11,17,24]);
 
 function updateUI() {
   document.getElementById('ct').textContent = (cur+1) + ' / ' + total;
