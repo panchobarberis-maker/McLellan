@@ -3,661 +3,504 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>McLellan Law Group — SEO Strategy Presentation</title>
+<title>McLellan Law Group — SEO Strategy</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
-
 .deck { width:100vw; height:100vh; position:relative; }
-
 .slide {
-  position:absolute; inset:0;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  padding:60px 80px;
-  opacity:0; pointer-events:none;
-  transition:opacity 0.4s ease;
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; padding:72px 80px 52px;
+  opacity:0; pointer-events:none; transition:opacity 0.4s ease;
 }
 .slide.active { opacity:1; pointer-events:all; }
 
-/* NAV */
-.nav-bar {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:18px 36px;
-  pointer-events:none;
-}
-.nav-wordmark { font-family:'Cormorant Garamond',serif; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); }
-.nav-wordmark.dark { color:rgba(27,42,53,0.4); }
-.slide-counter { font-size:11px; font-weight:600; letter-spacing:1px; color:rgba(255,255,255,0.4); }
-.slide-counter.dark { color:rgba(27,42,53,0.4); }
+/* TOP BAR */
+.top-bar { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:16px 32px; pointer-events:none; }
+.wm { font-family:'Cormorant Garamond',serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+.wm.d { color:rgba(255,255,255,0.4); } .wm.l { color:rgba(27,42,53,0.3); }
+.ct { font-size:11px; font-weight:600; letter-spacing:1px; }
+.ct.d { color:rgba(255,255,255,0.35); } .ct.l { color:rgba(27,42,53,0.3); }
 
 /* ARROWS */
-.arrow-btn {
-  position:fixed; top:50%; transform:translateY(-50%);
-  background:rgba(185,152,106,0.15); border:1px solid rgba(185,152,106,0.3);
-  color:#b9986a; font-size:22px; width:44px; height:44px;
-  border-radius:50%; cursor:pointer; z-index:100;
-  display:flex; align-items:center; justify-content:center;
-  transition:background 0.2s;
-}
-.arrow-btn:hover { background:rgba(185,152,106,0.35); }
-.arrow-btn.prev { left:20px; }
-.arrow-btn.next { right:20px; }
+.arr { position:fixed; top:50%; transform:translateY(-50%); z-index:200; width:40px; height:40px; border-radius:50%; border:1px solid rgba(185,152,106,0.4); background:rgba(185,152,106,0.1); color:#b9986a; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
+.arr:hover { background:rgba(185,152,106,0.3); }
+.arr.p { left:16px; } .arr.n { right:16px; }
+.prog { position:fixed; bottom:0; left:0; height:2px; background:#b9986a; transition:width 0.4s; z-index:200; }
 
-/* PROGRESS BAR */
-.progress { position:fixed; bottom:0; left:0; height:2px; background:#b9986a; transition:width 0.4s ease; z-index:100; }
-
-/* ===================== SLIDE TYPES ===================== */
+/* BGs */
+.dark  { background:#1b2a35; }
+.light { background:#f7f5f0; }
+.white { background:#fff; }
 
 /* COVER */
-.slide-cover { background:#1b2a35; text-align:center; }
-.cover-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#b9986a; font-weight:700; margin-bottom:24px; }
-.cover-title { font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:700; color:#fff; line-height:1; margin-bottom:16px; }
-.cover-subtitle { font-size:18px; color:rgba(255,255,255,0.6); margin-bottom:32px; }
-.cover-divider { width:60px; height:2px; background:#b9986a; margin:0 auto 32px; }
-.cover-note { font-size:12px; color:rgba(255,255,255,0.35); letter-spacing:1px; }
+.cv-lbl { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#b9986a; font-weight:700; margin-bottom:20px; }
+.cv-ttl { font-family:'Cormorant Garamond',serif; font-size:68px; font-weight:700; color:#fff; line-height:1; text-align:center; margin-bottom:10px; }
+.cv-ln  { width:56px; height:2px; background:#b9986a; margin:18px auto; }
+.cv-sub { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:8px; }
+.cv-nt  { font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:1px; }
 
-/* SECTION DIVIDER */
-.slide-section { background:#1b2a35; text-align:center; }
-.section-num { font-family:'Cormorant Garamond',serif; font-size:120px; font-weight:700; color:rgba(185,152,106,0.15); line-height:1; margin-bottom:-20px; }
-.section-title { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:700; color:#fff; margin-bottom:16px; }
-.section-subtitle { font-size:15px; color:rgba(255,255,255,0.5); max-width:560px; line-height:1.6; }
+/* SECTION */
+.sn  { font-family:'Cormorant Garamond',serif; font-size:110px; font-weight:700; color:rgba(185,152,106,0.12); line-height:1; margin-bottom:-12px; }
+.st  { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:700; color:#fff; margin-bottom:14px; text-align:center; }
+.ss  { font-size:14px; color:rgba(255,255,255,0.42); max-width:520px; line-height:1.65; text-align:center; }
 
-/* CONTENT LIGHT */
-.slide-light { background:#f7f5f0; align-items:flex-start; }
-.slide-white { background:#fff; align-items:flex-start; }
+/* SLIDE LABELS */
+.sl  { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#b9986a; font-weight:700; border-left:3px solid #b9986a; padding-left:10px; margin-bottom:8px; align-self:flex-start; }
+.sh  { font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:700; color:#1b2a35; margin-bottom:5px; align-self:flex-start; }
+.sd  { font-size:13px; color:#777; margin-bottom:18px; align-self:flex-start; max-width:700px; line-height:1.5; }
 
-.slide-title { font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:700; color:#1b2a35; margin-bottom:8px; }
-.slide-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#b9986a; font-weight:700; margin-bottom:12px; border-left:3px solid #b9986a; padding-left:10px; }
-.slide-desc { font-size:14px; color:#666; margin-bottom:32px; max-width:700px; }
+/* GRIDS */
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:28px; width:100%; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; width:100%; }
+.ch { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b9986a; margin-bottom:12px; padding-bottom:6px; border-bottom:1px solid #e5e0d8; }
 
-/* TWO COLUMNS */
-.two-col { display:grid; grid-template-columns:1fr 1fr; gap:40px; width:100%; max-width:1000px; }
-.three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px; width:100%; max-width:1100px; }
+/* PILLS */
+.pills { display:flex; flex-wrap:wrap; gap:6px; }
+.pill  { background:#1b2a35; color:#fff; font-size:11px; font-weight:600; padding:4px 11px; border-radius:20px; }
+.pill.g { background:#b9986a; }
+.pill.o { background:#fff; color:#1b2a35; border:1px solid #d5cfc7; }
 
-.col-head { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b9986a; margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid #e5e0d8; }
+/* PHONE MOCKUP */
+.ba { display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; align-items:start; }
+.ba-c { display:flex; flex-direction:column; align-items:center; }
+.badge { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:4px 14px; border-radius:20px; margin-bottom:12px; }
+.badge.b { background:#e8e4df; color:#999; }
+.badge.a { background:#b9986a; color:#fff; }
+.phone { position:relative; background:#1b2a35; border-radius:30px; padding:9px; box-shadow:0 12px 40px rgba(0,0,0,0.25); width:100%; max-width:220px; }
+.phone::before { content:''; display:block; width:54px; height:5px; background:rgba(255,255,255,0.12); border-radius:4px; margin:0 auto 7px; }
+.screen { border-radius:20px; overflow:hidden; background:#fff; width:100%; aspect-ratio:9/16; }
+.screen img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
 
-/* KEYWORD PILLS */
-.pills { display:flex; flex-wrap:wrap; gap:8px; }
-.pill { background:#1b2a35; color:#fff; font-size:11px; font-weight:600; padding:5px 12px; border-radius:20px; letter-spacing:0.3px; }
-.pill.gold { background:#b9986a; }
-.pill.light { background:#fff; color:#1b2a35; border:1px solid #ddd; }
+/* MAP */
+.map-wrap { width:100%; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.1); }
+.map-wrap iframe { display:block; width:100%; height:300px; border:0; }
+.map-note { margin-top:12px; font-size:12px; color:#888; text-align:center; align-self:center; }
 
-/* BEFORE / AFTER */
-.before-after { display:grid; grid-template-columns:1fr 1fr; gap:0; width:100%; max-width:1000px; border-radius:10px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.1); }
-.ba-col { padding:32px; }
-.ba-before { background:#f0ede8; }
-.ba-after { background:#1b2a35; }
-.ba-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
-.ba-before .ba-label { color:#999; }
-.ba-after .ba-label { color:#b9986a; }
-.ba-before h3 { font-family:'Cormorant Garamond',serif; font-size:20px; color:#888; margin-bottom:12px; text-decoration:line-through; }
-.ba-after h3 { font-family:'Cormorant Garamond',serif; font-size:20px; color:#fff; margin-bottom:12px; }
-.ba-list { list-style:none; }
-.ba-list li { font-size:13px; line-height:1.7; padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.06); }
-.ba-before .ba-list li { color:#888; }
-.ba-after .ba-list li { color:rgba(255,255,255,0.75); border-bottom-color:rgba(255,255,255,0.08); }
-.ba-after .ba-list li::before { content:"✓ "; color:#b9986a; font-weight:bold; }
+/* FAQ */
+.fql { list-style:none; width:100%; }
+.fql li { padding:8px 0; border-bottom:1px solid #e5e0d8; font-size:12px; color:#333; display:flex; align-items:flex-start; gap:9px; line-height:1.5; }
+.fql li::before { content:"Q"; background:#b9986a; color:#fff; font-size:9px; font-weight:700; padding:2px 5px; border-radius:3px; flex-shrink:0; margin-top:2px; }
 
-/* FAQ LIST */
-.faq-list { list-style:none; width:100%; max-width:900px; }
-.faq-list li { padding:10px 0; border-bottom:1px solid #e5e0d8; font-size:13px; color:#333; display:flex; align-items:flex-start; gap:10px; }
-.faq-list li::before { content:"Q"; background:#b9986a; color:#fff; font-size:9px; font-weight:700; padding:2px 5px; border-radius:3px; flex-shrink:0; margin-top:2px; }
+/* STRUCTURE */
+.str { display:flex; flex-wrap:wrap; gap:8px; width:100%; }
+.str-i { background:#fff; border:1px solid #e5e0d8; border-radius:6px; padding:8px 13px; font-size:12px; color:#1b2a35; font-weight:600; display:flex; align-items:center; gap:7px; }
+.str-i span { color:#b9986a; font-size:11px; font-weight:400; }
 
-/* STRUCTURE LIST */
-.structure { list-style:none; display:flex; flex-wrap:wrap; gap:10px; width:100%; max-width:900px; }
-.structure li { background:#fff; border:1px solid #e5e0d8; border-radius:6px; padding:10px 16px; font-size:13px; color:#1b2a35; font-weight:600; display:flex; align-items:center; gap:8px; }
-.structure li span { color:#b9986a; font-size:11px; font-weight:400; }
-
-/* SUMMARY CARDS */
-.summary-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; width:100%; max-width:900px; }
-.summary-card { background:#fff; border-radius:10px; padding:24px; border-top:3px solid #b9986a; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
-.summary-card h3 { font-family:'Cormorant Garamond',serif; font-size:22px; color:#1b2a35; margin-bottom:8px; }
-.summary-card p { font-size:13px; color:#666; line-height:1.6; }
-
-/* CLOSING */
-.slide-closing { background:#1b2a35; text-align:center; }
-
-/* FULL WIDTH */
-.full-width { width:100%; max-width:1000px; }
+/* SUMMARY */
+.sg { display:grid; grid-template-columns:1fr 1fr; gap:16px; width:100%; }
+.sc { background:#fff; border-radius:10px; padding:20px; border-top:3px solid #b9986a; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+.sc h3 { font-family:'Cormorant Garamond',serif; font-size:20px; color:#1b2a35; margin-bottom:6px; }
+.sc p  { font-size:12px; color:#666; line-height:1.6; }
 
 /* MOBILE */
 @media(max-width:768px) {
   body { overflow:auto; }
   .deck { height:auto; }
-  .slide { position:relative; opacity:1; pointer-events:all; padding:48px 24px; min-height:100vh; display:flex; }
-  .arrow-btn, .progress, .nav-bar { display:none; }
-  .two-col, .before-after, .summary-grid { grid-template-columns:1fr; }
-  .three-col { grid-template-columns:1fr; }
-  .cover-title { font-size:42px; }
-  .section-num { font-size:72px; }
-  .section-title { font-size:36px; }
-  .slide-title { font-size:28px; }
+  .slide { position:relative; opacity:1; pointer-events:all; padding:44px 20px; min-height:100vh; }
+  .arr, .top-bar, .prog { display:none; }
+  .g2,.ba,.sg { grid-template-columns:1fr; }
+  .g3 { grid-template-columns:1fr; }
+  .cv-ttl { font-size:44px; } .sn { font-size:72px; } .st { font-size:32px; }
 }
 </style>
 </head>
 <body>
 
-<div class="nav-bar" id="navBar">
-  <div class="nav-wordmark" id="navWordmark">McLellan Law Group</div>
-  <div class="slide-counter" id="slideCounter">1 / 19</div>
+<div class="top-bar">
+  <div class="wm d" id="wm">McLellan Law Group</div>
+  <div class="ct d" id="ct">1 / 24</div>
+</div>
+<button class="arr p" onclick="go(-1)">‹</button>
+<button class="arr n" onclick="go(1)">›</button>
+<div class="prog" id="prog"></div>
+
+<div class="deck">
+
+<!-- 1. COVER -->
+<div class="slide dark active">
+  <div class="cv-lbl">SEO & Content Strategy</div>
+  <div class="cv-ttl">McLellan<br>Law Group</div>
+  <div class="cv-ln"></div>
+  <div class="cv-sub">Website Optimization · Saratoga, California</div>
+  <div class="cv-nt">mc-lellan.vercel.app</div>
 </div>
 
-<button class="arrow-btn prev" onclick="changeSlide(-1)">‹</button>
-<button class="arrow-btn next" onclick="changeSlide(1)">›</button>
-<div class="progress" id="progress"></div>
-
-<div class="deck" id="deck">
-
-  <!-- SLIDE 1: COVER -->
-  <div class="slide slide-cover active">
-    <div class="cover-label">SEO & Content Strategy</div>
-    <div class="cover-title">McLellan<br>Law Group</div>
-    <div class="cover-divider"></div>
-    <div class="cover-subtitle">Website Optimization · Saratoga, California</div>
-    <div class="cover-note">Prepared for McLellan Law Group · mc-lellan.vercel.app</div>
-  </div>
-
-  <!-- SLIDE 2: SECTION — BRAND KEYWORDS -->
-  <div class="slide slide-section">
-    <div class="section-num">01</div>
-    <div class="section-title">Brand Keywords</div>
-    <div class="section-subtitle">How clients find McLellan Law Group on Google and AI search</div>
-  </div>
-
-  <!-- SLIDE 3: PRIMARY + LOCATION KEYWORDS -->
-  <div class="slide slide-light">
-    <div class="slide-label">Brand Keywords</div>
-    <div class="slide-title">Primary & Location Keywords</div>
-    <p class="slide-desc">Core search terms embedded across all pages — in headings, body text, meta tags, and schema markup.</p>
-    <div class="two-col full-width">
-      <div>
-        <div class="col-head">Primary Keywords</div>
-        <div class="pills">
-          <span class="pill gold">Employment & Business Litigation Attorneys in Saratoga, CA</span>
-          <span class="pill">Employment attorney Saratoga CA</span>
-          <span class="pill">Business litigation attorney Saratoga California</span>
-          <span class="pill">Civil litigation firm Saratoga California</span>
-          <span class="pill">Award-winning civil litigation firm</span>
-        </div>
-      </div>
-      <div>
-        <div class="col-head">Location Keywords</div>
-        <div class="pills">
-          <span class="pill gold">Saratoga, California</span>
-          <span class="pill">Silicon Valley</span>
-          <span class="pill">Santa Clara County</span>
-          <span class="pill">Bay Area</span>
-          <span class="pill">San Jose</span>
-          <span class="pill">Santa Clara</span>
-          <span class="pill">Cupertino</span>
-          <span class="pill">Los Gatos</span>
-          <span class="pill">Campbell</span>
-          <span class="pill">Los Altos</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 4: PRACTICE + META KEYWORDS -->
-  <div class="slide slide-white">
-    <div class="slide-label">Brand Keywords</div>
-    <div class="slide-title">Practice & Technical Keywords</div>
-    <p class="slide-desc">Practice keywords appear in visible content. Technical meta keywords are embedded in the page head — invisible to users but indexed by Google.</p>
-    <div class="two-col full-width">
-      <div>
-        <div class="col-head">Practice Keywords</div>
-        <div class="pills">
-          <span class="pill">Employment Law</span>
-          <span class="pill">Business Litigation</span>
-          <span class="pill">Wrongful Termination</span>
-          <span class="pill">PAGA Claims</span>
-          <span class="pill">Real Estate Litigation</span>
-          <span class="pill">Trust & Probate Litigation</span>
-          <span class="pill">Civil Appeals</span>
-          <span class="pill">Asset Protection</span>
-          <span class="pill">Financial Elder Abuse</span>
-          <span class="pill">Contract Disputes</span>
-        </div>
-      </div>
-      <div>
-        <div class="col-head">Meta Keywords (page head)</div>
-        <div class="pills">
-          <span class="pill light">employment attorney Saratoga CA</span>
-          <span class="pill light">business litigation attorney Saratoga California</span>
-          <span class="pill light">employment lawyer Silicon Valley</span>
-          <span class="pill light">wrongful termination lawyer Santa Clara County</span>
-          <span class="pill light">business litigation Silicon Valley</span>
-        </div>
-        <br>
-        <div class="col-head" style="margin-top:16px;">Schema (LegalService — visible to Google/AI)</div>
-        <div class="pills">
-          <span class="pill gold">Employment Law</span>
-          <span class="pill gold">Business Litigation</span>
-          <span class="pill gold">Wrongful Termination</span>
-          <span class="pill gold">PAGA Claims</span>
-          <span class="pill gold">Real Estate Litigation</span>
-          <span class="pill gold">Trust and Probate Litigation</span>
-          <span class="pill gold">Civil Appeals</span>
-          <span class="pill gold">Asset Protection</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 5: SECTION — HOME PAGE -->
-  <div class="slide slide-section">
-    <div class="section-num">02</div>
-    <div class="section-title">Home Page</div>
-    <div class="section-subtitle">The firm's primary entry point — optimized for both practice areas and all locations</div>
-  </div>
-
-  <!-- SLIDE 6: HOME — HERO BEFORE/AFTER -->
-  <div class="slide slide-light">
-    <div class="slide-label">Home Page · Hero</div>
-    <div class="slide-title">Hero Section</div>
-    <p class="slide-desc">The first thing a visitor sees — and the most important section for first impressions and SEO.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>"California Employment & Civil Litigation Attorneys for Businesses, Executives, and Families"</h3>
-        <ul class="ba-list">
-          <li>No attorney photo — flat dark background</li>
-          <li>H1 too long (11 words), dilutes target keywords</li>
-          <li>No geo-keyword in H1 (no mention of Saratoga)</li>
-          <li>Wall of text below H1 with no hierarchy</li>
-          <li>Separate redundant "Services" section</li>
-          <li>Testimonials stacked vertically — dense and unreadable</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>"Employment & Business Litigation Attorneys in Saratoga, California"</h3>
-        <ul class="ba-list">
-          <li>Full-bleed attorney photo with gold frame corners</li>
-          <li>Short H1 — leads with both practice areas + Saratoga</li>
-          <li>Aligns with Google Business Profile location</li>
-          <li>Clear subtitle + CTA button above the fold</li>
-          <li>Employment Law & Business Litigation highlighted as primary</li>
-          <li>Testimonials in swipeable carousel with local labels</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 7: HOME — TESTIMONIALS BEFORE/AFTER -->
-  <div class="slide slide-white">
-    <div class="slide-label">Home Page · Testimonials</div>
-    <div class="slide-title">Testimonials Section</div>
-    <p class="slide-desc">Social proof is critical for law firm conversion — format and keywords both matter.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>Vertical stack, dense text</h3>
-        <ul class="ba-list">
-          <li>Every review stacked vertically — endless scroll on mobile</li>
-          <li>Long unformatted blocks of text</li>
-          <li>No practice area labels</li>
-          <li>No local keywords per card</li>
-          <li>No visual hierarchy</li>
-          <li>No interaction — static and flat</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>Swipeable carousel with local SEO labels</h3>
-        <ul class="ba-list">
-          <li>Carousel: 1 card at a time on mobile, 3 side-by-side on desktop</li>
-          <li>Each card: short, punchy, scannable</li>
-          <li>"Employment Law · Saratoga" — local SEO on every card</li>
-          <li>"Business Litigation · Saratoga" — reinforces location signal</li>
-          <li>Touch swipe on mobile + auto-advance every 5s</li>
-          <li>Gold dot indicators — credible and modern</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 8: HOME — PAGE STRUCTURE -->
-  <div class="slide slide-light">
-    <div class="slide-label">Home Page · Structure</div>
-    <div class="slide-title">Page Architecture</div>
-    <p class="slide-desc">Every section has a clear purpose — content, conversion, or SEO signal.</p>
-    <ul class="structure full-width">
-      <li>Nav <span>logo + practice areas dropdown + contact CTA</span></li>
-      <li>Hero <span>H1 + attorney photo + CTA button</span></li>
-      <li>About <span>firm credibility — "Award-Winning"</span></li>
-      <li>Practice Areas <span>6 cards — Employment & Business Litigation primary</span></li>
-      <li>Testimonials <span>carousel — 3 reviews with local labels</span></li>
-      <li>Mid-page CTA <span>dark navy band — conversion anchor</span></li>
-      <li>Our Attorneys <span>Steven, Claire, Elizabeth — team carousel</span></li>
-      <li>Final CTA <span>"Based in Saratoga" — local signal</span></li>
-      <li>Google Maps <span>20665 4th St #202, Saratoga, CA — geo signal</span></li>
-    </ul>
-  </div>
-
-  <!-- SLIDE 9: SECTION — EMPLOYMENT -->
-  <div class="slide slide-section">
-    <div class="section-num">03</div>
-    <div class="section-title">Employment Law</div>
-    <div class="section-subtitle">Targeting employers and employees with dedicated sections and 10+ FAQs for AI search</div>
-  </div>
-
-  <!-- SLIDE 10: EMPLOYMENT — HERO + EMPLOYER BEFORE/AFTER -->
-  <div class="slide slide-light">
-    <div class="slide-label">Employment Law · Hero & Employers</div>
-    <div class="slide-title">Hero & Employer Section</div>
-    <p class="slide-desc">The employer section needed urgency, specificity, and scannability — especially for PAGA.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>Generic headline, no photo, wall of text</h3>
-        <ul class="ba-list">
-          <li>No geo-keyword in H1 — no mention of Saratoga</li>
-          <li>Flat dark background, no attorney photo</li>
-          <li>Employer + employee content mixed with no separation</li>
-          <li>3 long dense paragraphs (150+ words) before any CTA</li>
-          <li>No PAGA urgency messaging</li>
-          <li>No checklist — hard to scan on mobile</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>"California Employment Law Attorneys in Saratoga"</h3>
-        <ul class="ba-list">
-          <li>Full-bleed attorney photo, label "Employment Law · Saratoga, California"</li>
-          <li>H1 with Saratoga geo-keyword</li>
-          <li>Audience buttons: Employers ↗ / Employees ↗</li>
-          <li>6-item checklist: wrongful termination defense, PAGA, wage & hour, retaliation, HR policy, severance</li>
-          <li>PAGA alert box: "65-day response window starts immediately. Call us before you respond."</li>
-          <li>Entire section scannable in under 10 seconds on mobile</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 11: EMPLOYMENT — EMPLOYEE SECTION BEFORE/AFTER -->
-  <div class="slide slide-white">
-    <div class="slide-label">Employment Law · Employees</div>
-    <div class="slide-title">Employee Section</div>
-    <p class="slide-desc">The original employee section had no keywords, no services listed, and no path to conversion.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>"Protecting Employees' Rights"</h3>
-        <ul class="ba-list">
-          <li>Stock photo of generic woman at a desk</li>
-          <li>Two sentences of boilerplate — no specific services</li>
-          <li>No mention of Silicon Valley or Saratoga</li>
-          <li>No checklist — no scan path</li>
-          <li>Single CTA button at the end with no context</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>"We Fight for Employee Rights"</h3>
-        <ul class="ba-list">
-          <li>Direct headline with authority</li>
-          <li>"We represent employees throughout Silicon Valley on a contingency basis"</li>
-          <li>2-column grid: 6 case types — Wrongful termination, Discrimination, Sexual harassment, Retaliation, Unpaid wages, PAGA</li>
-          <li>Followed directly by Employee FAQs accordion</li>
-          <li>Contingency fee call-out: "you pay nothing unless we win"</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 12: EMPLOYMENT — FAQs -->
-  <div class="slide slide-light">
-    <div class="slide-label">Employment Law · FAQs</div>
-    <div class="slide-title">10+ FAQs — Built for Google & AI Search</div>
-    <p class="slide-desc">Expand/collapse accordion. Each answer structured to appear as a Google rich snippet and to be cited by AI engines like Perplexity and ChatGPT.</p>
-    <div class="two-col full-width">
-      <div>
-        <div class="col-head">Employer FAQs</div>
-        <ul class="faq-list">
-          <li>What to do if I receive a PAGA notice in California?</li>
-          <li>Can I be sued for wrongful termination with an at-will policy?</li>
-          <li>Difference between a PAGA claim and a class action?</li>
-          <li>Do I need an attorney to draft a severance agreement in California?</li>
-        </ul>
-      </div>
-      <div>
-        <div class="col-head">Employee FAQs</div>
-        <ul class="faq-list">
-          <li>Do you handle employment cases in Saratoga, California?</li>
-          <li>What employment law cases do you handle?</li>
-          <li>What should I do if I was paid late?</li>
-          <li>What should I do after I've been fired?</li>
-          <li>What should I do if I'm laid off?</li>
-          <li>I received a severance agreement — should I sign it?</li>
-          <li>What should I do if I've been demoted or discriminated against?</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 13: SECTION — BUSINESS LITIGATION -->
-  <div class="slide slide-section">
-    <div class="section-num">04</div>
-    <div class="section-title">Business Litigation</div>
-    <div class="section-subtitle">Local SEO for Silicon Valley companies, owners, and executives</div>
-  </div>
-
-  <!-- SLIDE 14: BIZ LIT — HERO BEFORE/AFTER -->
-  <div class="slide slide-light">
-    <div class="slide-label">Business Litigation · Hero</div>
-    <div class="slide-title">Hero Section</div>
-    <p class="slide-desc">The original hero had no photo and a headline that was too long to read — let alone rank.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>"CALIFORNIA BUSINESS LITIGATION ATTORNEYS FOR COMPANIES, OWNERS, AND EXECUTIVES"</h3>
-        <ul class="ba-list">
-          <li>All-caps headline spanning 4 lines</li>
-          <li>No attorney photo — dark flat background</li>
-          <li>Generic checklist layout with no visual identity</li>
-          <li>No gold frame, no warmth, no personality</li>
-          <li>No local label above the headline</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>"California Business Litigation Attorneys in Saratoga"</h3>
-        <ul class="ba-list">
-          <li>Premium hero — attorneys' own photo, gold frame corners</li>
-          <li>Label: "Business Litigation · Saratoga, California"</li>
-          <li>Clean two-line H1 in Cormorant Garamond serif</li>
-          <li>Attorneys' faces visible — CTA anchored at bottom</li>
-          <li>Warm overlay: dark at top for text, light at bottom for faces</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 15: BIZ LIT — CONTENT BEFORE/AFTER -->
-  <div class="slide slide-white">
-    <div class="slide-label">Business Litigation · Content</div>
-    <div class="slide-title">Content Sections</div>
-    <p class="slide-desc">Mid-page sections restructured from heavy stock-photo layouts to tight, scannable, keyword-rich paragraphs.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>Stock photos + dense multi-paragraph text</h3>
-        <ul class="ba-list">
-          <li>Large stock photos taking up half the screen per section</li>
-          <li>All-caps headers — hard to scan</li>
-          <li>150+ words per section with repeated boilerplate</li>
-          <li>Firm name mentioned in every paragraph redundantly</li>
-          <li>No geographic keywords in section text</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>Gold label + serif headline + tight paragraph</h3>
-        <ul class="ba-list">
-          <li>No stock photos mid-page — attorneys anchor the hero</li>
-          <li>2-column case type grid: Breach of Contract, Fiduciary Duty, Shareholder Disputes, Fraud, LLC Dissolutions, Business Torts</li>
-          <li>3 dedicated sections: Shareholder Disputes, Breach of Contract, Fiduciary Duty</li>
-          <li>Each with geo keywords: Saratoga, Los Gatos, Los Altos, Santa Clara County, Silicon Valley</li>
-          <li>Dark navy CTA band separates content from testimonials</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 16: BIZ LIT — FAQs BEFORE/AFTER -->
-  <div class="slide slide-light">
-    <div class="slide-label">Business Litigation · FAQs</div>
-    <div class="slide-title">FAQs</div>
-    <p class="slide-desc">From 3 static question boxes to 5 structured FAQs optimized for rich snippets and AI citation.</p>
-    <div class="before-after full-width">
-      <div class="ba-col ba-before">
-        <div class="ba-label">Before</div>
-        <h3>3 static boxes — no answers visible</h3>
-        <ul class="ba-list">
-          <li>Plain bordered boxes with all-caps text</li>
-          <li>No answers displayed — just questions sitting there</li>
-          <li>No interaction — no expand/collapse</li>
-          <li>No hierarchy, no typography</li>
-          <li>Not structured for Google rich snippets</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-after">
-        <div class="ba-label">After</div>
-        <h3>5 FAQs — rich snippet + AI-optimized</h3>
-        <ul class="ba-list">
-          <li>Expand/collapse accordion with smooth animation</li>
-          <li>Do you handle cases in Saratoga, CA?</li>
-          <li>Could I face personal liability?</li>
-          <li>What damages can I recover?</li>
-          <li>What is a breach of fiduciary duty?</li>
-          <li>How long does business litigation take in California?</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 17: BIZ LIT KEYWORDS -->
-  <div class="slide slide-white">
-    <div class="slide-label">Business Litigation · Keywords</div>
-    <div class="slide-title">Keywords Added</div>
-    <p class="slide-desc">All keywords are embedded naturally in headings, body text, and schema markup — not forced.</p>
-    <div class="three-col full-width">
-      <div>
-        <div class="col-head">Primary</div>
-        <div class="pills">
-          <span class="pill gold">Business litigation attorney Saratoga CA</span>
-          <span class="pill gold">California business litigation attorneys</span>
-          <span class="pill gold">Business lawyer Silicon Valley</span>
-          <span class="pill">Commercial litigation California</span>
-        </div>
-      </div>
-      <div>
-        <div class="col-head">Location</div>
-        <div class="pills">
-          <span class="pill">Saratoga</span>
-          <span class="pill">Silicon Valley</span>
-          <span class="pill">Santa Clara County</span>
-          <span class="pill">Bay Area</span>
-          <span class="pill">San Jose</span>
-          <span class="pill">Los Gatos</span>
-          <span class="pill">Los Altos</span>
-        </div>
-      </div>
-      <div>
-        <div class="col-head">Practice Long-Tail</div>
-        <div class="pills">
-          <span class="pill">Breach of contract lawyers Santa Clara County</span>
-          <span class="pill">Shareholder dispute attorneys Silicon Valley</span>
-          <span class="pill">Fiduciary duty attorneys Bay Area</span>
-          <span class="pill">Business fraud</span>
-          <span class="pill">LLC & Partnership Dissolutions</span>
-          <span class="pill">Business torts</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 18: SUMMARY -->
-  <div class="slide slide-light">
-    <div class="slide-label">Summary</div>
-    <div class="slide-title">What Was Built</div>
-    <p class="slide-desc">Three fully optimized landing pages — mobile-first, SEO-structured, and built for AI search citation.</p>
-    <div class="summary-grid full-width">
-      <div class="summary-card">
-        <h3>Home Page</h3>
-        <p>Desktop optimized (680px hero, 3-column practices). Attorney photo hero. Testimonial carousel with local SEO labels. Schema: LegalService with 8 practice areas and 9 cities.</p>
-      </div>
-      <div class="summary-card">
-        <h3>Employment Law</h3>
-        <p>Dual audience (employers + employees). 10+ FAQs in accordion format. PAGA urgency section. 2024 PAGA reform references. Schema: LegalService + FAQPage.</p>
-      </div>
-      <div class="summary-card">
-        <h3>Business Litigation</h3>
-        <p>Premium hero with attorneys' photo. 3 practice deep-dive sections. Dark CTA band for visual separation. 5 FAQs. Schema: LegalService + FAQPage.</p>
-      </div>
-      <div class="summary-card">
-        <h3>SEO Foundation</h3>
-        <p>Schema markup on all pages. Geo meta tags (37.2638;-122.0231). Canonical URLs. Open Graph tags. FAQ structured data for Google rich snippets and AI citation.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- SLIDE 19: CLOSING -->
-  <div class="slide slide-closing">
-    <div class="cover-label">Thank You</div>
-    <div class="cover-title">McLellan<br>Law Group</div>
-    <div class="cover-divider"></div>
-    <div class="cover-subtitle">Saratoga, California · Silicon Valley · Bay Area</div>
-    <div class="cover-note">mc-lellan.vercel.app</div>
-  </div>
-
+<!-- 2. SECTION: BRAND KEYWORDS -->
+<div class="slide dark">
+  <div class="sn">01</div>
+  <div class="st">Brand Keywords</div>
+  <div class="ss">How clients find McLellan Law Group on Google and AI search</div>
 </div>
+
+<!-- 3. PRIMARY + LOCATION -->
+<div class="slide light">
+  <div class="sl">Brand Keywords</div>
+  <div class="sh">Primary & Location Keywords</div>
+  <p class="sd">Core search terms embedded across all pages — in headings, body text, meta tags, and schema markup.</p>
+  <div class="g2">
+    <div>
+      <div class="ch">Primary Keywords</div>
+      <div class="pills">
+        <span class="pill g">Employment & Business Litigation Attorneys in Saratoga, CA</span>
+        <span class="pill">Employment attorney Saratoga CA</span>
+        <span class="pill">Business litigation attorney Saratoga California</span>
+        <span class="pill">Civil litigation firm Saratoga California</span>
+        <span class="pill">Award-winning civil litigation firm</span>
+      </div>
+    </div>
+    <div>
+      <div class="ch">Location Keywords (areaServed schema)</div>
+      <div class="pills">
+        <span class="pill g">Saratoga, California</span>
+        <span class="pill">Silicon Valley</span>
+        <span class="pill">Santa Clara County</span>
+        <span class="pill">Bay Area</span>
+        <span class="pill">San Jose</span>
+        <span class="pill">Santa Clara</span>
+        <span class="pill">Cupertino</span>
+        <span class="pill">Los Gatos</span>
+        <span class="pill">Campbell</span>
+        <span class="pill">Los Altos</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. PRACTICE + SCHEMA -->
+<div class="slide white">
+  <div class="sl">Brand Keywords</div>
+  <div class="sh">Practice & Schema Keywords</div>
+  <p class="sd">Practice keywords in visible content. Schema keywords read by Google and AI engines (Perplexity, ChatGPT).</p>
+  <div class="g2">
+    <div>
+      <div class="ch">Practice Keywords (visible content)</div>
+      <div class="pills">
+        <span class="pill">Employment Law</span><span class="pill">Business Litigation</span>
+        <span class="pill">Wrongful Termination</span><span class="pill">PAGA Claims</span>
+        <span class="pill">Real Estate Litigation</span><span class="pill">Trust & Probate Litigation</span>
+        <span class="pill">Civil Appeals</span><span class="pill">Asset Protection</span>
+        <span class="pill">Financial Elder Abuse</span><span class="pill">Contract Disputes</span>
+      </div>
+    </div>
+    <div>
+      <div class="ch">LegalService Schema — knowsAbout (indexed by AI)</div>
+      <div class="pills">
+        <span class="pill g">Employment Law</span><span class="pill g">Business Litigation</span>
+        <span class="pill g">Wrongful Termination</span><span class="pill g">PAGA Claims</span>
+        <span class="pill g">Real Estate Litigation</span><span class="pill g">Trust and Probate Litigation</span>
+        <span class="pill g">Civil Appeals</span><span class="pill g">Asset Protection</span>
+      </div>
+      <div class="ch" style="margin-top:16px;">Meta Keywords (page head — not visible)</div>
+      <div class="pills">
+        <span class="pill o">employment attorney Saratoga CA</span>
+        <span class="pill o">business litigation attorney Saratoga California</span>
+        <span class="pill o">employment lawyer Silicon Valley</span>
+        <span class="pill o">wrongful termination lawyer Santa Clara County</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. GOOGLE MAPS -->
+<div class="slide light">
+  <div class="sl">Brand Keywords · Local SEO</div>
+  <div class="sh">Google Maps — Geo Signal</div>
+  <p class="sd">Every page embeds the firm's address with geo coordinates (37.2638;-122.0231) — a key local SEO signal for "near me" searches and Google Maps ranking.</p>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy" title="McLellan Law Group"></iframe>
+  </div>
+  <p class="map-note">20665 4th St #202, Saratoga, CA 95070 · Embedded on all 3 pages</p>
+</div>
+
+<!-- 6. SECTION: HOME -->
+<div class="slide dark">
+  <div class="sn">02</div>
+  <div class="st">Home Page</div>
+  <div class="ss">Primary entry point — optimized for both practice areas and all locations</div>
+</div>
+
+<!-- 7. HOME HERO PHOTOS -->
+<div class="slide light">
+  <div class="sl">Home Page · Hero</div>
+  <div class="sh">Hero Section</div>
+  <p class="sd">Attorney photo, geo-keyword in H1, and a clear CTA above the fold — replacing a flat dark background with no photo.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Home_Page_Preview_1.png" alt="Home before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Home_Page_Preview_2.png" alt="Home after"></div></div></div>
+  </div>
+</div>
+
+<!-- 8. HOME PRACTICES PHOTOS -->
+<div class="slide white">
+  <div class="sl">Home Page · Practice Areas</div>
+  <div class="sh">Practice Areas Section</div>
+  <p class="sd">Employment Law and Business Litigation now highlighted as primary — visually and for SEO signal.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Home_Page_Preview_3.png" alt="Practices before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Home_Page_Preview_4.png" alt="Practices after"></div></div></div>
+  </div>
+</div>
+
+<!-- 9. HOME TESTIMONIALS PHOTOS -->
+<div class="slide light">
+  <div class="sl">Home Page · Testimonials</div>
+  <div class="sh">Testimonials</div>
+  <p class="sd">From a dense vertical stack to a swipeable carousel — each card labeled "Employment Law · Saratoga" or "Business Litigation · Saratoga".</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Home_Page_Preview_5.png" alt="Testimonials before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Home_Page_Preview_6.png" alt="Testimonials after"></div></div></div>
+  </div>
+</div>
+
+<!-- 10. HOME ARCHITECTURE -->
+<div class="slide white">
+  <div class="sl">Home Page · Structure</div>
+  <div class="sh">Page Architecture</div>
+  <p class="sd">Every section has a purpose — content, conversion, or SEO signal.</p>
+  <div class="str">
+    <div class="str-i">Nav <span>logo + dropdown + contact CTA</span></div>
+    <div class="str-i">Hero <span>H1 + attorney photo + CTA button</span></div>
+    <div class="str-i">About <span>"Award-Winning Civil Litigation Firm"</span></div>
+    <div class="str-i">Practice Areas <span>6 cards — Employment & Business Litigation primary</span></div>
+    <div class="str-i">Testimonials <span>carousel — 3 reviews with local labels</span></div>
+    <div class="str-i">Mid-page CTA <span>dark navy band — conversion anchor</span></div>
+    <div class="str-i">Our Attorneys <span>Steven, Claire, Elizabeth</span></div>
+    <div class="str-i">Final CTA <span>"Based in Saratoga" — local signal</span></div>
+    <div class="str-i">Google Maps <span>20665 4th St #202, Saratoga — geo signal</span></div>
+  </div>
+</div>
+
+<!-- 11. SECTION: EMPLOYMENT -->
+<div class="slide dark">
+  <div class="sn">03</div>
+  <div class="st">Employment Law</div>
+  <div class="ss">Targeting employers and employees with dedicated sections and 10+ FAQs for AI search</div>
+</div>
+
+<!-- 12. EMPLOYMENT HERO PHOTOS -->
+<div class="slide light">
+  <div class="sl">Employment Law · Hero</div>
+  <div class="sh">Hero Section</div>
+  <p class="sd">Attorney photo, geo-keyword in H1, audience split buttons (Employers / Employees), and PAGA urgency box added.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_1.png" alt="Employment hero before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_2.png" alt="Employment hero after"></div></div></div>
+  </div>
+</div>
+
+<!-- 13. EMPLOYMENT EMPLOYER PHOTOS -->
+<div class="slide white">
+  <div class="sl">Employment Law · Employers</div>
+  <div class="sh">Employer Section</div>
+  <p class="sd">Dense paragraphs replaced with a 6-item checklist and a PAGA alert: "65-day response window starts immediately."</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_3.png" alt="Employer before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_4.png" alt="Employer after"></div></div></div>
+  </div>
+</div>
+
+<!-- 14. EMPLOYMENT EMPLOYEE PHOTOS -->
+<div class="slide light">
+  <div class="sl">Employment Law · Employees</div>
+  <div class="sh">Employee Section</div>
+  <p class="sd">Generic stock photo and boilerplate replaced with a direct headline, contingency fee mention, and 6-case-type grid.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_5.png" alt="Employee before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_6.png" alt="Employee after"></div></div></div>
+  </div>
+</div>
+
+<!-- 15. EMPLOYMENT TESTIMONIALS PHOTOS -->
+<div class="slide white">
+  <div class="sl">Employment Law · Testimonials</div>
+  <div class="sh">Testimonials</div>
+  <p class="sd">Swipeable carousel with local labels — "Employment Law · Saratoga" on every card for local SEO reinforcement.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_7.png" alt="Employment testimonials before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Employment_Landing_Preview_8.png" alt="Employment testimonials after"></div></div></div>
+  </div>
+</div>
+
+<!-- 16. EMPLOYMENT FAQs -->
+<div class="slide light">
+  <div class="sl">Employment Law · FAQs</div>
+  <div class="sh">10+ FAQs — Built for Google & AI</div>
+  <p class="sd">Expand/collapse accordion. Each answer structured for Google rich snippets and AI citation (Perplexity, ChatGPT).</p>
+  <div class="g2">
+    <div>
+      <div class="ch">Employer FAQs</div>
+      <ul class="fql">
+        <li>What to do if I receive a PAGA notice in California?</li>
+        <li>Can I be sued for wrongful termination with an at-will policy?</li>
+        <li>Difference between a PAGA claim and a class action?</li>
+        <li>Do I need an attorney to draft a severance agreement?</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ch">Employee FAQs</div>
+      <ul class="fql">
+        <li>Do you handle employment cases in Saratoga, CA?</li>
+        <li>What employment law cases do you handle?</li>
+        <li>What should I do if I was paid late?</li>
+        <li>What should I do after I've been fired?</li>
+        <li>What should I do if I'm laid off?</li>
+        <li>I received a severance agreement — should I sign it?</li>
+        <li>What if I've been demoted or discriminated against?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 17. SECTION: BUSINESS LITIGATION -->
+<div class="slide dark">
+  <div class="sn">04</div>
+  <div class="st">Business Litigation</div>
+  <div class="ss">Local SEO for Silicon Valley companies, owners, and executives</div>
+</div>
+
+<!-- 18. BIZ LIT HERO PHOTOS -->
+<div class="slide light">
+  <div class="sl">Business Litigation · Hero</div>
+  <div class="sh">Hero Section</div>
+  <p class="sd">From all-caps flat headline to premium attorney photo with gold frame, clean H1, and CTA anchored at the bottom — faces visible throughout.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_1.png" alt="Biz hero before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_2.png" alt="Biz hero after"></div></div></div>
+  </div>
+</div>
+
+<!-- 19. BIZ LIT CASES PHOTOS -->
+<div class="slide white">
+  <div class="sl">Business Litigation · Content</div>
+  <div class="sh">Cases Grid & Practice Sections</div>
+  <p class="sd">Large stock photos and 150+ word paragraphs replaced with a clean 2-column grid and tight keyword-rich sections.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_3.png" alt="Biz content before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_4.png" alt="Biz content after"></div></div></div>
+  </div>
+</div>
+
+<!-- 20. BIZ LIT TESTIMONIALS PHOTOS -->
+<div class="slide light">
+  <div class="sl">Business Litigation · Testimonials</div>
+  <div class="sh">Testimonials</div>
+  <p class="sd">Dark navy CTA band added above reviews for visual separation — then swipeable carousel with "Business Litigation · Saratoga" labels.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_5.png" alt="Biz testimonials before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_6.png" alt="Biz testimonials after"></div></div></div>
+  </div>
+</div>
+
+<!-- 21. BIZ LIT FAQs PHOTOS -->
+<div class="slide white">
+  <div class="sl">Business Litigation · FAQs</div>
+  <div class="sh">FAQs</div>
+  <p class="sd">From 3 static boxes with no answers to 5 structured FAQs with expand/collapse — optimized for Google rich snippets and AI citation.</p>
+  <div class="ba">
+    <div class="ba-c"><div class="badge b">Before</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_7.png" alt="Biz FAQs before"></div></div></div>
+    <div class="ba-c"><div class="badge a">After</div><div class="phone"><div class="screen"><img src="presentation-imgs/Business_litigation_Landing__preview_8.png" alt="Biz FAQs after"></div></div></div>
+  </div>
+</div>
+
+<!-- 22. BIZ LIT KEYWORDS -->
+<div class="slide light">
+  <div class="sl">Business Litigation · Keywords</div>
+  <div class="sh">Keywords Added</div>
+  <p class="sd">All embedded naturally in headings, body text, and schema — not forced.</p>
+  <div class="g3">
+    <div>
+      <div class="ch">Primary</div>
+      <div class="pills">
+        <span class="pill g">Business litigation attorney Saratoga CA</span>
+        <span class="pill g">California business litigation attorneys</span>
+        <span class="pill g">Business lawyer Silicon Valley</span>
+        <span class="pill">Commercial litigation California</span>
+      </div>
+    </div>
+    <div>
+      <div class="ch">Location</div>
+      <div class="pills">
+        <span class="pill">Saratoga</span><span class="pill">Silicon Valley</span>
+        <span class="pill">Santa Clara County</span><span class="pill">Bay Area</span>
+        <span class="pill">San Jose</span><span class="pill">Los Gatos</span><span class="pill">Los Altos</span>
+      </div>
+    </div>
+    <div>
+      <div class="ch">Practice Long-Tail</div>
+      <div class="pills">
+        <span class="pill">Breach of contract lawyers Santa Clara County</span>
+        <span class="pill">Shareholder dispute attorneys Silicon Valley</span>
+        <span class="pill">Fiduciary duty attorneys Bay Area</span>
+        <span class="pill">Business fraud</span>
+        <span class="pill">LLC & Partnership Dissolutions</span>
+        <span class="pill">Business torts</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 23. SUMMARY -->
+<div class="slide white">
+  <div class="sl">Summary</div>
+  <div class="sh">What Was Built</div>
+  <p class="sd">Three fully optimized landing pages — mobile-first, SEO-structured, and built for AI search citation.</p>
+  <div class="sg">
+    <div class="sc"><h3>Home Page</h3><p>Desktop optimized (680px hero, 3-column practices). Attorney photo hero. Testimonial carousel with local SEO labels. Schema: LegalService with 8 practice areas and 9 cities.</p></div>
+    <div class="sc"><h3>Employment Law</h3><p>Dual audience (employers + employees). 10+ FAQs in accordion format. PAGA urgency section. 2024 PAGA reform references. Schema: LegalService + FAQPage.</p></div>
+    <div class="sc"><h3>Business Litigation</h3><p>Premium hero with attorneys' photo + gold frame. 3 practice deep-dive sections. Dark CTA band. 5 FAQs. Schema: LegalService + FAQPage.</p></div>
+    <div class="sc"><h3>SEO Foundation</h3><p>Schema markup on all pages. Geo meta tags (37.2638;-122.0231). Canonical URLs. Open Graph tags. FAQ structured data for Google rich snippets and AI citation.</p></div>
+  </div>
+</div>
+
+<!-- 24. CLOSING -->
+<div class="slide dark">
+  <div class="cv-lbl">Thank You</div>
+  <div class="cv-ttl">McLellan<br>Law Group</div>
+  <div class="cv-ln"></div>
+  <div class="cv-sub">Saratoga, California · Silicon Valley · Bay Area</div>
+  <div class="cv-nt">mc-lellan.vercel.app</div>
+</div>
+
+</div><!-- /deck -->
 
 <script>
-var slides = document.querySelectorAll('.slide');
-var navWordmark = document.getElementById('navWordmark');
-var slideCounter = document.getElementById('slideCounter');
-var progress = document.getElementById('progress');
-var current = 0;
+var slides = Array.from(document.querySelectorAll('.slide'));
 var total = slides.length;
+var cur = 0;
+var darkSlides = new Set([0,1,5,10,16,23]);
 
-var darkSlides = [0, 1, 4, 8, 12, 18];
-
-function updateNav() {
-  var isDark = darkSlides.indexOf(current) !== -1;
-  navWordmark.className = 'nav-wordmark' + (isDark ? '' : ' dark');
-  slideCounter.className = 'slide-counter' + (isDark ? '' : ' dark');
-  slideCounter.textContent = (current + 1) + ' / ' + total;
-  progress.style.width = ((current + 1) / total * 100) + '%';
+function updateUI() {
+  document.getElementById('ct').textContent = (cur+1) + ' / ' + total;
+  document.getElementById('prog').style.width = ((cur+1)/total*100) + '%';
+  var d = darkSlides.has(cur);
+  document.getElementById('wm').className = 'wm ' + (d?'d':'l');
+  document.getElementById('ct').className = 'ct ' + (d?'d':'l');
 }
 
-function goTo(n) {
+function go(dir) {
+  var n = cur + dir;
   if (n < 0 || n >= total) return;
-  slides[current].classList.remove('active');
-  current = n;
-  slides[current].classList.add('active');
-  updateNav();
+  slides[cur].classList.remove('active');
+  cur = n;
+  slides[cur].classList.add('active');
+  updateUI();
 }
-
-function changeSlide(dir) { goTo(current + dir); }
 
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') changeSlide(1);
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
+  if (e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' ') go(1);
+  if (e.key==='ArrowLeft' ||e.key==='ArrowUp') go(-1);
 });
 
-// Swipe
-var touchStart = 0;
-document.addEventListener('touchstart', function(e){ touchStart = e.touches[0].clientX; }, {passive:true});
+var tx = 0;
+document.addEventListener('touchstart', function(e){ tx=e.touches[0].clientX; },{passive:true});
 document.addEventListener('touchend', function(e){
-  var dx = touchStart - e.changedTouches[0].clientX;
-  if (Math.abs(dx) > 50) changeSlide(dx > 0 ? 1 : -1);
-}, {passive:true});
+  var dx = tx - e.changedTouches[0].clientX;
+  if (Math.abs(dx)>50) go(dx>0?1:-1);
+},{passive:true});
 
-updateNav();
+updateUI();
 </script>
 </body>
 </html>
