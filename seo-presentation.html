@@ -110,7 +110,7 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
 
 <div class="top-bar">
   <div class="wm d" id="wm">McLellan Law Group</div>
-  <div class="ct d" id="ct">1 / 25</div>
+  <div class="ct d" id="ct">1 / 26</div>
 </div>
 <button class="arr p" onclick="go(-1)">‹</button>
 <button class="arr n" onclick="go(1)">›</button>
@@ -127,7 +127,43 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
   <div class="cv-nt">mc-lellan.vercel.app</div>
 </div>
 
-<!-- 2. SECTION: BRAND KEYWORDS -->
+<!-- 2. AGENDA -->
+<div class="slide dark">
+  <div class="cv-lbl">What's Inside</div>
+  <div class="cv-ttl" style="font-size:52px;margin-bottom:0;">What We Built</div>
+  <div class="cv-ln"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;width:100%;max-width:980px;margin-top:8px;">
+    <div style="border:1px solid rgba(185,152,106,0.3);border-radius:14px;padding:28px 24px;background:rgba(185,152,106,0.06);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:rgba(185,152,106,0.2);line-height:1;margin-bottom:4px;">01</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b9986a;margin-bottom:10px;">Brand Keywords</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Why "Employment Attorney in Saratoga, CA"</li>
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Zero local competition analysis</li>
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Primary, location &amp; schema keywords</li>
+      </ul>
+    </div>
+    <div style="border:1px solid rgba(185,152,106,0.3);border-radius:14px;padding:28px 24px;background:rgba(185,152,106,0.06);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:rgba(185,152,106,0.2);line-height:1;margin-bottom:4px;">02</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b9986a;margin-bottom:10px;">Mobile Optimization</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Old site: Mobile score 56 / 100</li>
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Mobile-first redesign on new site</li>
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Google Maps geo signal embedded</li>
+      </ul>
+    </div>
+    <div style="border:1px solid rgba(185,152,106,0.3);border-radius:14px;padding:28px 24px;background:rgba(185,152,106,0.06);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:rgba(185,152,106,0.2);line-height:1;margin-bottom:4px;">03</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b9986a;margin-bottom:10px;">SEO Page Updates</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Home Page — hero, practices, testimonials</li>
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Employment Landing — employers &amp; employees</li>
+        <li style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.4;display:flex;align-items:flex-start;gap:8px;"><span style="color:#b9986a;margin-top:2px;">→</span> Business Litigation Landing — hero, FAQs, CTA</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 3. SECTION: BRAND KEYWORDS -->
 <div class="slide dark">
   <div class="sn">01</div>
   <div class="st">Brand Keywords</div>
@@ -515,7 +551,7 @@ body { font-family:'Barlow',sans-serif; background:#1b2a35; overflow:hidden; }
 var slides = Array.from(document.querySelectorAll('.slide'));
 var total = slides.length;
 var cur = 0;
-var darkSlides = new Set([0,1,3,6,11,17,24]);
+var darkSlides = new Set([0,1,2,4,7,12,18,25]);
 
 function updateUI() {
   document.getElementById('ct').textContent = (cur+1) + ' / ' + total;
