@@ -194,9 +194,15 @@
   .employees-section { padding:28px 24px; background:#fff; border-bottom:1px solid #e5e0d8; }
   .employees-section h2 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:14px; }
   .employees-section p { font-size:14px; line-height:1.65; color:#444; margin-bottom:16px; }
-  .employees-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; margin:14px 0 16px; }
-  .employees-grid span { padding:9px 8px 9px 0; border-bottom:1px solid #eee; font-size:13px; color:#333; display:flex; align-items:center; gap:8px; }
-  .employees-grid span::before { content:"→"; color:#b9986a; font-weight:900; font-size:12px; flex-shrink:0; }
+  .employees-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:14px 0 16px; }
+  .employees-grid a {
+    padding:12px 14px; border:1px solid #e5e0d8; border-radius:6px;
+    font-size:13px; font-weight:600; color:#1b2a35; text-decoration:none;
+    display:flex; align-items:center; gap:8px; background:#fafaf8;
+    transition:border-color 0.15s, background 0.15s, color 0.15s;
+  }
+  .employees-grid a:hover { border-color:#b9986a; background:#fff; color:#b9986a; }
+  .employees-grid a::before { content:"→"; color:#b9986a; font-weight:900; font-size:12px; flex-shrink:0; }
 
   .cta-inline { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:13px; padding:11px 20px; border-radius:6px; text-decoration:none; margin-top:4px; }
 
@@ -380,12 +386,14 @@
     <h2>We Fight for Employee Rights</h2>
     <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley on a contingency basis — you pay nothing unless we win.</p>
     <div class="employees-grid">
-      <span>Wrongful termination</span>
-      <span>Workplace discrimination</span>
-      <span>Sexual harassment</span>
-      <span>Retaliation for reporting violations</span>
-      <span>Unpaid wages &amp; overtime</span>
-      <span>PAGA claims</span>
+      <a href="employment-wrongful-termination.html">Wrongful termination</a>
+      <a href="employment-workplace-discrimination.html">Workplace discrimination</a>
+      <a href="employment-sexual-harassment.html">Sexual harassment</a>
+      <a href="employment-retaliation.html">Retaliation for reporting violations</a>
+      <a href="employment-unpaid-wages.html">Unpaid wages &amp; overtime</a>
+      <a href="employment-paga-claims.html">PAGA claims</a>
+      <a href="employment-age-discrimination.html">Age discrimination</a>
+      <a href="employment-workplace-bullying.html">Workplace bullying</a>
     </div>
     <div style="text-align:center; margin-top:8px;"><a href="#contact" class="cta-inline">Free Case Evaluation</a></div>
   </div>
