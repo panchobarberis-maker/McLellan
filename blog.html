@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Insights Blog | McLellan Law Group — Employment & Business Litigation</title>
+<meta name="description" content="Legal insights on employment law and business litigation from McLellan Law Group. Articles covering wrongful termination, PAGA claims, trade secrets, and more.">
+<meta name="keywords" content="employment law blog California, business litigation blog, wrongful termination California, PAGA claims, Silicon Valley employment attorney blog">
+<meta property="og:title" content="Legal Insights Blog | McLellan Law Group">
+<meta property="og:description" content="Legal insights on employment law and business litigation from McLellan Law Group attorneys in Saratoga, CA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mc-lellan.vercel.app/blog.html">
+<link rel="canonical" href="https://mc-lellan.vercel.app/blog.html">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Montserrat', Arial, sans-serif; background:#fff; color:#1b2a35; }
+
+  /* ── NAV ── */
+  .nav {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; background:#1b2a35;
+    position:sticky; top:0; z-index:100;
+  }
+  .logo-link { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
+  .logo-img { height:36px; width:auto; display:block; }
+  .logo-img-mobile { height:30px; width:auto; display:block; }
+  .logo-link { display:none; }
+  .nav .logo { font-weight:900; color:#fff; font-size:15px; letter-spacing:1px; flex-shrink:0; }
+  .nav-links { display:flex; gap:24px; align-items:center; list-style:none; margin:0 auto 0 40px; }
+  .nav-links > li { position:relative; }
+  .nav-links > li > a {
+    color:rgba(255,255,255,0.85); text-decoration:none; font-size:12px;
+    font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
+    white-space:nowrap; padding:6px 0; display:block; transition:color 0.15s;
+  }
+  .nav-links > li > a:hover, .nav-links > li > a.active { color:#b9986a; }
+  .dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.65; }
+  .dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+  .dropdown-menu {
+    display:none; position:absolute; top:calc(100% + 12px); left:50%;
+    transform:translateX(-50%);
+    background:#1b2a35; border-top:2px solid #b9986a;
+    min-width:240px; padding:8px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4); list-style:none;
+  }
+  .dropdown:hover .dropdown-menu { display:block; }
+  .dropdown-menu li a {
+    display:block; padding:11px 24px;
+    color:rgba(255,255,255,0.7); text-decoration:none;
+    font-size:12px; font-weight:400; transition:background 0.15s, color 0.15s;
+  }
+  .dropdown-menu li a:hover { background:rgba(185,152,106,0.15); color:#b9986a; }
+  .dropdown-menu li a.featured { font-weight:800; color:#fff; }
+  .dropdown-menu li a.featured:hover { color:#b9986a; }
+  .dropdown-divider { height:1px; background:rgba(255,255,255,0.08); margin:5px 0; }
+  .nav .contact-btn { background:#b9986a; color:#fff; border-radius:20px; padding:8px 18px; font-size:12px; font-weight:bold; text-decoration:none; flex-shrink:0; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background:#1b2a35; color:#fff;
+    padding:48px 24px 40px;
+    text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .page-header::before {
+    content:''; position:absolute; inset:16px;
+    border:1px solid rgba(185,152,106,0.25); pointer-events:none;
+  }
+  .page-header .section-label {
+    font-size:10px; letter-spacing:2px; text-transform:uppercase;
+    color:#b9986a; font-weight:700; margin-bottom:14px; display:block;
+  }
+  .page-header h1 {
+    font-family:'Cormorant Garamond', serif; font-size:34px;
+    font-weight:900; line-height:1.1; text-transform:uppercase; margin-bottom:12px;
+  }
+  .page-header p {
+    font-size:14px; color:rgba(255,255,255,0.7); max-width:540px; margin:0 auto; line-height:1.6;
+  }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    background:#f7f5f0; border-bottom:1px solid #e5e0d8;
+    padding:14px 24px; display:flex; gap:8px; flex-wrap:wrap;
+    justify-content:center;
+  }
+  .filter-btn {
+    background:none; border:1px solid #ccc; color:#555;
+    font-family:'Montserrat', sans-serif; font-size:11px;
+    font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
+    padding:7px 14px; border-radius:20px; cursor:pointer;
+    transition:all 0.15s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background:#1b2a35; border-color:#1b2a35; color:#fff;
+  }
+  .filter-btn.active { background:#b9986a; border-color:#b9986a; }
+
+  /* ── BLOG GRID ── */
+  .blog-section { padding:40px 24px; }
+  .blog-grid { display:grid; grid-template-columns:1fr; gap:24px; }
+
+  .blog-card {
+    background:#fff; border:1px solid #eee; border-radius:8px;
+    overflow:hidden; text-decoration:none; color:inherit;
+    transition:box-shadow 0.2s, border-color 0.2s;
+    display:flex; flex-direction:column;
+  }
+  .blog-card:hover { box-shadow:0 6px 24px rgba(0,0,0,0.1); border-color:#b9986a; }
+
+  .blog-card-img {
+    width:100%; height:200px; object-fit:cover; display:block;
+    background:#e8e4dc;
+  }
+  .blog-card-img-placeholder {
+    width:100%; height:200px; background:linear-gradient(135deg, #1b2a35 0%, #2d4459 100%);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .blog-card-img-placeholder span {
+    font-family:'Cormorant Garamond', serif; font-size:48px; color:rgba(185,152,106,0.5);
+    font-weight:700;
+  }
+  .blog-card-body { padding:20px; flex:1; display:flex; flex-direction:column; }
+  .blog-card-meta {
+    display:flex; gap:10px; align-items:center; margin-bottom:10px; flex-wrap:wrap;
+  }
+  .blog-tag {
+    font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    color:#b9986a; background:rgba(185,152,106,0.1); padding:3px 8px; border-radius:3px;
+  }
+  .blog-date { font-size:11px; color:#999; }
+  .blog-card h2 {
+    font-family:'Cormorant Garamond', serif; font-size:20px; font-weight:700;
+    color:#1b2a35; line-height:1.3; margin-bottom:10px; text-align:left;
+  }
+  .blog-card p {
+    font-size:13px; line-height:1.7; color:#666; flex:1; text-align:left;
+  }
+  .blog-card-footer {
+    display:flex; align-items:center; justify-content:space-between;
+    margin-top:16px; padding-top:14px; border-top:1px solid #f0ede8;
+  }
+  .blog-author { font-size:11px; color:#888; font-weight:600; }
+  .blog-read-more { font-size:12px; font-weight:700; color:#b9986a; letter-spacing:0.5px; }
+
+  /* ── FEATURED POST ── */
+  .blog-card.featured {
+    grid-column: 1 / -1;
+    flex-direction:column;
+  }
+  .blog-card.featured .blog-card-img-placeholder { height:260px; }
+  .blog-card.featured h2 { font-size:24px; }
+
+  /* ── SIDEBAR / NEWSLETTER ── */
+  .blog-sidebar { margin-top:32px; }
+  .sidebar-widget {
+    background:#f7f5f0; border:1px solid #e5e0d8; border-radius:8px;
+    padding:24px; margin-bottom:20px;
+  }
+  .sidebar-widget h3 {
+    font-family:'Cormorant Garamond', serif; font-size:18px; font-weight:700;
+    color:#1b2a35; text-transform:uppercase; margin-bottom:14px; text-align:left;
+  }
+  .sidebar-widget p { font-size:13px; color:#666; line-height:1.65; margin-bottom:14px; text-align:left; }
+  .sidebar-btn {
+    display:block; background:#1b2a35; color:#fff; text-align:center;
+    font-weight:700; font-size:13px; padding:11px 20px; border-radius:6px;
+    text-decoration:none; transition:background 0.15s;
+  }
+  .sidebar-btn:hover { background:#b9986a; }
+  .sidebar-topics { list-style:none; }
+  .sidebar-topics li {
+    border-bottom:1px solid #e5e0d8; padding:9px 0;
+  }
+  .sidebar-topics li:last-child { border-bottom:none; }
+  .sidebar-topics li a {
+    text-decoration:none; color:#1b2a35; font-size:13px; font-weight:600;
+    display:flex; justify-content:space-between; align-items:center;
+    transition:color 0.15s;
+  }
+  .sidebar-topics li a:hover { color:#b9986a; }
+  .sidebar-topics li a span { color:#b9986a; font-size:12px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner { background:#1b2a35; color:#fff; padding:40px 24px; text-align:center; }
+  .cta-banner h2 {
+    font-family:'Cormorant Garamond', serif; font-size:26px; font-weight:900;
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .cta-banner p { font-size:13px; color:rgba(255,255,255,0.75); margin-bottom:20px; line-height:1.6; max-width:480px; margin-left:auto; margin-right:auto; }
+  .cta-banner .btn { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:14px; padding:13px 28px; border-radius:6px; text-decoration:none; }
+
+  /* ── MOBILE NAV ── */
+  @media(max-width:768px) {
+    .nav { padding:12px 16px; }
+    .nav-links { display:none; }
+    .nav .contact-btn { font-size:11px; padding:7px 14px; }
+    .nav-hamburger {
+      display:flex; flex-direction:column; justify-content:center; gap:5px;
+      cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0;
+    }
+    .nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+    .nav-logo-center {
+      position:absolute; left:50%; transform:translateX(-50%);
+      font-weight:900; color:#fff; font-size:14px; letter-spacing:1px;
+      display:flex; align-items:center; gap:8px; white-space:nowrap;
+    }
+    .nav .logo { display:none; }
+    .mobile-menu {
+      display:none; position:fixed; inset:0; background:#1b2a35; z-index:200;
+      flex-direction:column; padding:24px;
+    }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu-close {
+      align-self:flex-end; background:none; border:none; color:#fff;
+      font-size:28px; cursor:pointer; margin-bottom:24px; line-height:1;
+    }
+    .mobile-menu ul { list-style:none; }
+    .mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.08); }
+    .mobile-menu ul li a {
+      display:block; padding:16px 0; color:#fff; text-decoration:none;
+      font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px;
+    }
+    .mobile-menu ul li a.featured { color:#b9986a; }
+    .mobile-accordion-btn {
+      display:flex; justify-content:space-between; align-items:center;
+      width:100%; background:none; border:none; padding:16px 0;
+      color:#fff; font-size:18px; font-weight:700; text-transform:uppercase;
+      letter-spacing:1px; cursor:pointer; text-align:left;
+    }
+    .mobile-accordion-arrow { transition:transform 0.2s; font-size:20px; color:#b9986a; }
+    .mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+    .mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+    .mobile-accordion.open .mobile-accordion-menu { display:block; }
+    .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.05); }
+    .mobile-accordion-menu li a { padding:12px 0; font-size:15px; font-weight:500; letter-spacing:0.5px; }
+  }
+  @media(min-width:769px) {
+    .nav-hamburger { display:none; }
+    .nav-logo-center { display:none; }
+    .logo-link { display:flex; }
+    .mobile-menu { display:none !important; }
+
+    .nav { padding:18px 60px; }
+    .nav-links { gap:32px; margin-left:60px; }
+
+    .page-header { padding:80px 80px 64px; }
+    .page-header h1 { font-size:52px; }
+    .page-header p { font-size:16px; }
+
+    .blog-section { padding:64px 80px; max-width:1400px; margin:0 auto; }
+    .blog-section-inner { display:grid; grid-template-columns:1fr 320px; gap:48px; align-items:start; }
+    .blog-grid { grid-template-columns:1fr 1fr; gap:28px; }
+    .blog-card.featured { flex-direction:row; }
+    .blog-card.featured .blog-card-img-placeholder { width:420px; height:auto; min-height:280px; flex-shrink:0; }
+    .blog-card.featured .blog-card-body { padding:32px; }
+    .blog-card.featured h2 { font-size:28px; }
+
+    .cta-banner { padding:72px 80px; }
+    .cta-banner h2 { font-size:38px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Practice Areas</a>
+      <ul class="dropdown-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Business Litigation</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a href="#">Appeals</a></li>
+        <li><a href="#">Real Estate Litigation</a></li>
+        <li><a href="#">Contract Disputes</a></li>
+        <li><a href="#">Financial Elder Abuse</a></li>
+        <li><a href="#">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#team">Your Team</a></li>
+    <li><a href="blog.html" class="active">Resources</a></li>
+    <li><a href="index.html#contact">Contact Us</a></li>
+  </ul>
+  <a href="index.html#contact" class="contact-btn">CONTACT</a>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Practice Areas <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Business Litigation</a></li>
+        <li><a href="#">Appeals</a></li>
+        <li><a href="#">Real Estate Litigation</a></li>
+        <li><a href="#">Contract Disputes</a></li>
+        <li><a href="#">Financial Elder Abuse</a></li>
+        <li><a href="#">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#team">Your Team</a></li>
+    <li><a href="blog.html">Resources</a></li>
+    <li><a href="index.html#contact">Contact Us</a></li>
+  </ul>
+</div>
+
+<div class="page-header">
+  <span class="section-label">Knowledge &amp; Insights</span>
+  <h1>Legal Resources &amp; Blog</h1>
+  <p>Practical legal insights on employment law and business litigation from the attorneys at McLellan Law Group.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterPosts('all', this)">All Topics</button>
+  <button class="filter-btn" onclick="filterPosts('employment', this)">Employment Law</button>
+  <button class="filter-btn" onclick="filterPosts('business', this)">Business Litigation</button>
+  <button class="filter-btn" onclick="filterPosts('real-estate', this)">Real Estate</button>
+  <button class="filter-btn" onclick="filterPosts('appeals', this)">Appeals</button>
+</div>
+
+<div class="blog-section">
+  <div class="blog-section-inner">
+
+    <div class="blog-grid" id="blogGrid">
+
+      <!-- Featured Post -->
+      <a href="blog-wrongful-termination.html" class="blog-card featured" data-category="employment">
+        <div class="blog-card-img-placeholder">
+          <span>§</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Employment Law</span>
+            <span class="blog-date">June 2025</span>
+          </div>
+          <h2>Wrongful Termination in California: What Employees and Employers Need to Know</h2>
+          <p>California is an at-will employment state — but that doesn't mean employers can terminate employees for any reason. Learn about the key protections employees have and the risks employers face when the law is overlooked.</p>
+          <div class="blog-card-footer">
+            <span class="blog-author">Steven McLellan</span>
+            <span class="blog-read-more">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 2 -->
+      <a href="#" class="blog-card" data-category="business">
+        <div class="blog-card-img-placeholder"><span>§</span></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Business Litigation</span>
+            <span class="blog-date">May 2025</span>
+          </div>
+          <h2>Trade Secret Misappropriation: Protecting Your Business in Silicon Valley</h2>
+          <p>With fierce competition for talent and technology in the Bay Area, trade secret disputes are increasingly common. Here's what businesses need to know about the Defend Trade Secrets Act and California's UTSA.</p>
+          <div class="blog-card-footer">
+            <span class="blog-author">Claire McLellan</span>
+            <span class="blog-read-more">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 3 -->
+      <a href="#" class="blog-card" data-category="employment">
+        <div class="blog-card-img-placeholder"><span>§</span></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Employment Law</span>
+            <span class="blog-date">April 2025</span>
+          </div>
+          <h2>PAGA Claims in 2025: What California Employers Must Know After Recent Reforms</h2>
+          <p>The Private Attorneys General Act remains one of the most powerful — and costly — tools for employees in California. Recent legislative changes have shifted the landscape. Here's what changed and what hasn't.</p>
+          <div class="blog-card-footer">
+            <span class="blog-author">Elizabeth Handtke</span>
+            <span class="blog-read-more">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 4 -->
+      <a href="#" class="blog-card" data-category="business">
+        <div class="blog-card-img-placeholder"><span>§</span></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Business Litigation</span>
+            <span class="blog-date">March 2025</span>
+          </div>
+          <h2>Breach of Contract Disputes: Key Strategies for California Businesses</h2>
+          <p>Contract disputes are among the most common sources of business litigation. Understanding your rights, remedies, and realistic outcomes before litigation begins can save time, money, and relationships.</p>
+          <div class="blog-card-footer">
+            <span class="blog-author">Claire McLellan</span>
+            <span class="blog-read-more">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 5 -->
+      <a href="#" class="blog-card" data-category="real-estate">
+        <div class="blog-card-img-placeholder"><span>§</span></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Real Estate</span>
+            <span class="blog-date">February 2025</span>
+          </div>
+          <h2>Real Estate Disputes in the Bay Area: Boundary Lines, Easements, and Neighbor Conflicts</h2>
+          <p>Property disputes can be deeply disruptive. Whether involving easements, boundary encroachments, or HOA disagreements, understanding your legal options early is critical to protecting your investment.</p>
+          <div class="blog-card-footer">
+            <span class="blog-author">Steven McLellan</span>
+            <span class="blog-read-more">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 6 -->
+      <a href="#" class="blog-card" data-category="appeals">
+        <div class="blog-card-img-placeholder"><span>§</span></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Appeals</span>
+            <span class="blog-date">January 2025</span>
+          </div>
+          <h2>When to Appeal a Civil Judgment in California: Standards of Review Explained</h2>
+          <p>Not every unfavorable verdict is the final word. Understanding the appellate process — including the standards of review, timelines, and strategic considerations — can determine whether an appeal is worth pursuing.</p>
+          <div class="blog-card-footer">
+            <span class="blog-author">Steven McLellan</span>
+            <span class="blog-read-more">Read Article →</span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /blog-grid -->
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <div class="sidebar-widget">
+        <h3>Free Consultation</h3>
+        <p>Have a legal question? Our attorneys offer a free initial consultation to evaluate your matter.</p>
+        <a href="https://www.mclellanlawgroup.com/contact" class="sidebar-btn">Request a Consultation</a>
+      </div>
+      <div class="sidebar-widget">
+        <h3>Topics</h3>
+        <ul class="sidebar-topics">
+          <li><a href="#" onclick="filterPosts('employment', null); return false;">Employment Law <span>›</span></a></li>
+          <li><a href="#" onclick="filterPosts('business', null); return false;">Business Litigation <span>›</span></a></li>
+          <li><a href="#" onclick="filterPosts('real-estate', null); return false;">Real Estate <span>›</span></a></li>
+          <li><a href="#" onclick="filterPosts('appeals', null); return false;">Appeals <span>›</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h3>Practice Areas</h3>
+        <ul class="sidebar-topics">
+          <li><a href="employment-law.html">Employment Law <span>›</span></a></li>
+          <li><a href="business-litigation.html">Business Litigation <span>›</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div><!-- /blog-section-inner -->
+</div><!-- /blog-section -->
+
+<div class="cta-banner">
+  <h2>Have a Legal Question?</h2>
+  <p>Our attorneys represent businesses, executives, and families across Silicon Valley and the Bay Area. Contact us for a free consultation.</p>
+  <a href="https://www.mclellanlawgroup.com/contact" class="btn">Request a Free Consultation</a>
+</div>
+
+<script>
+  function filterPosts(category, btn) {
+    var cards = document.querySelectorAll('.blog-card');
+    cards.forEach(function(card) {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    if (btn) {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+  }
+</script>
+</body>
+</html>
