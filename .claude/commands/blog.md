@@ -219,6 +219,17 @@ Every blog post must include a dedicated FAQ section (`<section class="faq-secti
 
 ---
 
+## Voice & Style Rules (enforce on every post — no exceptions)
+
+- **No dashes or em dashes** anywhere in the article body, headings, or pull quotes. Rewrite the sentence instead.
+- **No emojis** anywhere on the page — not in headings, body, sidebar, or CTAs.
+- **Tone: authoritative and formal.** McLellan Law Group is a serious litigation firm. Write like a senior attorney addressing a sophisticated client. No conversational filler, no exclamation points, no marketing speak.
+- **No bullet-point lists inside the article body** unless they are a numbered legal checklist. Use full paragraphs.
+- **No hedging language** ("may potentially", "could possibly", "it seems like"). State legal principles directly and confidently.
+- **No first-person plural marketing voice** ("We are passionate about...", "Our team is dedicated to..."). Let the legal analysis do the work.
+
+---
+
 ## Step 4 — Design System (copy exactly from existing pages)
 
 **Colors:** `#1b2a35` (navy) · `#b9986a` (gold) · `#f7f5f0` (cream) · `#e5e0d8` (border)
