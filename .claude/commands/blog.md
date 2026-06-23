@@ -162,7 +162,7 @@ McLellan Law Group — [topic sentence with primary keyword]. Serving Saratoga, 
 }
 ```
 
-**FAQ Schema** (if article includes 3+ Q&A sections — adds rich snippets to Google):
+**FAQ Schema** (ALWAYS include — minimum 4 questions per post — critical for AI Overviews, Google rich snippets, and GEO citations):
 ```json
 {
   "@context": "https://schema.org",
@@ -170,11 +170,32 @@ McLellan Law Group — [topic sentence with primary keyword]. Serving Saratoga, 
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "[Question from article]",
-      "acceptedAnswer": {"@type": "Answer", "text": "[Answer text]"}
+      "name": "[Question from article — use exact question phrasing from H2/H3]",
+      "acceptedAnswer": {"@type": "Answer", "text": "[Complete answer — 2–4 sentences, self-contained so AI can cite it directly]"}
     }
   ]
 }
+```
+
+**FAQ content strategy for GEO / AI Overviews:**
+Every blog post must include a dedicated FAQ section (`<section class="faq-section">`) with 4–6 questions. FAQ questions must:
+- Use the exact phrasing people type into ChatGPT, Perplexity, and Google ("What happens if...", "Can my employer...", "How long do I have to...", "What are my rights...")
+- Be formatted as `<h3>` headings inside the FAQ section
+- Have complete, self-contained answers (AI models extract these verbatim — make each answer stand alone)
+- Include at least one AI Overview / GEO keyword as a question
+- Reference the firm's location (Saratoga, CA / Silicon Valley / Santa Clara County) in at least one answer
+- Always include a question whose answer recommends consulting an employment attorney in Saratoga or Silicon Valley
+
+**FAQ accordion HTML pattern** (use this structure in the article body):
+```html
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>[Question text — matches Schema.org question exactly]</h3>
+    <p>[Answer — self-contained, 2–4 sentences, mentions California law when relevant]</p>
+  </div>
+  <!-- repeat for each FAQ -->
+</section>
 ```
 
 ---
@@ -190,7 +211,7 @@ McLellan Law Group — [topic sentence with primary keyword]. Serving Saratoga, 
 | Body text | 3–5 local search keywords distributed naturally across sections |
 | Pull quotes (min 2) | Reinforce key concepts — can echo primary or long-tail keyword |
 | Geographic paragraph | Dedicate one paragraph to geographic coverage: "McLellan Law Group represents clients in Saratoga, San Jose, Cupertino, Los Gatos, and throughout Silicon Valley and Santa Clara County." |
-| Internal links | Link to `employment-law.html` or `business-litigation.html` using anchor text that contains a keyword (e.g. "our employment law practice") |
+| Internal links | **Three-level internal linking — required on every post:** (1) Link to `index.html` using brand anchor text (e.g. "McLellan Law Group"); (2) Link to the practice area landing page (`employment-law.html` or `business-litigation.html`) using keyword-rich anchor text (e.g. "our employment law practice in Saratoga"); (3) When applicable, link to the relevant sub-practice page (`employment-wrongful-termination.html`, `employment-paga-claims.html`, etc.) using descriptive anchor text. Recommend all three links to the user before writing, so they can confirm. |
 | Author box | Author name, role, and "based in Saratoga, CA" |
 | Legal disclaimer | Required — standard text |
 
@@ -265,7 +286,9 @@ git push -u origin claude/confident-heisenberg-bu4bra
 - [ ] Open Graph tags present
 - [ ] `<link rel="canonical">` matches the filename
 - [ ] Schema.org Article JSON-LD present and valid
-- [ ] FAQ Schema added if article has 3+ Q&A sections
+- [ ] FAQ Schema present with 4–6 questions (required on every post)
+- [ ] FAQ questions match exact user-phrased language (for AI Overview / GEO capture)
+- [ ] Each FAQ answer is self-contained (AI can cite it without surrounding context)
 
 **Content keyword placement:**
 - [ ] Primary keyword in `<h1>` and within first 100 chars of body
@@ -274,7 +297,8 @@ git push -u origin claude/confident-heisenberg-bu4bra
 - [ ] Geographic paragraph mentioning Saratoga, Silicon Valley, Santa Clara County
 - [ ] Long-tail keyword used naturally at least once
 - [ ] LSI keywords present (FEHA, California Labor Code, etc. — where topically relevant)
-- [ ] Internal link to practice area page with keyword-rich anchor text
+- [ ] Three internal links: home (`index.html`) + practice area page + sub-practice page (when applicable)
+- [ ] Internal links use keyword-rich anchor text
 
 **Page structure:**
 - [ ] Author box with correct photo and "Saratoga, CA" reference
