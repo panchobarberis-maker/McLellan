@@ -162,8 +162,9 @@ body { font-family:'Barlow',sans-serif; background:#f7f5f0; color:#2d4a2d; -webk
 }
 
 /* ══ STATS BAR ══ */
-.stats-bar { background:#fff; padding:0 24px; display:flex; flex-wrap:wrap; border-top:1px solid #e8e4da; border-bottom:1px solid #e8e4da; }
-.stat-item { flex:1; min-width:120px; padding:22px 16px; border-right:1px solid #e8e4da; text-align:center; }
+.stats-bar { background:#fff; padding:0 24px; display:flex; flex-wrap:wrap; border-top:1px solid #e8e4da; border-bottom:1px solid #e8e4da; overflow:hidden; }
+.stat-item { flex:1; min-width:120px; padding:28px 16px; border-right:1px solid #e8e4da; text-align:center; opacity:0; transform:translateY(32px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.stat-item.visible { opacity:1; transform:none; }
 .stat-item:last-child { border-right:none; }
 .stat-value { font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:800; color:#2d4a2d; line-height:1; display:block; letter-spacing:-0.5px; }
 .stat-label { font-family:'Barlow',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#8a9a8e; margin-top:6px; display:block; font-weight:600; }
@@ -369,10 +370,10 @@ body { font-family:'Barlow',sans-serif; background:#f7f5f0; color:#2d4a2d; -webk
 
 <!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item pop"><span class="stat-value">5.0★</span><span class="stat-label">Google Reviews</span></div>
-  <div class="stat-item pop fade-d1"><span class="stat-value">7+</span><span class="stat-label">Practice Areas</span></div>
-  <div class="stat-item pop fade-d2"><span class="stat-value">Bay Area</span><span class="stat-label">& Statewide Coverage</span></div>
-  <div class="stat-item pop fade-d3"><span class="stat-value">3</span><span class="stat-label">Trial Attorneys</span></div>
+  <div class="stat-item"><span class="stat-value" data-count="5.0" data-suffix="★">5.0★</span><span class="stat-label">Google Reviews</span></div>
+  <div class="stat-item" data-delay="100"><span class="stat-value" data-count="7" data-suffix="+">7+</span><span class="stat-label">Practice Areas</span></div>
+  <div class="stat-item" data-delay="200"><span class="stat-value">Bay Area</span><span class="stat-label">& Statewide Coverage</span></div>
+  <div class="stat-item" data-delay="300"><span class="stat-value" data-count="3" data-suffix="">3</span><span class="stat-label">Trial Attorneys</span></div>
 </div>
 
 <!-- ABOUT -->
@@ -511,6 +512,39 @@ body { font-family:'Barlow',sans-serif; background:#f7f5f0; color:#2d4a2d; -webk
 // Animations
 var obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.fade,.slide-left,.slide-right,.pop').forEach(function(el){obs.observe(el);});
+
+// Stats bar: staggered entrance + counter animation
+function animateCount(el, target, isFloat, suffix) {
+  var duration = 1400, start = null, from = 0;
+  function step(ts) {
+    if (!start) start = ts;
+    var progress = Math.min((ts - start) / duration, 1);
+    var ease = 1 - Math.pow(1 - progress, 3);
+    var val = from + (target - from) * ease;
+    el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+var statsObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (!e.isIntersecting) return;
+    var el = e.target;
+    var delay = parseInt(el.getAttribute('data-delay') || 0);
+    setTimeout(function() {
+      el.classList.add('visible');
+      var val = el.querySelector('[data-count]');
+      if (val) {
+        var target = parseFloat(val.getAttribute('data-count'));
+        var suffix = val.getAttribute('data-suffix') || '';
+        var isFloat = val.getAttribute('data-count').indexOf('.') !== -1;
+        animateCount(val, target, isFloat, suffix);
+      }
+    }, delay);
+    statsObs.unobserve(el);
+  });
+}, {threshold: 0.3});
+document.querySelectorAll('.stat-item').forEach(function(el){statsObs.observe(el);});
 
 // Testimonials carousel
 var cur=0,tot=3;
