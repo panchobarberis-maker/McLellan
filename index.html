@@ -102,11 +102,17 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
 }
 .hero-badge span { width:6px; height:6px; background:#c9a96e; border-radius:50%; display:inline-block; }
 .hero h1 {
+  font-family:'Barlow',sans-serif;
+  font-size:11px; font-weight:600; letter-spacing:2px;
+  text-transform:uppercase; color:#8a9a8e;
+  margin-bottom:16px;
+}
+.hero-display {
   font-family:'DM Serif Display',serif;
   font-size:58px; line-height:1.0; font-weight:400;
   margin-bottom:22px; letter-spacing:-1px; color:#1a2a1e;
 }
-.hero h1 .line-gold { color:#c9a96e; display:block; font-style:italic; }
+.hero-display .line-gold { color:#c9a96e; display:block; font-style:italic; }
 .hero-sub { font-size:15px; line-height:1.75; color:#6a7a6e; margin-bottom:36px; font-weight:400; max-width:400px; }
 .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:52px; }
 .btn-primary { display:inline-flex; align-items:center; gap:8px; background:#1a2a1e; color:#fff; font-weight:600; font-size:14px; padding:14px 28px; border-radius:28px; text-decoration:none; transition:background 0.2s,transform 0.15s; letter-spacing:0.2px; }
@@ -121,7 +127,7 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
 
 @media(max-width:768px) {
   .hero { padding:56px 20px 48px; min-height:auto; }
-  .hero h1 { font-size:52px; }
+  .hero-display { font-size:52px; }
   .hero-stat-val { font-size:18px; }
   .hero-stat-lbl { font-size:8px; }
 }
@@ -219,7 +225,7 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
   .nav-logo-center { display:none; }
 
   .hero { min-height:90vh; padding:100px 96px 88px; }
-  .hero h1 { font-size:86px; letter-spacing:-2px; }
+  .hero-display { font-size:86px; letter-spacing:-2px; }
   .hero-sub { font-size:16px; }
   .hero-stats { max-width:600px; }
   .hero-stat-val { font-size:26px; }
@@ -315,8 +321,9 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
 
 <!-- HERO -->
 <section class="hero">
+  <h1>Employment &amp; Civil Litigation Attorneys — Saratoga, CA</h1>
   <div class="hero-badge"><span></span> California Civil Litigation</div>
-  <h1>Efficient Strategies.<span class="line-gold">Tireless Effort.</span></h1>
+  <div class="hero-display">Efficient Strategies.<span class="line-gold">Tireless Effort.</span></div>
   <p class="hero-sub">Employment and civil litigation attorneys serving businesses, executives, and families across Silicon Valley and the Bay Area.</p>
   <div class="hero-ctas">
     <a href="#contact" class="btn-primary">Request a Free Consultation →</a>
