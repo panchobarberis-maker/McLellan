@@ -240,6 +240,12 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .team-card-img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
 .team-card::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 30%, rgba(10,18,12,0.5) 60%, rgba(10,18,12,0.92) 100%); }
 .team-card-info { position:absolute; bottom:0; left:0; right:0; padding:24px 28px; color:#fff; z-index:2; }
+@media(max-width:768px) {
+  .team-card-img { transition:transform 0.7s cubic-bezier(0.22,1,0.36,1); transform:scale(1.08); }
+  .team-card.active .team-card-img { transform:scale(1); }
+  .team-card-info { opacity:0; transform:translateY(18px); transition:opacity 0.5s ease 0.15s, transform 0.5s cubic-bezier(0.22,1,0.36,1) 0.15s; }
+  .team-card.active .team-card-info { opacity:1; transform:none; }
+}
 .team-card-info h3 { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; margin-bottom:4px; }
 .team-card-info .role { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:16px; display:block; }
 .team-card-info .view-profile { display:inline-flex; align-items:center; gap:8px; background:#faf8f3; color:#fff; font-weight:500; font-size:13px; padding:9px 22px; border-radius:24px; text-decoration:none; transition:background 0.2s; }
@@ -477,7 +483,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       <button class="team-arrow" onclick="moveTeam(-1)">‹</button>
       <div class="team-track-wrap">
         <div class="team-track" id="teamTrack">
-          <div class="team-card">
+          <div class="team-card active">
             <img class="team-card-img" src="steven.jpg" alt="Steven McLellan">
             <div class="team-card-info"><h3>Steven McLellan</h3><span class="role">Partner</span><a href="#contact" class="view-profile">View Profile →</a></div>
           </div>
@@ -560,7 +566,7 @@ el.addEventListener('touchend',function(e){if(Math.abs(sx-e.changedTouches[0].cl
 
 // Team carousel
 var tc=0,tt=3;
-function updateTeam(){document.getElementById('teamTrack').style.transform='translateX(-'+(tc*100)+'%)';document.querySelectorAll('.team-dot').forEach(function(d,i){d.classList.toggle('active',i===tc);});}
+function updateTeam(){document.getElementById('teamTrack').style.transform='translateX(-'+(tc*100)+'%)';document.querySelectorAll('.team-dot').forEach(function(d,i){d.classList.toggle('active',i===tc);});document.querySelectorAll('.team-card').forEach(function(c,i){c.classList.toggle('active',i===tc);});}
 function moveTeam(dir){tc=(tc+dir+tt)%tt;updateTeam();}
 function goToTeam(i){tc=i;updateTeam();}
 var tw=document.querySelector('.team-track-wrap'),tsx=0;
