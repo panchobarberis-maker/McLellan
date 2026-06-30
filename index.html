@@ -22,10 +22,17 @@
 html { scroll-behavior:smooth; }
 body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webkit-font-smoothing:antialiased; }
 
-/* FADE IN */
-.fade { opacity:0; transform:translateY(24px); transition:opacity 0.75s ease, transform 0.75s ease; }
+/* ANIMATIONS */
+.fade { opacity:0; transform:translateY(40px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
 .fade.visible { opacity:1; transform:none; }
-.fade-d1 { transition-delay:.1s; } .fade-d2 { transition-delay:.2s; } .fade-d3 { transition-delay:.3s; } .fade-d4 { transition-delay:.4s; } .fade-d5 { transition-delay:.5s; }
+.fade-d1 { transition-delay:.08s; } .fade-d2 { transition-delay:.16s; } .fade-d3 { transition-delay:.24s; } .fade-d4 { transition-delay:.32s; } .fade-d5 { transition-delay:.40s; }
+
+.slide-left { opacity:0; transform:translateX(-32px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.slide-left.visible { opacity:1; transform:none; }
+.slide-right { opacity:0; transform:translateX(32px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.slide-right.visible { opacity:1; transform:none; }
+.pop { opacity:0; transform:scale(0.92) translateY(20px); transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+.pop.visible { opacity:1; transform:none; }
 
 /* ══ NAV ══ */
 .nav {
@@ -339,10 +346,10 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
 
 <!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item fade"><span class="stat-value">5.0★</span><span class="stat-label">Google Reviews</span></div>
-  <div class="stat-item fade fade-d1"><span class="stat-value">7+</span><span class="stat-label">Practice Areas</span></div>
-  <div class="stat-item fade fade-d2"><span class="stat-value">Bay Area</span><span class="stat-label">& Statewide Coverage</span></div>
-  <div class="stat-item fade fade-d3"><span class="stat-value">2</span><span class="stat-label">Founding Trial Attorneys</span></div>
+  <div class="stat-item pop"><span class="stat-value">5.0★</span><span class="stat-label">Google Reviews</span></div>
+  <div class="stat-item pop fade-d1"><span class="stat-value">7+</span><span class="stat-label">Practice Areas</span></div>
+  <div class="stat-item pop fade-d2"><span class="stat-value">Bay Area</span><span class="stat-label">& Statewide Coverage</span></div>
+  <div class="stat-item pop fade-d3"><span class="stat-value">2</span><span class="stat-label">Founding Trial Attorneys</span></div>
 </div>
 
 <!-- ABOUT -->
@@ -354,6 +361,7 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
   </div>
 </section>
 
+
 <!-- PRACTICES -->
 <section class="practices" id="practices">
   <div class="practices-inner">
@@ -362,27 +370,27 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
       <h2>Our Practice Areas</h2>
     </div>
     <div class="practices-grid">
-      <a href="employment-law.html" class="practice-item fade fade-d1">
+      <a href="employment-law.html" class="practice-item pop">
         <div><div class="name">Employment Law</div><div class="desc">Wrongful termination, discrimination, harassment &amp; wage claims</div></div>
         <div class="arrow">→</div>
       </a>
-      <a href="business-litigation.html" class="practice-item fade fade-d2">
+      <a href="business-litigation.html" class="practice-item pop fade-d1">
         <div><div class="name">Civil Litigation</div><div class="desc">Business disputes, breach of contract &amp; complex civil matters</div></div>
         <div class="arrow">→</div>
       </a>
-      <a href="#" class="practice-item fade fade-d3">
+      <a href="#" class="practice-item pop fade-d2">
         <div><div class="name">Real Estate Litigation</div><div class="desc">Property disputes, easements &amp; title issues</div></div>
         <div class="arrow">→</div>
       </a>
-      <a href="trust-probate.html" class="practice-item fade fade-d1">
+      <a href="trust-probate.html" class="practice-item pop fade-d3">
         <div><div class="name">Trust &amp; Probate Litigation</div><div class="desc">Will contests, trustee disputes &amp; estate matters</div></div>
         <div class="arrow">→</div>
       </a>
-      <a href="#" class="practice-item fade fade-d2">
+      <a href="#" class="practice-item pop fade-d4">
         <div><div class="name">Civil Appeals</div><div class="desc">Appellate advocacy in California courts</div></div>
         <div class="arrow">→</div>
       </a>
-      <a href="#" class="practice-item fade fade-d3">
+      <a href="#" class="practice-item pop fade-d5">
         <div><div class="name">Guardian Ad Litem</div><div class="desc">Court-appointed representation for minors</div></div>
         <div class="arrow">→</div>
       </a>
@@ -477,9 +485,9 @@ body { font-family:'Barlow',sans-serif; background:#eceae3; color:#1a2a1e; -webk
 </div>
 
 <script>
-// Fade animations
-var obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
-document.querySelectorAll('.fade').forEach(function(el){obs.observe(el);});
+// Animations
+var obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.fade,.slide-left,.slide-right,.pop').forEach(function(el){obs.observe(el);});
 
 // Testimonials carousel
 var cur=0,tot=3;
