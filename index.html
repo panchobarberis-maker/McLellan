@@ -283,13 +283,10 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   .practice-item .name { font-size:21px; }
 
   .testimonials { padding:120px 96px; }
-  .testimonials-inner { max-width:1100px; }
-  .carousel { overflow:visible; }
-  .carousel-track { gap:24px; transform:none !important; }
-  .testimonial-card { min-width:calc(33.333% - 16px); padding:40px 36px; text-align:left; }
+  .testimonials-inner { max-width:760px; }
+  .testimonial-card { padding:48px 56px; text-align:left; }
   .quote-icon { display:none; }
-  .testimonial-card .quote { font-size:17px; }
-  .carousel-nav { display:none; }
+  .testimonial-card .quote { font-size:18px; }
 
   .cta-banner { padding:120px 96px; }
   .cta-banner h3 { font-size:76px; }
@@ -438,21 +435,39 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       <div class="carousel-track" id="testimonialTrack">
         <div class="testimonial-card">
           <span class="quote-icon">"</span>
-          <span class="practice-tag">Employment Law · Saratoga</span>
-          <p class="quote"><strong>Claire was nothing short of incredible.</strong> Always available, prompt, organized, tactful, and strategic. She won me a large settlement and I would highly recommend her.</p>
-          <span class="author">— Pete</span>
+          <span class="practice-tag">Civil Litigation · Saratoga</span>
+          <p class="quote"><strong>I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant.</strong> Throughout her personal and team efforts, Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution to an unfolding disruptive and stressful situation. Much appreciation and gratitude.</p>
+          <span class="author">— Anonymous</span>
         </div>
         <div class="testimonial-card">
           <span class="quote-icon">"</span>
           <span class="practice-tag">Trust &amp; Probate · Saratoga</span>
-          <p class="quote"><strong>We were very impressed with their professionalism.</strong> Both Claire and Steven were quick to get all the facts and wonderful in helping us get a clear game plan.</p>
+          <p class="quote">We worked with Claire and Steven on a living trust issue that we had, and were <strong>very impressed with their professionalism and patience in handling everything</strong>. Claire was highly recommended from another firm we had reached out to, and we certainly understand why. The situation we were dealing with was complicated, but both Claire and Steven were <strong>quick to get all the facts and wonderful in helping us get a clear game plan figured out</strong>. It is reassuring to know that we can always reach out to them for additional help if needed.</p>
           <span class="author">— Wendy</span>
         </div>
         <div class="testimonial-card">
           <span class="quote-icon">"</span>
           <span class="practice-tag">Civil Litigation · Saratoga</span>
-          <p class="quote"><strong>Steven's legal expertise and sophistication were tremendous.</strong> His ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive.</p>
-          <span class="author">— Anonymous</span>
+          <p class="quote"><strong>Steven's legal expertise and sophistication were tremendous in resolving key issues in my case.</strong> Most important of all, Steven's ability to bring my case to settlement with eloquent presentation while keeping my focus on the bigger picture was most impressive to me. If ever needed, I would hire Steven for his services in a heartbeat.</p>
+          <span class="author">— Benjamin</span>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote-icon">"</span>
+          <span class="practice-tag">Civil Litigation · Saratoga</span>
+          <p class="quote"><strong>Claire and Steven are not only incredibly knowledgeable but very supportive.</strong> They won't simply recommend a course of action that will cost the most money, but actually consider the issues and advise you on what's best for YOU. I feel very fortunate I was able to work with them for a difficult issue!</p>
+          <span class="author">— Jordan</span>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote-icon">"</span>
+          <span class="practice-tag">Employment Law · Saratoga</span>
+          <p class="quote"><strong>Claire was nothing short of incredible with how she represented me and my interests.</strong> She was always available, super prompt, organized, tactful, and strategic throughout the entire process. Claire was also very empathetic and practical which was super important at various times throughout my case and trial. Ultimately, Claire won me a large settlement and won my case. I would highly and confidently recommend Ms. Melehani to anyone and I would absolutely hire her again!</p>
+          <span class="author">— Pete</span>
+        </div>
+        <div class="testimonial-card">
+          <span class="quote-icon">"</span>
+          <span class="practice-tag">Family Law · Saratoga</span>
+          <p class="quote"><strong>Excellent Attorney, Amazing Human Being.</strong> I had the pleasure of being represented by Mrs. Melehani during a very dark and extremely litigious phase of my custody case. I've been dealing with a 6-year custody battle for my daughter, had a two-week trial, experts, custody evaluations....you name it. Claire went above and beyond to ensure no detail was missed in my very laborious and exhaustive case. Further, her candor was always professional and extremely empathetic which went a long way to making me feel I was in good hands.</p>
+          <span class="author">— Raffaello</span>
         </div>
       </div>
     </div>
@@ -552,7 +567,7 @@ var statsObs = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.stat-item').forEach(function(el){statsObs.observe(el);});
 
 // Testimonials carousel
-var cur=0,tot=3;
+var cur=0,tot=7;
 var dotsEl=document.getElementById('carouselDots');
 for(var i=0;i<tot;i++){var d=document.createElement('button');d.className='carousel-dot'+(i===0?' active':'');d.setAttribute('data-i',i);d.onclick=function(){goToSlide(+this.getAttribute('data-i'));};dotsEl.appendChild(d);}
 function updateCarousel(){document.getElementById('testimonialTrack').style.transform='translateX(-'+(cur*100)+'%)';document.querySelectorAll('.carousel-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});}
