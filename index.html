@@ -113,6 +113,11 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   transform:translate(-50%,-50%);
   object-fit:cover;
 }
+.video-mobile { display:none; }
+@media(max-width:768px) {
+  .video-desktop { display:none; }
+  .video-mobile { display:block; }
+}
 .hero-overlay {
   position:absolute; inset:0; z-index:2;
   background:rgba(20,48,52,0.75);
@@ -369,8 +374,11 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 <!-- HERO -->
 <section class="hero">
   <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline preload="auto">
+    <video class="video-desktop" autoplay muted loop playsinline preload="auto">
       <source src="video mclellan.mp4" type="video/mp4">
+    </video>
+    <video class="video-mobile" autoplay muted loop playsinline preload="auto">
+      <source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
