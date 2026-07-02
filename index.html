@@ -80,12 +80,21 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07); }
 .mobile-accordion-menu li a { padding:11px 0; font-size:14px; font-weight:400; }
 
+.nav-contact-mobile { display:none; }
+
 @media(max-width:768px) {
   .nav { padding:12px 16px; }
   .nav-links { display:none; }
   .nav-hamburger { display:flex; }
   .nav-logo-center { display:flex; }
   .nav .contact-btn { display:none; }
+  .nav-contact-mobile {
+    display:flex; align-items:center;
+    background:#c9a96e; color:#1e3a3e;
+    border-radius:20px; padding:7px 16px;
+    font-size:12px; font-weight:700; letter-spacing:0.3px;
+    text-decoration:none; white-space:nowrap; flex-shrink:0;
+  }
 }
 @media(min-width:769px) {
   .logo-link { display:flex; }
@@ -327,6 +336,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
     <span></span><span></span><span></span>
   </button>
   <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
+  <a href="#contact" class="nav-contact-mobile">Contact Us</a>
   <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
