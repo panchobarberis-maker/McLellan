@@ -238,9 +238,20 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 /* ══ SIDEBAR ══ */
 .article-sidebar { position:sticky; top:80px; }
+@keyframes ctaPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(201,169,110,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(201,169,110,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
 .sidebar-box {
   background:#1e3a3e; border-radius:14px;
   padding:28px; margin-bottom:24px; color:#fff;
+  animation: ctaPulse 2.5s ease-out infinite;
+  border: 1.5px solid rgba(201,169,110,0.3);
 }
 .sidebar-box h3 {
   font-family:'Barlow Condensed',sans-serif;
@@ -249,12 +260,15 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 }
 .sidebar-box p { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6; margin-bottom:20px; }
 .sidebar-btn {
-  display:block; background:#c9a96e; color:#1e3a3e;
+  display:block; color:#1e3a3e;
   font-weight:700; font-size:13px; text-align:center;
   padding:13px 20px; border-radius:24px; text-decoration:none;
-  transition:background 0.2s;
+  background: linear-gradient(90deg, #c9a96e 0%, #e8cc8a 40%, #c9a96e 60%, #b8933a 100%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+  transition: transform 0.15s;
 }
-.sidebar-btn:hover { background:#d4b87d; }
+.sidebar-btn:hover { transform: scale(1.03); }
 
 .sidebar-related { background:#fff; border:1px solid #e8e4dc; border-radius:14px; padding:24px; }
 .sidebar-related h4 {
