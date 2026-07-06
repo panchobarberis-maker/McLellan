@@ -106,10 +106,12 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   .nav .contact-btn { display:none; }
   .nav-contact-mobile {
     display:flex; align-items:center;
-    background:#c9a96e; color:#1e3a3e;
-    border-radius:20px; padding:7px 16px;
+    color:#1e3a3e; border-radius:20px; padding:7px 16px;
     font-size:12px; font-weight:700; letter-spacing:0.3px;
     text-decoration:none; white-space:nowrap; flex-shrink:0;
+    background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+    background-size:200% auto;
+    animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
   }
 }
 @media(min-width:769px) {
