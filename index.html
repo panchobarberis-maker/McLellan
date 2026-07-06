@@ -176,8 +176,8 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .hero-sub { font-size:18px; line-height:1.65; color:rgba(255,255,255,0.85); margin-bottom:36px; font-weight:400; max-width:440px; font-family:'DM Serif Display',serif; font-style:italic; letter-spacing:0.2px; }
 .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:52px; }
 @media(max-width:768px) { .hero-ctas { display:none; } }
-.btn-primary { display:inline-flex; align-items:center; gap:8px; background:#c9a96e; color:#1e3a3e; font-weight:700; font-size:14px; padding:14px 28px; border-radius:28px; text-decoration:none; transition:background 0.2s,transform 0.15s; letter-spacing:0.2px; }
-.btn-primary:hover { background:#d4b87d; transform:translateY(-1px); }
+.btn-primary { display:inline-flex; align-items:center; gap:8px; color:#1e3a3e; font-weight:700; font-size:14px; padding:14px 28px; border-radius:28px; text-decoration:none; letter-spacing:0.2px; background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%); background-size:200% auto; animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite; transition:transform 0.15s; }
+.btn-primary:hover { transform:translateY(-2px) scale(1.03); }
 .btn-ghost { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#fff; font-weight:500; font-size:14px; padding:13px 24px; border-radius:28px; text-decoration:none; border:1.5px solid rgba(255,255,255,0.5); transition:border-color 0.2s,background 0.2s,color 0.2s; }
 .btn-ghost:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.8); }
 .hero-stats { display:none; }
