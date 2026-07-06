@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Insights & Resources | McLellan Law Group</title>
+<meta name="description" content="Expert legal insights from McLellan Law Group attorneys — employment law, civil litigation, trust & probate, real estate, and more.">
+<link rel="canonical" href="https://mc-lellan.vercel.app/blog.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webkit-font-smoothing:antialiased; font-weight:500; }
+
+/* ══ NAV ══ */
+.nav {
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px;
+  background:rgba(30,58,62,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(30,58,62,0.15);
+}
+.logo-link { display:none; text-decoration:none; }
+.logo-img { height:32px; width:auto; }
+.logo-img-mobile { height:28px; width:auto; }
+.nav-links { display:flex; gap:28px; list-style:none; margin:0 auto 0 48px; }
+.nav-links > li { position:relative; }
+.nav-links > li > a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13px; font-weight:500; letter-spacing:0.2px; padding:6px 0; display:block; transition:color 0.15s; }
+.nav-links > li > a:hover { color:#fff; }
+.dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.5; }
+.dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+.dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff; border:1px solid #e0ddd6; border-radius:10px; min-width:230px; padding:8px 0; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none; }
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu li a { display:block; padding:10px 20px; color:#333; text-decoration:none; font-size:13px; font-weight:400; transition:background 0.15s,color 0.15s; border-radius:6px; margin:2px 6px; }
+.dropdown-menu li a:hover { background:#f0f5f5; color:#1e3a3e; }
+.dropdown-menu li a.featured { font-weight:600; color:#1e3a3e; }
+.dropdown-divider { height:1px; background:#f0ede6; margin:5px 0; }
+.nav .contact-btn { background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:24px; padding:9px 22px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.2px; flex-shrink:0; transition:background 0.2s; }
+.nav .contact-btn:hover { background:rgba(255,255,255,0.3); }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
+.nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+.nav-logo-center { display:none; position:absolute; left:50%; transform:translateX(-50%); }
+.nav-contact-mobile { display:none; }
+.mobile-menu { display:none; position:fixed; inset:0; background:#1e3a3e; z-index:200; flex-direction:column; padding:24px; overflow-y:auto; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-close { align-self:flex-end; background:none; border:none; color:#fff; font-size:28px; cursor:pointer; margin-bottom:24px; }
+.mobile-menu ul { list-style:none; }
+.mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.1); }
+.mobile-menu ul li a { display:block; padding:15px 0; color:rgba(255,255,255,0.85); text-decoration:none; font-size:17px; font-weight:500; }
+.mobile-menu ul li a.featured { color:#c9a96e; font-weight:600; }
+.mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:15px 0; color:rgba(255,255,255,0.85); font-size:17px; font-weight:500; cursor:pointer; text-align:left; }
+.mobile-accordion-arrow { transition:transform 0.2s; font-size:18px; color:#c9a96e; }
+.mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+.mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+.mobile-accordion.open .mobile-accordion-menu { display:block; }
+.mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07); }
+.mobile-accordion-menu li a { padding:11px 0; font-size:14px; font-weight:400; }
+
+@media(max-width:768px) {
+  .nav { padding:12px 16px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .nav-logo-center { display:flex; }
+  .nav .contact-btn { display:none; }
+  .nav-contact-mobile {
+    display:flex; align-items:center;
+    background:#c9a96e; color:#1e3a3e;
+    border-radius:20px; padding:7px 16px;
+    font-size:12px; font-weight:700; letter-spacing:0.3px;
+    text-decoration:none; white-space:nowrap; flex-shrink:0;
+  }
+}
+@media(min-width:769px) {
+  .logo-link { display:flex; }
+  .mobile-menu { display:none !important; }
+}
+
+/* ══ PAGE HERO ══ */
+.page-hero {
+  background:#1e3a3e;
+  padding:72px 24px 64px;
+  text-align:center;
+}
+.page-hero .eyebrow {
+  display:inline-block;
+  font-size:10px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700;
+  color:#c9a96e; margin-bottom:16px;
+}
+.page-hero h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px,6vw,60px);
+  font-weight:800; text-transform:uppercase; letter-spacing:-0.5px;
+  color:#fff; line-height:1.05; margin-bottom:16px;
+}
+.page-hero p {
+  color:rgba(255,255,255,0.7); font-size:16px; max-width:520px; margin:0 auto;
+  font-family:'DM Serif Display',serif; font-style:italic;
+}
+
+/* ══ FILTER BAR ══ */
+.filter-bar {
+  background:#fff;
+  border-bottom:1px solid #e8e4dc;
+  padding:0 24px;
+  position:sticky; top:61px; z-index:50;
+}
+.filter-inner {
+  max-width:1100px; margin:0 auto;
+  display:flex; gap:4px; overflow-x:auto; padding:14px 0;
+  scrollbar-width:none;
+}
+.filter-inner::-webkit-scrollbar { display:none; }
+.filter-btn {
+  flex-shrink:0;
+  background:none; border:1.5px solid #d8d4cc;
+  border-radius:20px; padding:7px 18px;
+  font-size:12px; font-weight:600; letter-spacing:0.3px;
+  color:#1e3a3e; cursor:pointer; transition:all 0.15s;
+  font-family:'Barlow',sans-serif;
+}
+.filter-btn:hover { border-color:#1e3a3e; background:#f0f5f5; }
+.filter-btn.active { background:#1e3a3e; color:#fff; border-color:#1e3a3e; }
+
+/* ══ BLOG GRID ══ */
+.blog-section {
+  max-width:1100px; margin:0 auto;
+  padding:64px 24px 96px;
+}
+.blog-section-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase;
+  color:#c9a96e; margin-bottom:24px;
+  display:flex; align-items:center; gap:14px;
+}
+.blog-section-title::after {
+  content:''; flex:1; height:1px; background:#e8e4dc;
+}
+.blog-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-bottom:64px;
+}
+.blog-card {
+  background:#fff;
+  border:1px solid #e8e4dc;
+  border-radius:14px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#1e3a3e;
+  transition:transform 0.2s, box-shadow 0.2s;
+  display:flex; flex-direction:column;
+}
+.blog-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(30,58,62,0.1); }
+.blog-card-img {
+  width:100%; aspect-ratio:16/9; object-fit:cover;
+  background:#e0ebe8;
+  display:flex; align-items:center; justify-content:center;
+}
+.blog-card-img-placeholder {
+  width:100%; aspect-ratio:16/9;
+  background:linear-gradient(135deg,#1e3a3e 0%,#2d5560 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+.blog-card-img-placeholder svg { opacity:0.18; }
+.blog-card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
+.blog-card-tag {
+  display:inline-block;
+  background:#f0f5f5; color:#1e3a3e;
+  font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+  border-radius:12px; padding:4px 10px;
+  margin-bottom:12px; align-self:flex-start;
+}
+.blog-card-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px; font-weight:800; line-height:1.2;
+  margin-bottom:10px; text-transform:uppercase; letter-spacing:0.2px;
+}
+.blog-card-excerpt {
+  font-size:13px; color:#5a7070; line-height:1.6;
+  flex:1; margin-bottom:16px;
+}
+.blog-card-meta {
+  font-size:11px; color:#9aafaf; font-weight:600; letter-spacing:0.3px;
+  display:flex; align-items:center; gap:8px;
+}
+.blog-card-meta span { color:#d8d4cc; }
+
+/* Featured card (first in each section) */
+.blog-card.featured {
+  grid-column:1 / -1;
+  flex-direction:row;
+}
+.blog-card.featured .blog-card-img-placeholder {
+  width:420px; min-width:420px; aspect-ratio:unset;
+  height:auto;
+}
+.blog-card.featured .blog-card-body { padding:36px; }
+.blog-card.featured .blog-card-title { font-size:28px; }
+.blog-card.featured .blog-card-excerpt { font-size:14px; }
+
+/* No posts state */
+.no-posts {
+  grid-column:1/-1; text-align:center;
+  padding:64px 24px; color:#9aafaf;
+  font-size:15px;
+}
+.no-posts strong { display:block; font-size:20px; color:#1e3a3e; margin-bottom:8px; }
+
+/* ══ CTA BANNER ══ */
+.cta-banner {
+  background:#1e3a3e; padding:80px 24px; text-align:center;
+}
+.cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(32px,5vw,52px); font-weight:800; text-transform:uppercase;
+  color:#fff; margin-bottom:12px;
+}
+.cta-banner p { color:rgba(255,255,255,0.65); font-size:16px; margin-bottom:32px; }
+.btn-cta {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#c9a96e; color:#1e3a3e;
+  font-weight:700; font-size:14px; padding:16px 32px;
+  border-radius:28px; text-decoration:none;
+  transition:background 0.2s, transform 0.15s; letter-spacing:0.2px;
+}
+.btn-cta:hover { background:#d4b87d; transform:translateY(-1px); }
+
+/* ══ FOOTER ══ */
+.footer { background:#111c1d; color:rgba(255,255,255,0.5); padding:48px 24px 32px; text-align:center; }
+.footer-logo { height:28px; margin-bottom:20px; opacity:0.7; }
+.footer p { font-size:12px; line-height:1.8; }
+.footer a { color:rgba(255,255,255,0.5); text-decoration:none; }
+.footer a:hover { color:#c9a96e; }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px) {
+  .page-hero { padding:48px 20px 40px; }
+  .blog-grid { grid-template-columns:1fr; gap:20px; }
+  .blog-card.featured { flex-direction:column; }
+  .blog-card.featured .blog-card-img-placeholder { width:100%; min-width:unset; aspect-ratio:16/9; }
+  .blog-card.featured .blog-card-body { padding:24px; }
+  .blog-card.featured .blog-card-title { font-size:22px; }
+  .blog-section { padding:40px 20px 64px; }
+}
+@media(min-width:769px) and (max-width:1024px) {
+  .blog-grid { grid-template-columns:repeat(2,1fr); }
+  .blog-card.featured { flex-direction:column; }
+  .blog-card.featured .blog-card-img-placeholder { width:100%; min-width:unset; aspect-ratio:16/9; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
+  <a href="index.html#contact" class="nav-contact-mobile">Contact Us</a>
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="index.html#practices" class="dropdown-toggle">Practice Areas</a>
+      <ul class="dropdown-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a href="#">Real Estate Litigation</a></li>
+        <li><a href="#">Contract Disputes</a></li>
+        <li><a href="#">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#team">Our Team</a></li>
+    <li><a href="blog.html" style="color:#c9a96e;">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="contact-btn">Free Consultation →</a>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Practice Areas <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li><a href="#">Real Estate Litigation</a></li>
+        <li><a href="#">Contract Disputes</a></li>
+        <li><a href="#">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#team">Our Team</a></li>
+    <li><a href="blog.html" class="featured">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="eyebrow">Legal Insights</div>
+  <h1>Resources &<br>Perspectives</h1>
+  <p>Practical guidance from our attorneys on employment law, civil litigation, and more.</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">All Topics</button>
+    <button class="filter-btn" data-filter="employment">Employment Law</button>
+    <button class="filter-btn" data-filter="civil">Civil Litigation</button>
+    <button class="filter-btn" data-filter="trust">Trust &amp; Probate</button>
+    <button class="filter-btn" data-filter="realestate">Real Estate</button>
+    <button class="filter-btn" data-filter="appeals">Civil Appeals</button>
+    <button class="filter-btn" data-filter="guardian">Guardian Ad Litem</button>
+  </div>
+</div>
+
+<!-- BLOG CONTENT -->
+<div class="blog-section">
+
+  <!-- Employment Law -->
+  <div class="blog-category" data-category="employment">
+    <div class="blog-section-title">Employment Law</div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card featured">
+        <div class="blog-card-img-placeholder">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="#fff"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.33C18 2.53 15.87.5 13.33.5c-1.42 0-2.67.7-3.33 1.76C9.33 1.2 8.08.5 6.67.5 4.13.5 2 2.53 2 4.67c0 .45.11.89.18 1.33H0v14h20V6zm-6.67-4c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM6.67 2.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM18 18H2V8h16v10z"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Employment Law</span>
+          <div class="blog-card-title">What to Do If You're Wrongfully Terminated in California</div>
+          <p class="blog-card-excerpt">California is an at-will employment state — but that doesn't mean your employer can fire you for any reason. Learn the key legal protections available to employees and the steps you should take immediately after a wrongful termination.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Employment Law</span>
+          <div class="blog-card-title">Understanding Workplace Discrimination Claims in Silicon Valley</div>
+          <p class="blog-card-excerpt">From tech startups to established corporations, discrimination claims are more common than many employees realize. Here's what the law protects.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Employment Law</span>
+          <div class="blog-card-title">Wage & Hour Violations: Are You Owed Unpaid Overtime?</div>
+          <p class="blog-card-excerpt">California has some of the strongest wage and hour protections in the country. Find out if your employer may owe you back pay.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Civil Litigation -->
+  <div class="blog-category" data-category="civil">
+    <div class="blog-section-title">Civil Litigation</div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card featured">
+        <div class="blog-card-img-placeholder">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="#fff"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Civil Litigation</span>
+          <div class="blog-card-title">Breach of Contract in California: What Business Owners Need to Know</div>
+          <p class="blog-card-excerpt">A breach of contract can disrupt operations and cause significant financial harm. This guide walks business owners through the litigation process and what to expect when disputes escalate to court.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Civil Litigation</span>
+          <div class="blog-card-title">When to Sue vs. When to Settle: A Strategic Overview</div>
+          <p class="blog-card-excerpt">Litigation is expensive and time-consuming. Our attorneys break down when it makes sense to pursue trial and when settlement is the smarter move.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Civil Litigation</span>
+          <div class="blog-card-title">How Long Does a Civil Lawsuit Take in California?</div>
+          <p class="blog-card-excerpt">Timelines vary widely depending on the complexity of the case. Here's a realistic look at what to expect from filing to resolution.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Trust & Probate -->
+  <div class="blog-category" data-category="trust">
+    <div class="blog-section-title">Trust &amp; Probate</div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card featured">
+        <div class="blog-card-img-placeholder">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="#fff"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Trust &amp; Probate</span>
+          <div class="blog-card-title">Contesting a Will in California: Grounds, Process & Timelines</div>
+          <p class="blog-card-excerpt">Not every will is final. If you believe a loved one's estate documents were the result of fraud, undue influence, or lack of capacity, you may have legal grounds to challenge them. Here's what you need to know.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Trust &amp; Probate</span>
+          <div class="blog-card-title">Trustee Misconduct: What Beneficiaries Can Do</div>
+          <p class="blog-card-excerpt">If a trustee is mismanaging assets, failing to communicate, or acting in bad faith, beneficiaries have legal remedies available.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Trust &amp; Probate</span>
+          <div class="blog-card-title">Living Trusts vs. Wills: Which Does Your Family Need?</div>
+          <p class="blog-card-excerpt">Both tools serve important estate planning functions — but they operate very differently. Our attorneys explain the key distinctions for California families.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Real Estate -->
+  <div class="blog-category" data-category="realestate">
+    <div class="blog-section-title">Real Estate Litigation</div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card featured">
+        <div class="blog-card-img-placeholder">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="#fff"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Real Estate</span>
+          <div class="blog-card-title">Property Disputes in California: Easements, Boundaries & Title Issues</div>
+          <p class="blog-card-excerpt">Real estate disputes can be complex and emotionally charged. Whether you're dealing with a boundary encroachment, an easement conflict, or a title defect, understanding your legal options is the first step.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Real Estate</span>
+          <div class="blog-card-title">Landlord-Tenant Disputes: When Do You Need a Litigation Attorney?</div>
+          <p class="blog-card-excerpt">Not every landlord-tenant conflict requires a lawyer — but some situations demand aggressive legal advocacy. Here's how to tell the difference.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Real Estate</span>
+          <div class="blog-card-title">Construction Defect Claims: Your Rights as a Property Owner</div>
+          <p class="blog-card-excerpt">From faulty foundations to water intrusion, construction defects can devastate a property's value. California law provides important remedies.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Civil Appeals -->
+  <div class="blog-category" data-category="appeals">
+    <div class="blog-section-title">Civil Appeals</div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Civil Appeals</span>
+          <div class="blog-card-title">Lost at Trial? What Comes Next in the California Appellate Process</div>
+          <p class="blog-card-excerpt">A trial court verdict is not always the end. Understanding the grounds for appeal and the procedural timelines is critical to protecting your rights.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Civil Appeals</span>
+          <div class="blog-card-title">Preserving Error for Appeal: What Your Trial Attorney Must Do</div>
+          <p class="blog-card-excerpt">Appellate success often depends on groundwork laid during trial. Here's what to look for when evaluating whether your case has appellate merit.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Civil Appeals</span>
+          <div class="blog-card-title">How Long Does a Civil Appeal Take in California?</div>
+          <p class="blog-card-excerpt">The appellate process moves slowly. We walk you through the typical timeline from filing a notice of appeal to receiving a decision.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Guardian Ad Litem -->
+  <div class="blog-category" data-category="guardian">
+    <div class="blog-section-title">Guardian Ad Litem</div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Guardian Ad Litem</span>
+          <div class="blog-card-title">What Is a Guardian Ad Litem and When Is One Appointed?</div>
+          <p class="blog-card-excerpt">Courts appoint guardians ad litem to represent the best interests of minors in legal proceedings. Here's how the process works in California.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-img-placeholder"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Guardian Ad Litem</span>
+          <div class="blog-card-title">Minor's Compromise: Protecting Children in Personal Injury Settlements</div>
+          <p class="blog-card-excerpt">When a minor receives a settlement, California law requires court approval to ensure the money is protected for their future. Here's what that process involves.</p>
+          <div class="blog-card-meta">McLellan Law Group <span>·</span> Coming Soon</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <h2>Have a Legal Question?</h2>
+  <p>Our attorneys are ready to listen. Schedule a free consultation today.</p>
+  <a href="https://www.mclellanlawgroup.com/contact" class="btn-cta">Get My Free Consultation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img src="logo.svg" alt="McLellan Law Group" class="footer-logo">
+  <p>© 2025 McLellan Law Group. All rights reserved.<br>
+  <a href="#">Privacy Policy</a> · <a href="#">Disclaimer</a><br>
+  20665 4th St #202, Saratoga, CA 95070</p>
+</footer>
+
+<script>
+// Filter logic
+const btns = document.querySelectorAll('.filter-btn');
+const categories = document.querySelectorAll('.blog-category');
+
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    categories.forEach(cat => {
+      if (filter === 'all' || cat.dataset.category === filter) {
+        cat.style.display = '';
+      } else {
+        cat.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Mobile accordion
+document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
+});
+</script>
+</body>
+</html>
