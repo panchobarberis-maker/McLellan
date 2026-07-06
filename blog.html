@@ -79,9 +79,22 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 /* ══ PAGE HERO ══ */
 .page-hero {
+  position:relative; overflow:hidden;
   background:#1e3a3e;
   padding:72px 24px 64px;
   text-align:center;
+}
+.page-hero-bg {
+  position:absolute; inset:0; z-index:1;
+  background-image:url('Foto estudio.png');
+  background-size:cover; background-position:center 28%;
+}
+.page-hero-overlay {
+  position:absolute; inset:0; z-index:2;
+  background:rgba(20,48,52,0.78);
+}
+.page-hero > *:not(.page-hero-bg):not(.page-hero-overlay) {
+  position:relative; z-index:3;
 }
 .page-hero .eyebrow {
   display:inline-block;
@@ -309,6 +322,8 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 <!-- PAGE HERO -->
 <section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
   <div class="eyebrow">Legal Insights</div>
   <h1>Resources &<br>Perspectives</h1>
   <p>Practical guidance from our attorneys on employment law, civil litigation, and more.</p>
