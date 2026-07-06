@@ -58,8 +58,24 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .dropdown-menu li a:hover { background:#f0f5f5; color:#1e3a3e; }
 .dropdown-menu li a.featured { font-weight:600; color:#1e3a3e; }
 .dropdown-divider { height:1px; background:#f0ede6; margin:5px 0; }
-.nav .contact-btn { background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:24px; padding:9px 22px; font-size:13px; font-weight:500; text-decoration:none; letter-spacing:0.2px; flex-shrink:0; transition:background 0.2s; }
-.nav .contact-btn:hover { background:rgba(255,255,255,0.3); }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+.nav .contact-btn {
+  color:#1e3a3e; border:none; border-radius:24px; padding:9px 22px;
+  font-size:13px; font-weight:700; text-decoration:none; letter-spacing:0.2px; flex-shrink:0;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+  transition:transform 0.15s;
+}
+.nav .contact-btn:hover { transform:scale(1.04); }
 
 /* MOBILE NAV */
 .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
