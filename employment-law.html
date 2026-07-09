@@ -266,24 +266,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   line-height:1.75; margin-bottom:40px;
 }
 .employers-grid {
-  display:grid; grid-template-columns:1fr;
+  display:grid; grid-template-columns:1fr 1fr;
   gap:1px; background:rgba(255,255,255,0.08);
   border:1px solid rgba(255,255,255,0.08); border-radius:16px;
   overflow:hidden; margin-bottom:40px;
 }
-@media(min-width:600px) { .employers-grid { grid-template-columns:1fr 1fr; } }
 .employer-item {
   background:#1e3a3e; padding:32px 28px;
   display:flex; align-items:flex-start; gap:18px;
   transition:background 0.2s;
 }
 .employer-item:hover { background:rgba(255,255,255,0.05); }
-.employer-item-icon {
-  width:48px; height:48px; border-radius:12px;
-  background:rgba(201,169,110,0.15); border:1px solid rgba(201,169,110,0.3);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0; font-size:22px;
-}
+.employer-item-icon { display:none; }
 .employer-item-text strong {
   display:block; font-size:17px; font-weight:700; color:#fff; margin-bottom:6px;
 }
@@ -511,42 +505,42 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
   <div class="employers-grid">
     <a href="wrongful-termination.html" class="employer-item" style="text-decoration:none;">
-      <div class="employer-item-icon">⚖️</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Wrongful Termination</strong>
         <span>Fired unlawfully or in retaliation</span>
       </div>
     </a>
     <a href="workplace-discrimination.html" class="employer-item" style="text-decoration:none;">
-      <div class="employer-item-icon">🛡</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Workplace Discrimination</strong>
         <span>Race, gender, age, disability, religion</span>
       </div>
     </a>
     <a href="sexual-harassment.html" class="employer-item" style="text-decoration:none;">
-      <div class="employer-item-icon">🚫</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Sexual Harassment</strong>
         <span>Hostile work environment &amp; quid pro quo</span>
       </div>
     </a>
     <a href="retaliation.html" class="employer-item" style="text-decoration:none;">
-      <div class="employer-item-icon">⚠️</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Retaliation</strong>
         <span>Punished for reporting violations</span>
       </div>
     </a>
     <a href="unpaid-wages.html" class="employer-item" style="text-decoration:none;">
-      <div class="employer-item-icon">💰</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Unpaid Wages &amp; Overtime</strong>
         <span>Wage theft, missed breaks, classification</span>
       </div>
     </a>
     <a href="paga-claims.html" class="employer-item" style="text-decoration:none;">
-      <div class="employer-item-icon">📋</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>PAGA Claims</strong>
         <span>Act on behalf of yourself and coworkers</span>
@@ -629,42 +623,42 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
   <div class="employers-grid">
     <div class="employer-item">
-      <div class="employer-item-icon">🛡</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Wrongful Termination Defense</strong>
         <span>Defend against at-will and FEHA-based claims</span>
       </div>
     </div>
     <div class="employer-item">
-      <div class="employer-item-icon">⚠️</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>PAGA Notice Response</strong>
         <span>65-day window — act before it closes</span>
       </div>
     </div>
     <div class="employer-item">
-      <div class="employer-item-icon">💼</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Wage &amp; Hour Disputes</strong>
         <span>Overtime, meal breaks, classification issues</span>
       </div>
     </div>
     <div class="employer-item">
-      <div class="employer-item-icon">🔒</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Retaliation Defense</strong>
         <span>Protect against whistleblower and FEHA retaliation claims</span>
       </div>
     </div>
     <div class="employer-item">
-      <div class="employer-item-icon">📋</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>HR Policies &amp; Handbooks</strong>
         <span>Compliant documentation that reduces liability</span>
       </div>
     </div>
     <div class="employer-item">
-      <div class="employer-item-icon">📝</div>
+      <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Contracts &amp; Severance Agreements</strong>
         <span>Draft, review, and enforce employment agreements</span>
