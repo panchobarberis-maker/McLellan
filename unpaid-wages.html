@@ -178,6 +178,20 @@
 
   .maps-section { width:100%; line-height:0; }
   @media(min-width:769px) { .maps-section iframe { height:400px; } }
+/* WHY CHOOSE US */
+.why-us { background:#1e3a3e; padding:72px 28px; }
+@media(min-width:769px) { .why-us { padding:96px 80px; } }
+.why-us-inner { max-width:1080px; margin:0 auto; }
+.why-us-eyebrow { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; }
+.why-us-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
+.why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
+.why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.12); border:2px solid rgba(255,255,255,0.12); border-radius:16px; overflow:hidden; }
+@media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
+.why-us-item { background:#1e3a3e; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
+.why-us-item:hover { background:rgba(255,255,255,0.04); }
+.why-us-num { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#c9a96e; }
+.why-us-item strong { font-size:17px; font-weight:700; color:#fff; }
+.why-us-item span { font-size:14px; color:rgba(255,255,255,0.6); line-height:1.65; }
 </style>
 </head>
 <body>
@@ -353,6 +367,35 @@
 
   </section>
 
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="why-us-inner">
+    <div class="why-us-eyebrow">Why McLellan Law Group</div>
+    <h2 class="why-us-title">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-grid">
+      <div class="why-us-item">
+        <div class="why-us-num">01</div>
+        <strong>Boutique Firm Attention</strong>
+        <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
+      </div>
+      <div class="why-us-item">
+        <div class="why-us-num">02</div>
+        <strong>Silicon Valley Focus</strong>
+        <span>Based in Saratoga, we know California employment law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
+      </div>
+      <div class="why-us-item">
+        <div class="why-us-num">03</div>
+        <strong>Proven Track Record</strong>
+        <span>From wrongful termination to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
+      </div>
+      <div class="why-us-item">
+        <div class="why-us-num">04</div>
+        <strong>Free Consultation</strong>
+        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+      </div>
+    </div>
+  </div>
+</section>
   <div class="cta-banner" id="contact">
     <p>Based in Saratoga and serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
     <a href="https://www.mclellanlawgroup.com/contact" class="btn">Request a Free Consultation</a>
