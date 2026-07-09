@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>California Employment Law Attorneys in Saratoga | McLellan Law Group</title>
-
 <meta name="description" content="McLellan Law Group represents employees and employers in employment law disputes in Saratoga, CA. Wrongful termination, harassment, PAGA, wage & hour claims — Silicon Valley.">
 <meta name="keywords" content="employment attorney Saratoga CA, employment lawyer Silicon Valley, wrongful termination attorney Santa Clara County, PAGA defense California, employment discrimination lawyer Saratoga">
 <meta name="geo.region" content="US-CA">
@@ -88,499 +87,706 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  p, li, .about p, .quote { text-align: justify; }
-  h1, h2, h3, .section-label, .section-label-hero { text-align: center; }
-  body { font-family: 'Barlow', Arial, sans-serif; background:#fff; color:#1b2a35; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-font-smoothing:antialiased; font-weight:500; }
 
-  .nav {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 28px; background:#1b2a35;
-    position:sticky; top:0; z-index:100;
-  }
-
-  .logo-link { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
-  .logo-img { height:36px; width:auto; display:block; }
-  .logo-img-mobile { height:30px; width:auto; display:block; }
-  .logo-link { display:none; }
-  .nav .logo { font-weight:900; color:#fff; font-size:15px; letter-spacing:1px; flex-shrink:0; }
+/* NAV */
+.nav {
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px;
+  background:rgba(30,58,62,0.97);
+  backdrop-filter:blur(12px);
+}
+.logo-link { display:none; text-decoration:none; }
+.logo-img { height:32px; width:auto; }
+.logo-img-mobile { height:28px; width:auto; }
+.nav-links { display:flex; gap:28px; list-style:none; margin:0 auto 0 48px; }
+.nav-links > li { position:relative; }
+.nav-links > li > a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13px; font-weight:500; letter-spacing:0.2px; padding:6px 0; display:block; transition:color 0.15s; }
+.nav-links > li > a:hover { color:#fff; }
+.dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.5; }
+.dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+.dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff; border:1px solid #e0ddd6; border-radius:10px; min-width:230px; padding:8px 0; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none; }
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu li a { display:block; padding:10px 20px; color:#333; text-decoration:none; font-size:13px; font-weight:400; transition:background 0.15s,color 0.15s; border-radius:6px; margin:2px 6px; }
+.dropdown-menu li a:hover { background:#f0f5f5; color:#1e3a3e; }
+.dropdown-menu li a.featured { font-weight:600; color:#1e3a3e; }
+.dropdown-divider { height:1px; background:#f0ede6; margin:5px 0; }
+.nav .contact-btn {
+  color:#1e3a3e; border:none; border-radius:24px; padding:9px 22px;
+  font-size:13px; font-weight:700; text-decoration:none; flex-shrink:0;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+}
+.nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
+.nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+.nav-logo-center { display:none; position:absolute; left:50%; transform:translateX(-50%); }
+.mobile-menu { display:none; position:fixed; inset:0; background:#1e3a3e; z-index:200; flex-direction:column; padding:24px; overflow-y:auto; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-close { align-self:flex-end; background:none; border:none; color:#fff; font-size:28px; cursor:pointer; margin-bottom:24px; }
+.mobile-menu ul { list-style:none; }
+.mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.1); }
+.mobile-menu ul li a { display:block; padding:15px 0; color:rgba(255,255,255,0.85); text-decoration:none; font-size:17px; font-weight:500; }
+.mobile-menu ul li a.featured { color:#c9a96e; font-weight:600; }
+.mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:15px 0; color:rgba(255,255,255,0.85); font-size:17px; font-weight:500; cursor:pointer; text-align:left; }
+.mobile-accordion-arrow { transition:transform 0.2s; font-size:18px; color:#c9a96e; }
+.mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+.mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+.mobile-accordion.open .mobile-accordion-menu { display:block; }
+.mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07); }
+.mobile-accordion-menu li a { padding:11px 0; font-size:14px; font-weight:400; }
+.nav-contact-mobile { display:none; }
+@media(max-width:768px) {
+  .nav { padding:12px 16px; }
   .nav-links { display:none; }
-  .nav .contact-btn { background:#b9986a; color:#fff; border-radius:20px; padding:8px 18px; font-size:12px; font-weight:bold; text-decoration:none; flex-shrink:0; }
-
-  /* Mobile hamburger */
-  .nav-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
-  .nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
-  .nav-logo-center { position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px; white-space:nowrap; text-decoration:none; }
-
-  /* Mobile slide-out menu */
-  .mobile-menu { display:none; position:fixed; inset:0; background:#1b2a35; z-index:200; flex-direction:column; padding:24px; }
-  .mobile-menu.open { display:flex; }
-  .mobile-menu-close { align-self:flex-end; background:none; border:none; color:#fff; font-size:28px; cursor:pointer; margin-bottom:24px; line-height:1; }
-  .mobile-menu ul { list-style:none; }
-  .mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.08); }
-  .mobile-menu ul li a { display:block; padding:16px 0; color:#fff; text-decoration:none; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
-  .mobile-menu ul li a.featured { color:#b9986a; }
-  .mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:16px 0; color:#fff; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px; cursor:pointer; text-align:left; }
-  .mobile-accordion-arrow { transition:transform 0.2s; font-size:20px; color:#b9986a; }
-  .mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
-  .mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
-  .mobile-accordion.open .mobile-accordion-menu { display:block; }
-  .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.05); }
-  .mobile-accordion-menu li a { padding:12px 0; font-size:15px; font-weight:500; letter-spacing:0.5px; }
-
-  @media(min-width:769px) {
-    .nav-hamburger { display:none; }
-    .nav-logo-center { display:none; }
-    .logo-link { display:flex; }
-    .mobile-menu { display:none !important; }
-    .nav-links { display:flex; gap:24px; align-items:center; list-style:none; margin:0 auto 0 40px; }
-    .nav-links > li { position:relative; }
-    .nav-links > li > a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:12px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; white-space:nowrap; padding:6px 0; display:block; transition:color 0.15s; }
-    .nav-links > li > a:hover { color:#b9986a; }
-    .dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.65; }
-    .dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
-    .dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#1b2a35; border-top:2px solid #b9986a; min-width:240px; padding:8px 0; box-shadow:0 10px 30px rgba(0,0,0,0.4); list-style:none; }
-    .dropdown:hover .dropdown-menu { display:block; }
-    .dropdown-menu li a { display:block; padding:11px 24px; color:rgba(255,255,255,0.7); text-decoration:none; font-size:12px; font-weight:400; transition:background 0.15s, color 0.15s; }
-    .dropdown-menu li a:hover { background:rgba(185,152,106,0.15); color:#b9986a; }
-    .dropdown-menu li a.featured { font-weight:800; color:#fff; }
-    .dropdown-divider { height:1px; background:rgba(255,255,255,0.08); margin:5px 0; }
+  .nav-hamburger { display:flex; }
+  .nav-logo-center { display:flex; }
+  .nav .contact-btn { display:none; }
+  .nav-contact-mobile {
+    display:flex; align-items:center;
+    color:#1e3a3e; border-radius:20px; padding:7px 16px;
+    font-size:12px; font-weight:700; text-decoration:none; white-space:nowrap; flex-shrink:0;
+    background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+    background-size:200% auto;
   }
+}
+@media(min-width:769px) {
+  .logo-link { display:flex; }
+  .mobile-menu { display:none !important; }
+}
 
-  .hero { position:relative; height:520px; overflow:hidden; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; padding:0 24px 36px; }
-  .hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; filter:brightness(0.88) saturate(1.1) sepia(0.1); }
-  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.1) 30%,rgba(0,0,0,0.60) 58%,rgba(0,0,0,0.90) 78%,rgba(0,0,0,0.97) 100%); }
-  .hero-overlay-warm { position:absolute; inset:0; background:radial-gradient(ellipse at 60% 35%, rgba(185,152,106,0.10) 0%, transparent 65%); z-index:1; pointer-events:none; }
-  .hero-frame { position:absolute; inset:20px; border:1px solid rgba(185,152,106,0.35); pointer-events:none; z-index:2; }
-  .hero-frame::before, .hero-frame::after { content:''; position:absolute; width:28px; height:28px; border-color:#b9986a; border-style:solid; }
-  .hero-frame::before { top:-1px; left:-1px; border-width:2px 0 0 2px; }
-  .hero-frame::after  { bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
-  .section-label-hero { position:absolute; top:36px; left:0; right:0; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#b9986a; font-weight:700; text-align:center; z-index:3; }
-  .hero-content { position:relative; z-index:3; text-align:center; }
-  .hero h1 { font-family:'Cormorant Garamond',Georgia,serif; font-size:30px; line-height:1.15; font-weight:700; margin-bottom:10px; text-shadow:2px 2px 14px rgba(0,0,0,0.9); }
-  .hero p.sub { font-size:14px; line-height:1.5; color:rgba(255,255,255,0.85); margin-bottom:20px; text-align:center; }
-  @media(min-width:769px) {
-    .hero { height:680px; padding:0 60px 64px; }
-    .hero-img { object-position: center 15%; }
-    .hero h1 { font-size:52px; line-height:1.08; margin-bottom:14px; }
-    .hero p.sub { font-size:17px; margin-bottom:28px; }
-    .hero-frame { inset:28px; }
-  }
+/* HERO */
+.emp-hero {
+  position:relative; overflow:hidden;
+  min-height:560px; display:flex; flex-direction:column;
+  justify-content:flex-end; padding:0 28px 52px;
+  background:#1e3a3e;
+}
+@media(min-width:769px) { .emp-hero { min-height:680px; padding:0 80px 80px; } }
+.emp-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 20%;
+  filter:brightness(0.7) saturate(1.1);
+}
+.emp-hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
+}
+.emp-hero-label {
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:10px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#c9a96e; font-weight:700; margin-bottom:20px;
+}
+.emp-hero-label::before { content:''; width:24px; height:1px; background:#c9a96e; }
+.emp-hero h1 {
+  position:relative; z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 7vw, 72px); font-weight:900; line-height:0.95;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px;
+  margin-bottom:18px;
+}
+.emp-hero h1 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.75em; letter-spacing:0;
+}
+.emp-hero-sub {
+  position:relative; z-index:2;
+  font-size:16px; color:rgba(255,255,255,0.8); max-width:520px;
+  line-height:1.7; margin-bottom:32px;
+  font-family:'DM Serif Display',serif; font-style:italic;
+}
+.emp-hero-ctas {
+  position:relative; z-index:2;
+  display:flex; gap:12px; flex-wrap:wrap;
+}
+.btn-gold {
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+  color:#1e3a3e; font-weight:700; font-size:14px;
+  padding:13px 28px; border-radius:28px; text-decoration:none;
+}
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:#fff; font-weight:500; font-size:14px;
+  padding:12px 24px; border-radius:28px; text-decoration:none;
+  border:1.5px solid rgba(255,255,255,0.45);
+}
 
-  .audience-btns { display:flex; flex-direction:column; gap:10px; padding:24px; background:#f7f5f0; border-bottom:1px solid #e5e0d8; }
-  .audience-btn { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-radius:6px; font-weight:700; font-size:14px; text-decoration:none; }
-  .audience-btn.employers { background:#1b2a35; color:#fff; }
-  .audience-btn.employees { background:#fff; color:#1b2a35; border:2px solid #1b2a35; }
-  .audience-btn span { color:#b9986a; font-size:16px; }
+/* AUDIENCE SWITCHER */
+.audience-switch {
+  display:grid; grid-template-columns:1fr 1fr;
+  background:#1e3a3e;
+}
+.audience-tab {
+  padding:20px 24px; text-align:center; text-decoration:none;
+  font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  transition:background 0.2s, color 0.2s;
+  border-bottom:3px solid transparent;
+  color:rgba(255,255,255,0.55);
+}
+.audience-tab.employers {
+  color:#fff; border-bottom-color:#c9a96e; background:rgba(255,255,255,0.05);
+}
+.audience-tab.employees {
+  color:rgba(255,255,255,0.55);
+}
+.audience-tab:hover { color:#fff; background:rgba(255,255,255,0.08); }
 
-  .lawsuits { padding:28px 24px; background:#fff; border-bottom:1px solid #eee; }
-  .section-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#b9986a; font-weight:700; border-left:3px solid #b9986a; padding-left:8px; margin-bottom:12px; }
-  .lawsuits h2 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:16px; }
-  .lawsuits ul { list-style:none; }
-  .lawsuits ul li { padding:10px 0; border-bottom:1px solid #f0ece4; font-size:14px; color:#333; display:flex; align-items:center; gap:10px; }
-  .lawsuits ul li:last-child { border-bottom:none; }
-  .lawsuits ul li::before { content:"✓"; color:#b9986a; font-weight:900; font-size:15px; }
+/* EMPLOYERS SECTION */
+.employers-section {
+  background:#1e3a3e; padding:64px 28px;
+}
+@media(min-width:769px) { .employers-section { padding:80px 80px; } }
+.section-eyebrow {
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:10px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#c9a96e; font-weight:700; margin-bottom:20px;
+}
+.section-eyebrow::before { content:''; width:24px; height:1px; background:#c9a96e; }
+.employers-section h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 6vw, 64px); font-weight:900; line-height:0.95;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:24px;
+}
+.employers-section h2 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.72em;
+}
+.employers-section > p {
+  font-size:17px; color:rgba(255,255,255,0.75); max-width:560px;
+  line-height:1.75; margin-bottom:40px;
+}
+.employers-grid {
+  display:grid; grid-template-columns:1fr;
+  gap:1px; background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.08); border-radius:12px;
+  overflow:hidden; margin-bottom:40px;
+}
+@media(min-width:600px) { .employers-grid { grid-template-columns:1fr 1fr; } }
+.employer-item {
+  background:#1e3a3e; padding:22px 24px;
+  display:flex; align-items:flex-start; gap:14px;
+  transition:background 0.2s;
+}
+.employer-item:hover { background:rgba(255,255,255,0.05); }
+.employer-item-icon {
+  width:36px; height:36px; border-radius:8px;
+  background:rgba(201,169,110,0.15); border:1px solid rgba(201,169,110,0.3);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; font-size:16px;
+}
+.employer-item-text strong {
+  display:block; font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;
+}
+.employer-item-text span {
+  font-size:12px; color:rgba(255,255,255,0.5); line-height:1.5;
+}
+.paga-alert {
+  background:rgba(201,169,110,0.12); border:1px solid rgba(201,169,110,0.35);
+  border-radius:10px; padding:20px 24px; margin-bottom:32px;
+  display:flex; gap:16px; align-items:flex-start;
+}
+.paga-alert-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+.paga-alert p { font-size:14px; color:rgba(255,255,255,0.85); line-height:1.65; }
+.paga-alert p strong { color:#c9a96e; }
 
-  .employers-section { padding:28px 24px; background:#f7f5f0; border-bottom:1px solid #e5e0d8; }
-  .employers-section h2 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:14px; }
-  .employers-section p { font-size:14px; line-height:1.65; color:#444; margin-bottom:16px; }
-  .employers-list { list-style:none; margin:14px 0 16px; }
-  .employers-list li { padding:9px 0; border-bottom:1px solid #e5e0d8; font-size:14px; color:#333; display:flex; align-items:center; gap:10px; }
-  .employers-list li:last-child { border-bottom:none; }
-  .employers-list li::before { content:"✓"; color:#b9986a; font-weight:900; font-size:14px; flex-shrink:0; }
-  .employers-highlight { font-size:13px; line-height:1.6; color:#1b2a35; background:#fff3db; border-left:3px solid #b9986a; padding:10px 14px; margin-bottom:18px; border-radius:0 4px 4px 0; }
+/* EMPLOYER FAQ */
+.employer-faq { margin-top:48px; }
+.employer-faq h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:28px; font-weight:800; color:#fff;
+  text-transform:uppercase; letter-spacing:-0.5px; margin-bottom:24px;
+}
+.faq-item { border-bottom:1px solid rgba(255,255,255,0.1); }
+.faq-question {
+  width:100%; background:none; border:none; text-align:left;
+  padding:18px 0; font-family:'Barlow',sans-serif; font-size:15px;
+  font-weight:600; color:rgba(255,255,255,0.85); cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  transition:color 0.15s;
+}
+.faq-question:hover { color:#fff; }
+.faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
+.faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+.faq-answer p { font-size:14px; line-height:1.75; color:rgba(255,255,255,0.6); padding-bottom:20px; margin:0; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-item.open .faq-question { color:#fff; }
 
-  .employees-section { padding:28px 24px; background:#fff; border-bottom:1px solid #e5e0d8; }
-  .employees-section h2 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#1b2a35; text-transform:uppercase; margin-bottom:14px; }
-  .employees-section p { font-size:14px; line-height:1.65; color:#444; margin-bottom:16px; }
-  .employees-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; margin:14px 0 16px; }
-  .employees-grid span, .employees-grid a { padding:9px 8px 9px 0; border-bottom:1px solid #eee; font-size:13px; color:#333; display:flex; align-items:center; gap:8px; text-decoration:none; }
-  .employees-grid span::before, .employees-grid a::before { content:"→"; color:#b9986a; font-weight:900; font-size:12px; flex-shrink:0; }
-  .employees-grid a:hover { color:#b9986a; }
+/* EMPLOYEES SECTION */
+.employees-section {
+  background:#fbf6ef; padding:64px 28px;
+}
+@media(min-width:769px) { .employees-section { padding:80px 80px; } }
+.employees-section .section-eyebrow { color:#1e3a3e; }
+.employees-section .section-eyebrow::before { background:#1e3a3e; }
+.employees-section h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 6vw, 64px); font-weight:900; line-height:0.95;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:24px;
+}
+.employees-section h2 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.72em;
+}
+.employees-section > p {
+  font-size:17px; color:#5a6e70; max-width:560px;
+  line-height:1.75; margin-bottom:40px;
+}
+.contingency-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#1e3a3e; color:#fff; font-size:12px; font-weight:700;
+  letter-spacing:0.5px; padding:8px 16px; border-radius:20px;
+  margin-bottom:40px;
+}
+.contingency-badge::before { content:'✓'; color:#c9a96e; }
+.employees-claims {
+  display:grid; grid-template-columns:1fr;
+  gap:12px; margin-bottom:40px;
+}
+@media(min-width:600px) { .employees-claims { grid-template-columns:1fr 1fr; } }
+.claim-card {
+  background:#fff; border:1px solid #e8e3da; border-radius:10px;
+  padding:20px 22px; text-decoration:none;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:border-color 0.2s, box-shadow 0.2s;
+}
+.claim-card:hover { border-color:#c9a96e; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+.claim-card-text strong { display:block; font-size:14px; font-weight:700; color:#1e3a3e; margin-bottom:3px; }
+.claim-card-text span { font-size:12px; color:#8a9e9f; }
+.claim-card-arrow { color:#c9a96e; font-size:18px; flex-shrink:0; }
 
-  .cta-inline { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:13px; padding:11px 20px; border-radius:6px; text-decoration:none; margin-top:4px; }
+/* EMPLOYEE FAQ */
+.employee-faq {
+  background:#fff; padding:64px 28px;
+}
+@media(min-width:769px) { .employee-faq { padding:80px 80px; max-width:900px; margin:0 auto; } }
+.employee-faq h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(28px, 4vw, 44px); font-weight:900;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-0.5px; margin-bottom:32px;
+}
+.employee-faq .faq-item { border-bottom:1px solid #e8e3da; }
+.employee-faq .faq-question { color:#1e3a3e; }
+.employee-faq .faq-question:hover { color:#1e3a3e; opacity:0.75; }
+.employee-faq .faq-question .faq-icon { color:#c9a96e; }
+.employee-faq .faq-item.open .faq-question { color:#1e3a3e; }
+.employee-faq .faq-answer p { color:#5a6e70; }
 
-  /* Testimonials */
-  .emp-testimonials { padding:36px 24px; background:#f7f5f0; }
-  .emp-testimonials .section-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#b9986a; font-weight:700; border-left:3px solid #b9986a; padding-left:8px; margin-bottom:12px; }
-  .emp-testimonials h2 { font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:700; color:#1b2a35; margin-bottom:20px; }
-  .emp-carousel { overflow:hidden; }
-  .emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
-  .emp-test-card { min-width:100%; box-sizing:border-box; background:#fff; border-radius:8px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
-  .emp-test-card .review-label { display:block; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#b9986a; margin-bottom:10px; }
-  .emp-test-card .quote { font-size:14px; line-height:1.7; color:#444; font-style:italic; margin-bottom:12px; display:block; }
-  .emp-test-card .author { font-size:12px; font-weight:700; color:#1b2a35; }
-  .emp-carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:16px; }
-  .emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(27,42,53,0.2); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
-  .emp-dot.active { background:#b9986a; }
-  @media(min-width:769px) { .emp-testimonials { padding:60px 60px; max-width:900px; margin:0 auto; } }
+/* TESTIMONIALS */
+.emp-testimonials {
+  background:#1e3a3e; padding:64px 28px;
+}
+@media(min-width:769px) { .emp-testimonials { padding:80px 80px; } }
+.emp-testimonials .section-eyebrow { color:#c9a96e; }
+.emp-testimonials h2 {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(28px, 4vw, 42px); font-weight:400; font-style:italic;
+  color:#fff; margin-bottom:36px;
+}
+.emp-carousel { overflow:hidden; }
+.emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.emp-test-card {
+  min-width:100%; box-sizing:border-box;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px; padding:32px;
+}
+.emp-test-card .stars { color:#c9a96e; font-size:14px; margin-bottom:16px; letter-spacing:2px; }
+.emp-test-card .quote {
+  font-size:16px; line-height:1.8; color:rgba(255,255,255,0.85);
+  font-style:italic; font-family:'DM Serif Display',serif;
+  margin-bottom:20px; display:block;
+}
+.emp-test-card .author { font-size:12px; font-weight:700; color:#c9a96e; letter-spacing:1px; text-transform:uppercase; }
+.emp-carousel-dots { display:flex; gap:8px; margin-top:24px; }
+.emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.2); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
+.emp-dot.active { background:#c9a96e; }
 
-  /* FAQ Section */
-  .faq-section { padding:40px 24px; background:#fff; }
-  .employers-section .faq-section { background:transparent; padding:32px 0 0; }
-  .employers-section .faq-question { font-family:'Barlow',sans-serif; font-size:14px; }
-  .employers-section .faq-answer p { font-size:13px; }
-  .faq-section h2 { font-family:'Cormorant Garamond',Georgia,serif; font-size:26px; font-weight:700; color:#1b2a35; text-align:center; margin-bottom:28px; }
-  .faq-item { border-bottom:1px solid #e5e0d8; }
-  .faq-question { width:100%; background:none; border:none; text-align:left; padding:18px 0; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; color:#1b2a35; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-  .faq-question .faq-icon { font-size:20px; color:#b9986a; flex-shrink:0; transition:transform 0.3s; }
-  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
-  .faq-answer p { font-size:14px; line-height:1.7; color:#444; padding-bottom:18px; margin:0; }
-  .faq-item.open .faq-icon { transform:rotate(45deg); }
-  @media(min-width:769px){
-    .faq-section { max-width:800px; margin:0 auto; padding:60px 40px; }
-    .faq-section h2 { font-size:32px; }
-    .faq-question { font-size:16px; }
-    .faq-answer p { font-size:15px; }
-  }
-
-  .cta-banner { background:#1b2a35; color:#fff; padding:32px 24px; text-align:center; }
-  .cta-banner p { font-size:13px; color:rgba(255,255,255,0.8); margin-bottom:16px; line-height:1.6; }
-  .cta-banner .btn { display:inline-block; background:#b9986a; color:#fff; font-weight:bold; font-size:14px; padding:13px 26px; border-radius:6px; text-decoration:none; }
-
-  .maps-section { width:100%; line-height:0; }
-  @media(min-width:769px) { .maps-section iframe { height:400px; } }
+/* CTA BANNER */
+.cta-banner {
+  background:#fbf6ef; padding:72px 28px; text-align:center;
+  border-top:1px solid #e8e3da;
+}
+.cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(32px, 5vw, 52px); font-weight:900;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:12px;
+}
+.cta-banner h2 em {
+  font-style:italic; font-family:'DM Serif Display',serif;
+  font-weight:400; text-transform:none; color:#c9a96e;
+}
+.cta-banner p { font-size:16px; color:#5a6e70; margin-bottom:28px; line-height:1.65; }
+.cta-banner .btn-gold { font-size:15px; padding:15px 36px; }
 </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
+<nav class="nav">
+  <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Practice Areas</a>
+      <ul class="dropdown-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a href="#">Real Estate Litigation</a></li>
+        <li><a href="#">Contract Disputes</a></li>
+        <li><a href="#">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#team">Your Team</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+  <a href="#contact" class="contact-btn">Free Consultation →</a>
+  <a href="#contact" class="nav-contact-mobile">Consult →</a>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Practice Areas <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li><a href="#">Real Estate Litigation</a></li>
+        <li><a href="#">Contract Disputes</a></li>
+        <li><a href="#">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#team">Your Team</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="emp-hero">
+  <img class="emp-hero-img" src="employment-hero.png" alt="California employment law attorneys in Saratoga">
+  <div class="emp-hero-overlay"></div>
+  <div class="emp-hero-label">Employment Law · Saratoga, California</div>
+  <h1>California Employment Law Attorneys<em>in Saratoga.</em></h1>
+  <p class="emp-hero-sub">Representing businesses and employees throughout Silicon Valley &amp; the Bay Area.</p>
+  <div class="emp-hero-ctas">
+    <a href="#contact" class="btn-gold">Get My Free Consultation →</a>
+    <a href="#employers" class="btn-ghost">For Employers ↓</a>
+    <a href="#employees" class="btn-ghost">For Employees ↓</a>
+  </div>
+</section>
+
+<!-- AUDIENCE TABS -->
+<div class="audience-switch">
+  <a href="#employers" class="audience-tab employers">⚖ For Employers</a>
+  <a href="#employees" class="audience-tab employees">👤 For Employees</a>
+</div>
+
+<!-- EMPLOYERS SECTION -->
+<section class="employers-section" id="employers">
+  <div class="section-eyebrow">For Employers</div>
+  <h2>We Defend<em>California Employers.</em></h2>
+  <p>California has some of the strictest employment laws in the country. We help businesses of all sizes across Silicon Valley resolve claims fast and reduce future exposure.</p>
+
+  <div class="employers-grid">
+    <div class="employer-item">
+      <div class="employer-item-icon">🛡</div>
+      <div class="employer-item-text">
+        <strong>Wrongful Termination Defense</strong>
+        <span>Defend against at-will and FEHA-based claims</span>
+      </div>
+    </div>
+    <div class="employer-item">
+      <div class="employer-item-icon">⚠️</div>
+      <div class="employer-item-text">
+        <strong>PAGA Notice Response</strong>
+        <span>65-day window — act before it closes</span>
+      </div>
+    </div>
+    <div class="employer-item">
+      <div class="employer-item-icon">💼</div>
+      <div class="employer-item-text">
+        <strong>Wage &amp; Hour Disputes</strong>
+        <span>Overtime, meal breaks, classification issues</span>
+      </div>
+    </div>
+    <div class="employer-item">
+      <div class="employer-item-icon">🔒</div>
+      <div class="employer-item-text">
+        <strong>Retaliation Defense</strong>
+        <span>Protect against whistleblower and FEHA retaliation claims</span>
+      </div>
+    </div>
+    <div class="employer-item">
+      <div class="employer-item-icon">📋</div>
+      <div class="employer-item-text">
+        <strong>HR Policies &amp; Handbooks</strong>
+        <span>Compliant documentation that reduces liability</span>
+      </div>
+    </div>
+    <div class="employer-item">
+      <div class="employer-item-icon">📝</div>
+      <div class="employer-item-text">
+        <strong>Contracts &amp; Severance Agreements</strong>
+        <span>Draft, review, and enforce employment agreements</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paga-alert">
+    <div class="paga-alert-icon">⚡</div>
+    <p><strong>Received a PAGA notice?</strong> Time is critical — the 65-day response window starts immediately. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. <strong>Call us before you respond.</strong></p>
+  </div>
+
+  <a href="#contact" class="btn-gold">Get a Free Consultation →</a>
+
+  <div class="employer-faq">
+    <h3>Employer FAQs</h3>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What should I do if I receive a PAGA notice in California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Contact a California employment attorney immediately. PAGA notices trigger a 65-day window during which the LWDA can decide whether to investigate. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. Do not ignore the notice and do not retaliate against the employee who filed it. McLellan Law Group, LLP represents California employers in PAGA defense throughout Silicon Valley and the Bay Area.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I be sued for wrongful termination if I have an at-will employment policy?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes — and this is one of the biggest misconceptions California employers have. At-will employment is a starting point, not a shield. You cannot terminate someone for a reason that violates public policy, is based on a protected characteristic under FEHA, constitutes retaliation for protected activity, or breaches an implied contract created by your handbook or offer letter. Every termination should be documented and reviewed for risk before you act.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What is the difference between a PAGA claim and a class action?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>A class action requires court certification — a significant hurdle that can stop the case if denied. A PAGA claim does not: the employee acts on behalf of the State of California with no certification requirement. PAGA penalties are calculated per employee per pay period, 75% go to the State, and they cannot be fully eliminated through arbitration agreements. The 2024 reforms introduced new opportunities to limit exposure — making early legal strategy critical.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need an employment attorney to draft a severance agreement in California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>You are not legally required to, but getting it wrong is costly. For employees 40 or older, federal law requires specific timing and language. California requires a Civil Code §1542 waiver to release unknown claims. Recent state law changes restrict certain non-disparagement clauses. McLellan Law Group, LLP drafts and reviews severance agreements for California employers and advises employees and executives before they sign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYEES SECTION -->
+<section class="employees-section" id="employees">
+  <div class="section-eyebrow">For Employees</div>
+  <h2>We Fight for<em>Employee Rights.</em></h2>
+  <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you pay nothing unless we win.</p>
+  <div class="contingency-badge">Contingency Fee — You Pay Nothing Unless We Win</div>
+
+  <div class="employees-claims">
+    <a href="wrongful-termination.html" class="claim-card">
+      <div class="claim-card-text">
+        <strong>Wrongful Termination</strong>
+        <span>Fired unlawfully or in retaliation</span>
+      </div>
+      <span class="claim-card-arrow">→</span>
+    </a>
+    <a href="workplace-discrimination.html" class="claim-card">
+      <div class="claim-card-text">
+        <strong>Workplace Discrimination</strong>
+        <span>Race, gender, age, disability, religion</span>
+      </div>
+      <span class="claim-card-arrow">→</span>
+    </a>
+    <a href="sexual-harassment.html" class="claim-card">
+      <div class="claim-card-text">
+        <strong>Sexual Harassment</strong>
+        <span>Hostile work environment &amp; quid pro quo</span>
+      </div>
+      <span class="claim-card-arrow">→</span>
+    </a>
+    <a href="retaliation.html" class="claim-card">
+      <div class="claim-card-text">
+        <strong>Retaliation</strong>
+        <span>Punished for reporting violations</span>
+      </div>
+      <span class="claim-card-arrow">→</span>
+    </a>
+    <a href="unpaid-wages.html" class="claim-card">
+      <div class="claim-card-text">
+        <strong>Unpaid Wages &amp; Overtime</strong>
+        <span>Wage theft, missed breaks, classification</span>
+      </div>
+      <span class="claim-card-arrow">→</span>
+    </a>
+    <a href="paga-claims.html" class="claim-card">
+      <div class="claim-card-text">
+        <strong>PAGA Claims</strong>
+        <span>Act on behalf of yourself and coworkers</span>
+      </div>
+      <span class="claim-card-arrow">→</span>
+    </a>
+  </div>
+
+  <a href="#contact" class="btn-gold">Free Case Evaluation →</a>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="emp-testimonials">
+  <div class="section-eyebrow">Client Reviews</div>
+  <h2>What Our Clients Say</h2>
+  <div class="emp-carousel" id="empCarousel">
+    <div class="emp-carousel-track" id="empTrack">
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
+        <span class="author">— Benjamin · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
+        <span class="author">— Pete · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
+        <span class="author">— Anonymous · Employment Law</span>
+      </div>
+    </div>
+  </div>
+  <div class="emp-carousel-dots" id="empDots">
+    <button class="emp-dot active" onclick="goToEmp(0)"></button>
+    <button class="emp-dot" onclick="goToEmp(1)"></button>
+    <button class="emp-dot" onclick="goToEmp(2)"></button>
+  </div>
+</section>
+
+<!-- EMPLOYEE FAQ -->
+<section class="employee-faq">
+  <h2>Employee FAQs</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Do you handle employment cases in Saratoga, California?
+      <span class="faq-icon">+</span>
     </button>
-    <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
-    <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Practice Areas</a>
-        <ul class="dropdown-menu">
-          <li><a href="employment-law.html" class="featured">Employment Law</a></li>
-          <li><a href="#business-litigation" class="featured">Business Litigation</a></li>
-          <li class="dropdown-divider"></li>
-          <li><a href="#appeals">Appeals</a></li>
-          <li><a href="#real-estate">Real Estate Litigation</a></li>
-          <li><a href="#contract-disputes">Contract Disputes</a></li>
-          <li><a href="#elder-abuse">Financial Elder Abuse</a></li>
-          <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
-        </ul>
-      </li>
-      <li><a href="index.html#team">Your Team</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-    <a href="#contact" class="contact-btn">CONTACT</a>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li class="mobile-accordion">
-        <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
-          Practice Areas <span class="mobile-accordion-arrow">›</span>
-        </button>
-        <ul class="mobile-accordion-menu">
-          <li><a href="employment-law.html" class="featured">Employment Law</a></li>
-          <li><a href="#business-litigation" class="featured">Business Litigation</a></li>
-          <li><a href="#appeals">Appeals</a></li>
-          <li><a href="#real-estate">Real Estate Litigation</a></li>
-          <li><a href="#contract-disputes">Contract Disputes</a></li>
-          <li><a href="#elder-abuse">Financial Elder Abuse</a></li>
-          <li><a href="#trust-probate">Trust &amp; Probate Litigation</a></li>
-        </ul>
-      </li>
-      <li><a href="index.html#team">Your Team</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-  </div>
-
-  <div class="hero">
-    <img class="hero-img" src="employment-hero.png" alt="California employment law attorneys in Saratoga">
-    <div class="hero-overlay"></div>
-    <div class="hero-overlay-warm"></div>
-    <div class="hero-frame"></div>
-    <div class="section-label-hero">Employment Law · Saratoga, California</div>
-    <div class="hero-content">
-      <h1>California Employment Law Attorneys in Saratoga</h1>
-      <p class="sub">Representing businesses and employees throughout Silicon Valley &amp; the Bay Area.</p>
-      <a href="#contact" class="cta-inline">Request a Free Consultation</a>
+    <div class="faq-answer">
+      <p>Yes. McLellan Law Group is based in Saratoga, CA and represents employees and employers throughout Silicon Valley, Santa Clara County, and the Bay Area.</p>
     </div>
   </div>
 
-  <div class="audience-btns">
-    <a href="#employers" class="audience-btn employers">Employers <span>↗</span></a>
-    <a href="#employees" class="audience-btn employees">Employees <span>↗</span></a>
-  </div>
-
-  <div class="employers-section" id="employers">
-    <div class="section-label">For Employers</div>
-    <h2>We Defend California Employers</h2>
-    <p>California has some of the strictest employment laws in the country. We help businesses of all sizes across Silicon Valley resolve claims fast and reduce future exposure.</p>
-    <ul class="employers-list">
-      <li>Wrongful termination &amp; discrimination defense</li>
-      <li>PAGA notice response &amp; defense</li>
-      <li>Wage &amp; hour dispute resolution</li>
-      <li>Retaliation claim defense</li>
-      <li>HR policy reviews &amp; employee handbooks</li>
-      <li>Employment contracts &amp; severance agreements</li>
-    </ul>
-    <p class="employers-highlight">Received a PAGA notice? Time is critical — the 65-day response window starts immediately. <strong>Call us before you respond.</strong></p>
-    <div style="text-align:center; margin-top:8px;"><a href="#contact" class="cta-inline">Get a Free Consultation</a></div>
-
-    <section class="faq-section" style="padding:32px 0 0; background:transparent;">
-      <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; color:#1b2a35; margin-bottom:20px; text-align:left;">Employer FAQs</h2>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What should I do if I receive a PAGA notice in California?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Contact a California employment attorney immediately. PAGA notices trigger a 65-day window during which the LWDA can decide whether to investigate. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. Do not ignore the notice and do not retaliate against the employee who filed it. McLellan Law Group, LLP represents California employers in PAGA defense throughout Silicon Valley and the Bay Area.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Can I be sued for wrongful termination if I have an at-will employment policy?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Yes — and this is one of the biggest misconceptions California employers have. At-will employment is a starting point, not a shield. You cannot terminate someone for a reason that violates public policy, is based on a protected characteristic under FEHA, constitutes retaliation for protected activity, or breaches an implied contract created by your handbook or offer letter. Every termination should be documented and reviewed for risk before you act.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What is the difference between a PAGA claim and a class action?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>A class action requires court certification — a significant hurdle that can stop the case if denied. A PAGA claim does not: the employee acts on behalf of the State of California with no certification requirement. PAGA penalties are calculated per employee per pay period, 75% go to the State, and they cannot be fully eliminated through arbitration agreements. The 2024 reforms introduced new opportunities to limit exposure — making early legal strategy critical.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Do I need an employment attorney to draft a severance agreement in California?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>You are not legally required to, but getting it wrong is costly. For employees 40 or older, federal law requires specific timing and language. California requires a Civil Code §1542 waiver to release unknown claims. Recent state law changes restrict certain non-disparagement clauses. McLellan Law Group, LLP drafts and reviews severance agreements for California employers and advises employees and executives before they sign.</p>
-        </div>
-      </div>
-
-    </section>
-  </div>
-
-  <div class="employees-section" id="employees">
-    <div class="section-label">For Employees</div>
-    <h2>We Fight for Employee Rights</h2>
-    <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley on a contingency basis — you pay nothing unless we win.</p>
-    <div class="employees-grid">
-      <a href="wrongful-termination.html">Wrongful termination</a>
-      <a href="workplace-discrimination.html">Workplace discrimination</a>
-      <a href="sexual-harassment.html">Sexual harassment</a>
-      <a href="retaliation.html">Retaliation for reporting violations</a>
-      <a href="unpaid-wages.html">Unpaid wages &amp; overtime</a>
-      <a href="paga-claims.html">PAGA claims</a>
-    </div>
-    <div style="text-align:center; margin-top:8px;"><a href="#contact" class="cta-inline">Free Case Evaluation</a></div>
-  </div>
-
-  <!-- Testimonials -->
-  <div class="emp-testimonials">
-    <div class="section-label">Client Reviews</div>
-    <h2>What Our Clients Say</h2>
-    <div class="emp-carousel" id="empCarousel">
-      <div class="emp-carousel-track" id="empTrack">
-        <div class="emp-test-card">
-          <span class="review-label">Employment Law · Saratoga</span>
-          <p class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</p>
-          <span class="author">— Benjamin</span>
-        </div>
-        <div class="emp-test-card">
-          <span class="review-label">Employment Law · Saratoga</span>
-          <p class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</p>
-          <span class="author">— Pete</span>
-        </div>
-        <div class="emp-test-card">
-          <span class="review-label">Employment Law · Saratoga</span>
-          <p class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Throughout her personal and team efforts, Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution to an unfolding disruptive and stressful situation. Much appreciation and gratitude."</p>
-          <span class="author">— Anonymous</span>
-        </div>
-      </div>
-    </div>
-    <div class="emp-carousel-dots" id="empDots">
-      <button class="emp-dot active" onclick="goToEmp(0)"></button>
-      <button class="emp-dot" onclick="goToEmp(1)"></button>
-      <button class="emp-dot" onclick="goToEmp(2)"></button>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What employment law cases do you handle?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>We handle wrongful termination, workplace discrimination, sexual harassment, retaliation, wage and hour violations, PAGA claims, and other employment disputes under California and federal law.</p>
     </div>
   </div>
 
-  <script>
-    (function(){
-      var track = document.getElementById('empTrack');
-      var dots = document.querySelectorAll('#empDots .emp-dot');
-      var current = 0, total = 3, startX = 0, timer;
-      function goToEmp(n){
-        current = (n + total) % total;
-        track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
-      }
-      window.goToEmp = goToEmp;
-      function next(){ goToEmp(current+1); }
-      timer = setInterval(next, 5000);
-      var el = document.getElementById('empCarousel');
-      el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
-      el.addEventListener('touchend', function(e){
-        var dx = e.changedTouches[0].clientX - startX;
-        if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
-        timer = setInterval(next, 5000);
-      }, {passive:true});
-    })();
-  </script>
-
-  <!-- Employee FAQ Section -->
-  <section class="faq-section">
-    <h2>Employee FAQs</h2>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do you handle employment cases in Saratoga, California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. McLellan Law Group is based in Saratoga, CA and represents employees and employers throughout Silicon Valley, Santa Clara County, and the Bay Area.</p>
-      </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      How much does it cost to speak with an employment attorney?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>We offer a free initial consultation. Many employee-side cases are handled on a contingency fee basis, meaning you pay nothing unless we recover for you. Contact us to discuss your situation.</p>
     </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What employment law cases do you handle?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>We handle wrongful termination, workplace discrimination, sexual harassment, retaliation, wage and hour violations, PAGA claims, and other employment disputes under California and federal law.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do you represent both employers and employees?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. We represent both employers defending against claims and employees pursuing their rights under California employment law.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How much does it cost to speak with an employment attorney?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>We offer a free initial consultation. Many employee-side cases are handled on a contingency fee basis, meaning you pay nothing unless we recover for you. Contact us to discuss your situation.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should I do if I was paid late?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Document the late payment dates and any communications about the delay. California law requires prompt wage payments — late payments can entitle you to penalties. You may file a complaint with the California Labor Commissioner or consult an attorney to understand your remedies.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What are waiting time penalties?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Waiting time penalties apply when an employer willfully fails to pay final wages on time. Under California law, penalties accrue daily at the employee's regular rate of pay for up to 30 days. If your final wages were delayed after termination or resignation, you may be entitled to this additional compensation.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should I do after I've been fired?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Document everything — your termination notice, communications, and the circumstances surrounding the decision. California law protects employees from wrongful termination. If you believe the firing was unlawful, consult an employment attorney promptly to preserve your rights and evaluate your options.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should I do if I'm laid off?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Request written notice of your layoff and review any documents your employer asks you to sign. You may be entitled to final wages, accrued vacation pay, and WARN Act protections if the layoff involves a large workforce reduction. An attorney can help you assess whether the layoff was handled lawfully.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        I received a severance agreement from my former employer. Should I sign it?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Do not sign without legal review. Severance agreements typically waive your right to sue — including claims you may not yet be aware of. California law and federal law impose strict requirements around timing and language, especially for employees 40 or older. McLellan Law Group reviews severance agreements for employees and executives throughout Silicon Valley.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should I do if I'm demoted at work?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Document the demotion and any explanation provided by your employer. If the demotion followed protected activity — such as reporting harassment or taking medical leave — it may constitute unlawful retaliation. A demotion based on a protected characteristic under FEHA may also give rise to a discrimination claim.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should I do if I've been discriminated against at work?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Document incidents with dates, witnesses, and any written communications. Report the conduct through your employer's internal complaint process if safe to do so. California's FEHA prohibits discrimination based on race, gender, age, disability, religion, sexual orientation, and other protected characteristics. Contact an employment attorney to evaluate your case.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <div class="cta-banner" id="contact">
-    <p>Based in Saratoga and serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
-    <a href="https://www.mclellanlawgroup.com/contact" class="btn">Request a Free Consultation</a>
   </div>
 
-
-  <!-- Google Maps -->
-  <div class="maps-section">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1"
-      width="100%" height="300" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group — 20665 4th St #202, Saratoga, CA 95070">
-    </iframe>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What should I do if I was paid late?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Document the late payment dates and any communications about the delay. California law requires prompt wage payments — late payments can entitle you to penalties. You may file a complaint with the California Labor Commissioner or consult an attorney to understand your remedies.</p>
+    </div>
   </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What are waiting time penalties?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Waiting time penalties apply when an employer willfully fails to pay final wages on time. Under California law, penalties accrue daily at the employee's regular rate of pay for up to 30 days. If your final wages were delayed after termination or resignation, you may be entitled to this additional compensation.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What should I do after I've been fired?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Document everything — your termination notice, communications, and the circumstances surrounding the decision. California law protects employees from wrongful termination. If you believe the firing was unlawful, consult an employment attorney promptly to preserve your rights and evaluate your options.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      I received a severance agreement. Should I sign it?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Do not sign without legal review. Severance agreements typically waive your right to sue — including claims you may not yet be aware of. California law and federal law impose strict requirements around timing and language, especially for employees 40 or older. McLellan Law Group reviews severance agreements for employees and executives throughout Silicon Valley.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      What should I do if I've been discriminated against at work?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Document incidents with dates, witnesses, and any written communications. Report the conduct through your employer's internal complaint process if safe to do so. California's FEHA prohibits discrimination based on race, gender, age, disability, religion, sexual orientation, and other protected characteristics. Contact an employment attorney to evaluate your case.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <h2>Ready to Talk?<br><em>We're Here.</em></h2>
+  <p>Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://www.mclellanlawgroup.com/contact" class="btn-gold">Request a Free Consultation →</a>
+</section>
+
 <script>
 function toggleFaq(btn) {
   var item = btn.parentElement;
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
-  // close all
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
@@ -590,6 +796,27 @@ function toggleFaq(btn) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+(function(){
+  var track = document.getElementById('empTrack');
+  var dots = document.querySelectorAll('#empDots .emp-dot');
+  var current = 0, total = 3, startX = 0, timer;
+  function goToEmp(n){
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  window.goToEmp = goToEmp;
+  function next(){ goToEmp(current+1); }
+  timer = setInterval(next, 5000);
+  var el = document.getElementById('empCarousel');
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+    timer = setInterval(next, 5000);
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
