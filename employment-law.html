@@ -267,10 +267,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .employers-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:1px; background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.08); border-radius:16px;
+  gap:2px; background:rgba(255,255,255,0.25);
+  border:2px solid rgba(255,255,255,0.25); border-radius:16px;
   overflow:hidden; margin-bottom:40px;
 }
+.employees-section .employers-grid { background:rgba(30,58,62,0.2); border-color:rgba(30,58,62,0.2); }
 .employer-item {
   background:#1e3a3e; padding:32px 28px;
   display:flex; align-items:flex-start; gap:18px;
@@ -332,7 +333,6 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-family:'DM Serif Display',serif; font-weight:400;
   text-transform:none; color:#c9a96e; font-size:0.72em;
 }
-.employees-section .employers-grid { background:rgba(30,58,62,0.08); border-color:rgba(30,58,62,0.12); }
 .employees-section .employer-item { background:#fbf6ef; }
 .employees-section .employer-item:hover { background:#f3ece0; }
 .employees-section .employer-item-text strong { color:#1e3a3e; }
