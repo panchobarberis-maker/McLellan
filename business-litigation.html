@@ -372,6 +372,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 .maps-section { width:100%; line-height:0; }
 @media(min-width:769px) { .maps-section iframe { height:400px; } }
+/* GOLD BUTTON SHINE */
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+.btn-gold, .cta-inline, .cta-banner .btn, .contact-btn, .nav-contact-mobile {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+
 </style>
 </head>
 <body>
