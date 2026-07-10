@@ -263,6 +263,16 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   .blog-card.featured { flex-direction:column; }
   .blog-card.featured .blog-card-img-placeholder { width:100%; min-width:unset; aspect-ratio:16/9; }
 }
+
+/* HERO VIDEO */
+.video-mobile { display:none; }
+@media(max-width:768px) {
+  .video-desktop { display:none; }
+  .video-mobile { display:block; }
+}
+
+.page-hero-bg video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
 </style>
 </head>
 <body>
@@ -322,7 +332,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg"></div>
+  <div class="page-hero-bg"><video class=" video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video><video class=" video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video></div>
   <div class="page-hero-overlay"></div>
   <div class="eyebrow">Legal Insights</div>
   <h1>Resources &<br>Perspectives</h1>
