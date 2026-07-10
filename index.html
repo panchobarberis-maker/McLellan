@@ -212,8 +212,25 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .about-inner { max-width:960px; margin:0 auto; text-align:center; }
 .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#c9a96e; font-weight:600; margin-bottom:24px; }
 .eyebrow::before, .eyebrow::after { content:''; flex:1; height:1px; background:#c9a96e; opacity:0.5; width:32px; }
-.about h2 { font-family:'Barlow Condensed',sans-serif; font-size:72px; font-weight:800; color:#1e3a3e; line-height:1.05; margin-bottom:24px; letter-spacing:-2px; text-transform:uppercase; }
-.about h2 em { font-style:italic; color:#c9a96e; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; }
+@keyframes titleReveal {
+  0%   { opacity:0; transform:translateY(48px) skewY(2deg); }
+  100% { opacity:1; transform:translateY(0) skewY(0); }
+}
+@keyframes goldShimmer {
+  0%   { background-position:-300% center; }
+  100% { background-position:300% center; }
+}
+.about h2 { font-family:'Barlow Condensed',sans-serif; font-size:72px; font-weight:800; color:#1e3a3e; line-height:1.05; margin-bottom:24px; letter-spacing:-2px; text-transform:uppercase; overflow:hidden; }
+.about-line1 { display:inline-block; opacity:0; }
+.about-line2 { display:inline-block; opacity:0; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; letter-spacing:-1px; }
+.about-title.revealed .about-line1 { animation:titleReveal 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s forwards; }
+.about-title.revealed .about-line2 {
+  animation:titleReveal 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
+  background:linear-gradient(90deg, #c9a96e 0%, #f0d898 30%, #c9a96e 50%, #b8933a 70%, #e8cc8a 85%, #c9a96e 100%);
+  background-size:300% auto;
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 .about p { font-size:17px; line-height:1.85; color:#3a5254; font-weight:500; max-width:780px; margin:0 auto; }
 
 /* ══ PRACTICES ══ */
@@ -435,7 +452,10 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 <section class="about">
   <div class="about-inner">
     <div class="eyebrow fade">Who We Are</div>
-    <h2 class="fade fade-d1">Award-Winning.<br><em>Results-Driven.</em></h2>
+    <h2 class="about-title">
+      <span class="about-line1">Award-Winning.</span><br>
+      <em class="about-line2">Results-Driven.</em>
+    </h2>
     <p class="fade fade-d2">McLellan Law Group is a Saratoga-based litigation firm known for efficient strategy and tireless effort. We represent businesses, executives, and families in employment disputes, civil litigation, trust and probate matters, and more — delivering results across Silicon Valley and the Bay Area.</p>
   </div>
 </section>
@@ -604,6 +624,15 @@ function goToTeam(i){tc=i;updateTeam();}
 var tw=document.querySelector('.team-track-wrap'),tsx=0;
 tw.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX;},{passive:true});
 tw.addEventListener('touchend',function(e){if(Math.abs(tsx-e.changedTouches[0].clientX)>40)moveTeam(tsx>e.changedTouches[0].clientX?1:-1);},{passive:true});
+
+// About title reveal
+var titleObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('revealed'); titleObs.unobserve(e.target); }
+  });
+}, {threshold:0.3});
+var aboutTitle = document.querySelector('.about-title');
+if(aboutTitle) titleObs.observe(aboutTitle);
 </script>
 <script src="//cdn.lawbrokr.com/js/latest/lawbrokr.min.js" type="text/javascript"></script>
 <script>
