@@ -214,10 +214,10 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .eyebrow::before, .eyebrow::after { content:''; flex:1; height:1px; background:#c9a96e; opacity:0.5; width:32px; }
 @keyframes scrollRight { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 @keyframes scrollLeft  { from { transform:translateX(-50%); } to { transform:translateX(0); } }
-.marquee-wrap { overflow:hidden; margin-bottom:32px; }
+.marquee-wrap { overflow:hidden; margin-bottom:32px; display:flex; flex-direction:column; gap:8px; }
 .marquee-row { display:flex; width:max-content; }
-.marquee-right .marquee-track { display:flex; align-items:center; animation:scrollRight 18s linear infinite; }
-.marquee-left  .marquee-track { display:flex; align-items:center; animation:scrollLeft  18s linear infinite; }
+.marquee-right .marquee-track { display:flex; align-items:center; animation:scrollLeft  30s linear infinite; }
+.marquee-left  .marquee-track { display:flex; align-items:center; animation:scrollRight 30s linear infinite; }
 .marquee-track span, .marquee-track em {
   font-family:'Barlow Condensed',sans-serif; font-size:clamp(48px,8vw,100px);
   font-weight:800; letter-spacing:-2px; text-transform:uppercase;
