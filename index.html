@@ -626,13 +626,20 @@ tw.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX;},{passive
 tw.addEventListener('touchend',function(e){if(Math.abs(tsx-e.changedTouches[0].clientX)>40)moveTeam(tsx>e.changedTouches[0].clientX?1:-1);},{passive:true});
 
 // About title reveal
-var titleObs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){ e.target.classList.add('revealed'); titleObs.unobserve(e.target); }
-  });
-}, {threshold:0.3});
 var aboutTitle = document.querySelector('.about-title');
-if(aboutTitle) titleObs.observe(aboutTitle);
+if(aboutTitle){
+  var titleObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); titleObs.unobserve(e.target); }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+  titleObs.observe(aboutTitle);
+  // Fire immediately if already in view on load
+  setTimeout(function(){
+    var r = aboutTitle.getBoundingClientRect();
+    if(r.top < window.innerHeight){ aboutTitle.classList.add('revealed'); titleObs.unobserve(aboutTitle); }
+  }, 100);
+}
 </script>
 <script src="//cdn.lawbrokr.com/js/latest/lawbrokr.min.js" type="text/javascript"></script>
 <script>
