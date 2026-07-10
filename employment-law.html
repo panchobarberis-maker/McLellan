@@ -466,6 +466,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   .video-mobile { display:block; }
 }
 
+
+/* VIDEO TINT (match home opacity) */
+.hero-overlay::before, .emp-hero-overlay::before {
+  content:''; position:absolute; inset:0;
+  background:rgba(20,48,52,0.55);
+}
+
 </style>
 </head>
 <body>
