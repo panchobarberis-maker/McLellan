@@ -214,7 +214,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .eyebrow::before, .eyebrow::after { content:''; flex:1; height:1px; background:#c9a96e; opacity:0.5; width:32px; }
 @keyframes scrollRight { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 @keyframes scrollLeft  { from { transform:translateX(-50%); } to { transform:translateX(0); } }
-.marquee-wrap { overflow:hidden; margin-bottom:32px; display:flex; flex-direction:column; gap:8px; }
+.marquee-wrap { overflow:hidden; margin-bottom:32px; display:flex; flex-direction:column; gap:8px; margin-left:calc(-50vw + 50%); width:100vw; }
 .marquee-row { display:flex; width:max-content; }
 .marquee-right .marquee-track { display:flex; align-items:center; animation:scrollLeft  30s linear infinite; }
 .marquee-left  .marquee-track { display:flex; align-items:center; animation:scrollRight 30s linear infinite; }
