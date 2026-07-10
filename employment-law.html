@@ -473,6 +473,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   background:rgba(20,48,52,0.55);
 }
 
+
+/* FAQ 2-column table layout on desktop */
+@media(min-width:769px) {
+  .employer-faq { display:grid; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+  .employer-faq h3 { grid-column:1 / -1; }
+}
+
 </style>
 </head>
 <body>
