@@ -253,6 +253,13 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .maps-section { width:100%; line-height:0; }
 .maps-section iframe { width:100%; height:340px; border:0; display:block; }
 @media(min-width:769px) { .maps-section iframe { height:440px; } }
+
+/* Hours + Expect en un renglon (desktop) */
+@media(min-width:900px) {
+  .contact-info { display:grid !important; grid-template-columns:1fr 1fr !important; gap:20px !important; align-items:stretch !important; }
+  .info-card-visit { grid-column:1 / -1 !important; }
+}
+
 </style>
 </head>
 <body>
