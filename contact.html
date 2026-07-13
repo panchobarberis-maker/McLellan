@@ -157,7 +157,8 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 @media(min-width:900px) {
   .contact-main { padding:88px 48px; }
   .contact-main-inner { grid-template-columns:1fr; gap:36px; max-width:1240px; }
-  .contact-info { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; align-items:stretch; }
+  .contact-info { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch; }
+  .info-card-visit { grid-column:1 / -1; }
   .contact-form-card { display:flex; flex-direction:column; align-items:center; text-align:center; }
   .contact-form-card > p { max-width:560px; }
 }
@@ -342,16 +343,6 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
     <!-- INFO -->
     <div class="contact-info">
       <div class="info-card">
-        <div class="info-card-label">Visit Us</div>
-        <h3>Saratoga Office</h3>
-        <p style="margin-bottom:16px;">20665 4th St #202<br>Saratoga, CA 95070</p>
-        <iframe
-          src="https://www.google.com/maps?q=McLellan+Law+Group,+20665+4th+St+%23202,+Saratoga,+CA+95070&output=embed"
-          style="width:100%; height:220px; border:0; border-radius:12px; display:block;"
-          allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group on Google Maps"></iframe>
-      </div>
-      <div class="info-card">
         <div class="info-card-label">Office Hours</div>
         <h3>When We're Available</h3>
         <div class="info-hours">
@@ -368,6 +359,16 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
           <span class="mini-badge">Direct Attorney Access</span>
           <span class="mini-badge">Contingency Options</span>
         </div>
+      </div>
+      <div class="info-card info-card-visit">
+        <div class="info-card-label">Visit Us</div>
+        <h3>Saratoga Office</h3>
+        <p style="margin-bottom:16px;">20665 4th St #202<br>Saratoga, CA 95070</p>
+        <iframe
+          src="https://www.google.com/maps?q=McLellan+Law+Group,+20665+4th+St+%23202,+Saratoga,+CA+95070&output=embed"
+          style="width:100%; height:220px; border:0; border-radius:12px; display:block;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group on Google Maps"></iframe>
       </div>
     </div>
 
