@@ -271,16 +271,19 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .employers-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:2px; background:rgba(30,58,62,0.15);
-  border:2px solid rgba(30,58,62,0.15); border-radius:16px;
-  overflow:hidden; margin-bottom:40px;
+  gap:14px; background:transparent;
+  border:none; border-radius:0;
+  overflow:visible; margin-bottom:40px;
 }
-.employees-section .employers-grid { background:rgba(255,255,255,0.2); border-color:rgba(255,255,255,0.2); }
+.employees-section .employers-grid { background:transparent; }
 .employer-item {
   background:#fbf6ef; padding:32px 28px;
   display:flex; align-items:flex-start; gap:18px;
-  transition:background 0.2s;
+  transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
+  border:2px solid rgba(255,255,255,0.35); border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
 }
+.employer-item:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
 .employer-item:hover { background:#f3ece0; }
 .employer-item-icon { display:none; }
 .employer-item-text strong {
@@ -337,12 +340,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-family:'DM Serif Display',serif; font-weight:400;
   text-transform:none; color:#c9a96e; font-size:0.72em;
 }
-.employees-section .employer-item { background:#1e3a3e; }
+.employees-section .employer-item { background:#1e3a3e; border-color:rgba(30,58,62,0.4); box-shadow:0 3px 12px rgba(30,58,62,0.25); }
 .employees-section .employer-item:hover { background:rgba(255,255,255,0.05); }
 .employees-section .employer-item-text strong { color:#fff; }
 .employees-section .employer-item-text span { color:rgba(255,255,255,0.55); }
-.employees-section > p {
-  font-size:17px; color:#5a6e70; max-width:560px;
+.employees-section > p, .employees-intro-text p {
+  font-size:21px; color:#5a6e70; max-width:560px;
   line-height:1.75; margin-bottom:40px;
 }
 .contingency-badge {
@@ -387,20 +390,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 /* TESTIMONIALS */
 .emp-testimonials {
-  background:#1e3a3e; padding:64px 28px;
+  background:#fbf6ef; padding:64px 28px;
 }
 @media(min-width:769px) { .emp-testimonials { padding:80px 80px; } }
 .emp-testimonials .section-eyebrow { color:#c9a96e; }
 .emp-testimonials h2 {
   font-family:'DM Serif Display',serif;
   font-size:clamp(28px, 4vw, 42px); font-weight:400; font-style:italic;
-  color:#fff; margin-bottom:36px;
+  color:#1e3a3e; margin-bottom:36px;
 }
 .emp-carousel { overflow:hidden; }
 .emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
 .emp-test-card {
   min-width:100%; box-sizing:border-box;
-  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  background:#1e3a3e; border:1px solid rgba(30,58,62,0.2);
   border-radius:12px; padding:32px;
 }
 .emp-test-card .stars { color:#c9a96e; font-size:14px; margin-bottom:16px; letter-spacing:2px; }
@@ -411,7 +414,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .emp-test-card .author { font-size:12px; font-weight:700; color:#c9a96e; letter-spacing:1px; text-transform:uppercase; }
 .emp-carousel-dots { display:flex; gap:8px; margin-top:24px; }
-.emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.2); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
+.emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(30,58,62,0.25); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
 .emp-dot.active { background:#c9a96e; }
 
 /* CTA BANNER */
@@ -508,6 +511,14 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     display:block; width:100%; height:380px; object-fit:cover; object-position:center 20%; border-radius:16px;
     box-shadow:0 12px 40px rgba(0,0,0,0.12);
   }
+}
+
+
+/* Bigger section eyebrows on desktop */
+@media(min-width:769px) {
+  .section-eyebrow { font-size:18px; letter-spacing:4px; }
+  .section-eyebrow::before { width:40px; }
+  .why-us-eyebrow { font-size:18px; letter-spacing:4px; }
 }
 
 </style>
