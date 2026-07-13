@@ -544,6 +544,19 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   .cta-banner p { font-size:22px; }
 }
 
+
+/* EMPLOYERS INTRO con foto (desktop) */
+.employers-intro-img { display:none; }
+@media(min-width:769px) {
+  .employers-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; margin-bottom:8px; }
+  .employers-intro-img {
+    display:block; width:100%; height:380px; object-fit:cover;
+    object-position:center 20%; border-radius:16px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  }
+  .employers-section > p, .employers-intro-text p { font-size:21px; max-width:none; }
+}
+
 </style>
 </head>
 <body>
@@ -750,9 +763,14 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- EMPLOYERS SECTION -->
 <section class="employers-section" id="employers">
-  <div class="section-eyebrow">For Employers</div>
-  <h2>We Defend<em>California Employers.</em></h2>
-  <p>California has some of the strictest employment laws in the country. We help businesses of all sizes across Silicon Valley resolve claims fast and reduce future exposure.</p>
+  <div class="employers-intro">
+    <div class="employers-intro-text">
+      <div class="section-eyebrow">For Employers</div>
+      <h2>We Defend<em>California Employers.</em></h2>
+      <p>California has some of the strictest employment laws in the country. We help businesses of all sizes across Silicon Valley resolve claims fast and reduce future exposure.</p>
+    </div>
+    <img class="employers-intro-img" src="Foto estudio.png" alt="McLellan Law Group office in Saratoga">
+  </div>
 
   <div class="employers-grid">
     <div class="employer-item">
