@@ -228,15 +228,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .employers-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:2px; background:rgba(255,255,255,0.25);
-  border:2px solid rgba(255,255,255,0.25); border-radius:16px;
-  overflow:hidden; margin-bottom:40px;
+  gap:14px; background:transparent;
+  border:none; border-radius:0;
+  overflow:visible; margin-bottom:40px;
 }
 .employer-item {
   background:#fbf6ef; padding:32px 28px;
   display:flex; align-items:flex-start; gap:18px;
-  transition:background 0.2s;
+  transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
+  border:2px solid rgba(255,255,255,0.35); border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
 }
+.employer-item:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
 .employer-item:hover { background:#f3ece0; }
 .employer-item-text strong {
   display:block; font-size:17px; font-weight:700; color:#1e3a3e; margin-bottom:6px;
@@ -294,20 +297,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 /* TESTIMONIALS */
 .emp-testimonials {
-  background:#1e3a3e; padding:64px 28px;
+  background:#fbf6ef; padding:64px 28px;
 }
 @media(min-width:769px) { .emp-testimonials { padding:80px 80px; } }
 .emp-testimonials .section-eyebrow { color:#c9a96e; }
 .emp-testimonials h2 {
   font-family:'DM Serif Display',serif;
   font-size:clamp(28px, 4vw, 42px); font-weight:400; font-style:italic;
-  color:#fff; margin-bottom:36px;
+  color:#1e3a3e; margin-bottom:36px;
 }
 .emp-carousel { overflow:hidden; }
 .emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
 .emp-test-card {
   min-width:100%; box-sizing:border-box;
-  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  background:#1e3a3e; border:1px solid rgba(30,58,62,0.2);
   border-radius:12px; padding:32px;
 }
 .emp-test-card .stars { color:#c9a96e; font-size:14px; margin-bottom:16px; letter-spacing:2px; }
@@ -318,7 +321,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .emp-test-card .author { font-size:12px; font-weight:700; color:#c9a96e; letter-spacing:1px; text-transform:uppercase; }
 .emp-carousel-dots { display:flex; gap:8px; margin-top:24px; }
-.emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.2); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
+.emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(30,58,62,0.25); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
 .emp-dot.active { background:#c9a96e; }
 
 /* FAQ SECTION (light) */
@@ -441,6 +444,47 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .employees-section .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
 .employee-faq .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
 
+
+/* EMPLOYERS INTRO con foto (desktop) */
+.employers-intro-img { display:none; }
+@media(min-width:769px) {
+  .employers-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; margin-bottom:8px; }
+  .employers-intro-img {
+    display:block; width:100%; height:380px; object-fit:cover;
+    object-position:center 20%; border-radius:16px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  }
+}
+.employers-section .employers-intro-text p {
+  font-size:17px; color:rgba(255,255,255,0.75);
+  line-height:1.75; margin-bottom:40px;
+}
+
+/* Tipografía general más grande en desktop */
+@media(min-width:769px) {
+  .emp-hero-sub { font-size:20px !important; max-width:620px; }
+  .employers-section > p, .employers-intro-text p { font-size:21px !important; max-width:none; }
+  .employer-item-text strong { font-size:21px; }
+  .employer-item-text span { font-size:16px; }
+  .paga-alert p { font-size:17px; }
+  .detail-block p { font-size:19px; }
+  .faq-question { font-size:18px; padding:22px 0; }
+  .faq-answer p { font-size:16px; }
+  .employee-faq h2 { font-size:clamp(32px, 4vw, 48px); }
+  .section-eyebrow { font-size:18px; letter-spacing:4px; }
+  .section-eyebrow::before { width:40px; }
+  .why-us-eyebrow { font-size:18px; letter-spacing:4px; }
+}
+
+/* Titulos centrados */
+.emp-testimonials h2, .employee-faq h2, .why-us-title { text-align:center; }
+.emp-testimonials .section-eyebrow, .why-us-eyebrow {
+  display:flex; width:max-content;
+  margin-left:auto; margin-right:auto;
+}
+.employers-intro-text { text-align:left; }
+.employers-intro-text .section-eyebrow { margin-left:0; }
+
 </style>
 </head>
 <body>
@@ -511,9 +555,14 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- DISPUTES SECTION -->
 <section class="employers-section" id="disputes">
-  <div class="section-eyebrow">What We Handle</div>
-  <h2>Business Disputes<em>We Resolve.</em></h2>
-  <p>Business disputes threaten your company, your relationships, and your financial future. We represent California business owners, LLC members, shareholders, and executives throughout Silicon Valley — from contract breaches and fraud to partnership dissolutions and fiduciary claims.</p>
+  <div class="employers-intro">
+    <div class="employers-intro-text">
+      <div class="section-eyebrow">What We Handle</div>
+      <h2>Business Disputes<em>We Resolve.</em></h2>
+      <p>Business disputes threaten your company, your relationships, and your financial future. We represent California business owners, LLC members, shareholders, and executives throughout Silicon Valley — from contract breaches and fraud to partnership dissolutions and fiduciary claims.</p>
+    </div>
+    <img class="employers-intro-img" src="los 3.png" alt="McLellan Law Group attorneys">
+  </div>
 
   <div class="employers-grid">
     <div class="employer-item">
