@@ -485,6 +485,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .employers-intro-text { text-align:left; }
 .employers-intro-text .section-eyebrow { margin-left:0; }
 
+
+/* Detail sections: boxes verdes a todo el ancho */
+.detail-inner { max-width:1440px !important; }
+.detail-block {
+  background:#1e3a3e; border-radius:16px;
+  padding:40px 32px; margin-bottom:32px !important;
+  box-shadow:0 8px 28px rgba(0,0,0,0.12);
+}
+@media(min-width:769px) { .detail-block { padding:56px 64px; } }
+.detail-block h2 { color:#fff !important; }
+.detail-block p { color:rgba(255,255,255,0.8) !important; max-width:none !important; }
+.detail-block .section-eyebrow { color:#c9a96e !important; }
+.detail-block .section-eyebrow::before { background:#c9a96e !important; }
+
 </style>
 </head>
 <body>
