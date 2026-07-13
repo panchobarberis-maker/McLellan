@@ -509,6 +509,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .emp-dot { background:rgba(255,255,255,0.3) !important; }
 .emp-dot.active { background:#c9a96e !important; }
 
+
+/* FAQ en dos columnas y mas ancho */
+@media(min-width:769px) {
+  .employee-faq { max-width:1440px !important; }
+  .employee-faq .faq-list { display:grid; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+}
+
 </style>
 </head>
 <body>
@@ -687,6 +694,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <!-- FAQs -->
 <section class="employee-faq">
   <h2>Business Litigation FAQs</h2>
+  <div class="faq-list">
 
   <div class="faq-item">
     <button class="faq-question" onclick="toggleFaq(this)">
@@ -736,6 +744,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-answer">
       <p>Many commercial disputes resolve in 6–18 months through negotiation or mediation. Fully litigated cases can take 2–4 years. McLellan Law Group pursues early resolution strategies where possible to reduce cost and disruption to your business.</p>
     </div>
+  </div>
   </div>
 
 </section>
