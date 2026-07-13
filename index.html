@@ -634,7 +634,10 @@ var statsObs = new IntersectionObserver(function(entries) {
     statsObs.unobserve(el);
   });
 }, {threshold: 0.3});
-document.querySelectorAll('.stat-item').forEach(function(el){statsObs.observe(el);});
+// Stats solo se activan después del primer scroll del usuario
+function armStats(){ document.querySelectorAll('.stat-item').forEach(function(el){statsObs.observe(el);}); }
+if (window.scrollY > 10) { armStats(); }
+else { window.addEventListener('scroll', armStats, {once:true, passive:true}); }
 
 // Testimonials carousel
 var cur=0,tot=7;
