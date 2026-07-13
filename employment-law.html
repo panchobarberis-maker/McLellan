@@ -226,11 +226,15 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   background:#1e3a3e;
 }
 .audience-tab {
-  padding:20px 24px; text-align:center; text-decoration:none;
-  font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  padding:36px 24px; text-align:center; text-decoration:none;
+  font-size:22px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+  font-family:'Barlow Condensed',sans-serif;
   transition:background 0.2s, color 0.2s;
-  border-bottom:3px solid transparent;
+  border-bottom:4px solid transparent;
   color:rgba(255,255,255,0.55);
+}
+@media(min-width:769px) {
+  .audience-tab { padding:44px 24px; font-size:32px; letter-spacing:2px; }
 }
 .audience-tab.employers {
   color:#fff; border-bottom-color:#c9a96e; background:rgba(255,255,255,0.05);
@@ -553,8 +557,6 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <p class="emp-hero-sub">Representing businesses and employees throughout Silicon Valley &amp; the Bay Area.</p>
   <div class="emp-hero-ctas">
     <a href="#contact" class="btn-gold">Get My Free Consultation →</a>
-    <a href="#employers" class="btn-ghost">For Employers ↓</a>
-    <a href="#employees" class="btn-ghost">For Employees ↓</a>
   </div>
 </section>
 
