@@ -606,6 +606,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .employees-intro-text, .employers-intro-text { text-align:center; }
 .employees-intro-text p, .employers-intro-text p { margin-left:auto; margin-right:auto; }
 
+
+/* Primera vista: hero + tabs exactos en pantalla */
+.emp-hero { min-height:calc(100svh - 150px) !important; }
+@media(min-width:769px) {
+  .emp-hero { min-height:calc(100svh - 185px) !important; padding-bottom:56px !important; }
+}
+
 </style>
 </head>
 <body>
