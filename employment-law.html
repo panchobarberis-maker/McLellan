@@ -499,6 +499,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   animation:none !important;
 }
 
+
+/* EMPLOYEES INTRO con foto (desktop) */
+.employees-intro-img { display:none; }
+@media(min-width:769px) {
+  .employees-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; margin-bottom:8px; }
+  .employees-intro-img {
+    display:block; width:100%; max-height:420px; object-fit:cover;
+    object-position:center top; border-radius:16px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.12);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -574,10 +586,15 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- EMPLOYEES SECTION -->
 <section class="employees-section" id="employees">
-  <div class="section-eyebrow">For Employees</div>
-  <h2>We Fight for<em>Employee Rights.</em></h2>
-  <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you pay nothing unless we win.</p>
-  <div class="contingency-badge">Contingency Fee — You Pay Nothing Unless We Win</div>
+  <div class="employees-intro">
+    <div class="employees-intro-text">
+      <div class="section-eyebrow">For Employees</div>
+      <h2>We Fight for<em>Employee Rights.</em></h2>
+      <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you pay nothing unless we win.</p>
+      <div class="contingency-badge">Contingency Fee — You Pay Nothing Unless We Win</div>
+    </div>
+    <img class="employees-intro-img" src="los 3.png" alt="McLellan Law Group attorneys">
+  </div>
 
   <div class="employers-grid">
     <a href="wrongful-termination.html" class="employer-item" style="text-decoration:none;">
