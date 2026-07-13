@@ -614,6 +614,21 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   .emp-hero { min-height:calc(100svh - 185px) !important; padding-bottom:56px !important; }
 }
 
+
+/* Tabs con aspecto de BOTON */
+.audience-switch { gap:14px; padding:16px 20px; background:#1e3a3e; }
+.audience-tab {
+  border-radius:14px !important;
+  border:2.5px solid #c9a96e !important;
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+  cursor:pointer;
+  transition:transform 0.15s, box-shadow 0.2s, background 0.2s, color 0.2s !important;
+}
+.audience-tab::after { content:' ↓'; font-weight:800; }
+.audience-tab:hover { transform:translateY(-3px) scale(1.01); box-shadow:0 12px 30px rgba(0,0,0,0.4); }
+.audience-tab.employers:hover { background:rgba(201,169,110,0.2); color:#fff; }
+.audience-tab.employees:hover { filter:brightness(1.06); }
+
 </style>
 </head>
 <body>
