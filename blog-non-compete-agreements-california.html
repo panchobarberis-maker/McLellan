@@ -372,6 +372,17 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .employees-section .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
 .employee-faq .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
 
+
+/* Articulo: mas ancho y letra mas grande en desktop */
+@media(min-width:769px) {
+  .article-wrap { max-width:1440px !important; grid-template-columns:1fr 360px !important; gap:72px !important; }
+  .article-content p, .article-body p { font-size:19px !important; line-height:1.85 !important; }
+  .article-content li, .article-body li { font-size:19px !important; line-height:1.8 !important; }
+  .article-content h2, .article-body h2 { font-size:38px !important; }
+  .article-content h3, .article-body h3 { font-size:28px !important; }
+  .article-hero h1 { font-size:clamp(44px,5vw,64px) !important; }
+}
+
 </style>
 </head>
 <body>
