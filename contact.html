@@ -286,6 +286,17 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .mini-badge { font-size:14px !important; padding:11px 18px !important; border-radius:24px !important; white-space:nowrap; }
 .badge-row { gap:12px !important; }
 
+
+/* Mobile: hero compacto para que el box de consulta entre en la primera vista */
+@media(max-width:768px) {
+  .contact-hero { padding:48px 20px 36px !important; }
+  .contact-hero h1 { font-size:clamp(34px, 10vw, 44px) !important; }
+  .contact-hero p { font-size:15px !important; }
+  .contact-hero-label { font-size:12px !important; margin-bottom:12px !important; }
+  .contact-main { padding:28px 16px !important; }
+  .contact-form-card { padding:28px 20px !important; }
+}
+
 </style>
 </head>
 <body>
