@@ -375,15 +375,17 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 }
 
 
-/* Gold buttons: gradiente suave sin linea + ritmos distintos */
-.nav .contact-btn, .nav-contact-mobile, .btn-primary, .btn-cta {
-  background:linear-gradient(90deg,#c9a96e 0%,#dfc084 25%,#e8cc8a 50%,#dfc084 75%,#c9a96e 100%) !important;
-  background-size:200% auto !important;
+/* Gold buttons: efecto respiracion (como contact us), ritmos distintos */
+@keyframes ctaBreath {
+  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
+  50%      { box-shadow:0 0 28px 6px rgba(201,169,110,0.55), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.03); }
 }
-.nav .contact-btn { animation-duration:2.2s, 2.8s !important; }
-.nav-contact-mobile { animation-duration:2.2s, 2.8s !important; }
-.btn-primary { animation-duration:3.1s, 3.6s !important; }
-.btn-cta { animation:navBtnShimmer 3.9s linear infinite, navBtnPulse 4.4s ease-out infinite !important; }
+.nav .contact-btn, .nav-contact-mobile, .btn-primary, .btn-cta {
+  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%) !important;
+  animation:ctaBreath 2.6s ease-in-out infinite !important;
+}
+.btn-primary { animation-duration:3.2s !important; }
+.btn-cta { animation-duration:3.8s !important; }
 
 </style>
 </head>
