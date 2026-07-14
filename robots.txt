@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /preview-practice-areas.html
+Disallow: /seo-presentation.html
+
+Sitemap: https://mc-lellan.vercel.app/sitemap.xml
