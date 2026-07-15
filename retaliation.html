@@ -260,6 +260,19 @@
   text-align:justify;
 }
 
+
+/* Badge dorado del hero */
+.hero-pill {
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:10px; width:max-content;
+  background:rgba(201,169,110,0.15); border:1.5px solid rgba(201,169,110,0.6);
+  border-radius:26px; padding:9px 20px; margin-bottom:24px;
+  font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
+  font-weight:700; color:#e8cc8a;
+}
+.hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
+@media(min-width:769px) { .hero-pill { font-size:15px; } }
+
 </style>
 </head>
 <body>
@@ -342,6 +355,7 @@
     <div class="hero-overlay-warm"></div>
     <div class="hero-frame"></div>
     <div class="hero-content">
+      <div class="hero-pill">Retaliation · Saratoga, California</div>
       <h1>Workplace Retaliation Attorneys in Saratoga, CA</h1>
       <p class="sub">Fighting back against employers who punish employees for speaking up</p>
       <a href="#contact" class="cta-inline">Request a Free Consultation</a>

@@ -546,6 +546,19 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   text-align:justify;
 }
 
+
+/* Badge dorado del hero */
+.hero-pill {
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:10px; width:max-content;
+  background:rgba(201,169,110,0.15); border:1.5px solid rgba(201,169,110,0.6);
+  border-radius:26px; padding:9px 20px; margin-bottom:24px;
+  font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
+  font-weight:700; color:#e8cc8a;
+}
+.hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
+@media(min-width:769px) { .hero-pill { font-size:15px; } }
+
 </style>
 </head>
 <body>
@@ -625,6 +638,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="emp-hero">
   <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video>
   <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">Business Litigation · Saratoga, California</div>
   <h1>California Business Litigation Attorneys</h1>
   <p class="emp-hero-sub">Protecting companies, owners, and executives throughout Silicon Valley &amp; the Bay Area.</p>
   <div class="emp-hero-ctas">
