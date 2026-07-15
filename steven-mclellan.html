@@ -255,6 +255,45 @@ a { text-decoration:none; color:inherit; }
   font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
 }
 .foot-cta p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:40px; }
+
+/* ── Boxes + dorado en el body ── */
+.lead {
+  border:1px solid rgba(185,152,106,0.4);
+  border-left:5px solid #b9986a;
+  padding:32px 36px;
+  background:rgba(185,152,106,0.06);
+}
+.about-copy {
+  border:1px solid rgba(255,255,255,0.08);
+  padding:32px 36px;
+  background:rgba(255,255,255,0.03);
+}
+.about-copy p:last-child { margin-bottom:0; }
+.result-item {
+  border:1px solid rgba(185,152,106,0.3) !important;
+  border-left:5px solid #b9986a !important;
+  padding:28px 32px !important;
+  margin-bottom:20px;
+  background:rgba(185,152,106,0.05);
+}
+.results .result-item + .result-item { border-top:1px solid rgba(185,152,106,0.3) !important; }
+.acc-item {
+  border:1px solid rgba(185,152,106,0.3) !important;
+  margin-bottom:14px;
+  padding:0 22px;
+  background:rgba(255,255,255,0.03);
+}
+.acc-btn .icon { font-size:18px !important; }
+.award-box {
+  border:1px solid #b9986a !important;
+  background:rgba(185,152,106,0.08);
+  box-shadow:0 0 0 4px rgba(185,152,106,0.08);
+}
+.section-label::after {
+  content:''; display:inline-block; vertical-align:middle;
+  width:36px; height:1px; background:#b9986a; margin-left:14px; opacity:0.6;
+}
+
 </style>
 </head>
 <body>
