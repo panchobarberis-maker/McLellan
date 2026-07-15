@@ -8,7 +8,7 @@
 <meta name="description" content="Steven McLellan is a litigation partner at McLellan Law Group in Saratoga, CA. Business litigation, real estate disputes, financial elder abuse, and landlord-tenant matters.">
 <link rel="canonical" href="https://www.mclellanlawgroup.com/steven-mclellan">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Steven McLellan","jobTitle":"Partner","worksFor":{"@type":"LegalService","name":"McLellan Law Group"},"email":"steven@mclellanlawgroup.com","telephone":"650-383-1266","url":"https://www.mclellanlawgroup.com/steven-mclellan","alumniOf":["University of California Berkeley Law School","San Jose State University","University of California, Irvine"]}
 </script>
@@ -131,11 +131,16 @@ a { text-decoration:none; color:inherit; }
 }
 .breadcrumb em { font-style:normal; color:rgba(255,255,255,0.6); }
 .hero-name {
-  font-family:'Cormorant Garamond',serif; font-weight:300;
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-1px;
   font-size:clamp(52px, 6vw, 80px); line-height:0.95;
   margin-bottom:24px;
 }
-.hero-name .first { display:block; font-style:italic; color:#b9986a; }
+.hero-name .first {
+  display:block; font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; letter-spacing:0; font-size:0.85em;
+}
 .hero-role {
   font-size:12px; letter-spacing:3px; text-transform:uppercase;
   color:rgba(255,255,255,0.5); font-weight:500;
@@ -144,7 +149,7 @@ a { text-decoration:none; color:inherit; }
 }
 .hero-stats { display:flex; gap:48px; flex-wrap:wrap; margin-bottom:48px; }
 .stat .num {
-  font-family:'Cormorant Garamond',serif; font-weight:300;
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
   font-size:56px; line-height:1; color:#b9986a; display:block; margin-bottom:10px;
 }
 .stat .label {
@@ -178,7 +183,7 @@ a { text-decoration:none; color:inherit; }
   color:#b9986a; font-weight:600; margin-bottom:32px;
 }
 .lead {
-  font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
   font-size:clamp(24px, 2.6vw, 32px); line-height:1.5; color:#f0ece4;
   margin-bottom:40px;
 }
@@ -193,7 +198,8 @@ a { text-decoration:none; color:inherit; }
   display:grid; grid-template-columns:1fr auto; gap:8px 32px;
 }
 .result-item h3 {
-  font-family:'Cormorant Garamond',serif; font-weight:400;
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  text-transform:uppercase; letter-spacing:0.5px;
   font-size:26px; color:#f0ece4;
 }
 .result-item .tag {
@@ -228,7 +234,7 @@ a { text-decoration:none; color:inherit; }
 }
 .award-box .section-label { margin-bottom:14px; }
 .award-box h4 {
-  font-family:'Cormorant Garamond',serif; font-weight:400;
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
   font-size:24px; line-height:1.3; color:#f0ece4; margin-bottom:10px;
 }
 .award-box .years { font-size:12px; letter-spacing:2px; color:rgba(255,255,255,0.45); }
@@ -240,10 +246,14 @@ a { text-decoration:none; color:inherit; }
 }
 @media(max-width:768px) { .foot-cta { padding:64px 24px; } }
 .foot-cta h2 {
-  font-family:'Cormorant Garamond',serif; font-weight:300;
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-0.5px;
   font-size:clamp(36px, 4.5vw, 56px); line-height:1.1; margin-bottom:16px;
 }
-.foot-cta h2 em { font-style:italic; color:#b9986a; }
+.foot-cta h2 em {
+  font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
+}
 .foot-cta p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:40px; }
 </style>
 </head>
