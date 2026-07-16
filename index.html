@@ -27,7 +27,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 /* ANIMATIONS */
 .fade { opacity:0; transform:translateY(40px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
 .fade.visible { opacity:1; transform:none; }
-.fade-d1 { transition-delay:.08s; } .fade-d2 { transition-delay:.16s; } .fade-d3 { transition-delay:.24s; } .fade-d4 { transition-delay:.32s; } .fade-d5 { transition-delay:.40s; }
+.fade-d1 { transition-delay:.08s; } .fade-d2 { transition-delay:.16s; } .fade-d3 { transition-delay:.24s; } .fade-d4 { transition-delay:.32s; } .fade-d5 { transition-delay:.40s; } .fade-d6 { transition-delay:.48s; } .fade-d7 { transition-delay:.56s; }
 
 .slide-left { opacity:0; transform:translateX(-32px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
 .slide-left.visible { opacity:1; transform:none; }
@@ -260,7 +260,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .testimonials .section-header h2 { color:#1e3a3e; }
 .testimonial-card {
   min-width:100%; background:#1e3a3e; border-radius:20px;
-  padding:44px 32px 36px; box-sizing:border-box; text-align:center;
+  padding:44px 32px 36px; box-sizing:border-box; text-align:right;
   position:relative; margin-top:28px;
   border:1px solid rgba(255,255,255,0.08);
 }
@@ -348,7 +348,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   .testimonials-inner { max-width:1100px; }
   .carousel { overflow:visible; }
   .carousel-track { display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; transform:none !important; padding-top:28px; }
-  .testimonial-card { min-width:0; padding:44px 36px 36px; text-align:left; }
+  .testimonial-card { min-width:0; padding:44px 36px 36px; text-align:right; }
   .quote-icon { left:36px; transform:none; }
   .testimonial-card .quote { font-size:16px; }
   .carousel-nav { display:none; }
@@ -560,6 +560,14 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       </a>
       <a href="#" class="practice-item pop fade-d5">
         <div><div class="name">Guardian Ad Litem</div><div class="desc">Court-appointed representation for minors and adults who lack capacity</div></div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="contract-disputes.html" class="practice-item pop fade-d6">
+        <div><div class="name">Contracts</div><div class="desc">Breach of contract, non-compete disputes &amp; vendor conflicts — for businesses and individuals</div></div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="financial-elder-abuse.html" class="practice-item pop fade-d7">
+        <div><div class="name">Financial Elder Abuse</div><div class="desc">Recovering stolen assets and holding abusers accountable on behalf of vulnerable elders</div></div>
         <div class="arrow">→</div>
       </a>
     </div>
