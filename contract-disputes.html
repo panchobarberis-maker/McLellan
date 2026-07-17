@@ -740,19 +740,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="emp-carousel-track" id="empTrack">
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
-        <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
-        <span class="author">— Wendy · Civil Litigation</span>
+        <span class="quote">"Steven's legal expertise and sophistication were tremendous in resolving key issues in my case. His ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
+        <span class="author">— Benjamin · Contract Disputes</span>
       </div>
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
-        <span class="quote">"McLellan Law Group understood exactly what was at stake for our business. They were strategic, responsive, and delivered results we didn't think were possible."</span>
-        <span class="author">— Anonymous · Civil Litigation</span>
+        <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
+        <span class="author">— Anonymous · Contract Disputes</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
+        <span class="author">— Jordan · Contract Disputes</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
+        <span class="author">— Wendy · Contract Disputes</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
+        <span class="author">— Pete · Contract Disputes</span>
       </div>
     </div>
   </div>
   <div class="emp-carousel-dots" id="empDots">
     <button class="emp-dot active" onclick="goToEmp(0)"></button>
     <button class="emp-dot" onclick="goToEmp(1)"></button>
+    <button class="emp-dot" onclick="goToEmp(2)"></button>
+    <button class="emp-dot" onclick="goToEmp(3)"></button>
+    <button class="emp-dot" onclick="goToEmp(4)"></button>
   </div>
 </section>
 
@@ -859,7 +877,7 @@ function toggleFaq(btn) {
 (function(){
   var track = document.getElementById('empTrack');
   var dots = document.querySelectorAll('#empDots .emp-dot');
-  var current = 0, total = 2, startX = 0, timer;
+  var current = 0, total = dots.length, startX = 0, timer;
   function goToEmp(n){
     current = (n + total) % total;
     track.style.transform = 'translateX(-' + (current * 100) + '%)';

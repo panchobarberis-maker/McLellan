@@ -1040,12 +1040,24 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
         <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
         <span class="author">— Anonymous · Employment Law</span>
       </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
+        <span class="author">— Wendy · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
+        <span class="author">— Jordan · Employment Law</span>
+      </div>
     </div>
   </div>
   <div class="emp-carousel-dots" id="empDots">
     <button class="emp-dot active" onclick="goToEmp(0)"></button>
     <button class="emp-dot" onclick="goToEmp(1)"></button>
     <button class="emp-dot" onclick="goToEmp(2)"></button>
+    <button class="emp-dot" onclick="goToEmp(3)"></button>
+    <button class="emp-dot" onclick="goToEmp(4)"></button>
   </div>
 </section>
 
@@ -1104,7 +1116,7 @@ function toggleFaq(btn) {
 (function(){
   var track = document.getElementById('empTrack');
   var dots = document.querySelectorAll('#empDots .emp-dot');
-  var current = 0, total = 3, startX = 0, timer;
+  var current = 0, total = dots.length, startX = 0, timer;
   function goToEmp(n){
     current = (n + total) % total;
     track.style.transform = 'translateX(-' + (current * 100) + '%)';
