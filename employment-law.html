@@ -201,7 +201,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .emp-hero-sub {
   position:relative; z-index:2;
   font-size:16px; color:rgba(255,255,255,0.8); max-width:520px;
-  line-height:1.7; margin-bottom:32px;
+  line-height:1.7; margin-bottom:4px;
   font-family:'DM Serif Display',serif; font-style:italic;
 }
 .emp-hero-ctas {
@@ -226,6 +226,10 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .audience-switch {
   display:grid; grid-template-columns:1fr 1fr;
   background:#1e3a3e;
+}
+.hero-cta-below {
+  background:#1e3a3e; display:flex; justify-content:center;
+  padding:0 20px 28px;
 }
 .audience-tab {
   padding:36px 24px; text-align:center; text-decoration:none;
@@ -763,15 +767,16 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="hero-pill">Employment Law · Saratoga, California</div>
   <h1>California Employment Law Attorneys</h1>
   <p class="emp-hero-sub">Representing businesses and employees throughout Silicon Valley &amp; the Bay Area.</p>
-  <div class="emp-hero-ctas">
-    <a href="#contact" class="btn-gold">Get My Free Consultation →</a>
-  </div>
 </section>
 
 <!-- AUDIENCE TABS -->
 <div class="audience-switch">
   <a href="#employees" class="audience-tab employers"><svg viewBox="0 0 24 24" width="26" height="26" fill="#c9a96e" style="vertical-align:-4px;margin-right:10px;"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.34 0-10 1.67-10 5v3h20v-3c0-3.33-6.66-5-10-5z"/></svg>For Employees</a>
   <a href="#employers" class="audience-tab employees">⚖ For Employers</a>
+</div>
+
+<div class="hero-cta-below">
+  <a href="#contact" class="btn-gold">Get My Free Consultation →</a>
 </div>
 
 <!-- EMPLOYEES SECTION -->
