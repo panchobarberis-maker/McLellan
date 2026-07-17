@@ -225,6 +225,20 @@
 /* Textos justificados */
 .bio-block p, .result-card span, .atty-hero p, .cred-answer li { text-align:justify; }
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 </style>
 </head>
 <body>
@@ -306,12 +320,12 @@
 <section class="atty-hero">
   <div class="atty-hero-inner">
     <div>
-      <h1>Sara Van Til</h1>
-      <div class="atty-role">Legal Assistant &amp; Notary Public</div>
-      <p>Sara Van Til brings valuable experience from legal aid, the United States Air Force, and NASA — with exceptional organizational skills and readiness to tackle any challenge.</p>
-      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+      <h1 class="reveal">Sara Van Til</h1>
+      <div class="atty-role reveal reveal-d1">Legal Assistant &amp; Notary Public</div>
+      <p class="reveal reveal-d2">Sara Van Til brings valuable experience from legal aid, the United States Air Force, and NASA — with exceptional organizational skills and readiness to tackle any challenge.</p>
+      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d3">Request a Free Consultation →</a>
     </div>
-    <div class="atty-photo" style="height:480px; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,#24484d 0%,#16333a 100%);">
+    <div class="atty-photo reveal reveal-d1" style="height:480px; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,#24484d 0%,#16333a 100%);">
       <span style="font-family:'DM Serif Display',serif; font-style:italic; font-size:120px; color:#c9a96e;">SV</span>
     </div>
   </div>
@@ -323,15 +337,15 @@
 
     <div>
       <div style="margin-top:0;">
-        <div class="result-card">
+        <div class="result-card reveal">
           <strong>United States Air Force</strong>
           <span>Service with the Air Guard pararescue's 131st squadron.</span>
         </div>
-        <div class="result-card">
+        <div class="result-card reveal reveal-d1">
           <strong>NASA Flight Operations</strong>
           <span>Implemented an organizational system for the department's historical federal records.</span>
         </div>
-        <div class="result-card">
+        <div class="result-card reveal reveal-d2">
           <strong>Legal Aid Experience</strong>
           <span>Administrative assistant at Elevate Community Center, a legal aid organization McLellan Law Group proudly supports.</span>
         </div>
@@ -341,10 +355,10 @@
 
     <div>
       <div class="bio-block">
-        <div class="bio-eyebrow">About Sara</div>
-        <p>Sara Van Til brings valuable experience from her previous role as an administrative assistant at Elevate Community Center, a legal aid organization we proudly support. Her background also includes service with the Air Force, specifically in the Air Guard pararescue's 131st squadron.</p>
-        <p>Before that, she contributed to NASA's flight operations department, where she implemented an organizational system for the department's historical federal records.</p>
-        <p>Ms. Van Til's exceptional organizational skills and readiness to tackle challenges make her a valuable asset to our team.</p>
+        <div class="bio-eyebrow reveal">About Sara</div>
+        <p class="reveal reveal-d1">Sara Van Til brings valuable experience from her previous role as an administrative assistant at Elevate Community Center, a legal aid organization we proudly support. Her background also includes service with the Air Force, specifically in the Air Guard pararescue's 131st squadron.</p>
+        <p class="reveal reveal-d2">Before that, she contributed to NASA's flight operations department, where she implemented an organizational system for the department's historical federal records.</p>
+        <p class="reveal reveal-d3">Ms. Van Til's exceptional organizational skills and readiness to tackle challenges make her a valuable asset to our team.</p>
       </div>
     </div>
 
@@ -353,9 +367,9 @@
 
 <!-- CTA -->
 <section class="cta-banner">
-  <h2>Work With<em> Our Team.</em></h2>
-  <p>Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+  <h2 class="reveal">Work With<em> Our Team.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
 </section>
 
 <script>
@@ -372,6 +386,28 @@ function toggleCred(btn) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
 </html>

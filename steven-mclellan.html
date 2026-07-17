@@ -316,6 +316,20 @@ a { text-decoration:none; color:inherit; }
 .hero-creds { margin-top:44px; max-width:460px; }
 .body-section { grid-template-columns:1fr !important; max-width:960px !important; }
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 </style>
 </head>
 <body>
@@ -396,34 +410,34 @@ a { text-decoration:none; color:inherit; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-photo">
-    <img src="steven.jpg" alt="Steven McLellan, Partner at McLellan Law Group">
+    <img src="steven.jpg" alt="Steven McLellan, Partner at McLellan Law Group" class="reveal">
   </div>
   <div class="hero-info">
-    <div class="breadcrumb">Our Team &nbsp;/&nbsp; <em>Partner</em></div>
-    <h1 class="hero-name"><span class="first">Steven</span>McLellan</h1>
-    <div class="hero-role">Partner &nbsp;—&nbsp; Business &amp; Employment Litigation</div>
+    <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Partner</em></div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Steven</span>McLellan</h1>
+    <div class="hero-role reveal reveal-d3">Partner &nbsp;—&nbsp; Business &amp; Employment Litigation</div>
     <div class="hero-stats">
-      <div class="stat">
+      <div class="stat reveal reveal-d4">
         <span class="num">3×</span>
         <span class="label">Super Lawyers<br>Rising Star</span>
       </div>
-      <div class="stat">
+      <div class="stat reveal reveal-d5">
         <span class="num">2</span>
         <span class="label">Trial<br>Victories</span>
       </div>
-      <div class="stat">
+      <div class="stat reveal reveal-d6">
         <span class="num">CA</span>
         <span class="label">State Bar<br>Admitted</span>
       </div>
     </div>
-    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta">Request a Consultation <span>→</span></a>
-    <div class="hero-contact">
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Request a Consultation <span>→</span></a>
+    <div class="hero-contact reveal reveal-d7">
       <a href="tel:650-383-1266">650-383-1266</a>
       <a href="mailto:steven@mclellanlawgroup.com">steven@mclellanlawgroup.com</a>
     </div>
     <div class="hero-creds">
 
-    <div class="acc-item open">
+    <div class="acc-item open reveal">
       <button class="acc-btn" onclick="toggleAcc(this)">Bar Admissions <span class="icon">×</span></button>
       <div class="acc-body" style="max-height:220px;">
         <ul>
@@ -434,7 +448,7 @@ a { text-decoration:none; color:inherit; }
         </ul>
       </div>
     </div>
-    <div class="acc-item">
+    <div class="acc-item reveal reveal-d1">
       <button class="acc-btn" onclick="toggleAcc(this)">Bar Associations <span class="icon">+</span></button>
       <div class="acc-body">
         <ul>
@@ -443,7 +457,7 @@ a { text-decoration:none; color:inherit; }
         </ul>
       </div>
     </div>
-    <div class="acc-item">
+    <div class="acc-item reveal reveal-d2">
       <button class="acc-btn" onclick="toggleAcc(this)">Education <span class="icon">+</span></button>
       <div class="acc-body">
         <ul>
@@ -454,7 +468,7 @@ a { text-decoration:none; color:inherit; }
       </div>
     </div>
 
-    <div class="award-box">
+    <div class="award-box reveal reveal-d3">
       <div class="section-label">Recognition</div>
       <h4>Super Lawyers — Rising Star</h4>
       <div class="years">2022 &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; 2024</div>
@@ -468,21 +482,21 @@ a { text-decoration:none; color:inherit; }
 <!-- BODY -->
 <section class="body-section">
   <div>
-    <div class="section-label">About</div>
-    <p class="lead">"Steven McLellan brings tenacity and strategic clarity to every case — from trial courts to appellate courts across California."</p>
+    <div class="section-label reveal">About</div>
+    <p class="lead reveal reveal-d1">"Steven McLellan brings tenacity and strategic clarity to every case — from trial courts to appellate courts across California."</p>
     <div class="about-copy">
-      <p>He has the knowledge and experience to help clients get a favorable result whether filing a lawsuit or defending against one. His practice focuses on business litigation, real estate disputes, financial elder abuse, and landlord-tenant matters.</p>
-      <p>During law school, Steven externed with the Honorable Patricia Lucas and the Honorable Peter Kirwan at the Superior Court of California, Santa Clara County, and later worked at an international law firm handling securities and intellectual property litigation.</p>
+      <p class="reveal reveal-d2">He has the knowledge and experience to help clients get a favorable result whether filing a lawsuit or defending against one. His practice focuses on business litigation, real estate disputes, financial elder abuse, and landlord-tenant matters.</p>
+      <p class="reveal reveal-d3">During law school, Steven externed with the Honorable Patricia Lucas and the Honorable Peter Kirwan at the Superior Court of California, Santa Clara County, and later worked at an international law firm handling securities and intellectual property litigation.</p>
     </div>
 
     <div class="results">
-      <div class="section-label">Notable Results</div>
-      <div class="result-item">
+      <div class="section-label reveal">Notable Results</div>
+      <div class="result-item reveal reveal-d1">
         <h3>Jury Trial Victory</h3>
         <span class="tag">Jury Trial</span>
         <p>Represented client in a two-week jury trial concerning breach of fiduciary duty. Jury issued verdict in favor of client.</p>
       </div>
-      <div class="result-item">
+      <div class="result-item reveal reveal-d2">
         <h3>Court Trial Victory</h3>
         <span class="tag">Court Trial</span>
         <p>Represented client in a four-day court trial concerning financial elder abuse. Court issued award in favor of client.</p>
@@ -495,9 +509,9 @@ a { text-decoration:none; color:inherit; }
 
 <!-- FOOT CTA -->
 <section class="foot-cta">
-  <h2>Work with <em>Steven.</em></h2>
-  <p>Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta" style="display:inline-flex;">Request a Consultation <span>→</span></a>
+  <h2 class="reveal">Work with <em>Steven.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex;">Request a Consultation <span>→</span></a>
 </section>
 
 <script>
@@ -517,6 +531,28 @@ function toggleAcc(btn) {
     icon.textContent = '×';
   }
 }
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
 </html>

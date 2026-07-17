@@ -558,6 +558,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 /* Badge dorado del hero */
 .hero-pill {
   position:relative; z-index:2;
@@ -662,45 +676,45 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="employers-section" id="disputes">
   <div class="employers-intro">
     <div class="employers-intro-text">
-      <div class="section-eyebrow">What We Handle</div>
-      <h2>Trust &amp; Probate Disputes<em>We Handle.</em></h2>
-      <p>McLellan Law Group, LLP represents beneficiaries, trustees, and heirs throughout Silicon Valley, Santa Clara County, and the Bay Area in will contests, trustee removal proceedings, breach of fiduciary duty claims, and contested probate matters.</p>
+      <div class="section-eyebrow reveal">What We Handle</div>
+      <h2 class="reveal reveal-d1">Trust &amp; Probate Disputes<em>We Handle.</em></h2>
+      <p class="reveal reveal-d2">McLellan Law Group, LLP represents beneficiaries, trustees, and heirs throughout Silicon Valley, Santa Clara County, and the Bay Area in will contests, trustee removal proceedings, breach of fiduciary duty claims, and contested probate matters.</p>
     </div>
-    <img class="employers-intro-img" src="los 3.png" alt="McLellan Law Group attorneys">
+    <img class="employers-intro-img reveal reveal-d2" src="los 3.png" alt="McLellan Law Group attorneys">
   </div>
 
   <div class="employers-grid">
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d1">
       <div class="employer-item-text">
         <strong>Will Contests</strong>
         <span>Challenging or defending the validity of a will</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d2">
       <div class="employer-item-text">
         <strong>Trustee Removal</strong>
         <span>Proceedings to remove or replace a trustee</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d3">
       <div class="employer-item-text">
         <strong>Breach of Fiduciary Duty</strong>
         <span>Holding trustees accountable for mismanagement</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d4">
       <div class="employer-item-text">
         <strong>Contested Probate Matters</strong>
         <span>Disputes over estate administration &amp; distribution</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d5">
       <div class="employer-item-text">
         <strong>Conservatorships</strong>
         <span>Medical care, living arrangements &amp; asset protection</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d6">
       <div class="employer-item-text">
         <strong>Beneficiary Rights</strong>
         <span>Enforcing your rights to information &amp; distributions</span>
@@ -708,31 +722,31 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="paga-alert">
+  <div class="paga-alert reveal">
     <div class="paga-alert-icon">⚡</div>
     <p><strong>We regularly handle trust and probate litigation involving high-net-worth estates in Saratoga, San Jose, Los Gatos, Cupertino, and across Santa Clara County</strong> — with the discretion these sensitive matters deserve.</p>
   </div>
 
-  <a href="#contact" class="btn-gold">Request a Free Consultation →</a>
+  <a href="#contact" class="btn-gold reveal">Request a Free Consultation →</a>
 </section>
 
 <!-- DETAIL SECTIONS -->
 <section class="detail-wrap">
   <div class="detail-inner">
 
-    <div class="detail-block">
+    <div class="detail-block reveal">
       <div class="section-eyebrow">Conservatorships</div>
       <h2>Conservatorship Services</h2>
       <p>Trust and probate disputes are among the most emotionally difficult legal matters a family can face. McLellan Law Group, LLP represents beneficiaries, trustees, and heirs throughout Silicon Valley, Santa Clara County, and the Bay Area in will contests, trustee removal proceedings, breach of fiduciary duty claims, and contested probate matters. Whether it's managing medical care, living arrangements, safeguarding their assets, or looking into <a href="financial-elder-abuse.html" style="color:#c9a96e; font-weight:700;">financial elder abuse</a> — we provide compassionate guidance through every step of the process.</p>
     </div>
 
-    <div class="detail-block">
+    <div class="detail-block reveal reveal-d1">
       <div class="section-eyebrow">Family Disputes</div>
       <h2>Litigating Against Heirs</h2>
       <p>Unfortunately, after the death of a loved one, siblings, relatives, or others may challenge how the assets should be divided. These cases are emotional, particularly where one child uses the death of a parent to claim that other relatives have engaged in bad acts towards the parent. Our attorneys have experience handling these cases, even going to trial to protect our clients' interests.</p>
     </div>
 
-    <div class="detail-block">
+    <div class="detail-block reveal reveal-d2">
       <div class="section-eyebrow">Our Commitment</div>
       <h2>Ensuring That Your Rights Are Fully Protected</h2>
       <p>We know that these cases can be emotionally taxing, and we will work tirelessly to resolve them as quickly and painlessly as possible. We understand the importance of protecting your assets and your family, and we will do everything we can to ensure that your rights are fully protected. We also understand the sensitive nature of these disputes, and we are committed to handling each case with the utmost care and discretion.</p>
@@ -743,9 +757,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- TESTIMONIALS -->
 <section class="emp-testimonials">
-  <div class="section-eyebrow">Client Reviews</div>
-  <h2>What Our Clients Say</h2>
-  <div class="emp-carousel" id="empCarousel">
+  <div class="section-eyebrow reveal">Client Reviews</div>
+  <h2 class="reveal reveal-d1">What Our Clients Say</h2>
+  <div class="emp-carousel reveal reveal-d2" id="empCarousel">
     <div class="emp-carousel-track" id="empTrack">
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
@@ -791,9 +805,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- FAQs -->
 <section class="employee-faq">
-  <h2>Trust &amp; Probate FAQs</h2>
+  <h2 class="reveal">Trust &amp; Probate FAQs</h2>
   <div class="faq-list">
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d1">
     <button class="faq-question" onclick="toggleFaq(this)">
       What is probate?
       <span class="faq-icon">+</span>
@@ -803,7 +817,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d2">
     <button class="faq-question" onclick="toggleFaq(this)">
       What is a trust?
       <span class="faq-icon">+</span>
@@ -813,7 +827,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d3">
     <button class="faq-question" onclick="toggleFaq(this)">
       What is a trustee?
       <span class="faq-icon">+</span>
@@ -823,7 +837,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d4">
     <button class="faq-question" onclick="toggleFaq(this)">
       What are a trustee's fiduciary duties?
       <span class="faq-icon">+</span>
@@ -838,25 +852,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <!-- WHY CHOOSE US -->
 <section class="why-us">
   <div class="why-us-inner">
-    <div class="why-us-eyebrow">Why McLellan Law Group</div>
-    <h2 class="why-us-title">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-eyebrow reveal">Why McLellan Law Group</div>
+    <h2 class="why-us-title reveal reveal-d1">Results-Driven.<em>Personally Invested.</em></h2>
     <div class="why-us-grid">
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d1">
         <div class="why-us-num">01</div>
         <strong>Boutique Firm Attention</strong>
         <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d2">
         <div class="why-us-num">02</div>
         <strong>Silicon Valley Focus</strong>
         <span>Based in Saratoga, we know California trust and probate law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
         <span>From will contests to trustee disputes, our attorneys have secured favorable outcomes for beneficiaries, trustees, and heirs across Silicon Valley.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
         <strong>Free Consultation</strong>
         <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
@@ -867,9 +881,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- CTA BANNER -->
 <section class="cta-banner" id="contact">
-  <h2>Ready to Talk?<br><em>We're Here.</em></h2>
-  <p>Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+  <h2 class="reveal">Ready to Talk?<br><em>We're Here.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
 </section>
 
 <div class="maps-section">
@@ -914,6 +928,28 @@ function toggleFaq(btn) {
     if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
     timer = setInterval(next, 5000);
   }, {passive:true});
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
 })();
 </script>
 </body>

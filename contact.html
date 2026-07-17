@@ -318,6 +318,20 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   text-align:justify;
 }
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 </style>
 </head>
 <body>
@@ -406,9 +420,9 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
     </video>
   </div>
   <div class="contact-hero-overlay"></div>
-  <div class="contact-hero-label">Contact Us · Saratoga, California</div>
-  <h1>Let's Talk About<em>Your Case.</em></h1>
-  <p>Free consultation. No obligation.<br>We respond within one business day.</p>
+  <div class="contact-hero-label reveal">Contact Us · Saratoga, California</div>
+  <h1 class="reveal reveal-d1">Let's Talk About<em>Your Case.</em></h1>
+  <p class="reveal reveal-d2">Free consultation. No obligation.<br>We respond within one business day.</p>
 </section>
 
 <!-- MAIN -->
@@ -417,9 +431,9 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
     <!-- FORM -->
     <div class="contact-form-card">
-      <h2>Request Your<em> Free Consultation.</em></h2>
-      <p>Tell us about your situation — it takes two minutes.</p>
-      <div style="text-align:center; padding:16px 0;">
+      <h2 class="reveal">Request Your<em> Free Consultation.</em></h2>
+      <p class="reveal reveal-d1">Tell us about your situation — it takes two minutes.</p>
+      <div style="text-align:center; padding:16px 0;" class="reveal reveal-d2">
         <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="form-submit" style="text-decoration:none; max-width:420px; margin:0 auto;">Start My Free Consultation →</a>
         <p class="form-note">A few quick questions — we reply within one business day.</p>
       </div>
@@ -427,7 +441,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
     <!-- INFO -->
     <div class="contact-info">
-      <div class="info-card">
+      <div class="info-card reveal">
         <div class="info-card-label">Office Hours</div>
         <h3>When We're Available</h3>
         <div class="hours-row">
@@ -440,7 +454,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
         </div>
         <div class="hours-note">Evening calls available for urgent matters — just ask.</div>
       </div>
-      <div class="info-card">
+      <div class="info-card reveal reveal-d1">
         <div class="info-card-label">Why McLellan</div>
         <h3>What You Can Expect</h3>
         <div class="badge-row">
@@ -450,7 +464,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
           <span class="mini-badge">Contingency Options</span>
         </div>
       </div>
-      <div class="info-card info-card-visit">
+      <div class="info-card info-card-visit reveal reveal-d2">
         <div class="info-card-label">Visit Us</div>
         <h3>Saratoga Office</h3>
         <p style="margin-bottom:16px;">20665 4th St #202<br>Saratoga, CA 95070</p>
@@ -472,10 +486,33 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   <img src="Estudio foto.png" alt="McLellan Law Group team"
     style="width:100%; height:420px; object-fit:cover; object-position:center 25%; display:block; filter:brightness(0.55);">
   <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; text-align:center; padding:24px 24px 44px; background:linear-gradient(to bottom, transparent 55%, rgba(20,48,52,0.9) 100%);">
-    <div style="font-family:'Barlow Condensed',sans-serif; font-size:clamp(28px,3.5vw,44px); font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:-0.5px; line-height:1;">We're Here <em style="font-family:'DM Serif Display',serif; font-weight:400; font-style:italic; text-transform:none; color:#c9a96e;">For You.</em></div>
-    <p style="font-family:'DM Serif Display',serif; font-style:italic; font-size:16px; color:rgba(255,255,255,0.85); margin-top:6px; max-width:520px;">Whenever you're ready to talk,<br>our team is at your disposal.</p>
+    <div class="reveal" style="font-family:'Barlow Condensed',sans-serif; font-size:clamp(28px,3.5vw,44px); font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:-0.5px; line-height:1;">We're Here <em style="font-family:'DM Serif Display',serif; font-weight:400; font-style:italic; text-transform:none; color:#c9a96e;">For You.</em></div>
+    <p class="reveal reveal-d1" style="font-family:'DM Serif Display',serif; font-style:italic; font-size:16px; color:rgba(255,255,255,0.85); margin-top:6px; max-width:520px;">Whenever you're ready to talk,<br>our team is at your disposal.</p>
   </div>
 </section>
 
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
 </body>
 </html>

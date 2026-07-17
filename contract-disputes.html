@@ -549,6 +549,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 /* Badge dorado del hero */
 .hero-pill {
   position:relative; z-index:2;
@@ -653,45 +667,45 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="employers-section" id="disputes">
   <div class="employers-intro">
     <div class="employers-intro-text">
-      <div class="section-eyebrow">What We Handle</div>
-      <h2>Contracts Are About Trust.<em>When That Trust Is Broken, We're Here to Help.</em></h2>
-      <p>Contract disputes can disrupt your business and damage relationships that took years to build. McLellan Law Group, LLP resolves contract disputes for businesses and individuals throughout Silicon Valley, Santa Clara County, and the Bay Area — including breach of contract claims, non-compete disputes, vendor conflicts, and employment contract matters.</p>
+      <div class="section-eyebrow reveal">What We Handle</div>
+      <h2 class="reveal reveal-d1">Contracts Are About Trust.<em>When That Trust Is Broken, We're Here to Help.</em></h2>
+      <p class="reveal reveal-d2">Contract disputes can disrupt your business and damage relationships that took years to build. McLellan Law Group, LLP resolves contract disputes for businesses and individuals throughout Silicon Valley, Santa Clara County, and the Bay Area — including breach of contract claims, non-compete disputes, vendor conflicts, and employment contract matters.</p>
     </div>
-    <img class="employers-intro-img" src="los 3.png" alt="McLellan Law Group attorneys">
+    <img class="employers-intro-img reveal reveal-d2" src="los 3.png" alt="McLellan Law Group attorneys">
   </div>
 
   <div class="employers-grid">
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d1">
       <div class="employer-item-text">
         <strong>Breach of Contract Claims</strong>
         <span>Failure to fulfill obligations, terms or performance</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d2">
       <div class="employer-item-text">
         <strong>Non-Compete Disputes</strong>
         <span>Enforceability and defense of restrictive covenants</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d3">
       <div class="employer-item-text">
         <strong>Vendor Conflicts</strong>
         <span>Supply, service &amp; commercial agreement disputes</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d4">
       <div class="employer-item-text">
         <strong>Employment Contract Matters</strong>
         <span>Offer letters, severance &amp; executive agreements</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d5">
       <div class="employer-item-text">
         <strong>Misrepresentation</strong>
         <span>False statements that induced the agreement</span>
       </div>
     </div>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d6">
       <div class="employer-item-text">
         <strong>Non-Payment</strong>
         <span>Recovering money owed under a contract</span>
@@ -699,12 +713,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="paga-alert">
+  <div class="paga-alert reveal">
     <div class="paga-alert-icon">⚡</div>
     <p><strong>We represent clients in Saratoga, San Jose, Cupertino, Sunnyvale, and across Santa Clara County</strong> — in both pre-litigation negotiations and full civil litigation when necessary.</p>
   </div>
 
-  <a href="#contact" class="btn-gold">Request a Free Consultation →</a>
+  <a href="#contact" class="btn-gold reveal">Request a Free Consultation →</a>
 </section>
 
 <!-- DETAIL SECTIONS -->
@@ -712,21 +726,21 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="detail-inner">
 
     <div class="detail-block">
-      <div class="section-eyebrow">The Basics</div>
-      <h2>What Is a Contract Dispute?</h2>
-      <p>A contract dispute arises when one party fails to fulfill their obligations or when disagreements occur over terms, performance, or payment. Whether you're dealing with a breach of contract, misrepresentation, or non-payment, we are here to protect your rights and interests.</p>
+      <div class="section-eyebrow reveal">The Basics</div>
+      <h2 class="reveal reveal-d1">What Is a Contract Dispute?</h2>
+      <p class="reveal reveal-d2">A contract dispute arises when one party fails to fulfill their obligations or when disagreements occur over terms, performance, or payment. Whether you're dealing with a breach of contract, misrepresentation, or non-payment, we are here to protect your rights and interests.</p>
     </div>
 
     <div class="detail-block">
-      <div class="section-eyebrow">How We Can Help</div>
-      <h2>A Focus on Resolution</h2>
-      <p>We approach contract disputes with a focus on resolution. Whether through negotiation, mediation, or litigation, we fight for your best outcome — minimizing disruption while maximizing results.</p>
+      <div class="section-eyebrow reveal">How We Can Help</div>
+      <h2 class="reveal reveal-d1">A Focus on Resolution</h2>
+      <p class="reveal reveal-d2">We approach contract disputes with a focus on resolution. Whether through negotiation, mediation, or litigation, we fight for your best outcome — minimizing disruption while maximizing results.</p>
     </div>
 
     <div class="detail-block">
-      <div class="section-eyebrow">Our Approach</div>
-      <h2>Your Solution Matters</h2>
-      <p>We start by understanding the specifics of your dispute and your goals for resolution. Our team develops a tailored strategy to enforce your rights, recover damages, or reach a fair settlement. We're relentless advocates when negotiation fails, ensuring your voice is heard in court. Whether you're an individual or a business, your success matters to us — we've helped clients recover losses, enforce agreements, and resolve disputes quickly and efficiently, saving time, money, and peace of mind.</p>
+      <div class="section-eyebrow reveal">Our Approach</div>
+      <h2 class="reveal reveal-d1">Your Solution Matters</h2>
+      <p class="reveal reveal-d2">We start by understanding the specifics of your dispute and your goals for resolution. Our team develops a tailored strategy to enforce your rights, recover damages, or reach a fair settlement. We're relentless advocates when negotiation fails, ensuring your voice is heard in court. Whether you're an individual or a business, your success matters to us — we've helped clients recover losses, enforce agreements, and resolve disputes quickly and efficiently, saving time, money, and peace of mind.</p>
     </div>
 
   </div>
@@ -734,9 +748,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- TESTIMONIALS -->
 <section class="emp-testimonials">
-  <div class="section-eyebrow">Client Reviews</div>
-  <h2>What Our Clients Say</h2>
-  <div class="emp-carousel" id="empCarousel">
+  <div class="section-eyebrow reveal">Client Reviews</div>
+  <h2 class="reveal reveal-d1">What Our Clients Say</h2>
+  <div class="emp-carousel reveal reveal-d2" id="empCarousel">
     <div class="emp-carousel-track" id="empTrack">
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
@@ -780,9 +794,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- FAQs -->
 <section class="employee-faq">
-  <h2>Contract Dispute FAQs</h2>
+  <h2 class="reveal">Contract Dispute FAQs</h2>
   <div class="faq-list">
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d1">
     <button class="faq-question" onclick="toggleFaq(this)">
       What is a contract?
       <span class="faq-icon">+</span>
@@ -792,7 +806,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d2">
     <button class="faq-question" onclick="toggleFaq(this)">
       What if I have an oral contract, instead of a written contract?
       <span class="faq-icon">+</span>
@@ -802,7 +816,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     </div>
   </div>
 
-  <div class="faq-item">
+  <div class="faq-item reveal reveal-d3">
     <button class="faq-question" onclick="toggleFaq(this)">
       What is the statute of limitations in a contract dispute?
       <span class="faq-icon">+</span>
@@ -817,25 +831,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <!-- WHY CHOOSE US -->
 <section class="why-us">
   <div class="why-us-inner">
-    <div class="why-us-eyebrow">Why McLellan Law Group</div>
-    <h2 class="why-us-title">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-eyebrow reveal">Why McLellan Law Group</div>
+    <h2 class="why-us-title reveal reveal-d1">Results-Driven.<em>Personally Invested.</em></h2>
     <div class="why-us-grid">
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d1">
         <div class="why-us-num">01</div>
         <strong>Boutique Firm Attention</strong>
         <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d2">
         <div class="why-us-num">02</div>
         <strong>Silicon Valley Focus</strong>
         <span>Based in Saratoga, we know California contract law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
         <span>From breach of contract claims to non-compete disputes, our attorneys have secured favorable outcomes for businesses and individuals across Silicon Valley.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
         <strong>Free Consultation</strong>
         <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
@@ -846,9 +860,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- CTA BANNER -->
 <section class="cta-banner" id="contact">
-  <h2>Ready to Talk?<br><em>We're Here.</em></h2>
-  <p>Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+  <h2 class="reveal">Ready to Talk?<br><em>We're Here.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
 </section>
 
 <div class="maps-section">
@@ -893,6 +907,28 @@ function toggleFaq(btn) {
     if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
     timer = setInterval(next, 5000);
   }, {passive:true});
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
 })();
 </script>
 </body>

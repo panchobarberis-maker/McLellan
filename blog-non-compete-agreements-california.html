@@ -424,6 +424,20 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   text-align:justify;
 }
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 </style>
 </head>
 <body>
@@ -505,14 +519,14 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 <section class="article-hero">
   <div class="article-hero-bg"><video class=" video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video><video class=" video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video></div>
   <div class="article-hero-overlay"></div>
-  <div class="breadcrumb">
+  <div class="breadcrumb reveal">
     <a href="index.html">Home</a> ›
     <a href="blog.html">Blog</a> ›
     <span>Employment Law</span>
   </div>
-  <div class="article-tag">Employment Law</div>
-  <h1>When Non-Compete Agreements Are Enforceable in California</h1>
-  <div class="article-byline">
+  <div class="article-tag reveal reveal-d1">Employment Law</div>
+  <h1 class="reveal reveal-d2">When Non-Compete Agreements Are Enforceable in California</h1>
+  <div class="article-byline reveal reveal-d3">
     <strong>Claire Melehani, Esq. &amp; Steven McLellan, Esq.</strong>
     <span class="byline-dot">·</span>
     June 2026
@@ -526,12 +540,12 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
   <article class="article-body">
 
-    <p>If you have been asked to sign a non-compete agreement in California, or if a former employer is threatening to enforce one against you, you need to know one thing before anything else: non-compete agreements are enforceable in California only in a narrow set of circumstances.</p>
+    <p class="reveal">If you have been asked to sign a non-compete agreement in California, or if a former employer is threatening to enforce one against you, you need to know one thing before anything else: non-compete agreements are enforceable in California only in a narrow set of circumstances.</p>
 
-    <img src="hf_20260706_180050_f072705b-c08e-444a-80d2-4de4c46970eb.png" alt="Non-Compete Agreements in California infographic" style="width:100%;border-radius:12px;margin:8px 0 32px;">
+    <img src="hf_20260706_180050_f072705b-c08e-444a-80d2-4de4c46970eb.png" alt="Non-Compete Agreements in California infographic" style="width:100%;border-radius:12px;margin:8px 0 32px;" class="reveal reveal-d1">
 
     <!-- TOC -->
-    <div class="toc">
+    <div class="toc reveal reveal-d2">
       <div class="toc-title">Table of Contents</div>
       <ol>
         <li><a href="#seccion-1">The California Rule: Non-Competes Are Generally Void</a></li>
@@ -544,57 +558,57 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       </ol>
     </div>
 
-    <h2 id="seccion-1">The California Rule: Non-Competes Are Generally Void</h2>
-    <p>California Business and Professions Code section 16600 establishes one of the most protective employee mobility rules in the United States. As a general matter, every contract by which anyone is restrained from engaging in a lawful profession, trade, or business of any kind is void.</p>
+    <h2 id="seccion-1" class="reveal">The California Rule: Non-Competes Are Generally Void</h2>
+    <p class="reveal reveal-d1">California Business and Professions Code section 16600 establishes one of the most protective employee mobility rules in the United States. As a general matter, every contract by which anyone is restrained from engaging in a lawful profession, trade, or business of any kind is void.</p>
     <p><strong>Concrete example:</strong> A senior engineer leaves a Cupertino software company and accepts a role at a competitor. Her former employer sends a cease-and-desist letter citing a non-compete clause she signed at hire. Under section 16600, that clause is void — and the former employer's threat of litigation is, in most circumstances, an attempt to enforce an unenforceable restriction.</p>
-    <blockquote>"California does not enforce non-compete agreements as a matter of public policy. The rule exists to protect employee mobility and California's competitive economy."</blockquote>
+    <blockquote class="reveal">"California does not enforce non-compete agreements as a matter of public policy. The rule exists to protect employee mobility and California's competitive economy."</blockquote>
 
-    <h2 id="seccion-2">Recent Legislative Reinforcement: SB 699 and AB 1076</h2>
-    <p>In 2023, the California Legislature passed two statutes that significantly strengthened the existing prohibition on non-compete agreements. Senate Bill 699 made it unlawful for an employer to enter into, maintain, or attempt to enforce a non-compete agreement that is void under California law, and extended that prohibition to agreements signed outside of California. Assembly Bill 1076 imposed an affirmative obligation on employers to notify current and former employees, by February 14, 2024, if those employees had signed non-compete agreements that were unenforceable under California law.</p>
+    <h2 id="seccion-2" class="reveal">Recent Legislative Reinforcement: SB 699 and AB 1076</h2>
+    <p class="reveal reveal-d1">In 2023, the California Legislature passed two statutes that significantly strengthened the existing prohibition on non-compete agreements. Senate Bill 699 made it unlawful for an employer to enter into, maintain, or attempt to enforce a non-compete agreement that is void under California law, and extended that prohibition to agreements signed outside of California. Assembly Bill 1076 imposed an affirmative obligation on employers to notify current and former employees, by February 14, 2024, if those employees had signed non-compete agreements that were unenforceable under California law.</p>
 
-    <h2 id="seccion-3">The Narrow Exceptions to Section 16600</h2>
-    <p>California law recognizes a small number of statutory exceptions to the general prohibition on non-compete agreements. The <strong>sale of business exception</strong> permits a non-compete agreement in connection with the sale of a business, when the seller agrees not to compete with the buyer within a specified geographic area and for a specified period.</p>
-    <p>The <strong>dissolution of partnership exception</strong> similarly permits partners in a partnership to agree not to compete within a defined area upon dissolution of the partnership. A comparable provision applies to members of a limited liability company upon dissolution.</p>
+    <h2 id="seccion-3" class="reveal">The Narrow Exceptions to Section 16600</h2>
+    <p class="reveal reveal-d1">California law recognizes a small number of statutory exceptions to the general prohibition on non-compete agreements. The <strong>sale of business exception</strong> permits a non-compete agreement in connection with the sale of a business, when the seller agrees not to compete with the buyer within a specified geographic area and for a specified period.</p>
+    <p class="reveal reveal-d2">The <strong>dissolution of partnership exception</strong> similarly permits partners in a partnership to agree not to compete within a defined area upon dissolution of the partnership. A comparable provision applies to members of a limited liability company upon dissolution.</p>
 
-    <h2 id="seccion-4">What Employers Can Protect: Trade Secrets and Confidential Information</h2>
-    <p>Although California does not permit non-compete agreements, employers retain the right to protect legitimate business interests through other legal mechanisms. The California Uniform Trade Secrets Act prohibits the misappropriation of trade secrets, defined as information that derives independent economic value from not being generally known and that is subject to reasonable measures to maintain its secrecy.</p>
-    <p>Non-solicitation agreements directed at a former employer's employees are also void as a matter of California law following the California Supreme Court's decision in <em>Ixchel Pharma, LLC v. Biogen, Inc.</em>, which confirmed that section 16600's prohibition extends beyond employee non-solicitation to any contract that restrains trade.</p>
+    <h2 id="seccion-4" class="reveal">What Employers Can Protect: Trade Secrets and Confidential Information</h2>
+    <p class="reveal reveal-d1">Although California does not permit non-compete agreements, employers retain the right to protect legitimate business interests through other legal mechanisms. The California Uniform Trade Secrets Act prohibits the misappropriation of trade secrets, defined as information that derives independent economic value from not being generally known and that is subject to reasonable measures to maintain its secrecy.</p>
+    <p class="reveal reveal-d2">Non-solicitation agreements directed at a former employer's employees are also void as a matter of California law following the California Supreme Court's decision in <em>Ixchel Pharma, LLC v. Biogen, Inc.</em>, which confirmed that section 16600's prohibition extends beyond employee non-solicitation to any contract that restrains trade.</p>
 
-    <h2 id="seccion-5">What to Do if Your Employer Is Threatening to Enforce a Non-Compete</h2>
-    <p>Employees in San Jose, Cupertino, Los Gatos, or anywhere in Silicon Valley who receive a cease-and-desist letter or threat of litigation based on a non-compete agreement should not assume that the restriction is enforceable. In the vast majority of cases, the restriction is void under California law.</p>
-    <p>McLellan Law Group represents clients throughout Silicon Valley and Santa Clara County in employment disputes, including matters involving non-compete threats, trade secret claims, and wrongful termination.</p>
+    <h2 id="seccion-5" class="reveal">What to Do if Your Employer Is Threatening to Enforce a Non-Compete</h2>
+    <p class="reveal reveal-d1">Employees in San Jose, Cupertino, Los Gatos, or anywhere in Silicon Valley who receive a cease-and-desist letter or threat of litigation based on a non-compete agreement should not assume that the restriction is enforceable. In the vast majority of cases, the restriction is void under California law.</p>
+    <p class="reveal reveal-d2">McLellan Law Group represents clients throughout Silicon Valley and Santa Clara County in employment disputes, including matters involving non-compete threats, trade secret claims, and wrongful termination.</p>
 
-    <h2 id="faq">Frequently Asked Questions</h2>
+    <h2 id="faq" class="reveal">Frequently Asked Questions</h2>
     <div class="faq-list">
-      <div class="faq-item">
+      <div class="faq-item reveal reveal-d1">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           Are non-compete agreements enforceable in California?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-answer">Generally, no — California Business and Professions Code section 16600 voids any contract that restrains an employee from engaging in a lawful profession, trade, or business. This prohibition applies regardless of where the agreement was signed and is subject only to narrow statutory exceptions involving the sale of a business or dissolution of a partnership.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal reveal-d2">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           Can a California employer enforce a non-compete signed in another state?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-answer">No — Senate Bill 699, effective January 1, 2024, expressly prohibits California employers from attempting to enforce non-compete agreements void under California law, even when signed in another state or governed by another state's law.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal reveal-d3">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           What can California employers protect instead of using a non-compete?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-answer">California employers may protect trade secrets under the California Uniform Trade Secrets Act, enforce lawful confidentiality agreements that do not function as de facto non-competes, and bring claims for misappropriation of proprietary information.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal reveal-d4">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           What should I do if my employer threatens to sue me for violating a non-compete?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-answer">Contact an employment attorney in Silicon Valley before responding — in most cases, the restriction is void under California law and the employer's threat is not supported by an enforceable obligation.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal reveal-d5">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           Do non-solicitation agreements violate California law?
           <span class="faq-arrow">+</span>
@@ -603,13 +617,13 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       </div>
     </div>
 
-    <h2 id="autores">About the Authors</h2>
+    <h2 id="autores" class="reveal">About the Authors</h2>
     <div class="author-bios">
-      <div class="author-card">
+      <div class="author-card reveal reveal-d1">
         <div class="author-card-name">Claire Melehani, Esq.</div>
         <p class="author-card-p">Employment law attorney at McLellan Law Group with extensive experience advising employees and employers on non-compete, trade secret, and restrictive covenant matters throughout Silicon Valley.</p>
       </div>
-      <div class="author-card">
+      <div class="author-card reveal reveal-d2">
         <div class="author-card-name">Steven McLellan, Esq.</div>
         <p class="author-card-p">Founding attorney at McLellan Law Group, specializing in employment law and business litigation throughout Silicon Valley and Santa Clara County.</p>
       </div>
@@ -621,12 +635,12 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
   <!-- SIDEBAR -->
   <aside class="article-sidebar">
-    <div class="sidebar-box">
+    <div class="sidebar-box reveal">
       <h3>Free Consultation</h3>
       <p>Received a non-compete threat? Our employment attorneys are ready to help — at no cost for your initial consultation.</p>
       <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="sidebar-btn">Get My Free Consultation →</a>
     </div>
-    <div class="sidebar-related">
+    <div class="sidebar-related reveal reveal-d1">
       <h4>Related Articles</h4>
       <ul>
         <li>
@@ -650,25 +664,25 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 <!-- WHY CHOOSE US -->
 <section class="why-us">
   <div class="why-us-inner">
-    <div class="why-us-eyebrow">Why McLellan Law Group</div>
-    <h2 class="why-us-title">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-eyebrow reveal">Why McLellan Law Group</div>
+    <h2 class="why-us-title reveal reveal-d1">Results-Driven.<em>Personally Invested.</em></h2>
     <div class="why-us-grid">
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d1">
         <div class="why-us-num">01</div>
         <strong>Boutique Firm Attention</strong>
         <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d2">
         <div class="why-us-num">02</div>
         <strong>Silicon Valley Focus</strong>
         <span>Based in Saratoga, we know California employment law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
         <span>From wrongful termination to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
       </div>
-      <div class="why-us-item">
+      <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
         <strong>Free Consultation</strong>
         <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
@@ -678,9 +692,9 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 </section>
 <!-- CTA BANNER -->
 <section class="cta-banner">
-  <h2>Have a Legal Question?</h2>
-  <p>Our attorneys are ready to listen. Schedule a free consultation today.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-cta">Get My Free Consultation →</a>
+  <h2 class="reveal">Have a Legal Question?</h2>
+  <p class="reveal reveal-d1">Our attorneys are ready to listen. Schedule a free consultation today.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-cta reveal reveal-d2">Get My Free Consultation →</a>
 </section>
 
 <!-- FOOTER -->
@@ -695,6 +709,28 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
   btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
 });
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
 </html>

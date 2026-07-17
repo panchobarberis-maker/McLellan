@@ -225,6 +225,20 @@
 /* Textos justificados */
 .bio-block p, .result-card span, .atty-hero p, .cred-answer li { text-align:justify; }
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 </style>
 </head>
 <body>
@@ -306,12 +320,12 @@
 <section class="atty-hero">
   <div class="atty-hero-inner">
     <div>
-      <h1>Sonia Mehmi</h1>
-      <div class="atty-role">Law Clerk</div>
-      <p>Sonia Mehmi supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a J.D. candidate at Santa Clara University School of Law and a registered Patent Agent.</p>
-      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+      <h1 class="reveal">Sonia Mehmi</h1>
+      <div class="atty-role reveal reveal-d1">Law Clerk</div>
+      <p class="reveal reveal-d2">Sonia Mehmi supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a J.D. candidate at Santa Clara University School of Law and a registered Patent Agent.</p>
+      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d3">Request a Free Consultation →</a>
     </div>
-    <div class="atty-photo" style="height:480px; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,#24484d 0%,#16333a 100%);">
+    <div class="atty-photo reveal reveal-d2" style="height:480px; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,#24484d 0%,#16333a 100%);">
       <span style="font-family:'DM Serif Display',serif; font-style:italic; font-size:120px; color:#c9a96e;">SM</span>
     </div>
   </div>
@@ -322,7 +336,7 @@
   <div class="atty-bio-inner">
 
     <div>
-      <div class="cred-item">
+      <div class="cred-item reveal">
         <button class="cred-question" onclick="toggleCred(this)">Education <span class="cred-icon">+</span></button>
         <div class="cred-answer">
           <ul>
@@ -332,7 +346,7 @@
           </ul>
         </div>
       </div>
-      <div class="cred-item">
+      <div class="cred-item reveal reveal-d1">
         <button class="cred-question" onclick="toggleCred(this)">Memberships &amp; Languages <span class="cred-icon">+</span></button>
         <div class="cred-answer">
           <ul>
@@ -345,11 +359,11 @@
       </div>
 
       <div style="margin-top:28px;">
-        <div class="result-card">
+        <div class="result-card reveal reveal-d2">
           <strong>Registered Patent Agent</strong>
           <span>Licensed to practice before the United States Patent and Trademark Office.</span>
         </div>
-        <div class="result-card">
+        <div class="result-card reveal reveal-d3">
           <strong>Science-Driven Analysis</strong>
           <span>A background in biochemistry and bioethics gives her a distinctive analytical lens for matters involving technical evidence, healthcare, and regulatory issues.</span>
         </div>
@@ -359,10 +373,10 @@
 
     <div>
       <div class="bio-block">
-        <div class="bio-eyebrow">About Sonia</div>
-        <p>Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at Santa Clara University School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
-        <p>Before law school, Sonia earned a Master of Science in Bioethics from Columbia University, where she studied the intersection of law, ethics, and regulation in medicine and biotechnology. She holds a Bachelor of Science in Biochemistry and Molecular Biology from the University of California, Davis. Her background in the sciences gives her a distinctive analytical lens, particularly in matters involving technical evidence, healthcare, and regulatory issues.</p>
-        <p>Sonia is an active member of the South Asian Law School Association, Women in Law, and the South Asian Bar Association. She is fluent in English, Punjabi, and Hindi.</p>
+        <div class="bio-eyebrow reveal">About Sonia</div>
+        <p class="reveal reveal-d1">Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at Santa Clara University School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
+        <p class="reveal reveal-d2">Before law school, Sonia earned a Master of Science in Bioethics from Columbia University, where she studied the intersection of law, ethics, and regulation in medicine and biotechnology. She holds a Bachelor of Science in Biochemistry and Molecular Biology from the University of California, Davis. Her background in the sciences gives her a distinctive analytical lens, particularly in matters involving technical evidence, healthcare, and regulatory issues.</p>
+        <p class="reveal reveal-d3">Sonia is an active member of the South Asian Law School Association, Women in Law, and the South Asian Bar Association. She is fluent in English, Punjabi, and Hindi.</p>
       </div>
     </div>
 
@@ -371,9 +385,9 @@
 
 <!-- CTA -->
 <section class="cta-banner">
-  <h2>Work With<em> Our Team.</em></h2>
-  <p>Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+  <h2 class="reveal">Work With<em> Our Team.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
 </section>
 
 <script>
@@ -390,6 +404,28 @@ function toggleCred(btn) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
 </html>

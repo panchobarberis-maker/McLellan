@@ -225,6 +225,20 @@
 /* Textos justificados */
 .bio-block p, .result-card span, .atty-hero p, .cred-answer li { text-align:justify; }
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 </style>
 </head>
 <body>
@@ -306,12 +320,12 @@
 <section class="atty-hero">
   <div class="atty-hero-inner">
     <div>
-      <h1>Elizabeth Handtke</h1>
-      <div class="atty-role">Attorney</div>
-      <p>Elizabeth Handtke is an attorney and a rising legal professional. She acquired her Juris Doctor degree at Santa Clara University School of Law, where she served as a Notes Editor for the Santa Clara Law Review.</p>
-      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+      <h1 class="reveal">Elizabeth Handtke</h1>
+      <div class="atty-role reveal reveal-d1">Attorney</div>
+      <p class="reveal reveal-d2">Elizabeth Handtke is an attorney and a rising legal professional. She acquired her Juris Doctor degree at Santa Clara University School of Law, where she served as a Notes Editor for the Santa Clara Law Review.</p>
+      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d3">Request a Free Consultation →</a>
     </div>
-    <img class="atty-photo" src="elizabeth.webp" alt="Elizabeth Handtke, Attorney at McLellan Law Group">
+    <img class="atty-photo reveal" src="elizabeth.webp" alt="Elizabeth Handtke, Attorney at McLellan Law Group">
   </div>
 </section>
 
@@ -320,7 +334,7 @@
   <div class="atty-bio-inner">
 
     <div>
-      <div class="cred-item">
+      <div class="cred-item reveal">
         <button class="cred-question" onclick="toggleCred(this)">Education <span class="cred-icon">+</span></button>
         <div class="cred-answer">
           <ul>
@@ -329,7 +343,7 @@
           </ul>
         </div>
       </div>
-      <div class="cred-item">
+      <div class="cred-item reveal reveal-d1">
         <button class="cred-question" onclick="toggleCred(this)">Professional Memberships <span class="cred-icon">+</span></button>
         <div class="cred-answer">
           <ul>
@@ -339,11 +353,11 @@
       </div>
 
       <div style="margin-top:28px;">
-        <div class="result-card">
+        <div class="result-card reveal reveal-d2">
           <strong>Estate Planning &amp; Probate</strong>
           <span>Drafted trusts, wills, powers of attorney, and advance health care directives, and prepared court documents for conservatorships and probate proceedings.</span>
         </div>
-        <div class="result-card">
+        <div class="result-card reveal reveal-d3">
           <strong>Litigation Experience</strong>
           <span>Assisted with discovery and document organization in criminal defense cases, handling sensitive information with a high level of discretion.</span>
         </div>
@@ -353,11 +367,11 @@
 
     <div>
       <div class="bio-block">
-        <div class="bio-eyebrow">About Elizabeth</div>
-        <p>Elizabeth Handtke is an attorney and a rising legal professional. She acquired her Juris Doctor degree at Santa Clara University School of Law. She formerly served as a Notes Editor for Santa Clara Law Review. Elizabeth also gained experience in estate planning and criminal law while completing other internships and clerkships.</p>
-        <p>During her time as a law clerk for Temmerman, Cilley, &amp; Kohlmann, Elizabeth drafted estate planning documents, including trusts, wills, powers of attorney, and advance health care directives. She also prepared court documents for conservatorships and probate proceedings, assisted with trust administration, and conducted relevant legal research.</p>
-        <p>Additionally, Elizabeth interned at the Law Offices of Latimer &amp; Kenkel, where she assisted with discovery and organized documents in various criminal defense cases. She researched legal topics and presented her findings during office meetings, all while handling sensitive information with a high level of discretion. Elizabeth's diverse legal experience and commitment to excellence make her an invaluable asset to our team.</p>
-        <p>Elizabeth tackles complex and esoteric tasks with dedication and superlative attention to detail. As a valued member of our team, she offers her unique set of skills, talent, intellect, and passion to our clients' cases.</p>
+        <div class="bio-eyebrow reveal">About Elizabeth</div>
+        <p class="reveal reveal-d1">Elizabeth Handtke is an attorney and a rising legal professional. She acquired her Juris Doctor degree at Santa Clara University School of Law. She formerly served as a Notes Editor for Santa Clara Law Review. Elizabeth also gained experience in estate planning and criminal law while completing other internships and clerkships.</p>
+        <p class="reveal reveal-d2">During her time as a law clerk for Temmerman, Cilley, &amp; Kohlmann, Elizabeth drafted estate planning documents, including trusts, wills, powers of attorney, and advance health care directives. She also prepared court documents for conservatorships and probate proceedings, assisted with trust administration, and conducted relevant legal research.</p>
+        <p class="reveal reveal-d3">Additionally, Elizabeth interned at the Law Offices of Latimer &amp; Kenkel, where she assisted with discovery and organized documents in various criminal defense cases. She researched legal topics and presented her findings during office meetings, all while handling sensitive information with a high level of discretion. Elizabeth's diverse legal experience and commitment to excellence make her an invaluable asset to our team.</p>
+        <p class="reveal reveal-d4">Elizabeth tackles complex and esoteric tasks with dedication and superlative attention to detail. As a valued member of our team, she offers her unique set of skills, talent, intellect, and passion to our clients' cases.</p>
       </div>
     </div>
 
@@ -366,9 +380,9 @@
 
 <!-- CTA -->
 <section class="cta-banner">
-  <h2>Work With<em> Elizabeth.</em></h2>
-  <p>Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold">Request a Free Consultation →</a>
+  <h2 class="reveal">Work With<em> Elizabeth.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
 </section>
 
 <script>
@@ -385,6 +399,28 @@ function toggleCred(btn) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
 </html>
