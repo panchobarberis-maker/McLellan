@@ -669,6 +669,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 
 
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
 /* Badge dorado del hero */
 .hero-pill {
   position:relative; z-index:2;
@@ -777,61 +791,61 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="employees-section" id="employees">
   <div class="employees-intro">
     <div class="employees-intro-text">
-      <div class="section-eyebrow">For Employees</div>
-      <h2>We Fight for<em>Employee Rights.</em></h2>
-      <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you pay nothing unless we win.</p>
-      <div class="contingency-badge">Contingency Fee — You Pay Nothing Unless We Win</div>
+      <div class="section-eyebrow reveal">For Employees</div>
+      <h2 class="reveal reveal-d1">We Fight for<em>Employee Rights.</em></h2>
+      <p class="reveal reveal-d2">If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you pay nothing unless we win.</p>
+      <div class="contingency-badge reveal reveal-d3">Contingency Fee — You Pay Nothing Unless We Win</div>
     </div>
-    <div class="employees-intro-img-wrap">
+    <div class="employees-intro-img-wrap reveal reveal-d2">
       <img class="employees-intro-img" src="WhatsApp Image 2025-01-21 at 14.57.35_a0a9c091.jpg" alt="McLellan Law Group attorneys">
       <div class="employees-intro-img-overlay"></div>
     </div>
   </div>
 
   <div class="employers-grid">
-    <a href="wrongful-termination.html" class="employer-item" style="text-decoration:none;">
+    <a href="wrongful-termination.html" class="employer-item reveal reveal-d1" style="text-decoration:none;">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Wrongful Termination</strong>
         <span>Fired unlawfully or in retaliation</span>
       </div>
     </a>
-    <a href="workplace-discrimination.html" class="employer-item" style="text-decoration:none;">
+    <a href="workplace-discrimination.html" class="employer-item reveal reveal-d2" style="text-decoration:none;">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Workplace Discrimination</strong>
         <span>Race, gender, age, disability, religion</span>
       </div>
     </a>
-    <a href="sexual-harassment.html" class="employer-item" style="text-decoration:none;">
+    <a href="sexual-harassment.html" class="employer-item reveal reveal-d3" style="text-decoration:none;">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Sexual Harassment</strong>
         <span>Hostile work environment &amp; quid pro quo</span>
       </div>
     </a>
-    <a href="retaliation.html" class="employer-item" style="text-decoration:none;">
+    <a href="retaliation.html" class="employer-item reveal reveal-d4" style="text-decoration:none;">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Retaliation</strong>
         <span>Punished for reporting violations</span>
       </div>
     </a>
-    <a href="unpaid-wages.html" class="employer-item" style="text-decoration:none;">
+    <a href="unpaid-wages.html" class="employer-item reveal reveal-d5" style="text-decoration:none;">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Unpaid Wages &amp; Overtime</strong>
         <span>Wage theft, missed breaks, classification</span>
       </div>
     </a>
-    <a href="paga-claims.html" class="employer-item" style="text-decoration:none;">
+    <a href="paga-claims.html" class="employer-item reveal reveal-d6" style="text-decoration:none;">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>PAGA Claims</strong>
         <span>Act on behalf of yourself and coworkers</span>
       </div>
     </a>
-    <div class="employer-item">
+    <div class="employer-item reveal reveal-d7">
       <div class="employer-item-icon"></div>
       <div class="employer-item-text">
         <strong>Constructive Termination</strong>
@@ -1131,6 +1145,28 @@ function toggleFaq(btn) {
     if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
     timer = setInterval(next, 5000);
   }, {passive:true});
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
 })();
 </script>
 </body>
