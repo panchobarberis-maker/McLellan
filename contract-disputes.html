@@ -241,9 +241,10 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
   border:2px solid rgba(255,255,255,0.35); border-radius:14px;
   box-shadow:0 3px 12px rgba(0,0,0,0.15);
+  -webkit-tap-highlight-color:transparent;
 }
-.employer-item:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
-.employer-item:hover { background:#f3ece0; }
+.employer-item:hover, .employer-item:active, .employer-item:focus-visible { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
+.employer-item:hover, .employer-item:active, .employer-item:focus-visible { background:#f3ece0; }
 .employer-item-text strong {
   display:block; font-size:17px; font-weight:700; color:#1e3a3e; margin-bottom:6px;
 }
