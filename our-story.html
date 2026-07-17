@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story | McLellan Law Group</title>
+<meta name="description" content="Why we started McLellan Law Group and who we built it for — a Saratoga, CA firm turning legal complexity into clarity for business owners, executives, and families.">
+<link rel="canonical" href="https://www.mclellanlawgroup.com/our-story">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Barlow',sans-serif; font-weight:400;
+  background:#1e3a3e; color:#f0ece4;
+  -webkit-font-smoothing:antialiased;
+}
+a { text-decoration:none; color:inherit; }
+
+/* NAV */
+.nav {
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px;
+  background:rgba(30,58,62,0.97);
+  backdrop-filter:blur(12px);
+}
+.logo-link { display:none; text-decoration:none; }
+.logo-img { height:32px; width:auto; }
+.logo-img-mobile { height:28px; width:auto; }
+.nav-links { display:flex; gap:28px; list-style:none; margin:0 auto 0 48px; }
+.nav-links > li { position:relative; }
+.nav-links > li > a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13px; font-weight:500; letter-spacing:0.2px; padding:6px 0; display:block; transition:color 0.15s; }
+.nav-links > li > a:hover { color:#fff; }
+.dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.5; }
+.dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+.dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff; border:1px solid #e0ddd6; border-radius:10px; min-width:230px; padding:8px 0; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none; }
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu li a { display:block; padding:10px 20px; color:#333; text-decoration:none; font-size:13px; font-weight:400; transition:background 0.15s,color 0.15s; border-radius:6px; margin:2px 6px; }
+.dropdown-menu li a:hover { background:#f0f5f5; color:#1e3a3e; }
+.dropdown-menu li a.featured { font-weight:600; color:#1e3a3e; }
+.dropdown-divider { height:1px; background:#f0ede6; margin:5px 0; }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+.nav .contact-btn {
+  color:#1e3a3e; border:none; border-radius:24px; padding:9px 22px;
+  font-size:13px; font-weight:700; text-decoration:none; flex-shrink:0;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+.nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
+.nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+.nav-logo-center { display:none; position:absolute; left:50%; transform:translateX(-50%); }
+.mobile-menu { display:none; position:fixed; inset:0; background:#1e3a3e; z-index:200; flex-direction:column; padding:24px; overflow-y:auto; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-close { align-self:flex-end; background:none; border:none; color:#fff; font-size:28px; cursor:pointer; margin-bottom:24px; }
+.mobile-menu ul { list-style:none; }
+.mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.1); }
+.mobile-menu ul li a { display:block; padding:15px 0; color:rgba(255,255,255,0.85); text-decoration:none; font-size:17px; font-weight:500; }
+.mobile-menu ul li a.featured { color:#c9a96e; font-weight:600; }
+.mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:15px 0; color:rgba(255,255,255,0.85); font-size:17px; font-weight:500; cursor:pointer; text-align:left; }
+.mobile-accordion-arrow { transition:transform 0.2s; font-size:18px; color:#c9a96e; }
+.mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+.mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+.mobile-accordion.open .mobile-accordion-menu { display:block; }
+.mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07); }
+.mobile-accordion-menu li a { padding:11px 0; font-size:14px; font-weight:400; }
+.nav-contact-mobile { display:none; }
+@media(max-width:768px) {
+  .nav { padding:12px 16px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .nav-logo-center { display:flex; }
+  .nav .contact-btn { display:none; }
+  .nav-contact-mobile {
+    display:flex; align-items:center;
+    color:#1e3a3e; border-radius:20px; padding:7px 16px;
+    font-size:12px; font-weight:700; text-decoration:none; white-space:nowrap; flex-shrink:0;
+    background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+    background-size:200% auto;
+    animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+  }
+}
+@media(min-width:769px) {
+  .logo-link { display:flex; }
+  .mobile-menu { display:none !important; }
+}
+
+/* ── HERO ── */
+.hero {
+  display:grid; grid-template-columns:55% 45%;
+  min-height:calc(100svh - 62px);
+}
+@media(max-width:900px) { .hero { grid-template-columns:1fr; min-height:0; } }
+.hero-photo { position:relative; overflow:hidden; }
+.hero-photo img {
+  width:100%; height:100%; object-fit:cover; object-position:center 20%;
+  filter:grayscale(10%) brightness(0.85);
+  display:block;
+}
+.hero-photo::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%);
+}
+@media(max-width:900px) {
+  .hero-photo { height:60vh; }
+  .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%); }
+}
+.hero-info {
+  padding:80px 64px 80px 48px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+@media(max-width:900px) { .hero-info { padding:40px 24px 64px; } }
+.breadcrumb {
+  font-size:13px; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(255,255,255,0.65); font-weight:500; margin-bottom:36px;
+}
+.breadcrumb em { font-style:normal; color:rgba(255,255,255,0.85); }
+.hero-name {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-1px;
+  font-size:clamp(38px, 4.6vw, 60px); line-height:1.05;
+  margin-bottom:0;
+}
+.hero-name .first {
+  display:block; font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; letter-spacing:0; font-size:0.72em; margin-bottom:8px;
+}
+
+/* ── BODY ── */
+.body-section {
+  padding:96px 64px; max-width:900px; margin:0 auto;
+}
+@media(max-width:900px) { .body-section { padding:64px 24px; } }
+.section-label {
+  font-size:14px; letter-spacing:3px; text-transform:uppercase;
+  color:#c9a96e; font-weight:600; margin-bottom:32px;
+}
+.section-label::after {
+  content:''; display:inline-block; vertical-align:middle;
+  width:36px; height:1px; background:#b9986a; margin-left:14px; opacity:0.6;
+}
+.lead {
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
+  font-size:clamp(24px, 2.6vw, 32px); line-height:1.5; color:#f0ece4;
+  margin-bottom:40px;
+  border:2.5px solid rgba(185,152,106,0.5);
+  border-left:8px solid #b9986a;
+  padding:32px 36px;
+  background:rgba(185,152,106,0.06);
+}
+.about-copy {
+  border:2.5px solid rgba(255,255,255,0.14);
+  padding:32px 36px;
+  background:rgba(255,255,255,0.03);
+  margin-bottom:40px;
+}
+.about-copy p {
+  font-size:19px; line-height:1.9; color:rgba(255,255,255,0.88);
+  margin-bottom:24px; text-align:justify;
+}
+.about-copy p:last-child { margin-bottom:0; }
+
+/* ── FOOT CTA ── */
+.foot-cta {
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:96px 64px; text-align:center;
+}
+@media(max-width:768px) { .foot-cta { padding:64px 24px; } }
+.foot-cta h2 {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-0.5px;
+  font-size:clamp(36px, 4.5vw, 56px); line-height:1.1; margin-bottom:16px;
+}
+.foot-cta h2 em {
+  font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
+}
+.foot-cta p { font-size:19px; color:rgba(255,255,255,0.75); margin-bottom:40px; }
+.hero-cta {
+  display:inline-flex; align-items:center; gap:14px;
+  background:#b9986a; color:#1e3a3e;
+  font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  padding:18px 36px; transition:background 0.25s;
+}
+.hero-cta:hover { background:#cbb084; }
+.hero-cta span { font-size:16px; }
+
+/* Scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+.reveal-d5 { transition-delay:0.4s; }
+.reveal-d6 { transition-delay:0.48s; }
+.reveal-d7 { transition-delay:0.56s; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="our-story.html" class="featured">Our Story</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Practice Areas</a>
+      <ul class="dropdown-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a href="real-estate-litigation.html">Real Estate Litigation</a></li>
+        <li><a href="contract-disputes.html">Contract Disputes</a></li>
+        <li><a href="financial-elder-abuse.html">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Our Team</a>
+      <ul class="dropdown-menu">
+        <li><a href="steven-mclellan.html" class="featured">Steven McLellan</a></li>
+        <li><a href="claire-melehani.html" class="featured">Claire Melehani</a></li>
+        <li><a href="elizabeth-handtke.html">Elizabeth Handtke</a></li>
+        <li><a href="sara-van-til.html">Sara Van Til</a></li>
+        <li><a href="sonia-mehmi.html">Sonia Mehmi</a></li>
+      </ul>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Four-story&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="contact-btn">Free Consultation →</a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Four-story&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="nav-contact-mobile">Consult →</a>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="our-story.html" class="featured">Our Story</a></li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Practice Areas <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li><a href="real-estate-litigation.html">Real Estate Litigation</a></li>
+        <li><a href="contract-disputes.html">Contract Disputes</a></li>
+        <li><a href="financial-elder-abuse.html">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Our Team <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="steven-mclellan.html">Steven McLellan</a></li>
+        <li><a href="claire-melehani.html">Claire Melehani</a></li>
+        <li><a href="elizabeth-handtke.html">Elizabeth Handtke</a></li>
+        <li><a href="sara-van-til.html">Sara Van Til</a></li>
+        <li><a href="sonia-mehmi.html">Sonia Mehmi</a></li>
+      </ul>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="featured">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="los 3.png" alt="McLellan Law Group attorneys" class="reveal">
+  </div>
+  <div class="hero-info">
+    <div class="breadcrumb reveal reveal-d1">Our Story</div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Why We Started This Firm</span>—and Who We Built It For</h1>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="body-section">
+  <div class="about-copy">
+    <p class="reveal">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
+    <p class="reveal reveal-d1">As we built strong relationships with our entrepreneurial clients, something powerful started to happen—they began referring their clients, friends, and family to us for help. That steady stream of referrals gave rise to our consumer-facing practice areas and revealed something important:</p>
+  </div>
+
+  <p class="lead reveal reveal-d2">"We see ourselves as more than lawyers—we're collaborators, advocates, and champions for business owners who are striving to achieve greatness."</p>
+
+  <div class="about-copy">
+    <p class="reveal reveal-d3">We started with a simple mission: to turn legal complexity into clarity. Far too often, we saw business owners blindsided by legal pitfalls—whether it was navigating contracts, addressing employment laws, or responding to unexpected litigation. We wanted to be the firm that not only solves problems but also anticipates them, empowering our clients to focus on running and growing their businesses without fear of the unknown.</p>
+  </div>
+</section>
+
+<!-- FOOT CTA -->
+<section class="foot-cta">
+  <h2 class="reveal">Let's Write <em>Your Chapter.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Four-story&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex;">Request a Consultation <span>→</span></a>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+</body>
+</html>
