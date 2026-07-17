@@ -507,13 +507,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 
 /* EMPLOYEES INTRO con foto (desktop) */
-.employees-intro-img { display:none; }
+.employees-intro-img-wrap { display:none; }
 @media(min-width:769px) {
   .employees-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; margin-bottom:8px; }
+  .employees-intro-img-wrap {
+    display:block; position:relative; width:100%; height:380px; border-radius:16px;
+    overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.12);
+  }
   .employees-intro-img {
-    display:block; width:100%; height:380px; object-fit:cover; object-position:center 20%; border-radius:16px;
-    box-shadow:0 12px 40px rgba(0,0,0,0.12);
+    display:block; width:100%; height:100%; object-fit:cover; object-position:center 20%;
     filter:brightness(0.7) saturate(1.1);
+  }
+  .employees-intro-img-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
   }
 }
 
@@ -769,7 +776,10 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
       <p>If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you pay nothing unless we win.</p>
       <div class="contingency-badge">Contingency Fee — You Pay Nothing Unless We Win</div>
     </div>
-    <img class="employees-intro-img" src="WhatsApp Image 2025-01-21 at 14.57.35_a0a9c091.jpg" alt="McLellan Law Group attorneys">
+    <div class="employees-intro-img-wrap">
+      <img class="employees-intro-img" src="WhatsApp Image 2025-01-21 at 14.57.35_a0a9c091.jpg" alt="McLellan Law Group attorneys">
+      <div class="employees-intro-img-overlay"></div>
+    </div>
   </div>
 
   <div class="employers-grid">
