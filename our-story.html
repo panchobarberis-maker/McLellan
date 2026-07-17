@@ -122,9 +122,12 @@ a { text-decoration:none; color:inherit; }
 }
 @media(max-width:900px) { .hero-info { padding:40px 24px 64px; } }
 .breadcrumb {
+  display:inline-block;
   font-size:13px; letter-spacing:3px; text-transform:uppercase;
   color:rgba(255,255,255,0.65); font-weight:500; margin-bottom:36px;
+  transition:color 0.2s;
 }
+a.breadcrumb:hover { color:#c9a96e; }
 .breadcrumb em { font-style:normal; color:rgba(255,255,255,0.85); }
 .hero-name {
   font-family:'Barlow Condensed',sans-serif; font-weight:900;
@@ -296,7 +299,7 @@ a { text-decoration:none; color:inherit; }
     <img src="los 3.png" alt="McLellan Law Group attorneys" class="reveal">
   </div>
   <div class="hero-info">
-    <div class="breadcrumb reveal reveal-d1">Our Story</div>
+    <a href="index.html" class="breadcrumb reveal reveal-d1">Our Story</a>
     <h1 class="hero-name reveal reveal-d2"><span class="first">Why We Started This Firm</span>—and Who We Built It For</h1>
     <p class="hero-sub reveal reveal-d3">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
 
