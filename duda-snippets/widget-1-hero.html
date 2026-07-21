@@ -1,0 +1,140 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&family=DM+Serif+Display:ital@0;1&display=swap');
+html, body { overflow-x:hidden !important; }
+@keyframes mlgBreath {
+  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
+  50%      { box-shadow:0 0 44px 14px rgba(201,169,110,0.85), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.06); }
+}
+.mlg-hero {
+  position:relative !important; overflow:hidden !important;
+  display:flex !important; flex-direction:column !important;
+  align-items:center !important; justify-content:center !important;
+  text-align:center !important;
+  padding:80px 28px 72px !important;
+  min-height:100svh !important;
+  background:#1e3a3e !important;
+  font-family:'Barlow',sans-serif !important;
+  margin-top:-8px !important;
+  box-shadow:0 20px 0 0 #1e3a3e !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important;
+  max-width:104vw !important;
+  z-index:0 !important;
+  isolation:isolate !important;
+}
+.mlg-hero-video-wrap {
+  position:absolute !important; inset:0 !important; z-index:1 !important;
+  pointer-events:none !important; overflow:hidden !important;
+}
+.mlg-hero-video-wrap video {
+  position:absolute !important;
+  top:50% !important; left:50% !important;
+  width:100% !important; height:100% !important;
+  min-width:100% !important; min-height:100% !important;
+  transform:translate(-50%,-50%) !important;
+  object-fit:cover !important;
+}
+.mlg-video-mobile { display:none !important; }
+@media(max-width:768px) {
+  .mlg-video-desktop { display:none !important; }
+  .mlg-video-mobile { display:block !important; }
+}
+.mlg-hero-overlay {
+  position:absolute !important; inset:0 !important; z-index:2 !important;
+  background:rgba(20,48,52,0.75) !important;
+}
+.mlg-hero-badge, .mlg-hero-display, .mlg-hero-sub, .mlg-hero-ctas {
+  position:relative !important; z-index:3 !important;
+}
+.mlg-hero-badge {
+  display:inline-flex !important; align-items:center !important; gap:8px !important;
+  background:rgba(255,255,255,0.15) !important; border:1px solid rgba(255,255,255,0.35) !important;
+  border-radius:24px !important; padding:6px 16px !important; margin-bottom:28px !important;
+  font-size:10px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-weight:600 !important; color:rgba(255,255,255,0.9) !important;
+  font-family:'Barlow',sans-serif !important;
+}
+.mlg-hero-badge::before {
+  content:'' !important; width:6px !important; height:6px !important;
+  background:#faf8f3 !important; border-radius:50% !important;
+  display:inline-block !important; flex-shrink:0 !important;
+}
+.mlg-hero-display {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:68px !important; line-height:0.95 !important; font-weight:800 !important;
+  margin-bottom:22px !important; letter-spacing:-1.5px !important; color:#fff !important;
+  text-transform:uppercase !important;
+}
+.mlg-hero-display .mlg-line-gold {
+  color:#c9a96e !important; display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; letter-spacing:-1px !important;
+}
+.mlg-hero-sub {
+  font-size:18px !important; line-height:1.65 !important;
+  color:rgba(255,255,255,0.85) !important; margin-bottom:36px !important;
+  font-weight:400 !important; max-width:440px !important;
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+  letter-spacing:0.2px !important;
+}
+.mlg-hero-ctas {
+  display:flex !important; gap:12px !important; flex-wrap:wrap !important;
+  justify-content:center !important;
+}
+.mlg-btn-primary {
+  display:inline-flex !important; align-items:center !important; gap:8px !important;
+  color:#1e3a3e !important; font-weight:700 !important; font-size:14px !important;
+  padding:14px 28px !important; border-radius:28px !important; text-decoration:none !important;
+  letter-spacing:0.2px !important;
+  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%) !important;
+  animation:mlgBreath 3.2s ease-in-out infinite !important;
+}
+@media(max-width:768px) {
+  .mlg-hero {
+    padding:120px 20px 48px !important;
+    min-height:100svh !important;
+    justify-content:flex-start !important;
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important;
+    max-width:100vw !important;
+  }
+  .mlg-hero-display { font-size:13vw !important; letter-spacing:-1px !important; }
+}
+@media(min-width:769px) {
+  .mlg-hero { min-height:100svh !important; padding:100px 96px 88px !important; }
+  .mlg-hero-display { font-size:96px !important; letter-spacing:-3px !important; }
+  .mlg-hero-sub { font-size:16px !important; }
+}
+ </style>
+ <section class="mlg-hero">
+  <div class="mlg-hero-video-wrap">
+   <video class="mlg-video-desktop" autoplay="" muted="" loop="" playsinline="" preload="auto">
+    <source src="https://raw.githubusercontent.com/panchobarberis-maker/McLellan/main/video%20mclellan.mp4" type="video/mp4">
+   </video>
+   <video class="mlg-video-mobile" autoplay="" muted="" loop="" playsinline="" preload="auto">
+    <source src="https://raw.githubusercontent.com/panchobarberis-maker/McLellan/main/WhatsApp%20Video%202026-07-01%20at%2017.20.29%20(1).mp4" type="video/mp4">
+   </video>
+  </div>
+  <div class="mlg-hero-overlay">
+  </div>
+  <h1 style="position:absolute !important; width:1px !important; height:1px !important; padding:0 !important; margin:-1px !important; overflow:hidden !important; clip:rect(0,0,0,0) !important; white-space:nowrap !important; border:0 !important;">
+   Employment &amp; Civil Litigation Attorneys — Saratoga, CA
+  </h1>
+  <div class="mlg-hero-badge">
+   Employment &amp; Civil Litigation Attorneys — Saratoga, CA
+  </div>
+  <div class="mlg-hero-display">
+   Efficient Strategies.
+   <span class="mlg-line-gold">
+    Tireless Effort.
+   </span>
+  </div>
+  <p class="mlg-hero-sub">
+   Representing businesses, executives &amp; families throughout Silicon Valley and the Bay Area.
+  </p>
+  <div class="mlg-hero-ctas">
+   <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&amp;engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="mlg-btn-primary">
+    Get My Free Consultation →
+   </a>
+  </div>
+ </section>
