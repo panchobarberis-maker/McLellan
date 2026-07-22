@@ -8,7 +8,7 @@
 <meta name="description" content="Why we started McLellan Law Group and who we built it for — a Saratoga, CA firm turning legal complexity into clarity for business owners, executives, and families.">
 <link rel="canonical" href="https://www.mclellanlawgroup.com/our-story">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -137,51 +137,39 @@ a.breadcrumb:hover { color:#c9a96e; }
 }
 .hero-name .first {
   display:block; font-style:italic; color:#b9986a;
-  font-family:'DM Serif Display',serif; font-weight:400;
+  font-family:'Barlow',sans-serif; font-weight:600;
   text-transform:none; letter-spacing:0; font-size:0.72em; margin-bottom:8px;
 }
 .hero-sub {
-  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
+  font-family:'Barlow',sans-serif; font-style:italic; font-weight:500;
   font-size:clamp(18px, 1.8vw, 22px); line-height:1.6; color:rgba(255,255,255,0.8);
   max-width:520px; margin-top:28px;
 }
 
-.section-label {
-  font-size:14px; letter-spacing:3px; text-transform:uppercase;
-  color:#c9a96e; font-weight:600; margin-bottom:32px;
+/* ── STORY SECTIONS (alternating cream/navy, like the home page) ── */
+.story-section { padding:72px 28px; text-align:center; }
+@media(min-width:769px) { .story-section { padding:120px 96px; } }
+.story-section.dark { background:#1e3a3e; }
+.story-section.light { background:#fbf6ef; }
+.story-eyebrow {
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'Barlow',sans-serif; font-size:15px; letter-spacing:3px; text-transform:uppercase;
+  color:#c9a96e; font-weight:700; margin-bottom:24px;
 }
-.section-label::after {
-  content:''; display:inline-block; vertical-align:middle;
-  width:36px; height:1px; background:#b9986a; margin-left:14px; opacity:0.6;
+.story-eyebrow::before, .story-eyebrow::after { content:''; width:32px; height:1px; background:#c9a96e; opacity:0.6; }
+@media(min-width:769px) { .story-eyebrow { font-size:18px; letter-spacing:4px; } .story-eyebrow::before, .story-eyebrow::after { width:48px; } }
+.story-text {
+  font-family:'Barlow',sans-serif; font-weight:500;
+  font-size:18px; line-height:1.85; max-width:1120px; margin:0 auto; text-align:justify;
 }
-.lead {
-  font-family:'Barlow',sans-serif; font-style:italic; font-weight:500;
-  font-size:clamp(20px, 2.2vw, 24px); line-height:1.6; color:rgba(255,255,255,0.88);
-  margin-top:8px; margin-bottom:40px;
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  padding:32px 36px;
-  background:#1e3a3e;
+@media(min-width:769px) { .story-text { font-size:20px; } }
+.story-section.dark .story-text { color:rgba(255,255,255,0.85); }
+.story-section.light .story-text { color:#3a5254; }
+.story-quote {
+  font-family:'Barlow',sans-serif; font-style:italic; font-weight:600;
+  font-size:clamp(22px, 2.8vw, 32px); line-height:1.5; color:#fff;
+  max-width:900px; margin:0 auto;
 }
-.about-copy {
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  padding:32px 36px;
-  background:rgba(255,255,255,0.03);
-  margin-top:8px; margin-bottom:40px;
-}
-.about-copy p {
-  font-family:'Barlow',sans-serif;
-  font-size:19px; line-height:1.9; color:rgba(255,255,255,0.88);
-  margin-bottom:24px; text-align:justify;
-}
-.about-copy p:last-child { margin-bottom:0; }
-.about-copy.cream {
-  background:#fbf6ef;
-  border:none;
-  border-radius:16px;
-}
-.about-copy.cream p { color:#33413f; }
 
 /* ── FOOT CTA ── */
 .foot-cta {
@@ -196,7 +184,7 @@ a.breadcrumb:hover { color:#c9a96e; }
 }
 .foot-cta h2 em {
   font-style:italic; color:#b9986a;
-  font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
+  font-family:'Barlow',sans-serif; font-weight:700; text-transform:none;
 }
 .foot-cta p { font-size:19px; color:rgba(255,255,255,0.75); margin-bottom:40px; }
 .hero-cta {
@@ -312,17 +300,25 @@ a.breadcrumb:hover { color:#c9a96e; }
     <a href="index.html" class="breadcrumb reveal reveal-d1">Our Story</a>
     <h1 class="hero-name reveal reveal-d2"><span class="first">Why We Started This Firm</span>—and Who We Built It For</h1>
     <p class="hero-sub reveal reveal-d3">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
-
-    <div class="about-copy reveal reveal-d4">
-      <p>As we built strong relationships with our entrepreneurial clients, something powerful started to happen—they began referring their clients, friends, and family to us for help. That steady stream of referrals gave rise to our consumer-facing practice areas and revealed something important:</p>
-    </div>
-
-    <p class="lead reveal reveal-d5">"We see ourselves as more than lawyers—we're collaborators, advocates, and champions for business owners who are striving to achieve greatness."</p>
-
-    <div class="about-copy cream reveal reveal-d6">
-      <p>We started with a simple mission: to turn legal complexity into clarity. Far too often, we saw business owners blindsided by legal pitfalls—whether it was navigating contracts, addressing employment laws, or responding to unexpected litigation. We wanted to be the firm that not only solves problems but also anticipates them, empowering our clients to focus on running and growing their businesses without fear of the unknown.</p>
-    </div>
   </div>
+</section>
+
+<!-- STORY: HOW WE STARTED (cream) -->
+<section class="story-section light">
+  <div class="story-eyebrow reveal">How We Started</div>
+  <p class="story-text reveal reveal-d1">As we built strong relationships with our entrepreneurial clients, something powerful started to happen—they began referring their clients, friends, and family to us for help. That steady stream of referrals gave rise to our consumer-facing practice areas and revealed something important:</p>
+</section>
+
+<!-- STORY: QUOTE (navy) -->
+<section class="story-section dark">
+  <div class="story-eyebrow reveal">In Our Own Words</div>
+  <p class="story-quote reveal reveal-d1">"We see ourselves as more than lawyers—we're collaborators, advocates, and champions for business owners who are striving to achieve greatness."</p>
+</section>
+
+<!-- STORY: OUR MISSION (cream) -->
+<section class="story-section light">
+  <div class="story-eyebrow reveal">Our Mission</div>
+  <p class="story-text reveal reveal-d1">We started with a simple mission: to turn legal complexity into clarity. Far too often, we saw business owners blindsided by legal pitfalls—whether it was navigating contracts, addressing employment laws, or responding to unexpected litigation. We wanted to be the firm that not only solves problems but also anticipates them, empowering our clients to focus on running and growing their businesses without fear of the unknown.</p>
 </section>
 
 <!-- FOOT CTA -->
