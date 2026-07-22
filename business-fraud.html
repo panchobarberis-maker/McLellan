@@ -255,15 +255,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -271,31 +279,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -303,7 +323,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -313,8 +333,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -468,9 +487,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Business Fraud?</div>
     <h2 class="reveal reveal-d1">Understanding Business Fraud Claims in California</h2>
-    <p>Business fraud occurs when one party knowingly makes a false representation of material fact — or conceals one — to induce another to act to their detriment. Unlike a simple breach of contract, fraud requires proof of intent to deceive, which makes these claims both more serious and more difficult to prove.</p>
-    <p>Common forms include fraudulent misrepresentation in the sale of a business or its financials, concealment of known defects or liabilities, fraudulent inducement to sign a contract or investment agreement, and promissory fraud — making a promise with no intention of keeping it.</p>
-    <p>Because fraud claims can support punitive damages, they carry significant leverage — but they also require careful investigation and airtight evidence of intent. Being falsely accused of fraud can be just as damaging, which is why a prompt, strategic defense matters.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>Business fraud occurs when one party knowingly makes a false representation of material fact — or conceals one — to induce another to act to their detriment. Unlike a simple breach of contract, fraud requires proof of intent to deceive, which makes these claims both more serious and more difficult to prove.</p>
+      <p>Common forms include fraudulent misrepresentation in the sale of a business or its financials, concealment of known defects or liabilities, fraudulent inducement to sign a contract or investment agreement, and promissory fraud — making a promise with no intention of keeping it.</p>
+      <p>Because fraud claims can support punitive damages, they carry significant leverage — but they also require careful investigation and airtight evidence of intent. Being falsely accused of fraud can be just as damaging, which is why a prompt, strategic defense matters.</p>
+    </div>
   </div>
 </section>
 
@@ -479,14 +500,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Business Fraud Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Investigate misrepresentations made during business sales, mergers, and investment negotiations</li>
-      <li>Gather documentary and forensic evidence establishing knowledge and intent to deceive</li>
-      <li>Pursue rescission of a contract or transaction induced by fraud, in addition to damages</li>
-      <li>Pursue punitive damages in cases involving egregious or malicious conduct</li>
-      <li>Defend business owners and executives against unfounded fraud allegations</li>
-      <li>Coordinate with forensic accountants when a case involves complex financial misrepresentation</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Investigate misrepresentations made during business sales, mergers, and investment negotiations</span></div>
+        <div class="help-item"><span>Gather documentary and forensic evidence establishing knowledge and intent to deceive</span></div>
+        <div class="help-item"><span>Pursue rescission of a contract or transaction induced by fraud, in addition to damages</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Pursue punitive damages in cases involving egregious or malicious conduct</span></div>
+        <div class="help-item"><span>Defend business owners and executives against unfounded fraud allegations</span></div>
+        <div class="help-item"><span>Coordinate with forensic accountants when a case involves complex financial misrepresentation</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -494,83 +519,89 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Business Fraud FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What must I prove to win a business fraud claim in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You generally must prove a false representation of a material fact (or a concealment where there was a duty to disclose), knowledge that it was false, intent to induce reliance, justifiable reliance by you, and resulting damages. This intent element is what separates fraud from an honest mistake or breach of contract.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What must I prove to win a business fraud claim in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You generally must prove a false representation of a material fact (or a concealment where there was a duty to disclose), knowledge that it was false, intent to induce reliance, justifiable reliance by you, and resulting damages. This intent element is what separates fraud from an honest mistake or breach of contract.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the difference between fraud and breach of contract?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A breach of contract is a failure to perform a promise, regardless of intent. Fraud requires that the other party knew a statement was false — or recklessly disregarded its truth — when they made it, specifically to induce you to act. The same facts sometimes support both claims.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between fraud and breach of contract?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A breach of contract is a failure to perform a promise, regardless of intent. Fraud requires that the other party knew a statement was false — or recklessly disregarded its truth — when they made it, specifically to induce you to act. The same facts sometimes support both claims.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What damages can I recover in a business fraud case?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>California allows recovery of actual damages — the out-of-pocket losses or benefit-of-the-bargain damages, whichever applies — and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What damages can I recover in a business fraud case?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>California allows recovery of actual damages — the out-of-pocket losses or benefit-of-the-bargain damages, whichever applies — and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I undo a business deal that was based on fraud?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. In addition to damages, California law allows a defrauded party to seek rescission — unwinding the transaction and restoring both parties to their pre-contract positions — where the fraud was material to the decision to enter the deal.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I undo a business deal that was based on fraud?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. In addition to damages, California law allows a defrauded party to seek rescission — unwinding the transaction and restoring both parties to their pre-contract positions — where the fraud was material to the decision to enter the deal.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is fraudulent concealment?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Fraudulent concealment occurs when a party with a duty to disclose — often due to a fiduciary relationship, partial disclosure that becomes misleading, or exclusive knowledge of a material fact — hides that information to induce another party's reliance, such as concealing known liabilities in a business sale.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is fraudulent concealment?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Fraudulent concealment occurs when a party with a duty to disclose — often due to a fiduciary relationship, partial disclosure that becomes misleading, or exclusive knowledge of a material fact — hides that information to induce another party's reliance, such as concealing known liabilities in a business sale.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How long do I have to sue for fraud in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The statute of limitations for fraud is generally three years, but it runs from when the fraud was discovered or reasonably should have been discovered — not necessarily when it occurred — which can extend the deadline in cases of hidden or ongoing concealment.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long do I have to sue for fraud in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The statute of limitations for fraud is generally three years, but it runs from when the fraud was discovered or reasonably should have been discovered — not necessarily when it occurred — which can extend the deadline in cases of hidden or ongoing concealment.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        I've been accused of fraud — what should I do?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Fraud allegations carry serious financial and reputational consequences, including potential punitive damages. Contact an attorney immediately to preserve evidence, avoid statements that could be used against you, and build a defense before a claim is filed or early in litigation.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            I've been accused of fraud — what should I do?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Fraud allegations carry serious financial and reputational consequences, including potential punitive damages. Contact an attorney immediately to preserve evidence, avoid statements that could be used against you, and build a defense before a claim is filed or early in litigation.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need a lawyer for a business fraud claim?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Fraud claims require proving intent, which is inherently harder than proving a simple breach — often requiring forensic document review, deposition testimony, and expert analysis. An experienced business litigation attorney can build the evidentiary record needed to succeed, or mount a strong defense.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a lawyer for a business fraud claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Fraud claims require proving intent, which is inherently harder than proving a simple breach — often requiring forensic document review, deposition testimony, and expert analysis. An experienced business litigation attorney can build the evidentiary record needed to succeed, or mount a strong defense.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

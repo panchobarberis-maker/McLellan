@@ -255,15 +255,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -271,31 +279,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -303,7 +323,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -313,8 +333,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -468,9 +487,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is LLC & Partnership Dissolution?</div>
     <h2 class="reveal reveal-d1">Understanding Business Dissolution in California</h2>
-    <p>Dissolution is the formal process of ending an LLC's or partnership's legal existence — winding up its affairs, paying off debts, and distributing remaining assets to the owners. Dissolution can be voluntary, by agreement of the owners, or involuntary, ordered by a court when owners are deadlocked or the business can no longer function.</p>
-    <p>A dissolution is often the final chapter of a broader business divorce — following disputes over management, unequal contributions, or a breakdown in the working relationship between partners or members. How the process is handled can significantly affect what each owner walks away with.</p>
-    <p>California's Corporations Code and Revised Uniform Limited Liability Company Act set out specific procedures for winding up a business, including notice to creditors, asset liquidation, and priority of distributions — deviating from these rules can expose owners to personal liability or delay the process significantly.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>Dissolution is the formal process of ending an LLC's or partnership's legal existence — winding up its affairs, paying off debts, and distributing remaining assets to the owners. Dissolution can be voluntary, by agreement of the owners, or involuntary, ordered by a court when owners are deadlocked or the business can no longer function.</p>
+      <p>A dissolution is often the final chapter of a broader business divorce — following disputes over management, unequal contributions, or a breakdown in the working relationship between partners or members. How the process is handled can significantly affect what each owner walks away with.</p>
+      <p>California's Corporations Code and Revised Uniform Limited Liability Company Act set out specific procedures for winding up a business, including notice to creditors, asset liquidation, and priority of distributions — deviating from these rules can expose owners to personal liability or delay the process significantly.</p>
+    </div>
   </div>
 </section>
 
@@ -479,14 +500,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Dissolution Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Advise on whether dissolution, buyout, or continued operation best serves your interests</li>
-      <li>Negotiate a fair separation and asset division between partners or members</li>
-      <li>Petition for involuntary judicial dissolution when owners are deadlocked or oppressed</li>
-      <li>Oversee the wind-up process, including creditor notice, asset liquidation, and final distributions</li>
-      <li>Resolve disputes over the value of a departing owner's interest</li>
-      <li>Draft dissolution and separation agreements that protect you from future liability</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Advise on whether dissolution, buyout, or continued operation best serves your interests</span></div>
+        <div class="help-item"><span>Negotiate a fair separation and asset division between partners or members</span></div>
+        <div class="help-item"><span>Petition for involuntary judicial dissolution when owners are deadlocked or oppressed</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Oversee the wind-up process, including creditor notice, asset liquidation, and final distributions</span></div>
+        <div class="help-item"><span>Resolve disputes over the value of a departing owner's interest</span></div>
+        <div class="help-item"><span>Draft dissolution and separation agreements that protect you from future liability</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -494,83 +519,89 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">LLC & Partnership Dissolution FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How do I dissolve an LLC or partnership in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Voluntary dissolution generally requires a vote of the members or partners as specified in the operating or partnership agreement, followed by winding up the business's affairs — paying debts, liquidating assets, and distributing what remains according to ownership percentages — and filing dissolution paperwork with the California Secretary of State.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do I dissolve an LLC or partnership in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Voluntary dissolution generally requires a vote of the members or partners as specified in the operating or partnership agreement, followed by winding up the business's affairs — paying debts, liquidating assets, and distributing what remains according to ownership percentages — and filing dissolution paperwork with the California Secretary of State.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I dissolve the business if my partner won't agree?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, in certain circumstances. California law allows a member or partner to petition the court for involuntary dissolution when the business is deadlocked, when it's no longer reasonably practicable to carry on the business, or when those in control have acted illegally, fraudulently, or oppressively.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I dissolve the business if my partner won't agree?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, in certain circumstances. California law allows a member or partner to petition the court for involuntary dissolution when the business is deadlocked, when it's no longer reasonably practicable to carry on the business, or when those in control have acted illegally, fraudulently, or oppressively.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What happens to business debts during dissolution?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Outstanding debts must generally be paid — or provided for — before any assets are distributed to owners. Creditors are typically notified and given an opportunity to submit claims. Failing to properly notify creditors can expose owners to personal liability for the business's debts.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What happens to business debts during dissolution?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Outstanding debts must generally be paid — or provided for — before any assets are distributed to owners. Creditors are typically notified and given an opportunity to submit claims. Failing to properly notify creditors can expose owners to personal liability for the business's debts.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How is my share of the business valued during dissolution?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Valuation is often governed by the operating or partnership agreement; absent a formula, an independent business valuation is typically used, considering the company's assets, income, liabilities, and fair market value. Disagreements over valuation are one of the most common sources of dissolution disputes.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How is my share of the business valued during dissolution?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Valuation is often governed by the operating or partnership agreement; absent a formula, an independent business valuation is typically used, considering the company's assets, income, liabilities, and fair market value. Disagreements over valuation are one of the most common sources of dissolution disputes.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I just walk away from my LLC or partnership?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Not without consequences. Simply abandoning the business without formally dissolving it can leave you exposed to ongoing liabilities, tax obligations, and disputes over your ownership interest. Proper dissolution — or a negotiated buyout — protects you going forward.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I just walk away from my LLC or partnership?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Not without consequences. Simply abandoning the business without formally dissolving it can leave you exposed to ongoing liabilities, tax obligations, and disputes over your ownership interest. Proper dissolution — or a negotiated buyout — protects you going forward.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the difference between dissolution and a buyout?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Dissolution ends the business entirely, winding up its affairs and distributing assets to all owners. A buyout allows one owner to exit while the business continues under the remaining owners — often a faster and less disruptive alternative when only one relationship has broken down.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between dissolution and a buyout?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Dissolution ends the business entirely, winding up its affairs and distributing assets to all owners. A buyout allows one owner to exit while the business continues under the remaining owners — often a faster and less disruptive alternative when only one relationship has broken down.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How long does dissolving a business take in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A straightforward, amicable dissolution can be completed in a few months. Contested dissolutions — involving valuation disputes, deadlock litigation, or uncooperative partners — can take a year or more, particularly if court intervention is required.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long does dissolving a business take in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A straightforward, amicable dissolution can be completed in a few months. Contested dissolutions — involving valuation disputes, deadlock litigation, or uncooperative partners — can take a year or more, particularly if court intervention is required.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need a lawyer to dissolve my LLC or partnership?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Dissolution involves legal notice requirements, creditor obligations, and often high-stakes negotiations over asset division. An experienced business litigation attorney protects you from personal liability during wind-up and ensures you receive your fair share of the business's value.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a lawyer to dissolve my LLC or partnership?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Dissolution involves legal notice requirements, creditor obligations, and often high-stakes negotiations over asset division. An experienced business litigation attorney protects you from personal liability during wind-up and ensures you receive your fair share of the business's value.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

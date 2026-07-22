@@ -255,15 +255,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -271,31 +279,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -303,7 +323,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -313,8 +333,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -468,9 +487,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Are Shareholder Disputes?</div>
     <h2 class="reveal reveal-d1">Understanding Shareholder & Member Disputes in California</h2>
-    <p>Shareholder disputes arise when the owners of a corporation or LLC disagree over management, profits, or the direction of the company. These conflicts are especially common in closely held businesses, where a handful of owners run day-to-day operations and disagreements can quickly become personal.</p>
-    <p>Common triggers include disputes over compensation and distributions, disagreements about hiring or firing key employees, deadlock between equal owners, exclusion of a minority owner from decision-making or profits, and disputes over the valuation and buyout of an owner's interest.</p>
-    <p>California law provides several tools to resolve these conflicts — including buy-sell agreements, involuntary dissolution, and derivative lawsuits — but the right strategy depends on your ownership percentage, the governing documents, and your goals for the business going forward.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>Shareholder disputes arise when the owners of a corporation or LLC disagree over management, profits, or the direction of the company. These conflicts are especially common in closely held businesses, where a handful of owners run day-to-day operations and disagreements can quickly become personal.</p>
+      <p>Common triggers include disputes over compensation and distributions, disagreements about hiring or firing key employees, deadlock between equal owners, exclusion of a minority owner from decision-making or profits, and disputes over the valuation and buyout of an owner's interest.</p>
+      <p>California law provides several tools to resolve these conflicts — including buy-sell agreements, involuntary dissolution, and derivative lawsuits — but the right strategy depends on your ownership percentage, the governing documents, and your goals for the business going forward.</p>
+    </div>
   </div>
 </section>
 
@@ -479,14 +500,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Shareholder Dispute Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Review operating agreements, bylaws, and buy-sell provisions to determine your rights and options</li>
-      <li>Negotiate a fair buyout when an owner wants to exit or is being pushed out</li>
-      <li>Pursue or defend against claims for oppression of minority shareholders</li>
-      <li>Litigate deadlock disputes between equal owners, including petitions for involuntary dissolution</li>
-      <li>Bring derivative actions on behalf of the company against officers or directors who breach their duties</li>
-      <li>Advise on shareholder agreements and governance structures to prevent future disputes</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Review operating agreements, bylaws, and buy-sell provisions to determine your rights and options</span></div>
+        <div class="help-item"><span>Negotiate a fair buyout when an owner wants to exit or is being pushed out</span></div>
+        <div class="help-item"><span>Pursue or defend against claims for oppression of minority shareholders</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Litigate deadlock disputes between equal owners, including petitions for involuntary dissolution</span></div>
+        <div class="help-item"><span>Bring derivative actions on behalf of the company against officers or directors who breach their duties</span></div>
+        <div class="help-item"><span>Advise on shareholder agreements and governance structures to prevent future disputes</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -494,83 +519,89 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Shareholder Dispute FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What rights does a minority shareholder have in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Minority shareholders in a closely held corporation are owed a fiduciary duty by the majority, and cannot be oppressed, frozen out of profits, or excluded from decision-making in bad faith. Minority shareholders also generally have inspection rights to review corporate books and records.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What rights does a minority shareholder have in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Minority shareholders in a closely held corporation are owed a fiduciary duty by the majority, and cannot be oppressed, frozen out of profits, or excluded from decision-making in bad faith. Minority shareholders also generally have inspection rights to review corporate books and records.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I be forced to sell my shares or membership interest?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Generally not without your consent, unless your operating agreement, bylaws, or a buy-sell agreement contains a forced-sale or buyout provision. However, majority owners sometimes use pressure tactics — such as excluding you from profits — to force an exit; these tactics can themselves be actionable.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I be forced to sell my shares or membership interest?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Generally not without your consent, unless your operating agreement, bylaws, or a buy-sell agreement contains a forced-sale or buyout provision. However, majority owners sometimes use pressure tactics — such as excluding you from profits — to force an exit; these tactics can themselves be actionable.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is shareholder or member oppression?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Oppression occurs when those in control of a business use their power to unfairly disadvantage a minority owner — for example, refusing to pay distributions while paying themselves salaries, excluding a minority owner from records or meetings, or diluting their ownership improperly. California courts can order remedies including buyout at fair value.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is shareholder or member oppression?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oppression occurs when those in control of a business use their power to unfairly disadvantage a minority owner — for example, refusing to pay distributions while paying themselves salaries, excluding a minority owner from records or meetings, or diluting their ownership improperly. California courts can order remedies including buyout at fair value.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What happens when two 50/50 owners can't agree?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>This is called deadlock. If the operating agreement or bylaws don't provide a resolution mechanism, California law allows a shareholder or member to petition the court for involuntary dissolution or to appoint a provisional director to break the tie in certain circumstances.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What happens when two 50/50 owners can't agree?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>This is called deadlock. If the operating agreement or bylaws don't provide a resolution mechanism, California law allows a shareholder or member to petition the court for involuntary dissolution or to appoint a provisional director to break the tie in certain circumstances.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How is my ownership interest valued in a buyout?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Valuation typically depends on the company's governing documents and, absent an agreed formula, an independent business valuation considering the company's assets, earnings, and comparable sales. Disputes over valuation methodology are common and often require expert testimony.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How is my ownership interest valued in a buyout?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Valuation typically depends on the company's governing documents and, absent an agreed formula, an independent business valuation considering the company's assets, earnings, and comparable sales. Disputes over valuation methodology are common and often require expert testimony.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I sue the company's officers or directors directly?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>In many cases, claims against officers or directors for harming the company belong to the company itself and must be brought as a derivative lawsuit on behalf of all shareholders, rather than a direct claim by one shareholder — though certain direct claims, like oppression, are the exception.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I sue the company's officers or directors directly?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>In many cases, claims against officers or directors for harming the company belong to the company itself and must be brought as a derivative lawsuit on behalf of all shareholders, rather than a direct claim by one shareholder — though certain direct claims, like oppression, are the exception.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is a derivative lawsuit?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A derivative lawsuit is a claim brought by a shareholder or member on behalf of the company to recover for harm the company suffered — typically from breaches of fiduciary duty by officers or directors. Any recovery generally goes to the company, not the individual shareholder who filed suit.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is a derivative lawsuit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A derivative lawsuit is a claim brought by a shareholder or member on behalf of the company to recover for harm the company suffered — typically from breaches of fiduciary duty by officers or directors. Any recovery generally goes to the company, not the individual shareholder who filed suit.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need a lawyer for a shareholder dispute?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Shareholder and member disputes involve a mix of contract interpretation, fiduciary duty law, and corporate procedure that is difficult to navigate alone. An experienced business litigation attorney can assess your governing documents, protect your ownership interest, and pursue the most efficient path to resolution.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a lawyer for a shareholder dispute?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Shareholder and member disputes involve a mix of contract interpretation, fiduciary duty law, and corporate procedure that is difficult to navigate alone. An experienced business litigation attorney can assess your governing documents, protect your ownership interest, and pursue the most efficient path to resolution.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

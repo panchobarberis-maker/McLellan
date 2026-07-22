@@ -255,15 +255,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -271,31 +279,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -303,7 +323,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -313,8 +333,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -468,9 +487,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Breach of Fiduciary Duty?</div>
     <h2 class="reveal reveal-d1">Understanding Fiduciary Duty in California Business Relationships</h2>
-    <p>A fiduciary duty is a legal obligation to act in the best interests of another party, rather than your own. In California, partners, LLC members, corporate officers and directors, and certain agents owe fiduciary duties — including the duty of loyalty and the duty of care — to the business and to each other.</p>
-    <p>A breach occurs when someone in a position of trust puts their own interests ahead of the business: self-dealing, usurping a corporate opportunity, competing with the business, misusing confidential information, or misappropriating company funds. These breaches often surface during a partnership dispute, buyout, or dissolution.</p>
-    <p>Because fiduciary breaches often involve hidden conduct, early investigation and evidence preservation are critical. California law allows the wronged party to seek damages, an accounting of profits, and in egregious cases, punitive damages.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>A fiduciary duty is a legal obligation to act in the best interests of another party, rather than your own. In California, partners, LLC members, corporate officers and directors, and certain agents owe fiduciary duties — including the duty of loyalty and the duty of care — to the business and to each other.</p>
+      <p>A breach occurs when someone in a position of trust puts their own interests ahead of the business: self-dealing, usurping a corporate opportunity, competing with the business, misusing confidential information, or misappropriating company funds. These breaches often surface during a partnership dispute, buyout, or dissolution.</p>
+      <p>Because fiduciary breaches often involve hidden conduct, early investigation and evidence preservation are critical. California law allows the wronged party to seek damages, an accounting of profits, and in egregious cases, punitive damages.</p>
+    </div>
   </div>
 </section>
 
@@ -479,14 +500,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Fiduciary Duty Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Investigate self-dealing, diverted business opportunities, and misuse of company funds or information</li>
-      <li>Demand a formal accounting from partners, officers, or directors suspected of a breach</li>
-      <li>Pursue disgorgement of profits obtained through a fiduciary's breach</li>
-      <li>Litigate derivative and direct claims on behalf of shareholders and LLC members</li>
-      <li>Advise business owners on fiduciary obligations to avoid exposure before disputes arise</li>
-      <li>Defend officers, directors, and partners against unfounded breach of fiduciary duty claims</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Investigate self-dealing, diverted business opportunities, and misuse of company funds or information</span></div>
+        <div class="help-item"><span>Demand a formal accounting from partners, officers, or directors suspected of a breach</span></div>
+        <div class="help-item"><span>Pursue disgorgement of profits obtained through a fiduciary's breach</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Litigate derivative and direct claims on behalf of shareholders and LLC members</span></div>
+        <div class="help-item"><span>Advise business owners on fiduciary obligations to avoid exposure before disputes arise</span></div>
+        <div class="help-item"><span>Defend officers, directors, and partners against unfounded breach of fiduciary duty claims</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -494,83 +519,89 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Breach of Fiduciary Duty FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Who owes a fiduciary duty in a California business?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Who owes a fiduciary duty in a California business?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What are the two main fiduciary duties under California law?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The duty of loyalty requires acting in the business's best interest rather than a fiduciary's personal interest — prohibiting self-dealing and competing ventures. The duty of care requires acting with the same care an ordinarily prudent person would exercise in similar circumstances, including making informed decisions.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What are the two main fiduciary duties under California law?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The duty of loyalty requires acting in the business's best interest rather than a fiduciary's personal interest — prohibiting self-dealing and competing ventures. The duty of care requires acting with the same care an ordinarily prudent person would exercise in similar circumstances, including making informed decisions.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What are common examples of breach of fiduciary duty?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Common examples include diverting a business opportunity to a competing venture, using company funds for personal expenses, competing directly with the business while still a partner or officer, withholding material information from co-owners, and self-dealing transactions that benefit the fiduciary at the business's expense.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What are common examples of breach of fiduciary duty?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Common examples include diverting a business opportunity to a competing venture, using company funds for personal expenses, competing directly with the business while still a partner or officer, withholding material information from co-owners, and self-dealing transactions that benefit the fiduciary at the business's expense.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What damages can I recover for breach of fiduciary duty?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>California allows recovery of the actual losses caused by the breach, disgorgement of any profits the fiduciary improperly obtained, and in cases involving fraud, oppression, or malice, punitive damages. An accounting may also be ordered to trace where company funds went.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What damages can I recover for breach of fiduciary duty?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>California allows recovery of the actual losses caused by the breach, disgorgement of any profits the fiduciary improperly obtained, and in cases involving fraud, oppression, or malice, punitive damages. An accounting may also be ordered to trace where company funds went.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the deadline to file a breach of fiduciary duty claim?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the deadline to file a breach of fiduciary duty claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I bring a claim on behalf of the business, not just myself?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. Certain fiduciary breach claims — particularly against corporate officers or directors — may need to be brought as a derivative action on behalf of the company, rather than a direct claim by an individual shareholder. We evaluate which type of claim fits your situation.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I bring a claim on behalf of the business, not just myself?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Certain fiduciary breach claims — particularly against corporate officers or directors — may need to be brought as a derivative action on behalf of the company, rather than a direct claim by an individual shareholder. We evaluate which type of claim fits your situation.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can a minority shareholder sue a majority shareholder for breach of fiduciary duty?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. Majority shareholders in a closely held California corporation owe a fiduciary duty to minority shareholders and cannot use their control to oppress or unfairly disadvantage them — for example, by freezing them out of profits or decision-making.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can a minority shareholder sue a majority shareholder for breach of fiduciary duty?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Majority shareholders in a closely held California corporation owe a fiduciary duty to minority shareholders and cannot use their control to oppress or unfairly disadvantage them — for example, by freezing them out of profits or decision-making.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need a lawyer to pursue a fiduciary duty claim?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Fiduciary breach cases are fact-intensive and often require forensic review of financial records and business communications. An experienced business litigation attorney can investigate the conduct, quantify your damages, and pursue the claim through negotiation or litigation.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a lawyer to pursue a fiduciary duty claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Fiduciary breach cases are fact-intensive and often require forensic review of financial records and business communications. An experienced business litigation attorney can investigate the conduct, quantify your damages, and pursue the claim through negotiation or litigation.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
