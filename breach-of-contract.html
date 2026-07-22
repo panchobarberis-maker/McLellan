@@ -255,15 +255,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
 .content-inner { max-width:1120px; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -288,25 +296,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-list li { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-item { border-bottom:2px solid rgba(255,255,255,0.15); }
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
-  font-weight:600; color:#1e3a3e; cursor:pointer;
+  font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
 .faq-question:hover { opacity:0.75; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
-.faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
+.faq-answer p { font-size:15px; line-height:1.75; color:rgba(255,255,255,0.65); padding-bottom:20px; margin:0; text-align:justify; }
 .faq-item.open .faq-icon { transform:rotate(45deg); }
 @media(min-width:769px) { .faq-question { font-size:18px; } .faq-answer p { font-size:16px; } }
 
@@ -468,9 +476,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Breach of Contract?</div>
     <h2 class="reveal reveal-d1">Understanding Breach of Contract in California</h2>
-    <p>A contract is breached when one party fails to perform an obligation required under the agreement — without a legal excuse. In California, a valid contract can be written, oral, or implied through the parties' conduct, though certain agreements, such as real estate transactions, must be in writing to be enforceable.</p>
-    <p>Breaches can be material — striking at the heart of the agreement, such as non-payment or non-delivery — or minor, involving a technical failure that does not defeat the contract's purpose. The distinction matters because it determines what remedies are available and whether the non-breaching party can terminate the agreement altogether.</p>
-    <p>Whether you are owed money, services, or performance under a contract — or have been wrongly accused of breaching one — California law provides several avenues to recover damages, compel performance, or defend against an unfounded claim.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>A contract is breached when one party fails to perform an obligation required under the agreement — without a legal excuse. In California, a valid contract can be written, oral, or implied through the parties' conduct, though certain agreements, such as real estate transactions, must be in writing to be enforceable.</p>
+      <p>Breaches can be material — striking at the heart of the agreement, such as non-payment or non-delivery — or minor, involving a technical failure that does not defeat the contract's purpose. The distinction matters because it determines what remedies are available and whether the non-breaching party can terminate the agreement altogether.</p>
+      <p>Whether you are owed money, services, or performance under a contract — or have been wrongly accused of breaching one — California law provides several avenues to recover damages, compel performance, or defend against an unfounded claim.</p>
+    </div>
   </div>
 </section>
 
