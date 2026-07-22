@@ -303,18 +303,24 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid rgba(255,255,255,0.15); }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
-  font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;
+  font-weight:600; color:#1e3a3e; cursor:pointer;
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
-.faq-answer p { font-size:15px; line-height:1.75; color:rgba(255,255,255,0.65); padding-bottom:20px; margin:0; text-align:justify; }
+.faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
 .faq-item.open .faq-icon { transform:rotate(45deg); }
 @media(min-width:769px) { .faq-question { font-size:18px; } .faq-answer p { font-size:16px; } }
 
@@ -504,83 +510,89 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Breach of Contract FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What counts as a breach of contract in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A breach occurs when a party fails to perform any promise that forms all or part of a contract, without a legal excuse. This includes non-payment, late or defective performance, and outright refusal to perform. The contract can be written, oral, or implied by conduct, though some agreements must be in writing under California's statute of frauds.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What counts as a breach of contract in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A breach occurs when a party fails to perform any promise that forms all or part of a contract, without a legal excuse. This includes non-payment, late or defective performance, and outright refusal to perform. The contract can be written, oral, or implied by conduct, though some agreements must be in writing under California's statute of frauds.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the deadline to sue for breach of contract in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The statute of limitations depends on the contract type. Written contracts generally have four years to file suit, while oral contracts have two years. The clock typically starts running when the breach occurs, though exceptions can apply — such as when the breach is not discovered right away.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the deadline to sue for breach of contract in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The statute of limitations depends on the contract type. Written contracts generally have four years to file suit, while oral contracts have two years. The clock typically starts running when the breach occurs, though exceptions can apply — such as when the breach is not discovered right away.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What damages can I recover for breach of contract?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>California generally allows recovery of the benefit of the bargain — the amount needed to put you in the position you would have been in had the contract been performed. This can include direct damages, consequential damages (foreseeable losses caused by the breach), and in some cases, attorney's fees if the contract includes a fee-shifting provision.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What damages can I recover for breach of contract?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>California generally allows recovery of the benefit of the bargain — the amount needed to put you in the position you would have been in had the contract been performed. This can include direct damages, consequential damages (foreseeable losses caused by the breach), and in some cases, attorney's fees if the contract includes a fee-shifting provision.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I get out of a contract if the other party breaches first?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Generally yes, if the breach is material. A material breach by one party excuses the other party's further performance and may allow them to terminate the agreement and sue for damages. Minor or partial breaches typically do not excuse performance entirely.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I get out of a contract if the other party breaches first?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Generally yes, if the breach is material. A material breach by one party excuses the other party's further performance and may allow them to terminate the agreement and sue for damages. Minor or partial breaches typically do not excuse performance entirely.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Does my contract need to be in writing to be enforceable?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Not always. California enforces oral and implied contracts in most circumstances. However, the statute of frauds requires certain agreements to be in writing, including contracts for the sale of real property, agreements that cannot be performed within one year, and certain guarantees.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Does my contract need to be in writing to be enforceable?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Not always. California enforces oral and implied contracts in most circumstances. However, the statute of frauds requires certain agreements to be in writing, including contracts for the sale of real property, agreements that cannot be performed within one year, and certain guarantees.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the difference between a material and minor breach?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A material breach defeats the essential purpose of the contract — such as failing to deliver goods at all — and allows the non-breaching party to treat the contract as terminated. A minor breach is a partial or technical failure that does not undermine the contract's core purpose, and the non-breaching party generally must still perform but can sue for the resulting damages.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between a material and minor breach?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A material breach defeats the essential purpose of the contract — such as failing to deliver goods at all — and allows the non-breaching party to treat the contract as terminated. A minor breach is a partial or technical failure that does not undermine the contract's core purpose, and the non-breaching party generally must still perform but can sue for the resulting damages.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I sue for breach of contract without a written agreement?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, in most cases. Oral contracts and implied-in-fact contracts, formed through the parties' conduct, are enforceable in California, though they can be harder to prove. Emails, texts, invoices, and performance history often serve as key evidence.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I sue for breach of contract without a written agreement?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, in most cases. Oral contracts and implied-in-fact contracts, formed through the parties' conduct, are enforceable in California, though they can be harder to prove. Emails, texts, invoices, and performance history often serve as key evidence.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need an attorney to pursue a breach of contract claim?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You are not required to have an attorney, but contract disputes often involve complex damages calculations, defenses, and procedural deadlines. An experienced business litigation attorney can evaluate your contract, calculate your damages, and pursue the fastest path to resolution — whether through negotiation, mediation, or litigation.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need an attorney to pursue a breach of contract claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You are not required to have an attorney, but contract disputes often involve complex damages calculations, defenses, and procedural deadlines. An experienced business litigation attorney can evaluate your contract, calculate your damages, and pursue the fastest path to resolution — whether through negotiation, mediation, or litigation.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
