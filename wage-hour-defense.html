@@ -241,15 +241,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -257,31 +265,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -289,7 +309,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -299,8 +319,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -454,9 +473,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Wage &amp; Hour Defense?</div>
     <h2 class="reveal reveal-d1">Defending Your Business in Wage and Hour Disputes</h2>
-    <p>California's wage and hour laws are among the most detailed and strictly enforced in the country, and even well-intentioned employers commonly face exposure from technical, easy-to-miss violations. Common triggers include misclassifying employees as exempt from overtime, misclassifying workers as independent contractors under the ABC test, calculating overtime incorrectly under California's daily-overtime rules, failing to provide legally compliant meal and rest breaks, and wage statement errors that are themselves independently penalized.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>California's wage and hour laws are among the most detailed and strictly enforced in the country, and even well-intentioned employers commonly face exposure from technical, easy-to-miss violations. Common triggers include misclassifying employees as exempt from overtime, misclassifying workers as independent contractors under the ABC test, calculating overtime incorrectly under California's daily-overtime rules, failing to provide legally compliant meal and rest breaks, and wage statement errors that are themselves independently penalized.</p>
     <p>A single systemic wage and hour issue — such as a timekeeping practice that doesn't capture off-the-clock work, or a job classification applied uniformly across a role that doesn't actually meet exemption requirements — can expose a business to liability across its entire workforce, and frequently escalates into a PAGA claim or class action rather than a single-employee dispute.</p>
     <p>McLellan Law Group helps Silicon Valley employers respond to individual wage claims and Labor Commissioner investigations, and — just as importantly — helps identify and correct systemic issues before they generate broader exposure.</p>
+    </div>
   </div>
 </section>
 
@@ -465,14 +486,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Wage &amp; Hour Defense Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Audit job classifications against California's exemption tests and the ABC test for independent contractors</li>
-      <li>Review timekeeping, meal break, and rest break practices for compliance with California Labor Code requirements</li>
-      <li>Defend your business in Labor Commissioner (DLSE) claims and hearings</li>
-      <li>Defend wage and hour lawsuits, including claims that carry a PAGA or class action component</li>
-      <li>Correct wage statement and payroll practices that create independent penalty exposure</li>
-      <li>Advise on lawful policies for on-call time, travel time, remote work, and other frequently miscalculated pay categories</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Audit job classifications against California's exemption tests and the ABC test for independent contractors</span></div>
+        <div class="help-item"><span>Review timekeeping, meal break, and rest break practices for compliance with California Labor Code requirements</span></div>
+        <div class="help-item"><span>Defend your business in Labor Commissioner (DLSE) claims and hearings</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Defend wage and hour lawsuits, including claims that carry a PAGA or class action component</span></div>
+        <div class="help-item"><span>Correct wage statement and payroll practices that create independent penalty exposure</span></div>
+        <div class="help-item"><span>Advise on lawful policies for on-call time, travel time, remote work, and other frequently miscalculated pay categories</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -480,63 +505,69 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Wage &amp; Hour Defense FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What are the biggest wage and hour risks for California employers?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The most common and costly risks are misclassifying non-exempt employees as exempt, misclassifying workers as independent contractors, failing to provide compliant meal and rest breaks, and calculating overtime under federal rather than California's more generous daily-overtime standard. Because these issues are typically applied uniformly across a job title or department, a single classification error can create liability for every employee who held that role — not just one.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What are the biggest wage and hour risks for California employers?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The most common and costly risks are misclassifying non-exempt employees as exempt, misclassifying workers as independent contractors, failing to provide compliant meal and rest breaks, and calculating overtime under federal rather than California's more generous daily-overtime standard. Because these issues are typically applied uniformly across a job title or department, a single classification error can create liability for every employee who held that role — not just one.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How is worker classification determined in California (ABC test)?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>California uses the ABC test to determine whether a worker is properly classified as an independent contractor. Under this test, a worker is presumed to be an employee unless the hiring business proves all three of the following: (A) the worker is free from the company's control and direction in performing the work, (B) the worker performs work outside the usual course of the hiring business, and (C) the worker is customarily engaged in an independently established business of the same nature. Failing to satisfy even one prong means the worker should be classified as an employee, with all the associated wage and hour obligations.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How is worker classification determined in California (ABC test)?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>California uses the ABC test to determine whether a worker is properly classified as an independent contractor. Under this test, a worker is presumed to be an employee unless the hiring business proves all three of the following: (A) the worker is free from the company's control and direction in performing the work, (B) the worker performs work outside the usual course of the hiring business, and (C) the worker is customarily engaged in an independently established business of the same nature. Failing to satisfy even one prong means the worker should be classified as an employee, with all the associated wage and hour obligations.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What happens if the Labor Commissioner investigates my business?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A Labor Commissioner (DLSE) investigation typically begins with a wage claim filed by a current or former employee and can expand into a broader audit of your pay practices. You will generally be asked to produce payroll records, time records, and personnel files, and a hearing (called a Berman hearing) may be scheduled. Legal representation at this stage matters — an unfavorable Berman hearing decision can be appealed only by posting a bond for the full amount awarded, which makes early, well-prepared participation important.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What happens if the Labor Commissioner investigates my business?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A Labor Commissioner (DLSE) investigation typically begins with a wage claim filed by a current or former employee and can expand into a broader audit of your pay practices. You will generally be asked to produce payroll records, time records, and personnel files, and a hearing (called a Berman hearing) may be scheduled. Legal representation at this stage matters — an unfavorable Berman hearing decision can be appealed only by posting a bond for the full amount awarded, which makes early, well-prepared participation important.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can wage and hour violations become a PAGA or class action?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, and this is one of the most significant risks of a systemic wage and hour issue. Because violations like a misclassification or a defective meal break policy typically apply to an entire job category rather than one individual, a single employee's claim can expose the business to civil penalties for every similarly situated current and former employee under PAGA, or support a class action seeking damages on behalf of the entire group.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can wage and hour violations become a PAGA or class action?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, and this is one of the most significant risks of a systemic wage and hour issue. Because violations like a misclassification or a defective meal break policy typically apply to an entire job category rather than one individual, a single employee's claim can expose the business to civil penalties for every similarly situated current and former employee under PAGA, or support a class action seeking damages on behalf of the entire group.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How can we reduce wage and hour liability going forward?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A periodic wage and hour compliance audit — reviewing job classifications, timekeeping systems, meal and rest break practices, and wage statement formatting against current California requirements — is the most effective way to catch issues before they become claims. California's wage and hour rules change frequently, so a classification or policy that was compliant several years ago may no longer be.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How can we reduce wage and hour liability going forward?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A periodic wage and hour compliance audit — reviewing job classifications, timekeeping systems, meal and rest break practices, and wage statement formatting against current California requirements — is the most effective way to catch issues before they become claims. California's wage and hour rules change frequently, so a classification or policy that was compliant several years ago may no longer be.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What records must we keep to defend a wage claim?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>California employers are generally required to keep accurate time records, itemized wage statements, and payroll records for at least three years (four years is safer given overlapping statutes of limitations). These records — particularly contemporaneous time punches and meal break logs — are often the single most important evidence in defending a wage and hour claim, since the burden can shift to the employer to disprove an employee's account when records are incomplete.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What records must we keep to defend a wage claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>California employers are generally required to keep accurate time records, itemized wage statements, and payroll records for at least three years (four years is safer given overlapping statutes of limitations). These records — particularly contemporaneous time punches and meal break logs — are often the single most important evidence in defending a wage and hour claim, since the burden can shift to the employer to disprove an employee's account when records are incomplete.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

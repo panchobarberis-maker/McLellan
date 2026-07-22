@@ -240,15 +240,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -256,31 +264,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -288,7 +308,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -298,8 +318,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -453,9 +472,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What We Handle</div>
     <h2 class="reveal reveal-d1">Agreements That Protect Your Business at Every Stage of Employment</h2>
-    <p>The agreements you use to hire, retain, and separate from employees carry real legal weight, and generic templates frequently fail to hold up when they matter most. Offer letters and executive employment agreements need to clearly establish at-will status (or the specific terms of a fixed arrangement), avoid unintentionally limiting your flexibility, and properly address compensation, equity, and confidentiality obligations from day one.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>The agreements you use to hire, retain, and separate from employees carry real legal weight, and generic templates frequently fail to hold up when they matter most. Offer letters and executive employment agreements need to clearly establish at-will status (or the specific terms of a fixed arrangement), avoid unintentionally limiting your flexibility, and properly address compensation, equity, and confidentiality obligations from day one.</p>
     <p>On the way out, a properly drafted severance agreement is one of the most effective tools available to resolve employment risk — but only if it satisfies California's specific requirements. A valid release of unknown claims requires an express Civil Code Section 1542 waiver, employees 40 and older are entitled to additional consideration periods and revocation rights under the federal OWBPA, and California's Silenced No More Act restricts using non-disparagement or confidentiality provisions to silence employees about unlawful conduct.</p>
     <p>California also generally prohibits non-compete agreements outside of narrow business-sale exceptions, which makes properly drafted confidentiality and non-solicitation provisions — rather than a non-compete — the primary tool available to protect your business's trade secrets and client relationships when an employee departs.</p>
+    </div>
   </div>
 </section>
 
@@ -464,14 +485,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Employment Contracts Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Draft and negotiate offer letters and executive employment agreements</li>
-      <li>Draft legally compliant severance agreements, including required OWBPA and Civil Code § 1542 provisions</li>
-      <li>Draft and enforce confidentiality, non-solicitation, and trade secret protection agreements</li>
-      <li>Advise on the narrow circumstances where non-compete provisions remain enforceable in California</li>
-      <li>Negotiate severance terms for individual departures and larger reductions in force</li>
-      <li>Review and update template agreements as California law changes</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Draft and negotiate offer letters and executive employment agreements</span></div>
+        <div class="help-item"><span>Draft legally compliant severance agreements, including required OWBPA and Civil Code § 1542 provisions</span></div>
+        <div class="help-item"><span>Draft and enforce confidentiality, non-solicitation, and trade secret protection agreements</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Advise on the narrow circumstances where non-compete provisions remain enforceable in California</span></div>
+        <div class="help-item"><span>Negotiate severance terms for individual departures and larger reductions in force</span></div>
+        <div class="help-item"><span>Review and update template agreements as California law changes</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -479,63 +504,69 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Employment Contracts &amp; Severance FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Are non-compete agreements enforceable in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Almost never. California Business and Professions Code Section 16600 voids nearly all non-compete agreements restricting a former employee from working for a competitor, with only a narrow exception tied to the sale of a business. As of 2024, California law goes further and requires employers to notify current and former employees if they have an unenforceable non-compete clause in their agreements, and imposes penalties for attempting to enforce one. Businesses should rely on confidentiality and non-solicitation agreements — not non-competes — to protect their interests.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Are non-compete agreements enforceable in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Almost never. California Business and Professions Code Section 16600 voids nearly all non-compete agreements restricting a former employee from working for a competitor, with only a narrow exception tied to the sale of a business. As of 2024, California law goes further and requires employers to notify current and former employees if they have an unenforceable non-compete clause in their agreements, and imposes penalties for attempting to enforce one. Businesses should rely on confidentiality and non-solicitation agreements — not non-competes — to protect their interests.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should a severance agreement include to be enforceable?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A severance agreement releasing legal claims generally needs a clear, express waiver of California Civil Code Section 1542 to cover unknown claims, must comply with the federal OWBPA's consideration and revocation period requirements for employees 40 or older, and should avoid non-disparagement or confidentiality language that violates California's Silenced No More Act by attempting to silence disclosure of unlawful conduct. A severance agreement that skips these requirements risks being partially or fully unenforceable exactly when you need it most.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What should a severance agreement include to be enforceable?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A severance agreement releasing legal claims generally needs a clear, express waiver of California Civil Code Section 1542 to cover unknown claims, must comply with the federal OWBPA's consideration and revocation period requirements for employees 40 or older, and should avoid non-disparagement or confidentiality language that violates California's Silenced No More Act by attempting to silence disclosure of unlawful conduct. A severance agreement that skips these requirements risks being partially or fully unenforceable exactly when you need it most.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can we require a departing employee to sign a non-disparagement clause?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You can include a mutual non-disparagement clause, but California's Silenced No More Act (SB 331) prohibits using it to prevent an employee from disclosing information about unlawful acts in the workplace, including discrimination, harassment, or retaliation. A properly scoped clause can still protect your business's general reputation while remaining enforceable under California law.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can we require a departing employee to sign a non-disparagement clause?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can include a mutual non-disparagement clause, but California's Silenced No More Act (SB 331) prohibits using it to prevent an employee from disclosing information about unlawful acts in the workplace, including discrimination, harassment, or retaliation. A properly scoped clause can still protect your business's general reputation while remaining enforceable under California law.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What's the difference between an offer letter and an employment contract?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>An offer letter typically confirms the basic terms of at-will employment — title, compensation, and start date — without creating a fixed-term commitment. A formal employment agreement is used for executives or specialized roles and can include fixed terms, severance triggers, equity vesting provisions, and specific termination procedures. Using the wrong document type, or careless language in an offer letter, can unintentionally convert an at-will relationship into one with contractual protections you didn't intend to offer.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What's the difference between an offer letter and an employment contract?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>An offer letter typically confirms the basic terms of at-will employment — title, compensation, and start date — without creating a fixed-term commitment. A formal employment agreement is used for executives or specialized roles and can include fixed terms, severance triggers, equity vesting provisions, and specific termination procedures. Using the wrong document type, or careless language in an offer letter, can unintentionally convert an at-will relationship into one with contractual protections you didn't intend to offer.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do we need different severance terms for a layoff versus an individual termination?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Often, yes. A group layoff or reduction in force triggers additional requirements — including, for larger layoffs, WARN Act notice obligations and OWBPA disclosure requirements about the group of employees being separated when severance is offered in exchange for a release. Severance terms for a group layoff should be reviewed together to ensure consistency and to properly satisfy these group-specific disclosure obligations.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do we need different severance terms for a layoff versus an individual termination?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Often, yes. A group layoff or reduction in force triggers additional requirements — including, for larger layoffs, WARN Act notice obligations and OWBPA disclosure requirements about the group of employees being separated when severance is offered in exchange for a release. Severance terms for a group layoff should be reviewed together to ensure consistency and to properly satisfy these group-specific disclosure obligations.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How do we protect trade secrets if non-competes aren't enforceable?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Since California will not enforce a non-compete, the primary tools available are a well-drafted confidentiality agreement covering trade secrets and proprietary information, a non-solicitation provision addressing your clients and employees (which remains enforceable within reasonable limits), and practical safeguards like restricting access to sensitive information and conducting a proper offboarding process when an employee with access to trade secrets departs.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do we protect trade secrets if non-competes aren't enforceable?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Since California will not enforce a non-compete, the primary tools available are a well-drafted confidentiality agreement covering trade secrets and proprietary information, a non-solicitation provision addressing your clients and employees (which remains enforceable within reasonable limits), and practical safeguards like restricting access to sensitive information and conducting a proper offboarding process when an employee with access to trade secrets departs.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -240,15 +240,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -256,31 +264,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -288,7 +308,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -298,8 +318,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -453,9 +472,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Retaliation Defense?</div>
     <h2 class="reveal reveal-d1">Defending Adverse Employment Decisions Against Retaliation Claims</h2>
-    <p>Retaliation claims arise whenever an employee alleges that a demotion, discipline, pay reduction, or termination was actually driven by their prior complaint, leave request, or whistleblowing — rather than the legitimate business reason the employer gives. California law protects an unusually broad range of employee activity from retaliation, including internal HR complaints, reports to government agencies, workers' compensation claims, and reports of suspected legal violations under Labor Code Section 1102.5.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>Retaliation claims arise whenever an employee alleges that a demotion, discipline, pay reduction, or termination was actually driven by their prior complaint, leave request, or whistleblowing — rather than the legitimate business reason the employer gives. California law protects an unusually broad range of employee activity from retaliation, including internal HR complaints, reports to government agencies, workers' compensation claims, and reports of suspected legal violations under Labor Code Section 1102.5.</p>
     <p>These claims are difficult to defend when the timing between the protected activity and the adverse action is close, when documentation of the underlying performance or conduct issue is thin, or when similarly situated employees who did not complain were treated more leniently. Even a fully justified decision can trigger costly litigation if it isn't clearly and contemporaneously documented.</p>
     <p>McLellan Law Group helps California employers make and document defensible personnel decisions involving employees who have engaged in protected activity, and defends businesses when a retaliation claim is filed regardless.</p>
+    </div>
   </div>
 </section>
 
@@ -464,14 +485,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Retaliation Defense Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Advise on the risk of a proposed disciplinary action or termination involving an employee who recently engaged in protected activity</li>
-      <li>Help build a contemporaneous, documented record supporting the legitimate business reason for an adverse action</li>
-      <li>Respond to CRD, EEOC, and Cal/OSHA retaliation complaints</li>
-      <li>Defend retaliation and whistleblower lawsuits, including claims brought under Labor Code § 1102.5</li>
-      <li>Negotiate early resolution of retaliation claims where appropriate</li>
-      <li>Train managers and supervisors on lawful, non-retaliatory decision-making</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Advise on the risk of a proposed disciplinary action or termination involving an employee who recently engaged in protected activity</span></div>
+        <div class="help-item"><span>Help build a contemporaneous, documented record supporting the legitimate business reason for an adverse action</span></div>
+        <div class="help-item"><span>Respond to CRD, EEOC, and Cal/OSHA retaliation complaints</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Defend retaliation and whistleblower lawsuits, including claims brought under Labor Code § 1102.5</span></div>
+        <div class="help-item"><span>Negotiate early resolution of retaliation claims where appropriate</span></div>
+        <div class="help-item"><span>Train managers and supervisors on lawful, non-retaliatory decision-making</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -479,63 +504,69 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Retaliation Defense FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can we discipline an employee who filed a complaint against us?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes — engaging in protected activity does not make an employee immune from legitimate discipline for unrelated performance or conduct issues. The key is ensuring the decision is based on documented, consistently applied standards and is not simply closer in time to the complaint than coincidence would suggest. Before disciplining or terminating an employee who has recently complained, it is worth having the decision reviewed to confirm it can be defended on its own facts.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can we discipline an employee who filed a complaint against us?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — engaging in protected activity does not make an employee immune from legitimate discipline for unrelated performance or conduct issues. The key is ensuring the decision is based on documented, consistently applied standards and is not simply closer in time to the complaint than coincidence would suggest. Before disciplining or terminating an employee who has recently complained, it is worth having the decision reviewed to confirm it can be defended on its own facts.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is considered retaliation under California law?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Retaliation occurs when an employer takes a materially adverse action — termination, demotion, pay cuts, schedule changes, exclusion from opportunities, or similar — because an employee engaged in protected activity such as reporting discrimination or harassment, filing a wage claim, reporting safety violations, taking protected leave, or whistleblowing under Labor Code § 1102.5. The action does not need to be a termination, and the employer's intent can be shown through timing and circumstantial evidence, not just direct admissions.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is considered retaliation under California law?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Retaliation occurs when an employer takes a materially adverse action — termination, demotion, pay cuts, schedule changes, exclusion from opportunities, or similar — because an employee engaged in protected activity such as reporting discrimination or harassment, filing a wage claim, reporting safety violations, taking protected leave, or whistleblowing under Labor Code § 1102.5. The action does not need to be a termination, and the employer's intent can be shown through timing and circumstantial evidence, not just direct admissions.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How do we document a legitimate, non-retaliatory reason for an adverse action?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Contemporaneous documentation is critical — performance issues and policy violations should be documented as they occur, not reconstructed after a complaint is filed or a lawsuit is threatened. Keep dated, specific records describing the conduct or performance problem, any prior warnings given, and how similarly situated employees who did not engage in protected activity were treated for comparable issues. Consistency across employees is often the deciding factor in these cases.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do we document a legitimate, non-retaliatory reason for an adverse action?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Contemporaneous documentation is critical — performance issues and policy violations should be documented as they occur, not reconstructed after a complaint is filed or a lawsuit is threatened. Keep dated, specific records describing the conduct or performance problem, any prior warnings given, and how similarly situated employees who did not engage in protected activity were treated for comparable issues. Consistency across employees is often the deciding factor in these cases.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should we do if we receive a retaliation complaint?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Preserve all records related to the employee's protected activity and the adverse action at issue, avoid any further adverse treatment of the employee while the complaint is pending, and involve an employment attorney before responding to a CRD, EEOC, or Cal/OSHA inquiry. How your business's initial position statement frames the timeline and business justification often shapes the trajectory of the entire case.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What should we do if we receive a retaliation complaint?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Preserve all records related to the employee's protected activity and the adverse action at issue, avoid any further adverse treatment of the employee while the complaint is pending, and involve an employment attorney before responding to a CRD, EEOC, or Cal/OSHA inquiry. How your business's initial position statement frames the timeline and business justification often shapes the trajectory of the entire case.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can an employee win a retaliation claim even if the underlying complaint was unfounded?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. California law protects employees who make a good-faith complaint even if the underlying allegation turns out to be incorrect, as long as the employee reasonably believed the conduct they reported was unlawful. This means an employer generally cannot successfully defend a retaliation claim by arguing the original complaint lacked merit — the retaliation analysis focuses on why the adverse action was taken, not whether the original complaint was ultimately correct.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can an employee win a retaliation claim even if the underlying complaint was unfounded?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. California law protects employees who make a good-faith complaint even if the underlying allegation turns out to be incorrect, as long as the employee reasonably believed the conduct they reported was unlawful. This means an employer generally cannot successfully defend a retaliation claim by arguing the original complaint lacked merit — the retaliation analysis focuses on why the adverse action was taken, not whether the original complaint was ultimately correct.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How can we train managers to avoid retaliation claims?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Effective training focuses on teaching managers to document performance and conduct issues consistently and in real time, to apply discipline uniformly regardless of whether an employee has complained, to escalate any disciplinary decision involving an employee who has recently engaged in protected activity for HR or legal review, and to avoid any change in tone, scrutiny, or treatment toward an employee immediately following a complaint. Most retaliation exposure comes from inconsistent, undocumented, or poorly timed decisions rather than intentional misconduct.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How can we train managers to avoid retaliation claims?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Effective training focuses on teaching managers to document performance and conduct issues consistently and in real time, to apply discipline uniformly regardless of whether an employee has complained, to escalate any disciplinary decision involving an employee who has recently engaged in protected activity for HR or legal review, and to avoid any change in tone, scrutiny, or treatment toward an employee immediately following a complaint. Most retaliation exposure comes from inconsistent, undocumented, or poorly timed decisions rather than intentional misconduct.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

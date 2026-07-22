@@ -234,15 +234,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -250,31 +258,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -282,7 +302,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -292,8 +312,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -447,9 +466,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Workplace Discrimination?</div>
     <h2 class="reveal reveal-d1">Understanding Workplace Discrimination in California</h2>
-    <p>Workplace discrimination occurs when an employer takes an adverse employment action against an employee because of a protected characteristic. Under California's Fair Employment and Housing Act (FEHA) — one of the broadest employee protection laws in the country — protected characteristics include race, color, national origin, sex, gender identity and expression, sexual orientation, religion, age (40 and older), physical or mental disability, medical condition, marital status, and pregnancy.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>Workplace discrimination occurs when an employer takes an adverse employment action against an employee because of a protected characteristic. Under California's Fair Employment and Housing Act (FEHA) — one of the broadest employee protection laws in the country — protected characteristics include race, color, national origin, sex, gender identity and expression, sexual orientation, religion, age (40 and older), physical or mental disability, medical condition, marital status, and pregnancy.</p>
     <p>Adverse employment actions include termination, demotion, pay cuts, denial of promotion, reassignment to less desirable duties, and other decisions that negatively affect the terms and conditions of employment. Discrimination does not need to be overt or admitted — it can be proven through circumstantial evidence such as statistical patterns, shifting explanations from the employer, or a close connection between the protected characteristic and the adverse action.</p>
     <p>If you believe you have been discriminated against at work in the Silicon Valley area, McLellan Law Group can evaluate your case and help you understand your rights under California and federal law.</p>
+    </div>
   </div>
 </section>
 
@@ -458,14 +479,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Discrimination Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Evaluate whether the adverse action you experienced qualifies as unlawful discrimination under FEHA or federal law</li>
-      <li>Document and preserve evidence including performance records, emails, comparator employee data, and witness testimony</li>
-      <li>File a complaint with the California Civil Rights Department (CRD) or EEOC to obtain a right-to-sue notice</li>
-      <li>Pursue settlement negotiations to achieve fair compensation without the cost and delay of trial</li>
-      <li>Litigate discrimination claims in California state court or federal court when necessary</li>
-      <li>Seek the full range of available remedies, including back pay, reinstatement, emotional distress damages, and punitive damages</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Evaluate whether the adverse action you experienced qualifies as unlawful discrimination under FEHA or federal law</span></div>
+        <div class="help-item"><span>Document and preserve evidence including performance records, emails, comparator employee data, and witness testimony</span></div>
+        <div class="help-item"><span>File a complaint with the California Civil Rights Department (CRD) or EEOC to obtain a right-to-sue notice</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Pursue settlement negotiations to achieve fair compensation without the cost and delay of trial</span></div>
+        <div class="help-item"><span>Litigate discrimination claims in California state court or federal court when necessary</span></div>
+        <div class="help-item"><span>Seek the full range of available remedies, including back pay, reinstatement, emotional distress damages, and punitive damages</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -473,53 +498,59 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Workplace Discrimination FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What qualifies as workplace discrimination in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Workplace discrimination in California occurs when an employer takes an adverse employment action — such as firing, demoting, refusing to hire, or denying a promotion — because of a protected characteristic. Under the California Fair Employment and Housing Act (FEHA), protected characteristics include race, color, national origin, ancestry, religion, sex, gender identity, sexual orientation, age (40 and over), disability, medical condition, pregnancy, marital status, and military or veteran status. California's FEHA protections are broader than federal law and apply to employers with 5 or more employees.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What qualifies as workplace discrimination in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Workplace discrimination in California occurs when an employer takes an adverse employment action — such as firing, demoting, refusing to hire, or denying a promotion — because of a protected characteristic. Under the California Fair Employment and Housing Act (FEHA), protected characteristics include race, color, national origin, ancestry, religion, sex, gender identity, sexual orientation, age (40 and over), disability, medical condition, pregnancy, marital status, and military or veteran status. California's FEHA protections are broader than federal law and apply to employers with 5 or more employees.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need to report discrimination to HR before suing?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You are not required to report discrimination to HR before filing a complaint with a government agency or pursuing legal action. However, reporting internally can strengthen your case by documenting your employer's response (or lack thereof). More importantly, before filing a civil lawsuit under FEHA, you must first file a complaint with the California Civil Rights Department (CRD) and obtain a right-to-sue notice.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need to report discrimination to HR before suing?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You are not required to report discrimination to HR before filing a complaint with a government agency or pursuing legal action. However, reporting internally can strengthen your case by documenting your employer's response (or lack thereof). More importantly, before filing a civil lawsuit under FEHA, you must first file a complaint with the California Civil Rights Department (CRD) and obtain a right-to-sue notice.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How long do I have to file a discrimination complaint in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>In California, you have three years from the date of the discriminatory act to file a complaint with the Civil Rights Department (CRD), formerly the Department of Fair Employment and Housing (DFEH). This deadline applies to FEHA claims including discrimination, harassment, and retaliation. If you intend to file a federal claim with the EEOC instead, the deadline is 300 days. Missing these deadlines generally bars your claim, which is why it is critical to contact an employment attorney as soon as possible after a discriminatory act.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long do I have to file a discrimination complaint in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>In California, you have three years from the date of the discriminatory act to file a complaint with the Civil Rights Department (CRD), formerly the Department of Fair Employment and Housing (DFEH). This deadline applies to FEHA claims including discrimination, harassment, and retaliation. If you intend to file a federal claim with the EEOC instead, the deadline is 300 days. Missing these deadlines generally bars your claim, which is why it is critical to contact an employment attorney as soon as possible after a discriminatory act.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What damages are available in a California workplace discrimination case?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>In a successful California workplace discrimination case under FEHA, you may recover lost wages and benefits (back pay from the date of the adverse action), future lost earnings (front pay), emotional distress damages, and attorney's fees. In cases of malice, oppression, or fraud by the employer, punitive damages may also be available. There is no cap on compensatory or punitive damages under FEHA — unlike federal Title VII, which caps damages based on employer size. The total value of a case depends on your salary, the duration of the harm, and the strength of the evidence.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What damages are available in a California workplace discrimination case?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>In a successful California workplace discrimination case under FEHA, you may recover lost wages and benefits (back pay from the date of the adverse action), future lost earnings (front pay), emotional distress damages, and attorney's fees. In cases of malice, oppression, or fraud by the employer, punitive damages may also be available. There is no cap on compensatory or punitive damages under FEHA — unlike federal Title VII, which caps damages based on employer size. The total value of a case depends on your salary, the duration of the harm, and the strength of the evidence.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I be discriminated against based on my accent or national origin in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>No — discrimination based on accent or national origin is illegal in California under FEHA. An employer cannot demote, refuse to hire, or take any adverse action against an employee because of how they speak, where they are from, or their ancestry. The only limited exception is if a specific language or accent requirement is a genuine, documented business necessity for the job. Even then, the policy must be narrowly tailored. If you were passed over for a promotion or terminated because of your accent or national origin, you may have a viable discrimination claim under California law.</p>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I be discriminated against based on my accent or national origin in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No — discrimination based on accent or national origin is illegal in California under FEHA. An employer cannot demote, refuse to hire, or take any adverse action against an employee because of how they speak, where they are from, or their ancestry. The only limited exception is if a specific language or accent requirement is a genuine, documented business necessity for the job. Even then, the policy must be narrowly tailored. If you were passed over for a promotion or terminated because of your accent or national origin, you may have a viable discrimination claim under California law.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

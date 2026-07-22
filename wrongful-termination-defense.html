@@ -240,15 +240,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -256,31 +264,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -288,7 +308,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -298,8 +318,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -453,9 +472,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Wrongful Termination Defense?</div>
     <h2 class="reveal reveal-d1">Defending Your Business Against Termination Claims</h2>
-    <p>California's at-will employment doctrine gives employers broad discretion to end an employment relationship, but that discretion is not unlimited. Former employees frequently allege that a termination was actually motivated by discrimination, retaliation, breach of an implied contract, or a violation of public policy — and even a well-justified termination can generate costly litigation if the decision was not properly documented.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>California's at-will employment doctrine gives employers broad discretion to end an employment relationship, but that discretion is not unlimited. Former employees frequently allege that a termination was actually motivated by discrimination, retaliation, breach of an implied contract, or a violation of public policy — and even a well-justified termination can generate costly litigation if the decision was not properly documented.</p>
     <p>Employers face wrongful termination exposure most often when a termination follows closely after an employee's complaint, leave request, or protected activity; when performance documentation is thin or inconsistent; when a handbook or offer letter arguably created an implied contract limiting at-will status; or when similarly situated employees were treated differently. Plaintiffs' attorneys look for these patterns, and a poorly documented decision — even one made for legitimate business reasons — can be difficult to defend without a clear paper trail.</p>
     <p>McLellan Law Group defends Silicon Valley employers at every stage, from a Civil Rights Department (CRD) complaint through litigation, and helps businesses build defensible termination practices before a dispute ever arises.</p>
+    </div>
   </div>
 </section>
 
@@ -464,14 +485,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Wrongful Termination Defense Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Conduct pre-termination risk reviews to identify exposure before a decision is finalized</li>
-      <li>Respond to Civil Rights Department (CRD) and EEOC complaints on your business's behalf</li>
-      <li>Build and organize the factual record supporting a legitimate, non-discriminatory business reason for the termination</li>
-      <li>Negotiate early resolution where litigation risk outweighs the cost of settlement</li>
-      <li>Litigate wrongful termination claims in state and federal court when a fair resolution isn't possible</li>
-      <li>Train managers and HR staff on documentation practices that reduce future termination-related liability</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Conduct pre-termination risk reviews to identify exposure before a decision is finalized</span></div>
+        <div class="help-item"><span>Respond to Civil Rights Department (CRD) and EEOC complaints on your business's behalf</span></div>
+        <div class="help-item"><span>Build and organize the factual record supporting a legitimate, non-discriminatory business reason for the termination</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Negotiate early resolution where litigation risk outweighs the cost of settlement</span></div>
+        <div class="help-item"><span>Litigate wrongful termination claims in state and federal court when a fair resolution isn't possible</span></div>
+        <div class="help-item"><span>Train managers and HR staff on documentation practices that reduce future termination-related liability</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -479,63 +504,69 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Wrongful Termination Defense FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can we be sued for terminating an at-will employee?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, and simply having an at-will policy will not defeat every claim. An at-will employee can still sue if the termination was based on a protected characteristic, was retaliatory, breached an implied contract created by handbook language or past practice, or violated public policy. That said, a documented, consistently applied, legitimate business reason is the strongest defense to these claims, and most terminations that follow sound process do not result in liability.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can we be sued for terminating an at-will employee?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, and simply having an at-will policy will not defeat every claim. An at-will employee can still sue if the termination was based on a protected characteristic, was retaliatory, breached an implied contract created by handbook language or past practice, or violated public policy. That said, a documented, consistently applied, legitimate business reason is the strongest defense to these claims, and most terminations that follow sound process do not result in liability.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What steps reduce wrongful termination risk before we terminate someone?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Before finalizing a termination, review the employee's personnel file for consistent documentation of the performance or conduct issue, confirm the decision doesn't closely follow a protected complaint or leave request, compare how similarly situated employees were treated for comparable conduct, and have HR or counsel review the decision when the employee is in a protected class, recently complained, or is a longer-tenured employee. A short pre-termination legal review is far less expensive than defending a lawsuit after the fact.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What steps reduce wrongful termination risk before we terminate someone?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Before finalizing a termination, review the employee's personnel file for consistent documentation of the performance or conduct issue, confirm the decision doesn't closely follow a protected complaint or leave request, compare how similarly situated employees were treated for comparable conduct, and have HR or counsel review the decision when the employee is in a protected class, recently complained, or is a longer-tenured employee. A short pre-termination legal review is far less expensive than defending a lawsuit after the fact.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should we do if we receive a CRD or EEOC complaint?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Do not respond informally or ignore the deadline. A Civil Rights Department (formerly DFEH) or EEOC complaint requires a formal position statement, and what you say at this stage shapes the rest of the case. Preserve all relevant records and communications immediately, avoid discussing the complaint with the employee directly, and involve an employment attorney before submitting a response — an early, well-drafted position statement can sometimes resolve a charge before it escalates to litigation.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What should we do if we receive a CRD or EEOC complaint?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Do not respond informally or ignore the deadline. A Civil Rights Department (formerly DFEH) or EEOC complaint requires a formal position statement, and what you say at this stage shapes the rest of the case. Preserve all relevant records and communications immediately, avoid discussing the complaint with the employee directly, and involve an employment attorney before submitting a response — an early, well-drafted position statement can sometimes resolve a charge before it escalates to litigation.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can documentation protect us if an employee claims wrongful termination?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Consistent, contemporaneous documentation is the single most effective defense available to an employer. Performance reviews, written warnings, and records of policy violations created before the termination — not after — demonstrate that the decision was based on legitimate business reasons. Documentation created or backdated after a claim is filed carries far less weight and can undermine an otherwise strong defense.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can documentation protect us if an employee claims wrongful termination?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Consistent, contemporaneous documentation is the single most effective defense available to an employer. Performance reviews, written warnings, and records of policy violations created before the termination — not after — demonstrate that the decision was based on legitimate business reasons. Documentation created or backdated after a claim is filed carries far less weight and can undermine an otherwise strong defense.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the cost of defending a wrongful termination lawsuit?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Costs vary widely based on the complexity of the claim and whether it proceeds to trial, but defending even a straightforward single-plaintiff wrongful termination lawsuit through discovery commonly runs into the tens of thousands of dollars before any settlement or judgment. Claims involving discrimination or retaliation, or that attract a PAGA component, can cost substantially more. Early legal involvement — ideally before a complaint is filed — is almost always less expensive than litigation.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the cost of defending a wrongful termination lawsuit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Costs vary widely based on the complexity of the claim and whether it proceeds to trial, but defending even a straightforward single-plaintiff wrongful termination lawsuit through discovery commonly runs into the tens of thousands of dollars before any settlement or judgment. Claims involving discrimination or retaliation, or that attract a PAGA component, can cost substantially more. Early legal involvement — ideally before a complaint is filed — is almost always less expensive than litigation.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Should we settle or fight a wrongful termination claim?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The right answer depends on the strength of your documentation, the cost of litigation relative to a likely settlement value, and your business's tolerance for the time and disruption of a lawsuit. Some claims are best resolved quickly and confidentially; others, particularly where the employer's documentation is strong, are worth defending through litigation to deter future claims. An experienced employment defense attorney can evaluate the specific facts of your case and recommend the most cost-effective strategy.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Should we settle or fight a wrongful termination claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The right answer depends on the strength of your documentation, the cost of litigation relative to a likely settlement value, and your business's tolerance for the time and disruption of a lawsuit. Some claims are best resolved quickly and confidentially; others, particularly where the employer's documentation is strong, are worth defending through litigation to deter future claims. An experienced employment defense attorney can evaluate the specific facts of your case and recommend the most cost-effective strategy.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

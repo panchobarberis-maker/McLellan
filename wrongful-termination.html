@@ -256,15 +256,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -272,31 +280,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -304,7 +324,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -314,8 +334,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -469,9 +488,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Wrongful Termination?</div>
     <h2 class="reveal reveal-d1">Understanding Wrongful Termination in California</h2>
-    <p>California is an at-will employment state, which means an employer can generally end the employment relationship at any time — but not for any reason. Wrongful termination occurs when an employer fires an employee for an illegal reason.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>California is an at-will employment state, which means an employer can generally end the employment relationship at any time — but not for any reason. Wrongful termination occurs when an employer fires an employee for an illegal reason.</p>
     <p>Illegal reasons include terminating an employee based on a protected characteristic such as race, gender, age, disability, religion, or national origin; firing an employee in retaliation for reporting workplace violations, harassment, or safety issues; terminating someone in breach of an express or implied employment contract; and firing an employee in violation of public policy — for example, for serving on jury duty or taking protected medical leave.</p>
     <p>If you believe you were fired for any of these reasons, you may have a wrongful termination claim under California law even if you had no written employment contract.</p>
+    </div>
   </div>
 </section>
 
@@ -480,14 +501,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Wrongful Termination Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Review the full circumstances of your termination to identify whether an illegal reason was involved</li>
-      <li>Gather and preserve key evidence including performance reviews, communications, and witness accounts</li>
-      <li>File complaints with the California Civil Rights Department (CRD) or the EEOC as required before filing suit</li>
-      <li>Negotiate aggressively for severance and settlement to achieve early resolution where appropriate</li>
-      <li>Litigate your case in state or federal court when employers refuse to do right by you</li>
-      <li>Advise on the full range of damages available, including back pay, front pay, emotional distress, and attorney's fees</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Review the full circumstances of your termination to identify whether an illegal reason was involved</span></div>
+        <div class="help-item"><span>Gather and preserve key evidence including performance reviews, communications, and witness accounts</span></div>
+        <div class="help-item"><span>File complaints with the California Civil Rights Department (CRD) or the EEOC as required before filing suit</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Negotiate aggressively for severance and settlement to achieve early resolution where appropriate</span></div>
+        <div class="help-item"><span>Litigate your case in state or federal court when employers refuse to do right by you</span></div>
+        <div class="help-item"><span>Advise on the full range of damages available, including back pay, front pay, emotional distress, and attorney's fees</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -495,83 +520,89 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Wrongful Termination FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Was my termination wrongful even if I'm an at-will employee?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. California is an at-will employment state, but that does not mean your employer can fire you for any reason. Terminations that violate anti-discrimination laws, are in retaliation for protected activity, breach an implied or express contract, or violate public policy are all wrongful — even if you were at-will. An at-will policy is a starting point, not a shield against illegal firings.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Was my termination wrongful even if I'm an at-will employee?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. California is an at-will employment state, but that does not mean your employer can fire you for any reason. Terminations that violate anti-discrimination laws, are in retaliation for protected activity, breach an implied or express contract, or violate public policy are all wrongful — even if you were at-will. An at-will policy is a starting point, not a shield against illegal firings.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the deadline to file a wrongful termination claim in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Deadlines depend on the type of claim. For discrimination or harassment claims under FEHA, you generally have three years from the adverse action to file a complaint with the Civil Rights Department (formerly DFEH). For breach of contract claims, the statute of limitations can be two to four years. Missing a deadline can bar your claim entirely, so it is important to consult an attorney promptly.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the deadline to file a wrongful termination claim in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Deadlines depend on the type of claim. For discrimination or harassment claims under FEHA, you generally have three years from the adverse action to file a complaint with the Civil Rights Department (formerly DFEH). For breach of contract claims, the statute of limitations can be two to four years. Missing a deadline can bar your claim entirely, so it is important to consult an attorney promptly.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I be fired for complaining about workplace violations?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>No. California law broadly protects employees who report illegal conduct, safety violations, discrimination, harassment, or wage violations. Firing an employee for engaging in these protected activities is unlawful retaliation. If you were terminated after making a complaint — internally or to a government agency — you may have a strong retaliation claim in addition to any underlying wrongful termination claim.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I be fired for complaining about workplace violations?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. California law broadly protects employees who report illegal conduct, safety violations, discrimination, harassment, or wage violations. Firing an employee for engaging in these protected activities is unlawful retaliation. If you were terminated after making a complaint — internally or to a government agency — you may have a strong retaliation claim in addition to any underlying wrongful termination claim.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What damages can I recover in a wrongful termination case?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Wrongful termination damages in California can include lost wages and benefits (back pay), future lost earnings (front pay), emotional distress damages, punitive damages in cases of egregious conduct, and attorney's fees. The value of your case depends on the circumstances of your termination, your salary, and the strength of the evidence.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What damages can I recover in a wrongful termination case?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Wrongful termination damages in California can include lost wages and benefits (back pay), future lost earnings (front pay), emotional distress damages, punitive damages in cases of egregious conduct, and attorney's fees. The value of your case depends on the circumstances of your termination, your salary, and the strength of the evidence.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How do I prove wrongful termination in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>To prove wrongful termination in California, you generally must show that (1) you were an employee, (2) your employer terminated you, (3) a discriminatory, retaliatory, or unlawful reason was a substantial motivating factor in the decision, and (4) you suffered harm as a result. Evidence includes emails, performance reviews, witness statements, the timing of the termination relative to protected activity, and inconsistencies in the reason your employer gave. California courts use the "substantial motivating factor" standard — the illegal reason does not have to be the only reason for the termination.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do I prove wrongful termination in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>To prove wrongful termination in California, you generally must show that (1) you were an employee, (2) your employer terminated you, (3) a discriminatory, retaliatory, or unlawful reason was a substantial motivating factor in the decision, and (4) you suffered harm as a result. Evidence includes emails, performance reviews, witness statements, the timing of the termination relative to protected activity, and inconsistencies in the reason your employer gave. California courts use the "substantial motivating factor" standard — the illegal reason does not have to be the only reason for the termination.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I sue for wrongful termination if I signed a severance agreement?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Signing a severance agreement may limit your ability to sue, but it depends on the agreement's terms and how it was presented. California requires that employees over 40 be given 21 days to consider a severance agreement and 7 days to revoke it after signing (under the Older Workers Benefit Protection Act). A release of FEHA claims must be knowing and voluntary. If you were pressured to sign, given insufficient time to review, or the agreement did not meet California's specific requirements, it may be unenforceable. You should have an employment attorney review any severance agreement before signing.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I sue for wrongful termination if I signed a severance agreement?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Signing a severance agreement may limit your ability to sue, but it depends on the agreement's terms and how it was presented. California requires that employees over 40 be given 21 days to consider a severance agreement and 7 days to revoke it after signing (under the Older Workers Benefit Protection Act). A release of FEHA claims must be knowing and voluntary. If you were pressured to sign, given insufficient time to review, or the agreement did not meet California's specific requirements, it may be unenforceable. You should have an employment attorney review any severance agreement before signing.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the difference between wrongful termination and layoff in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A layoff is a termination due to business reasons — restructuring, budget cuts, or elimination of a position — not related to the employee's performance or conduct. A wrongful termination occurs when an employer fires an employee for an illegal reason, such as discrimination, retaliation, or breach of contract. However, layoffs can also be wrongful if the employer uses a "layoff" as a pretext to target employees in a protected class, to retaliate against a whistleblower, or to avoid paying earned benefits. If your position was eliminated but similarly situated employees outside your protected class were retained, that pattern may support a wrongful termination claim.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between wrongful termination and layoff in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A layoff is a termination due to business reasons — restructuring, budget cuts, or elimination of a position — not related to the employee's performance or conduct. A wrongful termination occurs when an employer fires an employee for an illegal reason, such as discrimination, retaliation, or breach of contract. However, layoffs can also be wrongful if the employer uses a "layoff" as a pretext to target employees in a protected class, to retaliate against a whistleblower, or to avoid paying earned benefits. If your position was eliminated but similarly situated employees outside your protected class were retained, that pattern may support a wrongful termination claim.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need a lawyer to file a wrongful termination claim in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You are not legally required to have an attorney, but wrongful termination cases in California are complex and employers almost always have legal representation. An employment attorney can assess the strength of your claim, gather and preserve evidence, file a timely complaint with the Civil Rights Department (CRD) if required, and negotiate a settlement or litigate on your behalf. McLellan Law Group represents employees on a contingency fee basis — you pay nothing unless we recover for you. Given the strict deadlines (as short as three years from the adverse action under FEHA), consulting an attorney promptly protects your rights.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a lawyer to file a wrongful termination claim in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You are not legally required to have an attorney, but wrongful termination cases in California are complex and employers almost always have legal representation. An employment attorney can assess the strength of your claim, gather and preserve evidence, file a timely complaint with the Civil Rights Department (CRD) if required, and negotiate a settlement or litigate on your behalf. McLellan Law Group represents employees on a contingency fee basis — you pay nothing unless we recover for you. Given the strict deadlines (as short as three years from the adverse action under FEHA), consulting an attorney promptly protects your rights.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

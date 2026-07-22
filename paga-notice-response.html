@@ -240,15 +240,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -256,31 +264,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -288,7 +308,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -298,8 +318,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -453,9 +472,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a PAGA Notice?</div>
     <h2 class="reveal reveal-d1">Understanding Your PAGA Notice and the 65-Day Window</h2>
-    <p>A PAGA notice is a written notification that an employee (or their attorney) sends to your business and the Labor and Workforce Development Agency (LWDA) alleging one or more Labor Code violations. It is the required first step before an employee can file a PAGA lawsuit seeking civil penalties on behalf of themselves, other current and former employees, and the State of California.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>A PAGA notice is a written notification that an employee (or their attorney) sends to your business and the Labor and Workforce Development Agency (LWDA) alleging one or more Labor Code violations. It is the required first step before an employee can file a PAGA lawsuit seeking civil penalties on behalf of themselves, other current and former employees, and the State of California.</p>
     <p>Once a PAGA notice is served, the LWDA has 65 days to decide whether it will investigate the alleged violations itself. If the agency does not act within that window — which is the outcome in the vast majority of cases — the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations — but the opportunity to cure is time-sensitive and procedurally strict.</p>
     <p>Because PAGA penalties are calculated per employee, per pay period, exposure can escalate quickly across a workforce with even a single systemic violation. How your business responds in the first days after receiving a notice often determines whether the matter resolves quickly or turns into prolonged, expensive litigation.</p>
+    </div>
   </div>
 </section>
 
@@ -464,14 +485,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our PAGA Defense Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Review your PAGA notice immediately to identify which alleged violations are cited and whether any are eligible to be cured</li>
-      <li>Calculate your business's realistic penalty exposure across the affected employee population</li>
-      <li>Prepare and submit any available cure of underlying violations within the applicable statutory deadlines</li>
-      <li>Communicate with the LWDA and opposing counsel on your business's behalf during the notice period</li>
-      <li>Negotiate early resolution before litigation is filed, where appropriate</li>
-      <li>Conduct a broader wage and hour compliance audit to prevent recurring violations and future PAGA exposure</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Review your PAGA notice immediately to identify which alleged violations are cited and whether any are eligible to be cured</span></div>
+        <div class="help-item"><span>Calculate your business's realistic penalty exposure across the affected employee population</span></div>
+        <div class="help-item"><span>Prepare and submit any available cure of underlying violations within the applicable statutory deadlines</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>Communicate with the LWDA and opposing counsel on your business's behalf during the notice period</span></div>
+        <div class="help-item"><span>Negotiate early resolution before litigation is filed, where appropriate</span></div>
+        <div class="help-item"><span>Conduct a broader wage and hour compliance audit to prevent recurring violations and future PAGA exposure</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -479,63 +504,69 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">PAGA Notice Response FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is a PAGA notice and what should I do when I receive one?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>A PAGA notice is a formal notification of alleged Labor Code violations sent to your business and the LWDA before a PAGA lawsuit can be filed. The moment you receive one, preserve all relevant payroll, timekeeping, and policy records, avoid contacting the employee directly about the notice, and contact an employment attorney immediately — the response window is short, and how you handle these first days can materially affect your exposure.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is a PAGA notice and what should I do when I receive one?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A PAGA notice is a formal notification of alleged Labor Code violations sent to your business and the LWDA before a PAGA lawsuit can be filed. The moment you receive one, preserve all relevant payroll, timekeeping, and policy records, avoid contacting the employee directly about the notice, and contact an employment attorney immediately — the response window is short, and how you handle these first days can materially affect your exposure.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How much time do I have to respond?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>The LWDA has 65 days from the date the notice is filed to decide whether it will investigate. You are not required to submit a formal response to the LWDA during this window in every case, but if you intend to cure any of the alleged violations, specific and shorter deadlines apply to that process. Because of these overlapping timelines, it is important to get legal advice within days of receiving the notice, not weeks.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How much time do I have to respond?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The LWDA has 65 days from the date the notice is filed to decide whether it will investigate. You are not required to submit a formal response to the LWDA during this window in every case, but if you intend to cure any of the alleged violations, specific and shorter deadlines apply to that process. Because of these overlapping timelines, it is important to get legal advice within days of receiving the notice, not weeks.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I 'cure' the violations to avoid penalties?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>For certain types of violations — particularly some wage statement and minor pay-related errors — California law allows an employer to cure the violation within a limited window after the notice, which can eliminate or substantially reduce penalties for that violation. Not all violations are curable, and the 2024 PAGA reforms changed several of the rules governing this process, including the deadlines and the types of violations eligible. An attorney can assess quickly whether your situation qualifies.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I 'cure' the violations to avoid penalties?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>For certain types of violations — particularly some wage statement and minor pay-related errors — California law allows an employer to cure the violation within a limited window after the notice, which can eliminate or substantially reduce penalties for that violation. Not all violations are curable, and the 2024 PAGA reforms changed several of the rules governing this process, including the deadlines and the types of violations eligible. An attorney can assess quickly whether your situation qualifies.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What happens if I ignore a PAGA notice?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>If your business does not respond and the LWDA does not act within 65 days, the employee is free to file a PAGA lawsuit seeking civil penalties for every affected pay period going back one year, calculated across all aggrieved employees. Ignoring the notice forfeits any opportunity to cure violations or negotiate an early resolution, and typically results in a significantly larger exposure than addressing the notice proactively.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What happens if I ignore a PAGA notice?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>If your business does not respond and the LWDA does not act within 65 days, the employee is free to file a PAGA lawsuit seeking civil penalties for every affected pay period going back one year, calculated across all aggrieved employees. Ignoring the notice forfeits any opportunity to cure violations or negotiate an early resolution, and typically results in a significantly larger exposure than addressing the notice proactively.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How much could a PAGA claim cost my business?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>PAGA penalties are generally $100 per employee per pay period for an initial violation and $200 per employee per pay period for subsequent violations, calculated across your entire aggrieved employee population going back one year. For a mid-sized workforce with a recurring violation — such as a wage statement error affecting every pay period — this can total tens or hundreds of thousands of dollars before considering attorney's fees. The 2024 reforms give courts more discretion to reduce penalties for employers who acted in good faith, which makes an early, well-documented response valuable.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How much could a PAGA claim cost my business?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>PAGA penalties are generally $100 per employee per pay period for an initial violation and $200 per employee per pay period for subsequent violations, calculated across your entire aggrieved employee population going back one year. For a mid-sized workforce with a recurring violation — such as a wage statement error affecting every pay period — this can total tens or hundreds of thousands of dollars before considering attorney's fees. The 2024 reforms give courts more discretion to reduce penalties for employers who acted in good faith, which makes an early, well-documented response valuable.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can PAGA claims be arbitrated?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Only partially. Following the U.S. Supreme Court's decision in Viking River Cruises v. Moriana (2022), an employer can generally compel arbitration of the individual portion of a PAGA claim — the penalties tied to the notice-filing employee's own alleged violations — but the representative claims brought on behalf of other employees remain in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can PAGA claims be arbitrated?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Only partially. Following the U.S. Supreme Court's decision in Viking River Cruises v. Moriana (2022), an employer can generally compel arbitration of the individual portion of a PAGA claim — the penalties tied to the notice-filing employee's own alleged violations — but the representative claims brought on behalf of other employees remain in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

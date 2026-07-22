@@ -248,15 +248,23 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 
 /* CONTENT SECTION (What Is X) */
-.content-section { background:#fff; padding:64px 28px; }
+.content-section { background:#1e3a3e; padding:64px 28px; }
 @media(min-width:769px) { .content-section { padding:88px 80px; } }
-.content-inner { max-width:1120px; margin:0 auto; }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
 .content-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 .content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:18px; } }
 
 /* HELP SECTION (How We Help) */
@@ -264,31 +272,43 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .help-section { padding:88px 80px; } }
 .help-section .section-eyebrow { color:#1e3a3e; }
 .help-section .section-eyebrow::before { background:#1e3a3e; }
-.help-inner { max-width:1120px; margin:0 auto; }
+.help-inner { max-width:none; margin:0 auto; }
 .help-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.help-list { list-style:none; }
-.help-list li {
-  padding:18px 0; border-bottom:2px solid rgba(30,58,62,0.12);
-  font-size:16px; color:#33474a; display:flex; align-items:flex-start; gap:14px; line-height:1.65;
-  text-align:justify;
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-box {
+  background:#1e3a3e; border-radius:16px; padding:8px 28px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex; flex-direction:column; justify-content:center;
 }
-.help-list li:last-child { border-bottom:none; }
-.help-list li::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
-@media(min-width:769px) { .help-list li { font-size:18px; } }
+.help-item {
+  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  display:flex; align-items:flex-start; gap:14px;
+}
+.help-item:last-child { border-bottom:none; }
+.help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
 
 /* FAQ SECTION */
-.faq-section { background:#fff; padding:64px 28px; }
-@media(min-width:769px) { .faq-section { padding:88px 80px; max-width:1120px; margin:0 auto; } }
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 {
   font-family:'Barlow Condensed',sans-serif; text-align:center;
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
-  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
-.faq-item { border-bottom:2px solid #e8e3da; }
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
 .faq-question {
   width:100%; background:none; border:none; text-align:left;
   padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
@@ -296,7 +316,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   display:flex; justify-content:space-between; align-items:center; gap:12px;
   transition:opacity 0.15s;
 }
-.faq-question:hover { opacity:0.75; }
+.faq-question:hover { opacity:0.7; }
 .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
 .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
@@ -306,8 +326,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* WHY CHOOSE US */
 .why-us { background:#1e3a3e; padding:72px 28px; }
 @media(min-width:769px) { .why-us { padding:96px 80px; } }
-.why-us-inner { max-width:1080px; margin:0 auto; }
-@media(min-width:769px) { .why-us-inner { max-width:1440px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
 .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
 @media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
@@ -461,10 +480,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Sexual Harassment?</div>
     <h2 class="reveal reveal-d1">Understanding Sexual Harassment in the Workplace</h2>
-    <p>Sexual harassment is a form of sex discrimination prohibited under California's Fair Employment and Housing Act (FEHA) and federal Title VII. It encompasses two distinct forms: quid pro quo harassment and hostile work environment harassment.</p>
+    <div class="content-card reveal reveal-d2">
+      <p>Sexual harassment is a form of sex discrimination prohibited under California's Fair Employment and Housing Act (FEHA) and federal Title VII. It encompasses two distinct forms: quid pro quo harassment and hostile work environment harassment.</p>
     <p>Quid pro quo harassment occurs when a supervisor or manager makes job benefits — a promotion, raise, or continued employment — contingent on an employee submitting to unwelcome sexual conduct. A single instance of this type of harassment can be actionable.</p>
     <p>Hostile work environment harassment occurs when unwelcome conduct based on sex or gender is so severe or pervasive that it creates an intimidating, hostile, or abusive work environment. This can include unwanted touching, sexual comments or jokes, sharing explicit images, repeated requests for dates, and other conduct that interferes with an employee's ability to do their job.</p>
     <p>If you have experienced sexual harassment at work in Silicon Valley, McLellan Law Group offers a confidential consultation to help you understand your rights and options.</p>
+    </div>
   </div>
 </section>
 
@@ -473,14 +494,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="help-inner">
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Sexual Harassment Attorneys Do</h2>
-    <ul class="help-list">
-      <li>Provide a strictly confidential initial consultation to evaluate the facts of your situation without obligation</li>
-      <li>Identify whether the conduct you experienced constitutes quid pro quo harassment, hostile work environment, or both</li>
-      <li>Document and preserve evidence including messages, emails, voicemails, and witness statements</li>
-      <li>File a complaint with the California Civil Rights Department (CRD) or EEOC to preserve your right to sue</li>
-      <li>Pursue aggressive settlement negotiations to obtain fair compensation without unnecessary delay</li>
-      <li>Litigate your case in state or federal court and seek the full range of available damages</li>
-    </ul>
+    <div class="help-columns">
+      <div class="help-box reveal reveal-d1">
+        <div class="help-item"><span>Provide a strictly confidential initial consultation to evaluate the facts of your situation without obligation</span></div>
+        <div class="help-item"><span>Identify whether the conduct you experienced constitutes quid pro quo harassment, hostile work environment, or both</span></div>
+        <div class="help-item"><span>Document and preserve evidence including messages, emails, voicemails, and witness statements</span></div>
+      </div>
+      <div class="help-box reveal reveal-d2">
+        <div class="help-item"><span>File a complaint with the California Civil Rights Department (CRD) or EEOC to preserve your right to sue</span></div>
+        <div class="help-item"><span>Pursue aggressive settlement negotiations to obtain fair compensation without unnecessary delay</span></div>
+        <div class="help-item"><span>Litigate your case in state or federal court and seek the full range of available damages</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -488,73 +513,79 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 <section class="faq-section">
     <h2 class="reveal">Sexual Harassment FAQs</h2>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the difference between quid pro quo and hostile work environment harassment?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Quid pro quo harassment occurs when a supervisor conditions a job benefit — a hire, promotion, raise, or continued employment — on the employee's submission to sexual conduct. Hostile work environment harassment occurs when unwelcome sexual conduct is severe or pervasive enough to alter the conditions of employment and create an abusive working environment. The conduct can include comments, jokes, touching, or images. Unlike quid pro quo, hostile work environment harassment can be committed by coworkers, supervisors, or even non-employees. Both types are illegal under California's FEHA and federal Title VII.</p>
-      </div>
-    </div>
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between quid pro quo and hostile work environment harassment?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Quid pro quo harassment occurs when a supervisor conditions a job benefit — a hire, promotion, raise, or continued employment — on the employee's submission to sexual conduct. Hostile work environment harassment occurs when unwelcome sexual conduct is severe or pervasive enough to alter the conditions of employment and create an abusive working environment. The conduct can include comments, jokes, touching, or images. Unlike quid pro quo, hostile work environment harassment can be committed by coworkers, supervisors, or even non-employees. Both types are illegal under California's FEHA and federal Title VII.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I have to report harassment to HR first?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You are not legally required to report harassment to HR before consulting an attorney or filing a complaint with a government agency. However, reporting to HR creates a record and may trigger your employer's legal obligation to investigate and stop the harassment. Importantly, you must file a complaint with the California Civil Rights Department (CRD) and obtain a right-to-sue notice before filing a civil lawsuit in California.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I have to report harassment to HR first?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You are not legally required to report harassment to HR before consulting an attorney or filing a complaint with a government agency. However, reporting to HR creates a record and may trigger your employer's legal obligation to investigate and stop the harassment. Importantly, you must file a complaint with the California Civil Rights Department (CRD) and obtain a right-to-sue notice before filing a civil lawsuit in California.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I sue if the harasser was a coworker, not a manager?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. Under California law, employers can be held liable for sexual harassment by coworkers if the employer knew or should have known about the harassment and failed to take immediate and appropriate corrective action. Employers are also strictly liable for harassment by supervisors and managers. Harassment by a client, vendor, or customer can also give rise to a claim if the employer fails to protect you.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I sue if the harasser was a coworker, not a manager?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Under California law, employers can be held liable for sexual harassment by coworkers if the employer knew or should have known about the harassment and failed to take immediate and appropriate corrective action. Employers are also strictly liable for harassment by supervisors and managers. Harassment by a client, vendor, or customer can also give rise to a claim if the employer fails to protect you.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Is my sexual harassment case confidential?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Your initial consultation with McLellan Law Group is fully confidential and protected by attorney-client privilege. Regarding the case itself, many sexual harassment settlements include confidentiality provisions — but California law restricts employers from requiring employees to keep harassment settlements secret in ways that prevent them from discussing factual information. We will explain exactly what confidentiality protections apply to your situation.</p>
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is my sexual harassment case confidential?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your initial consultation with McLellan Law Group is fully confidential and protected by attorney-client privilege. Regarding the case itself, many sexual harassment settlements include confidentiality provisions — but California law restricts employers from requiring employees to keep harassment settlements secret in ways that prevent them from discussing factual information. We will explain exactly what confidentiality protections apply to your situation.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I file a sexual harassment claim against a coworker, not just a supervisor?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. In California, employers are strictly liable for sexual harassment by supervisors. For harassment by coworkers, clients, or contractors, the employer is liable if it knew or should have known about the harassment and failed to take immediate and appropriate corrective action. Under FEHA, employers have a duty to take all reasonable steps to prevent harassment. If you reported the harassment to HR or management and the employer did nothing — or retaliated against you for reporting — the employer faces significant legal exposure.</p>
-      </div>
-    </div>
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I file a sexual harassment claim against a coworker, not just a supervisor?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. In California, employers are strictly liable for sexual harassment by supervisors. For harassment by coworkers, clients, or contractors, the employer is liable if it knew or should have known about the harassment and failed to take immediate and appropriate corrective action. Under FEHA, employers have a duty to take all reasonable steps to prevent harassment. If you reported the harassment to HR or management and the employer did nothing — or retaliated against you for reporting — the employer faces significant legal exposure.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What evidence do I need for a sexual harassment case in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Useful evidence in a California sexual harassment case includes text messages, emails, social media messages, voicemails, and any written communications from the harasser. Contemporaneous notes of incidents — dates, locations, what was said or done, and any witnesses — are also valuable. Keep copies of any HR complaints you submitted and the employer's responses. Witness testimony from coworkers who observed the conduct can corroborate your account. California courts recognize that harassment often occurs without witnesses, so a credible, detailed account from the victim can be sufficient to support a claim.</p>
-      </div>
-    </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What evidence do I need for a sexual harassment case in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Useful evidence in a California sexual harassment case includes text messages, emails, social media messages, voicemails, and any written communications from the harasser. Contemporaneous notes of incidents — dates, locations, what was said or done, and any witnesses — are also valuable. Keep copies of any HR complaints you submitted and the employer's responses. Witness testimony from coworkers who observed the conduct can corroborate your account. California courts recognize that harassment often occurs without witnesses, so a credible, detailed account from the victim can be sufficient to support a claim.</p>
+          </div>
+        </div>
 
-    <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        How long do I have to file a sexual harassment complaint in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>In California, you have three years from the last act of sexual harassment to file a complaint with the Civil Rights Department (CRD) under FEHA. This three-year window was extended from one year by AB 9, which took effect January 1, 2020. If you were also assaulted, separate criminal statutes of limitations and the civil sexual assault claims under AB 2777 (the SPEAK OUT Act) may apply with different deadlines. Because harassment often involves a pattern of conduct, the deadline typically runs from the most recent act — but prompt action is always advisable to preserve evidence and witness memory.</p>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long do I have to file a sexual harassment complaint in California?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>In California, you have three years from the last act of sexual harassment to file a complaint with the Civil Rights Department (CRD) under FEHA. This three-year window was extended from one year by AB 9, which took effect January 1, 2020. If you were also assaulted, separate criminal statutes of limitations and the civil sexual assault claims under AB 2777 (the SPEAK OUT Act) may apply with different deadlines. Because harassment often involves a pattern of conduct, the deadline typically runs from the most recent act — but prompt action is always advisable to preserve evidence and witness memory.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
