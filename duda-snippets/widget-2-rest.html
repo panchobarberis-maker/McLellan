@@ -3,7 +3,7 @@
 .mlg-w2 *, .mlg-w2 *::before, .mlg-w2 *::after { box-sizing:border-box !important; margin:0 !important; padding:0 !important; }
 .mlg-w2 { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased !important; }
 /* full-bleed para TODAS las secciones */
-.mlg-stats-bar, .mlg-about, .mlg-practices, .mlg-testimonials, .mlg-cta-banner {
+.mlg-stats-bar, .mlg-about, .mlg-practices, .mlg-testimonials, .mlg-why-us, .mlg-cta-banner {
   margin-left:calc(-50vw + 50%) !important;
   width:100vw !important;
   max-width:100vw !important;
@@ -151,6 +151,18 @@
 .mlg-carousel-dots { display:flex !important; gap:8px !important; }
 .mlg-carousel-dot { width:6px !important; height:6px !important; border-radius:50% !important; background:#ccc !important; border:none !important; cursor:pointer !important; padding:0 !important; }
 .mlg-carousel-dot.mlg-active { background:#c9a96e !important; }
+.mlg-why-us { background:#1e3a3e !important; padding:72px 28px !important; }
+.mlg-why-us-inner { max-width:none !important; margin:0 auto !important; }
+.mlg-why-us-eyebrow { color:#c9a96e !important; margin-bottom:16px !important; display:flex !important; width:max-content !important; margin-left:auto !important; margin-right:auto !important; text-align:center !important; font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase !important; }
+.mlg-why-us-title { font-family:'Barlow Condensed',sans-serif !important; text-align:center !important; font-size:clamp(36px,5vw,56px) !important; font-weight:800 !important; color:#fff !important; line-height:1.05 !important; letter-spacing:-1px !important; text-transform:uppercase !important; margin-bottom:48px !important; }
+.mlg-why-us-title em { display:block !important; font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; letter-spacing:-0.5px !important; }
+.mlg-why-us-grid { display:grid !important; grid-template-columns:1fr 1fr !important; gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden !important; }
+.mlg-why-us-item { background:#fbf6ef !important; padding:32px 28px !important; display:flex !important; flex-direction:column !important; gap:10px !important; transition:background 0.2s !important; }
+.mlg-why-us-item:hover { background:#f3ece0 !important; }
+.mlg-why-us-num { font-family:'Barlow Condensed',sans-serif !important; font-size:13px !important; font-weight:700 !important; letter-spacing:2px !important; color:#c9a96e !important; }
+.mlg-why-us-item strong { font-size:17px !important; font-weight:700 !important; color:#1e3a3e !important; }
+.mlg-why-us-item span { font-size:14px !important; color:#5a6e70 !important; line-height:1.65 !important; }
+@media(max-width:600px) { .mlg-why-us-grid { grid-template-columns:1fr !important; } }
 .mlg-cta-banner { background:#1e3a3e !important; padding:56px 24px !important; text-align:center !important; }
 .mlg-cta-banner h3 { font-family:'Barlow Condensed',sans-serif !important; font-size:52px !important; font-weight:800 !important; color:#fff !important; line-height:1.0 !important; margin-bottom:16px !important; letter-spacing:-1px !important; text-transform:uppercase !important; }
 .mlg-cta-banner h3 em { font-style:italic !important; color:#c9a96e !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; }
@@ -182,6 +194,14 @@
   .mlg-quote-icon { left:36px !important; transform:none !important; }
   .mlg-testimonial-card .mlg-quote { font-size:16px !important; }
   .mlg-carousel-nav { display:none !important; }
+  .mlg-why-us { padding:96px 80px !important; }
+  .mlg-why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+  .mlg-why-us-title { font-size:clamp(48px,5.5vw,72px) !important; margin-bottom:56px !important; }
+  .mlg-why-us-grid { gap:8px !important; }
+  .mlg-why-us-item { padding:56px 48px !important; gap:14px !important; }
+  .mlg-why-us-num { font-size:16px !important; }
+  .mlg-why-us-item strong { font-size:26px !important; }
+  .mlg-why-us-item span { font-size:18px !important; line-height:1.7 !important; }
   .mlg-cta-banner { padding:120px 96px !important; }
   .mlg-cta-banner h3 { font-size:76px !important; }
   .mlg-cta-banner p { max-width:none !important; margin:0 auto 48px !important; font-size:28px !important; white-space:nowrap !important; }
@@ -722,6 +742,47 @@
      <button class="mlg-carousel-arrow" onclick="mlgMoveCarousel(1)">
       ›
      </button>
+    </div>
+   </div>
+  </section>
+  <section class="mlg-why-us">
+   <div class="mlg-why-us-inner">
+    <div class="mlg-why-us-eyebrow mlg-fade">
+     Why McLellan Law Group
+    </div>
+    <h2 class="mlg-why-us-title mlg-fade mlg-d1">
+     Results-Driven.
+     <em>Personally Invested.</em>
+    </h2>
+    <div class="mlg-why-us-grid">
+     <div class="mlg-why-us-item mlg-fade mlg-d1">
+      <div class="mlg-why-us-num">
+       01
+      </div>
+      <strong>Boutique Firm Attention</strong>
+      <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
+     </div>
+     <div class="mlg-why-us-item mlg-fade mlg-d2">
+      <div class="mlg-why-us-num">
+       02
+      </div>
+      <strong>Silicon Valley Focus</strong>
+      <span>Based in Saratoga, we know California law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
+     </div>
+     <div class="mlg-why-us-item mlg-fade mlg-d3">
+      <div class="mlg-why-us-num">
+       03
+      </div>
+      <strong>Proven Track Record</strong>
+      <span>From employment disputes to business litigation to trust and probate matters, our attorneys have secured favorable outcomes across Silicon Valley.</span>
+     </div>
+     <div class="mlg-why-us-item mlg-fade mlg-d4">
+      <div class="mlg-why-us-num">
+       04
+      </div>
+      <strong>Free Consultation</strong>
+      <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+     </div>
     </div>
    </div>
   </section>

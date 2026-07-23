@@ -281,6 +281,27 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .carousel-dot { width:6px; height:6px; border-radius:50%; background:#ccc; border:none; cursor:pointer; padding:0; transition:background 0.2s; }
 .carousel-dot.active { background:#c9a96e; }
 
+/* ══ WHY CHOOSE US ══ */
+.why-us { background:#1e3a3e; padding:72px 28px; }
+@media(min-width:769px) { .why-us { padding:96px 80px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
+.why-us-eyebrow { color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
+.why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
+@media(min-width:769px) { .why-us-title { font-size:clamp(48px,5.5vw,72px); margin-bottom:56px; } }
+.why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
+.why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
+@media(min-width:769px) { .why-us-grid { gap:8px; } }
+@media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
+.why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
+@media(min-width:769px) { .why-us-item { padding:56px 48px; gap:14px; } }
+.why-us-item:hover { background:#f3ece0; }
+.why-us-num { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#c9a96e; }
+@media(min-width:769px) { .why-us-num { font-size:16px; } }
+.why-us-item strong { font-size:17px; font-weight:700; color:#1e3a3e; }
+@media(min-width:769px) { .why-us-item strong { font-size:26px; } }
+.why-us-item span { font-size:14px; color:#5a6e70; line-height:1.65; }
+@media(min-width:769px) { .why-us-item span { font-size:18px; line-height:1.7; } }
+
 /* ══ CTA BANNER ══ */
 .cta-banner { background:#1e3a3e; padding:56px 24px; text-align:center; }
 .cta-banner h3 { font-family:'Barlow Condensed',sans-serif; font-size:52px; font-weight:800; color:#fff; line-height:1.0; margin-bottom:16px; letter-spacing:-1px; text-transform:uppercase; }
@@ -626,6 +647,36 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       <button class="carousel-arrow" onclick="moveCarousel(-1)">‹</button>
       <div class="carousel-dots" id="carouselDots"></div>
       <button class="carousel-arrow" onclick="moveCarousel(1)">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="why-us-inner">
+    <div class="why-us-eyebrow fade">Why McLellan Law Group</div>
+    <h2 class="why-us-title fade fade-d1">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-grid">
+      <div class="why-us-item fade fade-d1">
+        <div class="why-us-num">01</div>
+        <strong>Boutique Firm Attention</strong>
+        <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
+      </div>
+      <div class="why-us-item fade fade-d2">
+        <div class="why-us-num">02</div>
+        <strong>Silicon Valley Focus</strong>
+        <span>Based in Saratoga, we know California law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
+      </div>
+      <div class="why-us-item fade fade-d3">
+        <div class="why-us-num">03</div>
+        <strong>Proven Track Record</strong>
+        <span>From employment disputes to business litigation to trust and probate matters, our attorneys have secured favorable outcomes across Silicon Valley.</span>
+      </div>
+      <div class="why-us-item fade fade-d4">
+        <div class="why-us-num">04</div>
+        <strong>Free Consultation</strong>
+        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+      </div>
     </div>
   </div>
 </section>
