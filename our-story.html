@@ -8,7 +8,7 @@
 <meta name="description" content="Why we started McLellan Law Group and who we built it for — a Saratoga, CA firm turning legal complexity into clarity for business owners, executives, and families.">
 <link rel="canonical" href="https://www.mclellanlawgroup.com/our-story">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -140,6 +140,15 @@ a { text-decoration:none; color:inherit; }
   font-size:clamp(18px, 1.8vw, 22px); line-height:1.6; color:rgba(255,255,255,0.8);
   max-width:520px; margin-top:28px;
 }
+.hero-stats { display:flex; gap:40px; flex-wrap:wrap; margin-top:44px; }
+.hero-stats .stat .num {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  font-size:44px; line-height:1; color:#c9a96e; display:block; margin-bottom:8px;
+}
+.hero-stats .stat .label {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:rgba(255,255,255,0.55); font-weight:600; line-height:1.5; display:block;
+}
 
 /* ── STATS BAR (same component as the home page) ── */
 .stats-bar { background:#1e3a3e; padding:0 24px; display:flex; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,0.08); }
@@ -199,8 +208,8 @@ a { text-decoration:none; color:inherit; }
 .story-section.dark .story-text { color:rgba(255,255,255,0.85); }
 .story-section.light .story-text { color:#3a5254; }
 .story-quote {
-  font-family:'Barlow',sans-serif; font-style:italic; font-weight:600;
-  font-size:clamp(22px, 2.8vw, 32px); line-height:1.5; color:#fff;
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
+  font-size:clamp(24px, 3vw, 34px); line-height:1.5; color:#fff;
   max-width:900px; margin:0 auto;
 }
 
@@ -333,6 +342,20 @@ a { text-decoration:none; color:inherit; }
     <div class="hero-pill reveal reveal-d1">Our Story · Saratoga, California</div>
     <h1 class="hero-name reveal reveal-d2">Why We Started This Firm—And Who We Built It For</h1>
     <p class="hero-sub reveal reveal-d3">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
+    <div class="hero-stats">
+      <div class="stat reveal reveal-d4">
+        <span class="num">5.0★</span>
+        <span class="label">Google<br>Reviews</span>
+      </div>
+      <div class="stat reveal reveal-d5">
+        <span class="num">8+</span>
+        <span class="label">Practice<br>Areas</span>
+      </div>
+      <div class="stat reveal reveal-d6">
+        <span class="num">3</span>
+        <span class="label">Trial<br>Attorneys</span>
+      </div>
+    </div>
   </div>
 </section>
 
