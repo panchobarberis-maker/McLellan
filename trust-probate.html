@@ -157,7 +157,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .emp-hero {
   position:relative; overflow:hidden;
   min-height:560px; display:flex; flex-direction:column;
-  justify-content:flex-end; padding:0 28px 52px;
+  justify-content:center; align-items:center; text-align:center; padding:0 28px 52px;
   background:#1e3a3e;
 }
 @media(min-width:769px) { .emp-hero { min-height:680px; padding:0 80px 80px; } }
@@ -182,7 +182,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-family:'Barlow Condensed',sans-serif;
   font-size:clamp(36px, 7vw, 72px); font-weight:900; line-height:0.95;
   color:#fff; text-transform:uppercase; letter-spacing:-1px;
-  margin-bottom:18px;
+  margin:0 auto 18px; max-width:1000px;
 }
 .emp-hero h1 em {
   display:block; font-style:italic;
@@ -191,8 +191,8 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .emp-hero-sub {
   position:relative; z-index:2;
-  font-size:16px; color:rgba(255,255,255,0.8); max-width:520px;
-  line-height:1.7; margin-bottom:32px;
+  font-size:19px; color:rgba(255,255,255,0.8); max-width:520px;
+  line-height:1.7; margin:0 auto 32px;
   font-family:'DM Serif Display',serif; font-style:italic;
 }
 .emp-hero-ctas {
@@ -475,7 +475,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 /* Tipografía general más grande en desktop */
 @media(min-width:769px) {
-  .emp-hero-sub { font-size:20px !important; max-width:620px; }
+  .emp-hero-sub { font-size:25px !important; max-width:760px; }
   .employers-section > p, .employers-intro-text p { font-size:21px !important; max-width:none; }
   .employer-item-text strong { font-size:21px; }
   .employer-item-text span { font-size:16px; }
@@ -666,7 +666,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video>
   <div class="emp-hero-overlay"></div>
   <div class="hero-pill">Trust &amp; Probate Litigation · Saratoga, California</div>
-  <h1>California Trust &amp; Probate Litigation Attorneys</h1>
+  <h1>California Trust &amp; Probate Litigation <em>Attorneys</em></h1>
   <p class="emp-hero-sub">Trust and probate disputes are among the most emotionally difficult legal matters a family can face. We're here to guide you through.</p>
   <div class="emp-hero-ctas">
     <a href="#contact" class="btn-gold">Get My Free Consultation →</a>
