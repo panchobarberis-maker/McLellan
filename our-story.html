@@ -160,7 +160,7 @@ a { text-decoration:none; color:inherit; }
 }
 
 /* ── STATS BAR (same component as the home page) ── */
-.stats-bar { background:#1e3a3e; padding:0 24px; display:flex; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,0.08); }
+.stats-bar { background:#1e3a3e; padding:0 24px; display:flex; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,0.08); border-bottom:8px solid #c9a96e; }
 @media(min-width:769px) { .stats-bar { padding:0 96px; } }
 @keyframes statBounce {
   0%   { opacity:0; transform:scale(0.6) translateY(48px); }
@@ -198,7 +198,8 @@ a { text-decoration:none; color:inherit; }
 .team-link:hover { opacity:0.7; }
 
 /* ── STORY SECTIONS (alternating cream/navy, like the home page) ── */
-.story-duo { display:grid; grid-template-columns:1fr 1fr; }
+.story-duo { display:grid; grid-template-columns:1fr 1fr; background:#c9a96e; gap:8px; }
+.story-duo .story-section { margin:0; }
 @media(max-width:900px) { .story-duo { grid-template-columns:1fr; } }
 .story-section { padding:72px 28px; text-align:center; }
 @media(min-width:769px) { .story-section { padding:120px 96px; } }
