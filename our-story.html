@@ -199,6 +199,8 @@ a { text-decoration:none; color:inherit; }
 .team-link:hover { opacity:0.7; }
 
 /* ── STORY SECTIONS (alternating cream/navy, like the home page) ── */
+.story-duo { display:grid; grid-template-columns:1fr 1fr; }
+@media(max-width:900px) { .story-duo { grid-template-columns:1fr; } }
 .story-section { padding:72px 28px; text-align:center; }
 @media(min-width:769px) { .story-section { padding:120px 96px; } }
 .story-section.dark { background:#1e3a3e; }
@@ -380,16 +382,16 @@ a { text-decoration:none; color:inherit; }
   <div class="stat-item" data-delay="300"><span class="stat-value" data-count="3" data-suffix="">3</span><span class="stat-label">Trial Attorneys</span></div>
 </div>
 
-<!-- STORY: HOW WE STARTED (cream) -->
-<section class="story-section light">
-  <div class="story-eyebrow reveal">How We Started</div>
-  <p class="story-text reveal reveal-d1">As we built strong relationships with our entrepreneurial clients, something powerful started to happen—they began referring their clients, friends, and family to us for help. That steady stream of referrals gave rise to our consumer-facing practice areas and revealed something important:</p>
-</section>
-
-<!-- STORY: QUOTE (navy) -->
-<section class="story-section dark">
-  <div class="story-eyebrow reveal">In Our Own Words</div>
-  <p class="story-quote reveal reveal-d1">"We see ourselves as more than lawyers—we're collaborators, advocates, and champions for business owners who are striving to achieve greatness."</p>
+<!-- STORY: HOW WE STARTED + IN OUR OWN WORDS (side by side) -->
+<section class="story-duo">
+  <div class="story-section light">
+    <div class="story-eyebrow reveal">How We Started</div>
+    <p class="story-text reveal reveal-d1">As we built strong relationships with our entrepreneurial clients, something powerful started to happen—they began referring their clients, friends, and family to us for help. That steady stream of referrals gave rise to our consumer-facing practice areas and revealed something important:</p>
+  </div>
+  <div class="story-section dark">
+    <div class="story-eyebrow reveal">In Our Own Words</div>
+    <p class="story-quote reveal reveal-d1">"We see ourselves as more than lawyers—we're collaborators, advocates, and champions for business owners who are striving to achieve greatness."</p>
+  </div>
 </section>
 
 <!-- STORY: THE TEAM (cream) -->
