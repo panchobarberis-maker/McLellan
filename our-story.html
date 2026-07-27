@@ -100,7 +100,7 @@ a { text-decoration:none; color:inherit; }
 .hero {
   display:grid; grid-template-columns:55% 45%;
 }
-@media(min-width:901px) { .hero { min-height:560px; } }
+@media(min-width:901px) { .hero { min-height:560px; max-width:1200px; margin:0 auto; } }
 @media(max-width:900px) { .hero { grid-template-columns:1fr; min-height:0; } }
 .hero-photo { position:relative; overflow:hidden; }
 .hero-photo img, .hero-photo video {
