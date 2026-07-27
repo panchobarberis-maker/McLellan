@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +488,24 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is an Easement or Boundary Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Easement & Boundary Disputes in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>An easement gives one property owner a legal right to use a portion of a neighboring property for a specific purpose, such as a shared driveway, utility line, or access road. Boundary disputes, by contrast, arise when neighbors disagree about where one property ends and another begins — often because of an outdated survey, a fence built in the wrong location, or a structure that encroaches onto adjoining land.</p>
-      <p>These disputes can arise from ambiguous or outdated deed language, easements never properly recorded, or a use that has continued for years without a written agreement. California law recognizes prescriptive easements, allowing a party to gain the right to use another's land after open, continuous, and adverse use for five years, and implied easements can arise from prior use even without a written grant. Resolving a dispute typically starts with the recorded chain of title and often requires a licensed surveyor to establish the true boundary line.</p>
-      <p>Left unresolved, an easement or boundary dispute can limit access to your property, reduce its value, or leave an encroachment in place indefinitely if you fail to act. Because these disputes often affect long-term property rights rather than a one-time transaction, resolving them correctly — through negotiation, a boundary line agreement, or a quiet title action — matters more than resolving them quickly.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">An easement gives one property owner the legal right to use part of a neighboring property for a specific purpose.</p>
+        <p>This can include a shared driveway, utility line, or access road. Boundary disputes, by contrast, arise when neighbors disagree about where one property ends and another begins, often because of:</p>
+        <ul class="content-list">
+          <li><span>An outdated survey</span></li>
+          <li><span>A fence built in the wrong location</span></li>
+          <li><span>A structure that encroaches onto adjoining land</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">These disputes often stem from ambiguous deed language, unrecorded easements, or long-standing unwritten uses.</p>
+        <p>California law recognizes prescriptive easements, allowing a party to gain the right to use another's land after open, continuous, and adverse use for five years, and implied easements can arise from prior use even without a written grant. Resolving a dispute typically starts with the recorded chain of title and often requires a licensed surveyor to establish the true boundary line.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Left unresolved, an easement or boundary dispute can limit your property access, reduce its value, or leave an encroachment in place.</p>
+        <p>Because these disputes often affect long-term property rights rather than a one-time transaction, resolving them correctly — through negotiation, a boundary line agreement, or a quiet title action — matters more than resolving them quickly.</p>
+      </div>
     </div>
   </div>
 </section>

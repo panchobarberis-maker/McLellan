@@ -266,14 +266,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -488,10 +496,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Wrongful Termination?</div>
     <h2 class="reveal reveal-d1">Understanding Wrongful Termination in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>California is an at-will employment state, which means an employer can generally end the employment relationship at any time — but not for any reason. Wrongful termination occurs when an employer fires an employee for an illegal reason.</p>
-    <p>Illegal reasons include terminating an employee based on a protected characteristic such as race, gender, age, disability, religion, or national origin; firing an employee in retaliation for reporting workplace violations, harassment, or safety issues; terminating someone in breach of an express or implied employment contract; and firing an employee in violation of public policy — for example, for serving on jury duty or taking protected medical leave.</p>
-    <p>If you believe you were fired for any of these reasons, you may have a wrongful termination claim under California law even if you had no written employment contract.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Wrongful termination occurs when an employer fires an employee for an illegal reason.</p>
+        <p>California is an at-will employment state, which means an employer can generally end the employment relationship at any time — but not for any reason.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">Illegal reasons for firing an employee generally fall into a few recognized categories.</p>
+        <p>Illegal reasons include:</p>
+        <ul class="content-list">
+          <li><span>Terminating an employee based on a protected characteristic such as race, gender, age, disability, religion, or national origin</span></li>
+          <li><span>Firing an employee in retaliation for reporting workplace violations, harassment, or safety issues</span></li>
+          <li><span>Terminating someone in breach of an express or implied employment contract</span></li>
+          <li><span>Firing an employee in violation of public policy — for example, for serving on jury duty or taking protected medical leave</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">You may have a wrongful termination claim even without a written employment contract.</p>
+        <p>If you believe you were fired for any of these reasons, you may have a wrongful termination claim under California law even if you had no written employment contract.</p>
+      </div>
     </div>
   </div>
 </section>

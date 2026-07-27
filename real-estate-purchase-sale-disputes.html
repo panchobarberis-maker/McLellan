@@ -265,14 +265,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -487,10 +495,24 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Purchase & Sale Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Purchase & Sale Disputes in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Real estate purchase agreements govern some of the largest financial transactions most people or businesses will ever undertake, and disputes can arise at nearly any stage — from a buyer backing out after removing contingencies, to a seller failing to disclose known defects, to disagreements over who is entitled to a deposit when a deal falls apart. Even well-drafted agreements can lead to litigation when the parties disagree about their obligations or the condition of the property.</p>
-      <p>California law requires sellers of residential property to disclose known material defects, and failure to do so can support claims for fraud, negligent misrepresentation, or breach of contract, in addition to remedies under the statutory disclosure requirements. When a party breaches a purchase agreement outright — such as refusing to close — the non-breaching party may seek damages, retention or return of the deposit, or in some cases specific performance, compelling the sale to proceed because real property is considered legally unique.</p>
-      <p>Whether you are a buyer who discovered undisclosed problems after closing, or a seller facing a claim over a transaction you believed was handled properly, purchase and sale disputes often involve significant sums and tight contractual deadlines for asserting claims or defenses. Understanding your rights under the purchase agreement and applicable disclosure laws early can determine whether you recover fully, are compelled to complete a sale, or successfully defend against an unfounded claim.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Real estate purchase agreements govern some of the largest financial transactions most people or businesses will ever undertake.</p>
+        <p>Disputes can arise at nearly any stage — from a buyer backing out after removing contingencies, to a seller failing to disclose known defects, to disagreements over who is entitled to a deposit when a deal falls apart. Even well-drafted agreements can lead to litigation when the parties disagree about their obligations or the condition of the property.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California law requires sellers of residential property to disclose known material defects.</p>
+        <p>Failure to disclose can support claims for fraud, negligent misrepresentation, or breach of contract, in addition to remedies under the statutory disclosure requirements. When a party breaches a purchase agreement outright — such as refusing to close — the non-breaching party may seek:</p>
+        <ul class="content-list">
+          <li><span>Damages</span></li>
+          <li><span>Retention or return of the deposit</span></li>
+          <li><span>Specific performance, compelling the sale to proceed, because real property is considered legally unique</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Purchase and sale disputes often involve significant sums and tight contractual deadlines for asserting claims or defenses.</p>
+        <p>Whether you are a buyer who discovered undisclosed problems after closing, or a seller facing a claim over a transaction you believed was handled properly, understanding your rights under the purchase agreement and applicable disclosure laws early can determine whether you recover fully, are compelled to complete a sale, or successfully defend against an unfounded claim.</p>
+      </div>
     </div>
   </div>
 </section>

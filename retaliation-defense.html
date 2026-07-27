@@ -250,14 +250,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -472,10 +480,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Retaliation Defense?</div>
     <h2 class="reveal reveal-d1">Defending Adverse Employment Decisions Against Retaliation Claims</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Retaliation claims arise whenever an employee alleges that a demotion, discipline, pay reduction, or termination was actually driven by their prior complaint, leave request, or whistleblowing — rather than the legitimate business reason the employer gives. California law protects an unusually broad range of employee activity from retaliation, including internal HR complaints, reports to government agencies, workers' compensation claims, and reports of suspected legal violations under Labor Code Section 1102.5.</p>
-    <p>These claims are difficult to defend when the timing between the protected activity and the adverse action is close, when documentation of the underlying performance or conduct issue is thin, or when similarly situated employees who did not complain were treated more leniently. Even a fully justified decision can trigger costly litigation if it isn't clearly and contemporaneously documented.</p>
-    <p>McLellan Law Group helps California employers make and document defensible personnel decisions involving employees who have engaged in protected activity, and defends businesses when a retaliation claim is filed regardless.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Retaliation claims arise when an adverse action is allegedly driven by an employee's protected activity, not a legitimate business reason.</p>
+        <p>Claims typically involve a demotion, discipline, pay reduction, or termination that the employee says was actually triggered by their prior complaint, leave request, or whistleblowing. California law protects an unusually broad range of employee activity from retaliation, including internal HR complaints, reports to government agencies, workers' compensation claims, and reports of suspected legal violations under Labor Code Section 1102.5.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">These claims are difficult to defend under a few common conditions.</p>
+        <p>They are hardest to defend when:</p>
+        <ul class="content-list">
+          <li><span>The timing between the protected activity and the adverse action is close</span></li>
+          <li><span>Documentation of the underlying performance or conduct issue is thin</span></li>
+          <li><span>Similarly situated employees who did not complain were treated more leniently</span></li>
+        </ul>
+        <p>Even a fully justified decision can trigger costly litigation if it isn't clearly and contemporaneously documented.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">McLellan Law Group helps employers make and document defensible personnel decisions.</p>
+        <p>McLellan Law Group helps California employers make and document defensible personnel decisions involving employees who have engaged in protected activity, and defends businesses when a retaliation claim is filed regardless.</p>
+      </div>
     </div>
   </div>
 </section>

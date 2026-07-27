@@ -266,14 +266,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -488,10 +496,27 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Workplace Retaliation?</div>
     <h2 class="reveal reveal-d1">Understanding Retaliation Under California Law</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Workplace retaliation occurs when an employer takes adverse action against an employee because the employee engaged in a legally protected activity. California law provides some of the strongest anti-retaliation protections in the country, and employees who are punished for speaking up have meaningful legal remedies.</p>
-    <p>Protected activities that cannot legally trigger adverse employment actions include reporting workplace discrimination or harassment to HR or a government agency, filing a wage claim with the Labor Commissioner, reporting unsafe working conditions to Cal/OSHA, blowing the whistle on illegal employer conduct under Labor Code Section 1102.5, taking protected family or medical leave under CFRA or FMLA, and filing a workers' compensation claim.</p>
-    <p>Adverse actions that can constitute retaliation include termination, demotion, reduction in pay or hours, hostile reassignment, negative performance reviews issued in bad faith, exclusion from meetings or opportunities, and other changes that materially affect the terms and conditions of employment. The employer does not need to admit retaliatory intent — circumstantial evidence and timing can establish the required connection.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Workplace retaliation occurs when an employer punishes an employee for engaging in protected activity.</p>
+        <p>California law provides some of the strongest anti-retaliation protections in the country, and employees who are punished for speaking up have meaningful legal remedies.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California law protects a wide range of activities from retaliation.</p>
+        <p>Protected activities that cannot legally trigger adverse employment actions include:</p>
+        <ul class="content-list">
+          <li><span>Reporting workplace discrimination or harassment to HR or a government agency</span></li>
+          <li><span>Filing a wage claim with the Labor Commissioner</span></li>
+          <li><span>Reporting unsafe working conditions to Cal/OSHA</span></li>
+          <li><span>Blowing the whistle on illegal employer conduct under Labor Code Section 1102.5</span></li>
+          <li><span>Taking protected family or medical leave under CFRA or FMLA</span></li>
+          <li><span>Filing a workers' compensation claim</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">The employer does not need to admit retaliatory intent for a claim to succeed.</p>
+        <p>Adverse actions that can constitute retaliation include termination, demotion, reduction in pay or hours, hostile reassignment, negative performance reviews issued in bad faith, exclusion from meetings or opportunities, and other changes that materially affect the terms and conditions of employment. Circumstantial evidence and timing can establish the required connection.</p>
+      </div>
     </div>
   </div>
 </section>

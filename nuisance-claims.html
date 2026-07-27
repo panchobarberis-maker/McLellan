@@ -257,14 +257,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -479,10 +487,27 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Nuisance Claim?</div>
     <h2 class="reveal reveal-d1">Understanding Nuisance Claims in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>California law defines a nuisance broadly as anything that is injurious to health, offensive to the senses, or an obstruction to the free use of property, so as to interfere with the comfortable enjoyment of life or property. In practice, nuisance claims often arise between neighbors over persistent noise, foul odors, excessive light, overhanging vegetation, water runoff, or business activity that spills over onto adjoining residential property.</p>
-      <p>A private nuisance claim requires showing that the interference was substantial and unreasonable — not just an occasional annoyance — and that it affected your ability to use and enjoy your own property. Nuisances can be permanent, such as a structure built to encroach on light or airflow, or continuing, such as ongoing noise or odor, and the distinction affects both the statute of limitations and the remedies available, including damages and injunctive relief ordering the interference to stop.</p>
-      <p>A serious, ongoing nuisance can affect your property's value, your health, and your quality of life, and can be difficult to resolve informally once a neighbor or business refuses to change their conduct. Acting promptly — documenting the interference and understanding whether it qualifies as a permanent or continuing nuisance — preserves your options for both monetary damages and a court order requiring the interference to end.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">California law defines a nuisance broadly as anything that interferes with the comfortable enjoyment of life or property.</p>
+        <p>This can include harm to health, offense to the senses, or an obstruction to the free use of property. In practice, nuisance claims often arise between neighbors over:</p>
+        <ul class="content-list">
+          <li><span>Persistent noise</span></li>
+          <li><span>Foul odors</span></li>
+          <li><span>Excessive light</span></li>
+          <li><span>Overhanging vegetation</span></li>
+          <li><span>Water runoff</span></li>
+          <li><span>Business activity that spills over onto adjoining residential property</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">A private nuisance claim requires showing the interference was substantial and unreasonable, not just an occasional annoyance.</p>
+        <p>It must also have affected your ability to use and enjoy your own property. Nuisances can be permanent, such as a structure built to encroach on light or airflow, or continuing, such as ongoing noise or odor, and the distinction affects both the statute of limitations and the remedies available, including damages and injunctive relief ordering the interference to stop.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">A serious, ongoing nuisance can affect your property's value, your health, and your quality of life.</p>
+        <p>It can be difficult to resolve informally once a neighbor or business refuses to change their conduct. Acting promptly — documenting the interference and understanding whether it qualifies as a permanent or continuing nuisance — preserves your options for both monetary damages and a court order requiring the interference to end.</p>
+      </div>
     </div>
   </div>
 </section>

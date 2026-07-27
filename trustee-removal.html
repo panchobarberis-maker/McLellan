@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +488,28 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Trustee Removal?</div>
     <h2 class="reveal reveal-d1">Understanding Trustee Removal in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>When a trustee mismanages trust assets, favors their own interests over the beneficiaries', or simply fails to do the job the trust document requires, beneficiaries are not without recourse. California law allows an interested party to petition the probate court to remove a trustee and appoint a successor, ensuring the trust is administered the way the person who created it intended.</p>
-      <p>Courts consider removal for a range of reasons, including breach of trust, hostility between the trustee and beneficiaries that impairs administration, mismanagement of investments, self-dealing or conflicts of interest, failure to provide required accountings, and incapacity of the trustee. A single serious breach can be enough, though courts also weigh a pattern of neglect or repeated failures to communicate.</p>
-      <p>Trust assets can lose significant value while a problematic trustee remains in control, and delay allows further harm — from depleted accounts to missed investment opportunities to outright self-dealing. Acting quickly to petition for removal, and in some cases seeking a temporary restraining order or surcharge for losses already caused, can be essential to protecting what remains of the trust estate.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Beneficiaries are not without recourse when a trustee mismanages trust assets or puts their own interests first.</p>
+        <p>When a trustee favors their own interests over the beneficiaries', or simply fails to do the job the trust document requires, California law allows an interested party to petition the probate court to remove a trustee and appoint a successor, ensuring the trust is administered the way the person who created it intended.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">Courts consider removal for a range of reasons.</p>
+        <p>Common grounds include:</p>
+        <ul class="content-list">
+          <li><span>Breach of trust</span></li>
+          <li><span>Hostility between the trustee and beneficiaries that impairs administration</span></li>
+          <li><span>Mismanagement of investments</span></li>
+          <li><span>Self-dealing or conflicts of interest</span></li>
+          <li><span>Failure to provide required accountings</span></li>
+          <li><span>Incapacity of the trustee</span></li>
+        </ul>
+        <p>A single serious breach can be enough, though courts also weigh a pattern of neglect or repeated failures to communicate.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">A problematic trustee left in control can cause trust assets to lose significant value.</p>
+        <p>Delay allows further harm — from depleted accounts to missed investment opportunities to outright self-dealing. Acting quickly to petition for removal, and in some cases seeking a temporary restraining order or surcharge for losses already caused, can be essential to protecting what remains of the trust estate.</p>
+      </div>
     </div>
   </div>
 </section>

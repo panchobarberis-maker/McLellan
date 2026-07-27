@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +488,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Co-Ownership Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Co-Ownership Disputes in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>When two or more people hold title to real property as tenants in common, joint tenants, or community property, disagreements can arise over how the property is used, who pays for maintenance and taxes, and whether — or when — it should be sold. These disputes are common among family members who inherit property together, business partners who purchase investment real estate, or unmarried couples who buy a home jointly without a clear written agreement governing their respective rights.</p>
-      <p>California law generally allows any co-owner to force a sale or division of jointly held property through a partition action, regardless of what the other owners want, unless a valid agreement waives that right. Courts can order the property physically divided or, more commonly for a single residence, sold with proceeds divided according to ownership interests, contributions, and any credits owed for expenses like mortgage payments, property taxes, or improvements.</p>
-      <p>Because partition actions can force the sale of a property one co-owner wants to keep, the stakes are often personal as well as financial. Delaying action can mean paying more than your fair share of expenses, losing leverage in a buyout negotiation, or watching a shared asset deteriorate while owners are at odds — early legal guidance often shapes the outcome as much as the litigation itself.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Co-ownership disputes arise when people who jointly hold title to real property disagree about its use, costs, or sale.</p>
+        <p>When two or more people hold title to real property as tenants in common, joint tenants, or community property, disagreements can arise over how the property is used, who pays for maintenance and taxes, and whether — or when — it should be sold. These disputes are common among family members who inherit property together, business partners who purchase investment real estate, or unmarried couples who buy a home jointly without a clear written agreement governing their respective rights.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California law lets any co-owner force a sale or division of jointly held property through a partition action.</p>
+        <p>This right generally applies regardless of what the other owners want, unless a valid agreement waives it. Courts can order the property physically divided or, more commonly for a single residence, sold with proceeds divided according to ownership interests, contributions, and any credits owed for expenses like mortgage payments, property taxes, or improvements.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Partition actions can force the sale of a property even when one co-owner wants to keep it.</p>
+        <p>The stakes are often personal as well as financial, and delaying action can mean:</p>
+        <ul class="content-list">
+          <li><span>Paying more than your fair share of expenses</span></li>
+          <li><span>Losing leverage in a buyout negotiation</span></li>
+          <li><span>Watching a shared asset deteriorate while owners are at odds</span></li>
+        </ul>
+        <p>Early legal guidance often shapes the outcome as much as the litigation itself.</p>
+      </div>
     </div>
   </div>
 </section>

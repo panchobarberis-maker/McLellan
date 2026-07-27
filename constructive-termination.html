@@ -250,14 +250,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -472,11 +480,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Constructive Termination?</div>
     <h2 class="reveal reveal-d1">Understanding Constructive Termination in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Constructive termination — also called constructive discharge — occurs when an employer deliberately makes working conditions so intolerable that a reasonable employee would feel compelled to resign. Under California law, a resignation obtained this way is legally treated the same as if the employer had fired the employee outright.</p>
-    <p>To prove constructive termination, an employee generally must show that the employer knowingly permitted working conditions so intolerable or aggravated that a reasonable person in the employee's position would have had no choice but to resign, and that the employer either intended to force the resignation or knew resignation was the likely result of its conduct. A single unpleasant incident or an employee simply being unhappy at work is not enough — California courts, following the landmark case Turner v. Anheuser-Busch, require conditions that are unusually severe.</p>
-    <p>Constructive termination often arises alongside other unlawful conduct — being demoted without justification after reporting discrimination or harassment, having pay or job duties stripped away in retaliation for a complaint, or being subjected to a sudden hostile campaign designed to push you out the door. Because the underlying conduct is frequently a form of discrimination, harassment, or retaliation, a constructive termination claim often accompanies claims under California's Fair Employment and Housing Act (FEHA).</p>
-    <p>If you resigned because your employer made your job impossible to continue, McLellan Law Group can evaluate whether the circumstances meet California's legal standard for constructive termination.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Constructive termination occurs when an employer deliberately makes working conditions so intolerable that a reasonable employee would feel compelled to resign.</p>
+        <p>Under California law, a resignation obtained this way — also called constructive discharge — is legally treated the same as if the employer had fired the employee outright.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California courts require conditions that are unusually severe — not just an unpleasant incident.</p>
+        <p>To prove constructive termination, an employee generally must show that the employer knowingly permitted working conditions so intolerable or aggravated that a reasonable person in the employee's position would have had no choice but to resign, and that the employer either intended to force the resignation or knew resignation was the likely result of its conduct. A single unpleasant incident or an employee simply being unhappy at work is not enough — California courts, following the landmark case Turner v. Anheuser-Busch, require conditions that are unusually severe.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Constructive termination often arises alongside other unlawful conduct.</p>
+        <p>Common examples include:</p>
+        <ul class="content-list">
+          <li><span>Being demoted without justification after reporting discrimination or harassment</span></li>
+          <li><span>Having pay or job duties stripped away in retaliation for a complaint</span></li>
+          <li><span>Being subjected to a sudden hostile campaign designed to push you out the door</span></li>
+        </ul>
+        <p>Because the underlying conduct is frequently a form of discrimination, harassment, or retaliation, a constructive termination claim often accompanies claims under California's Fair Employment and Housing Act (FEHA). If you resigned because your employer made your job impossible to continue, McLellan Law Group can evaluate whether the circumstances meet California's legal standard.</p>
+      </div>
     </div>
   </div>
 </section>

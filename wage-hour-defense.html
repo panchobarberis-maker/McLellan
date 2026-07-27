@@ -251,14 +251,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -473,10 +481,26 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Wage &amp; Hour Defense?</div>
     <h2 class="reveal reveal-d1">Defending Your Business in Wage and Hour Disputes</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>California's wage and hour laws are among the most detailed and strictly enforced in the country, and even well-intentioned employers commonly face exposure from technical, easy-to-miss violations. Common triggers include misclassifying employees as exempt from overtime, misclassifying workers as independent contractors under the ABC test, calculating overtime incorrectly under California's daily-overtime rules, failing to provide legally compliant meal and rest breaks, and wage statement errors that are themselves independently penalized.</p>
-    <p>A single systemic wage and hour issue — such as a timekeeping practice that doesn't capture off-the-clock work, or a job classification applied uniformly across a role that doesn't actually meet exemption requirements — can expose a business to liability across its entire workforce, and frequently escalates into a PAGA claim or class action rather than a single-employee dispute.</p>
-    <p>McLellan Law Group helps Silicon Valley employers respond to individual wage claims and Labor Commissioner investigations, and — just as importantly — helps identify and correct systemic issues before they generate broader exposure.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">California's wage and hour laws are strictly enforced, and even well-intentioned employers commonly face exposure.</p>
+        <p>Common triggers include:</p>
+        <ul class="content-list">
+          <li><span>Misclassifying employees as exempt from overtime</span></li>
+          <li><span>Misclassifying workers as independent contractors under the ABC test</span></li>
+          <li><span>Calculating overtime incorrectly under California's daily-overtime rules</span></li>
+          <li><span>Failing to provide legally compliant meal and rest breaks</span></li>
+          <li><span>Wage statement errors that are themselves independently penalized</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">A single systemic wage and hour issue can expose a business across its entire workforce.</p>
+        <p>A timekeeping practice that doesn't capture off-the-clock work, or a job classification applied uniformly across a role that doesn't actually meet exemption requirements, frequently escalates into a PAGA claim or class action rather than a single-employee dispute.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">McLellan Law Group helps Silicon Valley employers respond to individual wage claims and Labor Commissioner investigations.</p>
+        <p>Just as importantly, McLellan Law Group helps identify and correct systemic issues before they generate broader exposure.</p>
+      </div>
     </div>
   </div>
 </section>

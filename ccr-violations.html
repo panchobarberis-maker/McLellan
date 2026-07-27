@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +488,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a CC&R Violation?</div>
     <h2 class="reveal reveal-d1">Understanding CC&R Violations in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Covenants, Conditions & Restrictions (CC&Rs) are the recorded rules that govern properties within a homeowners association or other common interest development, covering everything from architectural standards and landscaping to rental restrictions and parking. A violation occurs when an owner fails to follow these rules, or when an association enforces them unevenly, exceeds its authority, or fails to follow its own required procedures before imposing fines or restrictions.</p>
-      <p>CC&R disputes in California are governed largely by the Davis-Stirling Common Interest Development Act, which sets requirements for how associations must adopt and enforce rules, provide notice before disciplinary action, and offer owners a fair hearing. Because CC&Rs function as a recorded contract binding every owner in the development, both sides — the homeowner accused of a violation and the association seeking to enforce its rules — have specific rights and obligations that don't always match what the HOA board initially claims.</p>
-      <p>An unresolved CC&R dispute can result in escalating fines, liens against your property, or restrictions on how you use your own home. For associations, inconsistent enforcement can undermine the community's rules and expose the board to liability. Whether you are a homeowner facing improper enforcement or an association seeking to uphold its governing documents, understanding your rights under the Davis-Stirling Act is the first step toward resolution.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">CC&Rs are the recorded rules that govern properties within a homeowners association or other common interest development.</p>
+        <p>These rules can cover everything from architectural standards and landscaping to rental restrictions and parking. A violation occurs when an owner fails to follow these rules, or when an association enforces them unevenly, exceeds its authority, or fails to follow its own required procedures before imposing fines or restrictions.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">CC&R disputes in California are governed largely by the Davis-Stirling Common Interest Development Act.</p>
+        <p>The Act sets requirements for how associations must:</p>
+        <ul class="content-list">
+          <li><span>Adopt and enforce rules</span></li>
+          <li><span>Provide notice before disciplinary action</span></li>
+          <li><span>Offer owners a fair hearing</span></li>
+        </ul>
+        <p>Because CC&Rs function as a recorded contract binding every owner in the development, both sides — the homeowner accused of a violation and the association seeking to enforce its rules — have specific rights and obligations that don't always match what the HOA board initially claims.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">An unresolved CC&R dispute can lead to escalating fines, property liens, or restrictions on how you use your home.</p>
+        <p>For associations, inconsistent enforcement can undermine the community's rules and expose the board to liability. Whether you are a homeowner facing improper enforcement or an association seeking to uphold its governing documents, understanding your rights under the Davis-Stirling Act is the first step toward resolution.</p>
+      </div>
     </div>
   </div>
 </section>

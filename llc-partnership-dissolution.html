@@ -265,14 +265,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -487,10 +495,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is LLC & Partnership Dissolution?</div>
     <h2 class="reveal reveal-d1">Understanding Business Dissolution in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Dissolution is the formal process of ending an LLC's or partnership's legal existence — winding up its affairs, paying off debts, and distributing remaining assets to the owners. Dissolution can be voluntary, by agreement of the owners, or involuntary, ordered by a court when owners are deadlocked or the business can no longer function.</p>
-      <p>A dissolution is often the final chapter of a broader business divorce — following disputes over management, unequal contributions, or a breakdown in the working relationship between partners or members. How the process is handled can significantly affect what each owner walks away with.</p>
-      <p>California's Corporations Code and Revised Uniform Limited Liability Company Act set out specific procedures for winding up a business, including notice to creditors, asset liquidation, and priority of distributions — deviating from these rules can expose owners to personal liability or delay the process significantly.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Dissolution is the formal process of ending an LLC's or partnership's legal existence.</p>
+        <p>It involves winding up the business's affairs, paying off debts, and distributing remaining assets to the owners. Dissolution can be voluntary, by agreement of the owners, or involuntary, ordered by a court when owners are deadlocked or the business can no longer function.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">A dissolution is often the final chapter of a broader business divorce.</p>
+        <p>It typically follows disputes over management, unequal contributions, or a breakdown in the working relationship between partners or members. How the process is handled can significantly affect what each owner walks away with.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">California law sets out specific procedures for winding up a business, and deviating from them carries real risk.</p>
+        <p>The Corporations Code and Revised Uniform Limited Liability Company Act require:</p>
+        <ul class="content-list">
+          <li><span>Notice to creditors</span></li>
+          <li><span>Asset liquidation</span></li>
+          <li><span>Priority of distributions</span></li>
+        </ul>
+        <p>Deviating from these rules can expose owners to personal liability or delay the process significantly.</p>
+      </div>
     </div>
   </div>
 </section>

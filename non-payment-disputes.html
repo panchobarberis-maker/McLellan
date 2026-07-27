@@ -266,14 +266,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -488,10 +496,27 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Non-Payment Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Non-Payment Claims in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Non-payment disputes arise when a party fails to pay money owed under a contract — whether for goods delivered, services rendered, a loan, or a commercial invoice. Non-payment is one of the most common forms of breach of contract, and California law generally entitles the unpaid party to recover the amount owed, plus any consequential losses caused by the delay or refusal to pay, and interest where the contract or statute provides for it.</p>
-      <p>These disputes commonly involve disputed invoices, unpaid vendor or contractor bills, defaulted loans or promissory notes, withheld commission or bonus payments, and clients who refuse payment by claiming — sometimes in bad faith — that the underlying work was deficient. Before pursuing a non-payment claim, it's important to confirm the contract terms, document the amount owed, and rule out valid offsets or defenses the paying party may raise, such as an alleged breach on your end.</p>
-      <p>Unresolved non-payment can strain cash flow and threaten a business's stability, particularly for small and mid-sized companies. California offers several paths to recovery — from a formal demand letter to a lawsuit for breach of contract or, in commercial settings, a common count claim for money had and received — and choosing the right strategy early often determines how quickly and completely you get paid.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Non-payment disputes happen when a party fails to pay money it owes under a contract.</p>
+        <p>That can involve goods delivered, services rendered, a loan, or a commercial invoice. Non-payment is one of the most common forms of breach of contract, and California law generally entitles the unpaid party to recover the amount owed, plus any consequential losses caused by the delay or refusal to pay, and interest where the contract or statute provides for it.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">These disputes take several common forms.</p>
+        <p>Common issues include:</p>
+        <ul class="content-list">
+          <li><span>Disputed invoices</span></li>
+          <li><span>Unpaid vendor or contractor bills</span></li>
+          <li><span>Defaulted loans or promissory notes</span></li>
+          <li><span>Withheld commission or bonus payments</span></li>
+          <li><span>Clients who refuse payment by claiming — sometimes in bad faith — that the underlying work was deficient</span></li>
+        </ul>
+        <p>Before pursuing a non-payment claim, it's important to confirm the contract terms, document the amount owed, and rule out valid offsets or defenses the paying party may raise, such as an alleged breach on your end.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Unresolved non-payment can strain cash flow and threaten a business's stability.</p>
+        <p>This is particularly true for small and mid-sized companies. California offers several paths to recovery — from a formal demand letter to a lawsuit for breach of contract or, in commercial settings, a common count claim for money had and received — and choosing the right strategy early often determines how quickly and completely you get paid.</p>
+      </div>
     </div>
   </div>
 </section>

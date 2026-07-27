@@ -265,14 +265,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -487,10 +495,19 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Breach of Contract?</div>
     <h2 class="reveal reveal-d1">Understanding Breach of Contract in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>A contract is breached when one party fails to perform an obligation required under the agreement — without a legal excuse. In California, a valid contract can be written, oral, or implied through the parties' conduct, though certain agreements, such as real estate transactions, must be in writing to be enforceable.</p>
-      <p>Breaches can be material — striking at the heart of the agreement, such as non-payment or non-delivery — or minor, involving a technical failure that does not defeat the contract's purpose. The distinction matters because it determines what remedies are available and whether the non-breaching party can terminate the agreement altogether.</p>
-      <p>Whether you are owed money, services, or performance under a contract — or have been wrongly accused of breaching one — California law provides several avenues to recover damages, compel performance, or defend against an unfounded claim.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">A contract is breached when one party fails to perform a required obligation without a legal excuse.</p>
+        <p>In California, a valid contract can be written, oral, or implied through the parties' conduct, though certain agreements — such as real estate transactions — must be in writing to be enforceable.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">Breaches fall into two categories, and which one applies determines what remedies are available.</p>
+        <p>A material breach strikes at the heart of the agreement, such as non-payment or non-delivery, while a minor breach involves only a technical failure that does not defeat the contract's purpose. That distinction also determines whether the non-breaching party can terminate the agreement altogether.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">California law offers several avenues for recovery whether you are owed performance or accused of a breach.</p>
+        <p>Whether you are owed money, services, or performance under a contract — or have been wrongly accused of breaching one — California law provides ways to recover damages, compel performance, or defend against an unfounded claim.</p>
+      </div>
     </div>
   </div>
 </section>

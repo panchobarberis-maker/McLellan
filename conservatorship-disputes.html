@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +488,19 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Conservatorship Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Conservatorship Disputes in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>A conservatorship gives one person legal authority to make decisions for another adult who can no longer manage their own affairs — whether due to age, illness, or disability. While many conservatorships are established without controversy, families often disagree about who is best suited to serve, whether a conservatorship is even necessary, or whether an existing conservator is acting in the protected person's best interests.</p>
-      <p>California recognizes different types of conservatorships depending on the circumstances: a general or limited probate conservatorship for an adult who cannot manage personal care or finances, and an LPS conservatorship under the Lanterman-Petris-Short Act for individuals with severe mental illness who pose a danger to themselves or others. Each involves its own petition process, standard of proof, and ongoing court oversight, and disputes can arise at any stage — from the initial appointment to allegations of later abuse.</p>
-      <p>The stakes in these cases go beyond finances — a conservatorship touches where a person lives, who makes their medical decisions, and how their assets are protected. When a conservator abuses that authority, isolates the conservatee from family, or mismanages their estate, prompt court intervention can be necessary to protect a vulnerable person who may not be able to advocate for themselves.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">A conservatorship gives one person legal authority to make decisions for another adult who can no longer manage their own affairs.</p>
+        <p>Whether due to age, illness, or disability, many conservatorships are established without controversy — but families often disagree about who is best suited to serve, whether a conservatorship is even necessary, or whether an existing conservator is acting in the protected person's best interests.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California recognizes different types of conservatorships depending on the circumstances.</p>
+        <p>A general or limited probate conservatorship applies to an adult who cannot manage personal care or finances, while an LPS conservatorship under the Lanterman-Petris-Short Act applies to individuals with severe mental illness who pose a danger to themselves or others. Each involves its own petition process, standard of proof, and ongoing court oversight, and disputes can arise at any stage — from the initial appointment to allegations of later abuse.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">The stakes in these cases go beyond finances.</p>
+        <p>A conservatorship touches where a person lives, who makes their medical decisions, and how their assets are protected. When a conservator abuses that authority, isolates the conservatee from family, or mismanages their estate, prompt court intervention can be necessary to protect a vulnerable person who may not be able to advocate for themselves.</p>
+      </div>
     </div>
   </div>
 </section>

@@ -250,14 +250,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -472,10 +480,27 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">Why Employee Handbooks Matter</div>
     <h2 class="reveal reveal-d1">Building HR Policies That Protect Your Business</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>An employee handbook is one of the most effective — and most overlooked — tools for reducing employment litigation risk. A well-drafted handbook clearly establishes at-will employment status, communicates required policies, sets consistent expectations across your workforce, and creates a documented record that supports your business if a dispute arises.</p>
-    <p>California imposes specific policy requirements that many off-the-shelf or outdated handbooks miss — including detailed meal and rest break policies, anti-harassment and complaint procedures that satisfy FEHA requirements, paid sick leave and protected leave policies (CFRA, PFL, and local ordinances), pay transparency and wage statement disclosures, and reasonable accommodation procedures. California's employment laws change frequently, and a handbook that was compliant even two or three years ago may already be outdated.</p>
-    <p>Beyond the handbook itself, offer letters, arbitration agreements, and standalone policies each carry their own legal requirements. McLellan Law Group helps Silicon Valley businesses build a complete, current set of HR documentation rather than relying on generic templates that don't reflect California's specific requirements.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">An employee handbook is one of the most effective — and most overlooked — tools for reducing litigation risk.</p>
+        <p>A well-drafted handbook clearly establishes at-will employment status, communicates required policies, sets consistent expectations across your workforce, and creates a documented record that supports your business if a dispute arises.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California imposes specific policy requirements that many off-the-shelf or outdated handbooks miss.</p>
+        <p>These requirements include:</p>
+        <ul class="content-list">
+          <li><span>Detailed meal and rest break policies</span></li>
+          <li><span>Anti-harassment and complaint procedures that satisfy FEHA requirements</span></li>
+          <li><span>Paid sick leave and protected leave policies (CFRA, PFL, and local ordinances)</span></li>
+          <li><span>Pay transparency and wage statement disclosures</span></li>
+          <li><span>Reasonable accommodation procedures</span></li>
+        </ul>
+        <p>California's employment laws change frequently, and a handbook that was compliant even two or three years ago may already be outdated.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Offer letters, arbitration agreements, and standalone policies each carry their own legal requirements.</p>
+        <p>McLellan Law Group helps Silicon Valley businesses build a complete, current set of HR documentation rather than relying on generic templates that don't reflect California's specific requirements.</p>
+      </div>
     </div>
   </div>
 </section>

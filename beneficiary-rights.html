@@ -266,14 +266,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -488,10 +496,24 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Are Beneficiary Rights?</div>
     <h2 class="reveal reveal-d1">Understanding Beneficiary Rights in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Being named a beneficiary of a trust or estate comes with real legal protections, not just an expectation of goodwill from the trustee or executor. California's Probate Code gives beneficiaries the right to be kept reasonably informed about the trust or estate's administration, to receive accountings showing how assets have been managed, and to receive their inheritance without unreasonable delay.</p>
-      <p>In practice, these rights are frequently ignored — trustees may withhold information, delay providing an accounting for years, or simply refuse to distribute assets without a clear justification. When that happens, beneficiaries are not left to simply wait; they can petition the probate court to compel the trustee or executor to produce records, provide a full accounting, or make distributions the trust or will requires.</p>
-      <p>Enforcing these rights often uncovers larger problems — an incomplete accounting can reveal mismanagement, and a stalled distribution can point to a trustee acting in their own interest rather than the beneficiaries'. Beneficiaries who assert their rights early are in a far stronger position to recover their full inheritance and hold a noncompliant trustee accountable.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Being named a beneficiary of a trust or estate comes with real legal protections, not just an expectation of goodwill.</p>
+        <p>California's Probate Code gives beneficiaries the right to:</p>
+        <ul class="content-list">
+          <li><span>Be kept reasonably informed about the trust or estate's administration</span></li>
+          <li><span>Receive accountings showing how assets have been managed</span></li>
+          <li><span>Receive their inheritance without unreasonable delay</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">In practice, these rights are frequently ignored.</p>
+        <p>Trustees may withhold information, delay providing an accounting for years, or simply refuse to distribute assets without a clear justification. When that happens, beneficiaries are not left to simply wait; they can petition the probate court to compel the trustee or executor to produce records, provide a full accounting, or make distributions the trust or will requires.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Enforcing these rights often uncovers larger problems.</p>
+        <p>An incomplete accounting can reveal mismanagement, and a stalled distribution can point to a trustee acting in their own interest rather than the beneficiaries'. Beneficiaries who assert their rights early are in a far stronger position to recover their full inheritance and hold a noncompliant trustee accountable.</p>
+      </div>
     </div>
   </div>
 </section>

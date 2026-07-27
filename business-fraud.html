@@ -265,14 +265,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -487,10 +495,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Business Fraud?</div>
     <h2 class="reveal reveal-d1">Understanding Business Fraud Claims in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Business fraud occurs when one party knowingly makes a false representation of material fact — or conceals one — to induce another to act to their detriment. Unlike a simple breach of contract, fraud requires proof of intent to deceive, which makes these claims both more serious and more difficult to prove.</p>
-      <p>Common forms include fraudulent misrepresentation in the sale of a business or its financials, concealment of known defects or liabilities, fraudulent inducement to sign a contract or investment agreement, and promissory fraud — making a promise with no intention of keeping it.</p>
-      <p>Because fraud claims can support punitive damages, they carry significant leverage — but they also require careful investigation and airtight evidence of intent. Being falsely accused of fraud can be just as damaging, which is why a prompt, strategic defense matters.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Business fraud occurs when a party knowingly makes — or conceals — a false representation of material fact to induce another's reliance.</p>
+        <p>Unlike a simple breach of contract, fraud requires proof of intent to deceive, which makes these claims both more serious and more difficult to prove.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">Business fraud can take several forms, each requiring proof of a knowing misrepresentation.</p>
+        <p>Common forms include:</p>
+        <ul class="content-list">
+          <li><span>Fraudulent misrepresentation in the sale of a business or its financials</span></li>
+          <li><span>Concealment of known defects or liabilities</span></li>
+          <li><span>Fraudulent inducement to sign a contract or investment agreement</span></li>
+          <li><span>Promissory fraud — making a promise with no intention of keeping it</span></li>
+        </ul>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Fraud claims carry significant leverage because they can support punitive damages.</p>
+        <p>But they also require careful investigation and airtight evidence of intent — and being falsely accused of fraud can be just as damaging, which is why a prompt, strategic defense matters.</p>
+      </div>
     </div>
   </div>
 </section>

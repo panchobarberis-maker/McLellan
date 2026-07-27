@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,11 +488,20 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is PAGA?</div>
     <h2 class="reveal reveal-d1">Understanding the Private Attorneys General Act</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>The Private Attorneys General Act (PAGA) is a powerful California law that allows an aggrieved employee to sue their employer on behalf of the State of California to enforce labor code violations and collect civil penalties. Enacted in 2004, PAGA fills an enforcement gap by empowering employees to act as private attorneys general when government agencies lack the resources to pursue every violation.</p>
-    <p>Unlike a class action lawsuit, PAGA does not require court certification — a significant procedural advantage that makes PAGA claims faster and more difficult for employers to defeat early in litigation. PAGA penalties are also calculated per employee per pay period, meaning that long-running violations across a large workforce can generate substantial liability. Of the civil penalties collected, 65% go to the Labor and Workforce Development Agency (LWDA) and 35% are distributed to aggrieved employees.</p>
-    <p>Importantly, PAGA claims cannot be fully waived through arbitration agreements, unlike individual employment claims. This makes PAGA one of the most significant tools available to California employees.</p>
-    <p>In 2024, California enacted significant PAGA reforms that changed penalty calculations, created new cure provisions, and increased the employee share of recovered penalties from 25% to 35%. These reforms affect both how PAGA cases are brought and how they resolve — making experienced legal counsel essential.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">PAGA lets an aggrieved employee sue their employer on behalf of the State of California to enforce labor code violations.</p>
+        <p>The Private Attorneys General Act, enacted in 2004, fills an enforcement gap by empowering employees to act as private attorneys general when government agencies lack the resources to pursue every violation.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">PAGA claims move faster than class actions because they don't require court certification.</p>
+        <p>This procedural advantage makes PAGA claims more difficult for employers to defeat early in litigation. PAGA penalties are also calculated per employee per pay period, meaning that long-running violations across a large workforce can generate substantial liability. Of the civil penalties collected, 65% go to the Labor and Workforce Development Agency (LWDA) and 35% are distributed to aggrieved employees.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">PAGA claims cannot be fully waived through arbitration agreements, and recent reforms have reshaped how they work.</p>
+        <p>Unlike individual employment claims, this makes PAGA one of the most significant tools available to California employees.</p>
+        <p>In 2024, California enacted significant PAGA reforms that changed penalty calculations, created new cure provisions, and increased the employee share of recovered penalties from 25% to 35%. These reforms affect both how PAGA cases are brought and how they resolve — making experienced legal counsel essential.</p>
+      </div>
     </div>
   </div>
 </section>

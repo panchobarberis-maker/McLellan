@@ -250,14 +250,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -472,10 +480,19 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a PAGA Notice?</div>
     <h2 class="reveal reveal-d1">Understanding Your PAGA Notice and the 65-Day Window</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>A PAGA notice is a written notification that an employee (or their attorney) sends to your business and the Labor and Workforce Development Agency (LWDA) alleging one or more Labor Code violations. It is the required first step before an employee can file a PAGA lawsuit seeking civil penalties on behalf of themselves, other current and former employees, and the State of California.</p>
-    <p>Once a PAGA notice is served, the LWDA has 65 days to decide whether it will investigate the alleged violations itself. If the agency does not act within that window — which is the outcome in the vast majority of cases — the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations — but the opportunity to cure is time-sensitive and procedurally strict.</p>
-    <p>Because PAGA penalties are calculated per employee, per pay period, exposure can escalate quickly across a workforce with even a single systemic violation. How your business responds in the first days after receiving a notice often determines whether the matter resolves quickly or turns into prolonged, expensive litigation.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">A PAGA notice is the required first step before an employee can file a PAGA lawsuit.</p>
+        <p>It is a written notification that an employee (or their attorney) sends to your business and the Labor and Workforce Development Agency (LWDA) alleging one or more Labor Code violations, seeking civil penalties on behalf of themselves, other current and former employees, and the State of California.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">The LWDA has 65 days to decide whether it will investigate the alleged violations.</p>
+        <p>If the agency does not act within that window — which is the outcome in the vast majority of cases — the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations — but the opportunity to cure is time-sensitive and procedurally strict.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">How your business responds in the first days after receiving a notice often determines the outcome.</p>
+        <p>Because PAGA penalties are calculated per employee, per pay period, exposure can escalate quickly across a workforce with even a single systemic violation — determining whether the matter resolves quickly or turns into prolonged, expensive litigation.</p>
+      </div>
     </div>
   </div>
 </section>

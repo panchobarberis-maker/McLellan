@@ -257,14 +257,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -479,10 +487,27 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Adverse Possession?</div>
     <h2 class="reveal reveal-d1">Understanding Adverse Possession in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Adverse possession is a legal doctrine that allows someone who has openly and continuously occupied another person's land, without permission, to eventually claim legal ownership of it. While the concept sounds unusual, it most often arises in disputes over long-standing fence lines, driveways, or portions of land that one neighbor has used and maintained for years, sometimes without either side realizing the true boundary differs from actual use.</p>
-      <p>California imposes a demanding standard: the possession must be actual, open and notorious, hostile to the true owner's title, exclusive, and continuous for five years — and, unlike most states, the claimant must also have paid all property taxes assessed on the disputed parcel during that entire period. This tax payment requirement makes successful adverse possession claims relatively rare, but it also means a well-documented claim can be difficult for a property owner to defeat without acting promptly.</p>
-      <p>If someone is asserting a claim to part of your property, waiting to respond can allow the clock to keep running in their favor. Conversely, if you have used and maintained land as if it were your own for years, you may have a legitimate claim worth pursuing formally through a quiet title action. Either way, resolving the question of ownership sooner rather than later protects the value and marketability of the property.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Adverse possession lets someone who has openly and continuously occupied another person's land eventually claim legal ownership of it.</p>
+        <p>While the concept sounds unusual, it most often arises in disputes over long-standing fence lines, driveways, or portions of land that one neighbor has used and maintained for years, sometimes without either side realizing the true boundary differs from actual use.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">California imposes a demanding standard to establish a valid adverse possession claim.</p>
+        <p>The possession must be:</p>
+        <ul class="content-list">
+          <li><span>Actual</span></li>
+          <li><span>Open and notorious</span></li>
+          <li><span>Hostile to the true owner's title</span></li>
+          <li><span>Exclusive</span></li>
+          <li><span>Continuous for five years</span></li>
+        </ul>
+        <p>Unlike most states, the claimant must also have paid all property taxes assessed on the disputed parcel during that entire period. This tax payment requirement makes successful adverse possession claims relatively rare, but it also means a well-documented claim can be difficult for a property owner to defeat without acting promptly.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">If someone is asserting a claim to part of your property, waiting to respond can let the clock keep running in their favor.</p>
+        <p>Conversely, if you have used and maintained land as if it were your own for years, you may have a legitimate claim worth pursuing formally through a quiet title action. Either way, resolving the question of ownership sooner rather than later protects the value and marketability of the property.</p>
+      </div>
     </div>
   </div>
 </section>

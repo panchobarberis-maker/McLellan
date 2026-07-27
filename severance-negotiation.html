@@ -251,14 +251,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -473,11 +481,25 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Severance Negotiation?</div>
     <h2 class="reveal reveal-d1">Understanding Severance Agreements in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>A severance agreement is a contract offered by an employer at the end of employment, typically providing a payment or extended benefits in exchange for the employee releasing legal claims against the employer. Employers offer severance primarily to obtain that release — not out of obligation, since California generally does not require severance pay.</p>
-    <p>Because a severance agreement asks you to give up your legal rights, signing without review can be costly. Employees frequently waive claims they do not realize they have — including discrimination, wrongful termination, unpaid wages and overtime, or retaliation — often for far less than those claims may be worth. The severance amount offered is rarely fixed; it is frequently a starting point for negotiation, especially when the circumstances of your departure suggest potential legal exposure for the employer.</p>
-    <p>California law also imposes specific requirements on severance agreements. A valid release of unknown claims must satisfy Civil Code Section 1542. Employees 40 or older are entitled to additional protections under the federal Older Workers Benefit Protection Act (OWBPA), including 21 days to consider the agreement and 7 days to revoke after signing. California's Silenced No More Act (SB 331) also restricts employers from using non-disparagement or confidentiality clauses to silence employees about unlawful acts in the workplace.</p>
-    <p>If you have been offered a severance agreement, McLellan Law Group can review its terms, assess your leverage, and negotiate on your behalf before you sign anything.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">A severance agreement offers payment or benefits in exchange for releasing legal claims against your employer.</p>
+        <p>Employers offer severance primarily to obtain that release — not out of obligation, since California generally does not require severance pay.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">Signing a severance agreement without review can be costly, because it asks you to give up your legal rights.</p>
+        <p>Employees frequently waive claims they do not realize they have — including discrimination, wrongful termination, unpaid wages and overtime, or retaliation — often for far less than those claims may be worth. The severance amount offered is rarely fixed; it is frequently a starting point for negotiation, especially when the circumstances of your departure suggest potential legal exposure for the employer.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">California law imposes specific requirements on severance agreements.</p>
+        <p>These requirements include:</p>
+        <ul class="content-list">
+          <li><span>A valid release of unknown claims must satisfy Civil Code Section 1542</span></li>
+          <li><span>Employees 40 or older are entitled to additional protections under the federal Older Workers Benefit Protection Act (OWBPA), including 21 days to consider the agreement and 7 days to revoke after signing</span></li>
+          <li><span>California's Silenced No More Act (SB 331) restricts employers from using non-disparagement or confidentiality clauses to silence employees about unlawful acts in the workplace</span></li>
+        </ul>
+        <p>If you have been offered a severance agreement, McLellan Law Group can review its terms, assess your leverage, and negotiate on your behalf before you sign anything.</p>
+      </div>
     </div>
   </div>
 </section>

@@ -258,14 +258,22 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:6px; }
+.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
+.content-list li:last-child { border-bottom:none; }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +488,26 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Contested Probate Matter?</div>
     <h2 class="reveal reveal-d1">Understanding Contested Probate Matters in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Probate is meant to be an orderly, court-supervised process for settling a decedent's affairs, but disagreements often arise long before a will's validity is even questioned. A contested probate matter can involve disputes over who should serve as executor, how the estate's assets should be valued and divided, whether an executor is properly performing their duties, or claims by creditors and omitted heirs demanding a share of the estate.</p>
-      <p>These disputes proceed within the probate court under the oversight of a judge, who can resolve disagreements over asset valuation, approve or reject an executor's accounting, rule on competing claims to specific property, and address allegations that an executor is mismanaging or delaying administration. Because multiple family members and interests are often involved, contested probate matters can become procedurally complex even without a formal will contest.</p>
-      <p>Estates can remain tied up for months or years when disputes go unresolved, delaying distributions and increasing legal costs that erode what heirs ultimately receive. Whether you are an executor facing objections to your administration, or an heir who believes the estate is being mishandled, timely legal representation helps move the case toward resolution while protecting your position.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">Probate is meant to be an orderly, court-supervised process, but disagreements often arise long before a will's validity is even questioned.</p>
+        <p>A contested probate matter can involve disputes over who should serve as executor, how the estate's assets should be valued and divided, whether an executor is properly performing their duties, or claims by creditors and omitted heirs demanding a share of the estate.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">These disputes proceed within the probate court under the oversight of a judge.</p>
+        <p>The judge can:</p>
+        <ul class="content-list">
+          <li><span>Resolve disagreements over asset valuation</span></li>
+          <li><span>Approve or reject an executor's accounting</span></li>
+          <li><span>Rule on competing claims to specific property</span></li>
+          <li><span>Address allegations that an executor is mismanaging or delaying administration</span></li>
+        </ul>
+        <p>Because multiple family members and interests are often involved, contested probate matters can become procedurally complex even without a formal will contest.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Estates can remain tied up for months or years when disputes go unresolved.</p>
+        <p>That delays distributions and increases legal costs that erode what heirs ultimately receive. Whether you are an executor facing objections to your administration, or an heir who believes the estate is being mishandled, timely legal representation helps move the case toward resolution while protecting your position.</p>
+      </div>
     </div>
   </div>
 </section>
