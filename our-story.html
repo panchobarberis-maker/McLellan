@@ -96,42 +96,33 @@ a { text-decoration:none; color:inherit; }
   .mobile-menu { display:none !important; }
 }
 
-/* ── HERO ── */
-.hero {
-  display:grid; grid-template-columns:55% 45%;
+/* ── HERO (same emp-hero pattern as the practice-area pages) ── */
+.emp-hero {
+  position:relative; overflow:hidden;
+  min-height:calc(100svh - 53px); display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; padding:0 28px 10px;
+  background:#1e3a3e;
+  border-bottom:12px solid #c9a96e;
 }
-@media(min-width:901px) { .hero { min-height:560px; max-width:1200px; margin:0 auto; } }
-@media(max-width:900px) { .hero { grid-template-columns:1fr; min-height:0; } }
-.hero-photo { position:relative; overflow:hidden; }
-.hero-photo img, .hero-photo video {
-  width:100%; height:100%; object-fit:cover; object-position:center 20%;
-  filter:grayscale(10%) brightness(0.85);
-  display:block;
+@media(min-width:769px) { .emp-hero { min-height:calc(100svh - 62px); padding:0 80px 12px; } }
+.emp-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 20%;
+  filter:brightness(0.7) saturate(1.1);
 }
-.hero-photo::before {
-  content:''; position:absolute; inset:0; z-index:1;
-  background:rgba(20,48,52,0.75);
+.emp-hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
 }
-.hero-photo::after {
-  content:''; position:absolute; inset:0; z-index:2;
-  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%);
-}
+.emp-hero-overlay::before { content:''; position:absolute; inset:0; background:rgba(20,48,52,0.55); }
 .video-mobile { display:none; }
 @media(max-width:768px) {
   .video-desktop { display:none; }
   .video-mobile { display:block; }
 }
-@media(max-width:900px) {
-  .hero-photo { height:60vh; }
-  .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%); }
-  .hero-stats { display:none; }
-}
-.hero-info {
-  padding:56px 64px 56px 48px;
-  display:flex; flex-direction:column; justify-content:center;
-}
-@media(max-width:900px) { .hero-info { padding:40px 24px 64px; } }
+@media(max-width:900px) { .hero-stats { display:none; } }
 .hero-pill {
+  position:relative; z-index:2;
   display:inline-flex; align-items:center; gap:10px; width:max-content; max-width:100%;
   background:rgba(201,169,110,0.15); border:1.5px solid rgba(201,169,110,0.6);
   border-radius:26px; padding:9px 16px; margin-bottom:20px;
@@ -139,18 +130,26 @@ a { text-decoration:none; color:inherit; }
   font-weight:700; color:#e8cc8a;
 }
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
-.hero-name {
-  font-family:'Barlow Condensed',sans-serif; font-weight:900;
-  text-transform:uppercase; letter-spacing:-1px;
-  font-size:clamp(32px, 3.2vw, 44px); line-height:1.1;
-  margin-bottom:0;
+.emp-hero h1 {
+  position:relative; z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 7vw, 68px); font-weight:900; line-height:0.98;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px;
+  margin:0 auto 18px; max-width:1000px;
+}
+.emp-hero h1 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.75em; letter-spacing:0;
 }
 .hero-sub {
-  font-family:'Barlow',sans-serif; font-style:italic; font-weight:500;
-  font-size:clamp(18px, 1.8vw, 22px); line-height:1.6; color:rgba(255,255,255,0.8);
-  max-width:520px; margin-top:16px;
+  position:relative; z-index:2;
+  font-family:'DM Serif Display',serif; font-style:italic;
+  font-size:19px; line-height:1.7; color:rgba(255,255,255,0.8);
+  max-width:540px; margin:0 auto 28px;
 }
-.hero-stats { display:flex; gap:40px; flex-wrap:wrap; margin-top:24px; }
+@media(min-width:769px) { .hero-sub { font-size:25px !important; max-width:760px; } }
+.hero-stats { position:relative; z-index:2; display:flex; gap:40px; flex-wrap:wrap; justify-content:center; margin-top:8px; }
 .hero-stats .stat .num {
   font-family:'Barlow Condensed',sans-serif; font-weight:800;
   font-size:44px; line-height:1; color:#c9a96e; display:block; margin-bottom:8px;
@@ -344,32 +343,25 @@ a { text-decoration:none; color:inherit; }
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-photo">
-    <video class="reveal video-desktop" autoplay muted loop playsinline preload="auto">
-      <source src="video mclellan.mp4" type="video/mp4">
-    </video>
-    <video class="reveal video-mobile" autoplay muted loop playsinline preload="auto">
-      <source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-info">
-    <div class="hero-pill reveal reveal-d1">Our Story · Saratoga, California</div>
-    <h1 class="hero-name reveal reveal-d2">Why We Started This Firm—And Who We Built It For</h1>
-    <p class="hero-sub reveal reveal-d3">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
-    <div class="hero-stats">
-      <div class="stat reveal reveal-d4">
-        <span class="num">5.0★</span>
-        <span class="label">Google<br>Reviews</span>
-      </div>
-      <div class="stat reveal reveal-d5">
-        <span class="num">8+</span>
-        <span class="label">Practice<br>Areas</span>
-      </div>
-      <div class="stat reveal reveal-d6">
-        <span class="num">3</span>
-        <span class="label">Trial<br>Attorneys</span>
-      </div>
+<section class="emp-hero">
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video>
+  <video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video>
+  <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">Our Story · Saratoga, California</div>
+  <h1>Why We Started This Firm <em>And Who We Built It For</em></h1>
+  <p class="hero-sub">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="num">5.0★</span>
+      <span class="label">Google<br>Reviews</span>
+    </div>
+    <div class="stat">
+      <span class="num">8+</span>
+      <span class="label">Practice<br>Areas</span>
+    </div>
+    <div class="stat">
+      <span class="num">3</span>
+      <span class="label">Trial<br>Attorneys</span>
     </div>
   </div>
 </section>
