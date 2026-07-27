@@ -258,14 +258,14 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
 .content-card {
   background:#fbf6ef; border-radius:20px;
   padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
 }
 @media(min-width:769px) { .content-card { padding:48px 56px; } }
-.content-section p { font-size:16px; line-height:1.8; color:#4a5c5e; margin-bottom:18px; text-align:justify; }
-.content-section p:last-child { margin-bottom:0; }
-@media(min-width:769px) { .content-section p { font-size:18px; } }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:0; text-align:justify; }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -480,10 +480,16 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Vendor Conflict?</div>
     <h2 class="reveal reveal-d1">Understanding Vendor & Supplier Disputes in California</h2>
-    <div class="content-card reveal reveal-d2">
-      <p>Vendor disputes arise when a supplier, service provider, or business partner fails to meet its contractual obligations — whether that means late or defective deliveries, service-level agreement (SLA) violations, substandard work product, or unilateral changes to pricing and terms. These disputes often unfold gradually, as a vendor relationship that once worked smoothly begins to break down under missed deadlines, quality complaints, or disagreements over scope.</p>
-      <p>Because vendor agreements frequently involve ongoing performance rather than a single transaction, disputes can be harder to pinpoint than a one-time breach. Common flashpoints include failure to meet negotiated SLAs or uptime guarantees, delivery of goods that do not conform to specifications, improper termination of a vendor contract, and disputes over indemnification, limitation-of-liability, or payment terms buried in a master services agreement.</p>
-      <p>A vendor problem left unaddressed can cascade — delaying your own deliverables, damaging client relationships, and exposing your business to downstream liability. Whether you need to enforce an agreement against an underperforming vendor or defend your business against a vendor's claims, prompt legal review of the governing contract is critical to protecting your position.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p>Vendor disputes arise when a supplier, service provider, or business partner fails to meet its contractual obligations — whether that means late or defective deliveries, service-level agreement (SLA) violations, substandard work product, or unilateral changes to pricing and terms. These disputes often unfold gradually, as a vendor relationship that once worked smoothly begins to break down under missed deadlines, quality complaints, or disagreements over scope.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p>Because vendor agreements frequently involve ongoing performance rather than a single transaction, disputes can be harder to pinpoint than a one-time breach. Common flashpoints include failure to meet negotiated SLAs or uptime guarantees, delivery of goods that do not conform to specifications, improper termination of a vendor contract, and disputes over indemnification, limitation-of-liability, or payment terms buried in a master services agreement.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p>A vendor problem left unaddressed can cascade — delaying your own deliverables, damaging client relationships, and exposing your business to downstream liability. Whether you need to enforce an agreement against an underperforming vendor or defend your business against a vendor's claims, prompt legal review of the governing contract is critical to protecting your position.</p>
+      </div>
     </div>
   </div>
 </section>
