@@ -14,12 +14,20 @@
 <meta property="og:description" content="Are non-compete agreements enforceable in California? Employment attorney Saratoga CA explains the law.">
 <meta property="og:url" content="https://mc-lellan.vercel.app/blog-non-compete-agreements-california.html">
 <meta property="og:site_name" content="McLellan Law Group">
+<meta property="og:image" content="https://mc-lellan.vercel.app/non-compete-infographic.webp">
+<meta property="og:image:width" content="1264">
+<meta property="og:image:height" content="848">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Non-Compete Agreements in California | McLellan Law Group">
+<meta name="twitter:description" content="Are non-compete agreements enforceable in California? Employment attorney Saratoga CA explains the law.">
+<meta name="twitter:image" content="https://mc-lellan.vercel.app/non-compete-infographic.webp">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "When Non-Compete Agreements Are Enforceable in California — What Employees and Employers Should Know",
   "description": "Are non-compete agreements enforceable in California? Employment attorney Saratoga CA explains the law.",
+  "image": "https://mc-lellan.vercel.app/non-compete-infographic.webp",
   "author": [{"@type": "Person","name": "Claire Melehani, Esq."},{"@type": "Person","name": "Steven McLellan, Esq."}],
   "publisher": {"@type": "Organization","name": "McLellan Law Group","address": {"@type": "PostalAddress","streetAddress": "20665 4th Street, Suite 202","addressLocality": "Saratoga","addressRegion": "CA","postalCode": "95070"}},
   "datePublished": "2026-06-01",
@@ -37,6 +45,17 @@
     {"@type": "Question","name": "What can California employers protect instead of using a non-compete?","acceptedAnswer": {"@type": "Answer","text": "California employers may protect trade secrets under the California Uniform Trade Secrets Act, enforce lawful confidentiality agreements, and bring claims for misappropriation of proprietary information."}},
     {"@type": "Question","name": "What should I do if my employer threatens to sue me for violating a non-compete in California?","acceptedAnswer": {"@type": "Answer","text": "Contact an employment attorney before responding — in most cases, the restriction is void under California law."}},
     {"@type": "Question","name": "Do non-solicitation agreements violate California law?","acceptedAnswer": {"@type": "Answer","text": "Yes — non-solicitation agreements restricting a former employee from soliciting former clients or coworkers are generally void under California Business and Professions Code section 16600."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "Home","item": "https://mc-lellan.vercel.app/index.html"},
+    {"@type": "ListItem","position": 2,"name": "Blog","item": "https://mc-lellan.vercel.app/blog.html"},
+    {"@type": "ListItem","position": 3,"name": "When Non-Compete Agreements Are Enforceable in California","item": "https://mc-lellan.vercel.app/blog-non-compete-agreements-california.html"}
   ]
 }
 </script>
@@ -519,7 +538,19 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 <!-- ARTICLE HERO -->
 <section class="article-hero">
-  <div class="article-hero-bg"><video class=" video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video><video class=" video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video></div>
+  <div class="article-hero-bg"><video class="hero-video" autoplay muted loop playsinline preload="none" data-desktop-src="video mclellan.mp4" data-mobile-src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4"></video></div>
+  <script>
+  (function(){
+    var v = document.querySelector('.hero-video');
+    if (!v) return;
+    var isMobile = window.matchMedia('(max-width:768px)').matches;
+    var s = document.createElement('source');
+    s.src = isMobile ? v.dataset.mobileSrc : v.dataset.desktopSrc;
+    s.type = 'video/mp4';
+    v.appendChild(s);
+    v.load();
+  })();
+  </script>
   <div class="article-hero-overlay"></div>
   <div class="breadcrumb reveal">
     <a href="index.html">Home</a> ›
@@ -544,7 +575,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
     <p class="reveal">If you have been asked to sign a non-compete agreement in California, or if a former employer is threatening to enforce one against you, you need to know one thing before anything else: non-compete agreements are enforceable in California only in a narrow set of circumstances.</p>
 
-    <img src="hf_20260706_180050_f072705b-c08e-444a-80d2-4de4c46970eb.png" alt="Non-Compete Agreements in California infographic" style="width:100%;border-radius:12px;margin:8px 0 32px;" class="reveal reveal-d1">
+    <img src="non-compete-infographic.webp" width="1264" height="848" loading="eager" alt="Non-Compete Agreements in California infographic" style="width:100%;height:auto;border-radius:12px;margin:8px 0 32px;" class="reveal reveal-d1">
 
     <!-- TOC -->
     <div class="toc reveal reveal-d2">
@@ -646,15 +677,15 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
       <h4>Related Articles</h4>
       <ul>
         <li>
-          <a href="#">Wrongful Termination in California: What You Need to Know</a>
+          <a href="blog.html">Wrongful Termination in California: What You Need to Know</a>
           <span>Employment Law · Coming Soon</span>
         </li>
         <li>
-          <a href="#">Workplace Discrimination Claims in Silicon Valley</a>
+          <a href="blog.html">Workplace Discrimination Claims in Silicon Valley</a>
           <span>Employment Law · Coming Soon</span>
         </li>
         <li>
-          <a href="#">Wage & Hour Violations: Are You Owed Overtime?</a>
+          <a href="blog.html">Wage &amp; Hour Violations: Are You Owed Overtime?</a>
           <span>Employment Law · Coming Soon</span>
         </li>
       </ul>
