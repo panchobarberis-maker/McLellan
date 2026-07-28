@@ -159,11 +159,11 @@ a { text-decoration:none; color:inherit; }
 .hero-cta {
   display:inline-flex; align-items:center; gap:14px; align-self:flex-start;
   background:#b9986a; color:#1e3a3e;
-  font-size:12px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
-  padding:18px 36px; transition:background 0.25s;
+  font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  padding:24px 48px; transition:background 0.25s;
 }
 .hero-cta:hover { background:#cbb084; }
-.hero-cta span { font-size:16px; }
+.hero-cta span { font-size:18px; }
 .hero-contact { display:flex; gap:32px; flex-wrap:wrap; margin-top:36px; }
 .hero-contact a {
   font-size:13px; letter-spacing:0.5px; color:rgba(255,255,255,0.55);
@@ -306,10 +306,26 @@ a { text-decoration:none; color:inherit; }
 .breadcrumb em { color:rgba(255,255,255,0.85) !important; }
 .hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
 .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
-.hero-contact a { font-size:17px !important; color:rgba(255,255,255,0.85) !important; }
-.hero-cta { font-size:14px !important; }
+.hero-cta { font-size:16px !important; padding:26px 52px !important; }
 .award-box .years { font-size:14px !important; color:rgba(255,255,255,0.7) !important; }
 .foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+
+/* Info mas grande en desktop */
+@media(min-width:769px) {
+  .lead { font-size:clamp(28px,2.8vw,36px) !important; }
+  .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+  .result-item h3 { font-size:30px !important; }
+  .result-item p { font-size:20px !important; }
+  .result-item .tag { font-size:14px !important; }
+  .acc-btn { font-size:16px !important; }
+  .acc-body li { font-size:18px !important; }
+  .section-label { font-size:15px !important; }
+  .hero-role { font-size:16px !important; }
+  .stat .num { font-size:64px !important; }
+  .stat .label { font-size:14px !important; }
+  .award-box h4 { font-size:26px !important; }
+  .foot-cta p { font-size:21px !important; }
+}
 
 
 /* Credenciales debajo del contacto */
@@ -432,11 +448,7 @@ a { text-decoration:none; color:inherit; }
         <span class="label">State Bar<br>Admitted</span>
       </div>
     </div>
-    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Request a Consultation <span>→</span></a>
-    <div class="hero-contact reveal reveal-d7">
-      <a href="tel:650-383-1266">650-383-1266</a>
-      <a href="mailto:steven@mclellanlawgroup.com">steven@mclellanlawgroup.com</a>
-    </div>
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
     <div class="hero-creds">
 
     <div class="acc-item open reveal">
@@ -513,7 +525,7 @@ a { text-decoration:none; color:inherit; }
 <section class="foot-cta">
   <h2 class="reveal">Work with <em>Steven.</em></h2>
   <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex;">Request a Consultation <span>→</span></a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex;">Get My Free Consultation <span>→</span></a>
 </section>
 
 <script>
