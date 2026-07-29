@@ -192,9 +192,10 @@ a { text-decoration:none; color:inherit; }
   font-size:clamp(24px, 2.6vw, 32px); line-height:1.5; color:#1e3a3e;
   margin-bottom:40px;
 }
+.about-copy { display:flex; flex-direction:column; gap:20px; }
 .about-copy p {
   font-size:16px; line-height:1.9; color:rgba(30,58,62,0.7);
-  margin-bottom:24px; text-align:justify;
+  text-align:justify;
 }
 .results { margin-top:72px; }
 .result-item {
@@ -268,12 +269,11 @@ a { text-decoration:none; color:inherit; }
   padding:32px 36px;
   background:#fbf6ef;
 }
-.about-copy {
+.about-copy p {
   border:2.5px solid rgba(185,152,106,0.35);
-  padding:32px 36px;
+  padding:28px 32px;
   background:#fbf6ef;
 }
-.about-copy p:last-child { margin-bottom:0; }
 .result-item {
   border:2.5px solid rgba(185,152,106,0.45) !important;
   border-left:8px solid #b9986a !important;
