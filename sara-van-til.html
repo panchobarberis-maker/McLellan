@@ -6,14 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sara Van Til — Legal Assistant &amp; Notary Public | McLellan Law Group</title>
 <meta name="description" content="Sara Van Til is a Legal Assistant and Notary Public at McLellan Law Group in Saratoga, CA, with a background in legal aid, the Air Force, and NASA flight operations.">
-<link rel="canonical" href="steven-mclellan.html">
+<link rel="canonical" href="https://www.mclellanlawgroup.com/sara-van-til">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Sara Van Til","jobTitle":"Legal Assistant & Notary Public","worksFor":{"@type":"LegalService","name":"McLellan Law Group"},"url":"https://www.mclellanlawgroup.com/sara-van-til"}
 </script>
 <style>
-* { text-wrap:pretty; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; text-wrap:pretty; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Barlow',sans-serif; font-weight:400;
+  background:#1e3a3e; color:#f0ece4;
+  -webkit-font-smoothing:antialiased;
+}
+a { text-decoration:none; color:inherit; }
 
 /* NAV */
 .nav {
@@ -93,139 +100,191 @@
 }
 
 
-/* ATTORNEY HERO */
-.atty-hero {
-  background:#1e3a3e; border-bottom:12px solid #c9a96e;
-  padding:56px 24px;
+/* ── HERO ── */
+.hero {
+  display:grid; grid-template-columns:55% 45%;
 }
-.atty-hero-inner {
-  max-width:1200px; margin:0 auto;
-  display:grid; grid-template-columns:1fr; gap:36px; align-items:center;
+@media(max-width:900px) { .hero { grid-template-columns:1fr; } }
+.hero-photo { position:relative; overflow:hidden; height:calc(100svh - 62px); }
+.hero-photo::before {
+  content:''; position:absolute; inset:50px;
+  border:3px solid #b9986a;
+  z-index:3; pointer-events:none;
 }
-@media(min-width:900px) { .atty-hero { padding:88px 48px; } .atty-hero-inner { grid-template-columns:1.1fr 1fr; gap:64px; } }
-.atty-hero h1 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(44px, 6vw, 76px); font-weight:900; line-height:0.95;
-  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:8px;
+.hero-photo-placeholder {
+  width:100%; height:100%;
+  background:linear-gradient(160deg,#24484d 0%,#16333a 100%);
+  display:flex; align-items:center; justify-content:center;
 }
-.atty-role {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(20px, 2.5vw, 28px); font-weight:800; letter-spacing:3px;
-  text-transform:uppercase; color:#c9a96e; margin-bottom:24px;
-}
-.atty-hero p { font-size:18px; line-height:1.75; color:rgba(255,255,255,0.85); max-width:560px; margin-bottom:28px; }
-.atty-contact { display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
-.atty-contact a {
-  display:inline-flex; align-items:center; gap:12px;
-  color:#fff; font-weight:700; font-size:17px; text-decoration:none;
-}
-.atty-contact a:hover { color:#c9a96e; }
-.atty-contact svg { flex-shrink:0; }
-.atty-photo {
-  width:calc(100% - 24px); max-height:560px; object-fit:cover; object-position:center 15%;
-  border-radius:6px; display:block;
-  box-shadow:
-    24px 24px 0 -6px #c9a96e,
-    0 24px 64px rgba(0,0,0,0.4);
-}
-@keyframes ctaBreath {
-  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
-  50%      { box-shadow:0 0 28px 6px rgba(201,169,110,0.55), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.03); }
-}
-.btn-gold {
-  display:inline-flex; align-items:center; gap:10px;
-  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%);
-  color:#1e3a3e; font-weight:800; font-size:16px;
-  padding:16px 36px; border-radius:32px; text-decoration:none;
-  animation:ctaBreath 2.6s ease-in-out infinite;
-}
-
-/* BIO */
-.atty-bio { background:#fbf6ef; padding:56px 24px; }
-.atty-bio-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:32px; }
-@media(min-width:900px) { .atty-bio { padding:88px 48px; } .atty-bio-inner { grid-template-columns:1fr 1.4fr; gap:56px; align-items:start; } }
-.bio-block {
-  background:#1e3a3e; border-radius:16px; padding:36px 32px;
-  box-shadow:0 8px 28px rgba(0,0,0,0.12); margin-bottom:24px;
-}
-.bio-block p { font-size:17px; line-height:1.8; color:rgba(255,255,255,0.85); margin-bottom:18px; }
-.bio-block p:last-child { margin-bottom:0; }
-.bio-block a { color:#c9a96e; font-weight:700; }
-.bio-eyebrow {
-  display:inline-flex; align-items:center; gap:10px;
-  font-size:15px; letter-spacing:3px; text-transform:uppercase;
-  color:#c9a96e; font-weight:700; margin-bottom:16px;
-}
-.bio-eyebrow::before { content:''; width:24px; height:1px; background:#c9a96e; }
-
-/* RESULTS */
-.result-card {
-  background:#1e3a3e; border-radius:14px; padding:28px;
-  margin-bottom:16px; border-left:5px solid #c9a96e;
-}
-.result-card strong { display:block; color:#c9a96e; font-family:'Barlow Condensed',sans-serif; font-size:20px; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
-.result-card span { color:rgba(255,255,255,0.85); font-size:16px; line-height:1.7; }
-
-/* CREDENTIALS ACCORDIONS */
-.cred-item { margin-bottom:14px; border-radius:12px; overflow:hidden; }
-.cred-question {
-  width:100%; background:linear-gradient(180deg,#d3b483 0%,#c2a06a 100%);
-  border:none; text-align:left; cursor:pointer;
-  padding:20px 24px; font-family:'Barlow Condensed',sans-serif;
-  font-size:20px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
-  color:#fff; display:flex; justify-content:space-between; align-items:center; gap:12px;
-}
-.cred-question .cred-icon { font-size:24px; transition:transform 0.3s; }
-.cred-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; background:#fff; }
-.cred-answer ul { list-style:none; padding:20px 26px; }
-.cred-answer li { font-size:16px; color:#3a5254; padding:7px 0; padding-left:22px; position:relative; line-height:1.6; }
-.cred-answer li::before { content:'•'; color:#c9a96e; font-weight:900; position:absolute; left:0; }
-.cred-item.open .cred-icon { transform:rotate(45deg); }
-
-/* CTA */
-.cta-banner { background:#1e3a3e; padding:72px 24px; text-align:center; border-top:12px solid #c9a96e; }
-.cta-banner h2 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(40px, 6vw, 80px); font-weight:900;
-  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:14px;
-}
-.cta-banner h2 em { font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; }
-.cta-banner p { font-size:19px; color:rgba(255,255,255,0.7); margin-bottom:32px; }
-
-/* ── Editorial refinements ── */
-.atty-hero p {
+.hero-photo-placeholder span {
   font-family:'DM Serif Display',serif; font-style:italic;
-  font-size:21px !important; line-height:1.8 !important;
-  color:rgba(255,255,255,0.9) !important;
+  font-size:clamp(120px,18vw,220px); color:#b9986a;
 }
-.atty-role { position:relative; padding-bottom:18px; }
-.atty-role::after { content:''; position:absolute; left:0; bottom:0; width:56px; height:2px; background:#c9a96e; }
-.atty-contact a { font-size:19px !important; letter-spacing:0.3px; }
-
-.atty-bio { padding:80px 24px !important; }
-@media(min-width:900px) { .atty-bio { padding:120px 48px !important; } }
-
-.bio-block { padding:48px 44px !important; border-radius:4px !important; }
-.bio-block p { font-size:19px !important; line-height:1.95 !important; }
-.bio-block p:first-of-type::first-letter {
-  font-family:'DM Serif Display',serif;
-  font-size:64px; line-height:0.8; float:left;
-  padding:8px 12px 0 0; color:#c9a96e;
+.hero-photo::after {
+  content:''; position:absolute; inset:0; z-index:2;
+  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%);
 }
-.bio-eyebrow { font-size:16px !important; letter-spacing:4px !important; }
+@media(max-width:900px) {
+  .hero-photo { height:60vh; }
+  .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%); }
+  .hero-photo::before { inset:8px; }
+}
+.hero-info {
+  padding:80px 64px 80px 48px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+@media(max-width:900px) { .hero-info { padding:40px 24px 64px; } }
+.breadcrumb {
+  font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(255,255,255,0.4); font-weight:500; margin-bottom:36px;
+}
+.breadcrumb em { font-style:normal; color:rgba(255,255,255,0.6); }
+.hero-name {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-1px;
+  font-size:clamp(90px, 13vw, 200px); line-height:0.9;
+  margin-bottom:24px;
+}
+.hero-name .first {
+  display:block; font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; letter-spacing:0; font-size:0.85em;
+}
+.hero-role {
+  font-size:12px; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(255,255,255,0.5); font-weight:500;
+  padding-bottom:36px; margin-bottom:36px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.hero-stats { display:flex; gap:48px; flex-wrap:wrap; margin-bottom:48px; }
+.stat .num {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  font-size:56px; line-height:1; color:#b9986a; display:block; margin-bottom:10px;
+}
+.stat .label {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:rgba(255,255,255,0.45); font-weight:500; line-height:1.6; display:block;
+}
+.hero-cta {
+  display:inline-flex; align-items:center; gap:14px; align-self:flex-start;
+  background:#b9986a; color:#1e3a3e;
+  font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  padding:24px 48px; transition:background 0.25s;
+}
+.hero-cta:hover { background:#cbb084; }
+.hero-cta span { font-size:18px; }
 
-.cred-question { font-size:23px !important; padding:24px 28px !important; letter-spacing:2px !important; }
-.cred-answer li { font-size:18px !important; padding:9px 0 9px 24px !important; line-height:1.7 !important; }
+/* ── BODY ── */
+.body-section {
+  display:grid; grid-template-columns:1fr 340px; gap:96px;
+  padding:96px 64px; max-width:1360px; margin:0 auto;
+}
+@media(max-width:900px) { .body-section { grid-template-columns:1fr; gap:64px; padding:64px 24px; } }
+.section-label {
+  font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color:#b9986a; font-weight:600; margin-bottom:32px;
+}
+.lead {
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
+  font-size:clamp(24px, 2.6vw, 32px); line-height:1.5; color:#1e3a3e;
+  margin-bottom:40px;
+}
+.about-copy { display:flex; flex-direction:column; gap:20px; }
+.about-copy p {
+  font-size:16px; line-height:1.9; color:rgba(30,58,62,0.7);
+  text-align:justify;
+}
+.results { margin-top:72px; }
+.result-item {
+  border-top:1px solid rgba(30,58,62,0.1);
+  padding:32px 0;
+  display:grid; grid-template-columns:1fr auto; gap:8px 32px;
+}
+.result-item h3 {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  text-transform:uppercase; letter-spacing:0.5px;
+  font-size:26px; color:#1e3a3e;
+}
+.result-item .tag {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:#8a6d43; font-weight:600; align-self:start; padding-top:8px;
+}
+.result-item p {
+  grid-column:1 / -1;
+  font-size:15px; line-height:1.8; color:rgba(30,58,62,0.6); text-align:justify;
+}
 
-.result-card { padding:32px !important; }
-.result-card strong { font-size:24px !important; }
-.result-card span { font-size:17.5px !important; line-height:1.75 !important; }
+/* ── FOOT CTA ── */
+.foot-cta {
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:96px 64px; text-align:center;
+}
+@media(max-width:768px) { .foot-cta { padding:64px 24px; } }
+.foot-cta h2 {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-0.5px;
+  font-size:clamp(36px, 4.5vw, 56px); line-height:1.1; margin-bottom:16px;
+}
+.foot-cta h2 em {
+  font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
+}
+.foot-cta p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:40px; }
 
-.cta-banner p { font-size:22px !important; font-family:'DM Serif Display',serif; font-style:italic; }
+/* ── Boxes + dorado en el body ── */
+.lead {
+  border:2.5px solid rgba(185,152,106,0.5);
+  border-left:8px solid #b9986a;
+  padding:32px 36px;
+  background:#fbf6ef;
+}
+.about-copy p {
+  border:2.5px solid rgba(185,152,106,0.35);
+  padding:28px 32px;
+  background:#fbf6ef;
+}
+.result-item {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  margin-bottom:20px;
+  background:#fbf6ef;
+}
+.results .result-item + .result-item { border-top:2.5px solid rgba(185,152,106,0.45) !important; }
+.section-label::after {
+  content:''; display:inline-block; vertical-align:middle;
+  width:36px; height:1px; background:#b9986a; margin-left:14px; opacity:0.6;
+}
 
 
-/* Textos justificados */
-.bio-block p, .result-card span, .atty-hero p, .cred-answer li { text-align:justify; }
+/* ── Legibilidad publico adulto: letra grande y clara ── */
+.about-copy p { font-size:19px !important; line-height:1.9 !important; color:rgba(30,58,62,0.85) !important; }
+.result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
+.result-item .tag { font-size:13px !important; }
+.section-label { font-size:14px !important; color:#c9a96e !important; }
+.breadcrumb { font-size:13px !important; color:rgba(255,255,255,0.65) !important; }
+.breadcrumb em { color:rgba(255,255,255,0.85) !important; }
+.hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
+.stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
+.hero-cta { font-size:16px !important; padding:26px 52px !important; }
+.foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+
+/* Info mas grande en desktop */
+@media(min-width:769px) {
+  .lead { font-size:clamp(28px,2.8vw,36px) !important; }
+  .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+  .result-item h3 { font-size:30px !important; }
+  .result-item p { font-size:20px !important; }
+  .result-item .tag { font-size:14px !important; }
+  .section-label { font-size:15px !important; }
+  .hero-role { font-size:16px !important; }
+  .stat .num { font-size:64px !important; }
+  .stat .label { font-size:14px !important; }
+  .foot-cta p { font-size:21px !important; }
+}
+
+/* Sin sidebar de credenciales: Sara no tiene admisiones/educación que mostrar */
+.body-section { grid-template-columns:1fr !important; max-width:900px !important; }
 
 /* Scroll reveal */
 .reveal {
@@ -321,76 +380,72 @@
 </div>
 
 <!-- HERO -->
-<section class="atty-hero">
-  <div class="atty-hero-inner">
-    <div>
-      <h1 class="reveal">Sara Van Til</h1>
-      <div class="atty-role reveal reveal-d1">Legal Assistant &amp; Notary Public</div>
-      <p class="reveal reveal-d2">Sara Van Til brings valuable experience from legal aid, the United States Air Force, and NASA — with exceptional organizational skills and readiness to tackle any challenge.</p>
-      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d3">Request a Free Consultation →</a>
+<section class="hero">
+  <div class="hero-photo">
+    <div class="hero-photo-placeholder reveal"><span>SV</span></div>
+  </div>
+  <div class="hero-info">
+    <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Legal Assistant</em></div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Sara</span>Van Til</h1>
+    <div class="hero-role reveal reveal-d3">Legal Assistant &amp; Notary Public</div>
+    <div class="hero-stats">
+      <div class="stat reveal reveal-d4">
+        <span class="num">USAF</span>
+        <span class="label">Air Guard<br>Pararescue</span>
+      </div>
+      <div class="stat reveal reveal-d5">
+        <span class="num">NASA</span>
+        <span class="label">Flight<br>Operations</span>
+      </div>
+      <div class="stat reveal reveal-d6">
+        <span class="num">Notary</span>
+        <span class="label">Public<br>Notary</span>
+      </div>
     </div>
-    <div class="atty-photo reveal reveal-d1" style="height:480px; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,#24484d 0%,#16333a 100%);">
-      <span style="font-family:'DM Serif Display',serif; font-style:italic; font-size:120px; color:#c9a96e;">SV</span>
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="body-section">
+  <div>
+    <div class="section-label reveal">About</div>
+    <p class="lead reveal reveal-d1">"Sara Van Til brings the discipline of military service and the precision of federal record-keeping to every case she supports."</p>
+    <div class="about-copy">
+      <p class="reveal reveal-d2">Sara Van Til brings valuable experience from her previous role as an administrative assistant at Elevate Community Center, a legal aid organization we proudly support. Her background also includes service with the Air Force, specifically in the Air Guard pararescue's 131st squadron.</p>
+      <p class="reveal reveal-d3">Before that, she contributed to NASA's flight operations department, where she implemented an organizational system for the department's historical federal records.</p>
+      <p class="reveal reveal-d4">Ms. Van Til's exceptional organizational skills and readiness to tackle challenges make her a valuable asset to our team.</p>
+    </div>
+
+    <div class="results">
+      <div class="section-label reveal">Background</div>
+      <div class="result-item reveal reveal-d1">
+        <h3>United States Air Force</h3>
+        <span class="tag">Military Service</span>
+        <p>Service with the Air Guard pararescue's 131st squadron.</p>
+      </div>
+      <div class="result-item reveal reveal-d2">
+        <h3>NASA Flight Operations</h3>
+        <span class="tag">Federal Service</span>
+        <p>Implemented an organizational system for the department's historical federal records.</p>
+      </div>
+      <div class="result-item reveal reveal-d3">
+        <h3>Legal Aid Experience</h3>
+        <span class="tag">Community Service</span>
+        <p>Administrative assistant at Elevate Community Center, a legal aid organization McLellan Law Group proudly supports.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BIO -->
-<section class="atty-bio">
-  <div class="atty-bio-inner">
-
-    <div>
-      <div style="margin-top:0;">
-        <div class="result-card reveal">
-          <strong>United States Air Force</strong>
-          <span>Service with the Air Guard pararescue's 131st squadron.</span>
-        </div>
-        <div class="result-card reveal reveal-d1">
-          <strong>NASA Flight Operations</strong>
-          <span>Implemented an organizational system for the department's historical federal records.</span>
-        </div>
-        <div class="result-card reveal reveal-d2">
-          <strong>Legal Aid Experience</strong>
-          <span>Administrative assistant at Elevate Community Center, a legal aid organization McLellan Law Group proudly supports.</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div>
-      <div class="bio-block">
-        <div class="bio-eyebrow reveal">About Sara</div>
-        <p class="reveal reveal-d1">Sara Van Til brings valuable experience from her previous role as an administrative assistant at Elevate Community Center, a legal aid organization we proudly support. Her background also includes service with the Air Force, specifically in the Air Guard pararescue's 131st squadron.</p>
-        <p class="reveal reveal-d2">Before that, she contributed to NASA's flight operations department, where she implemented an organizational system for the department's historical federal records.</p>
-        <p class="reveal reveal-d3">Ms. Van Til's exceptional organizational skills and readiness to tackle challenges make her a valuable asset to our team.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-banner">
-  <h2 class="reveal">Work With<em> Our Team.</em></h2>
+<!-- FOOT CTA -->
+<section class="foot-cta">
+  <h2 class="reveal">Work With <em>Our Team.</em></h2>
   <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex;">Get My Free Consultation <span>→</span></a>
 </section>
 
 <script>
-function toggleCred(btn) {
-  var item = btn.parentElement;
-  var answer = item.querySelector('.cred-answer');
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.cred-item.open').forEach(function(el) {
-    el.classList.remove('open');
-    el.querySelector('.cred-answer').style.maxHeight = null;
-  });
-  if (!isOpen) {
-    item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-  }
-}
-
 (function(){
   var els = document.querySelectorAll('.reveal');
   if (!els.length) return;
