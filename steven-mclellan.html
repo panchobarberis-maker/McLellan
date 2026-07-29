@@ -106,7 +106,7 @@ a { text-decoration:none; color:inherit; }
   align-items:start;
 }
 @media(max-width:900px) { .hero { grid-template-columns:1fr; } }
-.hero-photo { position:relative; overflow:hidden; height:55vh; }
+.hero-photo { position:relative; overflow:hidden; height:calc(100svh - 62px); }
 .hero-photo::before {
   content:''; position:absolute; inset:50px;
   border:3px solid #b9986a;
