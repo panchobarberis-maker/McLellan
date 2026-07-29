@@ -103,10 +103,10 @@ a { text-decoration:none; color:inherit; }
 /* ── HERO ── */
 .hero {
   display:grid; grid-template-columns:55% 45%;
-  min-height:60vh;
+  align-items:start;
 }
-@media(max-width:900px) { .hero { grid-template-columns:1fr; min-height:0; } }
-.hero-photo { position:relative; overflow:hidden; }
+@media(max-width:900px) { .hero { grid-template-columns:1fr; } }
+.hero-photo { position:relative; overflow:hidden; height:55vh; }
 .hero-photo::before {
   content:''; position:absolute; inset:50px;
   border:3px solid #b9986a;
