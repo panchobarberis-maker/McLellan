@@ -103,7 +103,6 @@ a { text-decoration:none; color:inherit; }
 /* ── HERO ── */
 .hero {
   display:grid; grid-template-columns:55% 45%;
-  align-items:start;
 }
 @media(max-width:900px) { .hero { grid-template-columns:1fr; } }
 .hero-photo { position:relative; overflow:hidden; height:calc(100svh - 62px); }
@@ -333,9 +332,9 @@ a { text-decoration:none; color:inherit; }
 }
 
 
-/* Credenciales debajo del contacto */
-.hero-creds { margin-top:44px; max-width:460px; }
-.body-section { grid-template-columns:1fr !important; max-width:960px !important; }
+/* Sidebar de credenciales en el body */
+.body-sidebar { position:sticky; top:96px; align-self:start; }
+.body-sidebar .section-label { margin-bottom:24px; }
 
 /* Scroll reveal */
 .reveal {
@@ -454,8 +453,36 @@ a { text-decoration:none; color:inherit; }
       </div>
     </div>
     <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
-    <div class="hero-creds">
+  </div>
+</section>
 
+<!-- BODY -->
+<section class="body-section">
+  <div>
+    <div class="section-label reveal">About</div>
+    <p class="lead reveal reveal-d1">"Steven McLellan brings tenacity and strategic clarity to every case — from trial courts to appellate courts across California."</p>
+    <div class="about-copy">
+      <p class="reveal reveal-d2">He has the knowledge and experience to help clients get a favorable result whether filing a lawsuit or defending against one. His practice focuses on business litigation, real estate disputes, financial elder abuse, and landlord-tenant matters.</p>
+      <p class="reveal reveal-d3">During law school, Steven externed with the Honorable Patricia Lucas and the Honorable Peter Kirwan at the Superior Court of California, Santa Clara County, and later worked at an international law firm handling securities and intellectual property litigation.</p>
+    </div>
+
+    <div class="results">
+      <div class="section-label reveal">Notable Results</div>
+      <div class="result-item reveal reveal-d1">
+        <h3>Jury Trial Victory</h3>
+        <span class="tag">Jury Trial</span>
+        <p>Represented client in a two-week jury trial concerning breach of fiduciary duty. Jury issued verdict in favor of client.</p>
+      </div>
+      <div class="result-item reveal reveal-d2">
+        <h3>Court Trial Victory</h3>
+        <span class="tag">Court Trial</span>
+        <p>Represented client in a four-day court trial concerning financial elder abuse. Court issued award in favor of client.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="body-sidebar">
+    <div class="section-label reveal">Credentials</div>
     <div class="acc-item open reveal">
       <button class="acc-btn" onclick="toggleAcc(this)">Bar Admissions <span class="icon">×</span></button>
       <div class="acc-body" style="max-height:220px;">
@@ -486,44 +513,12 @@ a { text-decoration:none; color:inherit; }
         </ul>
       </div>
     </div>
-
     <div class="award-box reveal reveal-d3">
       <div class="section-label">Recognition</div>
       <h4>Super Lawyers — Rising Star</h4>
       <div class="years">2022 &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; 2024</div>
     </div>
-  
-    </div>
-
-  </div>
-</section>
-
-<!-- BODY -->
-<section class="body-section">
-  <div>
-    <div class="section-label reveal">About</div>
-    <p class="lead reveal reveal-d1">"Steven McLellan brings tenacity and strategic clarity to every case — from trial courts to appellate courts across California."</p>
-    <div class="about-copy">
-      <p class="reveal reveal-d2">He has the knowledge and experience to help clients get a favorable result whether filing a lawsuit or defending against one. His practice focuses on business litigation, real estate disputes, financial elder abuse, and landlord-tenant matters.</p>
-      <p class="reveal reveal-d3">During law school, Steven externed with the Honorable Patricia Lucas and the Honorable Peter Kirwan at the Superior Court of California, Santa Clara County, and later worked at an international law firm handling securities and intellectual property litigation.</p>
-    </div>
-
-    <div class="results">
-      <div class="section-label reveal">Notable Results</div>
-      <div class="result-item reveal reveal-d1">
-        <h3>Jury Trial Victory</h3>
-        <span class="tag">Jury Trial</span>
-        <p>Represented client in a two-week jury trial concerning breach of fiduciary duty. Jury issued verdict in favor of client.</p>
-      </div>
-      <div class="result-item reveal reveal-d2">
-        <h3>Court Trial Victory</h3>
-        <span class="tag">Court Trial</span>
-        <p>Represented client in a four-day court trial concerning financial elder abuse. Court issued award in favor of client.</p>
-      </div>
-    </div>
-  </div>
-
-  
+  </aside>
 </section>
 
 <!-- FOOT CTA -->
