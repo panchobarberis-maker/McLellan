@@ -111,14 +111,10 @@ a { text-decoration:none; color:inherit; }
   border:3px solid #b9986a;
   z-index:3; pointer-events:none;
 }
-.hero-photo-placeholder {
-  width:100%; height:100%;
-  background:linear-gradient(160deg,#24484d 0%,#16333a 100%);
-  display:flex; align-items:center; justify-content:center;
-}
-.hero-photo-placeholder span {
-  font-family:'DM Serif Display',serif; font-style:italic;
-  font-size:clamp(120px,18vw,220px); color:#b9986a;
+.hero-photo img {
+  width:100%; height:100%; object-fit:cover; object-position:center 0%;
+  filter:grayscale(10%) brightness(0.85);
+  display:block;
 }
 .hero-photo::after {
   content:''; position:absolute; inset:0; z-index:2;
@@ -382,7 +378,7 @@ a { text-decoration:none; color:inherit; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-photo">
-    <div class="hero-photo-placeholder reveal"><span>SV</span></div>
+    <img src="Sara-Van-Til-Headshot-1920w.webp" alt="Sara Van Til, Legal Assistant &amp; Notary Public at McLellan Law Group" class="reveal">
   </div>
   <div class="hero-info">
     <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Legal Assistant</em></div>
