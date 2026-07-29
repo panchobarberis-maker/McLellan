@@ -6,14 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claire Melehani — Partner | McLellan Law Group</title>
 <meta name="description" content="Claire Melehani is a founding partner at McLellan Law Group in Saratoga, CA. Civil trial attorney focused on complex litigation for high-net-worth individuals, executives, and companies.">
-<link rel="canonical" href="steven-mclellan.html">
+<link rel="canonical" href="https://www.mclellanlawgroup.com/claire-melehani">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Claire Melehani","jobTitle":"Partner","worksFor":{"@type":"LegalService","name":"McLellan Law Group"},"email":"claire@mclellanlawgroup.com","telephone":"650-383-1266","url":"https://www.mclellanlawgroup.com/claire-melehani","alumniOf":["University of North Carolina School of Law","Duke University"]}
 </script>
 <style>
-* { text-wrap:pretty; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; text-wrap:pretty; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Barlow',sans-serif; font-weight:400;
+  background:#1e3a3e; color:#f0ece4;
+  -webkit-font-smoothing:antialiased;
+}
+a { text-decoration:none; color:inherit; }
 
 /* NAV */
 .nav {
@@ -93,139 +100,235 @@
 }
 
 
-/* ATTORNEY HERO */
-.atty-hero {
-  background:#1e3a3e; border-bottom:12px solid #c9a96e;
-  padding:56px 24px;
+/* ── HERO ── */
+.hero {
+  display:grid; grid-template-columns:55% 45%;
 }
-.atty-hero-inner {
-  max-width:1200px; margin:0 auto;
-  display:grid; grid-template-columns:1fr; gap:36px; align-items:center;
+@media(max-width:900px) { .hero { grid-template-columns:1fr; } }
+.hero-photo { position:relative; overflow:hidden; height:calc(100svh - 62px); }
+.hero-photo::before {
+  content:''; position:absolute; inset:50px;
+  border:3px solid #b9986a;
+  z-index:3; pointer-events:none;
 }
-@media(min-width:900px) { .atty-hero { padding:88px 48px; } .atty-hero-inner { grid-template-columns:1.1fr 1fr; gap:64px; } }
-.atty-hero h1 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(44px, 6vw, 76px); font-weight:900; line-height:0.95;
-  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:8px;
+.hero-photo img {
+  width:100%; height:100%; object-fit:cover; object-position:center 0%;
+  filter:grayscale(10%) brightness(0.85);
+  display:block;
 }
-.atty-role {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(20px, 2.5vw, 28px); font-weight:800; letter-spacing:3px;
-  text-transform:uppercase; color:#c9a96e; margin-bottom:24px;
+.hero-photo::after {
+  content:''; position:absolute; inset:0; z-index:2;
+  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%);
 }
-.atty-hero p { font-size:18px; line-height:1.75; color:rgba(255,255,255,0.85); max-width:560px; margin-bottom:28px; }
-.atty-contact { display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
-.atty-contact a {
-  display:inline-flex; align-items:center; gap:12px;
-  color:#fff; font-weight:700; font-size:17px; text-decoration:none;
+@media(max-width:900px) {
+  .hero-photo { height:60vh; }
+  .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%); }
+  .hero-photo::before { inset:8px; }
 }
-.atty-contact a:hover { color:#c9a96e; }
-.atty-contact svg { flex-shrink:0; }
-.atty-photo {
-  width:calc(100% - 24px); max-height:560px; object-fit:cover; object-position:center 15%;
-  border-radius:6px; display:block;
-  box-shadow:
-    24px 24px 0 -6px #c9a96e,
-    0 24px 64px rgba(0,0,0,0.4);
+.hero-info {
+  padding:80px 64px 80px 48px;
+  display:flex; flex-direction:column; justify-content:center;
 }
-@keyframes ctaBreath {
-  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
-  50%      { box-shadow:0 0 28px 6px rgba(201,169,110,0.55), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.03); }
+@media(max-width:900px) { .hero-info { padding:40px 24px 64px; } }
+.breadcrumb {
+  font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(255,255,255,0.4); font-weight:500; margin-bottom:36px;
 }
-.btn-gold {
-  display:inline-flex; align-items:center; gap:10px;
-  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%);
-  color:#1e3a3e; font-weight:800; font-size:16px;
-  padding:16px 36px; border-radius:32px; text-decoration:none;
-  animation:ctaBreath 2.6s ease-in-out infinite;
+.breadcrumb em { font-style:normal; color:rgba(255,255,255,0.6); }
+.hero-name {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-1px;
+  font-size:clamp(90px, 13vw, 200px); line-height:0.9;
+  margin-bottom:24px;
+}
+.hero-name .first {
+  display:block; font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; letter-spacing:0; font-size:0.85em;
+}
+.hero-role {
+  font-size:12px; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(255,255,255,0.5); font-weight:500;
+  padding-bottom:36px; margin-bottom:36px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.hero-stats { display:flex; gap:48px; flex-wrap:wrap; margin-bottom:48px; }
+.stat .num {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  font-size:56px; line-height:1; color:#b9986a; display:block; margin-bottom:10px;
+}
+.stat .label {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:rgba(255,255,255,0.45); font-weight:500; line-height:1.6; display:block;
+}
+.hero-cta {
+  display:inline-flex; align-items:center; gap:14px; align-self:flex-start;
+  background:#b9986a; color:#1e3a3e;
+  font-size:14px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  padding:24px 48px; transition:background 0.25s;
+}
+.hero-cta:hover { background:#cbb084; }
+.hero-cta span { font-size:18px; }
+
+/* ── BODY ── */
+.body-section {
+  display:grid; grid-template-columns:1fr 340px; gap:96px;
+  padding:96px 64px; max-width:1360px; margin:0 auto;
+}
+@media(max-width:900px) { .body-section { grid-template-columns:1fr; gap:64px; padding:64px 24px; } }
+.section-label {
+  font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color:#b9986a; font-weight:600; margin-bottom:32px;
+}
+.lead {
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
+  font-size:clamp(24px, 2.6vw, 32px); line-height:1.5; color:#1e3a3e;
+  margin-bottom:40px;
+}
+.about-copy p {
+  font-size:16px; line-height:1.9; color:rgba(30,58,62,0.7);
+  margin-bottom:24px; text-align:justify;
+}
+.results { margin-top:72px; }
+.result-item {
+  border-top:1px solid rgba(30,58,62,0.1);
+  padding:32px 0;
+  display:grid; grid-template-columns:1fr auto; gap:8px 32px;
+}
+.result-item h3 {
+  font-family:'Barlow Condensed',sans-serif; font-weight:800;
+  text-transform:uppercase; letter-spacing:0.5px;
+  font-size:26px; color:#1e3a3e;
+}
+.result-item .tag {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:#8a6d43; font-weight:600; align-self:start; padding-top:8px;
+}
+.result-item p {
+  grid-column:1 / -1;
+  font-size:15px; line-height:1.8; color:rgba(30,58,62,0.6); text-align:justify;
 }
 
-/* BIO */
-.atty-bio { background:#fbf6ef; padding:56px 24px; }
-.atty-bio-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:32px; }
-@media(min-width:900px) { .atty-bio { padding:88px 48px; } .atty-bio-inner { grid-template-columns:1fr 1.4fr; gap:56px; align-items:start; } }
-.bio-block {
-  background:#1e3a3e; border-radius:16px; padding:36px 32px;
-  box-shadow:0 8px 28px rgba(0,0,0,0.12); margin-bottom:24px;
+/* ── SIDEBAR ── */
+.acc-item { border-bottom:1px solid rgba(30,58,62,0.1); }
+.acc-btn {
+  width:100%; background:none; border:none; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:22px 0; text-align:left;
+  font-family:'Barlow',sans-serif;
+  font-size:12px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#1e3a3e; font-weight:600;
 }
-.bio-block p { font-size:17px; line-height:1.8; color:rgba(255,255,255,0.85); margin-bottom:18px; }
-.bio-block p:last-child { margin-bottom:0; }
-.bio-block a { color:#c9a96e; font-weight:700; }
-.bio-eyebrow {
-  display:inline-flex; align-items:center; gap:10px;
-  font-size:15px; letter-spacing:3px; text-transform:uppercase;
-  color:#c9a96e; font-weight:700; margin-bottom:16px;
+.acc-btn .icon { color:#8a6d43; font-size:16px; font-weight:400; transition:transform 0.3s; }
+.acc-body { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+.acc-body ul { list-style:none; padding:0 0 24px; }
+.acc-body li {
+  font-size:14px; line-height:1.7; color:rgba(30,58,62,0.65);
+  padding:6px 0;
 }
-.bio-eyebrow::before { content:''; width:24px; height:1px; background:#c9a96e; }
-
-/* RESULTS */
-.result-card {
-  background:#1e3a3e; border-radius:14px; padding:28px;
-  margin-bottom:16px; border-left:5px solid #c9a96e;
+.award-box {
+  margin-top:48px; padding:32px 28px;
+  border:1px solid rgba(185,152,106,0.35);
 }
-.result-card strong { display:block; color:#c9a96e; font-family:'Barlow Condensed',sans-serif; font-size:20px; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
-.result-card span { color:rgba(255,255,255,0.85); font-size:16px; line-height:1.7; }
-
-/* CREDENTIALS ACCORDIONS */
-.cred-item { margin-bottom:14px; border-radius:12px; overflow:hidden; }
-.cred-question {
-  width:100%; background:linear-gradient(180deg,#d3b483 0%,#c2a06a 100%);
-  border:none; text-align:left; cursor:pointer;
-  padding:20px 24px; font-family:'Barlow Condensed',sans-serif;
-  font-size:20px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
-  color:#fff; display:flex; justify-content:space-between; align-items:center; gap:12px;
+.award-box .section-label { margin-bottom:14px; color:#8a6d43 !important; }
+.award-box h4 {
+  font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;
+  font-size:24px; line-height:1.3; color:#1e3a3e; margin-bottom:10px;
 }
-.cred-question .cred-icon { font-size:24px; transition:transform 0.3s; }
-.cred-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; background:#fff; }
-.cred-answer ul { list-style:none; padding:20px 26px; }
-.cred-answer li { font-size:16px; color:#3a5254; padding:7px 0; padding-left:22px; position:relative; line-height:1.6; }
-.cred-answer li::before { content:'•'; color:#c9a96e; font-weight:900; position:absolute; left:0; }
-.cred-item.open .cred-icon { transform:rotate(45deg); }
+.award-box .years { font-size:12px; letter-spacing:2px; color:rgba(30,58,62,0.55); }
 
-/* CTA */
-.cta-banner { background:#1e3a3e; padding:72px 24px; text-align:center; border-top:12px solid #c9a96e; }
-.cta-banner h2 {
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(40px, 6vw, 80px); font-weight:900;
-  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:14px;
+/* ── FOOT CTA ── */
+.foot-cta {
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:96px 64px; text-align:center;
 }
-.cta-banner h2 em { font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; }
-.cta-banner p { font-size:19px; color:rgba(255,255,255,0.7); margin-bottom:32px; }
-
-/* ── Editorial refinements ── */
-.atty-hero p {
-  font-family:'DM Serif Display',serif; font-style:italic;
-  font-size:21px !important; line-height:1.8 !important;
-  color:rgba(255,255,255,0.9) !important;
+@media(max-width:768px) { .foot-cta { padding:64px 24px; } }
+.foot-cta h2 {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:-0.5px;
+  font-size:clamp(36px, 4.5vw, 56px); line-height:1.1; margin-bottom:16px;
 }
-.atty-role { position:relative; padding-bottom:18px; }
-.atty-role::after { content:''; position:absolute; left:0; bottom:0; width:56px; height:2px; background:#c9a96e; }
-.atty-contact a { font-size:19px !important; letter-spacing:0.3px; }
-
-.atty-bio { padding:80px 24px !important; }
-@media(min-width:900px) { .atty-bio { padding:120px 48px !important; } }
-
-.bio-block { padding:48px 44px !important; border-radius:4px !important; }
-.bio-block p { font-size:19px !important; line-height:1.95 !important; }
-.bio-block p:first-of-type::first-letter {
-  font-family:'DM Serif Display',serif;
-  font-size:64px; line-height:0.8; float:left;
-  padding:8px 12px 0 0; color:#c9a96e;
+.foot-cta h2 em {
+  font-style:italic; color:#b9986a;
+  font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
 }
-.bio-eyebrow { font-size:16px !important; letter-spacing:4px !important; }
+.foot-cta p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:40px; }
 
-.cred-question { font-size:23px !important; padding:24px 28px !important; letter-spacing:2px !important; }
-.cred-answer li { font-size:18px !important; padding:9px 0 9px 24px !important; line-height:1.7 !important; }
+/* ── Boxes + dorado en el body ── */
+.lead {
+  border:2.5px solid rgba(185,152,106,0.5);
+  border-left:8px solid #b9986a;
+  padding:32px 36px;
+  background:#fbf6ef;
+}
+.about-copy {
+  border:2.5px solid rgba(185,152,106,0.35);
+  padding:32px 36px;
+  background:#fbf6ef;
+}
+.about-copy p:last-child { margin-bottom:0; }
+.result-item {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  margin-bottom:20px;
+  background:#fbf6ef;
+}
+.results .result-item + .result-item { border-top:2.5px solid rgba(185,152,106,0.45) !important; }
+.acc-item {
+  border:5px solid rgba(185,152,106,0.6) !important;
+  margin-bottom:14px;
+  padding:0 22px;
+  background:#fbf6ef;
+}
+.acc-btn .icon { font-size:18px !important; }
+.award-box {
+  border:2.5px solid #b9986a !important;
+  background:#fbf6ef;
+  box-shadow:0 0 0 4px rgba(185,152,106,0.08);
+}
+.section-label::after {
+  content:''; display:inline-block; vertical-align:middle;
+  width:36px; height:1px; background:#b9986a; margin-left:14px; opacity:0.6;
+}
 
-.result-card { padding:32px !important; }
-.result-card strong { font-size:24px !important; }
-.result-card span { font-size:17.5px !important; line-height:1.75 !important; }
 
-.cta-banner p { font-size:22px !important; font-family:'DM Serif Display',serif; font-style:italic; }
+/* ── Legibilidad publico adulto: letra grande y clara ── */
+.about-copy p { font-size:19px !important; line-height:1.9 !important; color:rgba(30,58,62,0.85) !important; }
+.result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
+.result-item .tag { font-size:13px !important; }
+.acc-btn { font-size:15px !important; letter-spacing:2px !important; }
+.acc-body li { font-size:17px !important; color:rgba(30,58,62,0.75) !important; padding:8px 0 !important; }
+.section-label { font-size:14px !important; color:#c9a96e !important; }
+.breadcrumb { font-size:13px !important; color:rgba(255,255,255,0.65) !important; }
+.breadcrumb em { color:rgba(255,255,255,0.85) !important; }
+.hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
+.stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
+.hero-cta { font-size:16px !important; padding:26px 52px !important; }
+.award-box .years { font-size:14px !important; color:rgba(30,58,62,0.55) !important; }
+.foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+
+/* Info mas grande en desktop */
+@media(min-width:769px) {
+  .lead { font-size:clamp(28px,2.8vw,36px) !important; }
+  .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+  .result-item h3 { font-size:30px !important; }
+  .result-item p { font-size:20px !important; }
+  .result-item .tag { font-size:14px !important; }
+  .acc-btn { font-size:16px !important; }
+  .acc-body li { font-size:18px !important; }
+  .section-label { font-size:15px !important; }
+  .hero-role { font-size:16px !important; }
+  .stat .num { font-size:64px !important; }
+  .stat .label { font-size:14px !important; }
+  .award-box h4 { font-size:26px !important; }
+  .foot-cta p { font-size:21px !important; }
+}
 
 
-/* Textos justificados */
-.bio-block p, .result-card span, .atty-hero p, .cred-answer li { text-align:justify; }
+/* Sidebar de credenciales en el body */
+.body-sidebar { position:sticky; top:96px; align-self:start; }
+.body-sidebar .section-label { margin-bottom:24px; }
 
 /* Scroll reveal */
 .reveal {
@@ -321,159 +424,175 @@
 </div>
 
 <!-- HERO -->
-<section class="atty-hero">
-  <div class="atty-hero-inner">
-    <div>
-      <h1 class="reveal">Claire Melehani</h1>
-      <div class="atty-role reveal reveal-d1">Partner</div>
-      <p class="reveal reveal-d2" style="font-family:'Barlow',sans-serif !important; font-style:normal !important; font-size:17px !important; font-weight:700; color:#c9a96e !important; margin-bottom:20px;">2026 President of the Santa Clara County Bar Association</p>
-      <p class="reveal reveal-d3">Claire is a skilled trial attorney; for the last five years, Claire was named a Super Lawyer's Rising Star, an award conferred upon the top 2.5% of rising attorneys in California, and was named one of the Top Women Attorneys in Northern California. In 2023, she was named one of the Top 40 Young Lawyers by the American Bar Association.</p>
-      <div class="atty-contact reveal reveal-d4">
-        <a href="tel:650-383-1266"><svg width="20" height="20" viewBox="0 0 24 24" fill="#c9a96e"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>650-383-1266</a>
-        <a href="mailto:claire@mclellanlawgroup.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="#c9a96e"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>claire@mclellanlawgroup.com</a>
+<section class="hero">
+  <div class="hero-photo">
+    <img src="claire.jpg" alt="Claire Melehani, Partner at McLellan Law Group" class="reveal">
+  </div>
+  <div class="hero-info">
+    <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Partner</em></div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Claire</span>Melehani</h1>
+    <div class="hero-role reveal reveal-d3">Partner &nbsp;—&nbsp; Complex Civil Litigation</div>
+    <div class="hero-stats">
+      <div class="stat reveal reveal-d4">
+        <span class="num">4×</span>
+        <span class="label">Super Lawyers<br>Rising Star</span>
       </div>
-      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d5">Request a Free Consultation →</a>
+      <div class="stat reveal reveal-d5">
+        <span class="num">2026</span>
+        <span class="label">SCCBA<br>President</span>
+      </div>
+      <div class="stat reveal reveal-d6">
+        <span class="num">Top 40</span>
+        <span class="label">ABA Young<br>Lawyers</span>
+      </div>
     </div>
-    <img class="atty-photo reveal reveal-d2" src="claire.jpg" alt="Claire Melehani, Partner at McLellan Law Group">
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
   </div>
 </section>
 
-<!-- BIO -->
-<section class="atty-bio">
-  <div class="atty-bio-inner">
-
-    <div>
-      <div class="cred-item reveal">
-        <button class="cred-question" onclick="toggleCred(this)">Honors <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li><strong>2021–2024 Super Lawyer's Rising Star, Northern California</strong> (Civil Litigation – Plaintiffs' Side) — conferred upon the top 2.5% of rising attorneys in California, selected via peer reviews and independent research across 12 indicators of peer recognition and professional achievement.</li>
-            <li><strong>2021–2024 Top Women Attorneys in Northern California</strong> (Rising Star in Civil Litigation) — included in San Francisco Magazine's December 2021 and December 2022 issues.</li>
-            <li><strong>2023 Unsung Heroes Award Recipient</strong> — selected as the Santa Clara County Bar Association Barristers Section's Volunteer of the Year.</li>
-            <li><strong>2023 "On the Rise – Top 40 Young Lawyers" Award, American Bar Association</strong> — national recognition of ABA members who exemplify high achievement, innovation, vision, leadership, and service to the profession and their communities.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d1">
-        <button class="cred-question" onclick="toggleCred(this)">Bar Admissions <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li>California</li>
-            <li>United States District Court for the Northern District of California</li>
-            <li>United States Court of Appeals for the Ninth Circuit</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d2">
-        <button class="cred-question" onclick="toggleCred(this)">Education <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li>University of North Carolina School of Law (Chapel Hill), J.D. (2018)</li>
-            <li>Duke University, Certificate in Nonprofit Management (2015)</li>
-            <li>Duke University, B.S. in Economics (2014)</li>
-            <li>Duke University, Certificate in Markets and Management (2014)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d3">
-        <button class="cred-question" onclick="toggleCred(this)">Professional Memberships <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li>Santa Clara County Bar Association</li>
-            <li>San Mateo County Bar Association</li>
-            <li>Monterey County Bar Association</li>
-            <li>American Bar Association (ABA)</li>
-            <li>California Lawyers Association (CLA)</li>
-            <li>California Women Lawyers (CWL)</li>
-            <li>American Inns of Court</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d4">
-        <button class="cred-question" onclick="toggleCred(this)">Select Publications <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li><strong>"Law In The Age of Covid-19: Depose Your Own Witness To Preserve Their Testimony"</strong> — reprinted in the Practicing Law Institute's 2021 coursebook for trial attorneys.</li>
-            <li><strong>"Seven Tips for Success When Joining an All-Male Law Firm"</strong> — Claire shared her tips for succeeding as a trial attorney with Her Legal Global, a blog dedicated to empowering women in law.</li>
-            <li><strong>"Maintaining Client Trust"</strong> — advice to help other lawyers maintain client trust during lengthy legal battles.</li>
-            <li><strong>"11 Essential Tips for New Business Owners on Handling Employee Conflict"</strong> — employment law tips for entrepreneurs: written policies for employee conflict and documenting every step to protect the company in the event of litigation.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d5">
-        <button class="cred-question" onclick="toggleCred(this)">Professional Activities <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li><strong>California Women Lawyers (CWL), Board of Governors</strong> — member of the Board of Governors and Executive Committee (2023–2024), promoting the advancement of women in the legal profession.</li>
-            <li><strong>SCCBA Board of Trustees</strong> — elected for a two-year term beginning in 2023; previously the Barristers' delegate to the Board; charged with governance and fiscal stewardship.</li>
-            <li><strong>SCCBA Barristers, Former President</strong> — President (2022) and Vice President (2021) of the section dedicated to helping young attorneys give back and excel in the profession.</li>
-            <li><strong>SCCBA Women Lawyers Section, Former Co-chair</strong> — co-chaired 2023–2024, overseeing events that support and advance women lawyers and judges.</li>
-            <li><strong>SCCBA Diversity, Equity, Inclusion Committee</strong> — supporting diverse persons entering and thriving in the legal profession within Santa Clara County.</li>
-            <li><strong>American Inns of Court, Hon. William A. Ingram Inn</strong> — bolstering ethics, civility, and excellence through monthly mentoring, education, and networking.</li>
-            <li><strong>ABA Young Lawyers' Division</strong> — Affiliates Team Member (2021–2022) and Assembly Delegate (2021), voting on Resolutions to improve the profession.</li>
-            <li><strong>Elevate Community Center Volunteer</strong> — representing clients who cannot afford traditionally priced lawyers and supervising law student interns preparing cases for trial.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d6">
-        <button class="cred-question" onclick="toggleCred(this)">Speaking Engagements <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li>Moderator, "Dobbs v. Whole Woman's Health Discussion Panel" — American Constitution Society chapters at Univ. of Hawaii at Manoa and NC Central Univ. Schools of Law (October 2022)</li>
-            <li>Moderator, "Unprecedented: Navigating Legal and Health Issues in a Post-Dobbs World" — Santa Clara County Bar Association (July 2022)</li>
-            <li>Panelist, "Strategies for Developing a Legacy of Values and Finances" — Lockheed Martin's Black Excellence Council (February 2022)</li>
-            <li>Speaker, "Social Media for Lawyers: Avoiding Ethical Pitfalls" — Barristers Bootcamp (February 2022)</li>
-            <li>Panelist, "Finding that First Job and Setting Yourself Up for Success" — North Carolina Bar Association YLD with UNC School of Law (September 2021)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="margin-top:28px;">
-        <div class="result-card reveal reveal-d7">
-          <strong>ABA Top 40 Young Lawyers</strong>
-          <span>Named to the American Bar Association's "On The Rise — Top 40 Young Lawyers" class of 2023, a national recognition of achievement, leadership, and service.</span>
-        </div>
-        <div class="result-card reveal reveal-d7">
-          <strong>Super Lawyers Rising Star</strong>
-          <span>Selected as a California Super Lawyers Rising Star every year since 2021 — an honor conferred upon the top 2.5% of rising attorneys in California.</span>
-        </div>
-      </div>
-
+<!-- BODY -->
+<section class="body-section">
+  <div>
+    <div class="section-label reveal">About</div>
+    <p class="lead reveal reveal-d1">"Claire Melehani pairs sharp financial fluency with courtroom instinct — representing high-net-worth individuals, executives, and companies through California's most complex disputes."</p>
+    <div class="about-copy">
+      <p class="reveal reveal-d2">Claire Melehani is a founding partner at McLellan Law Group, LLP and a civil trial attorney focused on complex litigation for high-net-worth individuals, executives, and companies throughout California. Her practice spans business and commercial disputes, trust and estate litigation, employment law, and real estate litigation, with significant depth in matters involving financial elder abuse.</p>
+      <p class="reveal reveal-d3">Before co-founding McLellan Law Group, Claire spent nearly four years as a trial and appellate attorney at Gates Eisenhart Dawson, a Silicon Valley boutique firm handling high-conflict civil proceedings for high-net-worth clients. Prior to that, she represented clients in complex, contested divorce and asset division matters at a prominent Bay Area family law firm — experience that sharpened her instincts for high-stakes negotiations and the particular demands of sophisticated clientele.</p>
+      <p class="reveal reveal-d4">Claire's litigation practice is distinguished by uncommon financial fluency. Her background as an investment banking analyst at a global investment bank gives her command of financial analysis, valuation, and business strategy that directly informs her courtroom approach and the practical counsel she provides to executives and entrepreneurs navigating contentious disputes.</p>
+      <p class="reveal reveal-d5">A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association, having previously served as Treasurer, Secretary, and elected Trustee. Claire has also served on the Board of Governors of California Women Lawyers. She was named to the American Bar Association's "On The Rise — Top 40 Young Lawyers" class of 2023, has been selected as a California Super Lawyers Rising Star every year since 2021, and has been recognized as a Top Women Attorney in Northern California by San Francisco Magazine. Claire is admitted to practice in all California state courts, the U.S. District Court for the Northern District of California, and the U.S. Court of Appeals for the Ninth Circuit.</p>
+      <p class="reveal reveal-d6">Outside the courtroom, Claire maintains an active pro bono practice, mentors students in the legal community, and publishes Legally Speaking, a weekly newsletter on California law.</p>
     </div>
 
-    <div>
-      <div class="bio-block">
-        <div class="bio-eyebrow reveal">About Claire</div>
-        <p class="reveal reveal-d1">Claire Melehani is a founding partner at McLellan Law Group, LLP and a civil trial attorney focused on complex litigation for high-net-worth individuals, executives, and companies throughout California. Her practice spans business and commercial disputes, trust and estate litigation, employment law, and real estate litigation, with significant depth in matters involving financial elder abuse.</p>
-        <p class="reveal reveal-d2">Before co-founding McLellan Law Group, Claire spent nearly four years as a trial and appellate attorney at Gates Eisenhart Dawson, a Silicon Valley boutique firm handling high-conflict civil proceedings for high-net-worth clients. Prior to that, she represented clients in complex, contested divorce and asset division matters at a prominent Bay Area family law firm — experience that sharpened her instincts for high-stakes negotiations and the particular demands of sophisticated clientele.</p>
-        <p class="reveal reveal-d3">Claire's litigation practice is distinguished by uncommon financial fluency. Her background as an investment banking analyst at a global investment bank gives her command of financial analysis, valuation, and business strategy that directly informs her courtroom approach and the practical counsel she provides to executives and entrepreneurs navigating contentious disputes.</p>
-        <p class="reveal reveal-d4">A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association, having previously served as Treasurer, Secretary, and elected Trustee. Claire has also served on the Board of Governors of California Women Lawyers. She was named to the American Bar Association's "On The Rise — Top 40 Young Lawyers" class of 2023, has been selected as a California Super Lawyers Rising Star every year since 2021, and has been recognized as a Top Women Attorney in Northern California by San Francisco Magazine. Claire is admitted to practice in all California state courts, the U.S. District Court for the Northern District of California, and the U.S. Court of Appeals for the Ninth Circuit.</p>
-        <p class="reveal reveal-d5">Outside the courtroom, Claire maintains an active pro bono practice, mentors students in the legal community, and publishes Legally Speaking, a weekly newsletter on California law.</p>
+    <div class="results">
+      <div class="section-label reveal">Notable Results</div>
+      <div class="result-item reveal reveal-d1">
+        <h3>ABA Top 40 Young Lawyers</h3>
+        <span class="tag">National Recognition</span>
+        <p>Named to the American Bar Association's "On The Rise — Top 40 Young Lawyers" class of 2023, a national recognition of achievement, leadership, and service.</p>
+      </div>
+      <div class="result-item reveal reveal-d2">
+        <h3>Super Lawyers Rising Star</h3>
+        <span class="tag">California Rising Star</span>
+        <p>Selected as a California Super Lawyers Rising Star every year since 2021 — an honor conferred upon the top 2.5% of rising attorneys in California.</p>
       </div>
     </div>
-
   </div>
+
+  <aside class="body-sidebar">
+    <div class="section-label reveal">Credentials</div>
+    <div class="acc-item open reveal">
+      <button class="acc-btn" onclick="toggleAcc(this)">Bar Admissions <span class="icon">×</span></button>
+      <div class="acc-body" style="max-height:220px;">
+        <ul>
+          <li>California</li>
+          <li>United States District Court, Northern District of California</li>
+          <li>United States Court of Appeals, Ninth Circuit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d1">
+      <button class="acc-btn" onclick="toggleAcc(this)">Honors <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>2021–2024 Super Lawyer's Rising Star, Northern California (Civil Litigation – Plaintiffs' Side) — top 2.5% of rising attorneys in California.</li>
+          <li>2021–2024 Top Women Attorneys in Northern California (Rising Star in Civil Litigation) — San Francisco Magazine.</li>
+          <li>2023 Unsung Heroes Award Recipient — SCCBA Barristers Section Volunteer of the Year.</li>
+          <li>2023 "On the Rise – Top 40 Young Lawyers" Award, American Bar Association.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d2">
+      <button class="acc-btn" onclick="toggleAcc(this)">Education <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>University of North Carolina School of Law (Chapel Hill), J.D. (2018)</li>
+          <li>Duke University, Certificate in Nonprofit Management (2015)</li>
+          <li>Duke University, B.S. in Economics (2014)</li>
+          <li>Duke University, Certificate in Markets and Management (2014)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d3">
+      <button class="acc-btn" onclick="toggleAcc(this)">Professional Memberships <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>Santa Clara County Bar Association</li>
+          <li>San Mateo County Bar Association</li>
+          <li>Monterey County Bar Association</li>
+          <li>American Bar Association (ABA)</li>
+          <li>California Lawyers Association (CLA)</li>
+          <li>California Women Lawyers (CWL)</li>
+          <li>American Inns of Court</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d4">
+      <button class="acc-btn" onclick="toggleAcc(this)">Professional Activities <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>California Women Lawyers (CWL), Board of Governors (2023–2024)</li>
+          <li>SCCBA Board of Trustees — elected two-year term beginning 2023</li>
+          <li>SCCBA Barristers, Former President (2022) &amp; Vice President (2021)</li>
+          <li>SCCBA Women Lawyers Section, Former Co-chair (2023–2024)</li>
+          <li>SCCBA Diversity, Equity, Inclusion Committee</li>
+          <li>American Inns of Court, Hon. William A. Ingram Inn</li>
+          <li>ABA Young Lawyers' Division — Affiliates Team Member &amp; Assembly Delegate</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d5">
+      <button class="acc-btn" onclick="toggleAcc(this)">Select Publications <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>"Law In The Age of Covid-19: Depose Your Own Witness To Preserve Their Testimony" — PLI 2021 coursebook for trial attorneys.</li>
+          <li>"Seven Tips for Success When Joining an All-Male Law Firm" — Her Legal Global.</li>
+          <li>"Maintaining Client Trust" — advice for lawyers during lengthy legal battles.</li>
+          <li>"11 Essential Tips for New Business Owners on Handling Employee Conflict"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d6">
+      <button class="acc-btn" onclick="toggleAcc(this)">Speaking Engagements <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>Moderator, "Dobbs v. Whole Woman's Health Discussion Panel" (Oct. 2022)</li>
+          <li>Moderator, "Unprecedented: Navigating Legal and Health Issues in a Post-Dobbs World" — SCCBA (Jul. 2022)</li>
+          <li>Panelist, "Strategies for Developing a Legacy of Values and Finances" — Lockheed Martin (Feb. 2022)</li>
+          <li>Speaker, "Social Media for Lawyers: Avoiding Ethical Pitfalls" — Barristers Bootcamp (Feb. 2022)</li>
+          <li>Panelist, "Finding that First Job and Setting Yourself Up for Success" — NCBA YLD (Sep. 2021)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="award-box reveal reveal-d3">
+      <div class="section-label">Recognition</div>
+      <h4>Santa Clara County Bar Association</h4>
+      <div class="years">President &nbsp;·&nbsp; 2026</div>
+    </div>
+  </aside>
 </section>
 
-<!-- CTA -->
-<section class="cta-banner">
-  <h2 class="reveal">Work With<em> Claire.</em></h2>
+<!-- FOOT CTA -->
+<section class="foot-cta">
+  <h2 class="reveal">Work with <em>Claire.</em></h2>
   <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex;">Get My Free Consultation <span>→</span></a>
 </section>
 
 <script>
-function toggleCred(btn) {
+function toggleAcc(btn) {
   var item = btn.parentElement;
-  var answer = item.querySelector('.cred-answer');
+  var body = item.querySelector('.acc-body');
+  var icon = btn.querySelector('.icon');
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.cred-item.open').forEach(function(el) {
+  document.querySelectorAll('.acc-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.cred-answer').style.maxHeight = null;
+    el.querySelector('.acc-body').style.maxHeight = null;
+    el.querySelector('.icon').textContent = '+';
   });
   if (!isOpen) {
     item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    body.style.maxHeight = body.scrollHeight + 'px';
+    icon.textContent = '×';
   }
 }
 
