@@ -26,7 +26,7 @@
   img { border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; display:block; }
   a { text-decoration:none; }
   /* Stop Apple/Gmail auto-linking addresses in the navy-on-navy footer */
-  a[x-apple-data-detectors], .footer a { color:#C9D4E4 !important; text-decoration:underline !important; }
+  a[x-apple-data-detectors], .footer a { color:#D8D2C6 !important; text-decoration:underline !important; }
 
   /* ---------- MOBILE ---------- */
   @media only screen and (max-width:620px) {
@@ -40,46 +40,61 @@
 
   /* ---------- DARK MODE: hold the cream/navy identity ---------- */
   @media (prefers-color-scheme:dark) {
-    .cream-bg   { background-color:#FBF6EF !important; }
-    .cream-out  { background-color:#EFE6D6 !important; }
-    .navy-text  { color:#12294D !important; }
+    .cream-bg   { background-color:#EBE5D9 !important; }
+    .cream-out  { background-color:#EBE5D9 !important; }
+    .navy-text  { color:#2E3548 !important; }
     .body-text  { color:#3A4149 !important; }
   }
 </style>
 </head>
 
-<body style="margin:0; padding:0; background-color:#EFE6D6;">
+<body style="margin:0; padding:0; background-color:#EBE5D9;">
 
 <!-- PREHEADER : the inbox preview line, hidden inside the email itself -->
-<div style="display:none; font-size:1px; color:#EFE6D6; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
+<div style="display:none; font-size:1px; color:#EBE5D9; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
   Is this just part of the job?
   &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
 </div>
 
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable" class="cream-out" style="background-color:#EFE6D6;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable" class="cream-out" style="background-color:#EBE5D9;">
 <tr>
 <td align="center" style="padding:24px 12px 40px 12px;">
 
   <!--[if mso]><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600"><tr><td><![endif]-->
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="wrapper cream-bg" style="width:600px; max-width:600px; background-color:#FBF6EF;">
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" class="wrapper cream-bg" style="width:600px; max-width:600px; background-color:#EBE5D9;">
 
-    <!-- ================= NAVY MASTHEAD ================= -->
+    <!-- ================= LOGO HEADER ================= -->
+    <!-- Navy edge, then the logo on cream. The alt text carries the firm name
+         when images are blocked, which is the default in plenty of clients. -->
     <tr>
-      <td style="background-color:#12294D; padding:0; font-size:0; line-height:0;">
+      <td style="background-color:#2E3548; font-size:0; line-height:0;">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr><td height="4" style="height:4px; background-color:#B9986A; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td height="5" style="height:5px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
       </td>
     </tr>
     <tr>
-      <td align="center" class="pad-x" style="background-color:#12294D; padding:26px 40px 24px 40px;">
-        <div class="display-font" style="font-family:Georgia,'Times New Roman',serif; font-size:22px; line-height:28px; color:#FFFFFF; letter-spacing:1px;">
-          The Lange Firm
-        </div>
-        <div style="font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:16px; color:#B9986A; letter-spacing:2.5px; text-transform:uppercase; padding-top:7px;">
+      <td align="center" class="pad-x" style="padding:32px 40px 22px 40px;">
+        <!-- align="center" on a nested table is what actually centers in Outlook -->
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
+          <tr>
+            <td align="center" style="font-size:0; line-height:0;">
+              <img src="https://mcusercontent.com/dfc7cc051adb2f87917bf1722/images/a64d8d48-ef91-5cd9-5be7-68b57b6a03b2.png"
+                   width="240" alt="The Lange Firm"
+                   style="width:240px; max-width:100%; height:auto; display:block;">
+            </td>
+          </tr>
+        </table>
+        <div style="font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:16px; color:#2E3548; letter-spacing:2.5px; text-transform:uppercase; padding-top:16px;">
           Houston &nbsp;&middot;&nbsp; Texas
         </div>
       </td>
+    </tr>
+
+    <!-- Full-bleed navy rule: reads as the header's underline rather than as
+         one of the inset content dividers. -->
+    <tr>
+      <td height="2" style="height:2px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td>
     </tr>
 
     <!-- ================= HERO IMAGE ================= -->
@@ -97,16 +112,16 @@
     <tr>
       <td align="center" class="pad-x hero-pad" style="padding:46px 48px 30px 48px;">
 
-        <div style="font-family:Arial,Helvetica,sans-serif; font-size:11px; line-height:16px; color:#12294D; letter-spacing:3px; text-transform:uppercase; font-weight:bold; padding-bottom:18px;">
+        <div style="font-family:Arial,Helvetica,sans-serif; font-size:11px; line-height:16px; color:#2E3548; letter-spacing:3px; text-transform:uppercase; font-weight:bold; padding-bottom:18px;">
           Employment Law
         </div>
 
-        <h1 class="h1 display-font navy-text" style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:36px; line-height:46px; color:#12294D; font-weight:normal;">
+        <h1 class="h1 display-font navy-text" style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:36px; line-height:46px; color:#2E3548; font-weight:normal;">
           Is this just part of the job?
         </h1>
 
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:26px auto 0 auto;">
-          <tr><td width="64" height="3" style="width:64px; height:3px; background-color:#12294D; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td width="64" height="3" style="width:64px; height:3px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
       </td>
     </tr>
@@ -120,7 +135,7 @@
         <p class="body-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:27px; color:#3A4149; text-align:justify;">
           Most employees don&rsquo;t spend their workday thinking about employment laws. They&rsquo;re focused
           on doing their job, meeting deadlines, and getting home at the end of the day. But many find
-          themselves asking the same question: <strong style="color:#12294D;">&ldquo;Is this just part of the job?&rdquo;</strong>
+          themselves asking the same question: <strong style="color:#2E3548;">&ldquo;Is this just part of the job?&rdquo;</strong>
         </p>
       </td>
     </tr>
@@ -129,7 +144,7 @@
     <tr>
       <td class="pad-x" style="padding:0 48px;">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr><td height="2" style="height:2px; background-color:#12294D; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td height="2" style="height:2px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
       </td>
     </tr>
@@ -137,7 +152,7 @@
     <!-- ================= SECTION 1 ================= -->
     <tr>
       <td class="pad-x" style="padding:32px 48px 30px 48px;">
-        <h2 class="h2 display-font navy-text" style="margin:0 0 14px 0; font-family:Georgia,'Times New Roman',serif; font-size:23px; line-height:31px; color:#12294D; font-weight:normal;">
+        <h2 class="h2 display-font navy-text" style="margin:0 0 14px 0; font-family:Georgia,'Times New Roman',serif; font-size:23px; line-height:31px; color:#2E3548; font-weight:normal;">
           It&rsquo;s a Question More People Ask Than You Think
         </h2>
         <p class="body-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:27px; color:#3A4149; text-align:justify;">
@@ -152,7 +167,7 @@
     <tr>
       <td class="pad-x" style="padding:0 48px;">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr><td height="2" style="height:2px; background-color:#12294D; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td height="2" style="height:2px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
       </td>
     </tr>
@@ -160,7 +175,7 @@
     <!-- ================= SECTION 2 ================= -->
     <tr>
       <td class="pad-x" style="padding:32px 48px 30px 48px;">
-        <h2 class="h2 display-font navy-text" style="margin:0 0 14px 0; font-family:Georgia,'Times New Roman',serif; font-size:23px; line-height:31px; color:#12294D; font-weight:normal;">
+        <h2 class="h2 display-font navy-text" style="margin:0 0 14px 0; font-family:Georgia,'Times New Roman',serif; font-size:23px; line-height:31px; color:#2E3548; font-weight:normal;">
           Not Every Workplace Concern Is Obvious
         </h2>
         <p class="body-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:27px; color:#3A4149; text-align:justify;">
@@ -175,7 +190,7 @@
     <tr>
       <td class="pad-x" style="padding:0 48px;">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr><td height="2" style="height:2px; background-color:#12294D; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td height="2" style="height:2px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
       </td>
     </tr>
@@ -183,7 +198,7 @@
     <!-- ================= SECTION 3 ================= -->
     <tr>
       <td class="pad-x" style="padding:32px 48px 30px 48px;">
-        <h2 class="h2 display-font navy-text" style="margin:0 0 14px 0; font-family:Georgia,'Times New Roman',serif; font-size:23px; line-height:31px; color:#12294D; font-weight:normal;">
+        <h2 class="h2 display-font navy-text" style="margin:0 0 14px 0; font-family:Georgia,'Times New Roman',serif; font-size:23px; line-height:31px; color:#2E3548; font-weight:normal;">
           Getting Answers Doesn&rsquo;t Mean You&rsquo;re Looking for Trouble
         </h2>
         <p class="body-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:27px; color:#3A4149; text-align:justify;">
@@ -199,7 +214,7 @@
     <tr>
       <td class="pad-x" style="padding:0 48px;">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr><td height="2" style="height:2px; background-color:#12294D; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td height="2" style="height:2px; background-color:#2E3548; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
       </td>
     </tr>
@@ -208,7 +223,7 @@
     <tr>
       <td class="pad-x" style="padding:32px 48px 28px 48px;">
         <p class="body-text" style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:27px; color:#3A4149; text-align:justify;">
-          If you&rsquo;ve been asking yourself, <strong style="color:#12294D;">&ldquo;Is this just part of the job?&rdquo;</strong>,
+          If you&rsquo;ve been asking yourself, <strong style="color:#2E3548;">&ldquo;Is this just part of the job?&rdquo;</strong>,
           you don&rsquo;t have to keep wondering. Contact The Lange Firm for a consultation, and we&rsquo;ll
           help you better understand your rights, your options, and whether your situation deserves a
           closer look.
@@ -220,17 +235,17 @@
       <td align="center" class="pad-x" style="padding:0 48px 46px 48px;">
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" class="btn">
           <tr>
-            <td align="center" style="background-color:#12294D;">
+            <td align="center" style="background-color:#2E3548;">
               <!--[if mso]>
               <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
-                href="https://langefirm.com/home-one/contact/" style="height:50px;v-text-anchor:middle;width:290px;" arcsize="0%" stroke="f" fillcolor="#12294D">
+                href="https://langefirm.com/home-one/contact/" style="height:50px;v-text-anchor:middle;width:290px;" arcsize="0%" stroke="f" fillcolor="#2E3548">
                 <w:anchorlock/>
                 <center style="color:#FFFFFF;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:2px;">REQUEST A CONSULTATION</center>
               </v:roundrect>
               <![endif]-->
               <!--[if !mso]><!-- -->
               <a href="https://langefirm.com/home-one/contact/"
-                 style="display:inline-block; padding:17px 38px; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:16px; font-weight:bold; color:#FFFFFF; letter-spacing:2px; text-transform:uppercase; background-color:#12294D;">
+                 style="display:inline-block; padding:17px 38px; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:16px; font-weight:bold; color:#FFFFFF; letter-spacing:2px; text-transform:uppercase; background-color:#2E3548;">
                 Request a Consultation
               </a>
               <!--<![endif]-->
@@ -242,19 +257,19 @@
 
     <!-- ================= NAVY CONTACT FOOTER ================= -->
     <tr>
-      <td align="center" class="pad-x footer" style="background-color:#12294D; padding:34px 48px 30px 48px;">
+      <td align="center" class="pad-x footer" style="background-color:#2E3548; padding:34px 48px 30px 48px;">
 
         <div class="display-font" style="font-family:Georgia,'Times New Roman',serif; font-size:18px; line-height:26px; color:#FFFFFF; letter-spacing:0.5px;">
           The Lange Firm
         </div>
 
         <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:16px auto 16px auto;">
-          <tr><td width="44" height="2" style="width:44px; height:2px; background-color:#B9986A; font-size:0; line-height:0;">&nbsp;</td></tr>
+          <tr><td width="44" height="2" style="width:44px; height:2px; background-color:#D8D2C6; font-size:0; line-height:0;">&nbsp;</td></tr>
         </table>
 
         <!-- No street address or phone by request. The mailing address CAN-SPAM
              requires still ships below, via *|HTML:LIST_ADDRESS_HTML|*. -->
-        <div style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:23px; color:#C9D4E4;">
+        <div style="font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:23px; color:#D8D2C6;">
           Houston, Texas
         </div>
 
@@ -266,17 +281,17 @@
 
     <!-- ================= LEGAL / MAILCHIMP REQUIRED ================= -->
     <tr>
-      <td align="center" class="pad-x" style="background-color:#0D1E3A; padding:22px 48px 26px 48px;">
-        <div style="font-family:Arial,Helvetica,sans-serif; font-size:11px; line-height:19px; color:#8A9CB8;">
+      <td align="center" class="pad-x" style="background-color:#232936; padding:22px 48px 26px 48px;">
+        <div style="font-family:Arial,Helvetica,sans-serif; font-size:11px; line-height:19px; color:#A8A396;">
           You are receiving this because you subscribed to updates from *|LIST:COMPANY|*.<br>
-          <a href="*|UPDATE_PROFILE|*" style="color:#C9D4E4; text-decoration:underline;">Update your preferences</a>
+          <a href="*|UPDATE_PROFILE|*" style="color:#D8D2C6; text-decoration:underline;">Update your preferences</a>
           &nbsp;&middot;&nbsp;
-          <a href="*|UNSUB|*" style="color:#C9D4E4; text-decoration:underline;">Unsubscribe</a>
+          <a href="*|UNSUB|*" style="color:#D8D2C6; text-decoration:underline;">Unsubscribe</a>
         </div>
-        <div style="font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:17px; color:#6B7D99; padding-top:14px;">
+        <div style="font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:17px; color:#8E897C; padding-top:14px;">
           *|HTML:LIST_ADDRESS_HTML|*
         </div>
-        <div style="font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:17px; color:#6B7D99; padding-top:10px;">
+        <div style="font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:17px; color:#8E897C; padding-top:10px;">
           Attorney Advertising. This email is for general information only and is not legal advice.
           It does not create an attorney-client relationship. &copy; *|CURRENT_YEAR|* The Lange Firm.
         </div>
