@@ -175,26 +175,48 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .hero-pill { font-size:15px !important; } }
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
 
-/* NEWSLETTER HERO */
-.news-hero { position:relative; overflow:hidden; background:#1e3a3e; padding:64px 24px 56px; text-align:center; }
-@media(min-width:769px) { .news-hero { padding:100px 80px 72px; } }
-.news-hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(0.7) saturate(1.1); z-index:0; transition:opacity 0.6s ease; }
-.news-hero-video.video-mobile { display:none; }
-@media(max-width:768px) { .news-hero-video.video-desktop { display:none; } .news-hero-video.video-mobile { display:block; } }
-.news-hero-video.is-hidden { opacity:0; }
-.news-hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(20,45,50,0.6) 45%, rgba(20,45,50,0.95) 100%); z-index:1; }
-.news-hero > * { position:relative; z-index:2; }
-.news-hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(34px, 6vw, 62px); font-weight:900; line-height:1.05; color:#fff; text-transform:uppercase; letter-spacing:-1px; max-width:900px; margin:0 auto 20px; }
-.news-hero h1 .accent { color:#c9a96e; }
-.news-hero-sub { font-size:17px; line-height:1.75; color:rgba(255,255,255,0.75); max-width:620px; margin:0 auto 32px; }
-@media(min-width:769px) { .news-hero-sub { font-size:20px; } }
-.news-hero-sub strong { color:#fff; font-weight:700; }
-.news-hero-note { display:block; margin-top:14px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.5); }
-.hero-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:28px; max-width:760px; margin:40px auto 0; padding-top:28px; border-top:1px solid rgba(255,255,255,0.15); }
-.hero-tag { display:flex; align-items:center; gap:9px; }
-.hero-tag svg { width:18px; height:18px; color:#c9a96e; flex-shrink:0; }
-.hero-tag span { font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:rgba(255,255,255,0.7); font-weight:600; }
-@media(min-width:769px) { .hero-tag span { font-size:12.5px; } }
+/* HERO (matches the site's standard .emp-hero used on every practice/sub-page) */
+.emp-hero {
+  position:relative; overflow:hidden;
+  min-height:calc(100svh - 53px); display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; padding:0 28px 10px;
+  background:#1e3a3e;
+  border-bottom:12px solid #c9a96e;
+}
+@media(min-width:769px) { .emp-hero { min-height:calc(100svh - 62px); padding:0 80px 12px; } }
+.emp-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+  transition:opacity 0.6s ease;
+}
+.emp-hero-img.is-hidden { opacity:0; }
+.emp-hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
+}
+.emp-hero-overlay::before { content:''; position:absolute; inset:0; background:rgba(20,48,52,0.55); }
+.emp-hero h1 {
+  position:relative; z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 7vw, 68px); font-weight:900; line-height:0.98;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px;
+  margin:0 auto 18px; max-width:1000px;
+}
+.emp-hero h1 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.75em; letter-spacing:0;
+}
+.emp-hero-sub {
+  position:relative; z-index:2;
+  font-size:19px; color:rgba(255,255,255,0.8); max-width:540px;
+  line-height:1.7; margin:0 auto 28px;
+  font-family:'DM Serif Display',serif; font-style:italic;
+}
+@media(min-width:769px) { .emp-hero-sub { font-size:25px !important; max-width:760px; } }
+.video-mobile { display:none; }
+@media(max-width:768px) { .video-desktop { display:none; } .video-mobile { display:block; } }
 
 /* SECTION EYEBROW (shared) */
 .section-eyebrow { display:flex; width:max-content; margin:0 auto 20px; align-items:center; gap:10px; text-align:center; font-size:14px !important; letter-spacing:3px !important; text-transform:uppercase; color:#1e3a3e; font-weight:700 !important; }
@@ -362,36 +384,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </div>
 
 <!-- HERO -->
-<section class="news-hero">
-  <video class="news-hero-video video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video>
-  <video class="news-hero-video video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video>
-  <div class="news-hero-overlay"></div>
-  <div class="hero-pill">For California Attorneys Only</div>
-  <h1>The Updates Moving <span class="accent">California Litigation</span> — Delivered.</h1>
-  <p class="news-hero-sub">A free newsletter from McLellan Law Group bringing you the <strong>CA Appellate Digest</strong> and the developments shaping real estate, employment, trust &amp; probate, and business litigation across California.</p>
-  <a href="#subscribe" class="btn-gold">Subscribe Free
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-  </a>
-  <span class="news-hero-note">No spam · Unsubscribe anytime</span>
-
-  <div class="hero-tags">
-    <div class="hero-tag">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
-      <span>Real Estate</span>
-    </div>
-    <div class="hero-tag">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
-      <span>Employment Law — Both Sides</span>
-    </div>
-    <div class="hero-tag">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
-      <span>Trust &amp; Probate</span>
-    </div>
-    <div class="hero-tag">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381"></path><path d="m16 16 6-6"></path><path d="m21.5 10.5-8-8"></path><path d="m8 8 6-6"></path><path d="m8.5 7.5 8 8"></path></svg>
-      <span>Business Litigation</span>
-    </div>
-  </div>
+<section class="emp-hero">
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video>
+  <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">For California Attorneys · Free Newsletter</div>
+  <h1>The Updates Moving California Litigation <em>— Delivered.</em></h1>
+  <p class="emp-hero-sub">The CA Appellate Digest and practice-area updates in real estate, employment, trust &amp; probate, and business litigation.</p>
+  <a href="#subscribe" class="btn-gold">Subscribe Free →</a>
 </section>
 
 <!-- WHAT YOU GET -->
@@ -571,7 +570,7 @@ function toggleFaq(btn) {
 })();
 
 (function(){
-  var heroVideos = document.querySelectorAll('.news-hero-video');
+  var heroVideos = document.querySelectorAll('.emp-hero-img');
   if (!heroVideos.length) return;
   function hideHeroVideos(){
     heroVideos.forEach(function(v){ v.classList.add('is-hidden'); });
