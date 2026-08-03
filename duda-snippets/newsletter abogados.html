@@ -5,7 +5,7 @@ html, body { overflow-x:hidden !important; }
 .mlg-nl { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased !important; }
 
 /* full-bleed para todas las secciones */
-.mlg-nl-hero, .mlg-nl-get, .mlg-nl-why, .mlg-nl-subscribe, .mlg-nl-faq, .mlg-nl-cta {
+.mlg-nl-get, .mlg-nl-why, .mlg-nl-subscribe, .mlg-nl-faq, .mlg-nl-cta {
   margin-left:calc(-50vw + 50%) !important; width:100vw !important; max-width:100vw !important;
 }
 
@@ -18,7 +18,26 @@ html, body { overflow-x:hidden !important; }
   background:#1e3a3e !important;
   border-bottom:12px solid #c9a96e !important;
   margin-top:-8px !important;
+  box-shadow:0 20px 0 0 #1e3a3e !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important;
+  max-width:104vw !important;
   isolation:isolate !important;
+}
+@media(max-width:768px) {
+  .mlg-nl-hero {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important;
+    max-width:100vw !important;
+  }
+}
+/* el texto del hero nunca debe depender de ninguna animación de scroll que Duda le aplique por fuera */
+.mlg-nl-hero .mlg-nl-pill,
+.mlg-nl-hero h1,
+.mlg-nl-hero .mlg-nl-hero-sub,
+.mlg-nl-hero .mlg-nl-btn-gold {
+  opacity:1 !important; visibility:visible !important;
+  transform:none !important; animation:none !important; transition:none !important;
 }
 .mlg-nl-hero-video-wrap { position:absolute !important; inset:0 !important; z-index:0 !important; pointer-events:none !important; overflow:hidden !important; }
 .mlg-nl-hero-video-wrap video {
