@@ -1,0 +1,388 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+html, body { overflow-x:hidden !important; }
+.mlg-nl *, .mlg-nl *::before, .mlg-nl *::after { box-sizing:border-box !important; margin:0 !important; padding:0 !important; }
+.mlg-nl { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased !important; }
+
+/* full-bleed para todas las secciones */
+.mlg-nl-hero, .mlg-nl-get, .mlg-nl-why, .mlg-nl-subscribe, .mlg-nl-faq, .mlg-nl-cta {
+  margin-left:calc(-50vw + 50%) !important; width:100vw !important; max-width:100vw !important;
+}
+
+/* HERO */
+.mlg-nl-hero {
+  position:relative !important; overflow:hidden !important;
+  min-height:100svh !important; display:flex !important; flex-direction:column !important;
+  justify-content:center !important; align-items:center !important; text-align:center !important;
+  padding:0 28px 40px !important;
+  background:#1e3a3e !important;
+  border-bottom:12px solid #c9a96e !important;
+  margin-top:-8px !important;
+  isolation:isolate !important;
+}
+.mlg-nl-hero-video-wrap { position:absolute !important; inset:0 !important; z-index:0 !important; pointer-events:none !important; overflow:hidden !important; }
+.mlg-nl-hero-video-wrap video {
+  position:absolute !important; inset:0 !important; width:100% !important; height:100% !important;
+  object-fit:cover !important; object-position:center 30% !important;
+  filter:brightness(0.7) saturate(1.1) !important;
+  transition:opacity 0.6s ease !important;
+}
+.mlg-nl-video-mobile { display:none !important; }
+@media(max-width:768px) { .mlg-nl-video-desktop { display:none !important; } .mlg-nl-video-mobile { display:block !important; } }
+.mlg-nl-hero-video-wrap video.mlg-nl-hidden { opacity:0 !important; }
+.mlg-nl-hero-overlay {
+  position:absolute !important; inset:0 !important; z-index:1 !important;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
+}
+.mlg-nl-hero-overlay::before { content:'' !important; position:absolute !important; inset:0 !important; background:rgba(20,48,52,0.55) !important; }
+.mlg-nl-hero > * { position:relative !important; z-index:2 !important; }
+.mlg-nl-pill {
+  display:inline-flex !important; align-items:center !important; gap:10px !important;
+  background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
+  border-radius:26px !important; padding:9px 16px !important; margin-bottom:24px !important;
+  font-size:13px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-weight:700 !important; color:#e8cc8a !important; font-family:'Barlow',sans-serif !important;
+}
+.mlg-nl-pill::before { content:'' !important; width:7px !important; height:7px !important; background:#c9a96e !important; border-radius:50% !important; flex-shrink:0 !important; }
+.mlg-nl-hero h1 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(36px, 7vw, 68px) !important; font-weight:900 !important; line-height:0.98 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
+  margin:0 auto 18px !important; max-width:1000px !important;
+}
+.mlg-nl-hero h1 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.75em !important; letter-spacing:0 !important;
+}
+.mlg-nl-hero-sub {
+  font-size:19px !important; color:rgba(255,255,255,0.8) !important; max-width:540px !important;
+  line-height:1.7 !important; margin:0 auto 28px !important;
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+}
+@media(min-width:769px) { .mlg-nl-hero-sub { font-size:25px !important; max-width:760px !important; } }
+.mlg-nl-btn-gold {
+  display:inline-flex !important; align-items:center !important; gap:8px !important;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important; font-weight:700 !important; font-size:14px !important;
+  padding:13px 28px !important; border-radius:28px !important; text-decoration:none !important;
+  font-family:'Barlow',sans-serif !important;
+}
+
+/* SECTION EYEBROW */
+.mlg-nl-eyebrow {
+  display:flex !important; width:max-content !important; margin:0 auto 20px !important;
+  align-items:center !important; gap:10px !important; text-align:center !important;
+  font-size:14px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; font-weight:700 !important;
+}
+.mlg-nl-eyebrow::before { content:'' !important; width:24px !important; height:1px !important; background:#1e3a3e !important; }
+@media(min-width:769px) { .mlg-nl-eyebrow { font-size:16px !important; letter-spacing:4px !important; } }
+
+/* WHAT YOU GET */
+.mlg-nl-get { background:#1e3a3e !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlg-nl-get { padding:96px 80px !important; } }
+.mlg-nl-get-inner { max-width:1120px !important; margin:0 auto !important; }
+.mlg-nl-get .mlg-nl-eyebrow { color:#c9a96e !important; }
+.mlg-nl-get .mlg-nl-eyebrow::before { background:#c9a96e !important; }
+.mlg-nl-get h2 { font-family:'Barlow Condensed',sans-serif !important; text-align:center !important; font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important; color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:48px !important; }
+.mlg-nl-get-grid { display:grid !important; grid-template-columns:1fr 1fr !important; gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden !important; }
+@media(max-width:600px) { .mlg-nl-get-grid { grid-template-columns:1fr !important; } }
+.mlg-nl-get-item { background:#fbf6ef !important; padding:32px 28px !important; display:flex !important; flex-direction:column !important; gap:12px !important; transition:background 0.2s !important; }
+@media(min-width:769px) { .mlg-nl-get-item { padding:44px 40px !important; } }
+.mlg-nl-get-item:hover { background:#f3ece0 !important; }
+.mlg-nl-get-icon { width:44px !important; height:44px !important; border-radius:10px !important; background:rgba(201,169,110,0.15) !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+.mlg-nl-get-icon svg { width:22px !important; height:22px !important; color:#c9a96e !important; }
+.mlg-nl-get-item strong { font-family:'Barlow Condensed',sans-serif !important; font-size:18px !important; font-weight:800 !important; text-transform:uppercase !important; letter-spacing:-0.3px !important; color:#1e3a3e !important; }
+@media(min-width:769px) { .mlg-nl-get-item strong { font-size:21px !important; } }
+.mlg-nl-get-item p { font-size:14.5px !important; color:#5a6e70 !important; line-height:1.7 !important; text-align:left !important; }
+@media(min-width:769px) { .mlg-nl-get-item p { font-size:16px !important; } }
+
+/* WHY SUBSCRIBE */
+.mlg-nl-why { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlg-nl-why { padding:96px 80px !important; } }
+.mlg-nl-why-inner { max-width:1120px !important; margin:0 auto !important; display:grid !important; gap:40px !important; }
+@media(min-width:900px) { .mlg-nl-why-inner { grid-template-columns:1fr 1fr !important; gap:56px !important; align-items:center !important; } }
+.mlg-nl-why-inner .mlg-nl-eyebrow { margin:0 0 16px !important; margin-left:0 !important; }
+.mlg-nl-why-inner h2 { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(28px, 4.5vw, 44px) !important; font-weight:900 !important; line-height:1.08 !important; color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:20px !important; }
+.mlg-nl-why-inner > div:first-child p { font-size:17px !important; line-height:1.85 !important; color:#4a5c5e !important; text-align:justify !important; }
+@media(min-width:769px) { .mlg-nl-why-inner > div:first-child p { font-size:18px !important; } }
+.mlg-nl-help-box { background:#1e3a3e !important; border-radius:16px !important; padding:8px 28px !important; box-shadow:0 8px 24px rgba(0,0,0,0.15) !important; }
+.mlg-nl-help-item { padding:16px 0 !important; border-bottom:1px solid rgba(255,255,255,0.12) !important; display:flex !important; align-items:flex-start !important; gap:14px !important; }
+.mlg-nl-help-item:last-child { border-bottom:none !important; }
+.mlg-nl-help-item::before { content:"✓" !important; color:#c9a96e !important; font-weight:900 !important; font-size:18px !important; flex-shrink:0 !important; margin-top:1px !important; }
+.mlg-nl-help-item span { font-size:15.5px !important; color:rgba(255,255,255,0.85) !important; line-height:1.6 !important; text-align:left !important; }
+@media(min-width:769px) { .mlg-nl-help-item span { font-size:17px !important; } }
+
+/* SUBSCRIBE FORM */
+.mlg-nl-subscribe { background:#1e3a3e !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlg-nl-subscribe { padding:96px 80px !important; } }
+.mlg-nl-subscribe-card { max-width:660px !important; margin:0 auto !important; background:#fbf6ef !important; border-radius:20px !important; padding:40px 28px !important; box-shadow:0 10px 40px rgba(0,0,0,0.25) !important; text-align:center !important; }
+@media(min-width:769px) { .mlg-nl-subscribe-card { padding:56px 64px !important; } }
+.mlg-nl-subscribe-eyebrow { display:inline-flex !important; align-items:center !important; gap:8px !important; font-size:12px !important; letter-spacing:2.5px !important; text-transform:uppercase !important; color:#c9a96e !important; font-weight:700 !important; margin-bottom:16px !important; }
+.mlg-nl-subscribe-eyebrow svg { width:16px !important; height:16px !important; }
+.mlg-nl-subscribe-card h2 { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(26px, 4vw, 38px) !important; font-weight:900 !important; line-height:1.1 !important; color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:16px !important; }
+.mlg-nl-subscribe-card > p { font-size:15.5px !important; line-height:1.7 !important; color:#5a6e70 !important; max-width:480px !important; margin:0 auto 28px !important; }
+.mlg-nl-subscribe-embed { text-align:left !important; }
+.mlg-nl-subscribe-note { margin-top:20px !important; font-size:11px !important; letter-spacing:1.5px !important; text-transform:uppercase !important; color:#8a9698 !important; }
+
+/* FAQ */
+.mlg-nl-faq { background:#1e3a3e !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlg-nl-faq { padding:88px 80px !important; } }
+.mlg-nl-faq h2 { font-family:'Barlow Condensed',sans-serif !important; text-align:center !important; font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important; color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:32px !important; }
+.mlg-nl-faq-columns { display:flex !important; flex-direction:column !important; gap:14px !important; max-width:1120px !important; margin:0 auto !important; }
+@media(min-width:769px) { .mlg-nl-faq-columns { display:grid !important; grid-template-columns:1fr 1fr !important; column-gap:24px !important; align-items:start !important; } }
+.mlg-nl-faq-col { display:flex !important; flex-direction:column !important; gap:14px !important; }
+.mlg-nl-faq-item { background:#fbf6ef !important; border-radius:16px !important; padding:4px 24px !important; box-shadow:0 8px 24px rgba(0,0,0,0.18) !important; }
+.mlg-nl-faq-question { width:100% !important; background:none !important; border:none !important; text-align:left !important; padding:20px 0 !important; font-family:'Barlow',sans-serif !important; font-size:16px !important; font-weight:600 !important; color:#1e3a3e !important; cursor:pointer !important; display:flex !important; justify-content:space-between !important; align-items:center !important; gap:12px !important; transition:opacity 0.15s !important; }
+.mlg-nl-faq-question:hover { opacity:0.7 !important; }
+.mlg-nl-faq-question .mlg-nl-faq-icon { font-size:20px !important; color:#c9a96e !important; flex-shrink:0 !important; transition:transform 0.3s !important; }
+.mlg-nl-faq-answer { max-height:0 !important; overflow:hidden !important; transition:max-height 0.35s ease !important; }
+.mlg-nl-faq-answer p { font-size:15px !important; line-height:1.75 !important; color:#5a6e70 !important; padding-bottom:20px !important; margin:0 !important; text-align:justify !important; }
+.mlg-nl-faq-item.mlg-nl-open .mlg-nl-faq-icon { transform:rotate(45deg) !important; }
+@media(min-width:769px) { .mlg-nl-faq-question { font-size:18px !important; } .mlg-nl-faq-answer p { font-size:16px !important; } }
+
+/* CTA BANNER */
+.mlg-nl-cta { background:#fbf6ef !important; padding:64px 28px !important; text-align:center !important; border-top:1px solid #e8e3da !important; }
+@media(min-width:769px) { .mlg-nl-cta { padding:88px 28px !important; } }
+.mlg-nl-cta h2 { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(30px, 4.5vw, 48px) !important; font-weight:900 !important; color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:14px !important; }
+.mlg-nl-cta p { font-size:16px !important; color:#5a6e70 !important; margin-bottom:26px !important; line-height:1.65 !important; }
+@media(min-width:769px) { .mlg-nl-cta p { font-size:19px !important; } }
+.mlg-nl-cta .mlg-nl-btn-gold { font-size:15px !important; padding:15px 36px !important; margin:0 auto !important; }
+
+/* SCROLL REVEAL */
+.mlg-nl-reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.mlg-nl-reveal.mlg-nl-in-view { opacity:1 !important; transform:translateY(0) !important; }
+.mlg-nl-reveal-d1 { transition-delay:0.08s !important; }
+.mlg-nl-reveal-d2 { transition-delay:0.16s !important; }
+.mlg-nl-reveal-d3 { transition-delay:0.24s !important; }
+.mlg-nl-reveal-d4 { transition-delay:0.32s !important; }
+</style>
+
+<div class="mlg-nl">
+
+<!-- HERO -->
+<section class="mlg-nl-hero">
+  <div class="mlg-nl-hero-video-wrap">
+    <video class="mlg-nl-video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4"></video>
+    <video class="mlg-nl-video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4"></video>
+  </div>
+  <div class="mlg-nl-hero-overlay"></div>
+  <div class="mlg-nl-pill">For California Attorneys · Free Newsletter</div>
+  <h1>The Updates Moving California Litigation <em>— Delivered.</em></h1>
+  <p class="mlg-nl-hero-sub">The CA Appellate Digest and practice-area updates in real estate, employment, trust &amp; probate, and business litigation.</p>
+  <a href="#mlg-nl-subscribe" class="mlg-nl-btn-gold">Subscribe Free →</a>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="mlg-nl-get">
+  <div class="mlg-nl-get-inner">
+    <div class="mlg-nl-eyebrow mlg-nl-reveal">What You Get</div>
+    <h2 class="mlg-nl-reveal mlg-nl-reveal-d1">Built for the Way CA Attorneys Actually Work.</h2>
+    <div class="mlg-nl-get-grid">
+      <div class="mlg-nl-get-item mlg-nl-reveal mlg-nl-reveal-d1">
+        <div class="mlg-nl-get-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg></div>
+        <strong>The CA Appellate Digest</strong>
+        <p>Concise breakdowns of the California appellate decisions that actually change how cases are litigated — not exhaustive recitals you have to wade through.</p>
+      </div>
+      <div class="mlg-nl-get-item mlg-nl-reveal mlg-nl-reveal-d2">
+        <div class="mlg-nl-get-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></div>
+        <strong>Practice-Area Intelligence</strong>
+        <p>Targeted updates across real estate, employment (employee &amp; employer side), trust &amp; probate, and business litigation — the work CA attorneys handle every day.</p>
+      </div>
+      <div class="mlg-nl-get-item mlg-nl-reveal mlg-nl-reveal-d3">
+        <div class="mlg-nl-get-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div>
+        <strong>Built for Busy Lawyers</strong>
+        <p>Read it in five minutes. Skim the headlines, drill into what's relevant to your matters, and archive the rest.</p>
+      </div>
+      <div class="mlg-nl-get-item mlg-nl-reveal mlg-nl-reveal-d4">
+        <div class="mlg-nl-get-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+        <strong>From Practicing Litigators</strong>
+        <p>Written by the attorneys at McLellan Law Group, who try these cases — not aggregated by a content marketing team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SUBSCRIBE -->
+<section class="mlg-nl-why">
+  <div class="mlg-nl-why-inner">
+    <div>
+      <div class="mlg-nl-eyebrow mlg-nl-reveal">Why Subscribe</div>
+      <h2 class="mlg-nl-reveal mlg-nl-reveal-d1">Because Missing One Decision Can Cost You a Case.</h2>
+      <p class="mlg-nl-reveal mlg-nl-reveal-d2">California's appellate courts publish opinions that quietly redefine how motions are argued, how damages are proven, and how defenses survive demurrer. The attorneys who track those shifts early walk into court with the advantage — this newsletter exists to make sure you're one of them.</p>
+    </div>
+    <div class="mlg-nl-help-box mlg-nl-reveal mlg-nl-reveal-d3">
+      <div class="mlg-nl-help-item"><span>California law moves fast — a published decision today can reshape your motion calendar tomorrow.</span></div>
+      <div class="mlg-nl-help-item"><span>Most appellate updates are buried in dense bulletins. Ours surface what changes outcomes.</span></div>
+      <div class="mlg-nl-help-item"><span>Cross-practice awareness is a competitive edge — your real estate matter often touches probate, your employment case touches business litigation.</span></div>
+      <div class="mlg-nl-help-item"><span>It's free, it's relevant, and it's written for attorneys — not for clients or marketing funnels.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE FORM -->
+<section class="mlg-nl-subscribe" id="mlg-nl-subscribe">
+  <div class="mlg-nl-subscribe-card mlg-nl-reveal">
+    <div class="mlg-nl-subscribe-eyebrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+      Subscribe
+    </div>
+    <h2>Join California Attorneys Reading the Digest.</h2>
+    <p>Verification: this newsletter is reserved for licensed California attorneys. Please subscribe with your firm or bar-associated email.</p>
+    <!-- El loader de Flodesk (window.fd) ya está cargado global en head-custom-code.html — acá solo va el contenedor del form -->
+    <div class="mlg-nl-subscribe-embed">
+      <div id="fd-form-6a70c7ea42b55dc65bf0a776"></div>
+      <script>
+        window.fd('form', {
+          formId: '6a70c7ea42b55dc65bf0a776',
+          containerEl: '#fd-form-6a70c7ea42b55dc65bf0a776'
+        });
+      </script>
+    </div>
+    <p class="mlg-nl-subscribe-note">For CA-licensed attorneys · Free · Unsubscribe anytime</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="mlg-nl-faq">
+  <h2 class="mlg-nl-reveal">Newsletter FAQs</h2>
+  <div class="mlg-nl-faq-columns">
+    <div class="mlg-nl-faq-col">
+      <div class="mlg-nl-faq-item mlg-nl-reveal mlg-nl-reveal-d1">
+        <button class="mlg-nl-faq-question" onclick="mlgNlToggleFaq(this)">
+          Is the McLellan Law Group newsletter really free?
+          <span class="mlg-nl-faq-icon">+</span>
+        </button>
+        <div class="mlg-nl-faq-answer">
+          <p>Yes. The CA Appellate Digest is a free newsletter for California-licensed attorneys. There is no cost to subscribe, and you can unsubscribe at any time from any issue.</p>
+        </div>
+      </div>
+      <div class="mlg-nl-faq-item mlg-nl-reveal mlg-nl-reveal-d2">
+        <button class="mlg-nl-faq-question" onclick="mlgNlToggleFaq(this)">
+          Who can subscribe to the CA Appellate Digest?
+          <span class="mlg-nl-faq-icon">+</span>
+        </button>
+        <div class="mlg-nl-faq-answer">
+          <p>It is written for California-licensed attorneys and reserved for firm or bar-associated email addresses. It covers real estate, employment (both employee and employer side), trust &amp; probate, and business litigation.</p>
+        </div>
+      </div>
+      <div class="mlg-nl-faq-item mlg-nl-reveal mlg-nl-reveal-d3">
+        <button class="mlg-nl-faq-question" onclick="mlgNlToggleFaq(this)">
+          How often is the newsletter sent?
+          <span class="mlg-nl-faq-icon">+</span>
+        </button>
+        <div class="mlg-nl-faq-answer">
+          <p>Issues go out as significant California appellate decisions are published, plus periodic practice-area roundups — typically a few times per month, not a daily inbox burden.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mlg-nl-faq-col">
+      <div class="mlg-nl-faq-item mlg-nl-reveal mlg-nl-reveal-d1">
+        <button class="mlg-nl-faq-question" onclick="mlgNlToggleFaq(this)">
+          What makes this different from other legal newsletters?
+          <span class="mlg-nl-faq-icon">+</span>
+        </button>
+        <div class="mlg-nl-faq-answer">
+          <p>It is written directly by the practicing litigators at McLellan Law Group, not aggregated by a marketing team. Each issue focuses on the decisions and developments that actually change how cases are litigated.</p>
+        </div>
+      </div>
+      <div class="mlg-nl-faq-item mlg-nl-reveal mlg-nl-reveal-d2">
+        <button class="mlg-nl-faq-question" onclick="mlgNlToggleFaq(this)">
+          What topics does the CA Appellate Digest cover?
+          <span class="mlg-nl-faq-icon">+</span>
+        </button>
+        <div class="mlg-nl-faq-answer">
+          <p>Each issue covers California appellate decisions plus developments across real estate litigation, employment law for both employees and employers, trust &amp; probate disputes, and business litigation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="mlg-nl-cta">
+  <h2 class="mlg-nl-reveal">Don't Miss the Next Decision.</h2>
+  <p class="mlg-nl-reveal mlg-nl-reveal-d1">Free for California attorneys — join the Digest in under a minute.</p>
+  <a href="#mlg-nl-subscribe" class="mlg-nl-btn-gold mlg-nl-reveal mlg-nl-reveal-d2">Subscribe Free →</a>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.mlg-nl-reveal');
+  if (els.length) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('mlg-nl-in-view'); });
+    } else {
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) {
+            entry.target.classList.add('mlg-nl-in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el){ observer.observe(el); });
+    }
+  }
+
+  var heroVideos = document.querySelectorAll('.mlg-nl-hero-video-wrap video');
+  if (heroVideos.length) {
+    function mlgNlHideHeroVideos(){
+      heroVideos.forEach(function(v){ v.classList.add('mlg-nl-hidden'); });
+    }
+    if (window.scrollY > 10) { mlgNlHideHeroVideos(); }
+    else { window.addEventListener('scroll', mlgNlHideHeroVideos, { once:true, passive:true }); }
+  }
+})();
+
+function mlgNlToggleFaq(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.mlg-nl-faq-answer');
+  var isOpen = item.classList.contains('mlg-nl-open');
+  document.querySelectorAll('.mlg-nl-faq-item.mlg-nl-open').forEach(function(el){
+    el.classList.remove('mlg-nl-open');
+    el.querySelector('.mlg-nl-faq-answer').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('mlg-nl-open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "McLellan Law Group — CA Appellate Digest Newsletter",
+  "description": "Free newsletter for California-licensed attorneys covering the CA Appellate Digest plus practice-area updates in real estate, employment, trust & probate, and business litigation.",
+  "url": "https://www.mclellanlawgroup.com/newsletter",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20665 4th St #202",
+    "addressLocality": "Saratoga",
+    "addressRegion": "CA",
+    "postalCode": "95070",
+    "addressCountry": "US"
+  },
+  "areaServed": ["California", "Silicon Valley", "Santa Clara County", "Bay Area"],
+  "knowsAbout": ["California Appellate Decisions", "Real Estate Litigation", "Employment Law", "Trust and Probate Litigation", "Business Litigation"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is the McLellan Law Group newsletter really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The CA Appellate Digest is a free newsletter for California-licensed attorneys. There is no cost to subscribe, and you can unsubscribe at any time from any issue." } },
+    { "@type": "Question", "name": "Who can subscribe to the CA Appellate Digest?", "acceptedAnswer": { "@type": "Answer", "text": "It is written for California-licensed attorneys and reserved for firm or bar-associated email addresses. It covers real estate, employment (both employee and employer side), trust & probate, and business litigation." } },
+    { "@type": "Question", "name": "How often is the newsletter sent?", "acceptedAnswer": { "@type": "Answer", "text": "Issues go out as significant California appellate decisions are published, plus periodic practice-area roundups — typically a few times per month, not a daily inbox burden." } },
+    { "@type": "Question", "name": "What makes this different from other legal newsletters?", "acceptedAnswer": { "@type": "Answer", "text": "It is written directly by the practicing litigators at McLellan Law Group, not aggregated by a marketing team. Each issue focuses on the decisions and developments that actually change how cases are litigated." } },
+    { "@type": "Question", "name": "What topics does the CA Appellate Digest cover?", "acceptedAnswer": { "@type": "Answer", "text": "Each issue covers California appellate decisions plus developments across real estate litigation, employment law for both employees and employers, trust & probate disputes, and business litigation." } }
+  ]
+}
+</script>
