@@ -106,7 +106,13 @@ html, body { overflow-x:hidden !important; }
   .mlg-hero-display { font-size:96px !important; letter-spacing:-3px !important; }
   .mlg-hero-sub { font-size:16px !important; }
 }
-.mlg-nl *, .mlg-nl *::before, .mlg-nl *::after { box-sizing:border-box !important; margin:0 !important; padding:0 !important; }
+/* El reset NO debe entrar al form de Flodesk: le aplasta su propio espaciado */
+.mlg-nl *:not(.mlg-nl-subscribe-embed):not(.mlg-nl-subscribe-embed *),
+.mlg-nl *:not(.mlg-nl-subscribe-embed):not(.mlg-nl-subscribe-embed *)::before,
+.mlg-nl *:not(.mlg-nl-subscribe-embed):not(.mlg-nl-subscribe-embed *)::after {
+  box-sizing:border-box !important; margin:0 !important; padding:0 !important;
+}
+.mlg-nl-subscribe-embed, .mlg-nl-subscribe-embed * { box-sizing:border-box; }
 .mlg-nl { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased !important; }
 
 /* full-bleed para todas las secciones */
@@ -168,7 +174,7 @@ html, body { overflow-x:hidden !important; }
 .mlg-nl-subscribe-eyebrow svg { width:16px !important; height:16px !important; }
 .mlg-nl-subscribe-card h2 { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(26px, 4vw, 38px) !important; font-weight:900 !important; line-height:1.1 !important; color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:16px !important; }
 .mlg-nl-subscribe-card > p { font-size:15.5px !important; line-height:1.7 !important; color:#5a6e70 !important; max-width:480px !important; margin:0 auto 28px !important; }
-.mlg-nl-subscribe-embed { text-align:left !important; }
+.mlg-nl-subscribe-embed { text-align:center !important; margin-top:8px !important; }
 .mlg-nl-subscribe-note { margin-top:20px !important; font-size:11px !important; letter-spacing:1.5px !important; text-transform:uppercase !important; color:#8a9698 !important; }
 
 /* FAQ */
