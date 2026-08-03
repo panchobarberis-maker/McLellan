@@ -178,9 +178,11 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* NEWSLETTER HERO */
 .news-hero { position:relative; overflow:hidden; background:#1e3a3e; padding:64px 24px 56px; text-align:center; }
 @media(min-width:769px) { .news-hero { padding:100px 80px 72px; } }
-.news-hero::before, .news-hero::after { content:''; position:absolute; width:420px; height:420px; border-radius:50%; filter:blur(90px); opacity:0.18; z-index:0; }
-.news-hero::before { background:#c9a96e; top:-140px; left:-120px; }
-.news-hero::after { background:#e8cc8a; bottom:-160px; right:-120px; }
+.news-hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(0.7) saturate(1.1); z-index:0; transition:opacity 0.6s ease; }
+.news-hero-video.video-mobile { display:none; }
+@media(max-width:768px) { .news-hero-video.video-desktop { display:none; } .news-hero-video.video-mobile { display:block; } }
+.news-hero-video.is-hidden { opacity:0; }
+.news-hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(20,45,50,0.6) 45%, rgba(20,45,50,0.95) 100%); z-index:1; }
 .news-hero > * { position:relative; z-index:2; }
 .news-hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(34px, 6vw, 62px); font-weight:900; line-height:1.05; color:#fff; text-transform:uppercase; letter-spacing:-1px; max-width:900px; margin:0 auto 20px; }
 .news-hero h1 .accent { color:#c9a96e; }
@@ -361,6 +363,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <!-- HERO -->
 <section class="news-hero">
+  <video class="news-hero-video video-desktop" autoplay muted loop playsinline preload="auto"><source src="video mclellan.mp4" type="video/mp4"></video>
+  <video class="news-hero-video video-mobile" autoplay muted loop playsinline preload="auto"><source src="WhatsApp Video 2026-07-01 at 17.20.29 (1).mp4" type="video/mp4"></video>
+  <div class="news-hero-overlay"></div>
   <div class="hero-pill">For California Attorneys Only</div>
   <h1>The Updates Moving <span class="accent">California Litigation</span> — Delivered.</h1>
   <p class="news-hero-sub">A free newsletter from McLellan Law Group bringing you the <strong>CA Appellate Digest</strong> and the developments shaping real estate, employment, trust &amp; probate, and business litigation across California.</p>
@@ -563,6 +568,16 @@ function toggleFaq(btn) {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el){ observer.observe(el); });
+})();
+
+(function(){
+  var heroVideos = document.querySelectorAll('.news-hero-video');
+  if (!heroVideos.length) return;
+  function hideHeroVideos(){
+    heroVideos.forEach(function(v){ v.classList.add('is-hidden'); });
+  }
+  if (window.scrollY > 10) { hideHeroVideos(); }
+  else { window.addEventListener('scroll', hideHeroVideos, { once:true, passive:true }); }
 })();
 </script>
 </body>
