@@ -44,11 +44,9 @@ html, body { overflow-x:hidden !important; }
   position:absolute !important; inset:0 !important; width:100% !important; height:100% !important;
   object-fit:cover !important; object-position:center 30% !important;
   filter:brightness(0.7) saturate(1.1) !important;
-  transition:opacity 0.6s ease !important;
 }
 .mlg-nl-video-mobile { display:none !important; }
 @media(max-width:768px) { .mlg-nl-video-desktop { display:none !important; } .mlg-nl-video-mobile { display:block !important; } }
-.mlg-nl-hero-video-wrap video.mlg-nl-hidden { opacity:0 !important; }
 .mlg-nl-hero-overlay {
   position:absolute !important; inset:0 !important; z-index:1 !important;
   background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
@@ -184,8 +182,8 @@ html, body { overflow-x:hidden !important; }
 <!-- HERO -->
 <section class="mlg-nl-hero">
   <div class="mlg-nl-hero-video-wrap">
-    <video class="mlg-nl-video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4"></video>
-    <video class="mlg-nl-video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4"></video>
+    <video class="mlg-nl-video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video>
+    <video class="mlg-nl-video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
   </div>
   <div class="mlg-nl-hero-overlay"></div>
   <div class="mlg-nl-pill">For California Attorneys · Free Newsletter</div>
@@ -346,15 +344,6 @@ html, body { overflow-x:hidden !important; }
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
       els.forEach(function(el){ observer.observe(el); });
     }
-  }
-
-  var heroVideos = document.querySelectorAll('.mlg-nl-hero-video-wrap video');
-  if (heroVideos.length) {
-    function mlgNlHideHeroVideos(){
-      heroVideos.forEach(function(v){ v.classList.add('mlg-nl-hidden'); });
-    }
-    if (window.scrollY > 10) { mlgNlHideHeroVideos(); }
-    else { window.addEventListener('scroll', mlgNlHideHeroVideos, { once:true, passive:true }); }
   }
 })();
 

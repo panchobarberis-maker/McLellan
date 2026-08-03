@@ -190,7 +190,6 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   filter:brightness(0.7) saturate(1.1);
   transition:opacity 0.6s ease;
 }
-.emp-hero-img.is-hidden { opacity:0; }
 .emp-hero-overlay {
   position:absolute; inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
@@ -567,16 +566,6 @@ function toggleFaq(btn) {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el){ observer.observe(el); });
-})();
-
-(function(){
-  var heroVideos = document.querySelectorAll('.emp-hero-img');
-  if (!heroVideos.length) return;
-  function hideHeroVideos(){
-    heroVideos.forEach(function(v){ v.classList.add('is-hidden'); });
-  }
-  if (window.scrollY > 10) { hideHeroVideos(); }
-  else { window.addEventListener('scroll', hideHeroVideos, { once:true, passive:true }); }
 })();
 </script>
 </body>
