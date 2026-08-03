@@ -52,7 +52,7 @@ html, body { overflow-x:hidden !important; }
   background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
 }
 .mlg-nl-hero-overlay::before { content:'' !important; position:absolute !important; inset:0 !important; background:rgba(20,48,52,0.55) !important; }
-.mlg-nl-hero > * { position:relative !important; z-index:2 !important; }
+.mlg-nl-hero > *:not(.mlg-nl-hero-video-wrap):not(.mlg-nl-hero-overlay) { position:relative !important; z-index:2 !important; }
 .mlg-nl-pill {
   display:inline-flex !important; align-items:center !important; gap:10px !important;
   background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
