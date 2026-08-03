@@ -13,8 +13,8 @@ html, body { overflow-x:hidden !important; }
 .mlg-nl-hero {
   position:relative !important; overflow:hidden !important;
   min-height:100svh !important; display:flex !important; flex-direction:column !important;
-  justify-content:center !important; align-items:center !important; text-align:center !important;
-  padding:0 28px 40px !important;
+  justify-content:flex-start !important; align-items:center !important; text-align:center !important;
+  padding:110px 28px 48px !important;
   background:#1e3a3e !important;
   border-bottom:12px solid #c9a96e !important;
   margin-top:-8px !important;
@@ -39,6 +39,17 @@ html, body { overflow-x:hidden !important; }
   opacity:1 !important; visibility:visible !important;
   transform:none !important; animation:none !important; transition:none !important;
 }
+/* Duda: el tema puede pisar color/animacion de headings y parrafos dentro del widget */
+.mlg-nl-hero .mlg-nl-pill, .mlg-nl-hero h1, .mlg-nl-hero h1 *,
+.mlg-nl-hero .mlg-nl-hero-sub, .mlg-nl-hero .mlg-nl-btn-gold {
+  opacity:1 !important; visibility:visible !important; display:revert !important;
+  transform:none !important; animation:none !important; transition:none !important;
+  clip-path:none !important; filter:none !important;
+}
+.mlg-nl-hero h1, .mlg-nl-hero .mlg-nl-hero-sub { color:#fff !important; }
+.mlg-nl-hero h1 em { color:#c9a96e !important; display:block !important; }
+.mlg-nl-hero .mlg-nl-pill { color:#e8cc8a !important; display:inline-flex !important; }
+.mlg-nl-hero .mlg-nl-btn-gold { color:#1e3a3e !important; display:inline-flex !important; }
 .mlg-nl-hero-video-wrap { position:absolute !important; inset:0 !important; z-index:0 !important; pointer-events:none !important; overflow:hidden !important; }
 .mlg-nl-hero-video-wrap video {
   position:absolute !important; inset:0 !important; width:100% !important; height:100% !important;
