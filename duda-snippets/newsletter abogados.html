@@ -166,6 +166,13 @@ html, body { overflow-x:hidden !important; }
 @media(min-width:769px) { .mlg-nl-help-item span { font-size:17px !important; } }
 
 /* SUBSCRIBE FORM */
+/* La seccion de suscripcion vive FUERA de .mlg-nl para que nada nuestro toque el form
+   de Flodesk. Le damos el reset a mano, salteando el embed. */
+.mlg-nl-subscribe, .mlg-nl-subscribe-card, .mlg-nl-subscribe-eyebrow,
+.mlg-nl-subscribe-card h2, .mlg-nl-subscribe-card > p, .mlg-nl-subscribe-note {
+  box-sizing:border-box !important; margin:0 !important; padding:0 !important;
+}
+.mlg-nl-subscribe-card { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important; }
 .mlg-nl-subscribe { background:#1e3a3e !important; padding:64px 28px !important; }
 @media(min-width:769px) { .mlg-nl-subscribe { padding:96px 80px !important; } }
 .mlg-nl-subscribe-card { max-width:660px !important; margin:0 auto !important; background:#fbf6ef !important; border-radius:20px !important; padding:40px 28px !important; box-shadow:0 10px 40px rgba(0,0,0,0.25) !important; text-align:center !important; }
@@ -174,7 +181,7 @@ html, body { overflow-x:hidden !important; }
 .mlg-nl-subscribe-eyebrow svg { width:16px !important; height:16px !important; }
 .mlg-nl-subscribe-card h2 { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(26px, 4vw, 38px) !important; font-weight:900 !important; line-height:1.1 !important; color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:16px !important; }
 .mlg-nl-subscribe-card > p { font-size:15.5px !important; line-height:1.7 !important; color:#5a6e70 !important; max-width:480px !important; margin:0 auto 28px !important; }
-.mlg-nl-subscribe-embed { text-align:center !important; margin-top:8px !important; }
+.mlg-nl-subscribe-embed { margin-top:8px; }
 .mlg-nl-subscribe-note { margin-top:20px !important; font-size:11px !important; letter-spacing:1.5px !important; text-transform:uppercase !important; color:#8a9698 !important; }
 
 /* FAQ */
@@ -290,6 +297,8 @@ html, body { overflow-x:hidden !important; }
 </section>
 
 <!-- SUBSCRIBE FORM -->
+</div>
+
 <section class="mlg-nl-subscribe" id="mlg-nl-subscribe">
   <div class="mlg-nl-subscribe-card mlg-nl-reveal">
     <div class="mlg-nl-subscribe-eyebrow">
@@ -311,6 +320,9 @@ html, body { overflow-x:hidden !important; }
     <p class="mlg-nl-subscribe-note">For CA-licensed attorneys · Free · Unsubscribe anytime</p>
   </div>
 </section>
+
+<div class="mlg-nl">
+
 
 <!-- FAQ -->
 <section class="mlg-nl-faq">
