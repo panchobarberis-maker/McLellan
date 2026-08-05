@@ -280,9 +280,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:21px; } }
 .content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
-.content-list { list-style:none; margin-top:6px; }
-.content-list li { padding:10px 0; border-bottom:1px solid rgba(30,58,62,0.1); display:flex; align-items:flex-start; gap:12px; }
-.content-list li:last-child { border-bottom:none; }
+.content-list { list-style:none; margin-top:16px; display:grid; gap:14px; }
+@media(min-width:769px) { .content-list { grid-template-columns:1fr 1fr; gap:18px; } }
+.content-list li {
+  padding:20px 22px; display:flex; align-items:flex-start; gap:12px;
+  background:#fff; border:2.5px solid rgba(201,169,110,0.55); border-radius:14px;
+}
+@media(min-width:769px) { .content-list li { padding:26px 28px; } }
 .content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; }
 .content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
 @media(min-width:769px) { .content-list li span { font-size:21px; } }
@@ -300,16 +304,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .help-columns { display:flex; flex-direction:column; gap:14px; }
 @media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
-.help-box {
-  background:#1e3a3e; border-radius:16px; padding:8px 28px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.15);
-  display:flex; flex-direction:column; justify-content:center;
-}
 .help-item {
-  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  background:#1e3a3e; border-radius:16px; padding:22px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border:2.5px solid rgba(201,169,110,0.45);
   display:flex; align-items:flex-start; gap:14px;
 }
-.help-item:last-child { border-bottom:none; }
+@media(min-width:769px) { .help-item { padding:28px 30px; } }
 .help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
 .help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
 @media(min-width:769px) { .help-item span { font-size:18px; } }
@@ -523,16 +524,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Breach of Contract Attorneys Do</h2>
     <div class="help-columns">
-      <div class="help-box reveal reveal-d1">
-        <div class="help-item"><span>Review the contract and surrounding communications to determine whether a breach occurred and its materiality</span></div>
-        <div class="help-item"><span>Calculate and pursue the full range of recoverable damages, including consequential and incidental losses</span></div>
-        <div class="help-item"><span>Send demand letters and pursue early resolution before litigation becomes necessary</span></div>
-      </div>
-      <div class="help-box reveal reveal-d2">
-        <div class="help-item"><span>Draft and file complaints or answers in state or federal court on your behalf</span></div>
-        <div class="help-item"><span>Pursue specific performance or injunctive relief when monetary damages are not enough</span></div>
-        <div class="help-item"><span>Defend against breach of contract claims, including asserting excuse, waiver, or impossibility defenses</span></div>
-      </div>
+      <div class="help-item reveal reveal-d1"><span>Review the contract and surrounding communications to determine whether a breach occurred and its materiality</span></div>
+      <div class="help-item reveal reveal-d2"><span>Calculate and pursue the full range of recoverable damages, including consequential and incidental losses</span></div>
+      <div class="help-item reveal reveal-d3"><span>Send demand letters and pursue early resolution before litigation becomes necessary</span></div>
+      <div class="help-item reveal reveal-d4"><span>Draft and file complaints or answers in state or federal court on your behalf</span></div>
+      <div class="help-item reveal reveal-d5"><span>Pursue specific performance or injunctive relief when monetary damages are not enough</span></div>
+      <div class="help-item reveal reveal-d6"><span>Defend against breach of contract claims, including asserting excuse, waiver, or impossibility defenses</span></div>
     </div>
   </div>
 </section>
