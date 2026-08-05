@@ -305,16 +305,13 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 }
 .help-columns { display:flex; flex-direction:column; gap:14px; }
 @media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
-.help-box {
-  background:#1e3a3e; border-radius:16px; padding:8px 28px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.15);
-  display:flex; flex-direction:column; justify-content:center;
-}
 .help-item {
-  padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+  background:#1e3a3e; border-radius:16px; padding:22px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border:2.5px solid rgba(201,169,110,0.45);
   display:flex; align-items:flex-start; gap:14px;
 }
-.help-item:last-child { border-bottom:none; }
+@media(min-width:769px) { .help-item { padding:28px 30px; } }
 .help-item::before { content:"✓"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
 .help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
 @media(min-width:769px) { .help-item span { font-size:18px; } }
@@ -534,16 +531,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="section-eyebrow reveal">How We Help</div>
     <h2 class="reveal reveal-d1">What Our Wrongful Termination Attorneys Do</h2>
     <div class="help-columns">
-      <div class="help-box reveal reveal-d1">
-        <div class="help-item"><span>Review the full circumstances of your termination to identify whether an illegal reason was involved</span></div>
-        <div class="help-item"><span>Gather and preserve key evidence including performance reviews, communications, and witness accounts</span></div>
-        <div class="help-item"><span>File complaints with the California Civil Rights Department (CRD) or the EEOC as required before filing suit</span></div>
-      </div>
-      <div class="help-box reveal reveal-d2">
-        <div class="help-item"><span>Negotiate aggressively for severance and settlement to achieve early resolution where appropriate</span></div>
-        <div class="help-item"><span>Litigate your case in state or federal court when employers refuse to do right by you</span></div>
-        <div class="help-item"><span>Advise on the full range of damages available, including back pay, front pay, emotional distress, and attorney's fees</span></div>
-      </div>
+      <div class="help-item reveal reveal-d1"><span>Review the full circumstances of your termination to identify whether an illegal reason was involved</span></div>
+      <div class="help-item reveal reveal-d2"><span>Gather and preserve key evidence including performance reviews, communications, and witness accounts</span></div>
+      <div class="help-item reveal reveal-d3"><span>File complaints with the California Civil Rights Department (CRD) or the EEOC as required before filing suit</span></div>
+      <div class="help-item reveal reveal-d4"><span>Negotiate aggressively for severance and settlement to achieve early resolution where appropriate</span></div>
+      <div class="help-item reveal reveal-d5"><span>Litigate your case in state or federal court when employers refuse to do right by you</span></div>
+      <div class="help-item reveal reveal-d6"><span>Advise on the full range of damages available, including back pay, front pay, emotional distress, and attorney's fees</span></div>
     </div>
   </div>
 </section>
