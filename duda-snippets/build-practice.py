@@ -39,6 +39,9 @@ w = bw.build(page, SCOPE)
 
 if '--css' in sys.argv:
     css = mcss(re.search(r'<style>(.*?)</style>', w, re.S).group(1)).replace('#' + SCOPE, '.' + SCOPE)
+    # Esta regla no esta acotada al scope: se aplicaria a todo el sitio. Va en
+    # el widget de cada pagina, no en el head comun.
+    css = css.replace('html, body { overflow-x:hidden; }\n', '')
     out = f'<style>{css}</style>'
     f = 'duda-snippets/practice-CSS-COMUN.html'
     open(f, 'w', encoding='utf-8').write(out)
@@ -46,7 +49,9 @@ if '--css' in sys.argv:
 
 body = mhtml(re.search(r'<div id="[^"]+">\n(.*)\n</div>\n\n<script>', w, re.S).group(1))
 js   = mjs(re.search(r'<script>(.*?)</script>\s*$', w, re.S).group(1))
-out  = f'<div class="{SCOPE}">{body}</div><script>{js}</script>'
+out  = ('<style>html, body { overflow-x:hidden; }</style>\n\n'
+        f'<div class="{SCOPE}">\n\n{body}\n\n</div>\n\n'
+        f'<script>\n{js}\n</script>\n')
 f = f'duda-snippets/{name}-MARKUP.html'
 open(f, 'w', encoding='utf-8').write(out)
 print(f'{f}  ({len(out)} car.)  -> widget de la pagina')
