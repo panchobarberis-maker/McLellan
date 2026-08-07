@@ -113,17 +113,26 @@ html, body {{ overflow-x:hidden; }}
 
 {scope_block(css, scope)}
 
-/* Las secciones llenan el contenedor y listo. Nada de 100vw: dentro del
-   preview de Duda vw no coincide con el ancho real del ROW y quedaban
-   cuadrados blancos a los costados. El ROW va en full bleed desde Duda. */
-#{scope} {{ width:100% !important; max-width:100% !important; }}
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
 #{scope} > section, #{scope} > div {{
-  margin-left:0 !important; margin-right:0 !important;
-  width:100% !important; max-width:100% !important;
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
 }}
-/* Sin trucos para la franja de arriba: el margen negativo creaba una banda
-   donde asomaba el blanco de la COLUMN en los bordes. El espacio del ROW se
-   tapa pintandolo de verde desde Duda. */
+#{scope} > *:first-child {{
+  margin-top:-8px !important;
+  box-shadow:0 20px 0 0 #1e3a3e, 0 -60px 0 0 #1e3a3e !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}}
+@media(max-width:768px) {{
+  #{scope} > *:first-child {{
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }}
+}}
 </style>
 
 <div id="{scope}">
