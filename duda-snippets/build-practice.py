@@ -19,25 +19,18 @@ _spec.loader.exec_module(bw)
 SCOPE = 'mlgP'          # comun a todas las practice pages
 
 
+# Sin minificar: con el CSS aparte sobra margen, y asi los archivos se pueden
+# leer y editar a mano.
 def mcss(s):
-    s = re.sub(r'/\*.*?\*/', '', s, flags=re.S)
-    s = re.sub(r'\s*\n\s*', ' ', s)
-    s = re.sub(r'  +', ' ', s)
-    s = re.sub(r'\s*([{};,])\s*', r'\1', s)
-    s = re.sub(r':\s+', ':', s)
-    return re.sub(r';}', '}', s).strip()      # no tocar espacios de calc()
+    return s.strip()
 
 
 def mhtml(s):
-    s = re.sub(r'<!--.*?-->', '', s, flags=re.S)
-    s = re.sub(r'>\s+<', '><', s)
-    return re.sub(r'\s{2,}', ' ', s).strip()
+    return s.strip()
 
 
 def mjs(s):
-    s = re.sub(r'//[^\n]*', '', s)
-    s = re.sub(r'\s*\n\s*', '', s)
-    return re.sub(r'\s{2,}', ' ', s).strip()
+    return s.strip()
 
 
 page = sys.argv[1]
