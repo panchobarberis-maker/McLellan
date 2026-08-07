@@ -117,11 +117,12 @@ html, body {{ overflow-x:hidden; }}
   margin-left:calc(-52vw + 50%) !important;
   width:104vw !important; max-width:104vw !important;
 }}
-/* la franja que el ROW deja arriba: overflow:hidden recortaria un ::before,
-   la sombra no. */
+/* La franja que el ROW deja arriba. Una sombra no sirve: el overflow:hidden
+   del ROW la recorta. Un margen negativo si entra en esa zona, y el padding
+   lo compensa para que el contenido no se mueva. */
 #{scope} > *:first-child {{
-  margin-top:-8px !important;
-  box-shadow:0 -80px 0 0 #1e3a3e;
+  margin-top:-100px !important;
+  padding-top:100px !important;
 }}
 {scope_block(css, scope)}
 </style>
