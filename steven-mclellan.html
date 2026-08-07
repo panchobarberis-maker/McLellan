@@ -486,7 +486,7 @@ a { text-decoration:none; color:inherit; }
     <div class="section-label reveal">Credentials</div>
     <div class="acc-item open reveal">
       <button class="acc-btn" onclick="toggleAcc(this)">Bar Admissions <span class="icon">×</span></button>
-      <div class="acc-body" style="max-height:220px;">
+      <div class="acc-body">
         <ul>
           <li>California</li>
           <li>Ninth Circuit Court of Appeals</li>
@@ -530,6 +530,18 @@ a { text-decoration:none; color:inherit; }
 </section>
 
 <script>
+// El acordeon que arranca abierto se mide solo. Una altura fija se queda corta
+// cuando cambia la fuente, el tamano de letra o el ancho de la columna.
+function mlgSizeOpenAcc() {
+  document.querySelectorAll('.acc-item.open .acc-body').forEach(function(b){
+    b.style.maxHeight = b.scrollHeight + 'px';
+  });
+}
+mlgSizeOpenAcc();
+window.addEventListener('load', mlgSizeOpenAcc);
+window.addEventListener('resize', mlgSizeOpenAcc);
+if (document.fonts && document.fonts.ready) { document.fonts.ready.then(mlgSizeOpenAcc); }
+
 function toggleAcc(btn) {
   var item = btn.parentElement;
   var body = item.querySelector('.acc-body');
