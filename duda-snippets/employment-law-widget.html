@@ -509,13 +509,9 @@ html, body { overflow-x:hidden; }
   margin-left:0 !important; margin-right:0 !important;
   width:100% !important; max-width:100% !important;
 }
-/* La franja que el ROW deja arriba. Una sombra no sirve: el overflow:hidden
-   del ROW la recorta. Un margen negativo si entra en esa zona, y el padding
-   lo compensa para que el contenido no se mueva. */
-#mlg-emp > *:first-child {
-  margin-top:-100px !important;
-  padding-top:100px !important;
-}
+/* Sin trucos para la franja de arriba: el margen negativo creaba una banda
+   donde asomaba el blanco de la COLUMN en los bordes. El espacio del ROW se
+   tapa pintandolo de verde desde Duda. */
 </style>
 
 <div id="mlg-emp">
