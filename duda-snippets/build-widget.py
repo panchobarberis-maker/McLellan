@@ -140,6 +140,14 @@ html, body {{ overflow-x:hidden; }}
     return widget
 
 
+def schema(path):
+    """El JSON-LD vive en el <head> del original y el widget no se lo lleva.
+    Duda no genera FAQPage por su cuenta, asi que hay que pegarlo aparte."""
+    src = open(path, encoding='utf-8').read()
+    head = src[:src.index('</head>')]
+    return '\n'.join(re.findall(r'<script type="application/ld\+json">.*?</script>', head, re.S))
+
+
 if __name__ == '__main__':
     page  = sys.argv[1]
     scope = sys.argv[2] if len(sys.argv) > 2 else 'mlg-' + os.path.splitext(os.path.basename(page))[0]
@@ -147,3 +155,9 @@ if __name__ == '__main__':
     w = build(page, scope)
     open(out, 'w', encoding='utf-8').write(w)
     print(f'{out}  ({round(len(w)/1024)} KB, scope #{scope})')
+
+    sch = schema(page)
+    if sch:
+        f = out.replace('-widget.html', '-SCHEMA.html')
+        open(f, 'w', encoding='utf-8').write(sch + '\n')
+        print(f'{f}  ({len(sch)} car.)  -> widget aparte o panel de SEO')
