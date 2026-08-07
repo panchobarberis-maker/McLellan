@@ -95,6 +95,13 @@ def build(path, scope):
     body = re.sub(r'<nav\b.*?</nav>', '', body, flags=re.S)
     body = re.sub(r'<div class="mobile-menu".*?\n</div>\n', '', body, flags=re.S)
 
+    # Los estilos inline tienen que llevar !important tambien: sin eso, el
+    # !important que le ponemos a las reglas generales les gana y les pisa el
+    # color (asi salieron blancas las respuestas de las FAQ de employees).
+    def inline(m):
+        return 'style="' + force_important(m.group(1)) + '"'
+    body = re.sub(r'style="([^"]*)"', inline, body)
+
     scripts = re.findall(r'<script>(.*?)</script>', body, re.S)
     body = re.sub(r'<script>.*?</script>', '', body, flags=re.S).strip()
 
