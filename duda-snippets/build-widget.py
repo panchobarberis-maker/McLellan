@@ -104,11 +104,17 @@ html, body {{ overflow-x:hidden; }}
 #{scope} {{ font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
   -webkit-font-smoothing:antialiased; font-weight:500; }}
 
-/* Duda mete el widget dentro de un ROW con margenes: las secciones se sueltan
-   a lo ancho de la ventana, como en el sitio original. */
+/* Duda mete el widget dentro de un ROW con margenes propios. Nos pasamos 2vw
+   por lado para comerlos: con el ROW en full bleed sigue sobrando resto. */
 #{scope} > section, #{scope} > div {{
-  margin-left:calc(-50vw + 50%) !important;
-  width:100vw !important; max-width:100vw !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}}
+/* la franja que el ROW deja arriba: overflow:hidden recortaria un ::before,
+   la sombra no. */
+#{scope} > *:first-child {{
+  margin-top:-8px !important;
+  box-shadow:0 -80px 0 0 #1e3a3e;
 }}
 {scope_block(css, scope)}
 </style>
