@@ -1,0 +1,902 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+html, body { overflow-x:hidden; }
+#mlg-emp { font-family:'Barlow',sans-serif; color:#1e3a3e; -webkit-font-smoothing:antialiased; font-weight:500; }
+
+#mlg-emp *, #mlg-emp *::before, #mlg-emp *::after { margin:0; padding:0; box-sizing:border-box; text-wrap:pretty; }
+#mlg-emp { scroll-behavior:smooth; }
+#mlg-emp { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-font-smoothing:antialiased; font-weight:500; }
+#mlg-emp .logo-img-mobile { height:28px; width:auto; }
+#mlg-emp .dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.5; }
+#mlg-emp .dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff; border:1px solid #e0ddd6; border-radius:10px; min-width:230px; padding:8px 0; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none; }
+#mlg-emp .dropdown-menu li a { display:block; padding:10px 20px; color:#333; text-decoration:none; font-size:13px; font-weight:400; transition:background 0.15s,color 0.15s; border-radius:6px; margin:2px 6px; }
+#mlg-emp .dropdown-menu li a:hover { background:#f0f5f5; color:#1e3a3e; }
+#mlg-emp .dropdown-menu li a.featured { font-weight:600; color:#1e3a3e; }
+#mlg-emp .dropdown-divider { height:1px; background:#f0ede6; margin:5px 0; }
+#mlg-emp .mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:15px 0; color:rgba(255,255,255,0.85); font-size:17px; font-weight:500; cursor:pointer; text-align:left; }
+#mlg-emp .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px; color:#c9a96e; }
+#mlg-emp .mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+#mlg-emp .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07); }
+#mlg-emp .mobile-accordion-menu li a { padding:11px 0; font-size:14px; font-weight:400; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlg-emp .emp-hero {
+  position:relative; overflow:hidden;
+  min-height:560px; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; padding:0 28px 52px;
+  background:#1e3a3e;
+}
+@media(min-width:769px) {
+#mlg-emp .emp-hero { min-height:680px; padding:0 80px 80px; }
+}
+#mlg-emp .emp-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
+#mlg-emp .emp-hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
+}
+#mlg-emp .emp-hero-label {
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:10px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#c9a96e; font-weight:700; margin-bottom:20px;
+}
+#mlg-emp .emp-hero-label::before { content:''; width:24px; height:1px; background:#c9a96e; }
+#mlg-emp .emp-hero h1 {
+  position:relative; z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 7vw, 72px); font-weight:900; line-height:0.95;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px;
+  margin:0 auto 18px; max-width:1000px;
+}
+#mlg-emp .emp-hero h1 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.75em; letter-spacing:0;
+}
+#mlg-emp .emp-hero-sub {
+  position:relative; z-index:2;
+  font-size:17px; color:rgba(255,255,255,0.8); max-width:520px;
+  line-height:1.7; margin:0 auto 4px;
+  font-family:'DM Serif Display',serif; font-style:italic;
+}
+#mlg-emp .emp-hero-ctas {
+  position:relative; z-index:2;
+  display:flex; gap:12px; flex-wrap:wrap;
+}
+#mlg-emp .btn-gold {
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+  color:#1e3a3e; font-weight:700; font-size:14px;
+  padding:13px 28px; border-radius:28px; text-decoration:none;
+}
+#mlg-emp .btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:#fff; font-weight:500; font-size:14px;
+  padding:12px 24px; border-radius:28px; text-decoration:none;
+  border:1.5px solid rgba(255,255,255,0.45);
+}
+#mlg-emp .audience-switch {
+  display:grid; grid-template-columns:1fr 1fr;
+  background:#1e3a3e;
+}
+#mlg-emp .audience-tab {
+  padding:22px 24px; text-align:center; text-decoration:none;
+  font-size:22px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+  font-family:'Barlow Condensed',sans-serif;
+  transition:background 0.2s, color 0.2s;
+  border-bottom:4px solid transparent;
+  color:rgba(255,255,255,0.55);
+}
+@media(min-width:769px) {
+#mlg-emp .audience-tab { padding:44px 24px; font-size:32px; letter-spacing:2px; }
+}
+#mlg-emp .audience-tab.employers {
+  color:#fff; border-bottom-color:#c9a96e; background:rgba(255,255,255,0.05);
+}
+#mlg-emp .audience-tab.employees {
+  color:rgba(255,255,255,0.55);
+}
+#mlg-emp .audience-tab:hover { color:#fff; background:rgba(255,255,255,0.08); }
+#mlg-emp .employers-section {
+  background:#1e3a3e; padding:64px 28px;
+}
+@media(min-width:769px) {
+#mlg-emp .employers-section { padding:80px 80px; }
+}
+#mlg-emp .section-eyebrow {
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:10px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#c9a96e; font-weight:700; margin-bottom:20px;
+}
+#mlg-emp .section-eyebrow::before { content:''; width:24px; height:1px; background:#c9a96e; }
+#mlg-emp .employers-section h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 6vw, 64px); font-weight:900; line-height:0.95;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:24px;
+}
+#mlg-emp .employers-section h2 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.72em;
+}
+#mlg-emp .employers-section > p, #mlg-emp .employers-intro-text p {
+  font-size:15px; color:rgba(255,255,255,0.75); max-width:560px;
+  line-height:1.75; margin-bottom:40px;
+}
+#mlg-emp .employers-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:14px; background:transparent;
+  border:none; border-radius:0;
+  overflow:visible; margin-bottom:40px;
+}
+#mlg-emp .employees-section .employers-grid { background:transparent; }
+#mlg-emp .employer-item {
+  background:#fbf6ef; padding:32px 28px;
+  display:flex; align-items:flex-start; gap:18px;
+  transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
+  border:2px solid rgba(255,255,255,0.35); border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
+  -webkit-tap-highlight-color:transparent;
+}
+#mlg-emp .employer-item:hover, #mlg-emp .employer-item:active, #mlg-emp .employer-item:focus-visible { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
+#mlg-emp .employer-item:hover, #mlg-emp .employer-item:active, #mlg-emp .employer-item:focus-visible { background:#f3ece0; }
+#mlg-emp .employer-item-icon { display:none; }
+#mlg-emp .employer-item-text strong {
+  display:block; font-size:17px; font-weight:700; color:#1e3a3e; margin-bottom:6px;
+}
+#mlg-emp .employer-item-text span {
+  font-size:13px; color:#5a6e70; line-height:1.6;
+}
+#mlg-emp .paga-alert {
+  background:rgba(201,169,110,0.12); border:1px solid rgba(201,169,110,0.35);
+  border-radius:10px; padding:20px 24px; margin-bottom:32px;
+  display:flex; gap:16px; align-items:flex-start;
+}
+#mlg-emp .paga-alert-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+#mlg-emp .paga-alert p { font-size:13px; color:rgba(255,255,255,0.85); line-height:1.65; }
+#mlg-emp .paga-alert p strong { color:#c9a96e; }
+#mlg-emp .employer-faq { margin-top:48px; }
+#mlg-emp .employer-faq h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:28px; font-weight:800; color:#fff;
+  text-transform:uppercase; letter-spacing:-0.5px; margin-bottom:24px;
+}
+#mlg-emp .faq-item { border-bottom:1px solid rgba(255,255,255,0.1); }
+#mlg-emp .faq-question {
+  width:100%; background:none; border:none; text-align:left;
+  padding:18px 0; font-family:'Barlow',sans-serif; font-size:15px;
+  font-weight:600; color:rgba(255,255,255,0.85); cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  transition:color 0.15s;
+}
+#mlg-emp .faq-question:hover { color:#fff; }
+#mlg-emp .faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
+#mlg-emp .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+#mlg-emp .faq-answer p { font-size:13px; line-height:1.75; color:rgba(255,255,255,0.6); padding-bottom:20px; margin:0; }
+#mlg-emp .faq-item.open .faq-icon { transform:rotate(45deg); }
+#mlg-emp .faq-item.open .faq-question { color:#fff; }
+#mlg-emp .employees-section {
+  background:#fbf6ef; padding:64px 28px;
+}
+@media(min-width:769px) {
+#mlg-emp .employees-section { padding:80px 80px; }
+}
+#mlg-emp .employees-section .section-eyebrow { color:#1e3a3e; }
+#mlg-emp .employees-section .section-eyebrow::before { background:#1e3a3e; }
+#mlg-emp .employees-section h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 6vw, 64px); font-weight:900; line-height:0.95;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:24px;
+}
+#mlg-emp .employees-section h2 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.72em;
+}
+#mlg-emp .employees-section .employer-item { background:#1e3a3e; border-color:rgba(30,58,62,0.4); box-shadow:0 3px 12px rgba(30,58,62,0.25); }
+#mlg-emp .employees-section .employer-item:hover, #mlg-emp .employees-section .employer-item:active, #mlg-emp .employees-section .employer-item:focus-visible { background:#f3ece0; }
+#mlg-emp .employees-section .employer-item-text strong { color:#fff; }
+#mlg-emp .employees-section .employer-item-text span { color:rgba(255,255,255,0.55); }
+#mlg-emp .employees-section .employer-item:hover .employer-item-text strong, #mlg-emp .employees-section .employer-item:active .employer-item-text strong, #mlg-emp .employees-section .employer-item:focus-visible .employer-item-text strong { color:#1e3a3e; }
+#mlg-emp .employees-section .employer-item:hover .employer-item-text span, #mlg-emp .employees-section .employer-item:active .employer-item-text span, #mlg-emp .employees-section .employer-item:focus-visible .employer-item-text span { color:#5a6e70; }
+#mlg-emp .employees-section > p, #mlg-emp .employees-intro-text p {
+  font-size:18px; color:#5a6e70; max-width:560px;
+  line-height:1.75; margin-bottom:40px;
+}
+#mlg-emp .employees-claims {
+  display:grid; grid-template-columns:1fr;
+  gap:12px; margin-bottom:40px;
+}
+@media(min-width:600px) {
+#mlg-emp .employees-claims { grid-template-columns:1fr 1fr; }
+}
+#mlg-emp .claim-card {
+  background:#fff; border:1px solid #e8e3da; border-radius:10px;
+  padding:32px 28px; text-decoration:none;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:border-color 0.2s, box-shadow 0.2s;
+}
+#mlg-emp .claim-card:hover { border-color:#c9a96e; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+#mlg-emp .claim-card-text strong { display:block; font-size:17px; font-weight:700; color:#1e3a3e; margin-bottom:6px; }
+#mlg-emp .claim-card-text span { font-size:14px; color:#8a9e9f; }
+#mlg-emp .claim-card-arrow { color:#c9a96e; font-size:18px; flex-shrink:0; }
+#mlg-emp .employee-faq {
+  background:#fff; padding:64px 28px;
+}
+@media(min-width:769px) {
+#mlg-emp .employee-faq { padding:80px 80px; max-width:900px; margin:0 auto; }
+}
+#mlg-emp .employee-faq h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(28px, 4vw, 44px); font-weight:900;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-0.5px; margin-bottom:32px;
+}
+#mlg-emp .employee-faq .faq-item { border-bottom:1px solid #e8e3da; }
+#mlg-emp .employee-faq .faq-question { color:#1e3a3e; }
+#mlg-emp .employee-faq .faq-question:hover { color:#1e3a3e; opacity:0.75; }
+#mlg-emp .employee-faq .faq-question .faq-icon { color:#c9a96e; }
+#mlg-emp .employee-faq .faq-item.open .faq-question { color:#1e3a3e; }
+#mlg-emp .employee-faq .faq-answer p { color:#5a6e70; }
+#mlg-emp .emp-testimonials {
+  background:#fbf6ef; padding:64px 28px;
+}
+@media(min-width:769px) {
+#mlg-emp .emp-testimonials { padding:80px 80px; }
+}
+#mlg-emp .emp-testimonials .section-eyebrow { color:#c9a96e; }
+#mlg-emp .emp-testimonials h2 {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(28px, 4vw, 42px); font-weight:400; font-style:italic;
+  color:#1e3a3e; margin-bottom:36px;
+}
+#mlg-emp .emp-carousel { overflow:hidden; }
+#mlg-emp .emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+#mlg-emp .emp-test-card {
+  min-width:100%; box-sizing:border-box;
+  background:#1e3a3e; border:1px solid rgba(30,58,62,0.2);
+  border-radius:12px; padding:32px;
+}
+#mlg-emp .emp-test-card .stars { color:#c9a96e; font-size:14px; margin-bottom:16px; letter-spacing:2px; }
+#mlg-emp .emp-test-card .quote {
+  font-size:15px; line-height:1.8; color:rgba(255,255,255,0.85);
+  font-style:italic; font-family:'DM Serif Display',serif;
+  margin-bottom:20px; display:block;
+}
+#mlg-emp .emp-test-card .author { font-size:12px; font-weight:700; color:#c9a96e; letter-spacing:1px; text-transform:uppercase; }
+#mlg-emp .emp-carousel-dots { display:flex; gap:8px; margin-top:24px; }
+#mlg-emp .emp-dot { width:8px; height:8px; border-radius:50%; background:rgba(30,58,62,0.25); border:none; cursor:pointer; padding:0; transition:background 0.2s; }
+#mlg-emp .emp-dot.active { background:#c9a96e; }
+#mlg-emp .why-us { background:#1e3a3e; padding:72px 28px; }
+@media(min-width:769px) {
+#mlg-emp .why-us { padding:96px 80px; }
+}
+#mlg-emp .why-us-inner { max-width:1080px; margin:0 auto; }
+#mlg-emp .why-us-eyebrow { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; }
+#mlg-emp .why-us-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
+#mlg-emp .why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
+#mlg-emp .why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
+@media(max-width:600px) {
+#mlg-emp .why-us-grid { grid-template-columns:1fr; }
+}
+#mlg-emp .why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
+#mlg-emp .why-us-item:hover { background:#f3ece0; }
+#mlg-emp .why-us-num { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#c9a96e; }
+#mlg-emp .why-us-item strong { font-size:17px; font-weight:700; color:#1e3a3e; }
+#mlg-emp .why-us-item span { font-size:13px; color:#5a6e70; line-height:1.65; }
+#mlg-emp .cta-banner {
+  background:#fbf6ef; padding:72px 28px; text-align:center;
+  border-top:1px solid #e8e3da;
+}
+#mlg-emp .cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(32px, 5vw, 52px); font-weight:900;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:12px;
+}
+#mlg-emp .cta-banner h2 em {
+  font-style:italic; font-family:'DM Serif Display',serif;
+  font-weight:400; text-transform:none; color:#c9a96e;
+}
+#mlg-emp .cta-banner p { font-size:15px; color:#5a6e70; margin-bottom:28px; line-height:1.65; }
+#mlg-emp .cta-banner .btn-gold { font-size:15px; padding:15px 36px; }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlg-emp .btn-gold, #mlg-emp .cta-inline, #mlg-emp .cta-banner .btn, #mlg-emp .contact-btn {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+  transition:transform 0.15s;
+}
+#mlg-emp .btn-gold:hover, #mlg-emp .cta-inline:hover, #mlg-emp .cta-banner .btn:hover, #mlg-emp .contact-btn:hover {
+  background:#d4b87d !important;
+  animation:none !important;
+  transform:translateY(-1px);
+}
+#mlg-emp .video-mobile { display:none; }
+@media(max-width:768px) {
+#mlg-emp .video-desktop { display:none; }
+#mlg-emp .video-mobile { display:block; }
+}
+#mlg-emp .hero-overlay::before, #mlg-emp .emp-hero-overlay::before {
+  content:''; position:absolute; inset:0;
+  background:rgba(20,48,52,0.55);
+}
+@media(min-width:769px) {
+#mlg-emp .employer-faq { display:grid; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+#mlg-emp .employer-faq h3 { grid-column:1 / -1; }
+}
+@keyframes tabGlow {
+  0%, 45%, 100% { background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.7); box-shadow:none; }
+  10%, 30% { background:rgba(201,169,110,0.55); color:#fff; box-shadow:inset 0 0 48px rgba(201,169,110,0.7), 0 0 36px rgba(201,169,110,0.6); }
+}
+#mlg-emp .audience-tab.employers { animation:none !important; }
+#mlg-emp .audience-tab.employees {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  color:#1e3a3e !important;
+  border-bottom-color:#b8933a !important;
+  animation:none !important;
+}
+#mlg-emp .employees-intro-img-wrap { display:none; }
+@media(min-width:769px) {
+#mlg-emp .employees-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; margin-bottom:8px; }
+#mlg-emp .employees-intro-img-wrap {
+    display:block; position:relative; width:100%; height:380px; border-radius:16px;
+    overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.12);
+  }
+#mlg-emp .employees-intro-img {
+    display:block; width:100%; height:100%; object-fit:cover; object-position:center 20%;
+    filter:brightness(0.88) saturate(1.05);
+  }
+#mlg-emp .employees-intro-img-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(20,45,50,0.2) 40%, rgba(20,45,50,0.42) 100%);
+  }
+}
+@media(min-width:769px) {
+#mlg-emp .section-eyebrow { font-size:18px; letter-spacing:4px; }
+#mlg-emp .section-eyebrow::before { width:40px; }
+#mlg-emp .why-us-eyebrow { font-size:18px; letter-spacing:4px; }
+}
+@media(min-width:769px) {
+#mlg-emp .emp-hero-sub { font-size:22px !important; max-width:760px; }
+#mlg-emp .employers-section > p { font-size:18px; max-width:680px; }
+#mlg-emp .employees-section > p, #mlg-emp .employees-intro-text p { font-size:19px; max-width:none; }
+#mlg-emp .employer-item-text strong { font-size:21px; }
+#mlg-emp .employer-item-text span { font-size:14px; }
+#mlg-emp .paga-alert p { font-size:15px; }
+#mlg-emp .employer-faq h3 { font-size:34px; }
+#mlg-emp .faq-question { font-size:18px; padding:22px 0; }
+#mlg-emp .faq-answer p { font-size:14px; }
+#mlg-emp .employee-faq h2 { font-size:clamp(32px, 4vw, 48px); }
+#mlg-emp .emp-test-card .quote { font-size:16px; }
+#mlg-emp .emp-test-card .author { font-size:14px; }
+#mlg-emp .emp-test-card .stars { font-size:17px; }
+#mlg-emp .why-us-item strong { font-size:21px; }
+#mlg-emp .why-us-item span { font-size:14px; }
+#mlg-emp .why-us-num { font-size:15px; }
+#mlg-emp .cta-banner p { font-size:18px; }
+}
+#mlg-emp .employers-intro-img-wrap { display:none; }
+@media(min-width:769px) {
+#mlg-emp .employers-intro { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; margin-bottom:8px; }
+#mlg-emp .employers-intro-img-wrap {
+    display:block; position:relative; width:100%; height:380px; border-radius:16px;
+    overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  }
+#mlg-emp .employers-intro-img {
+    display:block; width:100%; height:100%; object-fit:cover; object-position:center 20%;
+    filter:brightness(0.88) saturate(1.05);
+  }
+#mlg-emp .employers-intro-img-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(20,45,50,0.2) 40%, rgba(20,45,50,0.42) 100%);
+  }
+#mlg-emp .employers-section > p, #mlg-emp .employers-intro-text p { font-size:18px; max-width:none; }
+}
+@media(min-width:769px) {
+#mlg-emp .why-us-inner { max-width:1440px; }
+#mlg-emp .why-us-grid { gap:8px; }
+#mlg-emp .why-us-item { padding:56px 48px; gap:14px; }
+#mlg-emp .why-us-item strong { font-size:26px; }
+#mlg-emp .why-us-item span { font-size:15px; line-height:1.7; }
+#mlg-emp .why-us-num { font-size:16px; }
+#mlg-emp .why-us-title { font-size:clamp(48px,5.5vw,72px); margin-bottom:56px; }
+}
+@media(min-width:769px) {
+#mlg-emp .cta-banner h2 { font-size:clamp(64px, 7vw, 104px); }
+#mlg-emp .cta-banner p { font-size:19px; }
+#mlg-emp .cta-banner .btn-gold { font-size:18px; padding:18px 44px; }
+}
+@media(min-width:769px) {
+#mlg-emp .emp-testimonials h2 { font-size:clamp(48px, 5vw, 68px); margin-bottom:44px; }
+#mlg-emp .emp-test-card { padding:56px 64px; }
+#mlg-emp .emp-test-card .quote { font-size:18px; line-height:1.75; }
+#mlg-emp .emp-test-card .author { font-size:16px; }
+#mlg-emp .emp-test-card .stars { font-size:22px; margin-bottom:20px; }
+}
+#mlg-emp .faq-item { border-bottom-width:2px !important; }
+#mlg-emp .employer-faq .faq-item { border-bottom:2px solid rgba(255,255,255,0.25) !important; }
+#mlg-emp .employees-section .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
+#mlg-emp .employee-faq .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
+#mlg-emp .employers-section h2, #mlg-emp .employees-section h2, #mlg-emp .emp-testimonials h2, #mlg-emp .employer-faq h3, #mlg-emp .employee-faq h2, #mlg-emp .why-us-title { text-align:center; }
+#mlg-emp .section-eyebrow, #mlg-emp .why-us-eyebrow {
+  display:flex; width:max-content;
+  margin-left:auto; margin-right:auto; text-align:center;
+}
+#mlg-emp .employees-intro-text, #mlg-emp .employers-intro-text { text-align:left; }
+#mlg-emp .employees-intro-text h2, #mlg-emp .employers-intro-text h2 { text-align:left; }
+#mlg-emp .employees-intro-text .section-eyebrow, #mlg-emp .employers-intro-text .section-eyebrow { margin-left:0; }
+#mlg-emp .emp-hero { min-height:calc(100svh - 210px) !important; padding-bottom:10px !important; }
+@media(min-width:769px) {
+#mlg-emp .emp-hero { min-height:calc(100svh - 225px) !important; padding-bottom:12px !important; }
+}
+#mlg-emp .audience-switch { gap:14px; padding:0px 20px 16px; background:#1e3a3e; }
+#mlg-emp .audience-tab {
+  border-radius:14px !important;
+  border:2.5px solid #c9a96e !important;
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+  cursor:pointer;
+  transition:transform 0.15s, box-shadow 0.2s, background 0.2s, color 0.2s !important;
+}
+#mlg-emp .audience-tab::after { content:' ↓'; font-weight:800; }
+#mlg-emp .audience-tab:hover { transform:translateY(-3px) scale(1.01); box-shadow:0 12px 30px rgba(0,0,0,0.4); }
+#mlg-emp .audience-tab.employers:hover { background:rgba(201,169,110,0.2); color:#fff; }
+#mlg-emp .audience-tab.employees:hover { filter:brightness(1.06); }
+#mlg-emp .section-eyebrow, #mlg-emp .why-us-eyebrow, #mlg-emp .emp-hero-label, #mlg-emp .eyebrow {
+  font-size:15px !important; letter-spacing:3px !important; font-weight:700 !important;
+}
+@media(min-width:769px) {
+#mlg-emp .section-eyebrow, #mlg-emp .why-us-eyebrow, #mlg-emp .eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+#mlg-emp .detail-block p, #mlg-emp .employers-section > p, #mlg-emp .employers-intro-text p, #mlg-emp .employees-intro-text p, #mlg-emp .employees-section > p, #mlg-emp .faq-answer p, #mlg-emp .emp-test-card .quote, #mlg-emp .why-us-item span, #mlg-emp .paga-alert p, #mlg-emp .employer-item-text span, #mlg-emp .about p, #mlg-emp .mlg-quote, #mlg-emp .quote, #mlg-emp .lawsuits p, #mlg-emp .detail-section p, #mlg-emp .bio-block p, #mlg-emp .result-card span, #mlg-emp .atty-hero p {
+  text-align:left;
+}
+#mlg-emp .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlg-emp .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlg-emp .reveal-d1 { transition-delay:0.08s; }
+#mlg-emp .reveal-d2 { transition-delay:0.16s; }
+#mlg-emp .reveal-d3 { transition-delay:0.24s; }
+#mlg-emp .reveal-d4 { transition-delay:0.32s; }
+#mlg-emp .reveal-d5 { transition-delay:0.4s; }
+#mlg-emp .reveal-d6 { transition-delay:0.48s; }
+#mlg-emp .reveal-d7 { transition-delay:0.56s; }
+#mlg-emp .hero-pill {
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:10px; width:max-content; max-width:100%;
+  box-sizing:border-box; white-space:normal;
+  background:rgba(201,169,110,0.15); border:1.5px solid rgba(201,169,110,0.6);
+  border-radius:26px; padding:9px 16px; margin-bottom:24px;
+  font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+  font-weight:700; color:#e8cc8a;
+}
+@media(max-width:400px) {
+#mlg-emp .hero-pill { font-size:10px; letter-spacing:1px; padding:8px 14px; }
+}
+#mlg-emp .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
+@media(min-width:769px) {
+#mlg-emp .hero-pill { font-size:15px; }
+}
+</style>
+
+<div id="mlg-emp">
+<!-- HERO -->
+<section class="emp-hero">
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
+  <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">Employment Law · Saratoga, California</div>
+  <h1>California Employment Law <em>Attorneys</em></h1>
+  <p class="emp-hero-sub">Representing businesses and employees throughout Silicon Valley &amp; the Bay Area.</p>
+</section>
+
+<!-- AUDIENCE TABS -->
+<div class="audience-switch">
+  <a href="#employees" class="audience-tab employers"><svg viewBox="0 0 24 24" width="26" height="26" fill="#c9a96e" style="vertical-align:-4px;margin-right:10px;"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.34 0-10 1.67-10 5v3h20v-3c0-3.33-6.66-5-10-5z"/></svg>For Employees</a>
+  <a href="#employers" class="audience-tab employees">⚖ For Employers</a>
+</div>
+
+<!-- EMPLOYEES SECTION -->
+<section class="employees-section" id="employees">
+  <div class="employees-intro">
+    <div class="employees-intro-text">
+      <div class="section-eyebrow reveal">For Employees</div>
+      <h2 class="reveal reveal-d1">We Fight for<em>Employee Rights.</em></h2>
+      <p class="reveal reveal-d2" style="text-align:left;">If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley — you don't pay for attorney fees unless we win.</p>
+    </div>
+    <div class="employees-intro-img-wrap reveal reveal-d2">
+      <img class="employees-intro-img" src="WhatsApp Image 2025-01-21 at 14.57.35_a0a9c091.jpg" alt="McLellan Law Group attorneys">
+      <div class="employees-intro-img-overlay"></div>
+    </div>
+  </div>
+
+  <div class="employers-grid">
+    <a href="wrongful-termination.html" class="employer-item reveal reveal-d1" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Wrongful Termination</strong>
+        <span>Fired unlawfully or in retaliation</span>
+      </div>
+    </a>
+    <a href="workplace-discrimination.html" class="employer-item reveal reveal-d2" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Workplace Discrimination</strong>
+        <span>Race, gender, age, disability, religion</span>
+      </div>
+    </a>
+    <a href="sexual-harassment.html" class="employer-item reveal reveal-d3" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Sexual Harassment</strong>
+        <span>Hostile work environment &amp; quid pro quo</span>
+      </div>
+    </a>
+    <a href="retaliation.html" class="employer-item reveal reveal-d4" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Retaliation</strong>
+        <span>Punished for reporting violations</span>
+      </div>
+    </a>
+    <a href="unpaid-wages.html" class="employer-item reveal reveal-d5" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Unpaid Wages &amp; Overtime</strong>
+        <span>Wage theft, missed breaks, classification</span>
+      </div>
+    </a>
+    <a href="paga-claims.html" class="employer-item reveal reveal-d6" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>PAGA Claims</strong>
+        <span>Act on behalf of yourself and coworkers</span>
+      </div>
+    </a>
+    <a href="constructive-termination.html" class="employer-item reveal reveal-d7" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Constructive Termination</strong>
+        <span>Forced to resign due to intolerable conditions</span>
+      </div>
+    </a>
+    <a href="severance-negotiation.html" class="employer-item reveal reveal-d7" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Severance Negotiation</strong>
+        <span>Review and negotiate your severance package</span>
+      </div>
+    </a>
+  </div>
+
+  <a href="#contact" class="btn-gold reveal" style="margin-bottom:48px; display:inline-flex;">Free Case Evaluation →</a>
+
+  <div class="employer-faq" style="margin-top:48px;">
+    <h3 class="reveal" style="color:#1e3a3e;">Employee FAQs</h3>
+
+    <div class="faq-item reveal reveal-d1" style="border-bottom:1px solid #e8e3da;">
+      <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e;">
+        Do you handle employment cases in Saratoga, California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p style="color:#5a6e70;">Yes. McLellan Law Group is based in Saratoga, CA and represents employees and employers throughout Silicon Valley, Santa Clara County, and the Bay Area.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d2" style="border-bottom:1px solid #e8e3da;">
+      <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e;">
+        What employment law cases do you handle?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p style="color:#5a6e70;">We handle wrongful termination, workplace discrimination, sexual harassment, retaliation, wage and hour violations, PAGA claims, and other employment disputes under California and federal law.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d3" style="border-bottom:1px solid #e8e3da;">
+      <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e;">
+        How much does it cost to speak with an employment attorney?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p style="color:#5a6e70;">We offer a free initial consultation. Many employee-side cases are handled on a contingency fee basis, meaning you pay nothing unless we recover for you.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d4" style="border-bottom:1px solid #e8e3da;">
+      <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e;">
+        What should I do after I've been fired?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p style="color:#5a6e70;">Document everything — your termination notice, communications, and the circumstances surrounding the decision. California law protects employees from wrongful termination. If you believe the firing was unlawful, consult an employment attorney promptly to preserve your rights and evaluate your options.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d5" style="border-bottom:1px solid #e8e3da;">
+      <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e;">
+        I received a severance agreement. Should I sign it?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p style="color:#5a6e70;">Do not sign without legal review. Severance agreements typically waive your right to sue — including claims you may not yet be aware of. California law imposes strict requirements around timing and language, especially for employees 40 or older. McLellan Law Group reviews severance agreements for employees and executives throughout Silicon Valley.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d6" style="border-bottom:1px solid #e8e3da;">
+      <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e;">
+        What should I do if I've been discriminated against at work?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p style="color:#5a6e70;">Document incidents with dates, witnesses, and any written communications. Report the conduct through your employer's internal complaint process if safe to do so. California's FEHA prohibits discrimination based on race, gender, age, disability, religion, sexual orientation, and other protected characteristics. Contact an employment attorney to evaluate your case.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYERS SECTION -->
+<section class="employers-section" id="employers">
+  <div class="employers-intro">
+    <div class="employers-intro-text">
+      <div class="section-eyebrow reveal">For Employers</div>
+      <h2 class="reveal reveal-d1">We Defend<em>California Employers.</em></h2>
+      <p class="reveal reveal-d2">California has some of the strictest employment laws in the country. We help businesses of all sizes across Silicon Valley resolve claims fast and reduce future exposure.</p>
+    </div>
+    <div class="employers-intro-img-wrap reveal reveal-d2">
+      <img class="employers-intro-img" src="Foto estudio.png" alt="McLellan Law Group office in Saratoga">
+      <div class="employers-intro-img-overlay"></div>
+    </div>
+  </div>
+
+  <div class="employers-grid">
+    <a href="wrongful-termination-defense.html" class="employer-item reveal reveal-d1" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Wrongful Termination Defense</strong>
+        <span>Defend against at-will and FEHA-based claims</span>
+      </div>
+    </a>
+    <a href="paga-notice-response.html" class="employer-item reveal reveal-d2" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>PAGA Notice Response</strong>
+        <span>65-day window — act before it closes</span>
+      </div>
+    </a>
+    <a href="wage-hour-defense.html" class="employer-item reveal reveal-d3" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Wage &amp; Hour Disputes</strong>
+        <span>Overtime, meal breaks, classification issues</span>
+      </div>
+    </a>
+    <a href="retaliation-defense.html" class="employer-item reveal reveal-d4" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Retaliation Defense</strong>
+        <span>Protect against whistleblower and FEHA retaliation claims</span>
+      </div>
+    </a>
+    <a href="hr-policies-handbooks.html" class="employer-item reveal reveal-d5" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>HR Policies &amp; Handbooks</strong>
+        <span>Compliant documentation that reduces liability</span>
+      </div>
+    </a>
+    <a href="employment-contracts-severance.html" class="employer-item reveal reveal-d6" style="text-decoration:none;">
+      <div class="employer-item-icon"></div>
+      <div class="employer-item-text">
+        <strong>Contracts &amp; Severance Agreements</strong>
+        <span>Draft, review, and enforce employment agreements</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="paga-alert reveal">
+    <div class="paga-alert-icon">⚡</div>
+    <p style="text-align:left;"><strong>Received a PAGA notice?</strong> Time is critical — the 65-day response window starts immediately. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. <strong>Call us before you respond.</strong></p>
+  </div>
+
+  <a href="#contact" class="btn-gold reveal">Get a Free Consultation →</a>
+
+  <div class="employer-faq">
+    <h3 class="reveal">Employer FAQs</h3>
+
+    <div class="faq-item reveal reveal-d1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What should I do if I receive a PAGA notice in California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Contact a California employment attorney immediately. PAGA notices trigger a 65-day window during which the LWDA can decide whether to investigate. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. Do not ignore the notice and do not retaliate against the employee who filed it. McLellan Law Group, LLP represents California employers in PAGA defense throughout Silicon Valley and the Bay Area.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I be sued for wrongful termination if I have an at-will employment policy?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes — and this is one of the biggest misconceptions California employers have. At-will employment is a starting point, not a shield. You cannot terminate someone for a reason that violates public policy, is based on a protected characteristic under FEHA, constitutes retaliation for protected activity, or breaches an implied contract created by your handbook or offer letter. Every termination should be documented and reviewed for risk before you act.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d3">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What is the difference between a PAGA claim and a class action?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>A class action requires court certification — a significant hurdle that can stop the case if denied. A PAGA claim does not: the employee acts on behalf of the State of California with no certification requirement. PAGA penalties are calculated per employee per pay period, 75% go to the State, and they cannot be fully eliminated through arbitration agreements. The 2024 reforms introduced new opportunities to limit exposure — making early legal strategy critical.</p>
+      </div>
+    </div>
+
+    <div class="faq-item reveal reveal-d4">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need an employment attorney to draft a severance agreement in California?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>You are not legally required to, but getting it wrong is costly. For employees 40 or older, federal law requires specific timing and language. California requires a Civil Code §1542 waiver to release unknown claims. Recent state law changes restrict certain non-disparagement clauses. McLellan Law Group, LLP drafts and reviews severance agreements for California employers and advises employees and executives before they sign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="emp-testimonials">
+  <div class="section-eyebrow reveal">Client Reviews</div>
+  <h2 class="reveal reveal-d1">What Our Clients Say</h2>
+  <div class="emp-carousel reveal reveal-d2" id="empCarousel">
+    <div class="emp-carousel-track" id="empTrack">
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
+        <span class="author">— Benjamin · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
+        <span class="author">— Pete · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
+        <span class="author">— Anonymous · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
+        <span class="author">— Wendy · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
+        <span class="author">— Jordan · Employment Law</span>
+      </div>
+    </div>
+  </div>
+  <div class="emp-carousel-dots" id="empDots">
+    <button class="emp-dot active" onclick="goToEmp(0)"></button>
+    <button class="emp-dot" onclick="goToEmp(1)"></button>
+    <button class="emp-dot" onclick="goToEmp(2)"></button>
+    <button class="emp-dot" onclick="goToEmp(3)"></button>
+    <button class="emp-dot" onclick="goToEmp(4)"></button>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="why-us-inner">
+    <div class="section-eyebrow reveal" style="color:#c9a96e;">Why McLellan Law Group</div>
+    <h2 class="why-us-title reveal reveal-d1">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-grid">
+      <div class="why-us-item reveal reveal-d1">
+        <div class="why-us-num">01</div>
+        <strong>Boutique Firm Attention</strong>
+        <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d2">
+        <div class="why-us-num">02</div>
+        <strong>Silicon Valley Focus</strong>
+        <span>Based in Saratoga, we know California employment law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d3">
+        <div class="why-us-num">03</div>
+        <strong>Proven Track Record</strong>
+        <span>From wrongful termination to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d4">
+        <div class="why-us-num">04</div>
+        <strong>Free Consultation</strong>
+        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Ready to Talk?<br><em>We're Here.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+</section>
+</div>
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+(function(){
+  var track = document.getElementById('empTrack');
+  var dots = document.querySelectorAll('#empDots .emp-dot');
+  var current = 0, total = dots.length, startX = 0, timer;
+  function goToEmp(n){
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  window.goToEmp = goToEmp;
+  function next(){ goToEmp(current+1); }
+  timer = setInterval(next, 5000);
+  var el = document.getElementById('empCarousel');
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+    timer = setInterval(next, 5000);
+  }, {passive:true});
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
