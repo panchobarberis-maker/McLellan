@@ -636,6 +636,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* Tabs con aspecto de BOTON */
 .audience-switch { gap:14px; padding:0px 20px 16px; background:#1e3a3e; }
 .audience-tab {
+  min-width:0 !important;          /* las columnas 1fr no pueden achicarse sin esto */
   border-radius:14px !important;
   border:2.5px solid #c9a96e !important;
   box-shadow:0 6px 20px rgba(0,0,0,0.3);
@@ -643,6 +644,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   transition:transform 0.15s, box-shadow 0.2s, background 0.2s, color 0.2s !important;
 }
 .audience-tab::after { content:' ↓'; font-weight:800; }
+/* en mobile la caja es angosta: achicamos para que quiebre entre palabras
+   y no parta "EMPLOYEES" al medio */
+@media(max-width:520px) {
+  .audience-tab { font-size:17px !important; letter-spacing:0.5px !important; padding:18px 8px !important; }
+  .audience-tab svg { width:20px !important; height:20px !important; margin-right:6px !important; }
+}
 .audience-tab:hover { transform:translateY(-3px) scale(1.01); box-shadow:0 12px 30px rgba(0,0,0,0.4); }
 .audience-tab.employers:hover { background:rgba(201,169,110,0.2); color:#fff; }
 .audience-tab.employees:hover { filter:brightness(1.06); }

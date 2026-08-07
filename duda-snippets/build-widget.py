@@ -111,11 +111,14 @@ html, body {{ overflow-x:hidden; }}
 #{scope} {{ font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
   -webkit-font-smoothing:antialiased; font-weight:500; }}
 
-/* Duda mete el widget dentro de un ROW con margenes propios. Nos pasamos 2vw
-   por lado para comerlos: con el ROW en full bleed sigue sobrando resto. */
+{scope_block(css, scope)}
+
+/* Duda encajona el widget en un ROW. Las secciones se sueltan al ancho de la
+   ventana. Exacto, sin desbordar: 104vw empujaba los botones fuera de pantalla
+   en mobile. Si el ROW deja algun gutter, se tapa pintandolo de verde en Duda. */
 #{scope} > section, #{scope} > div {{
-  margin-left:calc(-52vw + 50%) !important;
-  width:104vw !important; max-width:104vw !important;
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
 }}
 /* La franja que el ROW deja arriba. Una sombra no sirve: el overflow:hidden
    del ROW la recorta. Un margen negativo si entra en esa zona, y el padding
@@ -124,7 +127,6 @@ html, body {{ overflow-x:hidden; }}
   margin-top:-100px !important;
   padding-top:100px !important;
 }}
-{scope_block(css, scope)}
 </style>
 
 <div id="{scope}">
