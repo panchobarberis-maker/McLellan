@@ -326,7 +326,10 @@ html, body { overflow-x:hidden; }
   animation:none !important;
   transform:translateY(-1px);
 }
+#mlg-emp .video-mobile { display:none; }
 @media(max-width:768px) {
+#mlg-emp .video-desktop { display:none; }
+#mlg-emp .video-mobile { display:block; }
 }
 #mlg-emp .hero-overlay::before, #mlg-emp .emp-hero-overlay::before {
   content:''; position:absolute; inset:0;
@@ -495,8 +498,11 @@ html, body { overflow-x:hidden; }
 <div id="mlg-emp">
 <!-- HERO -->
 <section class="emp-hero">
-  <video class="emp-hero-img" autoplay muted loop playsinline preload="auto">
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto">
     <source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4">
+  </video>
+  <video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto">
+    <source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4">
   </video>
   <div class="emp-hero-overlay"></div>
   <div class="hero-pill">Employment Law · Saratoga, California</div>
