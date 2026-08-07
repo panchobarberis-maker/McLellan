@@ -113,12 +113,13 @@ html, body {{ overflow-x:hidden; }}
 
 {scope_block(css, scope)}
 
-/* Duda encajona el widget en un ROW. Las secciones se sueltan al ancho de la
-   ventana. Exacto, sin desbordar: 104vw empujaba los botones fuera de pantalla
-   en mobile. Si el ROW deja algun gutter, se tapa pintandolo de verde en Duda. */
+/* Las secciones llenan el contenedor y listo. Nada de 100vw: dentro del
+   preview de Duda vw no coincide con el ancho real del ROW y quedaban
+   cuadrados blancos a los costados. El ROW va en full bleed desde Duda. */
+#{scope} {{ width:100% !important; max-width:100% !important; }}
 #{scope} > section, #{scope} > div {{
-  margin-left:calc(-50vw + 50%) !important;
-  width:100vw !important; max-width:100vw !important;
+  margin-left:0 !important; margin-right:0 !important;
+  width:100% !important; max-width:100% !important;
 }}
 /* La franja que el ROW deja arriba. Una sombra no sirve: el overflow:hidden
    del ROW la recorta. Un margen negativo si entra en esa zona, y el padding
