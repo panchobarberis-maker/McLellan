@@ -33,6 +33,22 @@ FONTS = ("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;8
          "&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap")
 
 
+# Rutas reales en Duda. Por defecto el slug es el nombre del archivo; aca van
+# las que no coinciden. Si Duda usa otro slug, se cambia solo esta tabla y se
+# regeneran todas las paginas de una.
+SLUGS = {
+    'index':               '/',
+    'business-litigation': '/civil-litigation',
+    'contact':             '/contact-us',
+}
+
+
+def to_duda(href):
+    """wrongful-termination.html -> /wrongful-termination"""
+    name = href[:-5]
+    return SLUGS.get(name, '/' + name)
+
+
 def is_nav(sel):
     s = sel.strip()
     return any(s == n or s.startswith(n + c) for n in NAV for c in (' ', ':', '.', ',', '>'))
@@ -101,6 +117,11 @@ def build(path, scope):
     def inline(m):
         return 'style="' + force_important(m.group(1)) + '"'
     body = re.sub(r'style="([^"]*)"', inline, body)
+
+    # Links internos con la URL definitiva de Duda, para no tener que tocarlos
+    # despues de publicar.
+    body = re.sub(r'href="([a-z0-9-]+\.html)"',
+                  lambda m: 'href="' + to_duda(m.group(1)) + '"', body)
 
     scripts = re.findall(r'<script>(.*?)</script>', body, re.S)
     body = re.sub(r'<script>.*?</script>', '', body, flags=re.S).strip()

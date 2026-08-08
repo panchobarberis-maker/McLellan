@@ -1,0 +1,20 @@
+# SEO de las subpaginas de Employment Law
+
+Para cada pagina en Duda: Page Settings -> SEO.
+
+| URL | Title | Meta description |
+|---|---|---|
+| `/wrongful-termination` | Wrongful Termination Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group represents employees in wrongful termination cases in Saratoga, CA. Fired for illegal reasons? Get a free consultation from Silicon Valley employment attorneys. |
+| `/workplace-discrimination` | Workplace Discrimination Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group represents employees in workplace discrimination cases in Saratoga, CA. Protecting Silicon Valley employees from unlawful discrimination based on race, gender, age, disability, and more. |
+| `/sexual-harassment` | Sexual Harassment Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group provides confidential, compassionate representation for sexual harassment victims in Saratoga, CA. Serving Silicon Valley employees in quid pro quo and hostile work environment cases. |
+| `/retaliation` | Workplace Retaliation Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group represents Silicon Valley employees in workplace retaliation cases. If your employer punished you for speaking up, we fight back. Saratoga, CA employment attorneys. |
+| `/unpaid-wages` | Unpaid Wages & Overtime Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group recovers unpaid wages and overtime for Silicon Valley employees. Meal break violations, off-the-clock work, misclassification — Saratoga, CA employment attorneys. |
+| `/paga-claims` | PAGA Claims Attorney in Saratoga, CA | McLellan Law Group | McLellan Law Group handles PAGA claims for Silicon Valley employees. Enforcing California labor law violations under the Private Attorneys General Act. Saratoga, CA employment attorneys. |
+| `/constructive-termination` | Constructive Termination Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group represents employees forced to resign due to intolerable working conditions in Saratoga, CA. Constructive termination is treated as wrongful termination under California law. |
+| `/severance-negotiation` | Severance Negotiation Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group reviews and negotiates severance agreements for Silicon Valley employees in Saratoga, CA. Know what you're waiving before you sign. |
+| `/wrongful-termination-defense` | Wrongful Termination Defense Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group defends Silicon Valley employers against wrongful termination claims. At-will and FEHA-based defense from Saratoga, CA employment attorneys. |
+| `/retaliation-defense` | Retaliation Defense Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group defends Silicon Valley employers against whistleblower and FEHA retaliation claims. Saratoga, CA employment attorneys. |
+| `/wage-hour-defense` | Wage & Hour Defense Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group defends Silicon Valley employers in wage and hour disputes — overtime, meal breaks, and misclassification. Saratoga, CA employment attorneys. |
+| `/paga-notice-response` | PAGA Notice Response Attorneys in Saratoga, CA | McLellan Law Group | Received a PAGA notice? McLellan Law Group helps California employers respond within the 65-day window and reduce penalty exposure. Saratoga, CA employment attorneys. |
+| `/hr-policies-handbooks` | Employee Handbook &amp; HR Policy Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group drafts and updates employee handbooks and HR policies for Silicon Valley businesses. Compliant documentation that reduces liability. Saratoga, CA. |
+| `/employment-contracts-severance` | Employment Contracts &amp; Severance Agreement Attorneys in Saratoga, CA | McLellan Law Group | McLellan Law Group drafts, reviews, and enforces employment contracts and severance agreements for Silicon Valley businesses. Saratoga, CA employment attorneys. |
