@@ -285,6 +285,37 @@
 .mlgP .reveal-d2 { transition-delay:0.16s; }
 .mlgP .reveal-d3 { transition-delay:0.24s; }
 .mlgP .reveal-d4 { transition-delay:0.32s; }
+.mlgP .emp-testimonials {
+  background:#fbf6ef !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+.mlgP .emp-testimonials { padding:80px 80px !important; }
+}
+.mlgP .emp-testimonials .section-eyebrow { color:#c9a96e !important; }
+.mlgP .emp-testimonials h2 {
+  font-family:'DM Serif Display',serif !important;
+  font-size:clamp(28px, 4vw, 42px) !important; font-weight:400 !important; font-style:italic !important;
+  color:#1e3a3e !important; margin-bottom:36px !important;
+}
+.mlgP .emp-carousel { overflow:hidden; }
+.mlgP .emp-carousel-track { display:flex !important; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.mlgP .emp-test-card {
+  min-width:100% !important; box-sizing:border-box;
+  background:#1e3a3e !important; border:1px solid rgba(30,58,62,0.2) !important;
+  border-radius:12px !important; padding:32px !important;
+}
+.mlgP .emp-test-card .stars { color:#c9a96e !important; font-size:14px !important; margin-bottom:16px !important; letter-spacing:2px !important; }
+.mlgP .emp-test-card .quote {
+  font-size:15px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important;
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  margin-bottom:20px !important; display:block !important;
+}
+.mlgP .emp-test-card .author { font-size:12px !important; font-weight:700 !important; color:#c9a96e !important; letter-spacing:1px !important; text-transform:uppercase !important; }
+.mlgP .emp-carousel-dots { display:flex !important; gap:8px !important; margin-top:24px !important; }
+.mlgP .employers-section h2, .mlgP .employees-section h2, .mlgP .emp-testimonials h2, .mlgP .employer-faq h3, .mlgP .employee-faq h2, .mlgP .why-us-title { text-align:center !important; }
+.mlgP .detail-block p, .mlgP .employers-section > p, .mlgP .employers-intro-text p, .mlgP .employees-intro-text p, .mlgP .employees-section > p, .mlgP .faq-answer p, .mlgP .emp-test-card .quote, .mlgP .why-us-item span, .mlgP .paga-alert p, .mlgP .employer-item-text span, .mlgP .about p, .mlgP .mlg-quote, .mlgP .quote, .mlgP .lawsuits p, .mlgP .detail-section p, .mlgP .bio-block p, .mlgP .result-card span, .mlgP .atty-hero p {
+  text-align:left !important;
+}
 
 /* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
    secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
@@ -512,6 +543,47 @@
 </section>
 
 <!-- CTA BANNER -->
+<section class="emp-testimonials">
+  <div class="section-eyebrow reveal">Client Reviews</div>
+  <h2 class="reveal reveal-d1">What Our Clients Say</h2>
+  <div class="emp-carousel reveal reveal-d2" id="empCarousel">
+    <div class="emp-carousel-track" id="empTrack">
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
+        <span class="author">— Benjamin · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
+        <span class="author">— Pete · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
+        <span class="author">— Anonymous · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
+        <span class="author">— Wendy · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
+        <span class="author">— Jordan · Employment Law</span>
+      </div>
+    </div>
+  </div>
+  <div class="emp-carousel-dots" id="empDots">
+    <button class="emp-dot active" onclick="goToEmp(0)"></button>
+    <button class="emp-dot" onclick="goToEmp(1)"></button>
+    <button class="emp-dot" onclick="goToEmp(2)"></button>
+    <button class="emp-dot" onclick="goToEmp(3)"></button>
+    <button class="emp-dot" onclick="goToEmp(4)"></button>
+  </div>
+</section>
+
 <section class="cta-banner" id="contact">
   <h2 class="reveal">Fired Unlawfully?<em>Let's Talk.</em></h2>
   <p class="reveal reveal-d1">Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
@@ -563,6 +635,28 @@ function toggleFaq(btn) {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el){ observer.observe(el); });
+})();
+
+
+(function(){
+  var track = document.getElementById('empTrack');
+  var dots = document.querySelectorAll('#empDots .emp-dot');
+  var current = 0, total = dots.length, startX = 0, timer;
+  function goToEmp(n){
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  window.goToEmp = goToEmp;
+  function next(){ goToEmp(current+1); }
+  timer = setInterval(next, 5000);
+  var el = document.getElementById('empCarousel');
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+    timer = setInterval(next, 5000);
+  }, {passive:true});
 })();
 </script>
 

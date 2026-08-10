@@ -285,6 +285,37 @@
 .mlgP .reveal-d2 { transition-delay:0.16s; }
 .mlgP .reveal-d3 { transition-delay:0.24s; }
 .mlgP .reveal-d4 { transition-delay:0.32s; }
+.mlgP .emp-testimonials {
+  background:#fbf6ef !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+.mlgP .emp-testimonials { padding:80px 80px !important; }
+}
+.mlgP .emp-testimonials .section-eyebrow { color:#c9a96e !important; }
+.mlgP .emp-testimonials h2 {
+  font-family:'DM Serif Display',serif !important;
+  font-size:clamp(28px, 4vw, 42px) !important; font-weight:400 !important; font-style:italic !important;
+  color:#1e3a3e !important; margin-bottom:36px !important;
+}
+.mlgP .emp-carousel { overflow:hidden; }
+.mlgP .emp-carousel-track { display:flex !important; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.mlgP .emp-test-card {
+  min-width:100% !important; box-sizing:border-box;
+  background:#1e3a3e !important; border:1px solid rgba(30,58,62,0.2) !important;
+  border-radius:12px !important; padding:32px !important;
+}
+.mlgP .emp-test-card .stars { color:#c9a96e !important; font-size:14px !important; margin-bottom:16px !important; letter-spacing:2px !important; }
+.mlgP .emp-test-card .quote {
+  font-size:15px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important;
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  margin-bottom:20px !important; display:block !important;
+}
+.mlgP .emp-test-card .author { font-size:12px !important; font-weight:700 !important; color:#c9a96e !important; letter-spacing:1px !important; text-transform:uppercase !important; }
+.mlgP .emp-carousel-dots { display:flex !important; gap:8px !important; margin-top:24px !important; }
+.mlgP .employers-section h2, .mlgP .employees-section h2, .mlgP .emp-testimonials h2, .mlgP .employer-faq h3, .mlgP .employee-faq h2, .mlgP .why-us-title { text-align:center !important; }
+.mlgP .detail-block p, .mlgP .employers-section > p, .mlgP .employers-intro-text p, .mlgP .employees-intro-text p, .mlgP .employees-section > p, .mlgP .faq-answer p, .mlgP .emp-test-card .quote, .mlgP .why-us-item span, .mlgP .paga-alert p, .mlgP .employer-item-text span, .mlgP .about p, .mlgP .mlg-quote, .mlgP .quote, .mlgP .lawsuits p, .mlgP .detail-section p, .mlgP .bio-block p, .mlgP .result-card span, .mlgP .atty-hero p {
+  text-align:left !important;
+}
 
 /* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
    secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
