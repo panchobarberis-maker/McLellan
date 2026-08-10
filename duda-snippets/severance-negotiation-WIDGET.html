@@ -1,5 +1,7 @@
 <style>html, body { overflow-x:hidden; }</style>
 
+<div class="mlgP-progress"></div>
+
 <div class="mlgP">
 
 <!-- HERO -->
@@ -296,6 +298,23 @@ setTimeout(function(){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
 }, 1200);
+
+// Barra de progreso: mide cuanto del contenido queda por leer.
+(function(){
+  var barra = document.querySelector('.mlgP-progress');
+  var cont  = document.querySelector('.mlgP');
+  if (!barra || !cont) return;
+  function pintar(){
+    var arriba = cont.getBoundingClientRect().top + window.scrollY;
+    var recorrido = cont.offsetHeight - window.innerHeight;
+    if (recorrido <= 0) { barra.style.width = '0'; return; }
+    var hecho = (window.scrollY - arriba) / recorrido;
+    barra.style.width = Math.max(0, Math.min(1, hecho)) * 100 + '%';
+  }
+  pintar();
+  window.addEventListener('scroll', pintar, {passive:true});
+  window.addEventListener('resize', pintar);
+})();
 </script>
 
 <script type="application/ld+json">

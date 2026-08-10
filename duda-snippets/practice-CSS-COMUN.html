@@ -131,7 +131,7 @@
 @media(min-width:769px) {
 .mlgP .content-list li { padding:26px 28px !important; }
 }
-.mlgP .content-list li::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; flex-shrink:0; margin-top:2px !important; font-size:19px !important; }
+.mlgP .content-list li::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; flex-shrink:0; margin-top:2px !important; }
 .mlgP .content-list li span { font-size:18px !important; line-height:1.7 !important; color:#4a5c5e !important; text-align:left !important; }
 @media(min-width:769px) {
 .mlgP .content-list li span { font-size:21px !important; }
@@ -370,4 +370,14 @@
   .mlgP .emp-hero-sub { font-size:min(19px, 2.3vh) !important; margin-bottom:min(28px, 3vh) !important; }
   .mlgP .hero-pill { margin-bottom:min(18px, 2vh) !important; }
 }
+
+/* Barra de progreso de lectura. Solo aparece en las paginas cuyo widget trae
+   el elemento .mlgP-progress, asi que se activa pagina por pagina. */
+.mlgP-progress {
+  position:fixed !important; top:0 !important; left:0 !important;
+  height:4px !important; width:0; z-index:99999 !important;   /* el ancho lo pone el script: sin !important */
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 50%,#b8933a 100%) !important;
+  transition:width 0.1s linear !important; pointer-events:none !important;
+}
+@media(max-width:768px) { .mlgP-progress { height:3px !important; } }
 </style>
