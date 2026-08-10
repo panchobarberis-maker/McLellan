@@ -1,14 +1,6 @@
-<!-- Barra de progreso de lectura. Va UNA sola vez en el head del sitio y
-     funciona en todas las paginas.
-
-     Todo el estilo se aplica desde el script con cssText, no desde una hoja
-     de estilos: asi no depende de que Duda respete el <style> ni de que
-     alguna regla del tema le gane. El z-index es el maximo posible para que
-     no quede tapada por el header de Duda.
-
-     Ademas detecta cual es el elemento que scrollea de verdad, porque en
-     algunas plantillas de Duda no es la ventana sino un contenedor interno. -->
-<script>
+// Barra de progreso de lectura. Misma logica que el snippet de Duda
+// (duda-snippets/BARRA-PROGRESO.html): se crea sola, se estila desde JS y
+// se esconde en paginas demasiado cortas para scrollear.
 (function(){
   var ID = 'mlg-progreso';
 
@@ -106,4 +98,3 @@
     }
   }
 })();
-</script>
