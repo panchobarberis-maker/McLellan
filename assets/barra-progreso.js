@@ -1,4 +1,4 @@
-// Barra de progreso de lectura, vertical, pegada al borde derecho.
+// Barra de progreso de lectura, vertical, flotando sobre el borde izquierdo.
 // Misma logica que el snippet de Duda (duda-snippets/BARRA-PROGRESO.html):
 // se crea sola, se estila desde JS y se esconde en paginas demasiado cortas
 // para scrollear.
@@ -17,7 +17,7 @@
       arriba: chico ? '76px' : '96px',
       abajo: chico ? '24px' : '40px',
       // Separada del borde: flotando se nota mucho mas que pegada al filo.
-      derecha: chico ? '12px' : '22px'
+      izquierda: chico ? '12px' : '22px'
     };
   }
 
@@ -25,7 +25,7 @@
     var m = medidas();
     riel.style.cssText = [
       'position:fixed',
-      'right:' + m.derecha,
+      'left:' + m.izquierda,
       'top:' + m.arriba,
       'bottom:' + m.abajo,
       'width:' + m.ancho,
