@@ -12,10 +12,12 @@
   function medidas(){
     var chico = window.innerWidth <= 768;
     return {
-      ancho: chico ? '4px' : '6px',
+      ancho: chico ? '5px' : '8px',
       // Deja libres el header de arriba y un respiro abajo.
       arriba: chico ? '76px' : '96px',
-      abajo: chico ? '24px' : '40px'
+      abajo: chico ? '24px' : '40px',
+      // Separada del borde: flotando se nota mucho mas que pegada al filo.
+      derecha: chico ? '12px' : '22px'
     };
   }
 
@@ -23,7 +25,7 @@
     var m = medidas();
     riel.style.cssText = [
       'position:fixed',
-      'right:0',
+      'right:' + m.derecha,
       'top:' + m.arriba,
       'bottom:' + m.abajo,
       'width:' + m.ancho,
@@ -37,14 +39,15 @@
       'visibility:visible',
       'pointer-events:none',
       'z-index:2147483647',
-      'background:rgba(140,148,150,0.35)'
+      'background:rgba(140,148,150,0.35)',
+      'box-shadow:0 2px 12px rgba(20,48,52,0.22)'
     ].join(' !important;') + ' !important;';
 
     relleno.style.cssText = [
       'position:absolute',
       'top:0',
       'left:0',
-      'right:0',
+      'right:' + m.derecha,
       'width:100%',
       'margin:0',
       'padding:0',
