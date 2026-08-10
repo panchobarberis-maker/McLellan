@@ -293,4 +293,20 @@ function toggleFaq(btn) {
     timer = setInterval(next, 5000);
   }, {passive:true});
 })();
+
+// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
+// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
+// fijo medimos cuanto hay por encima y lo descontamos.
+(function(){
+  var hero = document.querySelector('.mlgP .emp-hero');
+  if (!hero) return;
+  function fit(){
+    hero.style.minHeight = '';
+    var arriba = hero.getBoundingClientRect().top + window.scrollY;
+    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+})();
 </script>

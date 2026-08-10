@@ -39,7 +39,7 @@ HERO_DIGEST = """
    salen de comparar su widget contra la version de Vercel: el overlay plano
    deja ver el video, el padding es mas generoso y el alto es 100svh. */
 .{s} .emp-hero {{
-  min-height:100svh !important;
+  min-height:calc(100svh - 62px) !important;   /* lo ajusta el script de abajo */
   padding:80px 28px 72px !important;
   justify-content:center !important;
   border-bottom:none !important;
@@ -77,9 +77,27 @@ if '--css' in sys.argv:
 
 body = mhtml(re.search(r'<div id="[^"]+">\n(.*)\n</div>\n\n<script>', w, re.S).group(1))
 js   = mjs(re.search(r'<script>(.*?)</script>\s*$', w, re.S).group(1))
+FIT_HERO = '''
+// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
+// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
+// fijo medimos cuanto hay por encima y lo descontamos.
+(function(){
+  var hero = document.querySelector('.%s .emp-hero');
+  if (!hero) return;
+  function fit(){
+    hero.style.minHeight = '';
+    var arriba = hero.getBoundingClientRect().top + window.scrollY;
+    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+})();
+''' % SCOPE
+
 out  = ('<style>html, body { overflow-x:hidden; }</style>\n\n'
         f'<div class="{SCOPE}">\n\n{body}\n\n</div>\n\n'
-        f'<script>\n{js}\n</script>\n')
+        f'<script>\n{js}\n{FIT_HERO}</script>\n')
 f = f'duda-snippets/{name}-MARKUP.html'
 open(f, 'w', encoding='utf-8').write(out)
 print(f'{f}  ({len(out)} car.)  -> widget de la pagina')

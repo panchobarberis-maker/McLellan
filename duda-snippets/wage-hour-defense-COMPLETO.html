@@ -341,7 +341,7 @@
    salen de comparar su widget contra la version de Vercel: el overlay plano
    deja ver el video, el padding es mas generoso y el alto es 100svh. */
 .mlgP .emp-hero {
-  min-height:100svh !important;
+  min-height:calc(100svh - 62px) !important;   /* lo ajusta el script de abajo */
   padding:80px 28px 72px !important;
   justify-content:center !important;
   border-bottom:none !important;
@@ -638,6 +638,22 @@ function toggleFaq(btn) {
     if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
     timer = setInterval(next, 5000);
   }, {passive:true});
+})();
+
+// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
+// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
+// fijo medimos cuanto hay por encima y lo descontamos.
+(function(){
+  var hero = document.querySelector('.mlgP .emp-hero');
+  if (!hero) return;
+  function fit(){
+    hero.style.minHeight = '';
+    var arriba = hero.getBoundingClientRect().top + window.scrollY;
+    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
 })();
 </script>
 

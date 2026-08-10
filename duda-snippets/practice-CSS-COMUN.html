@@ -341,7 +341,7 @@
    salen de comparar su widget contra la version de Vercel: el overlay plano
    deja ver el video, el padding es mas generoso y el alto es 100svh. */
 .mlgP .emp-hero {
-  min-height:100svh !important;
+  min-height:calc(100svh - 62px) !important;   /* lo ajusta el script de abajo */
   padding:80px 28px 72px !important;
   justify-content:center !important;
   border-bottom:none !important;
