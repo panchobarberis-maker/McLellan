@@ -35,12 +35,12 @@ def mjs(s):
 
 
 HERO_DIGEST = """
-/* Hero calcado del Appellate Digest, que en Duda se ve bien. Los valores
-   salen de comparar su widget contra la version de Vercel: el overlay plano
-   deja ver el video, el padding es mas generoso y el alto es 100svh. */
+/* Hero calcado del Appellate Digest. Los tamanos dependen del ancho Y del
+   alto de la ventana: en pantallas bajas todo se achica para que el hero
+   entre completo en la primera vista sin tener que scrollear. */
 .{s} .emp-hero {{
-  min-height:calc(100svh - 62px) !important;   /* lo ajusta el script de abajo */
-  padding:80px 28px 72px !important;
+  min-height:calc(100svh - 62px) !important;   /* lo ajusta el script */
+  padding:min(80px, 7vh) 28px min(72px, 6vh) !important;
   justify-content:center !important;
   border-bottom:none !important;
 }}
@@ -48,16 +48,23 @@ HERO_DIGEST = """
   background:rgba(20,48,52,0.75) !important;
 }}
 .{s} .emp-hero-overlay::before {{ content:none !important; }}
-.{s} .emp-hero h1 {{ font-size:68px !important; letter-spacing:-1.5px !important; }}
-.{s} .emp-hero-sub {{ font-size:18px !important; max-width:440px !important; margin-bottom:36px !important; }}
+.{s} .emp-hero h1 {{
+  font-size:min(68px, 11vh, 9vw) !important; letter-spacing:-1.5px !important;
+  margin-bottom:min(18px, 2vh) !important;
+}}
+.{s} .hero-pill {{ margin-bottom:min(24px, 2.5vh) !important; }}
+.{s} .emp-hero-sub {{
+  font-size:min(18px, 2.4vh) !important; max-width:440px !important;
+  margin-bottom:min(36px, 4vh) !important;
+}}
 @media(max-width:768px) {{
-  .{s} .emp-hero {{ padding:120px 20px 48px !important; justify-content:flex-start !important; }}
-  .{s} .emp-hero h1 {{ font-size:13vw !important; letter-spacing:-1px !important; }}
+  .{s} .emp-hero {{ padding:min(120px, 12vh) 20px min(48px, 5vh) !important; justify-content:flex-start !important; }}
+  .{s} .emp-hero h1 {{ font-size:min(13vw, 10vh) !important; letter-spacing:-1px !important; }}
 }}
 @media(min-width:769px) {{
-  .{s} .emp-hero {{ padding:100px 96px 88px !important; }}
-  .{s} .emp-hero h1 {{ font-size:96px !important; letter-spacing:-3px !important; }}
-  .{s} .emp-hero-sub {{ font-size:16px !important; }}
+  .{s} .emp-hero {{ padding:min(100px, 9vh) 96px min(88px, 8vh) !important; }}
+  .{s} .emp-hero h1 {{ font-size:min(96px, 13vh, 7vw) !important; letter-spacing:-3px !important; }}
+  .{s} .emp-hero-sub {{ font-size:min(20px, 2.6vh) !important; }}
 }}
 """
 
