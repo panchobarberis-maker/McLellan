@@ -1,0 +1,766 @@
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+.mlgP { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
+
+
+.mlgP *, .mlgP *::before, .mlgP *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+.mlgP { scroll-behavior:smooth; }
+.mlgP { font-family:'Barlow',sans-serif !important; background:#fff !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased; font-weight:500 !important; }
+.mlgP .logo-img-mobile { height:28px !important; width:auto !important; }
+.mlgP .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+.mlgP .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+.mlgP .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+.mlgP .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+.mlgP .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+.mlgP .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+.mlgP .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+.mlgP .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+.mlgP .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+.mlgP .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+.mlgP .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+.mlgP .emp-hero {
+  position:relative !important; overflow:hidden;
+  min-height:calc(100svh - 53px) !important; display:flex !important; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center !important; padding:0 28px 10px !important;
+  background:#1e3a3e !important;
+  border-bottom:12px solid #c9a96e !important;
+}
+@media(min-width:769px) {
+.mlgP .emp-hero { min-height:calc(100svh - 62px) !important; padding:0 80px 12px !important; }
+}
+.mlgP .emp-hero-img {
+  position:absolute !important; inset:0; width:100% !important; height:100% !important;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
+.mlgP .emp-hero-overlay {
+  position:absolute !important; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
+}
+.mlgP .emp-hero-overlay::before { content:''; position:absolute !important; inset:0; background:rgba(20,48,52,0.55) !important; }
+.mlgP .emp-hero h1 {
+  position:relative !important; z-index:2;
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(36px, 7vw, 68px) !important; font-weight:900 !important; line-height:0.98 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
+  margin:0 auto 18px !important; max-width:1000px !important;
+}
+.mlgP .emp-hero h1 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.75em !important; letter-spacing:0 !important;
+}
+.mlgP .emp-hero-sub {
+  position:relative !important; z-index:2;
+  font-size:19px !important; color:rgba(255,255,255,0.8) !important; max-width:540px !important;
+  line-height:1.7 !important; margin:0 auto 28px !important;
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+}
+@media(min-width:769px) {
+.mlgP .emp-hero-sub { font-size:25px !important; max-width:760px !important; }
+}
+.mlgP .btn-gold {
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important; font-weight:700 !important; font-size:14px !important;
+  padding:13px 28px !important; border-radius:28px !important; text-decoration:none !important;
+  position:relative !important; z-index:2; width:max-content !important;
+}
+.mlgP .hero-pill {
+  position:relative !important; z-index:2;
+  display:inline-flex !important; align-items:center; gap:10px !important; width:max-content !important; max-width:100% !important;
+  box-sizing:border-box; white-space:normal;
+  background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
+  border-radius:26px !important; padding:9px 16px !important; margin-bottom:24px !important;
+  font-size:15px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-weight:700 !important; color:#e8cc8a !important;
+}
+@media(max-width:400px) {
+.mlgP .hero-pill { font-size:10px !important; letter-spacing:1px !important; padding:8px 14px !important; }
+}
+.mlgP .hero-pill::before { content:''; width:7px !important; height:7px !important; background:#c9a96e !important; border-radius:50% !important; flex-shrink:0; }
+.mlgP .section-eyebrow {
+  display:flex !important; width:max-content !important; margin:0 auto 20px !important;
+  align-items:center; gap:10px !important; text-align:center !important;
+  font-size:15px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; font-weight:700 !important;
+}
+.mlgP .section-eyebrow::before { content:''; width:24px !important; height:1px !important; background:#1e3a3e !important; }
+@media(min-width:769px) {
+.mlgP .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+.mlgP .content-section { background:#1e3a3e !important; padding:64px 28px !important; }
+@media(min-width:769px) {
+.mlgP .content-section { padding:88px 80px !important; }
+}
+.mlgP .content-inner { max-width:none !important; margin:0 auto !important; }
+.mlgP .content-section .section-eyebrow { color:#c9a96e !important; }
+.mlgP .content-section .section-eyebrow::before { background:#c9a96e !important; }
+.mlgP .content-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:32px !important;
+}
+.mlgP .content-cards { display:flex !important; flex-direction:column; gap:24px !important; }
+.mlgP .content-card {
+  background:#fbf6ef !important; border-radius:20px !important;
+  padding:32px 28px !important; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) {
+.mlgP .content-card { padding:48px 56px !important; }
+}
+.mlgP .content-section p { font-size:18px !important; line-height:1.85 !important; color:#4a5c5e !important; margin-bottom:16px !important; text-align:justify !important; }
+.mlgP .content-section p:last-child { margin-bottom:0 !important; }
+@media(min-width:769px) {
+.mlgP .content-section p { font-size:21px !important; }
+}
+.mlgP .content-section p.content-lead { font-weight:800 !important; color:#1e3a3e !important; text-align:left !important; }
+.mlgP .content-list { list-style:none !important; margin-top:16px !important; display:grid !important; gap:14px !important; }
+@media(min-width:769px) {
+.mlgP .content-list { grid-template-columns:1fr 1fr; gap:18px !important; }
+}
+.mlgP .content-list li {
+  padding:20px 22px !important; display:flex !important; align-items:flex-start; gap:12px !important;
+  background:#fff !important; border:2.5px solid rgba(201,169,110,0.55) !important; border-radius:14px !important;
+}
+@media(min-width:769px) {
+.mlgP .content-list li { padding:26px 28px !important; }
+}
+.mlgP .content-list li::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; flex-shrink:0; margin-top:2px !important; font-size:19px !important; }
+.mlgP .content-list li span { font-size:18px !important; line-height:1.7 !important; color:#4a5c5e !important; text-align:left !important; }
+@media(min-width:769px) {
+.mlgP .content-list li span { font-size:21px !important; }
+}
+.mlgP .help-section { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) {
+.mlgP .help-section { padding:88px 80px !important; }
+}
+.mlgP .help-section .section-eyebrow { color:#1e3a3e !important; }
+.mlgP .help-section .section-eyebrow::before { background:#1e3a3e !important; }
+.mlgP .help-inner { max-width:none !important; margin:0 auto !important; }
+.mlgP .help-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:32px !important;
+}
+.mlgP .help-columns { display:flex !important; flex-direction:column; gap:14px !important; }
+@media(min-width:600px) {
+.mlgP .help-columns { display:grid !important; grid-template-columns:1fr 1fr; gap:20px !important; }
+}
+.mlgP .help-item {
+  background:#1e3a3e !important; border-radius:16px !important; padding:22px 24px !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border:2.5px solid rgba(201,169,110,0.45) !important;
+  display:flex !important; align-items:flex-start; gap:14px !important;
+}
+@media(min-width:769px) {
+.mlgP .help-item { padding:28px 30px !important; }
+}
+.mlgP .help-item::before { content:"✓"; color:#c9a96e !important; font-weight:900 !important; font-size:18px !important; flex-shrink:0; margin-top:1px !important; }
+.mlgP .help-item span { font-size:16px !important; color:rgba(255,255,255,0.85) !important; line-height:1.6 !important; text-align:justify !important; }
+@media(min-width:769px) {
+.mlgP .help-item span { font-size:18px !important; }
+}
+.mlgP .faq-section { background:#1e3a3e !important; padding:64px 28px !important; }
+@media(min-width:769px) {
+.mlgP .faq-section { padding:88px 80px !important; }
+}
+.mlgP .faq-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:32px !important;
+}
+.mlgP .faq-columns { display:flex !important; flex-direction:column; gap:14px !important; }
+@media(min-width:769px) {
+.mlgP .faq-columns { display:grid !important; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; }
+}
+.mlgP .faq-col { display:flex !important; flex-direction:column; gap:14px !important; }
+.mlgP .faq-item {
+  background:#fbf6ef !important; border-radius:16px !important; padding:4px 24px !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
+.mlgP .faq-question {
+  width:100% !important; background:none !important; border:none !important; text-align:left !important;
+  padding:20px 0 !important; font-family:'Barlow',sans-serif !important; font-size:16px !important;
+  font-weight:600 !important; color:#1e3a3e !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center; gap:12px !important;
+  transition:opacity 0.15s;
+}
+.mlgP .faq-question:hover { opacity:0.7; }
+.mlgP .faq-question .faq-icon { font-size:20px !important; color:#c9a96e !important; flex-shrink:0; transition:transform 0.3s; }
+.mlgP .faq-answer { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+.mlgP .faq-answer p { font-size:15px !important; line-height:1.75 !important; color:#5a6e70 !important; padding-bottom:20px !important; margin:0 !important; text-align:justify !important; }
+.mlgP .faq-item.open .faq-icon { transform:rotate(45deg); }
+@media(min-width:769px) {
+.mlgP .faq-question { font-size:18px !important; }
+.mlgP .faq-answer p { font-size:16px !important; }
+}
+.mlgP .why-us { background:#1e3a3e !important; padding:72px 28px !important; }
+@media(min-width:769px) {
+.mlgP .why-us { padding:96px 80px !important; }
+}
+.mlgP .why-us-inner { max-width:none !important; margin:0 auto !important; }
+.mlgP .why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:16px !important; display:flex !important; width:max-content !important; margin-left:auto !important; margin-right:auto !important; text-align:center !important; }
+@media(min-width:769px) {
+.mlgP .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+.mlgP .why-us-title { font-family:'Barlow Condensed',sans-serif !important; text-align:center !important; font-size:clamp(36px,5vw,56px) !important; font-weight:800 !important; color:#fff !important; line-height:1.05 !important; letter-spacing:-1px !important; text-transform:uppercase !important; margin-bottom:48px !important; }
+@media(min-width:769px) {
+.mlgP .why-us-title { font-size:clamp(48px,5.5vw,72px) !important; margin-bottom:56px !important; }
+}
+.mlgP .why-us-title em { display:block !important; font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; letter-spacing:-0.5px !important; }
+.mlgP .why-us-grid { display:grid !important; grid-template-columns:1fr 1fr; gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden; }
+@media(min-width:769px) {
+.mlgP .why-us-grid { gap:8px !important; }
+}
+@media(max-width:600px) {
+.mlgP .why-us-grid { grid-template-columns:1fr; }
+}
+.mlgP .why-us-item { background:#fbf6ef !important; padding:32px 28px !important; display:flex !important; flex-direction:column; gap:10px !important; transition:background 0.2s; }
+@media(min-width:769px) {
+.mlgP .why-us-item { padding:56px 48px !important; gap:14px !important; }
+}
+.mlgP .why-us-item:hover { background:#f3ece0 !important; }
+.mlgP .why-us-num { font-family:'Barlow Condensed',sans-serif !important; font-size:13px !important; font-weight:700 !important; letter-spacing:2px !important; color:#c9a96e !important; }
+@media(min-width:769px) {
+.mlgP .why-us-num { font-size:16px !important; }
+}
+.mlgP .why-us-item strong { font-size:17px !important; font-weight:700 !important; color:#1e3a3e !important; }
+@media(min-width:769px) {
+.mlgP .why-us-item strong { font-size:26px !important; }
+}
+.mlgP .why-us-item span { font-size:14px !important; color:#5a6e70 !important; line-height:1.65 !important; text-align:justify !important; }
+@media(min-width:769px) {
+.mlgP .why-us-item span { font-size:18px !important; line-height:1.7 !important; }
+}
+.mlgP .cta-banner { background:#fbf6ef !important; padding:72px 28px !important; text-align:center !important; border-top:1px solid #e8e3da !important; }
+@media(min-width:769px) {
+.mlgP .cta-banner { padding:100px 28px !important; }
+}
+.mlgP .cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(32px, 5vw, 52px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:12px !important;
+}
+@media(min-width:769px) {
+.mlgP .cta-banner h2 { font-size:clamp(48px, 6vw, 80px) !important; }
+}
+.mlgP .cta-banner h2 em {
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; display:block !important;
+}
+.mlgP .cta-banner p { font-size:16px !important; color:#5a6e70 !important; margin-bottom:28px !important; line-height:1.65 !important; }
+@media(min-width:769px) {
+.mlgP .cta-banner p { font-size:22px !important; }
+}
+.mlgP .cta-banner .btn-gold { font-size:15px !important; padding:15px 36px !important; margin:0 auto !important; }
+@media(min-width:769px) {
+.mlgP .cta-banner .btn-gold { font-size:18px !important; padding:18px 44px !important; }
+}
+@keyframes navBtnShimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+@keyframes navBtnPulse { 0% { box-shadow:0 0 0 0 rgba(201,169,110,0.6); } 70% { box-shadow:0 0 0 10px rgba(201,169,110,0); } 100% { box-shadow:0 0 0 0 rgba(201,169,110,0); } }
+.mlgP .btn-gold, .mlgP .contact-btn {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+.mlgP .video-mobile { display:none !important; }
+@media(max-width:768px) {
+.mlgP .video-desktop { display:none !important; }
+.mlgP .video-mobile { display:block !important; }
+}
+.mlgP .maps-section { width:100% !important; line-height:0 !important; }
+@media(min-width:769px) {
+.mlgP .maps-section iframe { height:400px !important; }
+}
+.mlgP .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.mlgP .reveal.in-view { opacity:1; transform:translateY(0); }
+.mlgP .reveal-d1 { transition-delay:0.08s; }
+.mlgP .reveal-d2 { transition-delay:0.16s; }
+.mlgP .reveal-d3 { transition-delay:0.24s; }
+.mlgP .reveal-d4 { transition-delay:0.32s; }
+.mlgP .emp-testimonials {
+  background:#fbf6ef !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+.mlgP .emp-testimonials { padding:80px 80px !important; }
+}
+.mlgP .emp-testimonials .section-eyebrow { color:#c9a96e !important; }
+.mlgP .emp-testimonials h2 {
+  font-family:'DM Serif Display',serif !important;
+  font-size:clamp(28px, 4vw, 42px) !important; font-weight:400 !important; font-style:italic !important;
+  color:#1e3a3e !important; margin-bottom:36px !important;
+}
+.mlgP .emp-carousel { overflow:hidden; }
+.mlgP .emp-carousel-track { display:flex !important; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.mlgP .emp-test-card {
+  min-width:100% !important; box-sizing:border-box;
+  background:#1e3a3e !important; border:1px solid rgba(30,58,62,0.2) !important;
+  border-radius:12px !important; padding:32px !important;
+}
+.mlgP .emp-test-card .stars { color:#c9a96e !important; font-size:14px !important; margin-bottom:16px !important; letter-spacing:2px !important; }
+.mlgP .emp-test-card .quote {
+  font-size:15px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important;
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  margin-bottom:20px !important; display:block !important;
+}
+.mlgP .emp-test-card .author { font-size:12px !important; font-weight:700 !important; color:#c9a96e !important; letter-spacing:1px !important; text-transform:uppercase !important; }
+.mlgP .emp-carousel-dots { display:flex !important; gap:8px !important; margin-top:24px !important; }
+.mlgP .employers-section h2, .mlgP .employees-section h2, .mlgP .emp-testimonials h2, .mlgP .employer-faq h3, .mlgP .employee-faq h2, .mlgP .why-us-title { text-align:center !important; }
+.mlgP .detail-block p, .mlgP .employers-section > p, .mlgP .employers-intro-text p, .mlgP .employees-intro-text p, .mlgP .employees-section > p, .mlgP .faq-answer p, .mlgP .emp-test-card .quote, .mlgP .why-us-item span, .mlgP .paga-alert p, .mlgP .employer-item-text span, .mlgP .about p, .mlgP .mlg-quote, .mlgP .quote, .mlgP .lawsuits p, .mlgP .detail-section p, .mlgP .bio-block p, .mlgP .result-card span, .mlgP .atty-hero p {
+  text-align:left !important;
+}
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+.mlgP > section, .mlgP > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+.mlgP > *:first-child {
+  margin-top:-8px !important;
+  box-shadow:0 20px 0 0 #1e3a3e, 0 -60px 0 0 #1e3a3e !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  .mlgP > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+/* Hero calcado del Appellate Digest, que en Duda se ve bien. Los valores
+   salen de comparar su widget contra la version de Vercel: el overlay plano
+   deja ver el video, el padding es mas generoso y el alto es 100svh. */
+.mlgP .emp-hero {
+  min-height:100svh !important;
+  padding:80px 28px 72px !important;
+  justify-content:center !important;
+  border-bottom:none !important;
+}
+.mlgP .emp-hero-overlay {
+  background:rgba(20,48,52,0.75) !important;
+}
+.mlgP .emp-hero-overlay::before { content:none !important; }
+.mlgP .emp-hero h1 { font-size:68px !important; letter-spacing:-1.5px !important; }
+.mlgP .emp-hero-sub { font-size:18px !important; max-width:440px !important; margin-bottom:36px !important; }
+@media(max-width:768px) {
+  .mlgP .emp-hero { padding:120px 20px 48px !important; justify-content:flex-start !important; }
+  .mlgP .emp-hero h1 { font-size:13vw !important; letter-spacing:-1px !important; }
+}
+@media(min-width:769px) {
+  .mlgP .emp-hero { padding:100px 96px 88px !important; }
+  .mlgP .emp-hero h1 { font-size:96px !important; letter-spacing:-3px !important; }
+  .mlgP .emp-hero-sub { font-size:16px !important; }
+}
+</style>
+
+<style>html, body { overflow-x:hidden; }</style>
+
+<div class="mlgP">
+
+<!-- HERO -->
+<section class="emp-hero">
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
+  <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">Breach of Fiduciary Duty · Saratoga, California</div>
+  <h1>Breach of Fiduciary Duty Attorneys <em>in Saratoga, CA</em></h1>
+  <p class="emp-hero-sub">Holding partners, officers, and directors accountable throughout Silicon Valley & the Bay Area.</p>
+  <a href="#contact" class="btn-gold">Request a Free Consultation →</a>
+</section>
+
+<!-- CONTENT -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-eyebrow reveal">What Is Breach of Fiduciary Duty?</div>
+    <h2 class="reveal reveal-d1">Understanding Fiduciary Duty in California Business Relationships</h2>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p class="content-lead">A fiduciary duty is a legal obligation to act in another party's best interests, not your own.</p>
+        <p>In California, partners, LLC members, corporate officers and directors, and certain agents owe fiduciary duties — including the duty of loyalty and the duty of care — to the business and to each other.</p>
+      </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">A breach occurs when someone in a position of trust puts their own interests ahead of the business.</p>
+        <p>Common breaches include:</p>
+        <ul class="content-list">
+          <li><span>Self-dealing</span></li>
+          <li><span>Usurping a corporate opportunity</span></li>
+          <li><span>Competing with the business</span></li>
+          <li><span>Misusing confidential information</span></li>
+          <li><span>Misappropriating company funds</span></li>
+        </ul>
+        <p>These breaches often surface during a partnership dispute, buyout, or dissolution.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">Because fiduciary breaches often involve hidden conduct, early investigation and evidence preservation are critical.</p>
+        <p>California law allows the wronged party to seek damages, an accounting of profits, and, in egregious cases, punitive damages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE HELP -->
+<section class="help-section">
+  <div class="help-inner">
+    <div class="section-eyebrow reveal">How We Help</div>
+    <h2 class="reveal reveal-d1">What Our Fiduciary Duty Attorneys Do</h2>
+    <div class="help-columns">
+      <div class="help-item reveal reveal-d1"><span>Investigate self-dealing, diverted business opportunities, and misuse of company funds or information</span></div>
+      <div class="help-item reveal reveal-d2"><span>Demand a formal accounting from partners, officers, or directors suspected of a breach</span></div>
+      <div class="help-item reveal reveal-d3"><span>Pursue disgorgement of profits obtained through a fiduciary's breach</span></div>
+      <div class="help-item reveal reveal-d4"><span>Litigate derivative and direct claims on behalf of shareholders and LLC members</span></div>
+      <div class="help-item reveal reveal-d5"><span>Advise business owners on fiduciary obligations to avoid exposure before disputes arise</span></div>
+      <div class="help-item reveal reveal-d6"><span>Defend officers, directors, and partners against unfounded breach of fiduciary duty claims</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <h2 class="reveal">Breach of Fiduciary Duty FAQs</h2>
+
+    <div class="faq-columns">
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Who owes a fiduciary duty in a California business?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What are the two main fiduciary duties under California law?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The duty of loyalty requires acting in the business's best interest rather than a fiduciary's personal interest — prohibiting self-dealing and competing ventures. The duty of care requires acting with the same care an ordinarily prudent person would exercise in similar circumstances, including making informed decisions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What are common examples of breach of fiduciary duty?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Common examples include diverting a business opportunity to a competing venture, using company funds for personal expenses, competing directly with the business while still a partner or officer, withholding material information from co-owners, and self-dealing transactions that benefit the fiduciary at the business's expense.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What damages can I recover for breach of fiduciary duty?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>California allows recovery of the actual losses caused by the breach, disgorgement of any profits the fiduciary improperly obtained, and in cases involving fraud, oppression, or malice, punitive damages. An accounting may also be ordered to trace where company funds went.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-col">
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the deadline to file a breach of fiduciary duty claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I bring a claim on behalf of the business, not just myself?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Certain fiduciary breach claims — particularly against corporate officers or directors — may need to be brought as a derivative action on behalf of the company, rather than a direct claim by an individual shareholder. We evaluate which type of claim fits your situation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can a minority shareholder sue a majority shareholder for breach of fiduciary duty?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Majority shareholders in a closely held California corporation owe a fiduciary duty to minority shareholders and cannot use their control to oppress or unfairly disadvantage them — for example, by freezing them out of profits or decision-making.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-d4">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a lawyer to pursue a fiduciary duty claim?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Fiduciary breach cases are fact-intensive and often require forensic review of financial records and business communications. An experienced business litigation attorney can investigate the conduct, quantify your damages, and pursue the claim through negotiation or litigation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="why-us-inner">
+    <div class="why-us-eyebrow reveal">Why McLellan Law Group</div>
+    <h2 class="why-us-title reveal reveal-d1">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-grid">
+      <div class="why-us-item reveal reveal-d1">
+        <div class="why-us-num">01</div>
+        <strong>Boutique Firm Attention</strong>
+        <span>You work directly with an attorney — not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d2">
+        <div class="why-us-num">02</div>
+        <strong>Silicon Valley Focus</strong>
+        <span>Based in Saratoga, we know California business law and the local court landscape inside out — from Santa Clara County to the broader Bay Area.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d3">
+        <div class="why-us-num">03</div>
+        <strong>Proven Track Record</strong>
+        <span>From fiduciary breaches to shareholder disputes, our attorneys have secured favorable outcomes for business owners and executives across Silicon Valley.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d4">
+        <div class="why-us-num">04</div>
+        <strong>Free Consultation</strong>
+        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="emp-testimonials">
+  <div class="section-eyebrow reveal">Client Reviews</div>
+  <h2 class="reveal reveal-d1">What Our Clients Say</h2>
+  <div class="emp-carousel reveal reveal-d2" id="empCarousel">
+    <div class="emp-carousel-track" id="empTrack">
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
+        <span class="author">— Benjamin · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
+        <span class="author">— Pete · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
+        <span class="author">— Anonymous · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
+        <span class="author">— Wendy · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
+        <span class="author">— Jordan · Employment Law</span>
+      </div>
+    </div>
+  </div>
+  <div class="emp-carousel-dots" id="empDots">
+    <button class="emp-dot active" onclick="goToEmp(0)"></button>
+    <button class="emp-dot" onclick="goToEmp(1)"></button>
+    <button class="emp-dot" onclick="goToEmp(2)"></button>
+    <button class="emp-dot" onclick="goToEmp(3)"></button>
+    <button class="emp-dot" onclick="goToEmp(4)"></button>
+  </div>
+</section>
+
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Duty Betrayed?<em>Hold Them Accountable.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga — serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fbreach-of-fiduciary-duty&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+</section>
+
+<div class="maps-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1"
+    width="100%" height="300" style="border:0 !important; display:block !important;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group — 20665 4th St #202, Saratoga, CA 95070">
+  </iframe>
+</div>
+
+</div>
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+
+(function(){
+  var track = document.getElementById('empTrack');
+  var dots = document.querySelectorAll('#empDots .emp-dot');
+  var current = 0, total = dots.length, startX = 0, timer;
+  function goToEmp(n){
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  window.goToEmp = goToEmp;
+  function next(){ goToEmp(current+1); }
+  timer = setInterval(next, 5000);
+  var el = document.getElementById('empCarousel');
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+    timer = setInterval(next, 5000);
+  }, {passive:true});
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "McLellan Law Group — Breach of Fiduciary Duty",
+  "description": "Breach of fiduciary duty attorneys in Saratoga, California. Representing business owners, partners, and shareholders in self-dealing and fiduciary breach claims throughout Silicon Valley and the Bay Area.",
+  "url": "https://www.mclellanlawgroup.com/breach-of-fiduciary-duty",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20665 4th St #202",
+    "addressLocality": "Saratoga",
+    "addressRegion": "CA",
+    "postalCode": "95070",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Silicon Valley",
+    "Santa Clara County",
+    "Bay Area",
+    "Saratoga CA"
+  ],
+  "knowsAbout": [
+    "Breach of Fiduciary Duty",
+    "Self-Dealing",
+    "Business Litigation",
+    "Partnership Disputes",
+    "Corporate Governance"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who owes a fiduciary duty in a California business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the two main fiduciary duties under California law?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The duty of loyalty requires acting in the business's best interest rather than a fiduciary's personal interest — prohibiting self-dealing and competing ventures. The duty of care requires acting with the same care an ordinarily prudent person would exercise in similar circumstances, including making informed decisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common examples of breach of fiduciary duty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common examples include diverting a business opportunity to a competing venture, using company funds for personal expenses, competing directly with the business while still a partner or officer, withholding material information from co-owners, and self-dealing transactions that benefit the fiduciary at the business's expense."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What damages can I recover for breach of fiduciary duty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "California allows recovery of the actual losses caused by the breach, disgorgement of any profits the fiduciary improperly obtained, and in cases involving fraud, oppression, or malice, punitive damages. An accounting may also be ordered to trace where company funds went."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the deadline to file a breach of fiduciary duty claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring a claim on behalf of the business, not just myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Certain fiduciary breach claims — particularly against corporate officers or directors — may need to be brought as a derivative action on behalf of the company, rather than a direct claim by an individual shareholder. We evaluate which type of claim fits your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a minority shareholder sue a majority shareholder for breach of fiduciary duty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Majority shareholders in a closely held California corporation owe a fiduciary duty to minority shareholders and cannot use their control to oppress or unfairly disadvantage them — for example, by freezing them out of profits or decision-making."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a lawyer to pursue a fiduciary duty claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fiduciary breach cases are fact-intensive and often require forensic review of financial records and business communications. An experienced business litigation attorney can investigate the conduct, quantify your damages, and pursue the claim through negotiation or litigation."
+      }
+    }
+  ]
+}
+</script>

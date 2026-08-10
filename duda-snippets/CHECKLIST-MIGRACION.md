@@ -29,6 +29,21 @@ rutas de Vercel. La tabla vive en `build-widget.py`:
 esta tabla.** Si Duda te obliga a otro, avisá: se cambia la tabla, se regeneran
 todas de una y no hay que tocar ningún link a mano.
 
+## Configuración de Duda que hay que hacer a mano
+
+Confirmado al publicar Wrongful Termination. El HTML no puede hacer esto por
+sí solo:
+
+- **ROW en full bleed**, si no las secciones quedan encajonadas con márgenes
+  blancos a los costados.
+- **ROW y COLUMN**: padding 0 y fondo `#1e3a3e`, para que ningún píxel que
+  sobre se vea blanco.
+- **Barra sobre el logo en mobile** (por confirmar el detalle exacto).
+
+Lo más práctico: dejar Wrongful Termination como plantilla y **duplicarla** en
+Duda para cada página nueva. Así heredás toda esta configuración y solo
+reemplazás el contenido del widget.
+
 ## Por cada subpágina
 
 1. **Crear la página** en Duda con el slug exacto (`/wrongful-termination`).
