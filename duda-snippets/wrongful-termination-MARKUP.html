@@ -309,4 +309,11 @@ function toggleFaq(btn) {
   window.addEventListener('load', fit);
   window.addEventListener('resize', fit);
 })();
+
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+setTimeout(function(){
+  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
+}, 1200);
 </script>

@@ -364,9 +364,11 @@
   .mlgP .emp-hero h1 { font-size:min(13vw, 10vh) !important; letter-spacing:-1px !important; }
 }
 @media(min-width:769px) {
-  .mlgP .emp-hero { padding:min(100px, 9vh) 96px min(88px, 8vh) !important; }
-  .mlgP .emp-hero h1 { font-size:min(96px, 13vh, 7vw) !important; letter-spacing:-3px !important; }
-  .mlgP .emp-hero-sub { font-size:min(20px, 2.6vh) !important; }
+  .mlgP .emp-hero { padding:min(64px, 6vh) 96px min(56px, 5vh) !important; }
+  .mlgP .emp-hero h1 { font-size:min(88px, 10.5vh, 6.4vw) !important; letter-spacing:-3px !important;
+                       margin-bottom:min(14px, 1.6vh) !important; }
+  .mlgP .emp-hero-sub { font-size:min(19px, 2.3vh) !important; margin-bottom:min(28px, 3vh) !important; }
+  .mlgP .hero-pill { margin-bottom:min(18px, 2vh) !important; }
 }
 </style>
 
@@ -665,6 +667,13 @@ function toggleFaq(btn) {
   window.addEventListener('load', fit);
   window.addEventListener('resize', fit);
 })();
+
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+setTimeout(function(){
+  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
+}, 1200);
 </script>
 
 <script type="application/ld+json">

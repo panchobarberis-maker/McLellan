@@ -62,9 +62,11 @@ HERO_DIGEST = """
   .{s} .emp-hero h1 {{ font-size:min(13vw, 10vh) !important; letter-spacing:-1px !important; }}
 }}
 @media(min-width:769px) {{
-  .{s} .emp-hero {{ padding:min(100px, 9vh) 96px min(88px, 8vh) !important; }}
-  .{s} .emp-hero h1 {{ font-size:min(96px, 13vh, 7vw) !important; letter-spacing:-3px !important; }}
-  .{s} .emp-hero-sub {{ font-size:min(20px, 2.6vh) !important; }}
+  .{s} .emp-hero {{ padding:min(64px, 6vh) 96px min(56px, 5vh) !important; }}
+  .{s} .emp-hero h1 {{ font-size:min(88px, 10.5vh, 6.4vw) !important; letter-spacing:-3px !important;
+                       margin-bottom:min(14px, 1.6vh) !important; }}
+  .{s} .emp-hero-sub {{ font-size:min(19px, 2.3vh) !important; margin-bottom:min(28px, 3vh) !important; }}
+  .{s} .hero-pill {{ margin-bottom:min(18px, 2vh) !important; }}
 }}
 """
 
@@ -102,9 +104,18 @@ FIT_HERO = '''
 })();
 ''' % SCOPE
 
+SAFE_REVEAL = '''
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+setTimeout(function(){
+  document.querySelectorAll('.%s .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
+}, 1200);
+''' % SCOPE
+
 out  = ('<style>html, body { overflow-x:hidden; }</style>\n\n'
         f'<div class="{SCOPE}">\n\n{body}\n\n</div>\n\n'
-        f'<script>\n{js}\n{FIT_HERO}</script>\n')
+        f'<script>\n{js}\n{FIT_HERO}{SAFE_REVEAL}</script>\n')
 f = f'duda-snippets/{name}-MARKUP.html'
 open(f, 'w', encoding='utf-8').write(out)
 print(f'{f}  ({len(out)} car.)  -> widget de la pagina')
