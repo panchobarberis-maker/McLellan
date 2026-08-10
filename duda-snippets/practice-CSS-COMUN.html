@@ -305,4 +305,29 @@
     margin-left:calc(-50vw + 50%) !important;
     width:100vw !important; max-width:100vw !important;
   }
-}</style>
+}
+/* Hero calcado del Appellate Digest, que en Duda se ve bien. Los valores
+   salen de comparar su widget contra la version de Vercel: el overlay plano
+   deja ver el video, el padding es mas generoso y el alto es 100svh. */
+.mlgP .emp-hero {
+  min-height:100svh !important;
+  padding:80px 28px 72px !important;
+  justify-content:center !important;
+  border-bottom:none !important;
+}
+.mlgP .emp-hero-overlay {
+  background:rgba(20,48,52,0.75) !important;
+}
+.mlgP .emp-hero-overlay::before { content:none !important; }
+.mlgP .emp-hero h1 { font-size:68px !important; letter-spacing:-1.5px !important; }
+.mlgP .emp-hero-sub { font-size:18px !important; max-width:440px !important; margin-bottom:36px !important; }
+@media(max-width:768px) {
+  .mlgP .emp-hero { padding:120px 20px 48px !important; justify-content:flex-start !important; }
+  .mlgP .emp-hero h1 { font-size:13vw !important; letter-spacing:-1px !important; }
+}
+@media(min-width:769px) {
+  .mlgP .emp-hero { padding:100px 96px 88px !important; }
+  .mlgP .emp-hero h1 { font-size:96px !important; letter-spacing:-3px !important; }
+  .mlgP .emp-hero-sub { font-size:16px !important; }
+}
+</style>

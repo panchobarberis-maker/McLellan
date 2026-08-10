@@ -33,6 +33,34 @@ def mjs(s):
     return s.strip()
 
 
+
+HERO_DIGEST = """
+/* Hero calcado del Appellate Digest, que en Duda se ve bien. Los valores
+   salen de comparar su widget contra la version de Vercel: el overlay plano
+   deja ver el video, el padding es mas generoso y el alto es 100svh. */
+.{s} .emp-hero {{
+  min-height:100svh !important;
+  padding:80px 28px 72px !important;
+  justify-content:center !important;
+  border-bottom:none !important;
+}}
+.{s} .emp-hero-overlay {{
+  background:rgba(20,48,52,0.75) !important;
+}}
+.{s} .emp-hero-overlay::before {{ content:none !important; }}
+.{s} .emp-hero h1 {{ font-size:68px !important; letter-spacing:-1.5px !important; }}
+.{s} .emp-hero-sub {{ font-size:18px !important; max-width:440px !important; margin-bottom:36px !important; }}
+@media(max-width:768px) {{
+  .{s} .emp-hero {{ padding:120px 20px 48px !important; justify-content:flex-start !important; }}
+  .{s} .emp-hero h1 {{ font-size:13vw !important; letter-spacing:-1px !important; }}
+}}
+@media(min-width:769px) {{
+  .{s} .emp-hero {{ padding:100px 96px 88px !important; }}
+  .{s} .emp-hero h1 {{ font-size:96px !important; letter-spacing:-3px !important; }}
+  .{s} .emp-hero-sub {{ font-size:16px !important; }}
+}}
+"""
+
 page = sys.argv[1]
 name = os.path.splitext(os.path.basename(page))[0]
 w = bw.build(page, SCOPE)
@@ -42,7 +70,7 @@ if '--css' in sys.argv:
     # Esta regla no esta acotada al scope: se aplicaria a todo el sitio. Va en
     # el widget de cada pagina, no en el head comun.
     css = css.replace('html, body { overflow-x:hidden; }\n', '')
-    out = f'<style>{css}</style>'
+    out = '<style>' + css + HERO_DIGEST.format(s=SCOPE) + '</style>'
     f = 'duda-snippets/practice-CSS-COMUN.html'
     open(f, 'w', encoding='utf-8').write(out)
     print(f'{f}  ({len(out)} car.)  -> head del sitio, UNA sola vez')
