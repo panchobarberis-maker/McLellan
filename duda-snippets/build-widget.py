@@ -168,11 +168,15 @@ html, body {{ overflow-x:hidden; }}
 
 
 def schema(path):
-    """El JSON-LD vive en el <head> del original y el widget no se lo lleva.
-    Duda no genera FAQPage por su cuenta, asi que hay que pegarlo aparte."""
+    """Solo el JSON-LD propio de la pagina.
+
+    LegalService queda afuera a proposito: la ficha de la firma ya va una sola
+    vez en el head del sitio, y declararla de nuevo por pagina le daria a Google
+    dos descripciones distintas de la misma empresa."""
     src = open(path, encoding='utf-8').read()
     head = src[:src.index('</head>')]
-    return '\n'.join(re.findall(r'<script type="application/ld\+json">.*?</script>', head, re.S))
+    bloques = re.findall(r'<script type="application/ld\+json">.*?</script>', head, re.S)
+    return '\n'.join(b for b in bloques if '"LegalService"' not in b)
 
 
 if __name__ == '__main__':

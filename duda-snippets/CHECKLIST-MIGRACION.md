@@ -44,6 +44,26 @@ Lo más práctico: dejar Wrongful Termination como plantilla y **duplicarla** en
 Duda para cada página nueva. Así heredás toda esta configuración y solo
 reemplazás el contenido del widget.
 
+
+## Reglas para no duplicar nada (SEO)
+
+Cada dato tiene **un solo lugar**. Si aparece dos veces, Google recibe dos
+respuestas para la misma pregunta.
+
+| Dato | Dónde va | Cuántas veces |
+|---|---|---|
+| Ficha de la firma (`LegalService`) | Head del sitio | **1 vez en todo el sitio** |
+| Preguntas frecuentes (`FAQPage`) | Dentro del widget de la página | 1 por página |
+| Title y description | Page Settings → SEO | 1 por página |
+| Canonical | Lo genera Duda solo | no cargarlo a mano |
+
+- **El archivo `-COMPLETO.html` ya incluye el `FAQPage`.** No lo pegues además
+  en Header HTML: quedaría duplicado.
+- **Header HTML de la página: dejalo vacío.** No hace falta para nada.
+- **El head del sitio no puede tener canonical ni `og:`**, porque se aplican a
+  todas las páginas y las marcan como copia del home.
+- **Destildá "Set page to no index"** antes de publicar.
+
 ## Por cada subpágina
 
 1. **Crear la página** en Duda con el slug exacto (`/wrongful-termination`).
