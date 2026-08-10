@@ -6,11 +6,6 @@
      tema le gane. El z-index es el maximo posible para que no quede tapada
      por el header de Duda. -->
 <script>
-// Barra de progreso de lectura, vertical, pegada al borde derecho.
-// Misma logica que el snippet de Duda (duda-snippets/BARRA-PROGRESO.html):
-// se crea sola, se estila desde JS y se esconde en paginas demasiado cortas
-// para scrollear.
-//
 // Son dos piezas: el riel, que muestra cuanto contenido hay en total, y el
 // relleno, que crece a medida que se baja. Sin el riel no se entiende cuanto
 // falta, que es justamente para lo que sirve.
@@ -55,7 +50,7 @@
       'position:absolute',
       'top:0',
       'left:0',
-      'right:' + m.derecha,
+      'right:0',
       'width:100%',
       'margin:0',
       'padding:0',
