@@ -1,0 +1,44 @@
+<!-- Barra de progreso de lectura. Va una sola vez en el head del sitio y
+     funciona en todas las paginas: se crea sola y mide el largo del documento.
+     El ancho lo calcula el script, por eso no lleva !important. -->
+<style>
+#mlg-progreso {
+  position:fixed !important; top:0 !important; left:0 !important;
+  height:4px !important; z-index:99999 !important;
+  width:0;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 50%,#b8933a 100%) !important;
+  transition:width 0.1s linear !important; pointer-events:none !important;
+}
+@media(max-width:768px) { #mlg-progreso { height:3px !important; } }
+@media(prefers-reduced-motion: reduce) { #mlg-progreso { transition:none !important; } }
+</style>
+<script>
+(function(){
+  function arrancar(){
+    if (document.getElementById('mlg-progreso')) return;
+    var barra = document.createElement('div');
+    barra.id = 'mlg-progreso';
+    document.body.appendChild(barra);
+
+    function pintar(){
+      var doc = document.documentElement;
+      var recorrido = doc.scrollHeight - window.innerHeight;
+      // En paginas cortas no hay nada que medir: la barra se esconde.
+      if (recorrido < 120) { barra.style.width = '0'; return; }
+      var hecho = window.scrollY / recorrido;
+      barra.style.width = Math.max(0, Math.min(1, hecho)) * 100 + '%';
+    }
+
+    pintar();
+    window.addEventListener('scroll', pintar, {passive:true});
+    window.addEventListener('resize', pintar);
+    window.addEventListener('load', pintar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', arrancar);
+  } else {
+    arrancar();
+  }
+})();
+</script>

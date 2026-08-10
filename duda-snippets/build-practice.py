@@ -34,17 +34,6 @@ def mjs(s):
 
 
 
-PROGRESO = """
-/* Barra de progreso de lectura. Solo aparece en las paginas cuyo widget trae
-   el elemento .{s}-progress, asi que se activa pagina por pagina. */
-.{s}-progress {{
-  position:fixed !important; top:0 !important; left:0 !important;
-  height:4px !important; width:0; z-index:99999 !important;   /* el ancho lo pone el script: sin !important */
-  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 50%,#b8933a 100%) !important;
-  transition:width 0.1s linear !important; pointer-events:none !important;
-}}
-@media(max-width:768px) {{ .{s}-progress {{ height:3px !important; }} }}
-"""
 
 HERO_DIGEST = """
 /* Hero calcado del Appellate Digest. Los tamanos dependen del ancho Y del
@@ -91,7 +80,7 @@ if '--css' in sys.argv:
     # Esta regla no esta acotada al scope: se aplicaria a todo el sitio. Va en
     # el widget de cada pagina, no en el head comun.
     css = css.replace('html, body { overflow-x:hidden; }\n', '')
-    out = '<style>' + css + HERO_DIGEST.format(s=SCOPE) + PROGRESO.format(s=SCOPE) + '</style>'
+    out = '<style>' + css + HERO_DIGEST.format(s=SCOPE) + '</style>'
     f = 'duda-snippets/practice-CSS-COMUN.html'
     open(f, 'w', encoding='utf-8').write(out)
     print(f'{f}  ({len(out)} car.)  -> head del sitio, UNA sola vez')
