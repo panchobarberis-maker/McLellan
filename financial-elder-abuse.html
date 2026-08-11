@@ -581,10 +581,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
 @media(min-width:769px) { .hero-pill { font-size:15px; } }
 
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -673,12 +692,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- DISPUTES SECTION -->
-<section class="employers-section" id="disputes">
+<section id="contenido" class="employers-section" id="disputes">
   <div class="employers-intro">
     <div class="employers-intro-text">
       <div class="section-eyebrow reveal">Warning Signs</div>
       <h2 class="reveal reveal-d1">When Trust Is Betrayed,<em>We're Here to Help.</em></h2>
-      <p class="reveal reveal-d2">Financial elder abuse is one of the most devastating and underreported legal violations affecting California families. McLellan Law Group, LLP represents victims of financial elder abuse and their families throughout Silicon Valley, Santa Clara County, and the Bay Area, recovering stolen assets, challenging suspicious trust amendments, and holding abusers accountable under California's Elder Abuse and Dependent Adult Civil Protection Act.</p>
+      <p class="reveal reveal-d2">Financial elder abuse is one of the most devastating and underreported legal violations affecting California families. McLellan Law Group LLP represents victims of financial elder abuse and their families throughout Silicon Valley, Santa Clara County, and the Bay Area, recovering stolen assets, challenging suspicious trust amendments, and holding abusers accountable under California's Elder Abuse and Dependent Adult Civil Protection Act.</p>
     </div>
     <img class="employers-intro-img reveal reveal-d2" src="los 3.png" alt="McLellan Law Group attorneys">
   </div>
@@ -797,41 +816,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <h2 class="reveal">Financial Elder Abuse FAQs</h2>
   <div class="faq-list">
   <div class="faq-item reveal reveal-d1">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What role can a law firm play in helping victims of financial elder abuse recover stolen assets?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-role-can-a-law-firm-play-h" aria-expanded="false" aria-controls="faq-what-role-can-a-law-firm-play" onclick="toggleFaq(this)">
+              What role can a law firm play in helping victims of financial elder abuse recover stolen assets?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-role-can-a-law-firm-play" role="region" aria-labelledby="faq-what-role-can-a-law-firm-play-h">
       <p>Attorneys can investigate the abuse, gather evidence, and identify the responsible parties. They can file lawsuits to reclaim misappropriated funds and seek damages for the victim. Under California law, elder abuse claims can lead to significant financial recovery and legal remedies. Legal professionals can also assist in securing protective orders and preventing further exploitation.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d2">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What are the statutes of limitations for filing financial elder abuse claims?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-the-statutes-of-limitations-for-h" aria-expanded="false" aria-controls="faq-what-are-the-statutes-of-limitations-for" onclick="toggleFaq(this)">
+              What are the statutes of limitations for filing financial elder abuse claims?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-the-statutes-of-limitations-for" role="region" aria-labelledby="faq-what-are-the-statutes-of-limitations-for-h">
       <p>The statutes of limitations for filing financial elder abuse claims in California generally require that the lawsuit be filed within four years from the date the abuse was discovered or should have been discovered. Consulting with an attorney can ensure compliance with these timeframes and protect your rights.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d3">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      Do cases of financial elder abuse need to involve significant monetary losses to be actionable?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-cases-of-financial-elder-abuse-need-h" aria-expanded="false" aria-controls="faq-do-cases-of-financial-elder-abuse-need" onclick="toggleFaq(this)">
+              Do cases of financial elder abuse need to involve significant monetary losses to be actionable?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-cases-of-financial-elder-abuse-need" role="region" aria-labelledby="faq-do-cases-of-financial-elder-abuse-need-h">
       <p>No, cases of financial elder abuse do not need to involve significant monetary losses to be actionable. Any unauthorized use or exploitation of an elder's assets, regardless of the amount, can be grounds for legal action. California law protects elders from financial abuse, emphasizing the wrongful act rather than the financial magnitude. Evidence of misappropriation, coercion, or undue influence is sufficient to pursue a claim. Protecting elders from financial exploitation is critical, irrespective of the loss's size. And the losses could grow in size if the problem is not addressed.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d4">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What evidence is needed to prove financial exploitation of an elderly person?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-evidence-is-needed-to-prove-financial-h" aria-expanded="false" aria-controls="faq-what-evidence-is-needed-to-prove-financial" onclick="toggleFaq(this)">
+              What evidence is needed to prove financial exploitation of an elderly person?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-evidence-is-needed-to-prove-financial" role="region" aria-labelledby="faq-what-evidence-is-needed-to-prove-financial-h">
       <p>To prove financial exploitation of an elderly person, evidence is needed to demonstrate improper use of the elder's funds, property, or assets. This can include bank statements, financial records, and documents showing unauthorized transactions or transfers. Testimony from the elderly person, witnesses, and experts can also support the claim. Evidence of coercion, manipulation, or undue influence, such as emails, texts, or recorded conversations, is crucial.</p>
     </div>
   </div>
@@ -885,18 +912,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var track = document.getElementById('empTrack');

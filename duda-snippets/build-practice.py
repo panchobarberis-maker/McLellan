@@ -335,7 +335,9 @@ f = f'duda-snippets/{name}-MARKUP.html'
 open(f, 'w', encoding='utf-8').write(out)
 print(f'{f}  ({len(out)} car.)  -> widget de la pagina')
 
-sch = bw.schema(page)
+madre = en.DE_QUIEN.get(name)
+sch = bw.schema(page, madre, en.MADRES.get(madre) if madre else None,
+                en.etiqueta(name) if madre else None)
 if sch:
     f = f'duda-snippets/{name}-SCHEMA.html'
     open(f, 'w', encoding='utf-8').write(sch + '\n')

@@ -3,6 +3,11 @@
 
 <div class="mlgP">
 
+<a class="mlg-salto" href="#contenido">Skip to content</a>
+
+
+
+
 <!-- HERO -->
 <section class="emp-hero">
   <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
@@ -14,8 +19,7 @@
 </section>
 
 <!-- CONTENT -->
-<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/employment-law">Employment Law</a><span>/</span>PAGA Notice Response</div></div>
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a PAGA Notice?</div>
     <h2 class="reveal reveal-d1">Understanding Your PAGA Notice and the 65-Day Window</h2>
@@ -26,7 +30,7 @@
       </div>
       <div class="content-card reveal reveal-d3">
         <p class="content-lead">The LWDA has 65 days to decide whether it will investigate the alleged violations.</p>
-        <p>If the agency does not act within that window, which is the outcome in the vast majority of cases: the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations, but the opportunity to cure is time-sensitive and procedurally strict.</p>
+        <p>If the agency does not act within that window, which is common: the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations, but the opportunity to cure is time-sensitive and procedurally strict.</p>
       </div>
       <div class="content-card reveal reveal-d4">
         <p class="content-lead">How your business responds in the first days after receiving a notice often determines the outcome.</p>
@@ -59,31 +63,37 @@
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is a PAGA notice and what should I do when I receive one?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-a-paga-notice-and-what-h" aria-expanded="false" aria-controls="faq-what-is-a-paga-notice-and-what" onclick="toggleFaq(this)">
+              What is a PAGA notice and what should I do when I receive one?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-a-paga-notice-and-what" role="region" aria-labelledby="faq-what-is-a-paga-notice-and-what-h">
             <p>A PAGA notice is a formal notification of alleged Labor Code violations sent to your business and the LWDA before a PAGA lawsuit can be filed. The moment you receive one, preserve all relevant payroll, timekeeping, and policy records, avoid contacting the employee directly about the notice, and contact an employment attorney immediately: the response window is short, and how you handle these first days can materially affect your exposure.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How much time do I have to respond?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-much-time-do-i-have-to-h" aria-expanded="false" aria-controls="faq-how-much-time-do-i-have-to" onclick="toggleFaq(this)">
+              How much time do I have to respond?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-much-time-do-i-have-to" role="region" aria-labelledby="faq-how-much-time-do-i-have-to-h">
             <p>The LWDA has 65 days from the date the notice is filed to decide whether it will investigate. You are not required to submit a formal response to the LWDA during this window in every case, but if you intend to cure any of the alleged violations, specific and shorter deadlines apply to that process. Because of these overlapping timelines, it is important to get legal advice within days of receiving the notice, not weeks.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I 'cure' the violations to avoid penalties?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-cure-the-violations-to-avoid-h" aria-expanded="false" aria-controls="faq-can-i-cure-the-violations-to-avoid" onclick="toggleFaq(this)">
+              Can I 'cure' the violations to avoid penalties?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-cure-the-violations-to-avoid" role="region" aria-labelledby="faq-can-i-cure-the-violations-to-avoid-h">
             <p>For certain types of violations, particularly some wage statement and minor pay-related errors. California law allows an employer to cure the violation within a limited window after the notice, which can eliminate or substantially reduce penalties for that violation. Not all violations are curable, and the 2024 PAGA reforms changed several of the rules governing this process, including the deadlines and the types of violations eligible. An attorney can assess quickly whether your situation qualifies.</p>
           </div>
         </div>
@@ -91,32 +101,38 @@
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What happens if I ignore a PAGA notice?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-happens-if-i-ignore-a-paga-h" aria-expanded="false" aria-controls="faq-what-happens-if-i-ignore-a-paga" onclick="toggleFaq(this)">
+              What happens if I ignore a PAGA notice?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-happens-if-i-ignore-a-paga" role="region" aria-labelledby="faq-what-happens-if-i-ignore-a-paga-h">
             <p>If your business does not respond and the LWDA does not act within 65 days, the employee is free to file a PAGA lawsuit seeking civil penalties for every affected pay period going back one year, calculated across all aggrieved employees. Ignoring the notice forfeits any opportunity to cure violations or negotiate an early resolution, and typically results in a significantly larger exposure than addressing the notice proactively.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How much could a PAGA claim cost my business?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-much-could-a-paga-claim-cost-h" aria-expanded="false" aria-controls="faq-how-much-could-a-paga-claim-cost" onclick="toggleFaq(this)">
+              How much could a PAGA claim cost my business?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-much-could-a-paga-claim-cost" role="region" aria-labelledby="faq-how-much-could-a-paga-claim-cost-h">
             <p>PAGA penalties are generally $100 per employee per pay period, calculated across your entire aggrieved employee population going back one year. After the 2024 reforms, the higher $200 per employee per pay period tier applies only where a court or the agency determined within the preceding five years that you had an unlawful policy or practice that caused the violation, or where the conduct was malicious, fraudulent, or oppressive. For a mid-sized workforce with a recurring violation, such as a wage statement error affecting every pay period, this can total tens or hundreds of thousands of dollars before considering attorney's fees. The reforms also created penalty caps: 15 percent where you had already taken all reasonable steps toward compliance before the notice, and 30 percent where you take them within 60 days of receiving it. There are further sub-caps of $25 for wage statement violations that caused no harm and $50 for violations lasting under 30 days or four consecutive pay periods.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can <a class="mlg-link-tema" href="/paga-claims">PAGA claims</a> be arbitrated?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Only partially. In Viking River Cruises, Inc. v. Moriana (2022), the United States Supreme Court held that an employer can compel arbitration of the individual portion of a PAGA claim, the penalties tied to the notice-filing employee's own alleged violations. The Court also suggested the employee would then lose standing to pursue the representative claims. The California Supreme Court rejected that reading in Adolph v. Uber Technologies, Inc. (2023) 14 Cal.5th 1104, holding that an employee compelled to arbitrate individual PAGA claims retains standing to pursue non-individual claims on behalf of other employees in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely, so it should be treated as one part of the strategy rather than the answer to it.</p>
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-paga-claims-be-arbitrated-h" aria-expanded="false" aria-controls="faq-can-paga-claims-be-arbitrated" onclick="toggleFaq(this)">
+              Can PAGA claims be arbitrated?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-paga-claims-be-arbitrated" role="region" aria-labelledby="faq-can-paga-claims-be-arbitrated-h">
+            <p>Only partially. In Viking River Cruises, Inc. v. Moriana (2022), the United States Supreme Court held that an employer can compel arbitration of the individual portion of a PAGA claim, the penalties tied to the notice-filing employee's own alleged violations. The Court also suggested the employee would then lose standing to pursue the representative claims. The California Supreme Court rejected that reading in Adolph v. Uber Technologies, Inc. (2023) 14 Cal.5th 1104, holding that an employee compelled to arbitrate individual <a class="mlg-link-tema" href="/paga-claims">PAGA claims</a> retains standing to pursue non-individual claims on behalf of other employees in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely, so it should be treated as one part of the strategy rather than the answer to it.</p>
           </div>
         </div>
       </div>
@@ -142,7 +158,7 @@
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
-        <span>From <a class="mlg-link-tema" href="/wrongful-termination">wrongful termination</a> to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
+        <span>Our attorneys have represented employees and employers across Silicon Valley in <a class="mlg-link-tema" href="/wrongful-termination">wrongful termination</a>, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
       </div>
       <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
@@ -224,18 +240,40 @@
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

@@ -450,10 +450,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -539,7 +558,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Breach of Fiduciary Duty?</div>
     <h2 class="reveal reveal-d1">Understanding Fiduciary Duty in California Business Relationships</h2>
@@ -591,41 +610,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Who owes a fiduciary duty in a California business?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-who-owes-a-fiduciary-duty-in-a-h" aria-expanded="false" aria-controls="faq-who-owes-a-fiduciary-duty-in-a" onclick="toggleFaq(this)">
+              Who owes a fiduciary duty in a California business?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-who-owes-a-fiduciary-duty-in-a" role="region" aria-labelledby="faq-who-owes-a-fiduciary-duty-in-a-h">
             <p>Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What are the two main fiduciary duties under California law?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-the-two-main-fiduciary-duties-h" aria-expanded="false" aria-controls="faq-what-are-the-two-main-fiduciary-duties" onclick="toggleFaq(this)">
+              What are the two main fiduciary duties under California law?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-the-two-main-fiduciary-duties" role="region" aria-labelledby="faq-what-are-the-two-main-fiduciary-duties-h">
             <p>The duty of loyalty requires acting in the business's best interest rather than a fiduciary's personal interest, prohibiting self-dealing and competing ventures. The duty of care requires acting with the same care an ordinarily prudent person would exercise in similar circumstances, including making informed decisions.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What are common examples of breach of fiduciary duty?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-common-examples-of-breach-of-h" aria-expanded="false" aria-controls="faq-what-are-common-examples-of-breach-of" onclick="toggleFaq(this)">
+              What are common examples of breach of fiduciary duty?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-common-examples-of-breach-of" role="region" aria-labelledby="faq-what-are-common-examples-of-breach-of-h">
             <p>Common examples include diverting a business opportunity to a competing venture, using company funds for personal expenses, competing directly with the business while still a partner or officer, withholding material information from co-owners, and self-dealing transactions that benefit the fiduciary at the business's expense.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What damages can I recover for breach of fiduciary duty?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-damages-can-i-recover-for-breach-h" aria-expanded="false" aria-controls="faq-what-damages-can-i-recover-for-breach" onclick="toggleFaq(this)">
+              What damages can I recover for breach of fiduciary duty?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-damages-can-i-recover-for-breach" role="region" aria-labelledby="faq-what-damages-can-i-recover-for-breach-h">
             <p>California allows recovery of the actual losses caused by the breach, disgorgement of any profits the fiduciary improperly obtained, and in cases involving fraud, oppression, or malice, punitive damages. An accounting may also be ordered to trace where company funds went.</p>
           </div>
         </div>
@@ -633,41 +660,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the deadline to file a breach of fiduciary duty claim?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-deadline-to-file-a-h" aria-expanded="false" aria-controls="faq-what-is-the-deadline-to-file-a" onclick="toggleFaq(this)">
+              What is the deadline to file a breach of fiduciary duty claim?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-deadline-to-file-a" role="region" aria-labelledby="faq-what-is-the-deadline-to-file-a-h">
             <p>The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I bring a claim on behalf of the business, not just myself?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-bring-a-claim-on-behalf-h" aria-expanded="false" aria-controls="faq-can-i-bring-a-claim-on-behalf" onclick="toggleFaq(this)">
+              Can I bring a claim on behalf of the business, not just myself?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-bring-a-claim-on-behalf" role="region" aria-labelledby="faq-can-i-bring-a-claim-on-behalf-h">
             <p>Yes. Certain fiduciary breach claims, particularly against corporate officers or directors, may need to be brought as a derivative action on behalf of the company, rather than a direct claim by an individual shareholder. We evaluate which type of claim fits your situation.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can a minority shareholder sue a majority shareholder for breach of fiduciary duty?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-a-minority-shareholder-sue-a-majority-h" aria-expanded="false" aria-controls="faq-can-a-minority-shareholder-sue-a-majority" onclick="toggleFaq(this)">
+              Can a minority shareholder sue a majority shareholder for breach of fiduciary duty?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-a-minority-shareholder-sue-a-majority" role="region" aria-labelledby="faq-can-a-minority-shareholder-sue-a-majority-h">
             <p>Yes. Majority shareholders in a closely held California corporation owe a fiduciary duty to minority shareholders and cannot use their control to oppress or unfairly disadvantage them, for example, by freezing them out of profits or decision-making.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need a lawyer to pursue a fiduciary duty claim?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-a-lawyer-to-pursue-h" aria-expanded="false" aria-controls="faq-do-i-need-a-lawyer-to-pursue" onclick="toggleFaq(this)">
+              Do I need a lawyer to pursue a fiduciary duty claim?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-a-lawyer-to-pursue" role="region" aria-labelledby="faq-do-i-need-a-lawyer-to-pursue-h">
             <p>Fiduciary breach cases are fact-intensive and often require forensic review of financial records and business communications. An experienced business litigation attorney can investigate the conduct, quantify your damages, and pursue the claim through negotiation or litigation.</p>
           </div>
         </div>
@@ -764,18 +799,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

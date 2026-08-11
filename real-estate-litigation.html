@@ -614,10 +614,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
 @media(min-width:769px) { .hero-pill { font-size:15px; } }
 
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -706,12 +725,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- DISPUTES SECTION -->
-<section class="employers-section" id="disputes">
+<section id="contenido" class="employers-section" id="disputes">
   <div class="employers-intro">
     <div class="employers-intro-text">
       <div class="section-eyebrow reveal">What We Handle</div>
       <h2 class="reveal reveal-d1">Real Estate Disputes<em>We're Here to Protect Your Interests.</em></h2>
-      <p class="reveal reveal-d2">Real estate disputes can threaten your most significant investments. McLellan Law Group, LLP represents property owners, landlords, tenants, developers, and investors throughout Silicon Valley, Santa Clara County, and the Bay Area in the full range of real estate litigation, from commercial lease conflicts and easement disputes to title defects and purchase agreement claims.</p>
+      <p class="reveal reveal-d2">Real estate disputes can threaten your most significant investments. McLellan Law Group LLP represents property owners, landlords, tenants, developers, and investors throughout Silicon Valley, Santa Clara County, and the Bay Area in the full range of real estate litigation, from commercial lease conflicts and easement disputes to title defects and purchase agreement claims.</p>
     </div>
     <img class="employers-intro-img reveal reveal-d3" src="los 3.png" alt="McLellan Law Group attorneys">
   </div>
@@ -782,7 +801,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="detail-block">
       <div class="section-eyebrow reveal">Overwhelmed? We Can Help</div>
       <h2 class="reveal reveal-d1">Real Estate Disputes Can Feel Overwhelming</h2>
-      <p class="reveal reveal-d2">Real estate disputes can threaten your most significant investments. McLellan Law Group, LLP represents property owners, landlords, tenants, developers, and investors throughout Silicon Valley, Santa Clara County, and the Bay Area, protecting your interests at every step.</p>
+      <p class="reveal reveal-d2">Real estate disputes can threaten your most significant investments. McLellan Law Group LLP represents property owners, landlords, tenants, developers, and investors throughout Silicon Valley, Santa Clara County, and the Bay Area, protecting your interests at every step.</p>
     </div>
 
     <div class="detail-block">
@@ -850,81 +869,97 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <h2 class="reveal">Real Estate Litigation FAQs</h2>
   <div class="faq-list">
   <div class="faq-item reveal reveal-d1">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What are common types of real estate disputes?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-common-types-of-real-estate-h" aria-expanded="false" aria-controls="faq-what-are-common-types-of-real-estate" onclick="toggleFaq(this)">
+              What are common types of real estate disputes?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-common-types-of-real-estate" role="region" aria-labelledby="faq-what-are-common-types-of-real-estate-h">
       <p>Common types of real estate disputes include boundary disputes, where property lines are contested, and landlord-tenant disputes, involving issues like lease agreements and eviction. Other frequent disputes involve breach of contract in real estate transactions, such as failure to disclose property defects or incomplete transactions. Easement and right-of-way disagreements, zoning and land use conflicts, and title defects are also prevalent. In California, these disputes often require legal intervention to resolve and protect property rights. Understanding these common issues can help you identify and address potential real estate conflicts.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d2">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What steps should I take if I am involved in a property boundary dispute?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-steps-should-i-take-if-i-h" aria-expanded="false" aria-controls="faq-what-steps-should-i-take-if-i" onclick="toggleFaq(this)">
+              What steps should I take if I am involved in a property boundary dispute?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-steps-should-i-take-if-i" role="region" aria-labelledby="faq-what-steps-should-i-take-if-i-h">
       <p>If you are involved in a property boundary dispute, start by reviewing your property deed and any related documents to understand your property's legal boundaries. Hiring a licensed surveyor to conduct a professional survey can provide an accurate assessment of the boundary lines. Attempt to resolve the dispute amicably by discussing the issue with your neighbor, supported by the survey results. If an agreement cannot be reached, consult with a real estate attorney experienced in California property law to explore legal options, such as mediation or litigation. Taking these steps can help protect your property rights and resolve the dispute effectively.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d3">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What are my legal options if a real estate transaction falls through?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-my-legal-options-if-a-h" aria-expanded="false" aria-controls="faq-what-are-my-legal-options-if-a" onclick="toggleFaq(this)">
+              What are my legal options if a real estate transaction falls through?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-my-legal-options-if-a" role="region" aria-labelledby="faq-what-are-my-legal-options-if-a-h">
       <p>If a real estate transaction falls through, your legal options include negotiating a new agreement or pursuing mediation to resolve disputes. You may also file a lawsuit for breach of contract to seek damages or specific performance, which requires the other party to complete the transaction as agreed. Reviewing the contract terms and any contingencies is crucial to understanding your rights. Consulting with a real estate attorney experienced in California law can help you determine the best course of action. Protecting your interests in a failed real estate transaction is essential to recovering potential losses.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d4">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What should I do if I discover a defect in a property after purchase?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-should-i-do-if-i-discover-h" aria-expanded="false" aria-controls="faq-what-should-i-do-if-i-discover" onclick="toggleFaq(this)">
+              What should I do if I discover a defect in a property after purchase?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-should-i-do-if-i-discover" role="region" aria-labelledby="faq-what-should-i-do-if-i-discover-h">
       <p>If you discover a defect in a property after purchase, first review your purchase agreement and disclosure documents to see if the defect was disclosed. Document the defect with photos and detailed notes. Notify the seller in writing about the defect and request a resolution, such as repairs or compensation. If the seller refuses to address the issue, consult with a real estate attorney experienced in California law to explore legal options, including potential claims for misrepresentation or breach of contract. Protecting your rights and ensuring proper remedies for undisclosed property defects is crucial.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d5">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What is specific performance in real estate litigation?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-specific-performance-in-real-estate-h" aria-expanded="false" aria-controls="faq-what-is-specific-performance-in-real-estate" onclick="toggleFaq(this)">
+              What is specific performance in real estate litigation?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-specific-performance-in-real-estate" role="region" aria-labelledby="faq-what-is-specific-performance-in-real-estate-h">
       <p>Specific performance in real estate litigation is a legal remedy where the court orders a party to fulfill their obligations under a real estate contract. This remedy is often used when monetary damages are insufficient, particularly in unique property transactions. In California, a buyer or seller can seek specific performance to compel the other party to complete the sale as agreed. To obtain specific performance, the requesting party must prove that they have met all contractual requirements and that the property is unique. Understanding specific performance can help protect your interests in real estate transactions.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d6">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      How are easement and right-of-way disputes handled?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-are-easement-and-right-of-way-h" aria-expanded="false" aria-controls="faq-how-are-easement-and-right-of-way" onclick="toggleFaq(this)">
+              How are easement and right-of-way disputes handled?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-are-easement-and-right-of-way" role="region" aria-labelledby="faq-how-are-easement-and-right-of-way-h">
       <p>Easement and right-of-way disputes are handled by reviewing the property deeds and any recorded easement agreements to determine the legal rights involved. If the terms are unclear, a surveyor may be needed to define the exact boundaries and usage rights. Mediation or negotiation can often resolve these disputes amicably between property owners. If a resolution cannot be reached, litigation may be necessary, where a court will interpret the easement and rule on the dispute. Consulting a real estate attorney can provide guidance and protect your rights in easement and right-of-way conflicts.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d7">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What are the legal implications of a title defect?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-the-legal-implications-of-a-h" aria-expanded="false" aria-controls="faq-what-are-the-legal-implications-of-a" onclick="toggleFaq(this)">
+              What are the legal implications of a title defect?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-the-legal-implications-of-a" role="region" aria-labelledby="faq-what-are-the-legal-implications-of-a-h">
       <p>The legal implications of a title defect can include challenges to property ownership, financial losses, and potential disputes with third parties. Title defects, such as liens, encumbrances, or errors in public records, can prevent the clear transfer of property ownership. In California, resolving a title defect may require legal action to clear the title, which can involve litigation or negotiations with creditors or other claimants. Title insurance can provide some protection against unforeseen defects. Addressing title defects promptly is essential to securing property rights and ensuring smooth real estate transactions.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d7">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      How can I challenge a zoning or land use decision?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-can-i-challenge-a-zoning-or-h" aria-expanded="false" aria-controls="faq-how-can-i-challenge-a-zoning-or" onclick="toggleFaq(this)">
+              How can I challenge a zoning or land use decision?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-can-i-challenge-a-zoning-or" role="region" aria-labelledby="faq-how-can-i-challenge-a-zoning-or-h">
       <p>Consulting with a real estate attorney experienced in zoning and land use laws can provide guidance and increase the chances of a favorable outcome. To challenge a zoning or land use decision, an attorney will begin by reviewing the specific decision and the applicable zoning laws or ordinances in your area. File an appeal with the local zoning board or planning commission within the required timeframe, presenting evidence and arguments supporting your position. If the appeal is unsuccessful, you can file a lawsuit in a California court to seek judicial review of the decision. Understanding the legal process is crucial for effectively challenging zoning decisions.</p>
     </div>
   </div>
@@ -978,18 +1013,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var track = document.getElementById('empTrack');

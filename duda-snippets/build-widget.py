@@ -199,16 +199,55 @@ html, body {{ overflow-x:hidden; }}
     return widget
 
 
-def schema(path):
-    """Solo el JSON-LD propio de la pagina.
+def schema(path, madre=None, nombre_madre=None, etiqueta=None):
+    """El JSON-LD propio de la pagina: FAQPage, BreadcrumbList y Service.
 
     LegalService queda afuera a proposito: la ficha de la firma ya va una sola
     vez en el head del sitio, y declararla de nuevo por pagina le daria a Google
-    dos descripciones distintas de la misma empresa."""
+    dos descripciones distintas de la misma empresa.
+
+    Review y aggregateRating tampoco se generan nunca. Google no acepta que una
+    empresa se puntue a si misma con datos estructurados, y puede costar una
+    accion manual. Los testimonios se muestran, no se marcan."""
+    import json
     src = open(path, encoding='utf-8').read()
     head = src[:src.index('</head>')]
-    bloques = re.findall(r'<script type="application/ld\+json">.*?</script>', head, re.S)
-    return '\n'.join(b for b in bloques if '"LegalService"' not in b)
+    bloques = [b for b in re.findall(r'<script type="application/ld\+json">.*?</script>', head, re.S)
+               if '"LegalService"' not in b]
+
+    if madre:
+        slug = SLUGS.get(os.path.splitext(os.path.basename(path))[0],
+                         '/' + os.path.splitext(os.path.basename(path))[0])
+        raiz = 'https://www.mclellanlawgroup.com'
+        miga = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": raiz + "/"},
+                {"@type": "ListItem", "position": 2, "name": nombre_madre, "item": raiz + madre},
+                {"@type": "ListItem", "position": 3, "name": etiqueta, "item": raiz + slug},
+            ],
+        }
+        servicio = {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": etiqueta,
+            "serviceType": etiqueta,
+            "url": raiz + slug,
+            "provider": {"@type": "LegalService", "name": "McLellan Law Group LLP",
+                         "url": raiz},
+            "areaServed": [
+                {"@type": "City", "name": "Saratoga"},
+                {"@type": "AdministrativeArea", "name": "Santa Clara County"},
+                {"@type": "AdministrativeArea", "name": "Silicon Valley"},
+                {"@type": "AdministrativeArea", "name": "Bay Area"},
+            ],
+        }
+        for d in (miga, servicio):
+            bloques.append('<script type="application/ld+json">\n'
+                           + json.dumps(d, indent=2, ensure_ascii=False)
+                           + '\n</script>')
+    return '\n'.join(bloques)
 
 
 if __name__ == '__main__':

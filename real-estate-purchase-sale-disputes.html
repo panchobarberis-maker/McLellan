@@ -450,10 +450,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -539,7 +558,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Purchase & Sale Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Purchase & Sale Disputes in California</h2>
@@ -589,41 +608,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What must a seller disclose when selling residential property in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-must-a-seller-disclose-when-selling-h" aria-expanded="false" aria-controls="faq-what-must-a-seller-disclose-when-selling" onclick="toggleFaq(this)">
+              What must a seller disclose when selling residential property in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-must-a-seller-disclose-when-selling" role="region" aria-labelledby="faq-what-must-a-seller-disclose-when-selling-h">
             <p>California requires sellers of most residential properties to disclose known material facts and defects that could affect the property's value or desirability, typically through a statutory disclosure form. Sellers must disclose known issues even if a buyer doesn't ask about them directly, and failing to do so can expose the seller to liability.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What can I do if I discover an undisclosed defect after buying a home?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-can-i-do-if-i-discover-h" aria-expanded="false" aria-controls="faq-what-can-i-do-if-i-discover" onclick="toggleFaq(this)">
+              What can I do if I discover an undisclosed defect after buying a home?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-can-i-do-if-i-discover" role="region" aria-labelledby="faq-what-can-i-do-if-i-discover-h">
             <p>You may have claims for breach of contract, fraud, or negligent misrepresentation if the seller knew of a material defect and failed to disclose it. Document the defect, gather your disclosure paperwork and inspection reports, and consult an attorney promptly, as claims are subject to statutory deadlines.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can a buyer be forced to complete a home purchase?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-a-buyer-be-forced-to-complete-h" aria-expanded="false" aria-controls="faq-can-a-buyer-be-forced-to-complete" onclick="toggleFaq(this)">
+              Can a buyer be forced to complete a home purchase?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-a-buyer-be-forced-to-complete" role="region" aria-labelledby="faq-can-a-buyer-be-forced-to-complete-h">
             <p>Yes. Because real property is considered legally unique, a seller can seek specific performance, asking a court to order the buyer to complete the purchase as agreed, rather than settling for monetary damages alone, provided the seller has met their own obligations under the contract.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Who keeps the earnest money deposit if a real estate deal falls through?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-who-keeps-the-earnest-money-deposit-if-h" aria-expanded="false" aria-controls="faq-who-keeps-the-earnest-money-deposit-if" onclick="toggleFaq(this)">
+              Who keeps the earnest money deposit if a real estate deal falls through?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-who-keeps-the-earnest-money-deposit-if" role="region" aria-labelledby="faq-who-keeps-the-earnest-money-deposit-if-h">
             <p>It depends on the purchase agreement's terms and which party breached. If a buyer backs out without a valid contingency, the seller may be entitled to retain the deposit as liquidated damages. If the seller breaches or a valid contingency excuses the buyer's performance, the buyer is typically entitled to a full refund.</p>
           </div>
         </div>
@@ -631,41 +658,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the deadline to sue over a real estate purchase agreement?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-deadline-to-sue-over-h" aria-expanded="false" aria-controls="faq-what-is-the-deadline-to-sue-over" onclick="toggleFaq(this)">
+              What is the deadline to sue over a real estate purchase agreement?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-deadline-to-sue-over" role="region" aria-labelledby="faq-what-is-the-deadline-to-sue-over-h">
             <p>Claims for breach of a written purchase agreement generally must be filed within four years, while claims based on fraud or non-disclosure generally must be filed within three years of discovering the defect or misrepresentation, though the clock and available exceptions depend on the specific facts.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I sue a seller after closing if they hid a defect?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-sue-a-seller-after-closing-h" aria-expanded="false" aria-controls="faq-can-i-sue-a-seller-after-closing" onclick="toggleFaq(this)">
+              Can I sue a seller after closing if they hid a defect?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-sue-a-seller-after-closing" role="region" aria-labelledby="faq-can-i-sue-a-seller-after-closing-h">
             <p>Yes, in many cases. The close of escrow does not automatically bar claims for defects the seller knew about and failed to disclose. Courts generally hold sellers accountable for known material defects even after the sale is complete, particularly where a required disclosure form omitted the issue.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What happens if a contingency in the purchase agreement isn't met?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-happens-if-a-contingency-in-the-h" aria-expanded="false" aria-controls="faq-what-happens-if-a-contingency-in-the" onclick="toggleFaq(this)">
+              What happens if a contingency in the purchase agreement isn't met?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-happens-if-a-contingency-in-the" role="region" aria-labelledby="faq-what-happens-if-a-contingency-in-the-h">
             <p>If a contingency, such as financing, inspection, or appraisal, is not satisfied and properly waived or removed, the party protected by that contingency generally has the right to cancel the agreement and receive a refund of their deposit, without breaching the contract.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need an attorney for a purchase or sale dispute?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-an-attorney-for-a-h" aria-expanded="false" aria-controls="faq-do-i-need-an-attorney-for-a" onclick="toggleFaq(this)">
+              Do I need an attorney for a purchase or sale dispute?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-an-attorney-for-a" role="region" aria-labelledby="faq-do-i-need-an-attorney-for-a-h">
             <p>Purchase and sale disputes often involve significant money, statutory disclosure requirements, and contractual deadlines that can bar a claim if missed. An experienced real estate litigation attorney can evaluate your transaction, protect your deposit and legal rights, and pursue the resolution that best serves your interests.</p>
           </div>
         </div>
@@ -762,18 +797,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

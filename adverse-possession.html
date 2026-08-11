@@ -442,10 +442,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -531,7 +550,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Adverse Possession?</div>
     <h2 class="reveal reveal-d1">Understanding Adverse Possession in California</h2>
@@ -584,41 +603,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What are the requirements for adverse possession in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-the-requirements-for-adverse-possession-h" aria-expanded="false" aria-controls="faq-what-are-the-requirements-for-adverse-possession" onclick="toggleFaq(this)">
+              What are the requirements for adverse possession in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-the-requirements-for-adverse-possession" role="region" aria-labelledby="faq-what-are-the-requirements-for-adverse-possession-h">
             <p>A claimant must show actual possession of the property, that the possession was open and notorious, hostile to the owner's title, exclusive, and continuous for five years. California also requires the claimant to have paid all property taxes assessed on the parcel during that five-year period.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Why does California require payment of property taxes for adverse possession?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-why-does-california-require-payment-of-property-h" aria-expanded="false" aria-controls="faq-why-does-california-require-payment-of-property" onclick="toggleFaq(this)">
+              Why does California require payment of property taxes for adverse possession?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-why-does-california-require-payment-of-property" role="region" aria-labelledby="faq-why-does-california-require-payment-of-property-h">
             <p>The tax payment requirement is unique to California and is intended to limit successful claims to situations where the claimant has treated the property as their own in every practical sense, including financial responsibility. This requirement makes adverse possession claims significantly harder to establish than in many other states.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How do I stop someone from claiming adverse possession of my land?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-do-i-stop-someone-from-claiming-h" aria-expanded="false" aria-controls="faq-how-do-i-stop-someone-from-claiming" onclick="toggleFaq(this)">
+              How do I stop someone from claiming adverse possession of my land?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-do-i-stop-someone-from-claiming" role="region" aria-labelledby="faq-how-do-i-stop-someone-from-claiming-h">
             <p>You can interrupt a developing adverse possession claim by granting the person permission to use the land in writing, which defeats the required element of hostility, or by taking legal action to reassert your rights before the five-year period and tax payment requirement are satisfied.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I claim adverse possession of land I've used for years?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-claim-adverse-possession-of-land-h" aria-expanded="false" aria-controls="faq-can-i-claim-adverse-possession-of-land" onclick="toggleFaq(this)">
+              Can I claim adverse possession of land I've used for years?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-claim-adverse-possession-of-land" role="region" aria-labelledby="faq-can-i-claim-adverse-possession-of-land-h">
             <p>Potentially, if you can demonstrate all required elements, including that you paid the property taxes on the disputed parcel for five consecutive years. A quiet title action is typically necessary to formally establish ownership, since adverse possession alone does not automatically transfer title without a court judgment.</p>
           </div>
         </div>
@@ -626,31 +653,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the difference between adverse possession and a prescriptive easement?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-adverse-possession-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-adverse-possession" onclick="toggleFaq(this)">
+              What is the difference between adverse possession and a prescriptive easement?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-adverse-possession" role="region" aria-labelledby="faq-what-is-the-difference-between-adverse-possession-h">
             <p>Adverse possession can transfer full ownership of land, requiring payment of property taxes on the parcel for five years. A prescriptive easement only grants a right to use land for a specific purpose, such as access, and does not require the claimant to have paid property taxes.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can a landlord or tenant claim adverse possession against a property owner?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-a-landlord-or-tenant-claim-adverse-h" aria-expanded="false" aria-controls="faq-can-a-landlord-or-tenant-claim-adverse" onclick="toggleFaq(this)">
+              Can a landlord or tenant claim adverse possession against a property owner?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-a-landlord-or-tenant-claim-adverse" role="region" aria-labelledby="faq-can-a-landlord-or-tenant-claim-adverse-h">
             <p>Generally no, because possession under a lease or other permission from the owner is not hostile, which is a required element of adverse possession. A claim typically requires possession without the true owner's consent throughout the statutory period.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need an attorney for an adverse possession dispute?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-an-attorney-for-an-h" aria-expanded="false" aria-controls="faq-do-i-need-an-attorney-for-an" onclick="toggleFaq(this)">
+              Do I need an attorney for an adverse possession dispute?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-an-attorney-for-an" role="region" aria-labelledby="faq-do-i-need-an-attorney-for-an-h">
             <p>Adverse possession claims require detailed proof of continuous possession and tax payment history spanning years, and courts scrutinize these claims closely. An experienced real estate litigation attorney can evaluate the strength of your position, gather the necessary records, and pursue or defend the claim through a quiet title action.</p>
           </div>
         </div>
@@ -747,18 +780,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

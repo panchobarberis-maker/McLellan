@@ -500,6 +500,14 @@ html, body { overflow-x:hidden; }
 @media(min-width:769px) {
 #mlgM .hero-pill { font-size:15px !important; }
 }
+#mlgM .faq-h { margin:0 !important; padding:0 !important; font-size:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
+#mlgM .faq-question:focus-visible, #mlgM a:focus-visible, #mlgM button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px !important; }
+#mlgM .mlg-salto {
+  position:absolute !important; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e !important; color:#fff !important; padding:12px 20px !important; border-radius:0 0 8px 0 !important;
+  font-family:'Barlow',sans-serif !important; font-size:15px !important; font-weight:700 !important; text-decoration:none !important;
+}
+#mlgM .mlg-salto:focus { left:0; }
 
 /* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
    secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
@@ -525,6 +533,11 @@ html, body { overflow-x:hidden; }
 </style>
 
 <div id="mlgM">
+<a class="mlg-salto" href="#contenido">Skip to content</a>
+
+
+
+
 <!-- HERO -->
 <section class="emp-hero">
   <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
@@ -541,12 +554,12 @@ html, body { overflow-x:hidden; }
 </div>
 
 <!-- EMPLOYEES SECTION -->
-<section class="employees-section" id="employees">
+<section id="contenido" class="employees-section" id="employees">
   <div class="employees-intro">
     <div class="employees-intro-text">
       <div class="section-eyebrow reveal">For Employees</div>
       <h2 class="reveal reveal-d1">We Fight for<em>Employee Rights.</em></h2>
-      <p class="reveal reveal-d2" style="text-align:left !important;">If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley: you don't pay for attorney fees unless we win.</p>
+      <p class="reveal reveal-d2" style="text-align:left !important;">If your employer violated your rights, you may be entitled to compensation. We represent employees throughout Silicon Valley: you pay no attorney fees unless we recover for you. Case costs are addressed separately in our written fee agreement, and we will walk you through exactly how they work before you sign anything.</p>
     </div>
     <div class="employees-intro-img-wrap reveal reveal-d2">
       <img class="employees-intro-img" src="WhatsApp Image 2025-01-21 at 14.57.35_a0a9c091.jpg" alt="McLellan Law Group attorneys">
@@ -616,7 +629,7 @@ html, body { overflow-x:hidden; }
   <a href="#contact" class="btn-gold reveal" style="margin-bottom:48px !important; display:inline-flex !important;">Free Case Evaluation →</a>
 
   <div class="employer-faq" style="margin-top:48px !important;">
-    <h3 class="reveal" style="color:#1e3a3e !important;">Employee FAQs</h3>
+    <h2 class="reveal" style="color:#1e3a3e !important;">Employee FAQs</h2>
 
     <div class="faq-item reveal reveal-d1" style="border-bottom:1px solid #e8e3da !important;">
       <button class="faq-question" onclick="toggleFaq(this)" style="color:#1e3a3e !important;">
@@ -747,45 +760,53 @@ html, body { overflow-x:hidden; }
   <a href="#contact" class="btn-gold reveal">Get a Free Consultation →</a>
 
   <div class="employer-faq">
-    <h3 class="reveal">Employer FAQs</h3>
+    <h2 class="reveal">Employer FAQs</h2>
 
     <div class="faq-item reveal reveal-d1">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What should I do if I receive a PAGA notice in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Contact a California employment attorney immediately. PAGA notices trigger a 65-day window during which the LWDA can decide whether to investigate. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. Do not ignore the notice and do not retaliate against the employee who filed it. McLellan Law Group, LLP represents California employers in PAGA defense throughout Silicon Valley and the Bay Area.</p>
+      <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-should-i-do-if-i-receive-h" aria-expanded="false" aria-controls="faq-what-should-i-do-if-i-receive" onclick="toggleFaq(this)">
+              What should I do if I receive a PAGA notice in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-should-i-do-if-i-receive" role="region" aria-labelledby="faq-what-should-i-do-if-i-receive-h">
+        <p>Contact a California employment attorney immediately. PAGA notices trigger a 65-day window during which the LWDA can decide whether to investigate. Under the 2024 PAGA reforms, employers who take early corrective action can significantly reduce penalties. Do not ignore the notice and do not retaliate against the employee who filed it. McLellan Law Group LLP represents California employers in PAGA defense throughout Silicon Valley and the Bay Area.</p>
       </div>
     </div>
 
     <div class="faq-item reveal reveal-d2">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Can I be sued for wrongful termination if I have an at-will employment policy?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
+      <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-be-sued-for-wrongful-termination-h" aria-expanded="false" aria-controls="faq-can-i-be-sued-for-wrongful-termination" onclick="toggleFaq(this)">
+              Can I be sued for wrongful termination if I have an at-will employment policy?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-be-sued-for-wrongful-termination" role="region" aria-labelledby="faq-can-i-be-sued-for-wrongful-termination-h">
         <p>Yes, and this is one of the biggest misconceptions California employers have. At-will employment is a starting point, not a shield. You cannot terminate someone for a reason that violates public policy, is based on a protected characteristic under FEHA, constitutes retaliation for protected activity, or breaches an implied contract created by your handbook or offer letter. Every termination should be documented and reviewed for risk before you act.</p>
       </div>
     </div>
 
     <div class="faq-item reveal reveal-d3">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        What is the difference between a PAGA claim and a class action?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
+      <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-a-paga-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-a-paga" onclick="toggleFaq(this)">
+              What is the difference between a PAGA claim and a class action?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-a-paga" role="region" aria-labelledby="faq-what-is-the-difference-between-a-paga-h">
         <p>A class action requires court certification, which is a significant hurdle and can end the case if certification is denied. A PAGA claim does not. The employee acts on behalf of the State of California, and no certification is required. PAGA penalties are calculated per employee, per pay period. Under the 2024 reforms, 65 percent of civil penalties go to the Labor and Workforce Development Agency and 35 percent is distributed to the aggrieved employees, up from 25 percent before the reforms. PAGA claims also cannot be fully compelled into arbitration, which makes early strategy critical.</p>
       </div>
     </div>
 
     <div class="faq-item reveal reveal-d4">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Do I need an employment attorney to draft a severance agreement in California?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>You are not legally required to, but getting it wrong is costly. For employees 40 or older, federal law requires specific timing and language. California requires a Civil Code §1542 waiver to release unknown claims. Recent state law changes restrict certain non-disparagement clauses. McLellan Law Group, LLP drafts and reviews severance agreements for California employers and advises employees and executives before they sign.</p>
+      <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-an-employment-attorney-to-h" aria-expanded="false" aria-controls="faq-do-i-need-an-employment-attorney-to" onclick="toggleFaq(this)">
+              Do I need an employment attorney to draft a severance agreement in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-an-employment-attorney-to" role="region" aria-labelledby="faq-do-i-need-an-employment-attorney-to-h">
+        <p>You are not legally required to, but getting it wrong is costly. For employees 40 or older, federal law requires specific timing and language. California requires a Civil Code §1542 waiver to release unknown claims. Recent state law changes restrict certain non-disparagement clauses. McLellan Law Group LLP drafts and reviews severance agreements for California employers and advises employees and executives before they sign.</p>
       </div>
     </div>
   </div>
@@ -853,7 +874,7 @@ html, body { overflow-x:hidden; }
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
-        <span>From wrongful termination to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
+        <span>Our attorneys have represented employees and employers across Silicon Valley in wrongful termination, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
       </div>
       <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
@@ -875,18 +896,40 @@ html, body { overflow-x:hidden; }
 <script>
 
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var track = document.getElementById('empTrack');

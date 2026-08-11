@@ -450,10 +450,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -539,7 +558,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Breach of Contract?</div>
     <h2 class="reveal reveal-d1">Understanding Breach of Contract in California</h2>
@@ -584,41 +603,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What counts as a breach of contract in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-counts-as-a-breach-of-contract-h" aria-expanded="false" aria-controls="faq-what-counts-as-a-breach-of-contract" onclick="toggleFaq(this)">
+              What counts as a breach of contract in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-counts-as-a-breach-of-contract" role="region" aria-labelledby="faq-what-counts-as-a-breach-of-contract-h">
             <p>A breach occurs when a party fails to perform any promise that forms all or part of a contract, without a legal excuse. This includes non-payment, late or defective performance, and outright refusal to perform. The contract can be written, oral, or implied by conduct, though some agreements must be in writing under California's statute of frauds.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the deadline to sue for breach of contract in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-deadline-to-sue-for-h" aria-expanded="false" aria-controls="faq-what-is-the-deadline-to-sue-for" onclick="toggleFaq(this)">
+              What is the deadline to sue for breach of contract in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-deadline-to-sue-for" role="region" aria-labelledby="faq-what-is-the-deadline-to-sue-for-h">
             <p>The statute of limitations depends on the contract type. Written contracts generally have four years to file suit, while oral contracts have two years. The clock typically starts running when the breach occurs, though exceptions can apply, such as when the breach is not discovered right away.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What damages can I recover for breach of contract?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-damages-can-i-recover-for-breach-h" aria-expanded="false" aria-controls="faq-what-damages-can-i-recover-for-breach" onclick="toggleFaq(this)">
+              What damages can I recover for breach of contract?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-damages-can-i-recover-for-breach" role="region" aria-labelledby="faq-what-damages-can-i-recover-for-breach-h">
             <p>California generally allows recovery of the benefit of the bargain, the amount needed to put you in the position you would have been in had the contract been performed. This can include direct damages, consequential damages (foreseeable losses caused by the breach), and in some cases, attorney's fees if the contract includes a fee-shifting provision.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I get out of a contract if the other party breaches first?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-get-out-of-a-contract-h" aria-expanded="false" aria-controls="faq-can-i-get-out-of-a-contract" onclick="toggleFaq(this)">
+              Can I get out of a contract if the other party breaches first?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-get-out-of-a-contract" role="region" aria-labelledby="faq-can-i-get-out-of-a-contract-h">
             <p>Generally yes, if the breach is material. A material breach by one party excuses the other party's further performance and may allow them to terminate the agreement and sue for damages. Minor or partial breaches typically do not excuse performance entirely.</p>
           </div>
         </div>
@@ -626,41 +653,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Does my contract need to be in writing to be enforceable?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-does-my-contract-need-to-be-in-h" aria-expanded="false" aria-controls="faq-does-my-contract-need-to-be-in" onclick="toggleFaq(this)">
+              Does my contract need to be in writing to be enforceable?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-does-my-contract-need-to-be-in" role="region" aria-labelledby="faq-does-my-contract-need-to-be-in-h">
             <p>Not always. California enforces oral and implied contracts in most circumstances. However, the statute of frauds requires certain agreements to be in writing, including contracts for the sale of real property, agreements that cannot be performed within one year, and certain guarantees.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the difference between a material and minor breach?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-a-material-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-a-material" onclick="toggleFaq(this)">
+              What is the difference between a material and minor breach?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-a-material" role="region" aria-labelledby="faq-what-is-the-difference-between-a-material-h">
             <p>A material breach defeats the essential purpose of the contract, such as failing to deliver goods at all, and allows the non-breaching party to treat the contract as terminated. A minor breach is a partial or technical failure that does not undermine the contract's core purpose, and the non-breaching party generally must still perform but can sue for the resulting damages.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I sue for breach of contract without a written agreement?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-sue-for-breach-of-contract-h" aria-expanded="false" aria-controls="faq-can-i-sue-for-breach-of-contract" onclick="toggleFaq(this)">
+              Can I sue for breach of contract without a written agreement?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-sue-for-breach-of-contract" role="region" aria-labelledby="faq-can-i-sue-for-breach-of-contract-h">
             <p>Yes, in most cases. Oral contracts and implied-in-fact contracts, formed through the parties' conduct, are enforceable in California, though they can be harder to prove. Emails, texts, invoices, and performance history often serve as key evidence.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need an attorney to pursue a breach of contract claim?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-an-attorney-to-pursue-h" aria-expanded="false" aria-controls="faq-do-i-need-an-attorney-to-pursue" onclick="toggleFaq(this)">
+              Do I need an attorney to pursue a breach of contract claim?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-an-attorney-to-pursue" role="region" aria-labelledby="faq-do-i-need-an-attorney-to-pursue-h">
             <p>You are not required to have an attorney, but contract disputes often involve complex damages calculations, defenses, and procedural deadlines. An experienced business litigation attorney can evaluate your contract, calculate your damages, and pursue the fastest path to resolution, whether through negotiation, mediation, or litigation.</p>
           </div>
         </div>
@@ -757,18 +792,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

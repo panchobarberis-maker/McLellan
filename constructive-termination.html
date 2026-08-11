@@ -435,10 +435,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -524,7 +543,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Constructive Termination?</div>
     <h2 class="reveal reveal-d1">Understanding Constructive Termination in California</h2>
@@ -574,31 +593,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the legal standard for constructive termination in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-legal-standard-for-constructive-h" aria-expanded="false" aria-controls="faq-what-is-the-legal-standard-for-constructive" onclick="toggleFaq(this)">
+              What is the legal standard for constructive termination in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-legal-standard-for-constructive" role="region" aria-labelledby="faq-what-is-the-legal-standard-for-constructive-h">
             <p>California courts, following Turner v. Anheuser-Busch, Inc. (1994), require an employee to show that the employer intentionally created or knowingly permitted working conditions so unusually adverse that a reasonable employee in the same position would have felt compelled to resign. The standard is objective, it does not turn on how the individual employee subjectively felt, and ordinary workplace stress, a single bad review, or a difficult supervisor is generally not enough on its own.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need to resign immediately for it to count as constructive termination?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-to-resign-immediately-for-h" aria-expanded="false" aria-controls="faq-do-i-need-to-resign-immediately-for" onclick="toggleFaq(this)">
+              Do I need to resign immediately for it to count as constructive termination?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-to-resign-immediately-for" role="region" aria-labelledby="faq-do-i-need-to-resign-immediately-for-h">
             <p>No, but waiting too long without objection can weaken your claim. Courts look at whether a reasonable employee would have resigned given the same intolerable conditions, and an employee is generally expected to give the employer a reasonable opportunity to address the situation before resigning, unless doing so would be futile. Documenting your complaints and the employer's response before you resign strengthens your case.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Is constructive termination the same as being fired?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-is-constructive-termination-the-same-as-being-h" aria-expanded="false" aria-controls="faq-is-constructive-termination-the-same-as-being" onclick="toggleFaq(this)">
+              Is constructive termination the same as being fired?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-is-constructive-termination-the-same-as-being" role="region" aria-labelledby="faq-is-constructive-termination-the-same-as-being-h">
             <p>Legally, yes. If you can prove constructive termination, California law treats your resignation as though your employer terminated you. This means you can pursue the same legal claims and remedies available to an employee who was directly fired, including wrongful termination, discrimination, harassment, or retaliation claims, depending on the conduct that forced you out.</p>
           </div>
         </div>
@@ -606,31 +631,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What kind of evidence supports a constructive termination claim?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-kind-of-evidence-supports-a-constructive-h" aria-expanded="false" aria-controls="faq-what-kind-of-evidence-supports-a-constructive" onclick="toggleFaq(this)">
+              What kind of evidence supports a constructive termination claim?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-kind-of-evidence-supports-a-constructive" role="region" aria-labelledby="faq-what-kind-of-evidence-supports-a-constructive-h">
             <p>Strong evidence includes a documented pattern of adverse treatment, demotions, pay cuts, removal of job duties, exclusion from meetings, or a sudden wave of unwarranted discipline, especially if it followed a protected complaint. Emails, performance reviews, HR complaints and the employer's responses, and witness accounts of the conditions all help establish that a reasonable person would have felt forced to resign. A resignation letter that explains the reasons for leaving, written contemporaneously, can also be valuable evidence.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What damages can I recover in a constructive termination case?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-damages-can-i-recover-in-a-h" aria-expanded="false" aria-controls="faq-what-damages-can-i-recover-in-a" onclick="toggleFaq(this)">
+              What damages can I recover in a constructive termination case?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-damages-can-i-recover-in-a" role="region" aria-labelledby="faq-what-damages-can-i-recover-in-a-h">
             <p>Because constructive termination is treated as a termination, damages can include lost wages and benefits (back pay), future lost earnings (front pay), emotional distress damages, punitive damages in cases of egregious employer conduct, and attorney's fees. The specific remedies available often depend on the underlying unlawful conduct, for example, discrimination or retaliation claims under FEHA can support broader damages than a standalone contract-based claim.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the deadline to file a constructive termination claim in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-deadline-to-file-a-h" aria-expanded="false" aria-controls="faq-what-is-the-deadline-to-file-a" onclick="toggleFaq(this)">
+              What is the deadline to file a constructive termination claim in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-deadline-to-file-a" role="region" aria-labelledby="faq-what-is-the-deadline-to-file-a-h">
             <p>Deadlines depend on the underlying legal theory, and the clock generally starts running from your resignation date. For claims involving discrimination, harassment, or retaliation under FEHA, you generally have three years to file a complaint with the Civil Rights Department (CRD). Because constructive termination claims are almost always paired with an underlying FEHA or public-policy violation, it is important to consult an attorney promptly to identify every applicable deadline.</p>
           </div>
         </div>
@@ -657,7 +688,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
-        <span>From wrongful termination to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
+        <span>Our attorneys have represented employees and employers across Silicon Valley in wrongful termination, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
       </div>
       <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
@@ -727,18 +758,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

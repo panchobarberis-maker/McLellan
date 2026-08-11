@@ -443,10 +443,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -532,7 +551,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Conservatorship Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Conservatorship Disputes in California</h2>
@@ -577,41 +596,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the difference between a conservatorship of the person and of the estate?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-a-conservatorship-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-a-conservatorship" onclick="toggleFaq(this)">
+              What is the difference between a conservatorship of the person and of the estate?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-a-conservatorship" role="region" aria-labelledby="faq-what-is-the-difference-between-a-conservatorship-h">
             <p>A conservatorship of the person gives the conservator authority over an individual's daily care, including housing, meals, and medical decisions. A conservatorship of the estate gives the conservator authority over the person's finances and assets. Courts can grant either type alone or both together, depending on the conservatee's needs.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the difference between a probate conservatorship and an LPS conservatorship?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-a-probate-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-a-probate" onclick="toggleFaq(this)">
+              What is the difference between a probate conservatorship and an LPS conservatorship?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-a-probate" role="region" aria-labelledby="faq-what-is-the-difference-between-a-probate-h">
             <p>A probate conservatorship addresses adults who cannot manage their personal care or finances due to age, illness, or disability. An LPS conservatorship, established under the Lanterman-Petris-Short Act, applies specifically to individuals with a severe mental illness who are gravely disabled, and involves a distinct court process with different standards and protections.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Who can be appointed as a conservator?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-who-can-be-appointed-as-a-conservator-h" aria-expanded="false" aria-controls="faq-who-can-be-appointed-as-a-conservator" onclick="toggleFaq(this)">
+              Who can be appointed as a conservator?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-who-can-be-appointed-as-a-conservator" role="region" aria-labelledby="faq-who-can-be-appointed-as-a-conservator-h">
             <p>California courts generally give preference to a spouse, adult child, or other close relative, but any competent adult can petition to serve, and the court will consider who is best able to act in the proposed conservatee's interest. Where family members disagree over who should serve, the court resolves the dispute based on the conservatee's best interests.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What are signs of conservatorship abuse?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-signs-of-conservatorship-abuse-h" aria-expanded="false" aria-controls="faq-what-are-signs-of-conservatorship-abuse" onclick="toggleFaq(this)">
+              What are signs of conservatorship abuse?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-signs-of-conservatorship-abuse" role="region" aria-labelledby="faq-what-are-signs-of-conservatorship-abuse-h">
             <p>Warning signs include unexplained withdrawals or transfers from the conservatee's accounts, failure to file required accountings, isolating the conservatee from family and friends, neglecting their medical or personal care needs, and living arrangements that appear to benefit the conservator more than the conservatee.</p>
           </div>
         </div>
@@ -619,31 +646,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can a conservatorship be contested before it's granted?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-a-conservatorship-be-contested-before-it-h" aria-expanded="false" aria-controls="faq-can-a-conservatorship-be-contested-before-it" onclick="toggleFaq(this)">
+              Can a conservatorship be contested before it's granted?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-a-conservatorship-be-contested-before-it" role="region" aria-labelledby="faq-can-a-conservatorship-be-contested-before-it-h">
             <p>Yes. The proposed conservatee or other interested parties can object to a conservatorship petition, argue that less restrictive alternatives exist, or contest who should be appointed. California law requires clear evidence that a conservatorship is necessary before the court will grant one.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How do I remove a conservator who isn't fulfilling their duties?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-do-i-remove-a-conservator-who-h" aria-expanded="false" aria-controls="faq-how-do-i-remove-a-conservator-who" onclick="toggleFaq(this)">
+              How do I remove a conservator who isn't fulfilling their duties?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-do-i-remove-a-conservator-who" role="region" aria-labelledby="faq-how-do-i-remove-a-conservator-who-h">
             <p>An interested party can petition the probate court to remove a conservator for failing to provide adequate care, mismanaging assets, or otherwise acting against the conservatee's best interests. The court can appoint a successor conservator and, where warranted, order the removed conservator to account for and repay any losses.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can a conservatorship be terminated?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-a-conservatorship-be-terminated-h" aria-expanded="false" aria-controls="faq-can-a-conservatorship-be-terminated" onclick="toggleFaq(this)">
+              Can a conservatorship be terminated?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-a-conservatorship-be-terminated" role="region" aria-labelledby="faq-can-a-conservatorship-be-terminated-h">
             <p>Yes. A conservatorship can be terminated if the conservatee regains capacity, or in the case of an LPS conservatorship, when it is no longer necessary. Interested parties, including the conservatee, may petition the court to end the conservatorship and restore the person's full legal rights.</p>
           </div>
         </div>
@@ -740,18 +773,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

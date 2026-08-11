@@ -451,10 +451,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -540,7 +559,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Are Beneficiary Rights?</div>
     <h2 class="reveal reveal-d1">Understanding Beneficiary Rights in California</h2>
@@ -590,41 +609,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What information am I entitled to as a trust beneficiary?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-information-am-i-entitled-to-as-h" aria-expanded="false" aria-controls="faq-what-information-am-i-entitled-to-as" onclick="toggleFaq(this)">
+              What information am I entitled to as a trust beneficiary?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-information-am-i-entitled-to-as" role="region" aria-labelledby="faq-what-information-am-i-entitled-to-as-h">
             <p>California law entitles beneficiaries to be reasonably informed of the trust's terms and its administration, including receiving a copy of the trust document when requested and periodic accountings showing income, expenses, distributions, and the trust's assets. A trustee who refuses these requests without justification can be compelled by the court to comply.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How often must a trustee provide an accounting?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-often-must-a-trustee-provide-an-h" aria-expanded="false" aria-controls="faq-how-often-must-a-trustee-provide-an" onclick="toggleFaq(this)">
+              How often must a trustee provide an accounting?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-often-must-a-trustee-provide-an" role="region" aria-labelledby="faq-how-often-must-a-trustee-provide-an-h">
             <p>Trustees are generally required to provide an accounting at least annually, upon a change in trustee, and when the trust terminates, unless the trust document validly waives this requirement. Beneficiaries can petition the court to compel an accounting if the trustee fails to provide one within a reasonable time.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What can I do if a trustee is delaying my distribution?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-can-i-do-if-a-trustee-h" aria-expanded="false" aria-controls="faq-what-can-i-do-if-a-trustee" onclick="toggleFaq(this)">
+              What can I do if a trustee is delaying my distribution?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-can-i-do-if-a-trustee" role="region" aria-labelledby="faq-what-can-i-do-if-a-trustee-h">
             <p>If the trust's debts, taxes, and administrative expenses have been resolved and no legitimate reason justifies further delay, beneficiaries can petition the probate court to compel the trustee to distribute the assets owed to them. Courts take unreasonable delay seriously, particularly where it appears to benefit the trustee.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I request a copy of the trust document?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-request-a-copy-of-the-h" aria-expanded="false" aria-controls="faq-can-i-request-a-copy-of-the" onclick="toggleFaq(this)">
+              Can I request a copy of the trust document?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-request-a-copy-of-the" role="region" aria-labelledby="faq-can-i-request-a-copy-of-the-h">
             <p>Yes. Beneficiaries of an irrevocable trust, and beneficiaries of a revocable trust after the person who created it has died or become incapacitated, generally have the right to receive a copy of the trust terms relevant to their interest upon request, along with information about their share.</p>
           </div>
         </div>
@@ -632,41 +659,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What should I do if the accounting I received seems incomplete?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-should-i-do-if-the-accounting-h" aria-expanded="false" aria-controls="faq-what-should-i-do-if-the-accounting" onclick="toggleFaq(this)">
+              What should I do if the accounting I received seems incomplete?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-should-i-do-if-the-accounting" role="region" aria-labelledby="faq-what-should-i-do-if-the-accounting-h">
             <p>An incomplete or vague accounting is a red flag that warrants closer review. We can request supporting documentation, formally object to the accounting in probate court, and, if the numbers don't reconcile, pursue a surcharge against the trustee for any losses the discrepancies reveal.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I have rights as a beneficiary of a will that's in probate?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-have-rights-as-a-beneficiary-h" aria-expanded="false" aria-controls="faq-do-i-have-rights-as-a-beneficiary" onclick="toggleFaq(this)">
+              Do I have rights as a beneficiary of a will that's in probate?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-have-rights-as-a-beneficiary" role="region" aria-labelledby="faq-do-i-have-rights-as-a-beneficiary-h">
             <p>Yes. Beneficiaries named in a will have the right to notice of the probate proceeding, to receive an accounting of the estate's administration, and to receive their distribution once debts and expenses are settled. They also have standing to object if the executor is mismanaging the estate.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can a trustee refuse to tell me anything about the trust?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-a-trustee-refuse-to-tell-me-h" aria-expanded="false" aria-controls="faq-can-a-trustee-refuse-to-tell-me" onclick="toggleFaq(this)">
+              Can a trustee refuse to tell me anything about the trust?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-a-trustee-refuse-to-tell-me" role="region" aria-labelledby="faq-can-a-trustee-refuse-to-tell-me-h">
             <p>No. Except in narrow circumstances involving a still-living, competent settlor of a revocable trust, a trustee cannot simply refuse to communicate with beneficiaries. Beneficiaries can petition the court to compel disclosure, and a pattern of stonewalling can itself be evidence supporting removal or a breach of fiduciary duty claim.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What if I disagree with how a trustee is interpreting the trust?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-if-i-disagree-with-how-a-h" aria-expanded="false" aria-controls="faq-what-if-i-disagree-with-how-a" onclick="toggleFaq(this)">
+              What if I disagree with how a trustee is interpreting the trust?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-if-i-disagree-with-how-a" role="region" aria-labelledby="faq-what-if-i-disagree-with-how-a-h">
             <p>Beneficiaries can petition the probate court to interpret ambiguous or disputed trust provisions, including questions about how a distribution should be calculated or who qualifies as a beneficiary. The court's interpretation resolves the disagreement and directs the trustee on how to proceed.</p>
           </div>
         </div>
@@ -763,18 +798,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

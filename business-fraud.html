@@ -450,10 +450,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -539,7 +558,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Business Fraud?</div>
     <h2 class="reveal reveal-d1">Understanding Business Fraud Claims in California</h2>
@@ -589,41 +608,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What must I prove to win a business fraud claim in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-must-i-prove-to-win-a-h" aria-expanded="false" aria-controls="faq-what-must-i-prove-to-win-a" onclick="toggleFaq(this)">
+              What must I prove to win a business fraud claim in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-must-i-prove-to-win-a" role="region" aria-labelledby="faq-what-must-i-prove-to-win-a-h">
             <p>You generally must prove a false representation of a material fact (or a concealment where there was a duty to disclose), knowledge that it was false, intent to induce reliance, justifiable reliance by you, and resulting damages. This intent element is what separates fraud from an honest mistake or breach of contract.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the difference between fraud and breach of contract?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-fraud-and-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-fraud-and" onclick="toggleFaq(this)">
+              What is the difference between fraud and breach of contract?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-fraud-and" role="region" aria-labelledby="faq-what-is-the-difference-between-fraud-and-h">
             <p>A breach of contract is a failure to perform a promise, regardless of intent. Fraud requires that the other party knew a statement was false, or recklessly disregarded its truth, when they made it, specifically to induce you to act. The same facts sometimes support both claims.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What damages can I recover in a business fraud case?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-damages-can-i-recover-in-a-h" aria-expanded="false" aria-controls="faq-what-damages-can-i-recover-in-a" onclick="toggleFaq(this)">
+              What damages can I recover in a business fraud case?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-damages-can-i-recover-in-a" role="region" aria-labelledby="faq-what-damages-can-i-recover-in-a-h">
             <p>California allows recovery of actual damages, the out-of-pocket losses or benefit-of-the-bargain damages, whichever applies, and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I undo a business deal that was based on fraud?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-undo-a-business-deal-that-h" aria-expanded="false" aria-controls="faq-can-i-undo-a-business-deal-that" onclick="toggleFaq(this)">
+              Can I undo a business deal that was based on fraud?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-undo-a-business-deal-that" role="region" aria-labelledby="faq-can-i-undo-a-business-deal-that-h">
             <p>Yes. In addition to damages, California law allows a defrauded party to seek rescission, unwinding the transaction and restoring both parties to their pre-contract positions, where the fraud was material to the decision to enter the deal.</p>
           </div>
         </div>
@@ -631,41 +658,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is fraudulent concealment?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-fraudulent-concealment-h" aria-expanded="false" aria-controls="faq-what-is-fraudulent-concealment" onclick="toggleFaq(this)">
+              What is fraudulent concealment?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-fraudulent-concealment" role="region" aria-labelledby="faq-what-is-fraudulent-concealment-h">
             <p>Fraudulent concealment occurs when a party with a duty to disclose, often due to a fiduciary relationship, partial disclosure that becomes misleading, or exclusive knowledge of a material fact, hides that information to induce another party's reliance, such as concealing known liabilities in a business sale.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How long do I have to sue for fraud in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-long-do-i-have-to-sue-h" aria-expanded="false" aria-controls="faq-how-long-do-i-have-to-sue" onclick="toggleFaq(this)">
+              How long do I have to sue for fraud in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-long-do-i-have-to-sue" role="region" aria-labelledby="faq-how-long-do-i-have-to-sue-h">
             <p>The statute of limitations for fraud is generally three years, but it runs from when the fraud was discovered or reasonably should have been discovered, not necessarily when it occurred, which can extend the deadline in cases of hidden or ongoing concealment.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            I've been accused of fraud, what should I do?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-i-ve-been-accused-of-fraud-what-h" aria-expanded="false" aria-controls="faq-i-ve-been-accused-of-fraud-what" onclick="toggleFaq(this)">
+              I've been accused of fraud, what should I do?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-i-ve-been-accused-of-fraud-what" role="region" aria-labelledby="faq-i-ve-been-accused-of-fraud-what-h">
             <p>Fraud allegations carry serious financial and reputational consequences, including potential punitive damages. Contact an attorney immediately to preserve evidence, avoid statements that could be used against you, and build a defense before a claim is filed or early in litigation.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need a lawyer for a business fraud claim?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-a-lawyer-for-a-h" aria-expanded="false" aria-controls="faq-do-i-need-a-lawyer-for-a" onclick="toggleFaq(this)">
+              Do I need a lawyer for a business fraud claim?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-a-lawyer-for-a" role="region" aria-labelledby="faq-do-i-need-a-lawyer-for-a-h">
             <p>Fraud claims require proving intent, which is inherently harder than proving a simple breach, often requiring forensic document review, deposition testimony, and expert analysis. An experienced business litigation attorney can build the evidentiary record needed to succeed, or mount a strong defense.</p>
           </div>
         </div>
@@ -762,18 +797,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

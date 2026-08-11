@@ -443,10 +443,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -532,7 +551,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Non-Compete Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Non-Compete Agreements in California</h2>
@@ -583,41 +602,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Are non-compete agreements enforceable in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-are-non-compete-agreements-enforceable-in-california-h" aria-expanded="false" aria-controls="faq-are-non-compete-agreements-enforceable-in-california" onclick="toggleFaq(this)">
+              Are non-compete agreements enforceable in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-are-non-compete-agreements-enforceable-in-california" role="region" aria-labelledby="faq-are-non-compete-agreements-enforceable-in-california-h">
             <p>Almost never. Business and Professions Code §16600 voids any contract that restrains someone from engaging in a lawful profession, trade, or business. This applies even to agreements signed in states where non-competes are enforceable, if the employee primarily works in or is based in California.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can my out-of-state employer enforce a non-compete against me in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-my-out-of-state-employer-enforce-h" aria-expanded="false" aria-controls="faq-can-my-out-of-state-employer-enforce" onclick="toggleFaq(this)">
+              Can my out-of-state employer enforce a non-compete against me in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-my-out-of-state-employer-enforce" role="region" aria-labelledby="faq-can-my-out-of-state-employer-enforce-h">
             <p>Generally no. California law and choice-of-law protections make it very difficult for an out-of-state employer to enforce a non-compete against a California-based employee, even if the contract designates another state's law. Recent legislation reinforces this by voiding such clauses regardless of where they were signed.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What are the exceptions to California's non-compete ban?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-are-the-exceptions-to-california-s-h" aria-expanded="false" aria-controls="faq-what-are-the-exceptions-to-california-s" onclick="toggleFaq(this)">
+              What are the exceptions to California's non-compete ban?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-are-the-exceptions-to-california-s" role="region" aria-labelledby="faq-what-are-the-exceptions-to-california-s-h">
             <p>The narrow exceptions apply to a person selling the goodwill of a business, an owner selling substantially all of a business's assets, or partners and LLC members dissolving their entity. These exceptions are construed strictly, and courts scrutinize whether an agreement is truly tied to a qualifying sale or dissolution.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can my employer still stop me from taking clients or confidential information?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-my-employer-still-stop-me-from-h" aria-expanded="false" aria-controls="faq-can-my-employer-still-stop-me-from" onclick="toggleFaq(this)">
+              Can my employer still stop me from taking clients or confidential information?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-my-employer-still-stop-me-from" role="region" aria-labelledby="faq-can-my-employer-still-stop-me-from-h">
             <p>Yes. While non-solicitation and non-compete clauses are generally void, trade secret misappropriation claims and properly drafted confidentiality agreements remain enforceable. An employer cannot bar you from working in your field, but you can still be liable for stealing trade secrets or breaching a valid NDA.</p>
           </div>
         </div>
@@ -625,31 +652,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            I signed a non-compete, should I still worry about it?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-i-signed-a-non-compete-should-i-h" aria-expanded="false" aria-controls="faq-i-signed-a-non-compete-should-i" onclick="toggleFaq(this)">
+              I signed a non-compete, should I still worry about it?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-i-signed-a-non-compete-should-i" role="region" aria-labelledby="faq-i-signed-a-non-compete-should-i-h">
             <p>An unenforceable clause can still cause problems if a former employer sends threatening letters, contacts your new employer, or files suit to intimidate you. Even a meritless claim can be costly and disruptive to defend, so it's worth having an attorney assess your specific agreement and situation early.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can my company require a non-compete for new hires in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-my-company-require-a-non-compete-h" aria-expanded="false" aria-controls="faq-can-my-company-require-a-non-compete" onclick="toggleFaq(this)">
+              Can my company require a non-compete for new hires in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-my-company-require-a-non-compete" role="region" aria-labelledby="faq-can-my-company-require-a-non-compete-h">
             <p>No. California law prohibits requiring employees or independent contractors to sign a non-compete as a condition of employment, and California employers must proactively notify current and former employees if they signed unlawful non-compete clauses in the past.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What should I do if I'm being sued or threatened over a non-compete?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-should-i-do-if-i-m-h" aria-expanded="false" aria-controls="faq-what-should-i-do-if-i-m" onclick="toggleFaq(this)">
+              What should I do if I'm being sued or threatened over a non-compete?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-should-i-do-if-i-m" role="region" aria-labelledby="faq-what-should-i-do-if-i-m-h">
             <p>Don't ignore it, but don't panic either. Most non-competes are unenforceable in California, and an attorney can quickly evaluate the agreement, respond to the threat, and, if necessary, pursue affirmative relief against a former employer using litigation as a pressure tactic.</p>
           </div>
         </div>
@@ -746,18 +779,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

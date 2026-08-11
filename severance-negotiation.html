@@ -436,10 +436,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -525,7 +544,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Severance Negotiation?</div>
     <h2 class="reveal reveal-d1">Understanding Severance Agreements in California</h2>
@@ -575,31 +594,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I have to sign the severance agreement my employer gives me?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-have-to-sign-the-severance-h" aria-expanded="false" aria-controls="faq-do-i-have-to-sign-the-severance" onclick="toggleFaq(this)">
+              Do I have to sign the severance agreement my employer gives me?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-have-to-sign-the-severance" role="region" aria-labelledby="faq-do-i-have-to-sign-the-severance-h">
             <p>No. Signing a severance agreement is always voluntary. If you decline to sign, you generally keep any legal claims you may have against your employer, but you also give up the severance payment or benefits offered in exchange for a release. Whether signing makes sense depends on the value of the severance offered compared to the strength of any claims you might be giving up, an evaluation an employment attorney can help you make before any deadline to sign expires.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How long do I have to review a severance agreement in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-long-do-i-have-to-review-h" aria-expanded="false" aria-controls="faq-how-long-do-i-have-to-review" onclick="toggleFaq(this)">
+              How long do I have to review a severance agreement in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-long-do-i-have-to-review" role="region" aria-labelledby="faq-how-long-do-i-have-to-review-h">
             <p>If you are 40 or older, federal law (the Older Workers Benefit Protection Act) requires your employer to give you at least 21 days to consider an individual severance agreement, plus 7 days to revoke your signature after signing. For employees under 40, there is no fixed statutory review period, but a reasonable amount of time is expected, and an unreasonably short deadline can itself be a red flag. Regardless of your age, you should have an attorney review the agreement before the deadline to sign.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I negotiate for more money in my severance package?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-negotiate-for-more-money-in-h" aria-expanded="false" aria-controls="faq-can-i-negotiate-for-more-money-in" onclick="toggleFaq(this)">
+              Can I negotiate for more money in my severance package?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-negotiate-for-more-money-in" role="region" aria-labelledby="faq-can-i-negotiate-for-more-money-in-h">
             <p>Yes. Severance offers are frequently negotiable, particularly when the circumstances of your departure suggest the employer may have legal exposure, for example, if your termination followed a discrimination complaint, a leave request, or a wage dispute. An attorney can identify leverage points in your situation and negotiate for a larger payment, extended health coverage, accelerated vesting, outplacement services, or a mutually agreed-upon reference, rather than accepting the employer's first offer.</p>
           </div>
         </div>
@@ -607,31 +632,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is a Civil Code Section 1542 waiver?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-a-civil-code-section-1542-h" aria-expanded="false" aria-controls="faq-what-is-a-civil-code-section-1542" onclick="toggleFaq(this)">
+              What is a Civil Code Section 1542 waiver?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-a-civil-code-section-1542" role="region" aria-labelledby="faq-what-is-a-civil-code-section-1542-h">
             <p>California Civil Code Section 1542 protects individuals from unknowingly releasing claims they don't know about at the time they sign a release. For a severance agreement to waive claims you are not yet aware of, it must include specific language expressly waiving your Section 1542 protections. If a severance agreement does not include a proper 1542 waiver, or the waiver was not knowing and voluntary, you may later be able to challenge the scope of what you released.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can my employer stop me from talking about what happened at my job?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-my-employer-stop-me-from-talking-h" aria-expanded="false" aria-controls="faq-can-my-employer-stop-me-from-talking" onclick="toggleFaq(this)">
+              Can my employer stop me from talking about what happened at my job?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-my-employer-stop-me-from-talking" role="region" aria-labelledby="faq-can-my-employer-stop-me-from-talking-h">
             <p>Not entirely. California's Silenced No More Act (SB 331), effective 2022, prohibits employers from using non-disparagement or confidentiality provisions in severance agreements to prevent employees from disclosing information about unlawful workplace acts, including discrimination, harassment, and retaliation. Employers can still protect legitimate trade secrets and the confidential terms of the settlement amount itself, but broad clauses attempting to silence you about illegal conduct may be unenforceable under California law.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What happens if I don't sign the severance agreement?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-happens-if-i-don-t-sign-h" aria-expanded="false" aria-controls="faq-what-happens-if-i-don-t-sign" onclick="toggleFaq(this)">
+              What happens if I don't sign the severance agreement?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-happens-if-i-don-t-sign" role="region" aria-labelledby="faq-what-happens-if-i-don-t-sign-h">
             <p>If you decline to sign, you typically do not receive the severance payment or benefits offered, but you retain any legal claims you may have against your employer, such as wrongful termination, discrimination, or unpaid wage claims, and remain free to pursue them. In some cases, the value of those retained claims can exceed what was offered in severance. An attorney can help you weigh the certainty of a severance payment against the potential value, timeline, and risk of pursuing a claim instead.</p>
           </div>
         </div>
@@ -658,7 +689,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
-        <span>From wrongful termination to PAGA claims, our attorneys have secured favorable outcomes for hundreds of employees and employers across Silicon Valley.</span>
+        <span>Our attorneys have represented employees and employers across Silicon Valley in wrongful termination, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
       </div>
       <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
@@ -728,18 +759,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');

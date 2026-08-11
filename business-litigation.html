@@ -582,10 +582,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
 @media(min-width:769px) { .hero-pill { font-size:15px; } }
 
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -674,7 +693,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- DISPUTES SECTION -->
-<section class="employers-section" id="disputes">
+<section id="contenido" class="employers-section" id="disputes">
   <div class="employers-intro">
     <div class="employers-intro-text">
       <div class="section-eyebrow reveal">What We Handle</div>
@@ -808,51 +827,61 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   <div class="faq-list">
 
   <div class="faq-item reveal reveal-d1">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      Do you handle business litigation cases in Saratoga, California?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-you-handle-business-litigation-cases-in-h" aria-expanded="false" aria-controls="faq-do-you-handle-business-litigation-cases-in" onclick="toggleFaq(this)">
+              Do you handle business litigation cases in Saratoga, California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-you-handle-business-litigation-cases-in" role="region" aria-labelledby="faq-do-you-handle-business-litigation-cases-in-h">
       <p>Yes. McLellan Law Group is based in Saratoga, CA and represents businesses and executives throughout Silicon Valley, Santa Clara County, and the Bay Area.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d2">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      Could I face personal liability in a business litigation matter?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-could-i-face-personal-liability-in-a-h" aria-expanded="false" aria-controls="faq-could-i-face-personal-liability-in-a" onclick="toggleFaq(this)">
+              Could I face personal liability in a business litigation matter?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-could-i-face-personal-liability-in-a" role="region" aria-labelledby="faq-could-i-face-personal-liability-in-a-h">
       <p>Potentially yes. Owners and executives can face personal liability if they personally guaranteed a contract, breached a fiduciary duty, committed fraud, or if a court pierces the corporate veil due to improper business practices. We assess your exposure early and build a strategy to protect you.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d3">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What damages can I recover in a business litigation case?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-damages-can-i-recover-in-a-h" aria-expanded="false" aria-controls="faq-what-damages-can-i-recover-in-a" onclick="toggleFaq(this)">
+              What damages can I recover in a business litigation case?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-damages-can-i-recover-in-a" role="region" aria-labelledby="faq-what-damages-can-i-recover-in-a-h">
       <p>Recoverable damages depend on your claims but can include compensatory damages for financial losses, lost profits, attorney's fees in certain contract or fraud cases, punitive damages for malicious conduct, and injunctive relief to stop ongoing harm.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d4">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      What is a breach of fiduciary duty between business partners?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-a-breach-of-fiduciary-duty-h" aria-expanded="false" aria-controls="faq-what-is-a-breach-of-fiduciary-duty" onclick="toggleFaq(this)">
+              What is a breach of fiduciary duty between business partners?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-a-breach-of-fiduciary-duty" role="region" aria-labelledby="faq-what-is-a-breach-of-fiduciary-duty-h">
       <p>Partners, LLC members, and corporate officers owe each other duties of loyalty and care. A breach occurs when one party acts in their own interest at the expense of the business, through self-dealing, diverting opportunities, misusing company funds, or making unauthorized decisions.</p>
     </div>
   </div>
 
   <div class="faq-item reveal reveal-d5">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      How long does business litigation take in California?
-      <span class="faq-icon">+</span>
-    </button>
-    <div class="faq-answer">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-long-does-business-litigation-take-in-h" aria-expanded="false" aria-controls="faq-how-long-does-business-litigation-take-in" onclick="toggleFaq(this)">
+              How long does business litigation take in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-long-does-business-litigation-take-in" role="region" aria-labelledby="faq-how-long-does-business-litigation-take-in-h">
       <p>Many commercial disputes resolve in 6,18 months through negotiation or mediation. Fully litigated cases can take 2,4 years. McLellan Law Group pursues early resolution strategies where possible to reduce cost and disruption to your business.</p>
     </div>
   </div>
@@ -907,18 +936,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var track = document.getElementById('empTrack');

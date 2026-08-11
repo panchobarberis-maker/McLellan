@@ -443,10 +443,29 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .bio-block p, .result-card span, .atty-hero p {
   text-align:left;
 }
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
 <body>
+<a class="mlg-salto" href="#contenido">Skip to content</a>
 
 <nav class="nav">
   <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -532,7 +551,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 </section>
 
 <!-- CONTENT -->
-<section class="content-section">
+<section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is an Easement or Boundary Dispute?</div>
     <h2 class="reveal reveal-d1">Understanding Easement & Boundary Disputes in California</h2>
@@ -581,41 +600,49 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
     <div class="faq-columns">
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is a prescriptive easement in California?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-a-prescriptive-easement-in-california-h" aria-expanded="false" aria-controls="faq-what-is-a-prescriptive-easement-in-california" onclick="toggleFaq(this)">
+              What is a prescriptive easement in California?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-a-prescriptive-easement-in-california" role="region" aria-labelledby="faq-what-is-a-prescriptive-easement-in-california-h">
             <p>A prescriptive easement allows someone to gain a legal right to use another person's land after using it openly, notoriously, continuously, and without the owner's permission for five years. Unlike adverse possession, a prescriptive easement does not require the claimant to have paid property taxes on the land.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            How do I resolve a boundary dispute with my neighbor?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-do-i-resolve-a-boundary-dispute-h" aria-expanded="false" aria-controls="faq-how-do-i-resolve-a-boundary-dispute" onclick="toggleFaq(this)">
+              How do I resolve a boundary dispute with my neighbor?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-do-i-resolve-a-boundary-dispute" role="region" aria-labelledby="faq-how-do-i-resolve-a-boundary-dispute-h">
             <p>Start by reviewing your deed and any recorded surveys, then consider hiring a licensed surveyor to establish the exact legal boundary. Many boundary disputes can be resolved through a written boundary line agreement between neighbors, but if an agreement can't be reached, a quiet title action asks the court to formally determine ownership.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is a quiet title action?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-a-quiet-title-action-h" aria-expanded="false" aria-controls="faq-what-is-a-quiet-title-action" onclick="toggleFaq(this)">
+              What is a quiet title action?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-a-quiet-title-action" role="region" aria-labelledby="faq-what-is-a-quiet-title-action-h">
             <p>A quiet title action is a lawsuit asking the court to resolve competing claims to property, including disputed boundaries, easements, or clouds on title. The court's judgment establishes clear legal ownership going forward and can be recorded to prevent future disputes over the same issue.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can I remove a structure that encroaches on my property?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-i-remove-a-structure-that-encroaches-h" aria-expanded="false" aria-controls="faq-can-i-remove-a-structure-that-encroaches" onclick="toggleFaq(this)">
+              Can I remove a structure that encroaches on my property?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-i-remove-a-structure-that-encroaches" role="region" aria-labelledby="faq-can-i-remove-a-structure-that-encroaches-h">
             <p>You generally have the right to seek removal of an encroaching structure through legal action, though courts sometimes weigh the cost of removal against the harm caused, particularly for minor or long-standing encroachments. An attorney can evaluate whether injunctive relief, damages, or a negotiated resolution best fits your situation.</p>
           </div>
         </div>
@@ -623,31 +650,37 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
       <div class="faq-col">
         <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            What is the difference between an easement and adverse possession?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-the-difference-between-an-easement-h" aria-expanded="false" aria-controls="faq-what-is-the-difference-between-an-easement" onclick="toggleFaq(this)">
+              What is the difference between an easement and adverse possession?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-the-difference-between-an-easement" role="region" aria-labelledby="faq-what-is-the-difference-between-an-easement-h">
             <p>An easement grants a right to use another's land for a specific purpose, such as access, without transferring ownership. Adverse possession, by contrast, can transfer actual ownership of the land itself, but requires the claimant to have paid all property taxes on the disputed parcel during the required possession period.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Can an easement be terminated or modified?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-can-an-easement-be-terminated-or-modified-h" aria-expanded="false" aria-controls="faq-can-an-easement-be-terminated-or-modified" onclick="toggleFaq(this)">
+              Can an easement be terminated or modified?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-can-an-easement-be-terminated-or-modified" role="region" aria-labelledby="faq-can-an-easement-be-terminated-or-modified-h">
             <p>Yes, in certain circumstances. Easements can end if the parties agree to terminate it in writing, if the easement's stated purpose is no longer possible, or through abandonment if the easement holder clearly demonstrates an intent to give up the right. Modifying an easement typically requires the agreement of both property owners.</p>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Do I need an attorney for an easement or boundary dispute?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
+          <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-need-an-attorney-for-an-h" aria-expanded="false" aria-controls="faq-do-i-need-an-attorney-for-an" onclick="toggleFaq(this)">
+              Do I need an attorney for an easement or boundary dispute?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-need-an-attorney-for-an" role="region" aria-labelledby="faq-do-i-need-an-attorney-for-an-h">
             <p>These disputes often involve competing surveys, historical deed language, and long-term property rights that are difficult to unwind later. An experienced real estate litigation attorney can evaluate your title records, coordinate with a surveyor, and pursue the resolution that best protects your property.</p>
           </div>
         </div>
@@ -744,18 +777,40 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 <script>
 function toggleFaq(btn) {
-  var item = btn.parentElement;
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
   var answer = item.querySelector('.faq-answer');
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
     el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
 
 (function(){
   var els = document.querySelectorAll('.reveal');
