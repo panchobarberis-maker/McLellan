@@ -224,7 +224,7 @@ def con_enlaces(body, name):
                 continue
             # El & del nombre puede venir escrito &amp; en el HTML. Se reemplaza
             # la version ya escapada, que es "\&", no el caracter suelto.
-            crudo = re.escape(frase).replace(re.escape('&'), '(?:&|&amp;)')
+            crudo = re.escape(frase).replace(re.escape('&'), '(?:&|&amp;|and)')
             patron = re.compile(r'\b' + crudo + r'\b', re.IGNORECASE)
             puesto = False
             for i, p in enumerate(partes):
