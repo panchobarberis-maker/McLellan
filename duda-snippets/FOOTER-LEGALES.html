@@ -1,11 +1,25 @@
-<!-- Los tres avisos que van en el FOOTER del sitio, una sola vez.
-     Salen de la revision del estudio, punto SW-4.
+<!-- Avisos legales del sitio. Van en el FOOTER, una sola vez, y aparecen en
+     todas las paginas. Salen de la revision del estudio, puntos SW-4 y SW-22.
 
-     El cuarto aviso, el de resultados, NO va aca: ese viaja dentro del widget
-     de cada pagina, pegado a los testimonios, que es donde cambia algo.
+     Son dos piezas y el ORDEN importa:
 
-     El estilo esta escrito para heredar el fondo del footer, sea claro u
-     oscuro, asi que se puede pegar tal cual. -->
+       1. mlg-aviso-form   -> tiene que quedar ARRIBA del boton de enviar del
+                              formulario. Si queda debajo, el lector ya mando
+                              los datos cuando lo lee y el aviso no sirve.
+       2. mlg-legales      -> debajo del formulario, al pie de todo.
+
+     Si el formulario esta en un widget aparte, pega cada bloque en su propio
+     widget HTML, uno arriba y otro abajo. Si no se puede separar, pega todo
+     junto arriba del formulario: es preferible que el aviso de conflictos se
+     lea antes y no despues.
+
+     El aviso de resultados NO va aca: ese viaja dentro del widget de cada
+     pagina, pegado a los testimonios, que es donde cambia algo. -->
+
+<!-- ===== 1. ARRIBA DEL BOTON DE ENVIAR ===== -->
+<p class="mlg-aviso-form">Please describe your situation briefly and do not include confidential details in this form. We will run a conflicts check before any substantive discussion. Sending this form does not create an attorney client relationship.</p>
+
+<!-- ===== 2. AL PIE, DEBAJO DEL FORMULARIO ===== -->
 <div class="mlg-legales">
   <p>The information on this website is provided for general informational purposes and is not legal advice. Viewing this site, contacting the firm, or sending information through this site does not create an attorney client relationship. Please do not send confidential information until an attorney client relationship has been established in writing.</p>
   <p>This website may be considered attorney advertising in some jurisdictions.</p>
@@ -13,6 +27,13 @@
 </div>
 
 <style>
+/* Sin color propio: los dos bloques heredan el del footer, sea claro u oscuro,
+   asi que se pueden pegar tal cual sin que desentonen. */
+.mlg-aviso-form {
+  max-width:560px !important; margin:0 0 16px !important;
+  font-family:'Barlow',sans-serif !important; font-size:13px !important;
+  line-height:1.6 !important; opacity:0.8 !important; text-align:left !important;
+}
 .mlg-legales {
   max-width:1100px !important; margin:0 auto !important; padding:24px 28px !important;
   font-family:'Barlow',sans-serif !important; font-size:13px !important;
@@ -21,6 +42,7 @@
 .mlg-legales p { margin:0 0 10px !important; }
 .mlg-legales p:last-child { margin-bottom:0 !important; font-weight:600 !important; }
 @media(min-width:769px) {
+  .mlg-aviso-form { font-size:14px !important; }
   .mlg-legales { font-size:14px !important; padding:28px 80px !important; }
 }
 </style>
