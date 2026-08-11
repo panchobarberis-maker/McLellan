@@ -368,7 +368,7 @@
 @media(min-width:769px) {
 .mlgP .content-list li { padding:26px 28px !important; }
 }
-.mlgP .content-list li::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; flex-shrink:0; margin-top:2px !important; }
+.mlgP .content-list li::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; flex-shrink:0; margin-top:2px !important; font-size:19px !important; }
 .mlgP .content-list li span { font-size:18px !important; line-height:1.7 !important; color:#4a5c5e !important; text-align:left !important; }
 @media(min-width:769px) {
 .mlgP .content-list li span { font-size:21px !important; }
@@ -398,7 +398,7 @@
 @media(min-width:769px) {
 .mlgP .help-item { padding:28px 30px !important; }
 }
-.mlgP .help-item::before { content:"✓"; color:#c9a96e !important; font-weight:900 !important; font-size:18px !important; flex-shrink:0; margin-top:1px !important; }
+.mlgP .help-item::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; font-size:18px !important; flex-shrink:0; margin-top:1px !important; }
 .mlgP .help-item span { font-size:16px !important; color:rgba(255,255,255,0.85) !important; line-height:1.6 !important; text-align:justify !important; }
 @media(min-width:769px) {
 .mlgP .help-item span { font-size:18px !important; }
@@ -606,5 +606,68 @@
                        margin-bottom:min(14px, 1.6vh) !important; }
   .mlgP .emp-hero-sub { font-size:min(19px, 2.3vh) !important; margin-bottom:min(28px, 3vh) !important; }
   .mlgP .hero-pill { margin-bottom:min(18px, 2vh) !important; }
+}
+
+/* Breadcrumb y paginas relacionadas. Las subpaginas funcionan como landing
+   pages, asi que necesitan links propios en el cuerpo: la nav de Duda no le
+   dice a Google que estas 38 cuelgan de una practica en particular. */
+/* Va entre el hero y el contenido, los dos verdes, asi que el breadcrumb
+   toma el mismo verde: si no, queda una franja blanca cortando la pagina. */
+.mlgP .mlg-miga {
+  background:#1e3a3e !important; padding:26px 28px 0 !important;
+}
+.mlgP .mlg-miga-inner {
+  max-width:1100px !important; margin:0 auto !important;
+  font-size:15px !important; color:#9fb0b2 !important; letter-spacing:0.2px !important;
+}
+.mlgP .mlg-miga a { color:#e8cc8a !important; text-decoration:none !important;
+  border-bottom:1px solid rgba(201,169,110,0.5) !important; font-weight:600 !important; }
+.mlgP .mlg-miga a:hover { color:#fff !important; border-bottom-color:#fff !important; }
+.mlgP .mlg-miga span { margin:0 8px !important; color:#5f7476 !important; }
+@media(min-width:769px) {
+  .mlgP .mlg-miga { padding:30px 80px 0 !important; }
+}
+@media(max-width:768px) {
+  .mlgP .mlg-miga { padding:20px 20px 0 !important; }
+  .mlgP .mlg-miga-inner { font-size:14px !important; }
+}
+
+.mlgP .mlg-link-tema {
+  color:#1e3a3e !important; font-weight:700 !important; text-decoration:none !important;
+  border-bottom:2px solid rgba(201,169,110,0.75) !important;
+}
+.mlgP .mlg-link-tema:hover { color:#b8933a !important; border-bottom-color:#b8933a !important; }
+
+.mlgP .mlg-relacionadas {
+  background:#fbf6ef !important; padding:72px 28px !important; text-align:center !important;
+}
+.mlgP .mlg-relacionadas h2 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  text-transform:uppercase !important; font-size:38px !important;
+  letter-spacing:-0.5px !important; color:#1e3a3e !important; margin:0 0 34px !important;
+}
+.mlgP .mlg-relacionadas-grid {
+  max-width:1100px !important; margin:0 auto !important; display:grid !important;
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)) !important; gap:16px !important;
+}
+.mlgP .mlg-relacionadas a {
+  display:block !important; background:#fff !important; border:1px solid #e6dcc9 !important;
+  border-radius:12px !important; padding:24px 22px !important; text-align:left !important;
+  color:#1e3a3e !important; text-decoration:none !important; font-size:19px !important;
+  font-weight:700 !important; line-height:1.35 !important;
+  box-shadow:0 2px 10px rgba(30,58,62,0.06);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.mlgP .mlg-relacionadas a:hover {
+  transform:translateY(-3px); box-shadow:0 10px 24px rgba(30,58,62,0.12);
+  border-color:#c9a96e !important;
+}
+.mlgP .mlg-relacionadas a::after {
+  content:' \2192'; color:#b8933a !important;
+}
+@media(max-width:768px) {
+  .mlgP .mlg-relacionadas { padding:52px 20px !important; }
+  .mlgP .mlg-relacionadas h2 { font-size:30px !important; }
+  .mlgP .mlg-relacionadas a { font-size:18px !important; padding:20px 18px !important; }
 }
 </style>
