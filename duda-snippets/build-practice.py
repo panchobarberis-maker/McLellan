@@ -153,6 +153,32 @@ if '--css' in sys.argv:
     open(f, 'w', encoding='utf-8').write(out)
     print(f'{f}  ({len(out)} car.)  -> head del sitio, UNA sola vez')
 
+    # El CSS comun sale de UNA pagina y lo usan las 38. Si alguna trae una regla
+    # distinta, en Duda se veria mal y no habria forma de darse cuenta mirando,
+    # asi que se compara aca y se avisa. Si esto no imprime nada, el bloque del
+    # head sirve para las 38 y no hay que volver a tocarlo.
+    def _reglas(texto):
+        d = {}
+        for m in re.finditer(r'([^{}]+)\{([^{}]*)\}', texto):
+            d.setdefault(' '.join(m.group(1).split()), set()).add(' '.join(m.group(2).split()))
+        return d
+
+    patron = _reglas(re.search(r'<style>(.*?)</style>', w, re.S).group(1))
+    desvios = 0
+    for otra in sorted(en.DE_QUIEN):
+        if otra == name:
+            continue
+        suyas = _reglas(re.search(r'<style>(.*?)</style>',
+                                  bw.build(otra + '.html', SCOPE), re.S).group(1))
+        for sel, decl in suyas.items():
+            if sel not in patron:
+                print(f'  OJO  {otra}: regla que la comun no tiene -> {sel[:70]}')
+                desvios += 1
+            elif decl != patron[sel] and 'emp-hero' not in sel:
+                print(f'  OJO  {otra}: {sel[:60]} difiere de la comun')
+                desvios += 1
+    print(f'  control: {desvios} desvios entre las 38 paginas')
+
 body = mhtml(re.search(r'<div id="[^"]+">\n(.*)\n</div>\n\n<script>', w, re.S).group(1))
 
 
