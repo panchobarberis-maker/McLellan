@@ -1,4 +1,4 @@
-# Meta tags para Duda — las 38 subpáginas
+# Meta tags para Duda, las 38 subpáginas
 
 Title ≤ 55 caracteres, description ≤ 160. Sin guiones largos, sin duplicados.
 Van en **Page Settings → SEO** de cada página.

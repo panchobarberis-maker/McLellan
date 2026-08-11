@@ -16,6 +16,9 @@ _spec = importlib.util.spec_from_file_location(
 bw = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(bw)
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import enlaces as en
+
 SCOPE = 'mlgP'          # comun a todas las practice pages
 
 
@@ -71,6 +74,71 @@ HERO_DIGEST = """
 }}
 """
 
+ENLACES = """
+/* Breadcrumb y paginas relacionadas. Las subpaginas funcionan como landing
+   pages, asi que necesitan links propios en el cuerpo: la nav de Duda no le
+   dice a Google que estas 38 cuelgan de una practica en particular. */
+/* Va entre el hero y el contenido, los dos verdes, asi que el breadcrumb
+   toma el mismo verde: si no, queda una franja blanca cortando la pagina. */
+.{s} .mlg-miga {{
+  background:#1e3a3e !important; padding:26px 28px 0 !important;
+}}
+.{s} .mlg-miga-inner {{
+  max-width:1100px !important; margin:0 auto !important;
+  font-size:15px !important; color:#9fb0b2 !important; letter-spacing:0.2px !important;
+}}
+.{s} .mlg-miga a {{ color:#e8cc8a !important; text-decoration:none !important;
+  border-bottom:1px solid rgba(201,169,110,0.5) !important; font-weight:600 !important; }}
+.{s} .mlg-miga a:hover {{ color:#fff !important; border-bottom-color:#fff !important; }}
+.{s} .mlg-miga span {{ margin:0 8px !important; color:#5f7476 !important; }}
+@media(min-width:769px) {{
+  .{s} .mlg-miga {{ padding:30px 80px 0 !important; }}
+}}
+@media(max-width:768px) {{
+  .{s} .mlg-miga {{ padding:20px 20px 0 !important; }}
+  .{s} .mlg-miga-inner {{ font-size:14px !important; }}
+}}
+
+.{s} .mlg-link-tema {{
+  color:#1e3a3e !important; font-weight:700 !important; text-decoration:none !important;
+  border-bottom:2px solid rgba(201,169,110,0.75) !important;
+}}
+.{s} .mlg-link-tema:hover {{ color:#b8933a !important; border-bottom-color:#b8933a !important; }}
+
+.{s} .mlg-relacionadas {{
+  background:#fbf6ef !important; padding:72px 28px !important; text-align:center !important;
+}}
+.{s} .mlg-relacionadas h2 {{
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  text-transform:uppercase !important; font-size:38px !important;
+  letter-spacing:-0.5px !important; color:#1e3a3e !important; margin:0 0 34px !important;
+}}
+.{s} .mlg-relacionadas-grid {{
+  max-width:1100px !important; margin:0 auto !important; display:grid !important;
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)) !important; gap:16px !important;
+}}
+.{s} .mlg-relacionadas a {{
+  display:block !important; background:#fff !important; border:1px solid #e6dcc9 !important;
+  border-radius:12px !important; padding:24px 22px !important; text-align:left !important;
+  color:#1e3a3e !important; text-decoration:none !important; font-size:19px !important;
+  font-weight:700 !important; line-height:1.35 !important;
+  box-shadow:0 2px 10px rgba(30,58,62,0.06);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}}
+.{s} .mlg-relacionadas a:hover {{
+  transform:translateY(-3px); box-shadow:0 10px 24px rgba(30,58,62,0.12);
+  border-color:#c9a96e !important;
+}}
+.{s} .mlg-relacionadas a::after {{
+  content:' \\2192'; color:#b8933a !important;
+}}
+@media(max-width:768px) {{
+  .{s} .mlg-relacionadas {{ padding:52px 20px !important; }}
+  .{s} .mlg-relacionadas h2 {{ font-size:30px !important; }}
+  .{s} .mlg-relacionadas a {{ font-size:18px !important; padding:20px 18px !important; }}
+}}
+"""
+
 page = sys.argv[1]
 name = os.path.splitext(os.path.basename(page))[0]
 w = bw.build(page, SCOPE)
@@ -80,12 +148,62 @@ if '--css' in sys.argv:
     # Esta regla no esta acotada al scope: se aplicaria a todo el sitio. Va en
     # el widget de cada pagina, no en el head comun.
     css = css.replace('html, body { overflow-x:hidden; }\n', '')
-    out = '<style>' + css + HERO_DIGEST.format(s=SCOPE) + '</style>'
+    out = '<style>' + css + HERO_DIGEST.format(s=SCOPE) + ENLACES.format(s=SCOPE) + '</style>'
     f = 'duda-snippets/practice-CSS-COMUN.html'
     open(f, 'w', encoding='utf-8').write(out)
     print(f'{f}  ({len(out)} car.)  -> head del sitio, UNA sola vez')
 
 body = mhtml(re.search(r'<div id="[^"]+">\n(.*)\n</div>\n\n<script>', w, re.S).group(1))
+
+
+def con_enlaces(body, name):
+    """Le da a la pagina los links internos que la nav de Duda no aporta."""
+    madre = en.DE_QUIEN.get(name)
+    if not madre:
+        return body
+    nombre_madre = en.MADRES[madre]
+
+    # 1. Menciones reales a paginas hermanas, enlazadas dentro del texto.
+    #    El nombre de la practica madre casi nunca aparece en los parrafos, pero
+    #    los temas vecinos si: una pagina de wrongful termination habla de
+    #    discriminacion y de represalias. Ese es el link que de verdad ayuda.
+    #    Maximo tres, y una sola vez cada uno, para no llenar el texto de azul.
+    puestos = 0
+    for v in en.GRUPOS[madre]:
+        if v == name or puestos >= 3:
+            continue
+        frase = en.etiqueta(v).replace('&', '&amp;')
+        patron = re.compile(r'(<(?:p|span)[^>]*>[^<]*?)\b(' + re.escape(frase) + r')\b',
+                            re.IGNORECASE)
+        nuevo, cuantos = patron.subn(
+            lambda m: m.group(1) + f'<a class="mlg-link-tema" href="/{v}">{m.group(2)}</a>',
+            body, count=1)
+        if cuantos:
+            body = nuevo
+            puestos += 1
+
+    # 2. Breadcrumb, arriba de todo el contenido, apenas termina el hero.
+    miga = (f'<div class="mlg-miga"><div class="mlg-miga-inner">'
+            f'<a href="/">Home</a><span>/</span>'
+            f'<a href="{madre}">{nombre_madre}</a><span>/</span>{en.etiqueta(name)}'
+            f'</div></div>\n')
+    body = body.replace('<section class="content-section">',
+                        miga + '<section class="content-section">', 1)
+
+    # 3. Paginas relacionadas, justo antes del cierre con el formulario.
+    vecinas = en.hermanas(name)
+    if vecinas:
+        tarjetas = '\n'.join(
+            f'    <a href="/{v}">{en.etiqueta(v)}</a>' for v in vecinas)
+        bloque = (f'<section class="mlg-relacionadas">\n'
+                  f'  <h2 class="reveal">Related {nombre_madre} Matters</h2>\n'
+                  f'  <div class="mlg-relacionadas-grid reveal reveal-d1">\n'
+                  f'{tarjetas}\n  </div>\n</section>\n\n')
+        body = body.replace('<section class="cta-banner"', bloque + '<section class="cta-banner"', 1)
+    return body
+
+
+body = con_enlaces(body, name)
 js   = mjs(re.search(r'<script>(.*?)</script>\s*$', w, re.S).group(1))
 FIT_HERO = '''
 // El hero tiene que entrar en la primera vista. Arriba suyo esta el header de

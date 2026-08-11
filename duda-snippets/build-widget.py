@@ -101,6 +101,35 @@ def scope_block(text, scope):
     return ''.join(out)
 
 
+def sin_guiones(body):
+    """Saca los guiones largos de la copia y los pasa a comas.
+
+    El guion largo en ingles hace de coma fuerte, asi que la coma es el
+    reemplazo natural y la frase no cambia de sentido. Despues hay que limpiar
+    los casos donde la coma queda al lado de otro signo.
+    """
+    def limpiar(texto):
+        t = texto.replace('—', ',').replace('–', ',')
+        t = re.sub(r'\s*,\s*,\s*', ', ', t)          # dos comas seguidas
+        t = re.sub(r'\s+,', ',', t)                  # espacio antes de la coma
+        t = re.sub(r',\s*([.,;:!?])', r'\1', t)      # coma pegada a otro signo
+        t = re.sub(r',\s+(and|but|or|so)\b', r', \1', t)
+        t = re.sub(r'\(\s*,\s*', '(', t)
+        t = re.sub(r',\s*\)', ')', t)
+        return t
+
+    # Solo el texto visible y los atributos de texto: nada de tocar clases,
+    # URLs ni nombres de archivo.
+    partes = re.split(r'(<[^>]*>)', body)
+    for i, p in enumerate(partes):
+        if p.startswith('<'):
+            partes[i] = re.sub(r'(title|alt|aria-label)="([^"]*)"',
+                               lambda m: f'{m.group(1)}="{limpiar(m.group(2))}"', p)
+        elif '—' in p or '–' in p:
+            partes[i] = limpiar(p)
+    return ''.join(partes)
+
+
 def build(path, scope):
     src = open(path, encoding='utf-8').read()
 
@@ -122,6 +151,8 @@ def build(path, scope):
     # despues de publicar.
     body = re.sub(r'href="([a-z0-9-]+\.html)"',
                   lambda m: 'href="' + to_duda(m.group(1)) + '"', body)
+
+    body = sin_guiones(body)
 
     scripts = re.findall(r'<script>(.*?)</script>', body, re.S)
     body = re.sub(r'<script>.*?</script>', '', body, flags=re.S).strip()
