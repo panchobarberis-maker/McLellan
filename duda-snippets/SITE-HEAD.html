@@ -101,9 +101,9 @@
     var chico = window.innerWidth <= 768;
     return {
       ancho: chico ? '5px' : '8px',
-      // Deja libres el header de arriba y un respiro abajo.
-      arriba: chico ? '76px' : '96px',
-      abajo: chico ? '24px' : '40px',
+      // La mitad de la pantalla, centrada. De punta a punta parecia un borde
+      // de la ventana y no un indicador.
+      alto: '50vh',
       // Separada del borde: flotando se nota mucho mas que pegada al filo.
       izquierda: chico ? '12px' : '22px'
     };
@@ -114,8 +114,9 @@
     riel.style.cssText = [
       'position:fixed',
       'left:' + m.izquierda,
-      'top:' + m.arriba,
-      'bottom:' + m.abajo,
+      'top:50%',
+      'transform:translateY(-50%)',
+      'height:' + m.alto,
       'width:' + m.ancho,
       'margin:0',
       'padding:0',
