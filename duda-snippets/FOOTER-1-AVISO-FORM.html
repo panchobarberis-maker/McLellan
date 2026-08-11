@@ -1,17 +1,53 @@
 <!-- Widget 1 de 2 del footer. Va ARRIBA del widget del formulario.
      Aviso de cliente potencial, punto SW-22 de la revision del estudio.
      Si queda debajo del formulario no sirve: la persona ya mando sus datos
-     cuando lo lee. -->
+     cuando lo lee.
+
+     El color del texto lo decide el script segun el fondo del footer, asi que
+     no hay que tocar nada si el footer es claro o si es oscuro. -->
 <p class="mlg-aviso-form">Please describe your situation briefly and do not include confidential details in this form. We will run a conflicts check before any substantive discussion. Sending this form does not create an attorney client relationship.</p>
 
 <style>
-/* Sin color propio: hereda el del footer, sea claro u oscuro. */
 .mlg-aviso-form {
   max-width:560px !important; margin:0 0 16px !important;
-  font-family:'Barlow',sans-serif !important; font-size:13px !important;
-  line-height:1.6 !important; opacity:0.8 !important; text-align:left !important;
+  font-family:'Barlow',sans-serif !important; font-size:14px !important;
+  line-height:1.6 !important; text-align:left !important;
+  color:rgba(255,255,255,0.82) !important;   /* lo ajusta el script */
 }
 @media(min-width:769px) {
-  .mlg-aviso-form { font-size:14px !important; }
+  .mlg-aviso-form { font-size:15px !important; }
 }
 </style>
+
+<script>
+// Elige el color del texto segun el fondo que tenga detras. Sin esto hay que
+// adivinar si el footer es claro u oscuro, y si se adivina mal el aviso queda
+// invisible, que es justo lo contrario de para lo que existe.
+(function(){
+  function fondo(el){
+    while (el && el !== document.documentElement) {
+      var c = getComputedStyle(el).backgroundColor;
+      var m = c && c.match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/);
+      if (m && (m[4] === undefined || parseFloat(m[4]) > 0.5)) {
+        return [+m[1], +m[2], +m[3]];
+      }
+      el = el.parentElement;
+    }
+    return [255, 255, 255];
+  }
+  function pintar(el){
+    var f = fondo(el.parentElement || el);
+    // Luminancia percibida: el verde pesa mucho mas que el azul en como el ojo
+    // lee el brillo, por eso no es un promedio simple.
+    var luz = (0.299 * f[0] + 0.587 * f[1] + 0.114 * f[2]) / 255;
+    el.style.setProperty('color', luz < 0.5 ? 'rgba(255,255,255,0.82)' : 'rgba(30,58,62,0.78)', 'important');
+  }
+  function todos(){
+    document.querySelectorAll('.mlg-aviso-form, .mlg-legales').forEach(pintar);
+  }
+  todos();
+  window.addEventListener('load', todos);
+  // Duda arma el footer por partes: revisamos un rato hasta que se estabiliza.
+  var n = 0, t = setInterval(function(){ todos(); if (++n > 12) clearInterval(t); }, 400);
+})();
+</script>
