@@ -99,6 +99,20 @@ ENLACES = """
   .{s} .mlg-miga-inner {{ font-size:14px !important; }}
 }}
 
+/* Aviso de resultados, pedido en la revision del estudio. Va pegado a los
+   testimonios porque uno de ellos menciona un resultado concreto, y sin el
+   aviso un lector puede leerlo como una expectativa. Discreto pero legible:
+   un aviso que no se lee no sirve para nada. */
+.{s} .mlg-aviso-resultados {{
+  max-width:1100px !important; margin:26px auto 0 !important;
+  font-size:14px !important; line-height:1.6 !important;
+  color:#6b7c7e !important; text-align:left !important;
+  padding-top:18px !important; border-top:1px solid rgba(30,58,62,0.15) !important;
+}}
+@media(min-width:769px) {{
+  .{s} .mlg-aviso-resultados {{ font-size:15px !important; margin-top:32px !important; }}
+}}
+
 .{s} .mlg-link-tema {{
   color:#1e3a3e !important; font-weight:700 !important; text-decoration:none !important;
   border-bottom:2px solid rgba(201,169,110,0.75) !important;
