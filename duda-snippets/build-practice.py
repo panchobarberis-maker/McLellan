@@ -194,19 +194,52 @@ def con_enlaces(body, name):
     #    los temas vecinos si: una pagina de wrongful termination habla de
     #    discriminacion y de represalias. Ese es el link que de verdad ayuda.
     #    Maximo tres, y una sola vez cada uno, para no llenar el texto de azul.
+    #    Se recorre nodo de texto por nodo de texto, salteando titulos y lo que
+    #    ya esta dentro de un link: buscar dentro del parrafo entero no alcanza,
+    #    porque cualquier <strong> en el medio corta la frase en dos.
+    partes = re.split(r'(<[^>]*>)', body)
+
+    def salteable(i):
+        prof_a = prof_h = 0
+        for p in partes[:i]:
+            if not p.startswith('<'):
+                continue
+            if re.match(r'<a\b', p):    prof_a += 1
+            elif p.startswith('</a'):   prof_a -= 1
+            elif re.match(r'<h[1-3]\b', p): prof_h += 1
+            elif re.match(r'</h[1-3]', p):  prof_h -= 1
+        return prof_a > 0 or prof_h > 0
+
     puestos = 0
     for v in en.GRUPOS[madre]:
         if v == name or puestos >= 3:
             continue
-        frase = en.etiqueta(v).replace('&', '&amp;')
-        patron = re.compile(r'(<(?:p|span)[^>]*>[^<]*?)\b(' + re.escape(frase) + r')\b',
-                            re.IGNORECASE)
-        nuevo, cuantos = patron.subn(
-            lambda m: m.group(1) + f'<a class="mlg-link-tema" href="/{v}">{m.group(2)}</a>',
-            body, count=1)
-        if cuantos:
-            body = nuevo
-            puestos += 1
+        eti = en.etiqueta(v)
+        # El nombre completo primero; si no aparece, la version sin la palabra
+        # generica del final, que es como lo suele nombrar el texto corrido.
+        corto = re.sub(r'\s*\b(disputes|claims|matters|violations|rights)\b\s*$', '', eti,
+                       flags=re.I).strip()
+        for frase in [eti, corto] if corto != eti else [eti]:
+            if len(frase) < 6:
+                continue
+            # El & del nombre puede venir escrito &amp; en el HTML. Se reemplaza
+            # la version ya escapada, que es "\&", no el caracter suelto.
+            crudo = re.escape(frase).replace(re.escape('&'), '(?:&|&amp;)')
+            patron = re.compile(r'\b' + crudo + r'\b', re.IGNORECASE)
+            puesto = False
+            for i, p in enumerate(partes):
+                if p.startswith('<') or salteable(i):
+                    continue
+                nuevo, cuantos = patron.subn(
+                    lambda m: f'<a class="mlg-link-tema" href="/{v}">{m.group(0)}</a>', p, count=1)
+                if cuantos:
+                    partes[i] = nuevo
+                    puesto = True
+                    break
+            if puesto:
+                puestos += 1
+                break
+    body = ''.join(partes)
 
     # 2. Breadcrumb, arriba de todo el contenido, apenas termina el hero.
     miga = (f'<div class="mlg-miga"><div class="mlg-miga-inner">'
