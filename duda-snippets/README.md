@@ -30,6 +30,16 @@ ese bloque suelto en vez del head entero. No hay que pegar los dos.
 - **Canonical**: lo genera Duda solo.
 - **Header HTML de la página**: vacío. El schema ya viaja en su widget.
 
+## Que hay que volver a pegar
+
+    python3 duda-snippets/cambios.py            lo que cambio
+    python3 duda-snippets/cambios.py --pegado   marcar todo como ya pegado
+
+El contenido vive dentro de un widget HTML, asi que Duda no deja editar una
+palabra desde el editor: cualquier cambio de texto obliga a regenerar y pegar
+de nuevo. Lo unico que se puede hacer es pegar lo minimo, y para eso hay que
+saber que cambio de verdad. Los comentarios no cuentan.
+
 ## Los generadores
 
     python3 duda-snippets/build-practice.py wrongful-termination.html --css
