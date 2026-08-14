@@ -1083,9 +1083,9 @@ function toggleFaq(btn) {
   // la calculadora es lo que vino a usar, y no se le bloquea por no dejar el
   // mail.
   var FORMULARIOS = {
-    individual:  '',
-    attorney:    '',
-    profesional: ''
+    individual:  'AAA',
+    attorney:    'BBB',
+    profesional: 'CCC'
   };
 
   // Poner en true para que no se pueda pasar del intake sin dejar el email.
@@ -1093,7 +1093,7 @@ function toggleFaq(btn) {
   // despues de suscribirse hacia esta misma pagina con ?suscripto=1 al final.
   // Esa vuelta es la unica forma de saber que la persona se suscribio de
   // verdad: el formulario de Flodesk vive en su propio iframe y no avisa.
-  var EXIGIR_EMAIL = false;
+  var EXIGIR_EMAIL = true;
 
   var TEXTOS = {
     individual:  'Leave your email and we will send you the result along with a short guide to what happens next.',
