@@ -820,7 +820,7 @@ if (!window.fd) {
         </div>
 
         <div class="wiz-flodesk" id="in-flodesk" hidden>
-          <h3 class="wiz-sub-h">Where should we send your results?</h3>
+          <h3 class="wiz-sub-h">Where should we send your results? <span class="req">*</span></h3>
           <p class="wiz-ayuda-larga" id="in-flodesk-texto"></p>
           <div id="fd-form-destino"></div>
         </div>
@@ -1088,17 +1088,23 @@ function toggleFaq(btn) {
     profesional: ''
   };
 
-  // Poner en true para que no se pueda pasar del intake sin dejar el email.
-  // Requiere configurar en Flodesk, en cada formulario, el redireccionamiento
-  // despues de suscribirse hacia esta misma pagina con ?suscripto=1 al final.
-  // Esa vuelta es la unica forma de saber que la persona se suscribio de
-  // verdad: el formulario de Flodesk vive en su propio iframe y no avisa.
-  var EXIGIR_EMAIL = false;
+  // El email es obligatorio para usar la calculadora.
+  //
+  // DEPENDE de que en Flodesk, en CADA formulario, este configurado el
+  // redireccionamiento posterior a la suscripcion hacia esta misma pagina con
+  // ?suscripto=1 al final. Esa vuelta es la unica forma de saber que la
+  // persona se suscribio: el formulario vive en su propio iframe y no avisa.
+  //
+  // Si el redireccionamiento no esta puesto, nadie puede pasar del paso 3.
+  // Por eso el bloqueo solo se activa cuando hay un formulario configurado
+  // para ese perfil: sin formId, la persona sigue de largo en vez de quedar
+  // atrapada.
+  var EXIGIR_EMAIL = true;
 
   var TEXTOS = {
-    individual:  'Leave your email and we will send you the result along with a short guide to what happens next.',
-    attorney:    'Leave your email and we will send you the result along with our notes on the authorities behind it.',
-    profesional: 'Leave your email and we will send you the result along with a short guide to what happens next.'
+    individual:  'Enter your email to unlock the calculator. We will send you the result along with a short guide to what happens next.',
+    attorney:    'Enter your email to unlock the calculator. We will send you the result along with our notes on the authorities behind it.',
+    profesional: 'Enter your email to unlock the calculator. We will send you the result along with a short guide to what happens next.'
   };
   var TOTAL = 6;
 
