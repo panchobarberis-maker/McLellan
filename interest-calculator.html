@@ -598,29 +598,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin-top:26px; padding-top:22px; border-top:1px solid rgba(30,58,62,0.15);
 }
 .wiz-flodesk .wiz-sub-h { margin-top:0; }
-#fd-form-destino { margin-top:14px; }
+
+.wiz-email { display:flex; flex-wrap:wrap; gap:12px; align-items:stretch; margin-top:6px; }
+.wiz-email input {
+  flex:1 1 260px; font-family:'Barlow',sans-serif; font-size:19px; font-weight:600; color:#1e3a3e;
+  background:#fff; border:2.5px solid rgba(201,169,110,0.55); border-radius:12px; padding:14px 16px;
+}
+.wiz-email .btn-gold { border:none; cursor:pointer; font-family:'Barlow',sans-serif; white-space:nowrap; }
+.wiz-email .btn-gold[disabled] { opacity:0.55; cursor:default; }
+.wiz-estado { margin-top:12px; font-size:16px; line-height:1.6; }
+.wiz-estado.bien { color:#1e3a3e; font-weight:700; }
+.wiz-estado.mal { color:#a3401f; font-weight:600; }
+.visualmente-oculto {
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
+}
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
-<!-- Flodesk. En Duda esto ya vive en el head del sitio; aca hace falta
-     porque la pagina de Vercel es autonoma. El guardia evita cargarlo dos
-     veces si algun dia se pega dentro de Duda. -->
-<script>
-if (!window.fd) {
-(function(w, d, t, h, s, n) {
-  w.FlodeskObject = n;
-  var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
-  w[n] = w[n] || fn;
-  var f = d.getElementsByTagName(t)[0];
-  var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
-  var sm = d.createElement(t);
-  sm.async = true; sm.type = 'module'; sm.src = h + s + '.mjs' + v;
-  f.parentNode.insertBefore(sm, f);
-  var sn = d.createElement(t);
-  sn.async = true; sn.noModule = true; sn.src = h + s + '.js' + v;
-  f.parentNode.insertBefore(sn, f);
-})(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
-}
-</script>
 </head>
 <body>
 <a class="mlg-salto" href="#asistente">Skip to content</a>
@@ -819,10 +813,15 @@ if (!window.fd) {
           </div>
         </div>
 
-        <div class="wiz-flodesk" id="in-flodesk" hidden>
+        <div class="wiz-flodesk" id="in-flodesk">
           <h3 class="wiz-sub-h">Where should we send your results? <span class="req">*</span></h3>
           <p class="wiz-ayuda-larga" id="in-flodesk-texto"></p>
-          <div id="fd-form-destino"></div>
+          <div class="wiz-email">
+            <label class="visualmente-oculto" for="in-email">Email address</label>
+            <input type="email" id="in-email" autocomplete="email" placeholder="your@email.com" inputmode="email">
+            <button type="button" class="btn-gold" id="in-suscribir">Unlock the Calculator</button>
+          </div>
+          <p class="wiz-estado" id="in-estado" role="status" aria-live="polite" hidden></p>
         </div>
 
         <p class="wiz-error" id="in-error" role="alert" hidden></p>
@@ -1073,32 +1072,18 @@ function toggleFaq(btn) {
 
   var estado = { quien: null, tipo: null, reclamo: null, suscripto: false };
 
-  // ---------- los formularios de Flodesk ----------
+  // ---------- suscripcion ----------
   //
-  // Cada perfil tiene su propio formulario, para que en Flodesk queden como
-  // audiencias separadas. Poner aca el formId de cada uno, el que aparece en
-  // el codigo que da Flodesk al copiar el embed.
+  // La casilla es nuestra y el alta la hace un endpoint propio, porque el
+  // formulario embebido de Flodesk trae su diseno y no entra en la tarjeta.
+  // El endpoint decide a que segmento va segun el perfil, y la clave de la
+  // API queda en el servidor, nunca en el navegador.
   //
-  // Con el id vacio no se muestra formulario y la persona igual puede seguir:
-  // la calculadora es lo que vino a usar, y no se le bloquea por no dejar el
-  // mail.
-  var FORMULARIOS = {
-    individual:  '',
-    attorney:    '',
-    profesional: ''
-  };
+  // Vacio significa que no hay suscripcion: se ve la casilla igual, pero no
+  // bloquea, para no dejar a nadie trabado antes de configurarlo.
+  var ALTA = '/api/suscribir';
 
   // El email es obligatorio para usar la calculadora.
-  //
-  // DEPENDE de que en Flodesk, en CADA formulario, este configurado el
-  // redireccionamiento posterior a la suscripcion hacia esta misma pagina con
-  // ?suscripto=1 al final. Esa vuelta es la unica forma de saber que la
-  // persona se suscribio: el formulario vive en su propio iframe y no avisa.
-  //
-  // Si el redireccionamiento no esta puesto, nadie puede pasar del paso 3.
-  // Por eso el bloqueo solo se activa cuando hay un formulario configurado
-  // para ese perfil: sin formId, la persona sigue de largo en vez de quedar
-  // atrapada.
   var EXIGIR_EMAIL = true;
 
   var TEXTOS = {
@@ -1121,6 +1106,7 @@ function toggleFaq(btn) {
         quien: estado.quien,
         nombre: ($('in-nombre') || {}).value || '',
         iniciales: ($('in-iniciales') || {}).value || '',
+        suscripto: estado.suscripto,
         nombre2: ($('in-nombre2') || {}).value || '',
         acuerdos: [].slice.call(document.querySelectorAll('#in-reconocimientos [data-obligatorio]'))
                     .map(function(c){ return c.checked; })
@@ -1131,6 +1117,7 @@ function toggleFaq(btn) {
     try {
       var d = JSON.parse(sessionStorage.getItem(LLAVE) || 'null');
       if (!d) return null;
+      estado.suscripto = !!d.suscripto;
       if (d.quien) {
         estado.quien = d.quien;
         var b = document.querySelector('[data-quien="' + d.quien + '"]');
@@ -1181,8 +1168,8 @@ function toggleFaq(btn) {
     if (limpio('in-nombre2').toLowerCase() !== limpio('in-nombre').toLowerCase() || !limpio('in-nombre2')) {
       faltan.push('a matching name in both name fields');
     }
-    if (EXIGIR_EMAIL && !estado.suscripto && FORMULARIOS[estado.quien]) {
-      faltan.push('your email in the form above');
+    if (EXIGIR_EMAIL && !estado.suscripto) {
+      faltan.push('your email in the field above');
     }
     if (faltan.length) {
       e.hidden = false;
@@ -1195,22 +1182,51 @@ function toggleFaq(btn) {
   });
 
 
-  // Flodesk dibuja el formulario dentro del contenedor que se le indica. Al
-  // cambiar de perfil hay que vaciarlo antes, o quedan los dos.
-  var montado = null;
   function montarFormulario(){
-    var caja = $('in-flodesk');
-    var id = FORMULARIOS[estado.quien];
-    if (!id) { caja.hidden = true; return; }
-    if (montado === id) { caja.hidden = false; return; }
-    $('fd-form-destino').innerHTML = '';
     $('in-flodesk-texto').textContent = TEXTOS[estado.quien] || '';
-    caja.hidden = false;
-    montado = id;
-    if (typeof window.fd === 'function') {
-      window.fd('form', {formId: id, containerEl: '#fd-form-destino'});
-    }
   }
+
+  $('in-suscribir').addEventListener('click', function(){
+    var email = ($('in-email').value || '').trim();
+    var aviso = $('in-estado');
+    aviso.hidden = false;
+    aviso.className = 'wiz-estado';
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      aviso.className = 'wiz-estado mal';
+      aviso.textContent = 'Enter a valid email address.';
+      return;
+    }
+    var boton = $('in-suscribir');
+    boton.disabled = true;
+    aviso.textContent = 'One moment...';
+
+    fetch(ALTA, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email, name: limpio('in-nombre'), who: estado.quien})
+    }).then(function(r){
+      // 501 es "todavia no esta configurado". No es culpa de la persona, asi
+      // que se la deja pasar igual en vez de dejarla trabada.
+      if (r.ok || r.status === 501) {
+        estado.suscripto = true;
+        aviso.className = 'wiz-estado bien';
+        aviso.textContent = r.ok ? 'Thank you. The calculator is unlocked below.' : 'The calculator is unlocked below.';
+        boton.textContent = 'Unlocked';
+        recordar();
+      } else {
+        boton.disabled = false;
+        aviso.className = 'wiz-estado mal';
+        aviso.textContent = 'We could not save that address. Please try again.';
+      }
+    }).catch(function(){
+      // Si el endpoint no existe, tampoco se bloquea a nadie.
+      estado.suscripto = true;
+      boton.textContent = 'Unlocked';
+      aviso.className = 'wiz-estado bien';
+      aviso.textContent = 'The calculator is unlocked below.';
+    });
+  });
 
   ['in-nombre', 'in-iniciales', 'in-nombre2'].forEach(function(id){
     var el = $(id);
@@ -1381,16 +1397,8 @@ function toggleFaq(btn) {
   });
 
 
-  // Vuelta desde Flodesk: se retoma donde estaba y se salta el intake, que ya
-  // completo antes de suscribirse.
-  var previo = recuperar();
-  if (/[?&]suscripto=1/.test(location.search)) {
-    estado.suscripto = true;
-    history.replaceState(null, '', location.pathname);
-    ir(previo && previo.quien ? 4 : 1);
-  } else {
-    ir(1);
-  }
+  recuperar();
+  ir(1);
 })();
 </script>
 </body>
