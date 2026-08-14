@@ -1079,9 +1079,12 @@ function toggleFaq(btn) {
   // El endpoint decide a que segmento va segun el perfil, y la clave de la
   // API queda en el servidor, nunca en el navegador.
   //
-  // Vacio significa que no hay suscripcion: se ve la casilla igual, pero no
-  // bloquea, para no dejar a nadie trabado antes de configurarlo.
-  var ALTA = '/api/suscribir';
+  // Duda no corre codigo de servidor, asi que el endpoint vive afuera. En
+  // Vercel se llama con ruta relativa; desde Duda, con la URL completa. Se
+  // resuelve solo para que la misma pagina sirva en los dos lados.
+  var EN_VERCEL = /vercel\.app$/.test(location.hostname) || location.protocol === 'file:'
+                  || location.hostname === '127.0.0.1' || location.hostname === 'localhost';
+  var ALTA = EN_VERCEL ? '/api/suscribir' : 'https://mc-lellan.vercel.app/api/suscribir';
 
   // El email es obligatorio para usar la calculadora.
   var EXIGIR_EMAIL = true;
