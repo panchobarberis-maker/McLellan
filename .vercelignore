@@ -1,0 +1,4 @@
+# El proyecto de Lovable vive en el repo solo como referencia. No es parte del
+# sitio y no tiene que llegar al deploy: su package.json y sus lockfiles pueden
+# hacer que Vercel crea que esto es una app de Vite y trate de compilarla.
+lovable/
