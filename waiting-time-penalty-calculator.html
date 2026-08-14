@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California Waiting Time Penalty Calculator | McLellan Law Group</title>
+<meta name="description" content="Estimate waiting time penalties under California Labor Code Section 203. A free calculator for employees whose final wages were paid late.">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Saratoga, California">
+<meta name="geo.position" content="37.2638;-122.0231">
+<meta name="ICBM" content="37.2638, -122.0231">
+<meta property="og:title" content="California Waiting Time Penalty Calculator | McLellan Law Group">
+<meta property="og:description" content="Estimate what your employer may owe you under Labor Code Section 203 if your final paycheck was late.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mclellanlawgroup.com/waiting-time-penalty-calculator">
+<link rel="canonical" href="https://www.mclellanlawgroup.com/waiting-time-penalty-calculator">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "McLellan Law Group: Unpaid Wages & Overtime",
+  "description": "Unpaid wages and overtime attorneys in Saratoga, California. Recovering stolen wages for employees throughout Silicon Valley and the Bay Area.",
+  "url": "https://www.mclellanlawgroup.com/unpaid-wages",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20665 4th St #202",
+    "addressLocality": "Saratoga",
+    "addressRegion": "CA",
+    "postalCode": "95070",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Silicon Valley",
+    "Santa Clara County",
+    "Bay Area",
+    "Saratoga CA"
+  ],
+  "knowsAbout": [
+    "Unpaid Wages",
+    "Overtime",
+    "Wage Theft",
+    "Meal Break Violations",
+    "Rest Break Violations",
+    "Misclassification",
+    "Independent Contractor",
+    "California Labor Code"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; text-wrap:pretty; }
+html { scroll-behavior:smooth; }
+body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-font-smoothing:antialiased; font-weight:500; }
+
+/* NAV */
+.nav {
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px;
+  background:rgba(30,58,62,0.97);
+  backdrop-filter:blur(12px);
+}
+.logo-link { display:none; text-decoration:none; }
+.logo-img { height:32px; width:auto; }
+.logo-img-mobile { height:28px; width:auto; }
+.nav-links { display:flex; gap:28px; list-style:none; margin:0 auto 0 48px; }
+.nav-links > li { position:relative; }
+.nav-links > li > a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13px; font-weight:500; letter-spacing:0.2px; padding:6px 0; display:block; transition:color 0.15s; }
+.nav-links > li > a:hover { color:#fff; }
+.dropdown-toggle::after { content:' ▾'; font-size:9px; opacity:0.5; }
+.dropdown::after { content:''; position:absolute; top:100%; left:0; width:100%; height:16px; }
+.dropdown-menu { display:none; position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff; border:1px solid #e0ddd6; border-radius:10px; min-width:230px; padding:8px 0; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none; }
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu li a { display:block; padding:10px 20px; color:#333; text-decoration:none; font-size:13px; font-weight:400; transition:background 0.15s,color 0.15s; border-radius:6px; margin:2px 6px; }
+.dropdown-menu li a:hover { background:#f0f5f5; color:#1e3a3e; }
+.dropdown-menu li a.featured { font-weight:600; color:#1e3a3e; }
+.dropdown-divider { height:1px; background:#f0ede6; margin:5px 0; }
+.nav .contact-btn {
+  color:#1e3a3e; border:none; border-radius:24px; padding:9px 22px;
+  font-size:13px; font-weight:700; text-decoration:none; flex-shrink:0;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+}
+.nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; flex-shrink:0; }
+.nav-hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; }
+.nav-logo-center { display:none; position:absolute; left:50%; transform:translateX(-50%); }
+.mobile-menu { display:none; position:fixed; inset:0; background:#1e3a3e; z-index:200; flex-direction:column; padding:24px; overflow-y:auto; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-close { align-self:flex-end; background:none; border:none; color:#fff; font-size:28px; cursor:pointer; margin-bottom:24px; }
+.mobile-menu ul { list-style:none; }
+.mobile-menu ul li { border-bottom:1px solid rgba(255,255,255,0.1); }
+.mobile-menu ul li a { display:block; padding:15px 0; color:rgba(255,255,255,0.85); text-decoration:none; font-size:17px; font-weight:500; }
+.mobile-menu ul li a.featured { color:#c9a96e; font-weight:600; }
+.mobile-accordion-btn { display:flex; justify-content:space-between; align-items:center; width:100%; background:none; border:none; padding:15px 0; color:rgba(255,255,255,0.85); font-size:17px; font-weight:500; cursor:pointer; text-align:left; }
+.mobile-accordion-arrow { transition:transform 0.2s; font-size:18px; color:#c9a96e; }
+.mobile-accordion.open .mobile-accordion-arrow { transform:rotate(90deg); }
+.mobile-accordion-menu { display:none; list-style:none; padding-left:16px; }
+.mobile-accordion.open .mobile-accordion-menu { display:block; }
+.mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07); }
+.mobile-accordion-menu li a { padding:11px 0; font-size:14px; font-weight:400; }
+.nav-contact-mobile { display:none; }
+@media(max-width:768px) {
+  .nav { padding:12px 16px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .nav-logo-center { display:flex; }
+  .nav .contact-btn { display:none; }
+  .nav-contact-mobile {
+    display:flex; align-items:center;
+    color:#1e3a3e; border-radius:20px; padding:7px 16px;
+    font-size:12px; font-weight:700; text-decoration:none; white-space:nowrap; flex-shrink:0;
+    background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+    background-size:200% auto;
+  }
+}
+@media(min-width:769px) {
+  .logo-link { display:flex; }
+  .mobile-menu { display:none !important; }
+}
+
+/* HERO */
+.emp-hero {
+  position:relative; overflow:hidden;
+  min-height:calc(100svh - 53px); display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; padding:0 28px 10px;
+  background:#1e3a3e;
+  border-bottom:12px solid #c9a96e;
+}
+@media(min-width:769px) { .emp-hero { min-height:calc(100svh - 62px); padding:0 80px 12px; } }
+.emp-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
+.emp-hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
+}
+.emp-hero-overlay::before { content:''; position:absolute; inset:0; background:rgba(20,48,52,0.55); }
+.emp-hero h1 {
+  position:relative; z-index:2;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px, 7vw, 68px); font-weight:900; line-height:0.98;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px;
+  margin:0 auto 18px; max-width:1000px;
+}
+.emp-hero h1 em {
+  display:block; font-style:italic;
+  font-family:'DM Serif Display',serif; font-weight:400;
+  text-transform:none; color:#c9a96e; font-size:0.75em; letter-spacing:0;
+}
+.emp-hero-sub {
+  position:relative; z-index:2;
+  font-size:19px; color:rgba(255,255,255,0.8); max-width:540px;
+  line-height:1.7; margin:0 auto 28px;
+  font-family:'DM Serif Display',serif; font-style:italic;
+}
+@media(min-width:769px) { .emp-hero-sub { font-size:25px !important; max-width:760px; } }
+.btn-gold {
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%);
+  background-size:200% auto;
+  color:#1e3a3e; font-weight:700; font-size:14px;
+  padding:13px 28px; border-radius:28px; text-decoration:none;
+  position:relative; z-index:2; width:max-content;
+}
+.hero-pill {
+  position:relative; z-index:2;
+  display:inline-flex; align-items:center; gap:10px; width:max-content; max-width:100%;
+  box-sizing:border-box; white-space:normal;
+  background:rgba(201,169,110,0.15); border:1.5px solid rgba(201,169,110,0.6);
+  border-radius:26px; padding:9px 16px; margin-bottom:24px;
+  font-size:15px !important; letter-spacing:2.5px; text-transform:uppercase;
+  font-weight:700 !important; color:#e8cc8a;
+}
+@media(max-width:400px) { .hero-pill { font-size:10px !important; letter-spacing:1px; padding:8px 14px; } }
+.hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
+
+/* SECTION EYEBROW (shared across content/help/faq sections) */
+.section-eyebrow {
+  display:flex; width:max-content; margin:0 auto 20px;
+  align-items:center; gap:10px; text-align:center;
+  font-size:15px !important; letter-spacing:3px !important; text-transform:uppercase;
+  color:#1e3a3e; font-weight:700 !important;
+}
+.section-eyebrow::before { content:''; width:24px; height:1px; background:#1e3a3e; }
+@media(min-width:769px) { .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
+
+/* CONTENT SECTION (What Is X) */
+.content-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .content-section { padding:88px 80px; } }
+.content-inner { max-width:none; margin:0 auto; }
+.content-section .section-eyebrow { color:#c9a96e; }
+.content-section .section-eyebrow::before { background:#c9a96e; }
+.content-section h2 {
+  font-family:'Barlow Condensed',sans-serif; text-align:center;
+  font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+}
+.content-cards { display:flex; flex-direction:column; gap:24px; }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
+.content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
+.content-section p:last-child { margin-bottom:0; }
+@media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-section p.content-lead { font-weight:800; color:#1e3a3e; text-align:left; }
+.content-list { list-style:none; margin-top:16px; display:grid; gap:14px; }
+@media(min-width:769px) { .content-list { grid-template-columns:1fr 1fr; gap:18px; } }
+.content-list li {
+  padding:20px 22px; display:flex; align-items:flex-start; gap:12px;
+  background:#fff; border:2.5px solid rgba(201,169,110,0.55); border-radius:14px;
+}
+@media(min-width:769px) { .content-list li { padding:26px 28px; } }
+.content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; font-size:19px; }
+.content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
+@media(min-width:769px) { .content-list li span { font-size:21px; } }
+
+/* HELP SECTION (How We Help) */
+.help-section { background:#fbf6ef; padding:64px 28px; }
+@media(min-width:769px) { .help-section { padding:88px 80px; } }
+.help-section .section-eyebrow { color:#1e3a3e; }
+.help-section .section-eyebrow::before { background:#1e3a3e; }
+.help-inner { max-width:none; margin:0 auto; }
+.help-section h2 {
+  font-family:'Barlow Condensed',sans-serif; text-align:center;
+  font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+}
+.help-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+.help-item {
+  background:#1e3a3e; border-radius:16px; padding:22px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border:2.5px solid rgba(201,169,110,0.45);
+  display:flex; align-items:flex-start; gap:14px;
+}
+@media(min-width:769px) { .help-item { padding:28px 30px; } }
+.help-item::before { content:"\2713"; color:#c9a96e; font-weight:900; font-size:18px; flex-shrink:0; margin-top:1px; }
+.help-item span { font-size:16px; color:rgba(255,255,255,0.85); line-height:1.6; text-align:justify; }
+@media(min-width:769px) { .help-item span { font-size:18px; } }
+
+/* FAQ SECTION */
+.faq-section { background:#1e3a3e; padding:64px 28px; }
+@media(min-width:769px) { .faq-section { padding:88px 80px; } }
+.faq-section h2 {
+  font-family:'Barlow Condensed',sans-serif; text-align:center;
+  font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05;
+  color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
+}
+.faq-columns { display:flex; flex-direction:column; gap:14px; }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+.faq-col { display:flex; flex-direction:column; gap:14px; }
+.faq-item {
+  background:#fbf6ef; border-radius:16px; padding:4px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
+.faq-question {
+  width:100%; background:none; border:none; text-align:left;
+  padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px;
+  font-weight:600; color:#1e3a3e; cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  transition:opacity 0.15s;
+}
+.faq-question:hover { opacity:0.7; }
+.faq-question .faq-icon { font-size:20px; color:#c9a96e; flex-shrink:0; transition:transform 0.3s; }
+.faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+.faq-answer p { font-size:15px; line-height:1.75; color:#5a6e70; padding-bottom:20px; margin:0; text-align:justify; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+@media(min-width:769px) { .faq-question { font-size:18px; } .faq-answer p { font-size:16px; } }
+
+/* WHY CHOOSE US */
+.why-us { background:#1e3a3e; padding:72px 28px; }
+@media(min-width:769px) { .why-us { padding:96px 80px; } }
+.why-us-inner { max-width:none; margin:0 auto; }
+.why-us-eyebrow { font-size:15px !important; font-weight:700 !important; letter-spacing:3px !important; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; display:flex; width:max-content; margin-left:auto; margin-right:auto; text-align:center; }
+@media(min-width:769px) { .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; } }
+.why-us-title { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
+@media(min-width:769px) { .why-us-title { font-size:clamp(48px,5.5vw,72px); margin-bottom:56px; } }
+.why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
+.why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
+@media(min-width:769px) { .why-us-grid { gap:8px; } }
+@media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
+.why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
+@media(min-width:769px) { .why-us-item { padding:56px 48px; gap:14px; } }
+.why-us-item:hover { background:#f3ece0; }
+.why-us-num { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#c9a96e; }
+@media(min-width:769px) { .why-us-num { font-size:16px; } }
+.why-us-item strong { font-size:17px; font-weight:700; color:#1e3a3e; }
+@media(min-width:769px) { .why-us-item strong { font-size:26px; } }
+.why-us-item span { font-size:14px; color:#5a6e70; line-height:1.65; text-align:justify; }
+@media(min-width:769px) { .why-us-item span { font-size:18px; line-height:1.7; } }
+
+/* CTA BANNER */
+.cta-banner { background:#fbf6ef; padding:72px 28px; text-align:center; border-top:1px solid #e8e3da; }
+@media(min-width:769px) { .cta-banner { padding:100px 28px; } }
+.cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(32px, 5vw, 52px); font-weight:900;
+  color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:12px;
+}
+@media(min-width:769px) { .cta-banner h2 { font-size:clamp(48px, 6vw, 80px); } }
+.cta-banner h2 em {
+  font-style:italic; font-family:'DM Serif Display',serif;
+  font-weight:400; text-transform:none; color:#c9a96e; display:block;
+}
+.cta-banner p { font-size:16px; color:#5a6e70; margin-bottom:28px; line-height:1.65; }
+@media(min-width:769px) { .cta-banner p { font-size:22px; } }
+.cta-banner .btn-gold { font-size:15px; padding:15px 36px; margin:0 auto; }
+@media(min-width:769px) { .cta-banner .btn-gold { font-size:18px; padding:18px 44px; } }
+
+/* GOLD BUTTON SHINE */
+@keyframes navBtnShimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+@keyframes navBtnPulse { 0% { box-shadow:0 0 0 0 rgba(201,169,110,0.6); } 70% { box-shadow:0 0 0 10px rgba(201,169,110,0); } 100% { box-shadow:0 0 0 0 rgba(201,169,110,0); } }
+.btn-gold, .contact-btn, .nav-contact-mobile {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+
+/* HERO VIDEO */
+.video-mobile { display:none; }
+@media(max-width:768px) { .video-desktop { display:none; } .video-mobile { display:block; } }
+
+/* MAPS */
+.maps-section { width:100%; line-height:0; }
+@media(min-width:769px) { .maps-section iframe { height:400px; } }
+
+/* SCROLL REVEAL */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:0.08s; }
+.reveal-d2 { transition-delay:0.16s; }
+.reveal-d3 { transition-delay:0.24s; }
+.reveal-d4 { transition-delay:0.32s; }
+
+/* CLIENT REVIEWS */
+/* TESTIMONIALS */
+.emp-testimonials {
+  background:#fbf6ef; padding:64px 28px;
+}@media(min-width:769px) {
+.emp-testimonials { padding:80px 80px; }
+}
+.emp-testimonials .section-eyebrow { color:#c9a96e; }
+.emp-testimonials h2 {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(28px, 4vw, 42px); font-weight:400; font-style:italic;
+  color:#1e3a3e; margin-bottom:36px;
+}
+.emp-carousel { overflow:hidden; }
+.emp-carousel-track { display:flex; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.emp-test-card {
+  min-width:100%; box-sizing:border-box;
+  background:#1e3a3e; border:1px solid rgba(30,58,62,0.2);
+  border-radius:12px; padding:32px;
+}
+.emp-test-card .stars { color:#c9a96e; font-size:14px; margin-bottom:16px; letter-spacing:2px; }
+.emp-test-card .quote {
+  font-size:15px; line-height:1.8; color:rgba(255,255,255,0.85);
+  font-style:italic; font-family:'DM Serif Display',serif;
+  margin-bottom:20px; display:block;
+}
+.emp-test-card .author { font-size:12px; font-weight:700; color:#c9a96e; letter-spacing:1px; text-transform:uppercase; }
+.emp-carousel-dots { display:flex; gap:8px; margin-top:24px; }
+/* Titulos centrados en todas las secciones */
+.employers-section h2, .employees-section h2,
+.emp-testimonials h2, .employer-faq h3, .employee-faq h2,
+.why-us-title { text-align:center; }
+/* Textos alineados a la izquierda */
+.detail-block p, .employers-section > p, .employers-intro-text p, .employees-intro-text p,
+.employees-section > p, .faq-answer p, .emp-test-card .quote, .why-us-item span,
+.paga-alert p, .employer-item-text span, .about p,
+.mlg-quote, .quote, .lawsuits p, .detail-section p,
+.bio-block p, .result-card span, .atty-hero p {
+  text-align:left;
+}
+
+/* El H3 existe por estructura, no por diseno: se anula todo lo que un
+   encabezado trae por defecto para que la pregunta se vea igual que antes. */
+.faq-h { margin:0; padding:0; font-size:inherit; font-weight:inherit; line-height:inherit; }
+
+/* Foco visible. Sin esto, quien navega con teclado no sabe donde esta parado. */
+.faq-question:focus-visible,
+a:focus-visible,
+button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px; }
+
+/* Link de salto: primero en el orden de tabulacion, invisible hasta que se
+   enfoca. Evita tener que recorrer todo el menu en cada pagina. */
+.mlg-salto {
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e; color:#fff; padding:12px 20px; border-radius:0 0 8px 0;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
+}
+.mlg-salto:focus { left:0; }
+
+/* CALCULADORA */
+.calc-card {
+  background:#fbf6ef; border-radius:20px; padding:32px 28px;
+  box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .calc-card { padding:48px 56px; } }
+.calc-grid { display:grid; gap:22px; }
+@media(min-width:700px) { .calc-grid { grid-template-columns:1fr 1fr; gap:26px 32px; } }
+.calc-campo { display:flex; flex-direction:column; gap:8px; }
+/* El display:flex de arriba le gana al atributo hidden, que viene del
+   navegador. Sin esta linea se ven los campos de los tres modos a la vez. */
+.calc-campo[hidden] { display:none; }
+.calc-campo label { font-size:17px; font-weight:700; color:#1e3a3e; line-height:1.4; }
+@media(min-width:769px) { .calc-campo label { font-size:19px; } }
+.calc-campo input, .calc-campo select {
+  font-family:'Barlow',sans-serif; font-size:19px; font-weight:600; color:#1e3a3e;
+  background:#fff; border:2.5px solid rgba(201,169,110,0.55); border-radius:12px;
+  padding:14px 16px; width:100%; box-sizing:border-box;
+}
+@media(min-width:769px) { .calc-campo input, .calc-campo select { font-size:21px; padding:16px 18px; } }
+.calc-campo input:focus-visible, .calc-campo select:focus-visible { outline:3px solid #c9a96e; outline-offset:2px; }
+.calc-input-money { position:relative; }
+.calc-input-money span {
+  position:absolute; left:16px; top:50%; transform:translateY(-50%);
+  font-size:19px; font-weight:700; color:#8a9799; pointer-events:none;
+}
+.calc-input-money input { padding-left:34px; }
+.calc-ayuda { font-size:15px; line-height:1.5; color:#6b7c7e; }
+@media(min-width:769px) { .calc-ayuda { font-size:16px; } }
+
+.calc-resultado {
+  margin-top:30px; padding:28px 24px; border-radius:16px;
+  background:#1e3a3e; border:2.5px solid rgba(201,169,110,0.45); text-align:center;
+}
+@media(min-width:769px) { .calc-resultado { padding:36px 32px; margin-top:36px; } }
+.calc-resultado-vacio { font-size:17px; color:rgba(255,255,255,0.6); line-height:1.6; }
+.calc-etiqueta {
+  font-size:14px; letter-spacing:2.5px; text-transform:uppercase;
+  font-weight:700; color:#c9a96e; margin-bottom:10px;
+}
+.calc-monto {
+  font-family:'Barlow Condensed',sans-serif; font-weight:900;
+  font-size:clamp(44px, 11vw, 76px); line-height:1; color:#fff; letter-spacing:-2px;
+}
+.calc-desglose {
+  margin-top:16px; font-size:16px; line-height:1.7; color:rgba(255,255,255,0.8);
+}
+@media(min-width:769px) { .calc-desglose { font-size:18px; } }
+.calc-tope { margin-top:10px; font-size:15px; color:#e8cc8a; font-weight:600; }
+.calc-error { font-size:17px; color:#e8cc8a; line-height:1.6; }
+
+.calc-aviso {
+  margin-top:24px; padding-top:18px; border-top:1px solid rgba(30,58,62,0.15);
+  font-size:15px; line-height:1.6; color:#6b7c7e; text-align:left;
+}
+@media(min-width:769px) { .calc-aviso { font-size:16px; } }
+
+/* BREADCRUMB */
+.mlg-miga { background:#1e3a3e; padding:26px 28px 0; }
+.mlg-miga-inner { max-width:1100px; margin:0 auto; font-size:15px; color:#9fb0b2; letter-spacing:0.2px; }
+.mlg-miga a { color:#e8cc8a; text-decoration:none; border-bottom:1px solid rgba(201,169,110,0.5); font-weight:600; }
+.mlg-miga a:hover { color:#fff; border-bottom-color:#fff; }
+.mlg-miga span { margin:0 8px; color:#5f7476; }
+@media(min-width:769px) { .mlg-miga { padding:30px 80px 0; } }
+@media(max-width:768px) { .mlg-miga { padding:20px 20px 0; } .mlg-miga-inner { font-size:14px; } }
+</style>
+<script src="/assets/barra-progreso.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When are my final wages actually due?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how the employment ended. If your employer fired you or laid you off, all wages earned and unpaid are due immediately, at the time of termination. If you quit and gave at least 72 hours of notice, they are due on your last day. If you quit without notice, your employer has 72 hours. Those are the dates to enter above, and getting them right matters, because the penalty clock starts from the date payment was due rather than the date you asked for it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the penalty really run for 30 days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Up to 30 days, and the days are calendar days rather than working days. If your final wages were 40 days late, the penalty still stops at 30 days of pay. If they were 6 days late, it runs 6 days. The cap is why the calculator stops climbing after a month, and it is also why a long delay and a very long delay are worth the same."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does willful mean here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Willful does not require bad motive or malice. It generally means the employer intentionally failed to pay wages it knew were due. An employer that simply did not get around to it can still be liable. What can defeat the penalty is a genuine, good faith dispute about whether the wages were owed at all. An employer that argues in good faith and loses may still avoid the penalty, which is one reason the number this calculator produces is an estimate rather than an entitlement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My employer paid most of my final check but not all of it. Does that count?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can. The obligation is to pay all wages owed at separation, which includes accrued unused vacation, earned commissions that are calculable, and any unpaid overtime or premium pay. A partial payment that leaves something out can still trigger the penalty, and the penalty is measured by your daily wage rather than by the amount left unpaid. That is why a small shortfall can produce a penalty far larger than the shortfall itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do I have to bring a waiting time penalty claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deadlines vary by the claim you bring and by whether you file with the Labor Commissioner or in court, and more than one deadline can apply to the same facts. Because the shortest applicable period controls, it is worth having the dates checked early rather than assuming you have time. If your separation was recent, that is the best moment to have someone look at it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this number what I would actually receive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is an estimate of one component of a possible claim, calculated from the figures you entered. A complete claim often includes the unpaid wages themselves, meal and rest period premiums, wage statement penalties, interest, and attorney fees, and it can also be reduced or defeated by facts the calculator cannot see. Treat the result as a reason to have the situation reviewed, not as a figure to rely on."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="mlg-salto" href="#contenido">Skip to content</a>
+
+<nav class="nav">
+  <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="nav-logo-center"><img src="logo.svg" alt="McLellan Law Group" class="logo-img-mobile"></a>
+  <a href="index.html" class="logo-link"><img src="logo.svg" alt="McLellan Law Group" class="logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="our-story.html">Our Story</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Practice Areas</a>
+      <ul class="dropdown-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a href="real-estate-litigation.html">Real Estate Litigation</a></li>
+        <li><a href="contract-disputes.html">Contract Disputes</a></li>
+        <li><a href="financial-elder-abuse.html">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle">Our Team</a>
+      <ul class="dropdown-menu">
+        <li><a href="steven-mclellan.html" class="featured">Steven McLellan</a></li>
+        <li><a href="claire-melehani.html" class="featured">Claire Melehani</a></li>
+        <li><a href="elizabeth-handtke.html">Elizabeth Handtke</a></li>
+        <li><a href="sara-van-til.html">Sara Van Til</a></li>
+        <li><a href="sonia-mehmi.html">Sonia Mehmi</a></li>
+      </ul>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <a href="#contact" class="contact-btn">Free Consultation →</a>
+  <a href="#contact" class="nav-contact-mobile">Consult →</a>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="our-story.html">Our Story</a></li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Practice Areas <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="employment-law.html" class="featured">Employment Law</a></li>
+        <li><a href="business-litigation.html" class="featured">Civil Litigation</a></li>
+        <li><a href="real-estate-litigation.html">Real Estate Litigation</a></li>
+        <li><a href="contract-disputes.html">Contract Disputes</a></li>
+        <li><a href="financial-elder-abuse.html">Financial Elder Abuse</a></li>
+        <li><a href="trust-probate.html">Trust &amp; Probate Litigation</a></li>
+      </ul>
+    </li>
+    <li class="mobile-accordion">
+      <button class="mobile-accordion-btn" onclick="this.parentElement.classList.toggle('open')">
+        Our Team <span class="mobile-accordion-arrow">›</span>
+      </button>
+      <ul class="mobile-accordion-menu">
+        <li><a href="steven-mclellan.html">Steven McLellan</a></li>
+        <li><a href="claire-melehani.html">Claire Melehani</a></li>
+        <li><a href="elizabeth-handtke.html">Elizabeth Handtke</a></li>
+        <li><a href="sara-van-til.html">Sara Van Til</a></li>
+        <li><a href="sonia-mehmi.html">Sonia Mehmi</a></li>
+      </ul>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<!-- HERO -->
+<section class="emp-hero">
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
+  <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">Free Tool · Labor Code Section 203</div>
+  <h1>Waiting Time Penalty Calculator <em>for California</em></h1>
+  <p class="emp-hero-sub">Estimate what your employer may owe you if your final paycheck arrived late.</p>
+  <a href="#calculadora" class="btn-gold">Run the Numbers →</a>
+</section>
+
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/employment-law">Employment Law</a><span>/</span><a href="/unpaid-wages">Unpaid Wages &amp; Overtime</a><span>/</span>Waiting Time Penalty Calculator</div></div>
+
+<!-- CALCULADORA -->
+<section class="content-section" id="calculadora">
+  <div class="content-inner">
+    <div class="section-eyebrow reveal">The Calculator</div>
+    <h2 class="reveal reveal-d1">What Your Late Final Paycheck May Be Worth</h2>
+
+    <div class="calc-card reveal reveal-d2">
+      <div class="calc-grid">
+        <div class="calc-campo">
+          <label for="calc-tipo">How were you paid?</label>
+          <select id="calc-tipo">
+            <option value="hora">By the hour</option>
+            <option value="semana">A weekly salary</option>
+            <option value="ano">An annual salary</option>
+          </select>
+        </div>
+
+        <div class="calc-campo" data-modo="hora">
+          <label for="calc-tarifa">Hourly rate</label>
+          <div class="calc-input-money"><span>$</span><input type="number" id="calc-tarifa" min="0" step="0.01" placeholder="25.00" inputmode="decimal"></div>
+        </div>
+        <div class="calc-campo" data-modo="hora">
+          <label for="calc-horas">Hours you usually worked per day</label>
+          <input type="number" id="calc-horas" min="0" max="24" step="0.5" placeholder="8" inputmode="decimal">
+        </div>
+
+        <div class="calc-campo" data-modo="semana" hidden>
+          <label for="calc-semanal">Weekly salary</label>
+          <div class="calc-input-money"><span>$</span><input type="number" id="calc-semanal" min="0" step="0.01" placeholder="1200.00" inputmode="decimal"></div>
+        </div>
+        <div class="calc-campo" data-modo="semana" hidden>
+          <label for="calc-dias-semana">Days you usually worked per week</label>
+          <input type="number" id="calc-dias-semana" min="1" max="7" step="1" placeholder="5" inputmode="numeric">
+        </div>
+
+        <div class="calc-campo" data-modo="ano" hidden>
+          <label for="calc-anual">Annual salary</label>
+          <div class="calc-input-money"><span>$</span><input type="number" id="calc-anual" min="0" step="100" placeholder="85000" inputmode="numeric"></div>
+        </div>
+        <div class="calc-campo" data-modo="ano" hidden>
+          <label for="calc-dias-ano">Days you usually worked per week</label>
+          <input type="number" id="calc-dias-ano" min="1" max="7" step="1" placeholder="5" inputmode="numeric">
+        </div>
+
+        <div class="calc-campo">
+          <label for="calc-vencia">Date your final wages were due</label>
+          <input type="date" id="calc-vencia">
+          <span class="calc-ayuda">Immediately if you were fired or laid off. Within 72 hours if you quit without notice.</span>
+        </div>
+        <div class="calc-campo">
+          <label for="calc-pagaron">Date you were actually paid</label>
+          <input type="date" id="calc-pagaron">
+          <span class="calc-ayuda">Leave this empty if you still have not been paid.</span>
+        </div>
+      </div>
+
+      <div class="calc-resultado" id="calc-resultado" role="status" aria-live="polite">
+        <div class="calc-resultado-vacio">Fill in the fields above and your estimate appears here.</div>
+      </div>
+
+      <p class="calc-aviso">This is an educational estimate, not legal advice and not a promise of recovery. The penalty applies only where an employer willfully failed to pay, and the actual amount depends on facts a calculator cannot see. Have an attorney review your situation before relying on any number.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="help-section">
+  <div class="help-inner">
+    <div class="section-eyebrow reveal">How It Works</div>
+    <h2 class="reveal reveal-d1">The Rule Behind the Number</h2>
+    <div class="help-columns">
+      <div class="help-item reveal reveal-d2"><span>California requires final wages to be paid promptly. Immediately at termination, or within 72 hours if you resigned without notice.</span></div>
+      <div class="help-item reveal reveal-d2"><span>If an employer willfully fails to pay everything owed at separation, Labor Code Section 203 allows a penalty of up to 30 days of your daily wages.</span></div>
+      <div class="help-item reveal reveal-d3"><span>The clock counts calendar days, not working days, and it stops at 30 days no matter how long the delay runs.</span></div>
+      <div class="help-item reveal reveal-d3"><span>The penalty runs regardless of how small the unpaid amount was, so a few hundred dollars in unpaid final wages can produce a penalty many times larger.</span></div>
+      <div class="help-item reveal reveal-d4"><span>Willful means the employer intentionally failed to pay. A genuine, good faith dispute over what was owed can defeat the penalty.</span></div>
+      <div class="help-item reveal reveal-d4"><span>Defective wage statements carry their own separate penalties under Labor Code Section 226, which this calculator does not estimate.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="reveal">Waiting Time Penalty FAQs</h2>
+  <div class="faq-columns">
+    <div class="faq-col">
+      <div class="faq-item reveal reveal-d1">
+        <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-when-are-my-final-wages-actually-due-h" aria-expanded="false" aria-controls="faq-when-are-my-final-wages-actually-due" onclick="toggleFaq(this)">
+              When are my final wages actually due?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-when-are-my-final-wages-actually-due" role="region" aria-labelledby="faq-when-are-my-final-wages-actually-due-h">
+          <p>It depends on how the employment ended. If your employer fired you or laid you off, all wages earned and unpaid are due immediately, at the time of termination. If you quit and gave at least 72 hours of notice, they are due on your last day. If you quit without notice, your employer has 72 hours. Those are the dates to enter above, and getting them right matters, because the penalty clock starts from the date payment was due rather than the date you asked for it.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-does-the-penalty-really-run-for-30-h" aria-expanded="false" aria-controls="faq-does-the-penalty-really-run-for-30" onclick="toggleFaq(this)">
+              Does the penalty really run for 30 days?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-does-the-penalty-really-run-for-30" role="region" aria-labelledby="faq-does-the-penalty-really-run-for-30-h">
+          <p>Up to 30 days, and the days are calendar days rather than working days. If your final wages were 40 days late, the penalty still stops at 30 days of pay. If they were 6 days late, it runs 6 days. The cap is why the calculator stops climbing after a month, and it is also why a long delay and a very long delay are worth the same.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d3">
+        <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-does-willful-mean-here-h" aria-expanded="false" aria-controls="faq-what-does-willful-mean-here" onclick="toggleFaq(this)">
+              What does willful mean here?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-does-willful-mean-here" role="region" aria-labelledby="faq-what-does-willful-mean-here-h">
+          <p>Willful does not require bad motive or malice. It generally means the employer intentionally failed to pay wages it knew were due. An employer that simply did not get around to it can still be liable. What can defeat the penalty is a genuine, good faith dispute about whether the wages were owed at all. An employer that argues in good faith and loses may still avoid the penalty, which is one reason the number this calculator produces is an estimate rather than an entitlement.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq-col">
+      <div class="faq-item reveal reveal-d1">
+        <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-my-employer-paid-most-of-my-final-h" aria-expanded="false" aria-controls="faq-my-employer-paid-most-of-my-final" onclick="toggleFaq(this)">
+              My employer paid most of my final check but not all of it. Does that count?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-my-employer-paid-most-of-my-final" role="region" aria-labelledby="faq-my-employer-paid-most-of-my-final-h">
+          <p>It can. The obligation is to pay all wages owed at separation, which includes accrued unused vacation, earned commissions that are calculable, and any unpaid overtime or premium pay. A partial payment that leaves something out can still trigger the penalty, and the penalty is measured by your daily wage rather than by the amount left unpaid. That is why a small shortfall can produce a penalty far larger than the shortfall itself.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-how-long-do-i-have-to-bring-h" aria-expanded="false" aria-controls="faq-how-long-do-i-have-to-bring" onclick="toggleFaq(this)">
+              How long do I have to bring a waiting time penalty claim?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-how-long-do-i-have-to-bring" role="region" aria-labelledby="faq-how-long-do-i-have-to-bring-h">
+          <p>Deadlines vary by the claim you bring and by whether you file with the Labor Commissioner or in court, and more than one deadline can apply to the same facts. Because the shortest applicable period controls, it is worth having the dates checked early rather than assuming you have time. If your separation was recent, that is the best moment to have someone look at it.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-d3">
+        <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-is-this-number-what-i-would-actually-h" aria-expanded="false" aria-controls="faq-is-this-number-what-i-would-actually" onclick="toggleFaq(this)">
+              Is this number what I would actually receive?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-is-this-number-what-i-would-actually" role="region" aria-labelledby="faq-is-this-number-what-i-would-actually-h">
+          <p>No. It is an estimate of one component of a possible claim, calculated from the figures you entered. A complete claim often includes the unpaid wages themselves, meal and rest period premiums, wage statement penalties, interest, and attorney fees, and it can also be reduced or defeated by facts the calculator cannot see. Treat the result as a reason to have the situation reviewed, not as a figure to rely on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Was Your Final Paycheck Late?<em>Let's Talk.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fwaiting-time-penalty-calculator&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+</section>
+
+<div class="maps-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1"
+    width="100%" height="300" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group, 20665 4th St #202, Saratoga, CA 95070">
+  </iframe>
+</div>
+
+<script>
+function toggleFaq(btn) {
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var track = document.getElementById('empTrack');
+  var dots = document.querySelectorAll('#empDots .emp-dot');
+  var current = 0, total = dots.length, startX = 0, timer;
+  function goToEmp(n){
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  window.goToEmp = goToEmp;
+  function next(){ goToEmp(current+1); }
+  timer = setInterval(next, 5000);
+  var el = document.getElementById('empCarousel');
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+    timer = setInterval(next, 5000);
+  }, {passive:true});
+})();
+</script>
+<script>
+// CALCULADORA DE WAITING TIME PENALTIES
+//
+// La cuenta es simple: salario diario por dias de demora, con tope de 30.
+// Lo que hay que cuidar son los bordes, porque un numero mal puesto en una
+// pagina de un estudio juridico es peor que no tener la pagina.
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var tipo = $('calc-tipo');
+  if (!tipo) return;
+
+  var TOPE = 30;   // Labor Code 203: hasta 30 dias de salario diario.
+
+  function verCampos(){
+    var modo = tipo.value;
+    document.querySelectorAll('[data-modo]').forEach(function(el){
+      el.hidden = el.getAttribute('data-modo') !== modo;
+    });
+  }
+
+  function num(id){
+    var v = parseFloat(($(id) || {}).value);
+    return isFinite(v) && v > 0 ? v : null;
+  }
+
+  function salarioDiario(){
+    if (tipo.value === 'hora') {
+      var tarifa = num('calc-tarifa'), horas = num('calc-horas');
+      if (!tarifa || !horas) return null;
+      // Mas de 24 horas en un dia no existe; el campo ya lo limita, pero el
+      // atributo max no impide escribirlo a mano.
+      if (horas > 24) return null;
+      return tarifa * horas;
+    }
+    if (tipo.value === 'semana') {
+      var sem = num('calc-semanal'), dias = num('calc-dias-semana');
+      if (!sem || !dias || dias > 7) return null;
+      return sem / dias;
+    }
+    var anual = num('calc-anual'), diasAno = num('calc-dias-ano');
+    if (!anual || !diasAno || diasAno > 7) return null;
+    return anual / 52 / diasAno;
+  }
+
+  function dias(){
+    var v = $('calc-vencia').value, p = $('calc-pagaron').value;
+    if (!v) return null;
+    var desde = new Date(v + 'T00:00:00');
+    // Sin fecha de pago se asume que todavia no pagaron, asi que corre hasta hoy.
+    var hasta = p ? new Date(p + 'T00:00:00') : new Date();
+    if (isNaN(desde) || isNaN(hasta)) return null;
+    var d = Math.floor((hasta - desde) / 86400000);
+    return d;
+  }
+
+  function plata(n){
+    return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
+
+  function calcular(){
+    var caja = $('calc-resultado');
+    var diario = salarioDiario();
+    var d = dias();
+
+    if (diario === null || d === null) {
+      caja.innerHTML = '<div class="calc-resultado-vacio">Fill in the fields above and your estimate appears here.</div>';
+      return;
+    }
+    if (d < 0) {
+      caja.innerHTML = '<div class="calc-error">The payment date is before the date the wages were due. Check the two dates.</div>';
+      return;
+    }
+    if (d === 0) {
+      caja.innerHTML = '<div class="calc-error">Those dates show the wages were paid on time, so no waiting time penalty would apply.</div>';
+      return;
+    }
+
+    var contados = Math.min(d, TOPE);
+    var total = diario * contados;
+
+    caja.innerHTML =
+      '<div class="calc-etiqueta">Estimated penalty</div>' +
+      '<div class="calc-monto">' + plata(total) + '</div>' +
+      '<div class="calc-desglose">' + plata(diario) + ' per day &times; ' + contados +
+      (contados === 1 ? ' day' : ' days') + ' late.</div>' +
+      (d > TOPE
+        ? '<div class="calc-tope">Your wages were ' + d + ' days late, but the penalty stops at 30 days.</div>'
+        : '');
+  }
+
+  tipo.addEventListener('change', function(){ verCampos(); calcular(); });
+  ['calc-tarifa','calc-horas','calc-semanal','calc-dias-semana','calc-anual',
+   'calc-dias-ano','calc-vencia','calc-pagaron'].forEach(function(id){
+    var el = $(id);
+    if (el) el.addEventListener('input', calcular);
+  });
+
+  verCampos();
+})();
+</script>
+</body>
+</html>
