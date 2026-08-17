@@ -324,6 +324,53 @@
   font-family:'Barlow',sans-serif !important; font-size:15px !important; font-weight:700 !important; text-decoration:none !important;
 }
 .mlgP .mlg-salto:focus { left:0; }
+.mlgP .mlg-tabla-caja {
+  overflow-x:auto; margin:26px 0 0 !important;
+  border:2.5px solid rgba(201,169,110,0.55) !important; border-radius:14px !important; background:#fff !important;
+}
+.mlgP .mlg-tabla { width:100% !important; border-collapse:collapse; min-width:520px !important; }
+.mlgP .mlg-tabla caption {
+  text-align:left !important; padding:18px 20px 0 !important;
+  font-size:15px !important; color:#6b7c7e !important; font-weight:600 !important;
+}
+.mlgP .mlg-tabla th, .mlgP .mlg-tabla td {
+  padding:14px 18px !important; text-align:left !important; vertical-align:top;
+  font-size:16px !important; line-height:1.55 !important; color:#4a5c5e !important;
+  border-bottom:1px solid rgba(30,58,62,0.12) !important;
+}
+.mlgP .mlg-tabla th {
+  background:#1e3a3e !important; color:#fff !important; font-weight:700 !important;
+  font-size:15px !important; letter-spacing:0.4px !important;
+}
+.mlgP .mlg-tabla tbody tr:last-child td { border-bottom:none !important; }
+.mlgP .mlg-tabla tbody tr:nth-child(even) td { background:#fbf6ef !important; }
+@media(min-width:769px) {
+.mlgP .mlg-tabla th, .mlgP .mlg-tabla td { font-size:18px !important; padding:16px 22px !important; }
+}
+.mlgP .mlg-autoridad {
+  margin:24px 0 0 !important; padding:22px 24px !important;
+  background:#fbf6ef !important; border-left:6px solid #c9a96e !important; border-radius:0 12px 12px 0 !important;
+}
+.mlgP .mlg-autoridad blockquote {
+  margin:0 0 12px !important; font-family:'DM Serif Display',serif !important;
+  font-style:italic !important; font-size:19px !important; line-height:1.6 !important; color:#1e3a3e !important;
+}
+.mlgP .mlg-autoridad cite {
+  display:block !important; font-style:normal !important; font-size:15px !important; font-weight:700 !important; color:#6b7c7e !important;
+}
+@media(min-width:769px) {
+.mlgP .mlg-autoridad blockquote { font-size:21px !important; }
+.mlgP .mlg-autoridad cite { font-size:16px !important; }
+}
+.mlgP .faq-answer .mlg-tabla-caja, .mlgP .faq-answer .mlg-autoridad { margin-bottom:20px !important; }
+.mlgP .mlg-tabla caption { padding-bottom:14px !important; }
+.mlgP .mlg-tabla--2col { min-width:0 !important; }
+.mlgP .mlg-tabla-nota { display:none !important; }
+@media(max-width:768px) {
+.mlgP .mlg-tabla-nota {
+    display:block !important; margin:14px 0 0 !important; font-size:15px !important; font-weight:600 !important; color:#6b7c7e !important;
+  }
+}
 
 /* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
    secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
