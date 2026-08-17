@@ -1218,16 +1218,21 @@ function toggleFaq(btn) {
     boton.disabled = true;
     aviso.textContent = 'One moment...';
 
+    // Se manda como formulario y no como JSON a proposito. Con JSON el
+    // navegador dispara primero un OPTIONS de permiso, que en Zapier aparece
+    // como una consulta vacia y puede bloquear el envio real. Un formulario
+    // no dispara nada y Zapier separa los campos igual.
+    var datos = new URLSearchParams({
+      email: email,
+      name: limpio('in-nombre'),
+      who: estado.quien || '',
+      segment_id: SEGMENTOS[estado.quien] || '',
+      tool: 'interest-calculator'
+    });
+
     fetch(ALTA, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: email,
-        name: limpio('in-nombre'),
-        who: estado.quien,
-        segment_id: SEGMENTOS[estado.quien] || '',
-        tool: 'interest-calculator'
-      })
+      body: datos
     }).then(function(r){
       // 501 es "todavia no esta configurado". No es culpa de la persona, asi
       // que se la deja pasar igual en vez de dejarla trabada.
