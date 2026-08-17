@@ -1088,17 +1088,25 @@ function toggleFaq(btn) {
     profesional: ''
   };
 
-  // Pegar aca la URL del Catch Hook de Zapier o del webhook de Make. Con esto
-  // puesto no hace falta nada mas: la pagina le habla directo y Vercel queda
-  // fuera del camino.
-  var HOOK = 'https://hooks.zapier.com/hooks/catch/22392889/4thqj9i/';
+  // Un Catch Hook de Zapier por audiencia. Mandar cada perfil a su propio Zap
+  // evita tener que filtrar del otro lado: el Zap que recibe ya sabe a que
+  // segmento va, porque solo le llega ese perfil.
+  var HOOKS = {
+    attorney:    'https://hooks.zapier.com/hooks/catch/22392889/4thqj9i/',
+    individual:  'https://hooks.zapier.com/hooks/catch/22392889/4th07aq/',
+    profesional: 'https://hooks.zapier.com/hooks/catch/22392889/4th07aq/'
+  };
 
   // Alternativa, si algun dia conviene que la clave de Flodesk no pase por
   // Zapier: un endpoint propio. Duda no corre codigo de servidor, asi que en
   // ese caso vive en Vercel y se llama con la URL completa.
   var EN_VERCEL = /vercel\.app$/.test(location.hostname) || location.protocol === 'file:'
                   || location.hostname === '127.0.0.1' || location.hostname === 'localhost';
-  var ALTA = HOOK || (EN_VERCEL ? '/api/suscribir' : 'https://mc-lellan.vercel.app/api/suscribir');
+  var RESERVA = EN_VERCEL ? '/api/suscribir' : 'https://mc-lellan.vercel.app/api/suscribir';
+
+  function destino(){
+    return HOOKS[estado.quien] || RESERVA;
+  }
 
   // El email es obligatorio para usar la calculadora.
   var EXIGIR_EMAIL = true;
@@ -1237,7 +1245,7 @@ function toggleFaq(btn) {
       tool: 'interest-calculator'
     });
 
-    fetch(ALTA, {
+    fetch(destino(), {
       method: 'POST',
       body: datos
     }).then(function(r){
