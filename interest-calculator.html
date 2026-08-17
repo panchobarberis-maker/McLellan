@@ -1222,9 +1222,16 @@ function toggleFaq(btn) {
     // navegador dispara primero un OPTIONS de permiso, que en Zapier aparece
     // como una consulta vacia y puede bloquear el envio real. Un formulario
     // no dispara nada y Zapier separa los campos igual.
+    // El nombre viaja entero y tambien partido: Flodesk pide nombre y apellido
+    // por separado, y asi no hay que cortarlo del otro lado.
+    var completo = limpio('in-nombre');
+    var partes = completo.split(/\s+/);
+
     var datos = new URLSearchParams({
       email: email,
-      name: limpio('in-nombre'),
+      name: completo,
+      first_name: partes[0] || '',
+      last_name: partes.slice(1).join(' '),
       who: estado.quien || '',
       segment_id: SEGMENTOS[estado.quien] || '',
       tool: 'interest-calculator'
