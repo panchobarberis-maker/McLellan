@@ -22,8 +22,9 @@ REGISTRO = os.path.join(RAIZ, 'duda-snippets', '.duda-pegado.json')
 GRUPOS = [
     ('Site Head',      ['duda-snippets/SITE-HEAD.html']),
     ('Footer',         ['duda-snippets/FOOTER-2-LEGALES.html']),
+    # El schema viaja adentro del widget, asi que no se cuenta aparte: era la
+    # mitad de las piezas a pegar y no aportaba una sola linea de contenido.
     ('Widget',         sorted(glob.glob(os.path.join(RAIZ, 'duda-snippets/*-MARKUP.html')))),
-    ('Schema',         sorted(glob.glob(os.path.join(RAIZ, 'duda-snippets/*-SCHEMA.html')))),
 ]
 
 

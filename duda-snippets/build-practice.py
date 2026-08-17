@@ -331,14 +331,27 @@ ELEMENTO = f'<div class="{SCOPE}-progress"></div>\n' if '--progreso' in sys.argv
 out  = ('<style>html, body { overflow-x:hidden; }</style>\n\n' + ELEMENTO + '\n'
         f'<div class="{SCOPE}">\n\n{body}\n\n</div>\n\n'
         f'<script>\n{js}\n{FIT_HERO}{SAFE_REVEAL}{BARRA}</script>\n')
-f = f'duda-snippets/{name}-MARKUP.html'
-open(f, 'w', encoding='utf-8').write(out)
-print(f'{f}  ({len(out)} car.)  -> widget de la pagina')
 
 madre = en.DE_QUIEN.get(name)
 sch = bw.schema(page, madre, en.MADRES.get(madre) if madre else None,
                 en.etiqueta(name) if madre else None)
+
+if sch:
+    # El JSON-LD va dentro del mismo widget. Google lo lee desde cualquier
+    # parte del DOM, y pegar una pieza por pagina en vez de dos corta a la
+    # mitad el trabajo manual y la chance de pegar una y olvidarse de la otra.
+    # El archivo -SCHEMA.html se sigue emitiendo por si alguna pagina lo
+    # necesita suelto, pero no hace falta pegarlo.
+    out += ('\n<!-- Datos estructurados de esta pagina. Ya van incluidos aca:\n'
+            '     no hace falta un widget aparte. Si la pagina ya tiene uno con\n'
+            '     este mismo JSON, borralo, o Google va a leer el FAQ dos veces. -->\n'
+            + sch + '\n')
+
+f = f'duda-snippets/{name}-MARKUP.html'
+open(f, 'w', encoding='utf-8').write(out)
+print(f'{f}  ({len(out)} car.)  -> widget de la pagina, schema incluido')
+
 if sch:
     f = f'duda-snippets/{name}-SCHEMA.html'
     open(f, 'w', encoding='utf-8').write(sch + '\n')
-    print(f'{f}  ({len(sch)} car.)  -> widget aparte, datos estructurados')
+    print(f'{f}  ({len(sch)} car.)  -> copia suelta, no hace falta pegarla')
