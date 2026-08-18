@@ -603,11 +603,14 @@
   margin-bottom:min(36px, 4vh) !important;
 }
 @media(max-width:768px) {
-  /* El bloque entero (badge, titulo, bajada, boton) sube junto, cerca del
-     header, sin quedar pegado a el. Separarlos (badge arriba, resto
-     centrado en el resto de la pantalla) dejaba un hueco raro entre el
-     badge y el titulo. */
-  .mlgP .emp-hero { padding:16px 20px min(48px, 5vh) !important; justify-content:flex-start !important; }
+  /* Solo el badge sube, pegado al header. El titulo, la bajada y el boton
+     quedan donde estaban, centrados en el resto de la pantalla: es el
+     pedido del usuario, no una decision mia. */
+  .mlgP .emp-hero { padding:min(120px, 12vh) 20px min(48px, 5vh) !important; justify-content:center !important; }
+  .mlgP .hero-pill {
+    position:absolute !important; top:16px !important; left:50% !important;
+    transform:translateX(-50%) !important; margin-bottom:0 !important;
+  }
   .mlgP .emp-hero h1 { font-size:min(8.2vw, 10vh, 50px) !important; letter-spacing:-1px !important; }
 }
 @media(min-width:769px) {
