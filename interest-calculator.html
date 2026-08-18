@@ -1210,12 +1210,16 @@ function toggleFaq(btn) {
   // esto hay que leer la frase y adivinar cual de todos los campos es.
   function marcarCampos(raiz, ids){
     document.querySelectorAll(raiz + ' .campo-mal').forEach(function(c){ c.classList.remove('campo-mal'); });
-    ids.forEach(function(id){
-      var el = $(id);
-      if (!el) return;
-      var contenedor = el.closest('.calc-campo, .wiz-grupo, .wiz-email') || el;
-      contenedor.classList.add('campo-mal');
-    });
+    ids.forEach(function(id){ marcarCampo(id, true); });
+  }
+
+  // Version de un solo campo, para validaciones puntuales (como el email al
+  // suscribirse) que no deben borrar el error de otros campos del mismo paso.
+  function marcarCampo(id, mal){
+    var el = $(id);
+    if (!el) return;
+    var contenedor = el.closest('.calc-campo, .wiz-grupo, .wiz-email') || el;
+    contenedor.classList.toggle('campo-mal', !!mal);
   }
 
   $('in-continuar').addEventListener('click', function(){
@@ -1259,8 +1263,10 @@ function toggleFaq(btn) {
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       aviso.className = 'wiz-estado mal';
       aviso.textContent = 'Enter a valid email address.';
+      marcarCampo('in-email', true);
       return;
     }
+    marcarCampo('in-email', false);
     var boton = $('in-suscribir');
     boton.disabled = true;
     aviso.textContent = 'One moment...';
@@ -1312,11 +1318,12 @@ function toggleFaq(btn) {
 
   ['in-nombre', 'in-iniciales', 'in-nombre2'].forEach(function(id){
     var el = $(id);
-    if (el) el.addEventListener('input', recordar);
+    if (el) el.addEventListener('input', function(){ recordar(); marcarCampo(id, false); });
   });
   document.querySelectorAll('#in-reconocimientos [data-obligatorio]').forEach(function(c){
-    c.addEventListener('change', recordar);
+    c.addEventListener('change', function(){ recordar(); marcarCampo('in-reconocimientos', false); });
   });
+  $('in-email').addEventListener('input', function(){ marcarCampo('in-email', false); });
 
   // ---------- paso 4: arbol de decision ----------
   function elegir(grupo, attr, valor, el){
