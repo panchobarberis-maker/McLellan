@@ -125,11 +125,6 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 }
 .contact-hero-overlay { position:absolute; inset:0; z-index:2; background:rgba(20,48,52,0.82); }
 .contact-hero > *:not(.contact-hero-video):not(.contact-hero-overlay) { position:relative; z-index:3; }
-.contact-hero-label {
-  display:inline-flex; align-items:center; gap:8px;
-  font-size:15px; letter-spacing:3px; text-transform:uppercase;
-  color:#c9a96e; font-weight:700; margin-bottom:20px;
-}
 .contact-hero h1 {
   font-family:'Barlow Condensed',sans-serif;
   font-size:clamp(44px, 7vw, 84px); font-weight:900; line-height:0.95;
@@ -149,9 +144,6 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 @media(min-width:769px) {
   .contact-hero { min-height:calc(100svh - 62px); padding:120px 24px 100px; }
   .contact-hero p { font-size:20px; }
-  /* En desktop el hero ya lleva el titulo, el boton y los avisos: el
-     eyebrow de arriba sumaba una linea mas sin aportar nada nuevo. */
-  .contact-hero-label { display:none; }
 }
 
 /* CONTACT MAIN */
@@ -297,27 +289,27 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .form-subnote { font-size:18px !important; color:rgba(255,255,255,0.55); font-style:italic; margin-top:8px; line-height:1.6; text-align:center; }
 .mini-badge { font-size:20px !important; padding:17px 28px !important; border-radius:30px !important; white-space:nowrap; }
 .badge-row { gap:12px !important; }
+@media(max-width:520px) {
+  /* Al agrandar los badges, el texto mas largo ("Response Within 1
+     Business Day") ya no entra en una linea en celulares angostos, y
+     white-space:nowrap empujaba todo el ancho de la pagina. Se deja
+     envolver el texto solo aca. */
+  .mini-badge { white-space:normal; text-align:left; }
+}
 
 
-/* Mobile: hero compacto para que el box de consulta entre en la primera vista */
+/* Mobile: el hero lleva menos padding vertical, pero el alto lo sigue
+   fijando min-height (calculado por JS, ver script debajo del hero), no
+   este padding. */
 @media(max-width:768px) {
-  .contact-hero { padding:36px 20px 30px !important; border-bottom-width:8px !important; }
+  .contact-hero { padding:24px 20px 30px !important; border-bottom-width:8px !important; }
   .contact-hero h1 { font-size:clamp(38px, 11vw, 48px) !important; margin-bottom:10px !important; }
   .contact-hero p { font-size:16px !important; }
-  .contact-hero-label { font-size:13px !important; margin-bottom:10px !important; }
   .contact-main { padding:24px 14px !important; }
-  .contact-form-card { padding:28px 20px !important; border-width:6px !important; }
-  .contact-form-card h2 { font-size:clamp(24px, 7vw, 32px) !important; }
-  .contact-form-card > p { font-size:19px !important; margin-bottom:20px !important; }
   .form-submit { font-size:19px !important; padding:16px 32px !important; margin-top:6px !important; }
   .form-note { font-size:19px !important; margin-top:14px !important; }
   .form-subnote { font-size:19px !important; }
 }
-
-
-/* Titulo del card centrado */
-.contact-form-card h2, .contact-form-card > p { text-align:center !important; margin-left:auto !important; margin-right:auto !important; }
-.contact-form-card h2 { white-space:nowrap !important; font-size:clamp(20px, 5.2vw, 44px) !important; }
 
 
 /* Textos justificados */
@@ -434,7 +426,6 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
     </video>
   </div>
   <div class="contact-hero-overlay"></div>
-  <div class="contact-hero-label reveal">Contact Us · Saratoga, California</div>
   <h1 class="reveal reveal-d1">Request Your<em>Free Consultation.</em></h1>
   <p class="reveal reveal-d2 contact-hero-sub">Tell us about your situation, it takes two minutes.</p>
   <div class="reveal reveal-d3" style="max-width:680px; margin:24px auto 0;">
@@ -443,6 +434,25 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
     <p class="mlg-aviso-conflictos">Contacting the firm does not create an attorney client relationship.</p>
   </div>
 </section>
+<script>
+// El calc(100svh - Xpx) del CSS asume que la barra de direcciones del
+// celular ya esta colapsada, y en la primera carga no lo esta todavia: eso
+// dejaba asomar la seccion de abajo en vez de que el hero ocupe toda la
+// vista. Se mide el alto real disponible (innerHeight menos lo que ocupa el
+// nav) y se lo fuerza por JS, que no depende de esa suposicion.
+(function(){
+  var hero = document.querySelector('.contact-hero');
+  var nav = document.querySelector('.nav');
+  if (!hero || !nav) return;
+  function ajustar(){
+    var altoNav = nav.getBoundingClientRect().height;
+    hero.style.minHeight = (window.innerHeight - altoNav) + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
+})();
+</script>
 
 <!-- MAIN -->
 <section class="contact-main" id="form">
