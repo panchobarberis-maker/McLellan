@@ -1,4 +1,43 @@
-<style>html, body { overflow-x:hidden; }</style>
+<style>
+html, body { overflow-x:hidden; }
+/* Reglas propias de esta pagina, no viven en el Site Head porque no las
+   comparte ninguna otra de las 38 subpaginas. */
+.mlgP .content-section p.content-note {
+  font-size:15px !important; font-weight:600 !important; color:#6b7c7e !important;
+  border-top:1px solid rgba(30,58,62,0.15) !important;
+  padding-top:18px !important; margin-top:20px !important; text-align:left !important;
+}
+@media(min-width:769px) { .mlgP .content-section p.content-note { font-size:16px !important; } }
+.mlgP .tiers-section { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlgP .tiers-section { padding:88px 80px !important; } }
+.mlgP .tiers-section .section-eyebrow { color:#1e3a3e !important; }
+.mlgP .tiers-section .section-eyebrow::before { background:#1e3a3e !important; }
+.mlgP .tiers-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:40px !important;
+}
+.mlgP .tiers-grid { display:flex !important; flex-direction:column; gap:20px !important; max-width:1100px !important; margin:0 auto !important; }
+@media(min-width:769px) { .mlgP .tiers-grid { display:grid !important; grid-template-columns:repeat(2,1fr); gap:24px !important; } }
+.mlgP .tier-card {
+  background:#1e3a3e !important; border-radius:16px !important; padding:28px 26px !important;
+  border:2.5px solid rgba(201,169,110,0.45) !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex !important; flex-direction:column; gap:14px !important;
+}
+@media(min-width:769px) { .mlgP .tier-card { padding:36px 34px !important; } }
+.mlgP .tier-card .tier-label {
+  font-family:'Barlow Condensed',sans-serif !important; font-size:14px !important; font-weight:800 !important;
+  letter-spacing:2px !important; text-transform:uppercase !important; color:#c9a96e !important;
+}
+.mlgP .tier-card h3 {
+  font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(24px,3vw,30px) !important;
+  font-weight:900 !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; color:#fff !important; line-height:1.1 !important;
+}
+.mlgP .tier-card p { font-size:16px !important; line-height:1.65 !important; color:rgba(255,255,255,0.8) !important; flex-grow:1; text-align:left !important; }
+@media(min-width:769px) { .mlgP .tier-card p { font-size:17px !important; } }
+.mlgP .tier-card .btn-gold { align-self:flex-start !important; margin-top:6px !important; font-size:13px !important; padding:11px 24px !important; }
+</style>
 
 
 <div class="mlgP">

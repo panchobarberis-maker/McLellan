@@ -1,4 +1,71 @@
-<style>html, body { overflow-x:hidden; }</style>
+<style>
+html, body { overflow-x:hidden; }
+/* Reglas propias de esta pagina, no viven en el Site Head porque no las
+   comparten las 38 subpaginas de practicas (son de las 4 tier pages). */
+.mlgP .mlg-miga { background:#1e3a3e !important; padding:0 28px 26px !important; }
+@media(min-width:769px) { .mlgP .mlg-miga { padding:0 80px 30px !important; } }
+.mlgP .mlg-miga-inner { max-width:1100px !important; margin:0 auto !important; font-size:15px !important; color:#9fb0b2 !important; letter-spacing:0.2px !important; text-align:center !important; }
+.mlgP .mlg-miga a { color:#e8cc8a !important; text-decoration:none !important; border-bottom:1px solid rgba(201,169,110,0.5) !important; font-weight:600 !important; }
+.mlgP .mlg-miga a:hover { color:#fff !important; border-bottom-color:#fff !important; }
+.mlgP .mlg-miga span { margin:0 8px !important; color:#5f7476 !important; }
+.mlgP .tiers-section { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlgP .tiers-section { padding:88px 80px !important; } }
+.mlgP .tiers-section .section-eyebrow { color:#1e3a3e !important; }
+.mlgP .tiers-section .section-eyebrow::before { background:#1e3a3e !important; }
+.mlgP .tiers-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:40px !important;
+}
+.mlgP .tiers-grid { display:flex !important; flex-direction:column; gap:20px !important; max-width:1300px !important; margin:0 auto !important; }
+@media(min-width:769px) { .mlgP .tiers-grid { display:grid !important; grid-template-columns:repeat(4,1fr); gap:18px !important; } }
+.mlgP .tier-card {
+  background:#1e3a3e !important; border-radius:16px !important; padding:26px 24px !important;
+  border:2.5px solid rgba(201,169,110,0.45) !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex !important; flex-direction:column; gap:14px !important;
+}
+@media(min-width:769px) { .mlgP .tier-card { padding:36px 34px !important; } }
+.mlgP .tier-card.current { border-color:#c9a96e !important; box-shadow:0 12px 32px rgba(201,169,110,0.35); }
+.mlgP .tier-card .tier-label {
+  font-family:'Barlow Condensed',sans-serif !important; font-size:14px !important; font-weight:800 !important;
+  letter-spacing:2px !important; text-transform:uppercase !important; color:#c9a96e !important;
+}
+.mlgP .tier-card .tier-current-badge {
+  font-size:11px !important; font-weight:800 !important; letter-spacing:1.5px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; background:#c9a96e !important; border-radius:20px !important; padding:4px 12px !important; width:max-content !important;
+}
+.mlgP .tier-card h3 {
+  font-family:'Barlow Condensed',sans-serif !important; font-size:22px !important;
+  font-weight:900 !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; color:#fff !important; line-height:1.1 !important;
+}
+.mlgP .tier-card ul { list-style:none !important; display:flex !important; flex-direction:column; gap:8px !important; flex-grow:1; }
+.mlgP .tier-card ul li { font-size:14px !important; line-height:1.5 !important; color:rgba(255,255,255,0.8) !important; padding-left:18px !important; position:relative; text-align:left !important; }
+.mlgP .tier-card ul li::before { content:"\2713"; position:absolute; left:0; top:0; color:#c9a96e !important; font-weight:900 !important; font-size:13px !important; }
+.mlgP .tier-card .btn-gold { align-self:flex-start !important; margin-top:6px !important; font-size:13px !important; padding:11px 24px !important; }
+.mlgP .terms-section { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlgP .terms-section { padding:88px 80px !important; } }
+.mlgP .terms-section .section-eyebrow { color:#1e3a3e !important; }
+.mlgP .terms-section .section-eyebrow::before { background:#1e3a3e !important; }
+.mlgP .terms-inner { max-width:1300px !important; margin:0 auto !important; }
+.mlgP .terms-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:32px !important;
+}
+.mlgP .terms-columns { display:flex !important; flex-direction:column; gap:14px !important; }
+@media(min-width:600px) { .mlgP .terms-columns { display:grid !important; grid-template-columns:1fr 1fr; gap:20px !important; } }
+.mlgP .terms-item {
+  background:#1e3a3e !important; border-radius:16px !important; padding:22px 24px !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border:2.5px solid rgba(201,169,110,0.45) !important;
+  display:flex !important; align-items:flex-start; gap:14px !important;
+}
+@media(min-width:769px) { .mlgP .terms-item { padding:28px 30px !important; } }
+.mlgP .terms-item::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; font-size:18px !important; flex-shrink:0; margin-top:1px !important; }
+.mlgP .terms-item span { font-size:16px !important; color:rgba(255,255,255,0.85) !important; line-height:1.6 !important; text-align:left !important; }
+@media(min-width:769px) { .mlgP .terms-item span { font-size:17px !important; } }
+</style>
 
 
 <div class="mlgP">
