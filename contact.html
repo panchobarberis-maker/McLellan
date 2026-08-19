@@ -149,6 +149,9 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 @media(min-width:769px) {
   .contact-hero { min-height:calc(100svh - 62px); padding:120px 24px 100px; }
   .contact-hero p { font-size:20px; }
+  /* En desktop el hero ya lleva el titulo, el boton y los avisos: el
+     eyebrow de arriba sumaba una linea mas sin aportar nada nuevo. */
+  .contact-hero-label { display:none; }
 }
 
 /* CONTACT MAIN */
@@ -437,7 +440,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   <div class="reveal reveal-d3" style="max-width:680px; margin:24px auto 0;">
     <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="form-submit" style="text-decoration:none;">Get My Free Consultation →</a>
     <p class="form-subnote">🔒 Your consultation is confidential and free, with no obligation.</p>
-    <p class="mlg-aviso-conflictos">Please describe your situation briefly and do not include confidential details. We will run a conflicts check before any substantive discussion. Contacting the firm does not create an attorney client relationship.</p>
+    <p class="mlg-aviso-conflictos">Contacting the firm does not create an attorney client relationship.</p>
   </div>
 </section>
 
