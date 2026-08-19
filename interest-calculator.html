@@ -916,15 +916,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
                 <option value="si">Yes</option>
               </select>
             </div>
-            <div class="calc-campo" id="ic-caja-presentado" hidden>
-              <label for="ic-presentado">Has a complaint or lawsuit been filed?</label>
-              <select id="ic-presentado">
-                <option value="">Choose one</option>
-                <option value="si">Yes, it has been filed</option>
-                <option value="no">No, not yet</option>
-              </select>
-              <span class="calc-ayuda">Prejudgment interest generally begins to accrue once a complaint is filed. If nothing has been filed yet, it is generally not accruing yet either.</span>
-            </div>
             <div class="calc-campo">
               <label for="ic-desde" id="ic-desde-label">Date interest started</label>
               <input type="date" id="ic-desde">
@@ -1399,15 +1390,19 @@ function toggleFaq(btn) {
 
     $('ic-caja-publico').hidden = !post;
     $('ic-caja-tasa').hidden = !(estado.reclamo === 'contrato');
-    // Para fraude y laboral la certeza del monto decide la tasa y si aplica.
-    $('ic-caja-certeza').hidden = !(estado.reclamo === 'fraude' || estado.reclamo === 'laboral');
+    // La certeza del monto decide si aplica interes automatico bajo el
+    // Codigo Civil seccion 3287(a), o si queda a discrecion del tribunal bajo
+    // la 3288. Esto vale para contrato igual que para fraude y laboral: un
+    // contrato con un monto en disputa no es mas "cierto" que cualquier otro
+    // reclamo no liquidado.
+    $('ic-caja-certeza').hidden = !(estado.reclamo === 'contrato' || estado.reclamo === 'fraude' || estado.reclamo === 'laboral');
 
-    $('ic-caja-presentado').hidden = post;
-
-    $('ic-desde-label').textContent = post ? 'Date the judgment was entered' : 'Date the complaint was filed, or the amount became due';
+    $('ic-desde-label').textContent = post ? 'Date the judgment was entered' : 'Date the amount became due or calculable';
     $('ic-desde-ayuda').textContent = post
       ? 'The date the court entered the money judgment.'
-      : 'Prejudgment interest generally starts running from whichever of these applies to your claim. If you are not sure which one, the filing date is the safer choice.';
+      // Cuando el monto es cierto o calculable, el interes bajo la 3287(a)
+      // corre desde esta fecha, no desde que se presenta la demanda.
+      : 'Where damages are certain or capable of being made certain, prejudgment interest generally starts running from this date, not from when a complaint is filed.';
   }
 
   // ---------- la cuenta ----------
@@ -1456,19 +1451,12 @@ function toggleFaq(btn) {
     var desde = $('ic-desde').value, hasta = $('ic-hasta').value;
     var falta = [], camposMal = [];
     if (!isFinite(monto) || monto <= 0) { falta.push('an amount'); camposMal.push('ic-monto'); }
-    if (!$('ic-caja-presentado').hidden && !$('ic-presentado').value) { falta.push('whether a complaint has been filed'); camposMal.push('ic-presentado'); }
     if (!desde) { falta.push('a start date'); camposMal.push('ic-desde'); }
     if (!$('ic-caja-certeza').hidden && !$('ic-certeza').value) { falta.push('whether the damages were certain'); camposMal.push('ic-certeza'); }
     marcarCampos('#calc-campos', camposMal);
     if (falta.length) {
       e.hidden = false; e.textContent = 'Please enter ' + falta.join(' and ') + '.';
       return;
-    }
-
-    if (!$('ic-caja-presentado').hidden && $('ic-presentado').value === 'no') {
-      e.hidden = true;
-      caja.innerHTML = '<div class="calc-resultado-vacio">Prejudgment interest generally begins to accrue once a complaint is filed. Because no complaint has been filed yet, interest is generally not accruing on this claim yet, so this tool does not produce an estimate. You are already on our list, and we will keep you posted on anything relevant, including once a complaint is filed.</div>';
-      ir(6); return;
     }
 
     if (!$('ic-caja-certeza').hidden && $('ic-certeza').value === 'no') {
