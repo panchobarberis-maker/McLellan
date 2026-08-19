@@ -105,6 +105,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .contact-hero {
   position:relative; overflow:hidden;
   background:#1e3a3e;
+  min-height:calc(100svh - 53px); display:flex; flex-direction:column; justify-content:center;
   padding:88px 24px 72px; text-align:center;
   border-bottom:12px solid #c9a96e;
 }
@@ -146,7 +147,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   font-family:'DM Serif Display',serif; font-style:italic;
 }
 @media(min-width:769px) {
-  .contact-hero { padding:120px 24px 100px; }
+  .contact-hero { min-height:calc(100svh - 62px); padding:120px 24px 100px; }
   .contact-hero p { font-size:20px; }
 }
 
