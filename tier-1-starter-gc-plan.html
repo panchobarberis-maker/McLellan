@@ -126,10 +126,18 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   border-bottom:12px solid #c9a96e;
 }
 @media(min-width:769px) { .emp-hero { min-height:calc(100svh - 62px); padding:0 80px 12px; } }
+.emp-hero-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
 .emp-hero-overlay {
   position:absolute; inset:0;
-  background:radial-gradient(ellipse at 50% 30%, rgba(60,95,90,0.35) 0%, rgba(20,45,50,0.0) 60%);
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%);
 }
+.emp-hero-overlay::before { content:''; position:absolute; inset:0; background:rgba(20,48,52,0.55); }
+.video-mobile { display:none; }
+@media(max-width:768px) { .video-desktop { display:none; } .video-mobile { display:block; } }
 .emp-hero h1 {
   position:relative; z-index:2;
   font-family:'Barlow Condensed',sans-serif;
@@ -424,6 +432,7 @@ a:focus-visible, button:focus-visible { outline:3px solid #c9a96e; outline-offse
 
 <!-- HERO -->
 <section class="emp-hero">
+  <video class="emp-hero-img video-desktop" muted loop playsinline preload="none"><source data-src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" muted loop playsinline preload="none"><source data-src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video><script>(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.currentScript.closest(".emp-hero");var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();</script>
   <div class="emp-hero-overlay"></div>
   <div class="hero-pill">Tier 1 · Starter GC Plan</div>
   <h1>Starter GC Plan</h1>
