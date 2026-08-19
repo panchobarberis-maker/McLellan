@@ -151,7 +151,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 }
 
 /* CONTACT MAIN */
-.contact-main { padding:56px 24px; }
+.contact-main { padding:56px 24px; background:#1e3a3e; }
 .contact-main-inner {
   max-width:1200px; margin:0 auto;
   display:grid; grid-template-columns:1fr; gap:32px;
@@ -167,7 +167,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 /* FORM CARD */
 .contact-form-card {
-  background:#1e3a3e; border-radius:20px;
+  background:#fbf6ef; border-radius:20px;
   padding:36px 28px;
   box-shadow:0 16px 48px rgba(0,0,0,0.14);
   border:8px solid #c9a96e;
@@ -175,31 +175,31 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 @media(min-width:769px) { .contact-form-card { padding:56px; } }
 .contact-form-card h2 {
   font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(30px,3.5vw,44px); font-weight:800; color:#fff;
+  font-size:clamp(30px,3.5vw,44px); font-weight:800; color:#1e3a3e;
   text-transform:uppercase; letter-spacing:-0.5px; margin-bottom:8px;
 }
 .contact-form-card h2 em {
   font-style:italic; font-family:'DM Serif Display',serif;
-  font-weight:400; text-transform:none; color:#c9a96e;
+  font-weight:400; text-transform:none; color:#b8933a;
 }
-.contact-form-card > p { font-size:18px; color:rgba(255,255,255,0.65); margin-bottom:32px; line-height:1.65; }
+.contact-form-card > p { font-size:18px; color:#4c6062; margin-bottom:32px; line-height:1.65; }
 .form-row { display:grid; grid-template-columns:1fr; gap:16px; margin-bottom:16px; }
 @media(min-width:600px) { .form-row.two { grid-template-columns:1fr 1fr; } }
 .form-field label {
   display:block; font-size:12px; font-weight:700;
   letter-spacing:1.5px; text-transform:uppercase;
-  color:#c9a96e; margin-bottom:8px;
+  color:#1e3a3e; margin-bottom:8px;
 }
 .form-field input, .form-field select, .form-field textarea {
-  width:100%; background:rgba(255,255,255,0.08);
-  border:1.5px solid rgba(255,255,255,0.18); border-radius:10px;
-  padding:14px 16px; color:#fff; font-family:'Barlow',sans-serif;
+  width:100%; background:#fff;
+  border:1.5px solid rgba(30,58,62,0.18); border-radius:10px;
+  padding:14px 16px; color:#1e3a3e; font-family:'Barlow',sans-serif;
   font-size:15px; font-weight:500; outline:none;
   transition:border-color 0.2s, background 0.2s;
 }
-.form-field input::placeholder, .form-field textarea::placeholder { color:rgba(255,255,255,0.35); }
+.form-field input::placeholder, .form-field textarea::placeholder { color:rgba(30,58,62,0.4); }
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-  border-color:#c9a96e; background:rgba(255,255,255,0.12);
+  border-color:#c9a96e; background:#fff;
 }
 .form-field select { appearance:none; cursor:pointer; }
 .form-field select option { color:#1e3a3e; background:#fff; }
@@ -219,7 +219,7 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   transition:transform 0.15s;
 }
 .form-submit:hover { transform:scale(1.02); }
-.form-note { font-size:12px; color:rgba(255,255,255,0.45); margin-top:16px; line-height:1.6; text-align:center; }
+.form-note { font-size:12px; color:#6b7c7e; margin-top:16px; line-height:1.6; text-align:center; }
 
 /* INFO COLUMN */
 .contact-info { display:flex; flex-direction:column; gap:20px; }
@@ -284,13 +284,13 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 
 
 /* Textos mas grandes: nota del intake y badges */
-.form-note { font-size:18px !important; color:rgba(255,255,255,0.85) !important; max-width:680px; margin-left:auto !important; margin-right:auto !important; line-height:1.6 !important; }
+.form-note { font-size:18px !important; color:#4c6062 !important; max-width:680px; margin-left:auto !important; margin-right:auto !important; line-height:1.6 !important; }
 .mlg-aviso-conflictos {
   max-width:680px; margin:14px auto 0; font-size:14px; line-height:1.6;
-  color:rgba(255,255,255,0.6); text-align:center;
+  color:#6b7c7e; text-align:center;
 }
 @media(min-width:769px) { .mlg-aviso-conflictos { font-size:15px; } }
-.form-subnote { font-size:18px !important; color:rgba(255,255,255,0.45); font-style:italic; margin-top:8px; line-height:1.6; text-align:center; }
+.form-subnote { font-size:18px !important; color:#6b7c7e; font-style:italic; margin-top:8px; line-height:1.6; text-align:center; }
 .mini-badge { font-size:14px !important; padding:11px 18px !important; border-radius:24px !important; white-space:nowrap; }
 .badge-row { gap:12px !important; }
 
