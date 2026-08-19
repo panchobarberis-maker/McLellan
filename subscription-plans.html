@@ -122,12 +122,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* HERO */
 .emp-hero {
   position:relative; overflow:hidden;
-  min-height:calc(60svh - 53px); display:flex; flex-direction:column;
+  min-height:calc(100svh - 53px); display:flex; flex-direction:column;
   justify-content:center; align-items:center; text-align:center; padding:0 28px 10px;
   background:#1e3a3e;
   border-bottom:12px solid #c9a96e;
 }
-@media(min-width:769px) { .emp-hero { min-height:calc(55svh - 62px); padding:0 80px 12px; } }
+@media(min-width:769px) { .emp-hero { min-height:calc(100svh - 62px); padding:0 80px 12px; } }
 .emp-hero-overlay {
   position:absolute; inset:0;
   background:radial-gradient(ellipse at 50% 30%, rgba(60,95,90,0.35) 0%, rgba(20,45,50,0.0) 60%);
@@ -549,6 +549,20 @@ a:focus-visible, button:focus-visible { outline:3px solid #c9a96e; outline-offse
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var hero = document.querySelector('.emp-hero');
+  var nav = document.querySelector('.nav');
+  if (!hero || !nav) return;
+  function ajustar(){
+    var altoNav = nav.getBoundingClientRect().height;
+    hero.style.minHeight = (window.innerHeight - altoNav) + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
 })();
 </script>
 </body>
