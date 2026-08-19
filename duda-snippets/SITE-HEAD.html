@@ -580,6 +580,11 @@
     width:100vw !important; max-width:100vw !important;
   }
 }
+/* Mismo problema que arriba pero al pie: el widget de Duda trae su propio
+   margen inferior por defecto, que se ve como un hueco blanco (o la seccion
+   siguiente asomando) antes del cierre del widget. Se compensa igual que el
+   de arriba, asi ninguna pagina nueva necesita tocar el margen a mano. */
+.mlgP > *:last-child { margin-bottom:-10px !important; }
 /* Hero calcado del Appellate Digest. Los tamanos dependen del ancho Y del
    alto de la ventana: en pantallas bajas todo se achica para que el hero
    entre completo en la primera vista sin tener que scrollear. */
