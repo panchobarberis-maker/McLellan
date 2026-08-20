@@ -269,6 +269,7 @@
   min-height:calc(100svh - 53px) !important; display:flex !important; flex-direction:column;
   justify-content:center; align-items:center; text-align:center !important; padding:0 28px 10px !important;
   background:#1e3a3e !important;
+  border-bottom:12px solid #c9a96e !important;
 }
 @media(min-width:769px) {
 .mlgP .emp-hero { min-height:calc(100svh - 62px) !important; padding:0 80px 12px !important; }
@@ -286,7 +287,7 @@
 .mlgP .emp-hero h1 {
   position:relative !important; z-index:2;
   font-family:'Barlow Condensed',sans-serif !important;
-  font-size:clamp(36px, 7vw, 68px) !important; font-weight:900 !important; line-height:0.98 !important;
+  font-size:clamp(26px, 7.2vw, 68px) !important; font-weight:900 !important; line-height:0.98 !important;
   color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
   margin:0 auto 18px !important; max-width:1000px !important;
   overflow-wrap:break-word !important;
@@ -584,46 +585,6 @@
    siguiente asomando) antes del cierre del widget. Se compensa igual que el
    de arriba, asi ninguna pagina nueva necesita tocar el margen a mano. */
 .mlgP > *:last-child { margin-bottom:-10px !important; }
-/* Hero calcado del Appellate Digest. Los tamanos dependen del ancho Y del
-   alto de la ventana: en pantallas bajas todo se achica para que el hero
-   entre completo en la primera vista sin tener que scrollear. */
-.mlgP .emp-hero {
-  min-height:calc(100svh - 62px) !important;   /* lo ajusta el script */
-  padding:min(80px, 7vh) 28px min(72px, 6vh) !important;
-  justify-content:center !important;
-  border-bottom:none !important;
-}
-.mlgP .emp-hero-overlay {
-  background:rgba(20,48,52,0.75) !important;
-}
-.mlgP .emp-hero-overlay::before { content:none !important; }
-.mlgP .emp-hero h1 {
-  font-size:min(68px, 11vh, 9vw) !important; letter-spacing:-1.5px !important;
-  margin-bottom:min(18px, 2vh) !important;
-}
-.mlgP .hero-pill { margin-bottom:min(24px, 2.5vh) !important; }
-.mlgP .emp-hero-sub {
-  font-size:min(18px, 2.4vh) !important; max-width:440px !important;
-  margin-bottom:min(36px, 4vh) !important;
-}
-@media(max-width:768px) {
-  /* Solo el badge sube, pegado al header. El titulo, la bajada y el boton
-     quedan donde estaban, centrados en el resto de la pantalla: es el
-     pedido del usuario, no una decision mia. */
-  .mlgP .emp-hero { padding:min(120px, 12vh) 20px min(48px, 5vh) !important; justify-content:center !important; }
-  .mlgP .hero-pill {
-    position:absolute !important; top:16px !important; left:50% !important;
-    transform:translateX(-50%) !important; margin-bottom:0 !important;
-  }
-  .mlgP .emp-hero h1 { font-size:min(8.2vw, 10vh, 50px) !important; letter-spacing:-1px !important; }
-}
-@media(min-width:769px) {
-  .mlgP .emp-hero { padding:min(64px, 6vh) 96px min(56px, 5vh) !important; }
-  .mlgP .emp-hero h1 { font-size:min(88px, 10.5vh, 6.4vw) !important; letter-spacing:-3px !important;
-                       margin-bottom:min(14px, 1.6vh) !important; }
-  .mlgP .emp-hero-sub { font-size:min(19px, 2.3vh) !important; margin-bottom:min(28px, 3vh) !important; }
-  .mlgP .hero-pill { margin-bottom:min(18px, 2vh) !important; }
-}
 /* Breadcrumb y paginas relacionadas. Las subpaginas funcionan como landing
    pages, asi que necesitan links propios en el cuerpo: la nav de Duda no le
    dice a Google que estas 38 cuelgan de una practica en particular. */
