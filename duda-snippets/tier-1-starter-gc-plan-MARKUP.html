@@ -1,5 +1,8 @@
 <style>
 html, body { overflow-x:hidden; }
+/* El hero de esta pagina tiene que medir igual que el del home (100svh
+   completo), no el calc(100svh - Xpx) que usan las subpaginas de practicas. */
+.mlgP .emp-hero { min-height:100svh !important; }
 /* Reglas propias de esta pagina, no viven en el Site Head porque no las
    comparten las 38 subpaginas de practicas (son de las 4 tier pages). */
 .mlgP .mlg-miga { background:#1e3a3e !important; padding:0 28px 26px !important; }
