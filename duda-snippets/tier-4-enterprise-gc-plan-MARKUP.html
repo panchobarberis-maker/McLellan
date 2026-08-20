@@ -1,0 +1,291 @@
+<style>
+html, body { overflow-x:hidden; }
+/* El hero de esta pagina tiene que medir igual que el del home (100svh
+   completo), no el calc(100svh - Xpx) que usan las subpaginas de practicas. */
+.mlgP .emp-hero { min-height:100svh !important; }
+/* Reglas propias de esta pagina, no viven en el Site Head porque no las
+   comparten las 38 subpaginas de practicas (son de las 4 tier pages). */
+.mlgP .mlg-miga { background:#1e3a3e !important; padding:0 28px 26px !important; }
+@media(min-width:769px) { .mlgP .mlg-miga { padding:0 80px 30px !important; } }
+.mlgP .mlg-miga-inner { max-width:1100px !important; margin:0 auto !important; font-size:15px !important; color:#9fb0b2 !important; letter-spacing:0.2px !important; text-align:center !important; }
+.mlgP .mlg-miga a { color:#e8cc8a !important; text-decoration:none !important; border-bottom:1px solid rgba(201,169,110,0.5) !important; font-weight:600 !important; }
+.mlgP .mlg-miga a:hover { color:#fff !important; border-bottom-color:#fff !important; }
+.mlgP .mlg-miga span { margin:0 8px !important; color:#5f7476 !important; }
+.mlgP .tiers-section { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlgP .tiers-section { padding:88px 80px !important; } }
+.mlgP .tiers-section .section-eyebrow { color:#1e3a3e !important; }
+.mlgP .tiers-section .section-eyebrow::before { background:#1e3a3e !important; }
+.mlgP .tiers-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:40px !important;
+}
+.mlgP .tiers-grid { display:flex !important; flex-direction:column; gap:20px !important; max-width:1300px !important; margin:0 auto !important; }
+@media(min-width:769px) { .mlgP .tiers-grid { display:grid !important; grid-template-columns:repeat(4,1fr); gap:18px !important; } }
+.mlgP .tier-card {
+  background:#1e3a3e !important; border-radius:16px !important; padding:26px 24px !important;
+  border:2.5px solid rgba(201,169,110,0.45) !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  display:flex !important; flex-direction:column; gap:14px !important;
+}
+@media(min-width:769px) { .mlgP .tier-card { padding:36px 34px !important; } }
+.mlgP .tier-card.current { border-color:#c9a96e !important; box-shadow:0 12px 32px rgba(201,169,110,0.35); }
+.mlgP .tier-card .tier-label {
+  font-family:'Barlow Condensed',sans-serif !important; font-size:14px !important; font-weight:800 !important;
+  letter-spacing:2px !important; text-transform:uppercase !important; color:#c9a96e !important;
+}
+.mlgP .tier-card .tier-current-badge {
+  font-size:11px !important; font-weight:800 !important; letter-spacing:1.5px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; background:#c9a96e !important; border-radius:20px !important; padding:4px 12px !important; width:max-content !important;
+}
+.mlgP .tier-card h3 {
+  font-family:'Barlow Condensed',sans-serif !important; font-size:22px !important;
+  font-weight:900 !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; color:#fff !important; line-height:1.1 !important;
+}
+.mlgP .tier-card ul { list-style:none !important; display:flex !important; flex-direction:column; gap:8px !important; flex-grow:1; }
+.mlgP .tier-card ul li { font-size:14px !important; line-height:1.5 !important; color:rgba(255,255,255,0.8) !important; padding-left:18px !important; position:relative; text-align:left !important; }
+.mlgP .tier-card ul li::before { content:"\2713"; position:absolute; left:0; top:0; color:#c9a96e !important; font-weight:900 !important; font-size:13px !important; }
+.mlgP .tier-card .btn-gold { align-self:flex-start !important; margin-top:6px !important; font-size:13px !important; padding:11px 24px !important; }
+.mlgP .terms-section { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) { .mlgP .terms-section { padding:88px 80px !important; } }
+.mlgP .terms-section .section-eyebrow { color:#1e3a3e !important; }
+.mlgP .terms-section .section-eyebrow::before { background:#1e3a3e !important; }
+.mlgP .terms-inner { max-width:1300px !important; margin:0 auto !important; }
+.mlgP .terms-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:32px !important;
+}
+.mlgP .terms-columns { display:flex !important; flex-direction:column; gap:14px !important; }
+@media(min-width:600px) { .mlgP .terms-columns { display:grid !important; grid-template-columns:1fr 1fr; gap:20px !important; } }
+.mlgP .terms-item {
+  background:#1e3a3e !important; border-radius:16px !important; padding:22px 24px !important;
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  border:2.5px solid rgba(201,169,110,0.45) !important;
+  display:flex !important; align-items:flex-start; gap:14px !important;
+}
+@media(min-width:769px) { .mlgP .terms-item { padding:28px 30px !important; } }
+.mlgP .terms-item::before { content:"\2713"; color:#c9a96e !important; font-weight:900 !important; font-size:18px !important; flex-shrink:0; margin-top:1px !important; }
+.mlgP .terms-item span { font-size:16px !important; color:rgba(255,255,255,0.85) !important; line-height:1.6 !important; text-align:left !important; }
+@media(min-width:769px) { .mlgP .terms-item span { font-size:17px !important; } }
+</style>
+
+
+<div class="mlgP">
+
+<a class="mlg-salto" href="#contenido">Skip to content</a>
+
+<!-- HERO -->
+<section class="emp-hero">
+  <video class="emp-hero-img video-desktop" muted loop playsinline preload="none"><source data-src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" muted loop playsinline preload="none"><source data-src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
+  <div class="emp-hero-overlay"></div>
+  <div class="hero-pill">Tier 4 · Enterprise GC Plan</div>
+  <h1>Enterprise GC Plan</h1>
+  <p class="emp-hero-sub">The benefits of in-house counsel, without the overhead — a lawyer fully aligned with your leadership team.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/enterprise-gc-plan" class="btn-gold">Get Started →</a>
+</section>
+
+<div class="mlg-miga">
+  <div class="mlg-miga-inner"><a href="/subscription-plans">General Counsel Subscription Plans</a><span>/</span>Tier 4: Enterprise GC Plan</div>
+</div>
+
+<!-- INTRO -->
+<section class="content-section" id="contenido">
+  <div class="content-inner">
+    <div class="section-eyebrow reveal">Who It's For</div>
+    <div class="content-card reveal reveal-d1">
+      <p class="content-lead">For established companies, family offices, and leadership teams that need an embedded legal partner.</p>
+      <p><strong>Scope of services (non-litigation):</strong></p>
+      <p>Up to 12 hours of legal services per month billed against your monthly deposit.</p>
+      <p><strong>Everything in Tier 3, plus:</strong></p>
+      <ul class="content-list">
+        <li><span>Attendance at up to two board/leadership meetings per year.</span></li>
+        <li><span>Custom contract drafting (employment, partnership, or real estate).</span></li>
+        <li><span>Annual compliance audit covering key risk areas.</span></li>
+        <li><span>Executive-level strategy consultations with leadership.</span></li>
+        <li><span>White-glove priority: urgent matters answered within 24 hours.</span></li>
+      </ul>
+      <a href="https://mclellanlawgroup.lawbrokr.com/enterprise-gc-plan" class="btn-gold">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TIER COMPARISON -->
+<section class="tiers-section">
+  <div class="section-eyebrow reveal">Compare Plans</div>
+  <h2 class="reveal reveal-d1">All Subscription Tiers</h2>
+  <div class="tiers-grid">
+    <div class="tier-card reveal reveal-d1">
+      <div class="tier-label">Tier 1</div>
+      <h3>Starter GC Plan</h3>
+      <ul>
+        <li>Up to 2 hours of legal services per month billed against your monthly deposit.</li>
+        <li>Quick contract reviews (NDAs, vendor agreements).</li>
+        <li>Email/phone consultations for routine questions.</li>
+        <li>Basic compliance guidance.</li>
+      </ul>
+      <a href="https://mclellanlawgroup.lawbrokr.com/starter-gc-plan" class="btn-gold">Get Started →</a>
+    </div>
+    <div class="tier-card reveal reveal-d2">
+      <div class="tier-label">Tier 2</div>
+      <h3>Essentials GC Plan</h3>
+      <ul>
+        <li>Everything from Tier 1</li>
+        <li>Employment contract and offer letter review.</li>
+        <li>Lease or vendor agreement review (short form).</li>
+        <li>Compliance checklists for common business issues.</li>
+      </ul>
+      <a href="https://mclellanlawgroup.lawbrokr.com/essentials-gc-plan" class="btn-gold">Get Started →</a>
+    </div>
+    <div class="tier-card reveal reveal-d3">
+      <div class="tier-label">Tier 3</div>
+      <h3>Growth GC Plan</h3>
+      <ul>
+        <li>Everything from Tier 2</li>
+        <li>Quarterly compliance review call with tailored recommendations.</li>
+        <li>Employee handbook or policy updates.</li>
+        <li>Negotiation and redlining of major business contracts.</li>
+        <li>Risk management advice for employment, real estate, and regulatory issues.</li>
+        <li>Priority response time: calls/emails within 24 hours.</li>
+      </ul>
+      <a href="https://mclellanlawgroup.lawbrokr.com/growth-gc-plan" class="btn-gold">Get Started →</a>
+    </div>
+    <div class="tier-card current reveal reveal-d4">
+      <div class="tier-label">Tier 4</div>
+      <div class="tier-current-badge">Your Plan</div>
+      <h3>Enterprise GC Plan</h3>
+      <ul>
+        <li>Everything from Tier 3</li>
+        <li>Attendance at up to two board/leadership meetings per year.</li>
+        <li>Custom contract drafting (employment, partnership, or real estate).</li>
+        <li>Annual compliance audit covering key risk areas.</li>
+        <li>Executive-level strategy consultations with leadership.</li>
+        <li>White-glove priority: urgent matters answered within 24 hours.</li>
+      </ul>
+      <a href="https://mclellanlawgroup.lawbrokr.com/enterprise-gc-plan" class="btn-gold">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="help-section">
+  <div class="help-inner">
+    <div class="section-eyebrow reveal">Your Benefits</div>
+    <h2 class="reveal reveal-d1">What Every Plan Provides</h2>
+    <div class="help-columns">
+      <div class="help-item reveal reveal-d1">
+        <strong>Predictability</strong>
+        <span>Flat monthly deposits into your trust account, with deductions only as services are performed.</span>
+      </div>
+      <div class="help-item reveal reveal-d2">
+        <strong>Savings</strong>
+        <span>Overage discounts grow as you move up tiers.</span>
+      </div>
+      <div class="help-item reveal reveal-d3">
+        <strong>Flexibility</strong>
+        <span>Unused balances roll forward or are refunded if the subscription ends.</span>
+      </div>
+      <div class="help-item reveal reveal-d4">
+        <strong>Clarity</strong>
+        <span>Litigation (lawsuits, discovery, hearings, arbitration, mediation) is not included and requires a separate agreement.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="terms-section">
+  <div class="terms-inner">
+    <div class="section-eyebrow reveal">The Fine Print</div>
+    <h2 class="reveal reveal-d1">Subscription Benefits and Terms</h2>
+    <div class="terms-columns">
+      <div class="terms-item reveal reveal-d1"><span>Subscription payments advance fee deposits into trust.</span></div>
+      <div class="terms-item reveal reveal-d2"><span>Attorneys bill time at the discounted subscription rate.</span></div>
+      <div class="terms-item reveal reveal-d3"><span>Unused balances roll forward in trust, subject to the 2x monthly cap.</span></div>
+      <div class="terms-item reveal reveal-d4"><span>Litigation matters require separate fee agreements.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Ready to Get<em>Started?</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/enterprise-gc-plan" class="btn-gold reveal reveal-d2">Get Started →</a>
+</section>
+
+<div class="maps-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1"
+    width="100%" height="300" style="border:0 !important; display:block !important;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group, 20665 4th St #202, Saratoga, CA 95070">
+  </iframe>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var heroes = document.querySelectorAll('.mlgP .emp-hero');
+  heroes.forEach(function(hero){
+    var chico = window.matchMedia("(max-width:768px)").matches;
+    var activo = hero.querySelector(chico ? ".video-mobile" : ".video-desktop");
+    var otro = hero.querySelector(chico ? ".video-desktop" : ".video-mobile");
+    if (otro) otro.remove();
+    if (activo) {
+      var f = activo.querySelector("source");
+      if (f && f.dataset.src) { f.src = f.dataset.src; activo.load(); activo.play().catch(function(){}); }
+    }
+  });
+})();
+
+(function(){
+  var els = document.querySelectorAll('.mlgP .reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "McLellan Law Group: Tier 4 Enterprise GC Plan",
+  "description": "For established companies, family offices, and leadership teams that need an embedded legal partner.",
+  "url": "https://www.mclellanlawgroup.com/tier-4-enterprise-gc-plan",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20665 4th St #202",
+    "addressLocality": "Saratoga",
+    "addressRegion": "CA",
+    "postalCode": "95070",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Silicon Valley",
+    "Santa Clara County",
+    "Bay Area",
+    "Saratoga CA"
+  ],
+  "knowsAbout": [
+    "General Counsel Services",
+    "Business Law",
+    "Contract Review"
+  ]
+}
+</script>
