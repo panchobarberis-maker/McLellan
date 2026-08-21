@@ -122,6 +122,26 @@
 .mlg-practice-item .mlg-name { font-family:'Barlow',sans-serif !important; font-size:21px !important; font-weight:700 !important; color:#1e3a3e !important; line-height:1.2 !important; }
 .mlg-practice-item .mlg-desc { font-size:16px !important; color:#5a6e70 !important; margin-top:8px !important; line-height:1.55 !important; font-weight:400 !important; }
 .mlg-practice-item .mlg-arrow { color:#c9a96e !important; font-size:18px !important; font-weight:300 !important; margin-top:20px !important; }
+.mlg-gc-teaser { padding:48px 24px !important; background:#fbf6ef !important; }
+.mlg-gc-teaser-inner { max-width:1200px !important; margin:0 auto !important; text-align:center !important; }
+.mlg-gc-teaser .mlg-section-header h2 { color:#1e3a3e !important; }
+.mlg-gc-teaser .mlg-gc-lead { font-size:18px !important; line-height:1.7 !important; color:#4a5c5e !important; max-width:680px !important; margin:0 auto 40px !important; }
+.mlg-gc-tier-grid { display:grid !important; grid-template-columns:1fr 1fr !important; gap:14px !important; margin-bottom:36px !important; }
+.mlg-gc-tier-card {
+  display:block !important; text-decoration:none !important; text-align:left !important;
+  background:#1e3a3e !important; border:2px solid rgba(201,169,110,0.45) !important; border-radius:16px !important;
+  padding:24px 22px !important;
+}
+.mlg-gc-tier-card:hover { border-color:#c9a96e !important; box-shadow:0 10px 26px rgba(30,58,62,0.25) !important; }
+.mlg-gc-tier-card .mlg-gc-tier-label { font-family:'Barlow Condensed',sans-serif !important; font-size:12px !important; font-weight:800 !important; letter-spacing:1.5px !important; text-transform:uppercase !important; color:#c9a96e !important; }
+.mlg-gc-tier-card .mlg-gc-tier-name { font-family:'Barlow',sans-serif !important; font-size:19px !important; font-weight:700 !important; color:#fff !important; margin-top:4px !important; }
+.mlg-gc-tier-card .mlg-gc-tier-desc { font-size:14px !important; color:rgba(255,255,255,0.75) !important; margin-top:6px !important; line-height:1.5 !important; }
+.mlg-btn-outline-gold {
+  display:inline-flex !important; align-items:center !important; gap:10px !important; background:#1e3a3e !important; color:#fff !important;
+  font-weight:700 !important; font-size:15px !important; padding:14px 34px !important; border-radius:32px !important; text-decoration:none !important;
+  border:2px solid #1e3a3e !important;
+}
+.mlg-btn-outline-gold:hover { background:#264a4f !important; }
 .mlg-testimonials { padding:48px 24px !important; background:#faf8f3 !important; }
 .mlg-testimonials-inner { max-width:960px !important; margin:0 auto !important; }
 .mlg-testimonials .mlg-section-header h2 { color:#1e3a3e !important; }
@@ -186,6 +206,10 @@
   .mlg-practice-item { padding:32px 28px !important; min-height:160px !important; }
   .mlg-practice-item .mlg-name { font-size:32px !important; }
   .mlg-practice-item .mlg-desc { font-size:19px !important; }
+  .mlg-gc-teaser { padding:100px 96px !important; }
+  .mlg-gc-teaser .mlg-gc-lead { font-size:21px !important; }
+  .mlg-gc-tier-grid { grid-template-columns:1fr 1fr 1fr 1fr !important; gap:18px !important; }
+  .mlg-gc-tier-card { padding:30px 26px !important; }
   .mlg-testimonials { padding:120px 96px !important; }
   .mlg-testimonials-inner { max-width:1100px !important; }
   .mlg-carousel { overflow:visible !important; }
@@ -592,6 +616,44 @@
       </div>
      </a>
     </div>
+   </div>
+  </section>
+  <section class="mlg-gc-teaser">
+   <div class="mlg-gc-teaser-inner">
+    <div class="mlg-section-header mlg-fade">
+     <div class="mlg-eyebrow">
+      For Businesses
+     </div>
+     <h2>
+      Ongoing Legal Support, One Flat Fee
+     </h2>
+    </div>
+    <p class="mlg-gc-lead mlg-fade mlg-d1">
+     Skip the hourly-billing guesswork. Our General Counsel Subscription Plans give your business predictable, on-call access to experienced attorneys every month.
+    </p>
+    <div class="mlg-gc-tier-grid">
+     <a href="https://www.mclellanlawgroup.com/tier-1-starter-gc-plan" class="mlg-gc-tier-card mlg-pop">
+      <div class="mlg-gc-tier-label">Tier 1</div>
+      <div class="mlg-gc-tier-name">Starter GC Plan</div>
+      <div class="mlg-gc-tier-desc">Quick reviews &amp; routine consultations for startups and solopreneurs.</div>
+     </a>
+     <a href="https://www.mclellanlawgroup.com/tier-2-essentials-gc-plan" class="mlg-gc-tier-card mlg-pop mlg-d1">
+      <div class="mlg-gc-tier-label">Tier 2</div>
+      <div class="mlg-gc-tier-name">Essentials GC Plan</div>
+      <div class="mlg-gc-tier-desc">Contract review &amp; compliance support for small businesses.</div>
+     </a>
+     <a href="https://www.mclellanlawgroup.com/tier-3-growth-gc-plan" class="mlg-gc-tier-card mlg-pop mlg-d2">
+      <div class="mlg-gc-tier-label">Tier 3</div>
+      <div class="mlg-gc-tier-name">Growth GC Plan</div>
+      <div class="mlg-gc-tier-desc">Proactive risk management for scaling companies.</div>
+     </a>
+     <a href="https://www.mclellanlawgroup.com/tier-4-enterprise-gc-plan" class="mlg-gc-tier-card mlg-pop mlg-d3">
+      <div class="mlg-gc-tier-label">Tier 4</div>
+      <div class="mlg-gc-tier-name">Enterprise GC Plan</div>
+      <div class="mlg-gc-tier-desc">Embedded legal partnership for established companies.</div>
+     </a>
+    </div>
+    <a href="https://www.mclellanlawgroup.com/subscription-plans" class="mlg-btn-outline-gold mlg-fade mlg-d2">View All Plans →</a>
    </div>
   </section>
   <section class="mlg-testimonials">
