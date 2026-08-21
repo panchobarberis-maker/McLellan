@@ -251,6 +251,28 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .practice-item .arrow { color:#c9a96e; font-size:18px; font-weight:300; margin-top:20px; transition:transform 0.2s; }
 .practice-item:hover .arrow { transform:translateX(4px); }
 
+/* ══ GC SUBSCRIPTION TEASER ══ */
+.gc-teaser { padding:48px 24px; background:#fbf6ef; }
+.gc-teaser-inner { max-width:1200px; margin:0 auto; text-align:center; }
+.gc-teaser .section-header h2 { color:#1e3a3e; }
+.gc-teaser p.gc-lead { font-size:18px; line-height:1.7; color:#4a5c5e; max-width:680px; margin:0 auto 40px; }
+.gc-tier-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:36px; }
+.gc-tier-card {
+  display:block; text-decoration:none; text-align:left;
+  background:#fff; border:2px solid rgba(201,169,110,0.35); border-radius:16px;
+  padding:24px 22px; transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.gc-tier-card:hover { border-color:#c9a96e; transform:translateY(-3px); box-shadow:0 10px 26px rgba(30,58,62,0.1); }
+.gc-tier-card .gc-tier-label { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#c9a96e; }
+.gc-tier-card .gc-tier-name { font-family:'Barlow',sans-serif; font-size:19px; font-weight:700; color:#1e3a3e; margin-top:4px; }
+.gc-tier-card .gc-tier-desc { font-size:14px; color:#5a6e70; margin-top:6px; line-height:1.5; }
+.btn-outline-gold {
+  display:inline-flex; align-items:center; gap:10px; background:transparent; color:#1e3a3e;
+  font-weight:700; font-size:15px; padding:14px 34px; border-radius:32px; text-decoration:none;
+  border:2px solid #c9a96e; transition:background 0.2s, transform 0.15s;
+}
+.btn-outline-gold:hover { background:#c9a96e; transform:translateY(-1px); }
+
 /* ══ TESTIMONIALS ══ */
 .testimonials { padding:48px 24px; background:#faf8f3; }
 .testimonials-inner { max-width:960px; margin:0 auto; }
@@ -363,6 +385,11 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   .practice-item { padding:32px 28px; min-height:160px; }
   .practice-item .name { font-size:32px; }
   .practice-item .desc { font-size:19px; }
+
+  .gc-teaser { padding:100px 96px; }
+  .gc-teaser p.gc-lead { font-size:21px; }
+  .gc-tier-grid { grid-template-columns:1fr 1fr 1fr 1fr; gap:18px; }
+  .gc-tier-card { padding:30px 26px; }
 
   .testimonials { padding:120px 96px; }
   .testimonials-inner { max-width:1100px; }
@@ -594,6 +621,40 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
         <div class="arrow">→</div>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- GC SUBSCRIPTION TEASER -->
+<section class="gc-teaser">
+  <div class="gc-teaser-inner">
+    <div class="section-header fade">
+      <div class="eyebrow">For Businesses</div>
+      <h2>Ongoing Legal Support, One Flat Fee</h2>
+    </div>
+    <p class="gc-lead fade fade-d1">Skip the hourly-billing guesswork. Our General Counsel Subscription Plans give your business predictable, on-call access to experienced attorneys every month.</p>
+    <div class="gc-tier-grid">
+      <a href="tier-1-starter-gc-plan.html" class="gc-tier-card pop">
+        <div class="gc-tier-label">Tier 1</div>
+        <div class="gc-tier-name">Starter GC Plan</div>
+        <div class="gc-tier-desc">Quick reviews &amp; routine consultations for startups and solopreneurs.</div>
+      </a>
+      <a href="tier-2-essentials-gc-plan.html" class="gc-tier-card pop fade-d1">
+        <div class="gc-tier-label">Tier 2</div>
+        <div class="gc-tier-name">Essentials GC Plan</div>
+        <div class="gc-tier-desc">Contract review &amp; compliance support for small businesses.</div>
+      </a>
+      <a href="tier-3-growth-gc-plan.html" class="gc-tier-card pop fade-d2">
+        <div class="gc-tier-label">Tier 3</div>
+        <div class="gc-tier-name">Growth GC Plan</div>
+        <div class="gc-tier-desc">Proactive risk management for scaling companies.</div>
+      </a>
+      <a href="tier-4-enterprise-gc-plan.html" class="gc-tier-card pop fade-d3">
+        <div class="gc-tier-label">Tier 4</div>
+        <div class="gc-tier-name">Enterprise GC Plan</div>
+        <div class="gc-tier-desc">Embedded legal partnership for established companies.</div>
+      </a>
+    </div>
+    <a href="subscription-plans.html" class="btn-outline-gold fade fade-d2">View All Plans →</a>
   </div>
 </section>
 
