@@ -24,16 +24,20 @@
 html { scroll-behavior:smooth; }
 body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webkit-font-smoothing:antialiased; font-weight:500; }
 
-/* ANIMATIONS */
-.fade { opacity:0; transform:translateY(40px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+/* ANIMATIONS — hidden-until-scrolled state only applies once JS has actually
+   run (html.js, set at the top of the animation script below). If a page
+   builder strips/blocks the script, content stays visible instead of stuck
+   at opacity:0 forever. */
+.fade, .slide-left, .slide-right, .pop { transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+html.js .fade { opacity:0; transform:translateY(40px); }
 .fade.visible { opacity:1; transform:none; }
 .fade-d1 { transition-delay:.08s; } .fade-d2 { transition-delay:.16s; } .fade-d3 { transition-delay:.24s; } .fade-d4 { transition-delay:.32s; } .fade-d5 { transition-delay:.40s; } .fade-d6 { transition-delay:.48s; } .fade-d7 { transition-delay:.56s; }
 
-.slide-left { opacity:0; transform:translateX(-32px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+html.js .slide-left { opacity:0; transform:translateX(-32px); }
 .slide-left.visible { opacity:1; transform:none; }
-.slide-right { opacity:0; transform:translateX(32px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+html.js .slide-right { opacity:0; transform:translateX(32px); }
 .slide-right.visible { opacity:1; transform:none; }
-.pop { opacity:0; transform:scale(0.92) translateY(20px); transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+html.js .pop { opacity:0; transform:scale(0.92) translateY(20px); }
 .pop.visible { opacity:1; transform:none; }
 
 /* ══ NAV ══ */
@@ -201,7 +205,8 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   0%   { width:0; opacity:0; }
   100% { width:40px; opacity:1; }
 }
-.stat-item { flex:1; min-width:120px; padding:28px 16px; border-right:1px solid rgba(255,255,255,0.1); text-align:center; opacity:0; transform:scale(0.6) translateY(48px); }
+.stat-item { flex:1; min-width:120px; padding:28px 16px; border-right:1px solid rgba(255,255,255,0.1); text-align:center; }
+html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
 .stat-item.visible { animation:statBounce 0.75s cubic-bezier(0.22,1,0.36,1) forwards; }
 .stat-item.visible .stat-value::after { content:''; display:block; height:3px; background:#c9a96e; border-radius:2px; margin:8px auto 0; animation:lineGrow 0.5s ease 0.4s forwards; opacity:0; }
 .stat-item:last-child { border-right:none; }
@@ -761,6 +766,10 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 </div>
 
 <script>
+// Marks that JS actually ran, so the CSS only hides .fade/.pop/.stat-item etc.
+// before reveal when the reveal script itself is present to bring them back.
+document.documentElement.classList.add('js');
+
 // Animations
 var obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.fade,.slide-left,.slide-right,.pop').forEach(function(el){obs.observe(el);});
