@@ -312,17 +312,17 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 @media(min-width:769px) { .why-us-title { font-size:clamp(48px,5.5vw,72px); margin-bottom:56px; padding:0 80px; } }
 .why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
 .why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border-top:2px solid rgba(255,255,255,0.25); border-bottom:2px solid rgba(255,255,255,0.25); border-radius:0; overflow:hidden; }
-@media(min-width:769px) { .why-us-grid { gap:8px; } }
+@media(min-width:769px) { .why-us-grid { gap:8px; grid-template-columns:repeat(4,1fr); } }
 @media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
 .why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
-@media(min-width:769px) { .why-us-item { padding:56px 48px; gap:14px; } }
+@media(min-width:769px) { .why-us-item { padding:48px 32px; gap:14px; } }
 .why-us-item:hover { background:#f3ece0; }
 .why-us-num { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#c9a96e; }
 @media(min-width:769px) { .why-us-num { font-size:16px; } }
 .why-us-item strong { font-size:17px; font-weight:700; color:#1e3a3e; }
-@media(min-width:769px) { .why-us-item strong { font-size:26px; } }
+@media(min-width:769px) { .why-us-item strong { font-size:22px; } }
 .why-us-item span { font-size:14px; color:#5a6e70; line-height:1.65; }
-@media(min-width:769px) { .why-us-item span { font-size:18px; line-height:1.7; } }
+@media(min-width:769px) { .why-us-item span { font-size:16px; line-height:1.6; } }
 
 /* ══ CTA BANNER ══ */
 .cta-banner { background:#1e3a3e; padding:56px 24px; text-align:center; }
