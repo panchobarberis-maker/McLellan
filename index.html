@@ -234,11 +234,12 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
 .about p { font-size:20px; line-height:1.85; color:#3a5254; font-weight:500; max-width:1120px; margin:0 auto; }
 
 /* ══ PRACTICES ══ */
-.practices { padding:48px 24px; background:#1e3a3e; }
-.practices-inner { max-width:960px; margin:0 auto; }
+.practices { padding:48px 0; background:#1e3a3e; }
+.practices-inner { max-width:none; margin:0 auto; }
+.practices .section-header { padding:0 24px; }
 .section-header { margin-bottom:52px; }
 .section-header h2 { font-family:'Barlow Condensed',sans-serif; font-size:46px; font-weight:800; color:#fff; margin-top:16px; letter-spacing:-1px; text-transform:uppercase; }
-.practices-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.practices-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:0 24px; }
 .practice-item {
   display:flex; flex-direction:column; justify-content:space-between;
   padding:28px 24px; border-radius:16px; text-decoration:none;
@@ -379,16 +380,19 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
   .eyebrow { font-size:18px; letter-spacing:4px; }
   .eyebrow::before, .eyebrow::after { width:48px; }
 
-  .practices { padding:120px 96px; }
-  .practices-inner { max-width:1100px; }
-  .practices-grid { grid-template-columns:1fr 1fr 1fr; gap:18px; }
+  .practices { padding:120px 0; }
+  .practices-inner { max-width:none; }
+  .practices .section-header { padding:0 96px; }
+  .practices-grid { grid-template-columns:1fr 1fr 1fr; gap:18px; padding:0; }
   .practice-item { padding:32px 28px; min-height:160px; }
   .practice-item .name { font-size:32px; }
   .practice-item .desc { font-size:19px; }
 
-  .gc-teaser { padding:100px 96px; }
+  .gc-teaser { padding:100px 0; }
+  .gc-teaser-inner { max-width:none; }
+  .gc-teaser .section-header { padding:0 96px; }
   .gc-teaser p.gc-lead { font-size:21px; }
-  .gc-tier-grid { grid-template-columns:1fr 1fr 1fr 1fr; gap:18px; }
+  .gc-tier-grid { grid-template-columns:1fr 1fr 1fr 1fr; gap:18px; padding:0; }
   .gc-tier-card { padding:30px 26px; }
 
   .testimonials { padding:120px 96px; }
