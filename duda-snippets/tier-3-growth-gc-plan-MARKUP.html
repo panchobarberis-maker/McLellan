@@ -3,6 +3,23 @@ html, body { overflow-x:hidden; }
 /* El hero de esta pagina tiene que medir igual que el del home (100svh
    completo), no el calc(100svh - Xpx) que usan las subpaginas de practicas. */
 .mlgP .emp-hero { min-height:100svh !important; }
+/* El Site Head solo define el checkmark y el texto de .help-item (pensado
+   para las 38 subpaginas, que no llevan titulo). Esta pagina si necesita
+   un titulo (Predictability, Savings...) arriba del texto, y sin estas
+   reglas ese <strong> queda con el color oscuro por defecto sobre el
+   fondo verde oscuro de la tarjeta -> invisible, y encima empuja la
+   primera linea del parrafo hacia la derecha (parecia texto centrado). */
+.mlgP .help-item {
+  display:block !important; position:relative !important;
+  padding-left:52px !important;
+}
+.mlgP .help-item::before { position:absolute !important; left:24px !important; top:24px !important; }
+.mlgP .help-item strong {
+  display:block !important; font-family:'Barlow Condensed',sans-serif !important;
+  font-size:13px !important; font-weight:800 !important; letter-spacing:1.5px !important;
+  text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:6px !important;
+}
+.mlgP .help-item span { display:block !important; }
 /* Reglas propias de esta pagina, no viven en el Site Head porque no las
    comparten las 38 subpaginas de practicas (son de las 4 tier pages). */
 .mlgP .mlg-miga { background:#1e3a3e !important; padding:0 28px 26px !important; }
