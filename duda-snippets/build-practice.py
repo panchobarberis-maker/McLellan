@@ -260,8 +260,8 @@ def con_enlaces(body, name):
             f'<a href="/">Home</a><span>/</span>'
             f'<a href="{madre}">{nombre_madre}</a><span>/</span>{en.etiqueta(name)}'
             f'</div></div>\n')
-    body = body.replace('<section class="content-section">',
-                        miga + '<section class="content-section">', 1)
+    body = re.sub(r'<section class="content-section"[^>]*>',
+                  lambda m: miga + m.group(0), body, count=1)
 
     # 3. Paginas relacionadas, justo antes del cierre con el formulario.
     vecinas = en.hermanas(name)
