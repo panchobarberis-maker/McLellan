@@ -97,10 +97,34 @@
       "name": "Can PAGA claims be arbitrated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only partially. In Viking River Cruises, Inc. v. Moriana (2022), the United States Supreme Court held that an employer can compel arbitration of the individual portion of a PAGA claim, the penalties tied to the notice-filing employee's own alleged violations. The Court also suggested the employee would then lose standing to pursue the representative claims. The California Supreme Court rejected that reading in Adolph v. Uber Technologies, Inc. (2023) 14 Cal.5th 1104, holding that an employee compelled to arbitrate individual PAGA claims retains standing to pursue non-individual claims on behalf of other employees in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely, so it should be treated as one part of the strategy rather than the answer to it."
+        "text": "Only partially. In Viking River Cruises, Inc. v. Moriana (2022) 596 U.S. 639, the United States Supreme Court held that an employer can compel arbitration of the individual portion of a PAGA claim, the penalties tied to the notice-filing employee's own alleged violations. The Court also suggested the employee would then lose standing to pursue the representative claims. The California Supreme Court rejected that reading in Adolph v. Uber Technologies, Inc. (2023) 14 Cal.5th 1104, holding that an employee compelled to arbitrate individual PAGA claims retains standing to pursue non-individual claims on behalf of other employees in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely, so it should be treated as one part of the strategy rather than the answer to it."
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mclellanlawgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Employment Law", "item": "https://www.mclellanlawgroup.com/employment-law" },
+    { "@type": "ListItem", "position": 3, "name": "PAGA Notice Response", "item": "https://www.mclellanlawgroup.com/paga-notice-response" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "PAGA Notice Response",
+  "provider": { "@type": "Organization", "name": "McLellan Law Group LLP" },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Santa Clara County" },
+    { "@type": "Place", "name": "Bay Area" }
+  ],
+  "url": "https://www.mclellanlawgroup.com/paga-notice-response"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -339,7 +363,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .why-us-title { font-size:clamp(48px,5.5vw,72px); margin-bottom:56px; } }
 .why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
 .why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
-@media(min-width:769px) { .why-us-grid { gap:8px; } }
+@media(min-width:769px) { .why-us-grid { gap:8px; grid-template-columns:repeat(3,1fr); } }
 @media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
 .why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
 @media(min-width:769px) { .why-us-item { padding:56px 48px; gap:14px; } }
@@ -514,6 +538,29 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
     display:block; margin:14px 0 0; font-size:15px; font-weight:600; color:#6b7c7e;
   }
 }
+
+/* Resumen "respuesta directa" arriba de todo el contenido: mismo molde de
+   content-card, con un borde de acento para distinguirlo del resto. */
+.content-card--resumen { border-left:6px solid #c9a96e; }
+
+/* Listas numeradas (pasos, checklists) con el mismo molde visual que
+   content-list pero con el numero real en vez del check. */
+.mlg-numerada { counter-reset:mlgn; }
+.mlg-numerada li { counter-increment:mlgn; }
+.mlg-numerada li::before {
+  content:counter(mlgn) "."; color:#c9a96e; font-weight:900; flex-shrink:0;
+  margin-top:1px; font-size:19px; font-family:'Barlow Condensed',sans-serif;
+}
+
+/* Bloque de enlaces relacionados, arriba de la franja final de CTA. */
+.mlg-relacionados-emp { background:#fbf6ef; padding:32px 28px; text-align:center; border-top:1px solid #e8e3da; }
+@media(min-width:769px) { .mlg-relacionados-emp { padding:40px 80px; } }
+.mlg-relacionados-emp p { font-size:15px; color:#5a6e70; margin:0 0 8px; }
+@media(min-width:769px) { .mlg-relacionados-emp p { font-size:17px; } }
+.mlg-relacionados-emp p:last-child { margin-bottom:0; }
+.mlg-relacionados-emp strong { color:#1e3a3e; }
+.mlg-relacionados-emp a { color:#1e3a3e; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(201,169,110,0.6); }
+.mlg-relacionados-emp a:hover { color:#c9a96e; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
@@ -602,7 +649,26 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
   <div class="hero-pill">PAGA Notice Response · Saratoga, California</div>
   <h1>PAGA Notice Response Attorneys <em>in Saratoga, CA</em></h1>
   <p class="emp-hero-sub">The 65-day window is critical. Don't respond to a PAGA notice without counsel.</p>
-  <a href="#contact" class="btn-gold">Request a Free Consultation →</a>
+  <a href="#contact" class="btn-gold">Send Us the Notice →</a>
+</section>
+
+<!-- FIRST WEEK CHECKLIST -->
+<section class="help-section">
+  <div class="help-inner">
+    <div class="section-eyebrow reveal">Act Now</div>
+    <h2 class="reveal reveal-d1">The First Week Matters More Than Any Week That Follows</h2>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <ol class="content-list mlg-numerada">
+          <li><span>Preserve everything. Issue a litigation hold covering payroll records, time records, wage statements, and written policies.</span></li>
+          <li><span>Calendar every date. The LWDA period runs from the notice, and the cure and evaluation deadlines run separately and are shorter.</span></li>
+          <li><span>Do not contact the employee about the notice, and do not change anything about their employment.</span></li>
+          <li><span>Pull the underlying records before anyone reads the allegations, so your assessment rests on what the records show rather than on what the notice claims.</span></li>
+          <li><span>Get counsel involved this week, because the penalty caps depend on steps taken early and are not available retroactively.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CONTENT -->
@@ -611,13 +677,20 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
     <div class="section-eyebrow reveal">What Is a PAGA Notice?</div>
     <h2 class="reveal reveal-d1">Understanding Your PAGA Notice and the 65-Day Window</h2>
     <div class="content-cards">
+      <div class="content-card content-card--resumen reveal">
+        <p>McLellan Law Group LLP helps California employers respond to PAGA notices within the statutory windows, calculate realistic penalty exposure, and pursue any available cure or early resolution process. The firm is based in Saratoga and works with businesses throughout Santa Clara County and the Bay Area.</p>
+      </div>
       <div class="content-card reveal reveal-d2">
         <p class="content-lead">A PAGA notice is the required first step before an employee can file a PAGA lawsuit.</p>
         <p>It is a written notification that an employee (or their attorney) sends to your business and the Labor and Workforce Development Agency (LWDA) alleging one or more Labor Code violations, seeking civil penalties on behalf of themselves, other current and former employees, and the State of California.</p>
       </div>
       <div class="content-card reveal reveal-d3">
         <p class="content-lead">The LWDA has 65 days to decide whether it will investigate the alleged violations.</p>
-        <p>If the agency does not act within that window, which is common: the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations, but the opportunity to cure is time-sensitive and procedurally strict.</p>
+        <p>If the agency does not act within that window, which is common, the employee becomes free to file a civil lawsuit. Under the 2024 PAGA reforms, employers who take genuine corrective action within specific windows after a notice can significantly reduce or, in some cases, eliminate exposure for certain violations, but the opportunity to cure is time-sensitive and procedurally strict.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">The 2024 reforms created two off-ramps that did not exist before, and both are time-sensitive.</p>
+        <p>An employer with fewer than 100 employees can notify the LWDA of its intent to cure the alleged violations and request an early settlement conference. An employer with 100 or more employees can ask the court to stay the action and order an Early Neutral Evaluation, in which a neutral evaluator reviews the employer's cure plan while discovery is paused. Both connect directly to the penalty caps described below, and neither is available retroactively. That is why the first week of a PAGA matter is worth more than any month that follows it.</p>
       </div>
       <div class="content-card reveal reveal-d4">
         <p class="content-lead">How your business responds in the first days after receiving a notice often determines the outcome.</p>
@@ -681,7 +754,7 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-i-cure-the-violations-to-avoid" role="region" aria-labelledby="faq-can-i-cure-the-violations-to-avoid-h">
-            <p>For certain types of violations, particularly some wage statement and minor pay-related errors. California law allows an employer to cure the violation within a limited window after the notice, which can eliminate or substantially reduce penalties for that violation. Not all violations are curable, and the 2024 PAGA reforms changed several of the rules governing this process, including the deadlines and the types of violations eligible. An attorney can assess quickly whether your situation qualifies.</p>
+            <p>For certain types of violations, particularly some wage statement and minor pay-related errors, California law allows an employer to cure the violation within a limited window after the notice, which can eliminate or substantially reduce penalties for that violation. Not all violations are curable, and the 2024 PAGA reforms changed several of the rules governing this process, including the deadlines and the types of violations eligible. An attorney can assess quickly whether your situation qualifies.</p>
           </div>
         </div>
       </div>
@@ -719,12 +792,38 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-paga-claims-be-arbitrated" role="region" aria-labelledby="faq-can-paga-claims-be-arbitrated-h">
-            <p>Only partially. In Viking River Cruises, Inc. v. Moriana (2022), the United States Supreme Court held that an employer can compel arbitration of the individual portion of a PAGA claim, the penalties tied to the notice-filing employee's own alleged violations. The Court also suggested the employee would then lose standing to pursue the representative claims. The California Supreme Court rejected that reading in Adolph v. Uber Technologies, Inc. (2023) 14 Cal.5th 1104, holding that an employee compelled to arbitrate individual PAGA claims retains standing to pursue non-individual claims on behalf of other employees in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely, so it should be treated as one part of the strategy rather than the answer to it.</p>
+            <p>Only partially. In Viking River Cruises, Inc. v. Moriana (2022) 596 U.S. 639, the United States Supreme Court held that an employer can compel arbitration of the individual portion of a PAGA claim, the penalties tied to the notice-filing employee's own alleged violations. The Court also suggested the employee would then lose standing to pursue the representative claims. The California Supreme Court rejected that reading in Adolph v. Uber Technologies, Inc. (2023) 14 Cal.5th 1104, holding that an employee compelled to arbitrate individual PAGA claims retains standing to pursue non-individual claims on behalf of other employees in court. An arbitration agreement can still meaningfully narrow a PAGA case, but it will rarely eliminate it entirely, so it should be treated as one part of the strategy rather than the answer to it.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+<!-- PAGA PENALTY TABLE -->
+<section class="help-section">
+  <div class="help-inner">
+    <div class="section-eyebrow reveal">Penalty Exposure</div>
+    <h2 class="reveal reveal-d1">What Changed in 2024</h2>
+    <div class="mlg-tabla-caja reveal reveal-d2">
+      <table class="mlg-tabla">
+        <caption>PAGA penalty exposure before and after the 2024 reforms</caption>
+        <thead>
+          <tr><th></th><th>Before the 2024 reforms</th><th>After AB 2288 and SB 92</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>LWDA share of penalties</td><td>75%</td><td>65%</td></tr>
+          <tr><td>Employee share</td><td>25%</td><td>35%</td></tr>
+          <tr><td>Default penalty</td><td>$100 per employee, per pay period</td><td>$100 per employee, per pay period</td></tr>
+          <tr><td>Higher tier</td><td>$200 per employee, per pay period</td><td>$200 only on a court or agency finding of an unlawful policy within the prior 5 years, or malicious, fraudulent, or oppressive conduct</td></tr>
+          <tr><td>Reasonable steps before the notice</td><td>No cap</td><td>Capped at 15%</td></tr>
+          <tr><td>Reasonable steps after the notice</td><td>No cap</td><td>Capped at 30%</td></tr>
+          <tr><td>Wage statement violation causing no harm</td><td>Standard penalty</td><td>$25</td></tr>
+          <tr><td>Violation under 30 days or 4 pay periods</td><td>Standard penalty</td><td>$50</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
 <!-- WHY CHOOSE US -->
 <section class="why-us">
@@ -744,13 +843,8 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
       </div>
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
-        <strong>Proven Track Record</strong>
-        <span>Our attorneys have represented employees and employers across Silicon Valley in wrongful termination, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
-      </div>
-      <div class="why-us-item reveal reveal-d4">
-        <div class="why-us-num">04</div>
-        <strong>Free Consultation</strong>
-        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+        <strong>First-Week Response</strong>
+        <span>PAGA outcomes are shaped in the days after the notice arrives, not in the months after.</span>
       </div>
     </div>
   </div>
@@ -777,32 +871,25 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
         <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
         <span class="author">Anonymous · Employment Law</span>
       </div>
-      <div class="emp-test-card">
-        <div class="stars">★★★★★</div>
-        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
-        <span class="author">Wendy · Employment Law</span>
-      </div>
-      <div class="emp-test-card">
-        <div class="stars">★★★★★</div>
-        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
-        <span class="author">Jordan · Employment Law</span>
-      </div>
     </div>
   </div>
   <div class="emp-carousel-dots" id="empDots">
     <button class="emp-dot active" onclick="goToEmp(0)"></button>
     <button class="emp-dot" onclick="goToEmp(1)"></button>
     <button class="emp-dot" onclick="goToEmp(2)"></button>
-    <button class="emp-dot" onclick="goToEmp(3)"></button>
-    <button class="emp-dot" onclick="goToEmp(4)"></button>
   </div>
   <p class="mlg-aviso-resultados">Results depend on the specific facts and law of each matter. Prior results do not guarantee or predict a similar outcome in any other case.</p>
+</section>
+
+<section class="mlg-relacionados-emp">
+  <p><strong>Related:</strong> <a href="wage-hour-defense.html">Wage &amp; Hour Defense</a> · <a href="hr-policies-handbooks.html">HR Policies &amp; Handbooks</a> · <a href="retaliation-defense.html">Retaliation Defense</a></p>
+  <p>For employees: <a href="paga-claims.html">PAGA Claims</a></p>
 </section>
 
 <section class="cta-banner" id="contact">
   <h2 class="reveal">Received a PAGA Notice?<em>Let's Talk.</em></h2>
   <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fpaga-notice-response&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fpaga-notice-response&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Send Us the Notice →</a>
 </section>
 
 <div class="maps-section">

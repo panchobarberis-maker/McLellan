@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employee Handbook &amp; HR Policy Attorneys in Saratoga, CA | McLellan Law Group</title>
+<title>Employee Handbook Attorneys in Saratoga, CA | McLellan Law</title>
 <meta name="description" content="McLellan Law Group drafts and updates employee handbooks and HR policies for Silicon Valley businesses. Compliant documentation that reduces liability. Saratoga, CA.">
 <meta name="geo.region" content="US-CA">
 <meta name="geo.placename" content="Saratoga, California">
@@ -101,6 +101,30 @@
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mclellanlawgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Employment Law", "item": "https://www.mclellanlawgroup.com/employment-law" },
+    { "@type": "ListItem", "position": 3, "name": "HR Policies & Handbooks", "item": "https://www.mclellanlawgroup.com/hr-policies-handbooks" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "HR Policies and Employee Handbooks",
+  "provider": { "@type": "Organization", "name": "McLellan Law Group LLP" },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Santa Clara County" },
+    { "@type": "Place", "name": "Bay Area" }
+  ],
+  "url": "https://www.mclellanlawgroup.com/hr-policies-handbooks"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -339,7 +363,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .why-us-title { font-size:clamp(48px,5.5vw,72px); margin-bottom:56px; } }
 .why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
 .why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
-@media(min-width:769px) { .why-us-grid { gap:8px; } }
+@media(min-width:769px) { .why-us-grid { gap:8px; grid-template-columns:repeat(3,1fr); } }
 @media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
 .why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
 @media(min-width:769px) { .why-us-item { padding:56px 48px; gap:14px; } }
@@ -514,6 +538,29 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
     display:block; margin:14px 0 0; font-size:15px; font-weight:600; color:#6b7c7e;
   }
 }
+
+/* Resumen "respuesta directa" arriba de todo el contenido: mismo molde de
+   content-card, con un borde de acento para distinguirlo del resto. */
+.content-card--resumen { border-left:6px solid #c9a96e; }
+
+/* Listas numeradas (pasos, checklists) con el mismo molde visual que
+   content-list pero con el numero real en vez del check. */
+.mlg-numerada { counter-reset:mlgn; }
+.mlg-numerada li { counter-increment:mlgn; }
+.mlg-numerada li::before {
+  content:counter(mlgn) "."; color:#c9a96e; font-weight:900; flex-shrink:0;
+  margin-top:1px; font-size:19px; font-family:'Barlow Condensed',sans-serif;
+}
+
+/* Bloque de enlaces relacionados, arriba de la franja final de CTA. */
+.mlg-relacionados-emp { background:#fbf6ef; padding:32px 28px; text-align:center; border-top:1px solid #e8e3da; }
+@media(min-width:769px) { .mlg-relacionados-emp { padding:40px 80px; } }
+.mlg-relacionados-emp p { font-size:15px; color:#5a6e70; margin:0 0 8px; }
+@media(min-width:769px) { .mlg-relacionados-emp p { font-size:17px; } }
+.mlg-relacionados-emp p:last-child { margin-bottom:0; }
+.mlg-relacionados-emp strong { color:#1e3a3e; }
+.mlg-relacionados-emp a { color:#1e3a3e; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(201,169,110,0.6); }
+.mlg-relacionados-emp a:hover { color:#c9a96e; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
@@ -602,7 +649,7 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
   <div class="hero-pill">HR Policies &amp; Handbooks · Saratoga, California</div>
   <h1>Employee Handbook &amp; HR Policy Attorneys <em>in Saratoga, CA</em></h1>
   <p class="emp-hero-sub">Compliant documentation that reduces liability across your workforce.</p>
-  <a href="#contact" class="btn-gold">Request a Free Consultation →</a>
+  <a href="#contact" class="btn-gold">Request a Handbook Review →</a>
 </section>
 
 <!-- CONTENT -->
@@ -611,6 +658,9 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
     <div class="section-eyebrow reveal">Why Employee Handbooks Matter</div>
     <h2 class="reveal reveal-d1">Building HR Policies That Protect Your Business</h2>
     <div class="content-cards">
+      <div class="content-card content-card--resumen reveal">
+        <p>McLellan Law Group LLP drafts and maintains employee handbooks, HR policies, offer letters, arbitration agreements, and the written safety programs California requires, for businesses throughout Santa Clara County and the Bay Area. The firm is based in Saratoga. This work is quoted on a flat fee, with an annual update option so documents stay current as California law changes.</p>
+      </div>
       <div class="content-card reveal reveal-d2">
         <p class="content-lead">An employee handbook is one of the most effective, and most overlooked, tools for reducing litigation risk.</p>
         <p>A well-drafted handbook clearly establishes at-will employment status, communicates required policies, sets consistent expectations across your workforce, and creates a documented record that supports your business if a dispute arises.</p>
@@ -627,9 +677,40 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
         </ul>
         <p>California's employment laws change frequently, and a handbook that was compliant even two or three years ago may already be outdated.</p>
       </div>
+      <div class="content-card reveal reveal-d3">
+        <p class="content-lead">If your handbook and safety documents have not been reviewed since 2023, they are very likely missing requirements that are now mandatory.</p>
+        <p>Two are worth checking today. Under Labor Code section 6401.9, nearly every California employer must establish, implement, and maintain an effective written workplace violence prevention plan, kept available and easily accessible to employees at all times and specific to the hazards of each work area. The plan has to name who is responsible for it, set out how employees report incidents without fear of reprisal, address emergency response, and be reviewed at least annually and after any incident. It also requires a violent incident log for every incident, annual training for every employee, and record retention of up to five years. Separately, Labor Code section 6401.7 requires every employer to maintain a written injury and illness prevention program, and it now expressly lists a conforming workplace violence prevention plan as one of that program's required elements. So these are not two unrelated projects. If your injury and illness program predates the workplace violence requirement, it is incomplete by the terms of its own statute.</p>
+        <div class="mlg-tabla-caja">
+          <table class="mlg-tabla">
+            <caption>What California requires in writing</caption>
+            <thead>
+              <tr><th>Document</th><th>Required by</th><th>Who must have one</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Injury and Illness Prevention Program</td><td>Labor Code section 6401.7</td><td>Every employer. Must be written, with limited documentation relief for small employers in low-hazard industries.</td></tr>
+              <tr><td>Workplace Violence Prevention Plan</td><td>Labor Code section 6401.9</td><td>Nearly every employer, with narrow exemptions. Written, accessible at all times, and specific to each work area.</td></tr>
+              <tr><td>Violent incident log</td><td>Labor Code section 6401.9</td><td>Every employer with a plan. One entry per incident, retained five years.</td></tr>
+              <tr><td>Annual workplace violence training</td><td>Labor Code section 6401.9</td><td>Every employee, at plan adoption and annually thereafter.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <div class="content-card reveal reveal-d4">
         <p class="content-lead">Offer letters, arbitration agreements, and standalone policies each carry their own legal requirements.</p>
         <p>McLellan Law Group helps Silicon Valley businesses build a complete, current set of HR documentation rather than relying on generic templates that don't reflect California's specific requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEE STRUCTURE -->
+<section class="help-section">
+  <div class="help-inner">
+    <div class="section-eyebrow reveal">How We Work On This</div>
+    <h2 class="reveal reveal-d1">Flat-Fee Documentation</h2>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p>Handbook review and gap analysis, flat fee. Full handbook build, flat fee. Workplace violence prevention plan and injury and illness prevention program, flat fee, together or separately. Annual update, so that when California changes the rules mid-year your documents change with them. We will tell you which of these you actually need before you engage us, and if your existing handbook is in good shape we will tell you that too.</p>
       </div>
     </div>
   </div>
@@ -647,6 +728,8 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
       <div class="help-item reveal reveal-d4"><span>Draft and review mandatory arbitration agreements consistent with current California law.</span></div>
       <div class="help-item reveal reveal-d5"><span>Advise on rolling out new or updated policies to minimize disruption and legal risk.</span></div>
       <div class="help-item reveal reveal-d6"><span>Provide ongoing updates as California employment law changes throughout the year.</span></div>
+      <div class="help-item reveal reveal-d6"><span>Draft and maintain the written workplace violence prevention plan required of nearly every California employer.</span></div>
+      <div class="help-item reveal reveal-d6"><span>Draft and maintain the injury and illness prevention program, including the workplace violence plan now required as one of its elements.</span></div>
     </div>
   </div>
 </section>
@@ -752,13 +835,8 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
       </div>
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
-        <strong>Proven Track Record</strong>
-        <span>Our attorneys have represented employees and employers across Silicon Valley in wrongful termination, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
-      </div>
-      <div class="why-us-item reveal reveal-d4">
-        <div class="why-us-num">04</div>
-        <strong>Free Consultation</strong>
-        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+        <strong>Flat-Fee Documentation</strong>
+        <span>Handbooks, safety plans, and annual updates on a defined fee rather than an hourly estimate.</span>
       </div>
     </div>
   </div>
@@ -785,32 +863,24 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
         <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
         <span class="author">Anonymous · Employment Law</span>
       </div>
-      <div class="emp-test-card">
-        <div class="stars">★★★★★</div>
-        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
-        <span class="author">Wendy · Employment Law</span>
-      </div>
-      <div class="emp-test-card">
-        <div class="stars">★★★★★</div>
-        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
-        <span class="author">Jordan · Employment Law</span>
-      </div>
     </div>
   </div>
   <div class="emp-carousel-dots" id="empDots">
     <button class="emp-dot active" onclick="goToEmp(0)"></button>
     <button class="emp-dot" onclick="goToEmp(1)"></button>
     <button class="emp-dot" onclick="goToEmp(2)"></button>
-    <button class="emp-dot" onclick="goToEmp(3)"></button>
-    <button class="emp-dot" onclick="goToEmp(4)"></button>
   </div>
   <p class="mlg-aviso-resultados">Results depend on the specific facts and law of each matter. Prior results do not guarantee or predict a similar outcome in any other case.</p>
+</section>
+
+<section class="mlg-relacionados-emp">
+  <p><strong>Related:</strong> <a href="employment-contracts-severance.html">Employment Contracts &amp; Severance</a> · <a href="wage-hour-defense.html">Wage &amp; Hour Defense</a> · <a href="retaliation-defense.html">Retaliation Defense</a></p>
 </section>
 
 <section class="cta-banner" id="contact">
   <h2 class="reveal">Need a Compliant Handbook?<em>Let's Talk.</em></h2>
   <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fhr-policies-handbooks&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fhr-policies-handbooks&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Handbook Review →</a>
 </section>
 
 <div class="maps-section">
