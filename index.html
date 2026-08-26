@@ -28,17 +28,17 @@ body { font-family:'Barlow',sans-serif; background:#faf8f3; color:#1e3a3e; -webk
    run (html.js, set at the top of the animation script below). If a page
    builder strips/blocks the script, content stays visible instead of stuck
    at opacity:0 forever. */
-.fade, .slide-left, .slide-right, .pop { transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.fade, .slide-left, .slide-right, .pop { transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); will-change:opacity, transform; }
 html.js .fade { opacity:0; transform:translateY(40px); }
-.fade.visible { opacity:1; transform:none; }
+html.js .fade.visible { opacity:1; transform:none; }
 .fade-d1 { transition-delay:.08s; } .fade-d2 { transition-delay:.16s; } .fade-d3 { transition-delay:.24s; } .fade-d4 { transition-delay:.32s; } .fade-d5 { transition-delay:.40s; } .fade-d6 { transition-delay:.48s; } .fade-d7 { transition-delay:.56s; }
 
 html.js .slide-left { opacity:0; transform:translateX(-32px); }
-.slide-left.visible { opacity:1; transform:none; }
+html.js .slide-left.visible { opacity:1; transform:none; }
 html.js .slide-right { opacity:0; transform:translateX(32px); }
-.slide-right.visible { opacity:1; transform:none; }
+html.js .slide-right.visible { opacity:1; transform:none; }
 html.js .pop { opacity:0; transform:scale(0.92) translateY(20px); }
-.pop.visible { opacity:1; transform:none; }
+html.js .pop.visible { opacity:1; transform:none; }
 
 /* ══ NAV ══ */
 .nav {
@@ -768,6 +768,17 @@ document.documentElement.classList.add('js');
 // Animations
 var obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.fade,.slide-left,.slide-right,.pop').forEach(function(el){obs.observe(el);});
+
+// Safety net: if the observer misses an element for any reason, this keeps
+// checking on scroll (not just once at load) so nothing stays invisible no
+// matter how far or fast the user scrolls.
+function forceVisibleInView(){
+  document.querySelectorAll('.fade:not(.visible),.slide-left:not(.visible),.slide-right:not(.visible),.pop:not(.visible),.stat-item:not(.visible)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+  });
+}
+setTimeout(forceVisibleInView, 1200);
+window.addEventListener('scroll', forceVisibleInView, {passive:true});
 
 // Stats bar: staggered entrance + counter animation
 function animateCount(el, target, isFloat, suffix) {
