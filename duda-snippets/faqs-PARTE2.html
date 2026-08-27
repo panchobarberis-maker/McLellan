@@ -1,0 +1,154 @@
+<div class="mlgP">
+<!-- TRUSTS & ESTATES -->
+<section class="faq-section" id="faq-trusts-estates">
+  <h2 class="reveal">Trusts &amp; Estates</h2>
+  <div class="faq-columns">
+    <div class="faq-col">
+      <div class="faq-item reveal reveal-d1">
+        <h3><button class="faq-question" type="button" id="faq-what-is-probate-h" aria-expanded="false" aria-controls="faq-what-is-probate" onclick="toggleFaq(this)">What is probate?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-what-is-probate" role="region" aria-labelledby="faq-what-is-probate-h"><p>Probate is the legal process of administering a deceased person's estate, ensuring debts are paid and assets are distributed according to their will or state law. In California, probate involves validating the will, appointing an executor, and inventorying the estate's assets, and can be time-consuming and costly depending on the estate's complexity.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <h3><button class="faq-question" type="button" id="faq-what-is-trust-h" aria-expanded="false" aria-controls="faq-what-is-trust" onclick="toggleFaq(this)">What is a trust?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-what-is-trust" role="region" aria-labelledby="faq-what-is-trust-h"><p>A trust is a legal arrangement where one party, the trustee, holds and manages assets on behalf of another party, the beneficiary. Trusts control how and when assets are distributed, often providing tax benefits and avoiding probate. In California, trusts can be revocable or irrevocable depending on whether they can be altered after creation.</p></div>
+      </div>
+    </div>
+    <div class="faq-col">
+      <div class="faq-item reveal reveal-d1">
+        <h3><button class="faq-question" type="button" id="faq-what-is-trustee-h" aria-expanded="false" aria-controls="faq-what-is-trustee" onclick="toggleFaq(this)">What is a trustee?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-what-is-trustee" role="region" aria-labelledby="faq-what-is-trustee-h"><p>A trustee is an individual or entity appointed to manage and administer the assets held in a trust on behalf of the beneficiaries. In California, a trustee's responsibilities include managing investments, distributing assets, and maintaining accurate records, and they must act with loyalty, care, and impartiality to fulfill their legal obligations.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-d2">
+        <h3><button class="faq-question" type="button" id="faq-trustee-fiduciary-duties-h" aria-expanded="false" aria-controls="faq-trustee-fiduciary-duties" onclick="toggleFaq(this)">What are a trustee's fiduciary duties?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-answer" id="faq-trustee-fiduciary-duties" role="region" aria-labelledby="faq-trustee-fiduciary-duties-h"><p>A trustee's fiduciary duties include acting in the best interests of the trust beneficiaries with loyalty, care, and impartiality, managing trust assets prudently, avoiding conflicts of interest, and keeping accurate records with regular reports to beneficiaries. In California, these duties also require following the terms of the trust document and complying with relevant laws; breach can lead to legal consequences and financial liability.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Still Have Questions?<em>Let's Talk.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+</section>
+
+<div class="maps-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1"
+    width="100%" height="300" style="border:0 !important; display:block !important;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group, 20665 4th St #202, Saratoga, CA 95070">
+  </iframe>
+</div>
+</div>
+
+<script>
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.currentScript.closest(".emp-hero");var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
+
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+
+(function(){
+  var hero = document.querySelector('.emp-hero');
+  var nav = document.querySelector('.nav');
+  if (!hero || !nav) return;
+  function ajustar(){
+    var altoNav = nav.getBoundingClientRect().height;
+    hero.style.minHeight = (window.innerHeight - altoNav) + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
+})();
+
+// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
+// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
+// fijo medimos cuanto hay por encima y lo descontamos.
+(function(){
+  var hero = document.querySelector('.mlgP .emp-hero');
+  if (!hero) return;
+  function fit(){
+    hero.style.minHeight = '';
+    var arriba = hero.getBoundingClientRect().top + window.scrollY;
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+})();
+
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+setTimeout(function(){
+  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
+}, 1200);
+</script>
+
+<!-- Datos estructurados de esta pagina. Ya van incluidos aca:
+     no hace falta un widget aparte. Si la pagina ya tiene uno con
+     este mismo JSON, borralo, o Google va a leer el FAQ dos veces. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mclellanlawgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://www.mclellanlawgroup.com/faqs" }
+  ]
+}
+</script>
