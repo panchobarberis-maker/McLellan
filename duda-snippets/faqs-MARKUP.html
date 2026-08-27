@@ -460,7 +460,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
