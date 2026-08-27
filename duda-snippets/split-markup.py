@@ -7,9 +7,16 @@ en piezas que entren en el limite de ~50.000 caracteres de un widget de Duda.
 A diferencia de split-widget.py (pensado para la salida cruda de
 build-widget.py, con el CSS adentro), estos MARKUP.html ya tienen el CSS
 compartido afuera (practice-CSS-COMUN.html / SITE-HEAD.html), asi que solo
-hay que partir el <div class="mlgP">...</div> por secciones de primer nivel
-y dejar el <script> final (el que revela el contenido al scrollear) y el
-schema en la ULTIMA pieza, para que exista una sola vez en la pagina.
+hay que partir el <div class="mlgP">...</div> por secciones de primer nivel.
+
+El <script> (el que revela el contenido al scrollear) va REPETIDO en
+TODAS las piezas, no solo en la ultima: si Duda mete cada widget de
+codigo en su propio contexto aislado, un script que solo vive en la
+ultima pieza nunca ve los elementos .reveal de las piezas anteriores, y
+esas quedan invisibles para siempre. Repetirlo es inofensivo si Duda
+NO aisla los widgets (el observer simplemente vuelve a mirar elementos
+que ya estan revelados). El schema (FAQPage JSON-LD) si va una sola
+vez, en la ultima pieza, para no duplicarlo.
 """
 import re, sys, os
 
@@ -47,7 +54,9 @@ if cur:
     parts.append(cur)
 
 for i, p in enumerate(parts, 1):
-    extra = f'\n\n<script>{script}</script>\n{tail}' if i == len(parts) else ''
+    extra = f'\n\n<script>{script}</script>\n'
+    if i == len(parts):
+        extra += tail
     out = f'<div class="{scope}">\n{p.strip()}\n</div>{extra}'
     f = f'{base}-PARTE{i}.html'
     open(f, 'w', encoding='utf-8').write(out)

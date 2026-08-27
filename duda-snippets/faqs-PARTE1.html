@@ -334,3 +334,101 @@
   </div>
 </section>
 </div>
+
+<script>
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.currentScript.closest(".emp-hero");var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
+
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+
+(function(){
+  var hero = document.querySelector('.emp-hero');
+  var nav = document.querySelector('.nav');
+  if (!hero || !nav) return;
+  function ajustar(){
+    var altoNav = nav.getBoundingClientRect().height;
+    hero.style.minHeight = (window.innerHeight - altoNav) + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
+})();
+
+// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
+// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
+// fijo medimos cuanto hay por encima y lo descontamos.
+(function(){
+  var hero = document.querySelector('.mlgP .emp-hero');
+  if (!hero) return;
+  function fit(){
+    hero.style.minHeight = '';
+    var arriba = hero.getBoundingClientRect().top + window.scrollY;
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+})();
+
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+setTimeout(function(){
+  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
+}, 1200);
+</script>
