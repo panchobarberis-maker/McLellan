@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/real-estate-litigation">Real Estate Litigation</a><span>/</span>Purchase & Sale Disputes</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Purchase & Sale Dispute?</div>
@@ -30,12 +31,12 @@
         <p class="mlg-vecinas">Failed transactions often reveal other problems, from <a class="mlg-link-tema" href="/realtor-fiduciary-duty">realtor fiduciary duty</a> breaches during the sale to <a class="mlg-link-tema" href="/ccr-violations">CC&amp;R violations</a> discovered after closing.</p>
       </div>
       <div class="content-card reveal reveal-d3">
-        <p class="content-lead">California law requires sellers of residential property to disclose known material defects.</p>
+        <p class="content-lead">California law imposes disclosure obligations on sellers in many residential real estate transactions, including disclosure of known material facts affecting value or desirability.</p>
         <p>Failure to disclose can support claims for fraud, negligent misrepresentation, or breach of contract, in addition to remedies under the statutory disclosure requirements. When a party breaches a purchase agreement outright, such as refusing to close, the non-breaching party may seek:</p>
         <ul class="content-list">
           <li><span>Damages.</span></li>
           <li><span>Retention or return of the deposit.</span></li>
-          <li><span>Specific performance, compelling the sale to proceed, because real property is considered legally unique.</span></li>
+          <li><span>Specific performance, compelling the sale to proceed, because real property is treated as unique, provided the requirements for equitable relief are satisfied.</span></li>
         </ul>
       </div>
       <div class="content-card reveal reveal-d4">
@@ -112,7 +113,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-who-keeps-the-earnest-money-deposit-if" role="region" aria-labelledby="faq-who-keeps-the-earnest-money-deposit-if-h">
-            <p>It depends on the purchase agreement's terms and which party breached. If a buyer backs out without a valid contingency, the seller may be entitled to retain the deposit as liquidated damages. If the seller breaches or a valid contingency excuses the buyer's performance, the buyer is typically entitled to a full refund.</p>
+            <p>It depends on the purchase agreement's terms and which party breached. If a buyer defaults after contingencies have been removed, the seller may be entitled to retain some or all of the deposit where the purchase agreement contains an enforceable liquidated-damages provision or otherwise permits that remedy. If the seller breaches or a valid contingency excuses the buyer's performance, the buyer is typically entitled to a full refund.</p>
           </div>
         </div>
       </div>
@@ -208,27 +209,27 @@
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
         <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
-        <span class="author">Benjamin · Employment Law</span>
+        <span class="author">Benjamin · Real Estate Litigation</span>
       </div>
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
         <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
-        <span class="author">Pete · Employment Law</span>
+        <span class="author">Pete · Real Estate Litigation</span>
       </div>
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
         <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
-        <span class="author">Anonymous · Employment Law</span>
+        <span class="author">Anonymous · Real Estate Litigation</span>
       </div>
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
         <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
-        <span class="author">Wendy · Employment Law</span>
+        <span class="author">Wendy · Real Estate Litigation</span>
       </div>
       <div class="emp-test-card">
         <div class="stars">★★★★★</div>
         <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
-        <span class="author">Jordan · Employment Law</span>
+        <span class="author">Jordan · Real Estate Litigation</span>
       </div>
     </div>
   </div>
@@ -360,7 +361,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -368,11 +373,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -412,7 +423,7 @@ setTimeout(function(){
       "name": "Who keeps the earnest money deposit if a real estate deal falls through?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on the purchase agreement's terms and which party breached. If a buyer backs out without a valid contingency, the seller may be entitled to retain the deposit as liquidated damages. If the seller breaches or a valid contingency excuses the buyer's performance, the buyer is typically entitled to a full refund."
+        "text": "It depends on the purchase agreement's terms and which party breached. If a buyer defaults after contingencies have been removed, the seller may be entitled to retain some or all of the deposit where the purchase agreement contains an enforceable liquidated-damages provision or otherwise permits that remedy. If the seller breaches or a valid contingency excuses the buyer's performance, the buyer is typically entitled to a full refund."
       }
     },
     {
