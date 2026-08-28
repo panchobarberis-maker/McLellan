@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/contract-disputes">Contract Disputes</a><span>/</span>Misrepresentation Claims</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Misrepresentation?</div>
@@ -55,7 +56,7 @@
     <h2 class="reveal reveal-d1">What Our Misrepresentation Attorneys Do</h2>
     <div class="help-columns">
       <div class="help-item reveal reveal-d1"><span>Investigate pre-contract representations, communications, and disclosures to identify actionable misrepresentation.</span></div>
-      <div class="help-item reveal reveal-d2"><span>Pursue fraudulent, negligent, or innocent misrepresentation claims to recover damages or rescind an agreement.</span></div>
+      <div class="help-item reveal reveal-d2"><span>Pursue damages for actionable fraudulent or negligent misrepresentation, or seek rescission where a material misrepresentation provides grounds to unwind the agreement.</span></div>
       <div class="help-item reveal reveal-d3"><span>Pursue punitive damages where fraud is supported by clear and convincing evidence.</span></div>
       <div class="help-item reveal reveal-d4"><span>Defend businesses and individuals against unfounded fraud or misrepresentation allegations.</span></div>
       <div class="help-item reveal reveal-d5"><span>Analyze the interplay between fraud claims and contract remedies, including rescission and reformation.</span></div>
@@ -90,7 +91,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-i-get-out-of-a-contract" role="region" aria-labelledby="faq-can-i-get-out-of-a-contract-h">
-            <p>Potentially, yes. If a material misrepresentation induced you to enter the agreement, California law allows rescission, undoing the contract and restoring both parties to their pre-contract positions, in addition to, or instead of, a claim for damages, depending on the circumstances and your goals.</p>
+            <p>Potentially, yes. If a material misrepresentation induced you to enter the agreement, California law allows rescission, undoing the contract and restoring both parties to their pre-contract positions, subject to California's procedural and restoration requirements, in addition to, or instead of, a claim for damages, depending on the circumstances and your goals.</p>
           </div>
         </div>
 
@@ -349,7 +350,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -357,11 +362,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -385,7 +396,7 @@ setTimeout(function(){
       "name": "Can I get out of a contract if I was misled into signing it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Potentially, yes. If a material misrepresentation induced you to enter the agreement, California law allows rescission, undoing the contract and restoring both parties to their pre-contract positions, in addition to, or instead of, a claim for damages, depending on the circumstances and your goals."
+        "text": "Potentially, yes. If a material misrepresentation induced you to enter the agreement, California law allows rescission, undoing the contract and restoring both parties to their pre-contract positions, subject to California's procedural and restoration requirements, in addition to, or instead of, a claim for damages, depending on the circumstances and your goals."
       }
     },
     {

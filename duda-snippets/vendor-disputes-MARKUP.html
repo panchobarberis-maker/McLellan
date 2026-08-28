@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/contract-disputes">Contract Disputes</a><span>/</span>Vendor Conflicts</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Vendor Conflict?</div>
@@ -100,7 +101,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-is-a-service-level-agreement-sla" role="region" aria-labelledby="faq-what-is-a-service-level-agreement-sla-h">
-            <p>An SLA sets measurable performance standards, such as uptime, response time, or delivery windows, that a vendor commits to meet. SLAs are enforceable contract terms, and repeated or serious violations can support a breach of contract claim, service credits, or termination rights, depending on how the agreement is drafted.</p>
+            <p>An SLA sets measurable performance standards, such as uptime, response time, or delivery windows, that a vendor commits to meet. Properly incorporated SLA provisions can constitute enforceable contract terms, and repeated or serious violations can support a breach of contract claim, service credits, or termination rights, depending on how the agreement is drafted.</p>
           </div>
         </div>
 
@@ -347,7 +348,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -355,11 +360,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -391,7 +402,7 @@ setTimeout(function(){
       "name": "What is a service-level agreement (SLA), and can I enforce it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An SLA sets measurable performance standards, such as uptime, response time, or delivery windows, that a vendor commits to meet. SLAs are enforceable contract terms, and repeated or serious violations can support a breach of contract claim, service credits, or termination rights, depending on how the agreement is drafted."
+        "text": "An SLA sets measurable performance standards, such as uptime, response time, or delivery windows, that a vendor commits to meet. Properly incorporated SLA provisions can constitute enforceable contract terms, and repeated or serious violations can support a breach of contract claim, service credits, or termination rights, depending on how the agreement is drafted."
       }
     },
     {

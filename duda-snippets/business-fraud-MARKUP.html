@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/civil-litigation">Civil Litigation</a><span>/</span>Business Fraud</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Business Fraud?</div>
@@ -100,7 +101,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-damages-can-i-recover-in-a" role="region" aria-labelledby="faq-what-damages-can-i-recover-in-a-h">
-            <p>California allows recovery of actual damages, the out-of-pocket losses or benefit-of-the-bargain damages, whichever applies, and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer.</p>
+            <p>Recoverable fraud damages depend on the nature of the transaction and may include out-of-pocket losses, consequential damages, and in appropriate cases benefit-of-the-bargain damages, and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer.</p>
           </div>
         </div>
 
@@ -112,7 +113,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-i-undo-a-business-deal-that" role="region" aria-labelledby="faq-can-i-undo-a-business-deal-that-h">
-            <p>Yes. In addition to damages, California law allows a defrauded party to seek rescission, unwinding the transaction and restoring both parties to their pre-contract positions, where the fraud was material to the decision to enter the deal.</p>
+            <p>Yes. In addition to damages, California law allows a defrauded party to seek rescission, unwinding the transaction and restoring both parties to their pre-contract positions, subject to California's procedural and restoration requirements, where the fraud was material to the decision to enter the deal.</p>
           </div>
         </div>
       </div>
@@ -360,7 +361,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -368,11 +373,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -404,7 +415,7 @@ setTimeout(function(){
       "name": "What damages can I recover in a business fraud case?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "California allows recovery of actual damages, the out-of-pocket losses or benefit-of-the-bargain damages, whichever applies, and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer."
+        "text": "Recoverable fraud damages depend on the nature of the transaction and may include out-of-pocket losses, consequential damages, and in appropriate cases benefit-of-the-bargain damages, and where the fraud involved oppression, malice, or fraud as legally defined, punitive damages intended to punish the wrongdoer."
       }
     },
     {
@@ -412,7 +423,7 @@ setTimeout(function(){
       "name": "Can I undo a business deal that was based on fraud?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. In addition to damages, California law allows a defrauded party to seek rescission, unwinding the transaction and restoring both parties to their pre-contract positions, where the fraud was material to the decision to enter the deal."
+        "text": "Yes. In addition to damages, California law allows a defrauded party to seek rescission, unwinding the transaction and restoring both parties to their pre-contract positions, subject to California's procedural and restoration requirements, where the fraud was material to the decision to enter the deal."
       }
     },
     {

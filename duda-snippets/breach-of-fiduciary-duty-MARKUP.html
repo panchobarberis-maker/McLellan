@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/civil-litigation">Civil Litigation</a><span>/</span>Breach of Fiduciary Duty</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is Breach of Fiduciary Duty?</div>
@@ -78,7 +79,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-who-owes-a-fiduciary-duty-in-a" role="region" aria-labelledby="faq-who-owes-a-fiduciary-duty-in-a-h">
-            <p>Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders.</p>
+            <p>Partners, managers and certain members of LLCs, corporate officers and directors, and certain agents may owe fiduciary duties depending on the entity structure, governing documents, and their role in the business. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders.</p>
           </div>
         </div>
 
@@ -128,7 +129,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-is-the-deadline-to-file-a" role="region" aria-labelledby="faq-what-is-the-deadline-to-file-a-h">
-            <p>The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered.</p>
+            <p>Breach-of-fiduciary-duty claims are often subject to a four-year limitations period in California, but a different period may apply depending on the nature of the alleged misconduct, including claims sounding in fraud. Because fiduciary breaches are often concealed, the discovery rule may also affect when the period begins.</p>
           </div>
         </div>
 
@@ -362,7 +363,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -370,11 +375,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -390,7 +401,7 @@ setTimeout(function(){
       "name": "Who owes a fiduciary duty in a California business?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Partners in a partnership, managing members of an LLC, and corporate officers and directors generally owe fiduciary duties to the business and to each other. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders."
+        "text": "Partners, managers and certain members of LLCs, corporate officers and directors, and certain agents may owe fiduciary duties depending on the entity structure, governing documents, and their role in the business. Majority shareholders in closely held corporations can also owe fiduciary duties to minority shareholders."
       }
     },
     {
@@ -422,7 +433,7 @@ setTimeout(function(){
       "name": "What is the deadline to file a breach of fiduciary duty claim?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The statute of limitations is generally four years for breaches involving a written fiduciary agreement, though it can be shorter depending on how the claim is framed. Because fiduciary breaches are often concealed, the discovery rule can extend the deadline to when the breach was or reasonably should have been discovered."
+        "text": "Breach-of-fiduciary-duty claims are often subject to a four-year limitations period in California, but a different period may apply depending on the nature of the alleged misconduct, including claims sounding in fraud. Because fiduciary breaches are often concealed, the discovery rule may also affect when the period begins."
       }
     },
     {

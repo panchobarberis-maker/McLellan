@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/contract-disputes">Contract Disputes</a><span>/</span>Non-Payment Disputes</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Non-Payment Dispute?</div>
@@ -26,7 +27,7 @@
     <div class="content-cards">
       <div class="content-card reveal reveal-d2">
         <p class="content-lead">Non-payment disputes happen when a party fails to pay money it owes under a contract.</p>
-        <p>That can involve goods delivered, services rendered, a loan, or a commercial invoice. Non-payment is one of the most common forms of breach of contract, and California law generally entitles the unpaid party to recover the amount owed, plus any consequential losses caused by the delay or refusal to pay, and interest where the contract or statute provides for it.</p>
+        <p>That can involve goods delivered, services rendered, a loan, or a commercial invoice. Non-payment is one of the most common forms of breach of contract, and the unpaid party may be entitled to recover the amount due and, depending on the contract and circumstances, additional damages that were foreseeable and caused by the breach, along with prejudgment interest where authorized.</p>
         <p class="mlg-vecinas">Unpaid invoices often expose deeper problems, including <a class="mlg-link-tema" href="/misrepresentation-claims">misrepresentation claims</a> about what was promised and <a class="mlg-link-tema" href="/vendor-disputes">vendor conflicts</a> over the quality of what was delivered.</p>
       </div>
       <div class="content-card reveal reveal-d3">
@@ -103,7 +104,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-i-charge-interest-on-unpaid-amounts" role="region" aria-labelledby="faq-can-i-charge-interest-on-unpaid-amounts-h">
-            <p>Yes, if the contract specifies an interest rate for late payment. Even without a contractual interest provision, California law allows prejudgment interest on a breach of contract claim, generally at 10% per year under Civil Code Section 3289(b), on damages that are certain or capable of being made certain by calculation, such as a fixed unpaid invoice amount.</p>
+            <p>Yes, if the contract specifies an interest rate for late payment. California law may also permit prejudgment interest on unpaid contractual amounts even without a contractual rate: for contracts that do not specify a lawful interest rate, Civil Code §3289(b) generally provides a 10% annual rate after breach, while Civil Code §3287 governs when prejudgment interest is recoverable on damages that are certain or capable of being made certain by calculation, such as a fixed unpaid invoice amount.</p>
           </div>
         </div>
 
@@ -362,7 +363,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -370,11 +375,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -406,7 +417,7 @@ setTimeout(function(){
       "name": "Can I charge interest on unpaid amounts?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, if the contract specifies an interest rate for late payment. Even without a contractual interest provision, California law allows prejudgment interest on a breach of contract claim, generally at 10% per year under Civil Code Section 3289(b), on damages that are certain or capable of being made certain by calculation, such as a fixed unpaid invoice amount."
+        "text": "Yes, if the contract specifies an interest rate for late payment. California law may also permit prejudgment interest on unpaid contractual amounts even without a contractual rate: for contracts that do not specify a lawful interest rate, Civil Code §3289(b) generally provides a 10% annual rate after breach, while Civil Code §3287 governs when prejudgment interest is recoverable on damages that are certain or capable of being made certain by calculation, such as a fixed unpaid invoice amount."
       }
     },
     {

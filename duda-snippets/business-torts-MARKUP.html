@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/civil-litigation">Civil Litigation</a><span>/</span>Business Torts</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Are Business Torts?</div>
@@ -113,7 +114,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-a-former-employee-took-my-client-list" role="region" aria-labelledby="faq-a-former-employee-took-my-client-list-h">
-            <p>If the client list qualifies as a trade secret and reasonable steps were taken to protect it, you can pursue a claim under the California Uniform Trade Secrets Act, seeking an injunction to stop its use, damages for resulting losses, and in cases of willful misappropriation, punitive damages and attorney's fees.</p>
+            <p>If the client list qualifies as a trade secret and reasonable steps were taken to protect it, you can pursue a claim under the California Uniform Trade Secrets Act, seeking an injunction to stop its use, damages for resulting losses, and if the misappropriation is willful and malicious, exemplary damages and an award of attorney's fees under the Act.</p>
           </div>
         </div>
       </div>
@@ -151,7 +152,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-damages-can-i-recover-in-a" role="region" aria-labelledby="faq-what-damages-can-i-recover-in-a-h">
-            <p>Damages typically include lost profits, harm to business reputation and goodwill, and disgorgement of any profits the wrongdoer gained from their misconduct. Cases involving malice or fraud may also support punitive damages.</p>
+            <p>Available remedies depend on the specific claim and may include lost profits, compensation for harm to goodwill or reputation, restitution or other equitable relief where authorized, and injunctive relief. Certain intentional torts may also support punitive damages.</p>
           </div>
         </div>
 
@@ -361,7 +362,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -369,11 +374,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -413,7 +424,7 @@ setTimeout(function(){
       "name": "A former employee took my client list, what can I do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If the client list qualifies as a trade secret and reasonable steps were taken to protect it, you can pursue a claim under the California Uniform Trade Secrets Act, seeking an injunction to stop its use, damages for resulting losses, and in cases of willful misappropriation, punitive damages and attorney's fees."
+        "text": "If the client list qualifies as a trade secret and reasonable steps were taken to protect it, you can pursue a claim under the California Uniform Trade Secrets Act, seeking an injunction to stop its use, damages for resulting losses, and if the misappropriation is willful and malicious, exemplary damages and an award of attorney's fees under the Act."
       }
     },
     {
@@ -437,7 +448,7 @@ setTimeout(function(){
       "name": "What damages can I recover in a business tort case?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Damages typically include lost profits, harm to business reputation and goodwill, and disgorgement of any profits the wrongdoer gained from their misconduct. Cases involving malice or fraud may also support punitive damages."
+        "text": "Available remedies depend on the specific claim and may include lost profits, compensation for harm to goodwill or reputation, restitution or other equitable relief where authorized, and injunctive relief. Certain intentional torts may also support punitive damages."
       }
     },
     {

@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/real-estate-litigation">Real Estate Litigation</a><span>/</span>Co-Ownership Disputes</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is a Co-Ownership Dispute?</div>
@@ -30,8 +31,8 @@
         <p class="mlg-vecinas">Co-owners in conflict often raise related issues as well, from <a class="mlg-link-tema" href="/nuisance-claims">nuisance claims</a> over how the property is used to <a class="mlg-link-tema" href="/real-estate-purchase-sale-disputes">purchase and sale disputes</a> when one of them wants out.</p>
       </div>
       <div class="content-card reveal reveal-d3">
-        <p class="content-lead">California law lets any co-owner force a sale or division of jointly held property through a partition action.</p>
-        <p>This right generally applies regardless of what the other owners want, unless a valid agreement waives it. Courts can order the property physically divided or, more commonly for a single residence, sold with proceeds divided according to ownership interests, contributions, and any credits owed for expenses like mortgage payments, property taxes, or improvements.</p>
+        <p class="content-lead">A tenant in common or joint tenant generally has a right to seek partition of jointly owned property, subject to limited exceptions such as a valid waiver.</p>
+        <p>Courts can order the property physically divided or, more commonly for a single residence, sold with proceeds divided according to ownership interests, contributions, and any credits owed for expenses like mortgage payments, property taxes, or improvements, subject to equitable adjustments and the circumstances of the case.</p>
       </div>
       <div class="content-card reveal reveal-d4">
         <p class="content-lead">Partition actions can force the sale of a property even when one co-owner wants to keep it.</p>
@@ -77,7 +78,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-one-co-owner-force-the-sale" role="region" aria-labelledby="faq-can-one-co-owner-force-the-sale-h">
-            <p>In most cases, yes. Any co-owner holding title as a tenant in common or joint tenant has an absolute right to partition, meaning they can ask a court to divide the property or order it sold, even over the objections of the other owners, unless they have signed a valid agreement waiving that right.</p>
+            <p>In most cases, yes. A tenant in common or joint tenant generally has a right to partition, meaning they can ask a court to divide the property or order it sold, even over the objections of the other owners, subject to limited exceptions such as a valid agreement waiving that right.</p>
           </div>
         </div>
 
@@ -101,7 +102,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-how-are-expenses-divided-between-co-owners" role="region" aria-labelledby="faq-how-are-expenses-divided-between-co-owners-h">
-            <p>Courts generally allocate the proceeds of a sale according to each owner's percentage interest, then adjust for contributions, crediting an owner who paid more than their share of the mortgage, taxes, insurance, or necessary repairs, and offsetting amounts owed for exclusive use of the property or unpaid rent.</p>
+            <p>Courts generally allocate the proceeds of a sale according to each owner's percentage interest, then adjust for contributions, crediting an owner who paid more than their share of the mortgage, taxes, insurance, or necessary repairs, and offsetting amounts owed for exclusive use of the property or unpaid rent, subject to equitable adjustments and the circumstances of the case.</p>
           </div>
         </div>
 
@@ -349,7 +350,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -357,11 +362,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -377,7 +388,7 @@ setTimeout(function(){
       "name": "Can one co-owner force the sale of jointly owned property in California?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In most cases, yes. Any co-owner holding title as a tenant in common or joint tenant has an absolute right to partition, meaning they can ask a court to divide the property or order it sold, even over the objections of the other owners, unless they have signed a valid agreement waiving that right."
+        "text": "In most cases, yes. A tenant in common or joint tenant generally has a right to partition, meaning they can ask a court to divide the property or order it sold, even over the objections of the other owners, subject to limited exceptions such as a valid agreement waiving that right."
       }
     },
     {
@@ -393,7 +404,7 @@ setTimeout(function(){
       "name": "How are expenses divided between co-owners in a dispute?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Courts generally allocate the proceeds of a sale according to each owner's percentage interest, then adjust for contributions, crediting an owner who paid more than their share of the mortgage, taxes, insurance, or necessary repairs, and offsetting amounts owed for exclusive use of the property or unpaid rent."
+        "text": "Courts generally allocate the proceeds of a sale according to each owner's percentage interest, then adjust for contributions, crediting an owner who paid more than their share of the mortgage, taxes, insurance, or necessary repairs, and offsetting amounts owed for exclusive use of the property or unpaid rent, subject to equitable adjustments and the circumstances of the case."
       }
     },
     {

@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/civil-litigation">Civil Litigation</a><span>/</span>Shareholder Disputes</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Are Shareholder Disputes?</div>
@@ -78,7 +79,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-rights-does-a-minority-shareholder-have" role="region" aria-labelledby="faq-what-rights-does-a-minority-shareholder-have-h">
-            <p>Minority shareholders in a closely held corporation are owed a fiduciary duty by the majority, and cannot be oppressed, frozen out of profits, or excluded from decision-making in bad faith. Minority shareholders also generally have inspection rights to review corporate books and records.</p>
+            <p>Minority shareholders in a closely held corporation are owed a fiduciary duty by the majority. Majority shareholders and those in control may face fiduciary-duty claims when they use their control to unfairly prejudice minority shareholders, including through improper freeze-out or self-dealing conduct. Minority shareholders also generally have inspection rights to review corporate books and records.</p>
           </div>
         </div>
 
@@ -102,7 +103,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-is-shareholder-or-member-oppression" role="region" aria-labelledby="faq-what-is-shareholder-or-member-oppression-h">
-            <p>Oppression occurs when those in control of a business use their power to unfairly disadvantage a minority owner, for example, refusing to pay distributions while paying themselves salaries, excluding a minority owner from records or meetings, or diluting their ownership improperly. California courts can order remedies including buyout at fair value.</p>
+            <p>Oppression occurs when those in control of a business use their power to unfairly disadvantage a minority owner, for example, refusing to pay distributions while paying themselves salaries, excluding a minority owner from records or meetings, or diluting their ownership improperly. Depending on the claim and procedural vehicle, available remedies may include dissolution proceedings, derivative relief, damages, injunctive relief, or statutory buyout procedures.</p>
           </div>
         </div>
 
@@ -362,7 +363,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -370,11 +375,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -390,7 +401,7 @@ setTimeout(function(){
       "name": "What rights does a minority shareholder have in California?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Minority shareholders in a closely held corporation are owed a fiduciary duty by the majority, and cannot be oppressed, frozen out of profits, or excluded from decision-making in bad faith. Minority shareholders also generally have inspection rights to review corporate books and records."
+        "text": "Minority shareholders in a closely held corporation are owed a fiduciary duty by the majority. Majority shareholders and those in control may face fiduciary-duty claims when they use their control to unfairly prejudice minority shareholders, including through improper freeze-out or self-dealing conduct. Minority shareholders also generally have inspection rights to review corporate books and records."
       }
     },
     {
@@ -406,7 +417,7 @@ setTimeout(function(){
       "name": "What is shareholder or member oppression?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oppression occurs when those in control of a business use their power to unfairly disadvantage a minority owner, for example, refusing to pay distributions while paying themselves salaries, excluding a minority owner from records or meetings, or diluting their ownership improperly. California courts can order remedies including buyout at fair value."
+        "text": "Oppression occurs when those in control of a business use their power to unfairly disadvantage a minority owner, for example, refusing to pay distributions while paying themselves salaries, excluding a minority owner from records or meetings, or diluting their ownership improperly. Depending on the claim and procedural vehicle, available remedies may include dissolution proceedings, derivative relief, damages, injunctive relief, or statutory buyout procedures."
       }
     },
     {

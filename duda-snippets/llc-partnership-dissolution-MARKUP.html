@@ -19,6 +19,7 @@
 </section>
 
 <!-- CONTENT -->
+<div class="mlg-miga"><div class="mlg-miga-inner"><a href="/">Home</a><span>/</span><a href="/civil-litigation">Civil Litigation</a><span>/</span>LLC & Partnership Dissolution</div></div>
 <section class="content-section" id="contenido">
   <div class="content-inner">
     <div class="section-eyebrow reveal">What Is LLC & Partnership Dissolution?</div>
@@ -35,13 +36,13 @@
       </div>
       <div class="content-card reveal reveal-d4">
         <p class="content-lead">California law sets out specific procedures for winding up a business, and deviating from them carries real risk.</p>
-        <p>The Corporations Code and Revised Uniform Limited Liability Company Act require:</p>
+        <p>California law imposes entity-specific procedures for winding up LLCs and partnerships, including:</p>
         <ul class="content-list">
           <li><span>Notice to creditors.</span></li>
           <li><span>Asset liquidation.</span></li>
           <li><span>Priority of distributions.</span></li>
         </ul>
-        <p>Deviating from these rules can expose owners to personal liability or delay the process significantly.</p>
+        <p>Improperly handling creditor claims or distributing assets before liabilities are satisfied or adequately provided for can create additional exposure and may delay the process significantly.</p>
       </div>
     </div>
   </div>
@@ -101,7 +102,7 @@
             </button>
           </h3>
           <div class="faq-answer" id="faq-what-happens-to-business-debts-during-dissolution" role="region" aria-labelledby="faq-what-happens-to-business-debts-during-dissolution-h">
-            <p>Outstanding debts must generally be paid, or provided for, before any assets are distributed to owners. Creditors are typically notified and given an opportunity to submit claims. Failing to properly notify creditors can expose owners to personal liability for the business's debts.</p>
+            <p>Outstanding debts must generally be paid, or provided for, before any assets are distributed to owners. Creditors are typically notified and given an opportunity to submit claims. Improperly handling creditor claims or distributing assets before liabilities are satisfied or adequately provided for can create additional exposure and may subject distributions or responsible parties to claims.</p>
           </div>
         </div>
 
@@ -361,7 +362,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -369,11 +374,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -405,7 +416,7 @@ setTimeout(function(){
       "name": "What happens to business debts during dissolution?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Outstanding debts must generally be paid, or provided for, before any assets are distributed to owners. Creditors are typically notified and given an opportunity to submit claims. Failing to properly notify creditors can expose owners to personal liability for the business's debts."
+        "text": "Outstanding debts must generally be paid, or provided for, before any assets are distributed to owners. Creditors are typically notified and given an opportunity to submit claims. Improperly handling creditor claims or distributing assets before liabilities are satisfied or adequately provided for can create additional exposure and may subject distributions or responsible parties to claims."
       }
     },
     {
