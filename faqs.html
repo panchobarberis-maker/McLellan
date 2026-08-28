@@ -158,6 +158,16 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(max-width:400px) { .hero-pill { font-size:10px !important; letter-spacing:1px; padding:8px 14px; } }
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
 
+/* CATEGORY INDEX */
+.faq-nav { background:#fbf6ef; padding:28px 20px; border-bottom:1px solid #e8e3da; }
+.faq-nav-grid { max-width:920px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.faq-nav-grid a {
+  display:inline-block; padding:9px 18px; border:1.5px solid #c9a96e; border-radius:24px;
+  color:#1e3a3e; text-decoration:none; font-size:13px; font-weight:700; letter-spacing:0.2px;
+  transition:background 0.15s, color 0.15s;
+}
+.faq-nav-grid a:hover { background:#1e3a3e; color:#fff; border-color:#1e3a3e; }
+
 /* FAQ SECTION */
 .faq-section { padding:60px 24px; scroll-margin-top:70px; background:#1e3a3e; }
 @media(min-width:769px) { .faq-section { padding:84px 28px; } }
@@ -335,6 +345,24 @@ a:focus-visible, button:focus-visible { outline:3px solid #c9a96e; outline-offse
   <p class="emp-hero-sub">Answers to common legal questions specific to California.</p>
   <a href="https://mclellanlawgroup.lawbrokr.com" class="btn-gold">Request a Free Consultation →</a>
 </section>
+
+<!-- CATEGORY INDEX -->
+<div class="faq-nav" role="navigation" aria-label="FAQ categories">
+  <div class="faq-nav-grid">
+    <a href="#faq-appeals">Appeals</a>
+    <a href="#faq-arbitration">Arbitration</a>
+    <a href="#faq-asset-protection">Asset Protection</a>
+    <a href="#faq-business-litigation">Business Litigation</a>
+    <a href="#faq-commercial-leasing">Commercial Leasing</a>
+    <a href="#faq-contract-disputes">Contract Disputes</a>
+    <a href="#faq-employment-law">Employment Law</a>
+    <a href="#faq-financial-elder-abuse">Financial Elder Abuse</a>
+    <a href="#faq-mediation">Mediation</a>
+    <a href="#faq-real-estate">Real Estate</a>
+    <a href="#faq-trials">Trials</a>
+    <a href="#faq-trusts-estates">Trusts &amp; Estates</a>
+  </div>
+</div>
 
 <!-- APPEALS -->
 <section class="faq-section" id="faq-appeals">
