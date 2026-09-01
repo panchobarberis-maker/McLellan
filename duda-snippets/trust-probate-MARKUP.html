@@ -1,7 +1,444 @@
-<style>html, body { overflow-x:hidden; }</style>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+html, body { overflow-x:hidden; }
+#mlgE-trust-probate { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
 
 
-<div class="mlgP">
+#mlgE-trust-probate *, #mlgE-trust-probate *::before, #mlgE-trust-probate *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlgE-trust-probate { scroll-behavior:smooth; }
+#mlgE-trust-probate { font-family:'Barlow',sans-serif !important; background:#fff !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased; font-weight:500 !important; }
+#mlgE-trust-probate .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlgE-trust-probate .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlgE-trust-probate .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlgE-trust-probate .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlgE-trust-probate .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlgE-trust-probate .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlgE-trust-probate .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+#mlgE-trust-probate .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlgE-trust-probate .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlgE-trust-probate .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlgE-trust-probate .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlgE-trust-probate .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlgE-trust-probate .emp-hero {
+  position:relative !important; overflow:hidden;
+  min-height:560px !important; display:flex !important; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center !important; padding:0 28px 52px !important;
+  background:#1e3a3e !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .emp-hero { min-height:680px !important; padding:0 80px 80px !important; }
+}
+#mlgE-trust-probate .emp-hero-img {
+  position:absolute !important; inset:0; width:100% !important; height:100% !important;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
+#mlgE-trust-probate .emp-hero-overlay {
+  position:absolute !important; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
+}
+#mlgE-trust-probate .emp-hero-label {
+  position:relative !important; z-index:2;
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  font-size:10px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#c9a96e !important; font-weight:700 !important; margin-bottom:20px !important;
+}
+#mlgE-trust-probate .emp-hero-label::before { content:''; width:24px !important; height:1px !important; background:#c9a96e !important; }
+#mlgE-trust-probate .emp-hero h1 {
+  position:relative !important; z-index:2;
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(36px, 7vw, 72px) !important; font-weight:900 !important; line-height:0.95 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
+  margin:0 auto 18px !important; max-width:1000px !important;
+}
+#mlgE-trust-probate .emp-hero h1 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.75em !important; letter-spacing:0 !important;
+}
+#mlgE-trust-probate .emp-hero-sub {
+  position:relative !important; z-index:2;
+  font-size:19px !important; color:rgba(255,255,255,0.8) !important; max-width:520px !important;
+  line-height:1.7 !important; margin:0 auto 32px !important;
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+}
+#mlgE-trust-probate .emp-hero-ctas {
+  position:relative !important; z-index:2;
+  display:flex !important; gap:12px !important; flex-wrap:wrap;
+}
+#mlgE-trust-probate .btn-gold {
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important; font-weight:700 !important; font-size:14px !important;
+  padding:13px 28px !important; border-radius:28px !important; text-decoration:none !important;
+}
+#mlgE-trust-probate .btn-ghost {
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  background:transparent !important; color:#fff !important; font-weight:500 !important; font-size:14px !important;
+  padding:12px 24px !important; border-radius:28px !important; text-decoration:none !important;
+  border:1.5px solid rgba(255,255,255,0.45) !important;
+}
+#mlgE-trust-probate .employers-section {
+  background:#1e3a3e !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .employers-section { padding:80px 80px !important; }
+}
+#mlgE-trust-probate .section-eyebrow {
+  display:inline-flex !important; align-items:center; gap:10px !important;
+  font-size:10px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#c9a96e !important; font-weight:700 !important; margin-bottom:20px !important;
+}
+#mlgE-trust-probate .section-eyebrow::before { content:''; width:24px !important; height:1px !important; background:#c9a96e !important; }
+#mlgE-trust-probate .employers-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(36px, 6vw, 64px) !important; font-weight:900 !important; line-height:0.95 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:24px !important;
+}
+#mlgE-trust-probate .employers-section h2 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.72em !important;
+}
+#mlgE-trust-probate .employers-section > p {
+  font-size:17px !important; color:rgba(255,255,255,0.75) !important; max-width:560px !important;
+  line-height:1.75 !important; margin-bottom:40px !important;
+}
+#mlgE-trust-probate .employers-grid {
+  display:grid !important; grid-template-columns:1fr 1fr;
+  gap:14px !important; background:transparent !important;
+  border:none !important; border-radius:0 !important;
+  overflow:visible; margin-bottom:40px !important;
+}
+#mlgE-trust-probate .employer-item {
+  background:#fbf6ef !important; padding:32px 28px !important;
+  display:flex !important; align-items:flex-start; gap:18px !important;
+  transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
+  border:2px solid rgba(255,255,255,0.35) !important; border-radius:14px !important;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
+  -webkit-tap-highlight-color:transparent;
+}
+#mlgE-trust-probate .employer-item:hover, #mlgE-trust-probate .employer-item:active, #mlgE-trust-probate .employer-item:focus-visible { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
+#mlgE-trust-probate .employer-item:hover, #mlgE-trust-probate .employer-item:active, #mlgE-trust-probate .employer-item:focus-visible { background:#f3ece0 !important; }
+#mlgE-trust-probate .employer-item-text strong {
+  display:block !important; font-size:17px !important; font-weight:700 !important; color:#1e3a3e !important; margin-bottom:6px !important;
+}
+#mlgE-trust-probate .employer-item-text span {
+  font-size:14px !important; color:#5a6e70 !important; line-height:1.6 !important;
+}
+#mlgE-trust-probate .paga-alert {
+  background:rgba(201,169,110,0.12) !important; border:1px solid rgba(201,169,110,0.35) !important;
+  border-radius:10px !important; padding:20px 24px !important; margin-bottom:32px !important;
+  display:flex !important; gap:16px !important; align-items:flex-start;
+}
+#mlgE-trust-probate .paga-alert-icon { font-size:22px !important; flex-shrink:0; margin-top:2px !important; }
+#mlgE-trust-probate .paga-alert p { font-size:14px !important; color:rgba(255,255,255,0.85) !important; line-height:1.65 !important; }
+#mlgE-trust-probate .paga-alert p strong { color:#c9a96e !important; }
+#mlgE-trust-probate .detail-wrap { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) {
+#mlgE-trust-probate .detail-wrap { padding:80px 80px !important; }
+}
+#mlgE-trust-probate .detail-inner { max-width:900px !important; margin:0 auto !important; }
+#mlgE-trust-probate .detail-block { margin-bottom:56px !important; }
+#mlgE-trust-probate .detail-block:last-child { margin-bottom:0 !important; }
+#mlgE-trust-probate .detail-wrap .section-eyebrow { color:#1e3a3e !important; }
+#mlgE-trust-probate .detail-wrap .section-eyebrow::before { background:#1e3a3e !important; }
+#mlgE-trust-probate .detail-block h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(28px, 4.5vw, 44px) !important; font-weight:900 !important; line-height:1.0 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:16px !important;
+}
+#mlgE-trust-probate .detail-block p {
+  font-size:16px !important; color:#5a6e70 !important; line-height:1.75 !important; max-width:760px !important;
+}
+#mlgE-trust-probate .employer-faq { margin-top:48px !important; }
+#mlgE-trust-probate .employer-faq h3 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:28px !important; font-weight:800 !important; color:#fff !important;
+  text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:24px !important;
+}
+#mlgE-trust-probate .faq-item { border-bottom:1px solid rgba(255,255,255,0.1) !important; }
+#mlgE-trust-probate .faq-question {
+  width:100% !important; background:none !important; border:none !important; text-align:left !important;
+  padding:18px 0 !important; font-family:'Barlow',sans-serif !important; font-size:15px !important;
+  font-weight:600 !important; color:rgba(255,255,255,0.85) !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center; gap:12px !important;
+  transition:color 0.15s;
+}
+#mlgE-trust-probate .faq-question:hover { color:#fff !important; }
+#mlgE-trust-probate .faq-question .faq-icon { font-size:20px !important; color:#c9a96e !important; flex-shrink:0; transition:transform 0.3s; }
+#mlgE-trust-probate .faq-answer { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+#mlgE-trust-probate .faq-answer p { font-size:14px !important; line-height:1.75 !important; color:rgba(255,255,255,0.6) !important; padding-bottom:20px !important; margin:0 !important; }
+#mlgE-trust-probate .faq-item.open .faq-icon { transform:rotate(45deg); }
+#mlgE-trust-probate .faq-item.open .faq-question { color:#fff !important; }
+#mlgE-trust-probate .emp-testimonials {
+  background:#fbf6ef !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .emp-testimonials { padding:80px 80px !important; }
+}
+#mlgE-trust-probate .emp-testimonials .section-eyebrow { color:#c9a96e !important; }
+#mlgE-trust-probate .emp-testimonials h2 {
+  font-family:'DM Serif Display',serif !important;
+  font-size:clamp(28px, 4vw, 42px) !important; font-weight:400 !important; font-style:italic !important;
+  color:#1e3a3e !important; margin-bottom:36px !important;
+}
+#mlgE-trust-probate .emp-carousel { overflow:hidden; }
+#mlgE-trust-probate .emp-carousel-track { display:flex !important; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+#mlgE-trust-probate .emp-test-card {
+  min-width:100% !important; box-sizing:border-box;
+  background:#1e3a3e !important; border:1px solid rgba(30,58,62,0.2) !important;
+  border-radius:12px !important; padding:32px !important;
+}
+#mlgE-trust-probate .emp-test-card .stars { color:#c9a96e !important; font-size:14px !important; margin-bottom:16px !important; letter-spacing:2px !important; }
+#mlgE-trust-probate .emp-test-card .quote {
+  font-size:16px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important;
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  margin-bottom:20px !important; display:block !important;
+}
+#mlgE-trust-probate .emp-test-card .author { font-size:12px !important; font-weight:700 !important; color:#c9a96e !important; letter-spacing:1px !important; text-transform:uppercase !important; }
+#mlgE-trust-probate .emp-carousel-dots { display:flex !important; gap:8px !important; margin-top:24px !important; }
+#mlgE-trust-probate .emp-dot { width:8px !important; height:8px !important; border-radius:50% !important; background:rgba(30,58,62,0.25) !important; border:none !important; cursor:pointer; padding:0 !important; transition:background 0.2s; }
+#mlgE-trust-probate .emp-dot.active { background:#c9a96e !important; }
+#mlgE-trust-probate .employee-faq {
+  background:#fff !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .employee-faq { padding:80px 80px !important; max-width:900px !important; margin:0 auto !important; }
+}
+#mlgE-trust-probate .employee-faq h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(28px, 4vw, 44px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:32px !important;
+}
+#mlgE-trust-probate .employee-faq .faq-item { border-bottom:1px solid #e8e3da !important; }
+#mlgE-trust-probate .employee-faq .faq-question { color:#1e3a3e !important; }
+#mlgE-trust-probate .employee-faq .faq-question:hover { color:#1e3a3e !important; opacity:0.75; }
+#mlgE-trust-probate .employee-faq .faq-question .faq-icon { color:#c9a96e !important; }
+#mlgE-trust-probate .employee-faq .faq-item.open .faq-question { color:#1e3a3e !important; }
+#mlgE-trust-probate .employee-faq .faq-answer p { color:#5a6e70 !important; }
+#mlgE-trust-probate .why-us { background:#1e3a3e !important; padding:72px 28px !important; }
+@media(min-width:769px) {
+#mlgE-trust-probate .why-us { padding:96px 80px !important; }
+}
+#mlgE-trust-probate .why-us-inner { max-width:1080px !important; margin:0 auto !important; }
+#mlgE-trust-probate .why-us-eyebrow { font-size:11px !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:16px !important; }
+#mlgE-trust-probate .why-us-title { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(36px,5vw,56px) !important; font-weight:800 !important; color:#fff !important; line-height:1.05 !important; letter-spacing:-1px !important; text-transform:uppercase !important; margin-bottom:48px !important; }
+#mlgE-trust-probate .why-us-title em { display:block !important; font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; letter-spacing:-0.5px !important; }
+#mlgE-trust-probate .why-us-grid { display:grid !important; grid-template-columns:1fr 1fr; gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden; }
+@media(max-width:600px) {
+#mlgE-trust-probate .why-us-grid { grid-template-columns:1fr; }
+}
+#mlgE-trust-probate .why-us-item { background:#fbf6ef !important; padding:32px 28px !important; display:flex !important; flex-direction:column; gap:10px !important; transition:background 0.2s; }
+#mlgE-trust-probate .why-us-item:hover { background:#f3ece0 !important; }
+#mlgE-trust-probate .why-us-num { font-family:'Barlow Condensed',sans-serif !important; font-size:13px !important; font-weight:700 !important; letter-spacing:2px !important; color:#c9a96e !important; }
+#mlgE-trust-probate .why-us-item strong { font-size:17px !important; font-weight:700 !important; color:#1e3a3e !important; }
+#mlgE-trust-probate .why-us-item span { font-size:14px !important; color:#5a6e70 !important; line-height:1.65 !important; }
+#mlgE-trust-probate .cta-banner {
+  background:#fbf6ef !important; padding:72px 28px !important; text-align:center !important;
+  border-top:1px solid #e8e3da !important;
+}
+#mlgE-trust-probate .cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(32px, 5vw, 52px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:12px !important;
+}
+#mlgE-trust-probate .cta-banner h2 em {
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  font-weight:400 !important; text-transform:none !important; color:#c9a96e !important;
+}
+#mlgE-trust-probate .cta-banner p { font-size:16px !important; color:#5a6e70 !important; margin-bottom:28px !important; line-height:1.65 !important; }
+#mlgE-trust-probate .cta-banner .btn-gold { font-size:15px !important; padding:15px 36px !important; }
+#mlgE-trust-probate .maps-section { width:100% !important; line-height:0 !important; }
+@media(min-width:769px) {
+#mlgE-trust-probate .maps-section iframe { height:400px !important; }
+}
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlgE-trust-probate .btn-gold, #mlgE-trust-probate .cta-inline, #mlgE-trust-probate .cta-banner .btn, #mlgE-trust-probate .contact-btn {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+#mlgE-trust-probate .video-mobile { display:none !important; }
+@media(max-width:768px) {
+#mlgE-trust-probate .video-desktop { display:none !important; }
+#mlgE-trust-probate .video-mobile { display:block !important; }
+}
+#mlgE-trust-probate .hero-overlay::before, #mlgE-trust-probate .emp-hero-overlay::before {
+  content:''; position:absolute !important; inset:0;
+  background:rgba(20,48,52,0.55) !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .why-us-inner { max-width:1440px !important; }
+#mlgE-trust-probate .why-us-grid { gap:8px !important; }
+#mlgE-trust-probate .why-us-item { padding:56px 48px !important; gap:14px !important; }
+#mlgE-trust-probate .why-us-item strong { font-size:26px !important; }
+#mlgE-trust-probate .why-us-item span { font-size:18px !important; line-height:1.7 !important; }
+#mlgE-trust-probate .why-us-num { font-size:16px !important; }
+#mlgE-trust-probate .why-us-title { font-size:clamp(48px,5.5vw,72px) !important; margin-bottom:56px !important; }
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .cta-banner h2 { font-size:clamp(64px, 7vw, 104px) !important; }
+#mlgE-trust-probate .cta-banner p { font-size:24px !important; }
+#mlgE-trust-probate .cta-banner .btn-gold { font-size:18px !important; padding:18px 44px !important; }
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .emp-testimonials h2 { font-size:clamp(48px, 5vw, 68px) !important; margin-bottom:44px !important; }
+#mlgE-trust-probate .emp-test-card { padding:56px 64px !important; }
+#mlgE-trust-probate .emp-test-card .quote { font-size:24px !important; line-height:1.75 !important; }
+#mlgE-trust-probate .emp-test-card .author { font-size:16px !important; }
+#mlgE-trust-probate .emp-test-card .stars { font-size:22px !important; margin-bottom:20px !important; }
+}
+#mlgE-trust-probate .faq-item { border-bottom-width:2px !important; }
+#mlgE-trust-probate .employer-faq .faq-item { border-bottom:2px solid rgba(255,255,255,0.25) !important; }
+#mlgE-trust-probate .employees-section .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
+#mlgE-trust-probate .employee-faq .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
+#mlgE-trust-probate .employers-intro-img { display:none !important; }
+@media(min-width:769px) {
+#mlgE-trust-probate .employers-intro { display:grid !important; grid-template-columns:1.1fr 1fr; gap:56px !important; align-items:center; margin-bottom:8px !important; }
+#mlgE-trust-probate .employers-intro-img {
+    display:block !important; width:100% !important; height:380px !important; object-fit:cover;
+    object-position:center 20%; border-radius:16px !important;
+    box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  }
+}
+#mlgE-trust-probate .employers-section .employers-intro-text p {
+  font-size:17px !important; color:rgba(255,255,255,0.75) !important;
+  line-height:1.75 !important; margin-bottom:40px !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .emp-hero-sub { font-size:25px !important; max-width:760px !important; }
+#mlgE-trust-probate .employers-section > p, #mlgE-trust-probate .employers-intro-text p { font-size:21px !important; max-width:none !important; }
+#mlgE-trust-probate .employer-item-text strong { font-size:21px !important; }
+#mlgE-trust-probate .employer-item-text span { font-size:16px !important; }
+#mlgE-trust-probate .paga-alert p { font-size:17px !important; }
+#mlgE-trust-probate .detail-block p { font-size:19px !important; }
+#mlgE-trust-probate .faq-question { font-size:18px !important; padding:22px 0 !important; }
+#mlgE-trust-probate .faq-answer p { font-size:16px !important; }
+#mlgE-trust-probate .employee-faq h2 { font-size:clamp(32px, 4vw, 48px) !important; }
+#mlgE-trust-probate .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+#mlgE-trust-probate .section-eyebrow::before { width:40px !important; }
+#mlgE-trust-probate .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+#mlgE-trust-probate .emp-testimonials h2, #mlgE-trust-probate .employee-faq h2, #mlgE-trust-probate .why-us-title { text-align:center !important; }
+#mlgE-trust-probate .emp-testimonials .section-eyebrow, #mlgE-trust-probate .why-us-eyebrow {
+  display:flex !important; width:max-content !important;
+  margin-left:auto !important; margin-right:auto !important;
+}
+#mlgE-trust-probate .employers-intro-text { text-align:left !important; }
+#mlgE-trust-probate .employers-intro-text .section-eyebrow { margin-left:0 !important; }
+#mlgE-trust-probate .detail-inner { max-width:1440px !important; }
+#mlgE-trust-probate .detail-block {
+  background:#1e3a3e !important; border-radius:16px !important;
+  padding:40px 32px !important; margin-bottom:32px !important;
+  box-shadow:0 8px 28px rgba(0,0,0,0.12);
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .detail-block { padding:56px 64px !important; }
+}
+#mlgE-trust-probate .detail-block h2 { color:#fff !important; }
+#mlgE-trust-probate .detail-block p { color:rgba(255,255,255,0.8) !important; max-width:none !important; }
+#mlgE-trust-probate .detail-block .section-eyebrow { color:#c9a96e !important; }
+#mlgE-trust-probate .detail-block .section-eyebrow::before { background:#c9a96e !important; }
+#mlgE-trust-probate .emp-testimonials { background:#1e3a3e !important; }
+#mlgE-trust-probate .emp-testimonials h2 { color:#fff !important; }
+#mlgE-trust-probate .emp-test-card { background:#fbf6ef !important; border:1px solid rgba(255,255,255,0.15) !important; }
+#mlgE-trust-probate .emp-test-card .quote { color:#3a5254 !important; }
+#mlgE-trust-probate .emp-test-card .author { color:#b8933a !important; }
+#mlgE-trust-probate .emp-dot { background:rgba(255,255,255,0.3) !important; }
+#mlgE-trust-probate .emp-dot.active { background:#c9a96e !important; }
+@media(min-width:769px) {
+#mlgE-trust-probate .employee-faq { max-width:1440px !important; }
+#mlgE-trust-probate .employee-faq .faq-list { display:grid !important; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+}
+#mlgE-trust-probate .emp-hero { min-height:calc(100svh - 56px) !important; }
+@media(min-width:769px) {
+#mlgE-trust-probate .emp-hero { min-height:calc(100svh - 62px) !important; }
+}
+#mlgE-trust-probate .section-eyebrow, #mlgE-trust-probate .why-us-eyebrow, #mlgE-trust-probate .emp-hero-label, #mlgE-trust-probate .eyebrow {
+  font-size:15px !important; letter-spacing:3px !important; font-weight:700 !important;
+}
+@media(min-width:769px) {
+#mlgE-trust-probate .section-eyebrow, #mlgE-trust-probate .why-us-eyebrow, #mlgE-trust-probate .eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+#mlgE-trust-probate .emp-hero { border-bottom:12px solid #c9a96e !important; }
+#mlgE-trust-probate .detail-block p, #mlgE-trust-probate .employers-section > p, #mlgE-trust-probate .employers-intro-text p, #mlgE-trust-probate .employees-intro-text p, #mlgE-trust-probate .employees-section > p, #mlgE-trust-probate .faq-answer p, #mlgE-trust-probate .emp-test-card .quote, #mlgE-trust-probate .why-us-item span, #mlgE-trust-probate .paga-alert p, #mlgE-trust-probate .employer-item-text span, #mlgE-trust-probate .about p, #mlgE-trust-probate .mlg-quote, #mlgE-trust-probate .quote, #mlgE-trust-probate .lawsuits p, #mlgE-trust-probate .detail-section p, #mlgE-trust-probate .bio-block p, #mlgE-trust-probate .result-card span, #mlgE-trust-probate .atty-hero p {
+  text-align:justify !important;
+}
+#mlgE-trust-probate .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlgE-trust-probate .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlgE-trust-probate .reveal-d1 { transition-delay:0.08s; }
+#mlgE-trust-probate .reveal-d2 { transition-delay:0.16s; }
+#mlgE-trust-probate .reveal-d3 { transition-delay:0.24s; }
+#mlgE-trust-probate .reveal-d4 { transition-delay:0.32s; }
+#mlgE-trust-probate .reveal-d5 { transition-delay:0.4s; }
+#mlgE-trust-probate .reveal-d6 { transition-delay:0.48s; }
+#mlgE-trust-probate .reveal-d7 { transition-delay:0.56s; }
+#mlgE-trust-probate .hero-pill {
+  position:relative !important; z-index:2;
+  display:inline-flex !important; align-items:center; gap:10px !important; width:max-content !important;
+  background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
+  border-radius:26px !important; padding:9px 20px !important; margin-bottom:24px !important;
+  font-size:13px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-weight:700 !important; color:#e8cc8a !important;
+}
+#mlgE-trust-probate .hero-pill::before { content:''; width:7px !important; height:7px !important; background:#c9a96e !important; border-radius:50% !important; flex-shrink:0; }
+@media(min-width:769px) {
+#mlgE-trust-probate .hero-pill { font-size:15px !important; }
+}
+#mlgE-trust-probate .faq-h { margin:0 !important; padding:0 !important; font-size:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
+#mlgE-trust-probate .faq-question:focus-visible, #mlgE-trust-probate a:focus-visible, #mlgE-trust-probate button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px !important; }
+#mlgE-trust-probate .mlg-salto {
+  position:absolute !important; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e !important; color:#fff !important; padding:12px 20px !important; border-radius:0 0 8px 0 !important;
+  font-family:'Barlow',sans-serif !important; font-size:15px !important; font-weight:700 !important; text-decoration:none !important;
+}
+#mlgE-trust-probate .mlg-salto:focus { left:0; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlgE-trust-probate > section, #mlgE-trust-probate > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlgE-trust-probate > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlgE-trust-probate > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+
+</style>
+
+<div id="mlgE-trust-probate">
 
 <a class="mlg-salto" href="#contenido">Skip to content</a>
 
@@ -73,7 +510,7 @@
 
   <div class="paga-alert reveal">
     <div class="paga-alert-icon">⚡</div>
-    <p><strong>We regularly handle trust and probate litigation involving high-net-worth estates in Saratoga, San Jose, Los Gatos, Cupertino, and across Santa Clara County</strong>. with the discretion these sensitive matters deserve.</p>
+    <p><strong>We regularly handle trust and probate litigation involving high-net-worth estates in Saratoga, San Jose, Los Gatos, Cupertino, and across Santa Clara County</strong>, with the discretion these sensitive matters deserve.</p>
   </div>
 
   <a href="#contact" class="btn-gold reveal">Request a Free Consultation →</a>
@@ -84,9 +521,15 @@
   <div class="detail-inner">
 
     <div class="detail-block reveal">
+      <div class="section-eyebrow">Deadlines</div>
+      <h2>Deadlines in Trust and Probate Cases</h2>
+      <p>Deadlines in trust and probate cases are shorter than people expect. If you received a formal notification from a trustee that a trust has become irrevocable, you generally have 120 days from the date that notification was served to bring a contest. That is a short window and it does not extend because you were gathering information or waiting on a family member to decide. Other deadlines in this area run on their own schedules, and some of them start from a date you may not have noticed at the time. If you have received anything on letterhead from a trustee, an executor, or a probate court, treat it as time sensitive and let us look at it.</p>
+    </div>
+
+    <div class="detail-block reveal">
       <div class="section-eyebrow">Conservatorships</div>
       <h2>Conservatorship Services</h2>
-      <p>Trust and probate disputes are among the most emotionally difficult legal matters a family can face. McLellan Law Group LLP represents beneficiaries, trustees, and heirs throughout Silicon Valley, Santa Clara County, and the Bay Area in will contests, trustee removal proceedings, breach of fiduciary duty claims, and contested probate matters. Whether it's managing medical care, living arrangements, safeguarding their assets, or looking into <a href="/financial-elder-abuse" style="color:#c9a96e !important; font-weight:700 !important;">financial elder abuse</a>. we provide compassionate guidance through every step of the process.</p>
+      <p>When an adult can no longer manage their own finances or personal care, a court can appoint a conservator to do it for them. These cases are contested more often than people expect, usually because family members disagree about who should serve, or because a conservatorship is being sought over the objection of the person it would cover. We handle both sides, including petitions to remove or replace a conservator who is not acting in the conservatee's interest, and objections where a conservatorship is not the least restrictive option available. Learn more about how these matters connect to <a href="/financial-elder-abuse" style="color:#c9a96e !important; font-weight:700 !important;">financial elder abuse</a> on our dedicated page.</p>
     </div>
 
     <div class="detail-block reveal reveal-d1">
@@ -226,7 +669,7 @@
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
-        <span>From will contests to trustee disputes, our attorneys have secured favorable outcomes for beneficiaries, trustees, and heirs across Silicon Valley.</span>
+        <span>We have handled trust and probate disputes on both sides of the table, for businesses enforcing agreements and for businesses defending against claims. Every case turns on its own facts, and past results do not predict future outcomes. What we can tell you is how we would approach yours, and we will do that in a free consultation.</span>
       </div>
       <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
@@ -255,7 +698,7 @@
 </div>
 
 <script>
-(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.currentScript.closest(".emp-hero");var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.querySelector(".emp-hero");if(!hero)return;var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
 
 function toggleFaq(btn) {
   // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
@@ -295,6 +738,8 @@ function toggleFaq(btn) {
 
 (function(){
   var track = document.getElementById('empTrack');
+  var el = document.getElementById('empCarousel');
+  if (!track || !el) return;
   var dots = document.querySelectorAll('#empDots .emp-dot');
   var current = 0, total = dots.length, startX = 0, timer;
   function goToEmp(n){
@@ -305,7 +750,6 @@ function toggleFaq(btn) {
   window.goToEmp = goToEmp;
   function next(){ goToEmp(current+1); }
   timer = setInterval(next, 5000);
-  var el = document.getElementById('empCarousel');
   el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
   el.addEventListener('touchend', function(e){
     var dx = e.changedTouches[0].clientX - startX;
@@ -336,38 +780,12 @@ function toggleFaq(btn) {
   els.forEach(function(el){ observer.observe(el); });
 })();
 
-// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
-// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
-// fijo medimos cuanto hay por encima y lo descontamos.
-(function(){
-  var hero = document.querySelector('.mlgP .emp-hero');
-  if (!hero) return;
-  function fit(){
-    hero.style.minHeight = '';
-    var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    // Si la medicion da un numero raro (el header de Duda no termino de
-    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
-    // se infle a casi toda la pantalla o se achique a casi nada.
-    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
-    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
-  }
-  fit();
-  window.addEventListener('load', fit);
-  window.addEventListener('resize', fit);
-})();
-
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
-// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
-// de la pantalla en ese momento, y quedaba invisible para siempre porque
-// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
-function mlgForzarVisibles(){
-  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+setTimeout(function(){
+  document.querySelectorAll('#mlgE-trust-probate .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}
-setTimeout(mlgForzarVisibles, 1200);
-window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
+}, 1200);
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:

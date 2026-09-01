@@ -1,7 +1,444 @@
-<style>html, body { overflow-x:hidden; }</style>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+html, body { overflow-x:hidden; }
+#mlgE-contract-disputes { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
 
 
-<div class="mlgP">
+#mlgE-contract-disputes *, #mlgE-contract-disputes *::before, #mlgE-contract-disputes *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlgE-contract-disputes { scroll-behavior:smooth; }
+#mlgE-contract-disputes { font-family:'Barlow',sans-serif !important; background:#fff !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased; font-weight:500 !important; }
+#mlgE-contract-disputes .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlgE-contract-disputes .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlgE-contract-disputes .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlgE-contract-disputes .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlgE-contract-disputes .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlgE-contract-disputes .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlgE-contract-disputes .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+#mlgE-contract-disputes .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlgE-contract-disputes .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlgE-contract-disputes .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlgE-contract-disputes .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlgE-contract-disputes .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlgE-contract-disputes .emp-hero {
+  position:relative !important; overflow:hidden;
+  min-height:560px !important; display:flex !important; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center !important; padding:0 28px 52px !important;
+  background:#1e3a3e !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .emp-hero { min-height:680px !important; padding:0 80px 80px !important; }
+}
+#mlgE-contract-disputes .emp-hero-img {
+  position:absolute !important; inset:0; width:100% !important; height:100% !important;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
+#mlgE-contract-disputes .emp-hero-overlay {
+  position:absolute !important; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
+}
+#mlgE-contract-disputes .emp-hero-label {
+  position:relative !important; z-index:2;
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  font-size:10px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#c9a96e !important; font-weight:700 !important; margin-bottom:20px !important;
+}
+#mlgE-contract-disputes .emp-hero-label::before { content:''; width:24px !important; height:1px !important; background:#c9a96e !important; }
+#mlgE-contract-disputes .emp-hero h1 {
+  position:relative !important; z-index:2;
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(36px, 7vw, 72px) !important; font-weight:900 !important; line-height:0.95 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
+  margin:0 auto 18px !important; max-width:1000px !important;
+}
+#mlgE-contract-disputes .emp-hero h1 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.75em !important; letter-spacing:0 !important;
+}
+#mlgE-contract-disputes .emp-hero-sub {
+  position:relative !important; z-index:2;
+  font-size:19px !important; color:rgba(255,255,255,0.8) !important; max-width:520px !important;
+  line-height:1.7 !important; margin:0 auto 32px !important;
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+}
+#mlgE-contract-disputes .emp-hero-ctas {
+  position:relative !important; z-index:2;
+  display:flex !important; gap:12px !important; flex-wrap:wrap;
+}
+#mlgE-contract-disputes .btn-gold {
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important; font-weight:700 !important; font-size:14px !important;
+  padding:13px 28px !important; border-radius:28px !important; text-decoration:none !important;
+}
+#mlgE-contract-disputes .btn-ghost {
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  background:transparent !important; color:#fff !important; font-weight:500 !important; font-size:14px !important;
+  padding:12px 24px !important; border-radius:28px !important; text-decoration:none !important;
+  border:1.5px solid rgba(255,255,255,0.45) !important;
+}
+#mlgE-contract-disputes .employers-section {
+  background:#1e3a3e !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .employers-section { padding:80px 80px !important; }
+}
+#mlgE-contract-disputes .section-eyebrow {
+  display:inline-flex !important; align-items:center; gap:10px !important;
+  font-size:10px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#c9a96e !important; font-weight:700 !important; margin-bottom:20px !important;
+}
+#mlgE-contract-disputes .section-eyebrow::before { content:''; width:24px !important; height:1px !important; background:#c9a96e !important; }
+#mlgE-contract-disputes .employers-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(36px, 6vw, 64px) !important; font-weight:900 !important; line-height:0.95 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:24px !important;
+}
+#mlgE-contract-disputes .employers-section h2 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.72em !important;
+}
+#mlgE-contract-disputes .employers-section > p {
+  font-size:17px !important; color:rgba(255,255,255,0.75) !important; max-width:560px !important;
+  line-height:1.75 !important; margin-bottom:40px !important;
+}
+#mlgE-contract-disputes .employers-grid {
+  display:grid !important; grid-template-columns:1fr 1fr;
+  gap:14px !important; background:transparent !important;
+  border:none !important; border-radius:0 !important;
+  overflow:visible; margin-bottom:40px !important;
+}
+#mlgE-contract-disputes .employer-item {
+  background:#fbf6ef !important; padding:32px 28px !important;
+  display:flex !important; align-items:flex-start; gap:18px !important;
+  transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
+  border:2px solid rgba(255,255,255,0.35) !important; border-radius:14px !important;
+  box-shadow:0 3px 12px rgba(0,0,0,0.15);
+  -webkit-tap-highlight-color:transparent;
+}
+#mlgE-contract-disputes .employer-item:hover, #mlgE-contract-disputes .employer-item:active, #mlgE-contract-disputes .employer-item:focus-visible { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.22); }
+#mlgE-contract-disputes .employer-item:hover, #mlgE-contract-disputes .employer-item:active, #mlgE-contract-disputes .employer-item:focus-visible { background:#f3ece0 !important; }
+#mlgE-contract-disputes .employer-item-text strong {
+  display:block !important; font-size:17px !important; font-weight:700 !important; color:#1e3a3e !important; margin-bottom:6px !important;
+}
+#mlgE-contract-disputes .employer-item-text span {
+  font-size:14px !important; color:#5a6e70 !important; line-height:1.6 !important;
+}
+#mlgE-contract-disputes .paga-alert {
+  background:rgba(201,169,110,0.12) !important; border:1px solid rgba(201,169,110,0.35) !important;
+  border-radius:10px !important; padding:20px 24px !important; margin-bottom:32px !important;
+  display:flex !important; gap:16px !important; align-items:flex-start;
+}
+#mlgE-contract-disputes .paga-alert-icon { font-size:22px !important; flex-shrink:0; margin-top:2px !important; }
+#mlgE-contract-disputes .paga-alert p { font-size:14px !important; color:rgba(255,255,255,0.85) !important; line-height:1.65 !important; }
+#mlgE-contract-disputes .paga-alert p strong { color:#c9a96e !important; }
+#mlgE-contract-disputes .detail-wrap { background:#fbf6ef !important; padding:64px 28px !important; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .detail-wrap { padding:80px 80px !important; }
+}
+#mlgE-contract-disputes .detail-inner { max-width:900px !important; margin:0 auto !important; }
+#mlgE-contract-disputes .detail-block { margin-bottom:56px !important; }
+#mlgE-contract-disputes .detail-block:last-child { margin-bottom:0 !important; }
+#mlgE-contract-disputes .detail-wrap .section-eyebrow { color:#1e3a3e !important; }
+#mlgE-contract-disputes .detail-wrap .section-eyebrow::before { background:#1e3a3e !important; }
+#mlgE-contract-disputes .detail-block h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(28px, 4.5vw, 44px) !important; font-weight:900 !important; line-height:1.0 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:16px !important;
+}
+#mlgE-contract-disputes .detail-block p {
+  font-size:16px !important; color:#5a6e70 !important; line-height:1.75 !important; max-width:760px !important;
+}
+#mlgE-contract-disputes .employer-faq { margin-top:48px !important; }
+#mlgE-contract-disputes .employer-faq h3 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:28px !important; font-weight:800 !important; color:#fff !important;
+  text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:24px !important;
+}
+#mlgE-contract-disputes .faq-item { border-bottom:1px solid rgba(255,255,255,0.1) !important; }
+#mlgE-contract-disputes .faq-question {
+  width:100% !important; background:none !important; border:none !important; text-align:left !important;
+  padding:18px 0 !important; font-family:'Barlow',sans-serif !important; font-size:15px !important;
+  font-weight:600 !important; color:rgba(255,255,255,0.85) !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center; gap:12px !important;
+  transition:color 0.15s;
+}
+#mlgE-contract-disputes .faq-question:hover { color:#fff !important; }
+#mlgE-contract-disputes .faq-question .faq-icon { font-size:20px !important; color:#c9a96e !important; flex-shrink:0; transition:transform 0.3s; }
+#mlgE-contract-disputes .faq-answer { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+#mlgE-contract-disputes .faq-answer p { font-size:14px !important; line-height:1.75 !important; color:rgba(255,255,255,0.6) !important; padding-bottom:20px !important; margin:0 !important; }
+#mlgE-contract-disputes .faq-item.open .faq-icon { transform:rotate(45deg); }
+#mlgE-contract-disputes .faq-item.open .faq-question { color:#fff !important; }
+#mlgE-contract-disputes .emp-testimonials {
+  background:#fbf6ef !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .emp-testimonials { padding:80px 80px !important; }
+}
+#mlgE-contract-disputes .emp-testimonials .section-eyebrow { color:#c9a96e !important; }
+#mlgE-contract-disputes .emp-testimonials h2 {
+  font-family:'DM Serif Display',serif !important;
+  font-size:clamp(28px, 4vw, 42px) !important; font-weight:400 !important; font-style:italic !important;
+  color:#1e3a3e !important; margin-bottom:36px !important;
+}
+#mlgE-contract-disputes .emp-carousel { overflow:hidden; }
+#mlgE-contract-disputes .emp-carousel-track { display:flex !important; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+#mlgE-contract-disputes .emp-test-card {
+  min-width:100% !important; box-sizing:border-box;
+  background:#1e3a3e !important; border:1px solid rgba(30,58,62,0.2) !important;
+  border-radius:12px !important; padding:32px !important;
+}
+#mlgE-contract-disputes .emp-test-card .stars { color:#c9a96e !important; font-size:14px !important; margin-bottom:16px !important; letter-spacing:2px !important; }
+#mlgE-contract-disputes .emp-test-card .quote {
+  font-size:16px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important;
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  margin-bottom:20px !important; display:block !important;
+}
+#mlgE-contract-disputes .emp-test-card .author { font-size:12px !important; font-weight:700 !important; color:#c9a96e !important; letter-spacing:1px !important; text-transform:uppercase !important; }
+#mlgE-contract-disputes .emp-carousel-dots { display:flex !important; gap:8px !important; margin-top:24px !important; }
+#mlgE-contract-disputes .emp-dot { width:8px !important; height:8px !important; border-radius:50% !important; background:rgba(30,58,62,0.25) !important; border:none !important; cursor:pointer; padding:0 !important; transition:background 0.2s; }
+#mlgE-contract-disputes .emp-dot.active { background:#c9a96e !important; }
+#mlgE-contract-disputes .employee-faq {
+  background:#fff !important; padding:64px 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .employee-faq { padding:80px 80px !important; max-width:900px !important; margin:0 auto !important; }
+}
+#mlgE-contract-disputes .employee-faq h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(28px, 4vw, 44px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:32px !important;
+}
+#mlgE-contract-disputes .employee-faq .faq-item { border-bottom:1px solid #e8e3da !important; }
+#mlgE-contract-disputes .employee-faq .faq-question { color:#1e3a3e !important; }
+#mlgE-contract-disputes .employee-faq .faq-question:hover { color:#1e3a3e !important; opacity:0.75; }
+#mlgE-contract-disputes .employee-faq .faq-question .faq-icon { color:#c9a96e !important; }
+#mlgE-contract-disputes .employee-faq .faq-item.open .faq-question { color:#1e3a3e !important; }
+#mlgE-contract-disputes .employee-faq .faq-answer p { color:#5a6e70 !important; }
+#mlgE-contract-disputes .why-us { background:#1e3a3e !important; padding:72px 28px !important; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .why-us { padding:96px 80px !important; }
+}
+#mlgE-contract-disputes .why-us-inner { max-width:1080px !important; margin:0 auto !important; }
+#mlgE-contract-disputes .why-us-eyebrow { font-size:11px !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:16px !important; }
+#mlgE-contract-disputes .why-us-title { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(36px,5vw,56px) !important; font-weight:800 !important; color:#fff !important; line-height:1.05 !important; letter-spacing:-1px !important; text-transform:uppercase !important; margin-bottom:48px !important; }
+#mlgE-contract-disputes .why-us-title em { display:block !important; font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; letter-spacing:-0.5px !important; }
+#mlgE-contract-disputes .why-us-grid { display:grid !important; grid-template-columns:1fr 1fr; gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden; }
+@media(max-width:600px) {
+#mlgE-contract-disputes .why-us-grid { grid-template-columns:1fr; }
+}
+#mlgE-contract-disputes .why-us-item { background:#fbf6ef !important; padding:32px 28px !important; display:flex !important; flex-direction:column; gap:10px !important; transition:background 0.2s; }
+#mlgE-contract-disputes .why-us-item:hover { background:#f3ece0 !important; }
+#mlgE-contract-disputes .why-us-num { font-family:'Barlow Condensed',sans-serif !important; font-size:13px !important; font-weight:700 !important; letter-spacing:2px !important; color:#c9a96e !important; }
+#mlgE-contract-disputes .why-us-item strong { font-size:17px !important; font-weight:700 !important; color:#1e3a3e !important; }
+#mlgE-contract-disputes .why-us-item span { font-size:14px !important; color:#5a6e70 !important; line-height:1.65 !important; }
+#mlgE-contract-disputes .cta-banner {
+  background:#fbf6ef !important; padding:72px 28px !important; text-align:center !important;
+  border-top:1px solid #e8e3da !important;
+}
+#mlgE-contract-disputes .cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(32px, 5vw, 52px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:12px !important;
+}
+#mlgE-contract-disputes .cta-banner h2 em {
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  font-weight:400 !important; text-transform:none !important; color:#c9a96e !important;
+}
+#mlgE-contract-disputes .cta-banner p { font-size:16px !important; color:#5a6e70 !important; margin-bottom:28px !important; line-height:1.65 !important; }
+#mlgE-contract-disputes .cta-banner .btn-gold { font-size:15px !important; padding:15px 36px !important; }
+#mlgE-contract-disputes .maps-section { width:100% !important; line-height:0 !important; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .maps-section iframe { height:400px !important; }
+}
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlgE-contract-disputes .btn-gold, #mlgE-contract-disputes .cta-inline, #mlgE-contract-disputes .cta-banner .btn, #mlgE-contract-disputes .contact-btn {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+#mlgE-contract-disputes .video-mobile { display:none !important; }
+@media(max-width:768px) {
+#mlgE-contract-disputes .video-desktop { display:none !important; }
+#mlgE-contract-disputes .video-mobile { display:block !important; }
+}
+#mlgE-contract-disputes .hero-overlay::before, #mlgE-contract-disputes .emp-hero-overlay::before {
+  content:''; position:absolute !important; inset:0;
+  background:rgba(20,48,52,0.55) !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .why-us-inner { max-width:1440px !important; }
+#mlgE-contract-disputes .why-us-grid { gap:8px !important; }
+#mlgE-contract-disputes .why-us-item { padding:56px 48px !important; gap:14px !important; }
+#mlgE-contract-disputes .why-us-item strong { font-size:26px !important; }
+#mlgE-contract-disputes .why-us-item span { font-size:18px !important; line-height:1.7 !important; }
+#mlgE-contract-disputes .why-us-num { font-size:16px !important; }
+#mlgE-contract-disputes .why-us-title { font-size:clamp(48px,5.5vw,72px) !important; margin-bottom:56px !important; }
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .cta-banner h2 { font-size:clamp(64px, 7vw, 104px) !important; }
+#mlgE-contract-disputes .cta-banner p { font-size:24px !important; }
+#mlgE-contract-disputes .cta-banner .btn-gold { font-size:18px !important; padding:18px 44px !important; }
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .emp-testimonials h2 { font-size:clamp(48px, 5vw, 68px) !important; margin-bottom:44px !important; }
+#mlgE-contract-disputes .emp-test-card { padding:56px 64px !important; }
+#mlgE-contract-disputes .emp-test-card .quote { font-size:24px !important; line-height:1.75 !important; }
+#mlgE-contract-disputes .emp-test-card .author { font-size:16px !important; }
+#mlgE-contract-disputes .emp-test-card .stars { font-size:22px !important; margin-bottom:20px !important; }
+}
+#mlgE-contract-disputes .faq-item { border-bottom-width:2px !important; }
+#mlgE-contract-disputes .employer-faq .faq-item { border-bottom:2px solid rgba(255,255,255,0.25) !important; }
+#mlgE-contract-disputes .employees-section .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
+#mlgE-contract-disputes .employee-faq .faq-item { border-bottom:2px solid rgba(30,58,62,0.3) !important; }
+#mlgE-contract-disputes .employers-intro-img { display:none !important; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .employers-intro { display:grid !important; grid-template-columns:1.1fr 1fr; gap:56px !important; align-items:center; margin-bottom:8px !important; }
+#mlgE-contract-disputes .employers-intro-img {
+    display:block !important; width:100% !important; height:380px !important; object-fit:cover;
+    object-position:center 20%; border-radius:16px !important;
+    box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  }
+}
+#mlgE-contract-disputes .employers-section .employers-intro-text p {
+  font-size:17px !important; color:rgba(255,255,255,0.75) !important;
+  line-height:1.75 !important; margin-bottom:40px !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .emp-hero-sub { font-size:25px !important; max-width:760px !important; }
+#mlgE-contract-disputes .employers-section > p, #mlgE-contract-disputes .employers-intro-text p { font-size:21px !important; max-width:none !important; }
+#mlgE-contract-disputes .employer-item-text strong { font-size:21px !important; }
+#mlgE-contract-disputes .employer-item-text span { font-size:16px !important; }
+#mlgE-contract-disputes .paga-alert p { font-size:17px !important; }
+#mlgE-contract-disputes .detail-block p { font-size:19px !important; }
+#mlgE-contract-disputes .faq-question { font-size:18px !important; padding:22px 0 !important; }
+#mlgE-contract-disputes .faq-answer p { font-size:16px !important; }
+#mlgE-contract-disputes .employee-faq h2 { font-size:clamp(32px, 4vw, 48px) !important; }
+#mlgE-contract-disputes .section-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+#mlgE-contract-disputes .section-eyebrow::before { width:40px !important; }
+#mlgE-contract-disputes .why-us-eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+#mlgE-contract-disputes .emp-testimonials h2, #mlgE-contract-disputes .employee-faq h2, #mlgE-contract-disputes .why-us-title { text-align:center !important; }
+#mlgE-contract-disputes .emp-testimonials .section-eyebrow, #mlgE-contract-disputes .why-us-eyebrow {
+  display:flex !important; width:max-content !important;
+  margin-left:auto !important; margin-right:auto !important;
+}
+#mlgE-contract-disputes .employers-intro-text { text-align:left !important; }
+#mlgE-contract-disputes .employers-intro-text .section-eyebrow { margin-left:0 !important; }
+#mlgE-contract-disputes .detail-inner { max-width:1440px !important; }
+#mlgE-contract-disputes .detail-block {
+  background:#1e3a3e !important; border-radius:16px !important;
+  padding:40px 32px !important; margin-bottom:32px !important;
+  box-shadow:0 8px 28px rgba(0,0,0,0.12);
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .detail-block { padding:56px 64px !important; }
+}
+#mlgE-contract-disputes .detail-block h2 { color:#fff !important; }
+#mlgE-contract-disputes .detail-block p { color:rgba(255,255,255,0.8) !important; max-width:none !important; }
+#mlgE-contract-disputes .detail-block .section-eyebrow { color:#c9a96e !important; }
+#mlgE-contract-disputes .detail-block .section-eyebrow::before { background:#c9a96e !important; }
+#mlgE-contract-disputes .emp-testimonials { background:#1e3a3e !important; }
+#mlgE-contract-disputes .emp-testimonials h2 { color:#fff !important; }
+#mlgE-contract-disputes .emp-test-card { background:#fbf6ef !important; border:1px solid rgba(255,255,255,0.15) !important; }
+#mlgE-contract-disputes .emp-test-card .quote { color:#3a5254 !important; }
+#mlgE-contract-disputes .emp-test-card .author { color:#b8933a !important; }
+#mlgE-contract-disputes .emp-dot { background:rgba(255,255,255,0.3) !important; }
+#mlgE-contract-disputes .emp-dot.active { background:#c9a96e !important; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .employee-faq { max-width:1440px !important; }
+#mlgE-contract-disputes .employee-faq .faq-list { display:grid !important; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+}
+#mlgE-contract-disputes .emp-hero { min-height:calc(100svh - 56px) !important; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .emp-hero { min-height:calc(100svh - 62px) !important; }
+}
+#mlgE-contract-disputes .section-eyebrow, #mlgE-contract-disputes .why-us-eyebrow, #mlgE-contract-disputes .emp-hero-label, #mlgE-contract-disputes .eyebrow {
+  font-size:15px !important; letter-spacing:3px !important; font-weight:700 !important;
+}
+@media(min-width:769px) {
+#mlgE-contract-disputes .section-eyebrow, #mlgE-contract-disputes .why-us-eyebrow, #mlgE-contract-disputes .eyebrow { font-size:18px !important; letter-spacing:4px !important; }
+}
+#mlgE-contract-disputes .emp-hero { border-bottom:12px solid #c9a96e !important; }
+#mlgE-contract-disputes .detail-block p, #mlgE-contract-disputes .employers-section > p, #mlgE-contract-disputes .employers-intro-text p, #mlgE-contract-disputes .employees-intro-text p, #mlgE-contract-disputes .employees-section > p, #mlgE-contract-disputes .faq-answer p, #mlgE-contract-disputes .emp-test-card .quote, #mlgE-contract-disputes .why-us-item span, #mlgE-contract-disputes .paga-alert p, #mlgE-contract-disputes .employer-item-text span, #mlgE-contract-disputes .about p, #mlgE-contract-disputes .mlg-quote, #mlgE-contract-disputes .quote, #mlgE-contract-disputes .lawsuits p, #mlgE-contract-disputes .detail-section p, #mlgE-contract-disputes .bio-block p, #mlgE-contract-disputes .result-card span, #mlgE-contract-disputes .atty-hero p {
+  text-align:justify !important;
+}
+#mlgE-contract-disputes .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlgE-contract-disputes .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlgE-contract-disputes .reveal-d1 { transition-delay:0.08s; }
+#mlgE-contract-disputes .reveal-d2 { transition-delay:0.16s; }
+#mlgE-contract-disputes .reveal-d3 { transition-delay:0.24s; }
+#mlgE-contract-disputes .reveal-d4 { transition-delay:0.32s; }
+#mlgE-contract-disputes .reveal-d5 { transition-delay:0.4s; }
+#mlgE-contract-disputes .reveal-d6 { transition-delay:0.48s; }
+#mlgE-contract-disputes .reveal-d7 { transition-delay:0.56s; }
+#mlgE-contract-disputes .hero-pill {
+  position:relative !important; z-index:2;
+  display:inline-flex !important; align-items:center; gap:10px !important; width:max-content !important;
+  background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
+  border-radius:26px !important; padding:9px 20px !important; margin-bottom:24px !important;
+  font-size:13px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-weight:700 !important; color:#e8cc8a !important;
+}
+#mlgE-contract-disputes .hero-pill::before { content:''; width:7px !important; height:7px !important; background:#c9a96e !important; border-radius:50% !important; flex-shrink:0; }
+@media(min-width:769px) {
+#mlgE-contract-disputes .hero-pill { font-size:15px !important; }
+}
+#mlgE-contract-disputes .faq-h { margin:0 !important; padding:0 !important; font-size:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
+#mlgE-contract-disputes .faq-question:focus-visible, #mlgE-contract-disputes a:focus-visible, #mlgE-contract-disputes button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px !important; }
+#mlgE-contract-disputes .mlg-salto {
+  position:absolute !important; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e !important; color:#fff !important; padding:12px 20px !important; border-radius:0 0 8px 0 !important;
+  font-family:'Barlow',sans-serif !important; font-size:15px !important; font-weight:700 !important; text-decoration:none !important;
+}
+#mlgE-contract-disputes .mlg-salto:focus { left:0; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlgE-contract-disputes > section, #mlgE-contract-disputes > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlgE-contract-disputes > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlgE-contract-disputes > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+
+</style>
+
+<div id="mlgE-contract-disputes">
 
 <a class="mlg-salto" href="#contenido">Skip to content</a>
 
@@ -73,7 +510,7 @@
 
   <div class="paga-alert reveal">
     <div class="paga-alert-icon">⚡</div>
-    <p><strong>We represent clients in Saratoga, San Jose, Cupertino, Sunnyvale, and across Santa Clara County</strong>. in both pre-litigation negotiations and full civil litigation when necessary.</p>
+    <p><strong>We represent clients in Saratoga, San Jose, Cupertino, Sunnyvale, and across Santa Clara County</strong>, in both pre-litigation negotiations and full civil litigation when necessary.</p>
   </div>
 
   <a href="#contact" class="btn-gold reveal">Request a Free Consultation →</a>
@@ -99,6 +536,12 @@
       <div class="section-eyebrow reveal">Our Approach</div>
       <h2 class="reveal reveal-d1">Your Solution Matters</h2>
       <p class="reveal reveal-d2">We start by understanding the specifics of your dispute and your goals for resolution. Our team develops a tailored strategy to enforce your rights, recover damages, or reach a fair settlement. We're relentless advocates when negotiation fails, ensuring your voice is heard in court. Whether you're an individual or a business, your success matters to us, we've worked to help clients recover losses, enforce agreements, and resolve disputes efficiently and strategically, saving time, money, and peace of mind.</p>
+    </div>
+
+    <div class="detail-block">
+      <div class="section-eyebrow reveal">Both Sides of the Table</div>
+      <h2 class="reveal reveal-d1">We Work Both Sides of Contract Disputes</h2>
+      <p class="reveal reveal-d2">In any given month we are enforcing agreements for some clients and defending against enforcement for others. That matters to you for a practical reason. A firm that only ever sues has one recommendation. Because we sit on both sides, we can tell you early and candidly whether your case is worth litigating, what it will likely cost, and what the other side is probably being told by their own lawyer. Sometimes the answer is that you should settle, and we would rather tell you that in the first meeting than in the third year.</p>
     </div>
 
   </div>
@@ -190,6 +633,66 @@
       <p>The statute of limitations refers to the time limit within which a lawsuit must be filed. In California, a breach-of-written-contract claim is generally subject to a four-year limitations period, while an oral-contract claim generally has a two-year period. The limitations period ordinarily runs from the breach, although accrual or tolling may differ in particular circumstances. If the lawsuit is not filed within this timeframe, the right to sue may be lost. Understanding these deadlines is crucial to protect your legal rights in contract disputes.</p>
     </div>
   </div>
+
+  <div class="faq-item reveal reveal-d4">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-can-i-recover-in-a-breach-h" aria-expanded="false" aria-controls="faq-what-can-i-recover-in-a-breach" onclick="toggleFaq(this)">
+              What can I recover in a breach of contract case?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-can-i-recover-in-a-breach" role="region" aria-labelledby="faq-what-can-i-recover-in-a-breach-h">
+      <p>California generally allows a non-breaching party to recover damages that place them in the position they would have been in had the contract been performed, often called expectation damages. Depending on the facts, this can include lost profits, costs incurred in reliance on the contract, and consequential damages that were foreseeable at the time of contracting. Punitive damages are generally not available for a straightforward breach, though a separate fraud claim may open that door. Attorney's fees may be recoverable if the contract or a specific statute authorizes them.</p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal reveal-d5">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-do-i-have-to-try-to-settle-h" aria-expanded="false" aria-controls="faq-do-i-have-to-try-to-settle" onclick="toggleFaq(this)">
+              Do I have to try to settle before filing?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-do-i-have-to-try-to-settle" role="region" aria-labelledby="faq-do-i-have-to-try-to-settle-h">
+      <p>Not usually, unless the contract itself requires mediation or another form of alternative dispute resolution before a lawsuit can be filed. Many commercial contracts include such a clause, so it is worth checking the agreement before filing. Even without a contractual requirement, settlement discussions often happen alongside litigation, and a well-prepared demand letter can sometimes resolve a dispute without a lawsuit at all.</p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal reveal-d6">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-if-the-contract-has-an-attorney-fees-h" aria-expanded="false" aria-controls="faq-what-if-the-contract-has-an-attorney-fees" onclick="toggleFaq(this)">
+              What if the contract has an attorney fees clause?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-if-the-contract-has-an-attorney-fees" role="region" aria-labelledby="faq-what-if-the-contract-has-an-attorney-fees-h">
+      <p>California generally enforces contractual attorney's fees provisions, and Civil Code section 1717 makes most one-sided fee clauses reciprocal, so the prevailing party can generally recover fees even if the clause only mentions one side. Without a fee clause or a statute that provides for fees, each side generally bears its own attorney's fees under the American Rule.</p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal reveal-d1">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-if-the-contract-requires-arbitration-h" aria-expanded="false" aria-controls="faq-what-if-the-contract-requires-arbitration" onclick="toggleFaq(this)">
+              What if the contract requires arbitration?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-if-the-contract-requires-arbitration" role="region" aria-labelledby="faq-what-if-the-contract-requires-arbitration-h">
+      <p>California generally enforces valid arbitration clauses, and a party with a mandatory arbitration provision in their contract is usually required to arbitrate rather than file suit in court, subject to certain exceptions and defenses. Arbitration can be faster and more private than litigation, but it also limits the right to appeal and can involve its own set of fees. Whether an arbitration clause applies to your specific dispute, and whether it is enforceable, is worth having an attorney review before you file anything.</p>
+    </div>
+  </div>
+
+  <div class="faq-item reveal reveal-d2">
+    <h3 class="faq-h">
+            <button class="faq-question" type="button" id="faq-what-is-anticipatory-breach-h" aria-expanded="false" aria-controls="faq-what-is-anticipatory-breach" onclick="toggleFaq(this)">
+              What is anticipatory breach?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-what-is-anticipatory-breach" role="region" aria-labelledby="faq-what-is-anticipatory-breach-h">
+      <p>Anticipatory breach occurs when one party clearly indicates, through words or conduct, that they will not perform their obligations under the contract before performance is actually due. California generally allows the other party to treat that repudiation as an immediate breach and pursue damages right away, rather than waiting for the performance date to pass. Whether particular conduct rises to the level of a clear repudiation is fact specific.</p>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -212,7 +715,7 @@
       <div class="why-us-item reveal reveal-d3">
         <div class="why-us-num">03</div>
         <strong>Proven Track Record</strong>
-        <span>From breach of contract claims to non-compete disputes, our attorneys have secured favorable outcomes for businesses and individuals across Silicon Valley.</span>
+        <span>We have handled contract disputes on both sides of the table, for businesses enforcing agreements and for businesses defending against claims. Every case turns on its own facts, and past results do not predict future outcomes. What we can tell you is how we would approach yours, and we will do that in a free consultation.</span>
       </div>
       <div class="why-us-item reveal reveal-d4">
         <div class="why-us-num">04</div>
@@ -241,7 +744,7 @@
 </div>
 
 <script>
-(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.currentScript.closest(".emp-hero");var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.querySelector(".emp-hero");if(!hero)return;var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
 
 function toggleFaq(btn) {
   // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
@@ -281,6 +784,8 @@ function toggleFaq(btn) {
 
 (function(){
   var track = document.getElementById('empTrack');
+  var el = document.getElementById('empCarousel');
+  if (!track || !el) return;
   var dots = document.querySelectorAll('#empDots .emp-dot');
   var current = 0, total = dots.length, startX = 0, timer;
   function goToEmp(n){
@@ -291,7 +796,6 @@ function toggleFaq(btn) {
   window.goToEmp = goToEmp;
   function next(){ goToEmp(current+1); }
   timer = setInterval(next, 5000);
-  var el = document.getElementById('empCarousel');
   el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
   el.addEventListener('touchend', function(e){
     var dx = e.changedTouches[0].clientX - startX;
@@ -322,38 +826,12 @@ function toggleFaq(btn) {
   els.forEach(function(el){ observer.observe(el); });
 })();
 
-// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
-// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
-// fijo medimos cuanto hay por encima y lo descontamos.
-(function(){
-  var hero = document.querySelector('.mlgP .emp-hero');
-  if (!hero) return;
-  function fit(){
-    hero.style.minHeight = '';
-    var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    // Si la medicion da un numero raro (el header de Duda no termino de
-    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
-    // se infle a casi toda la pantalla o se achique a casi nada.
-    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
-    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
-  }
-  fit();
-  window.addEventListener('load', fit);
-  window.addEventListener('resize', fit);
-})();
-
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
-// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
-// de la pantalla en ese momento, y quedaba invisible para siempre porque
-// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
-function mlgForzarVisibles(){
-  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+setTimeout(function(){
+  document.querySelectorAll('#mlgE-contract-disputes .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}
-setTimeout(mlgForzarVisibles, 1200);
-window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
+}, 1200);
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -386,6 +864,46 @@ window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
    "acceptedAnswer": {
     "@type": "Answer",
     "text": "The statute of limitations refers to the time limit within which a lawsuit must be filed. In California, a breach-of-written-contract claim is generally subject to a four-year limitations period, while an oral-contract claim generally has a two-year period. The limitations period ordinarily runs from the breach, although accrual or tolling may differ in particular circumstances. If the lawsuit is not filed within this timeframe, the right to sue may be lost. Understanding these deadlines is crucial to protect your legal rights in contract disputes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What can I recover in a breach of contract case?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "California generally allows a non-breaching party to recover damages that place them in the position they would have been in had the contract been performed, often called expectation damages. Depending on the facts, this can include lost profits, costs incurred in reliance on the contract, and consequential damages that were foreseeable at the time of contracting. Punitive damages are generally not available for a straightforward breach, though a separate fraud claim may open that door. Attorney's fees may be recoverable if the contract or a specific statute authorizes them."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I have to try to settle before filing?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Not usually, unless the contract itself requires mediation or another form of alternative dispute resolution before a lawsuit can be filed. Many commercial contracts include such a clause, so it is worth checking the agreement before filing. Even without a contractual requirement, settlement discussions often happen alongside litigation, and a well-prepared demand letter can sometimes resolve a dispute without a lawsuit at all."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What if the contract has an attorney fees clause?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "California generally enforces contractual attorney's fees provisions, and Civil Code section 1717 makes most one-sided fee clauses reciprocal, so the prevailing party can generally recover fees even if the clause only mentions one side. Without a fee clause or a statute that provides for fees, each side generally bears its own attorney's fees under the American Rule."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What if the contract requires arbitration?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "California generally enforces valid arbitration clauses, and a party with a mandatory arbitration provision in their contract is usually required to arbitrate rather than file suit in court, subject to certain exceptions and defenses. Arbitration can be faster and more private than litigation, but it also limits the right to appeal and can involve its own set of fees. Whether an arbitration clause applies to your specific dispute, and whether it is enforceable, is worth having an attorney review before you file anything."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is anticipatory breach?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Anticipatory breach occurs when one party clearly indicates, through words or conduct, that they will not perform their obligations under the contract before performance is actually due. California generally allows the other party to treat that repudiation as an immediate breach and pursue damages right away, rather than waiting for the performance date to pass. Whether particular conduct rises to the level of a clear repudiation is fact specific."
    }
   }
  ]
