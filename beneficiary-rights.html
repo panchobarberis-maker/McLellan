@@ -291,6 +291,9 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .content-list li::before { content:"\2713"; color:#c9a96e; font-weight:900; flex-shrink:0; margin-top:2px; font-size:19px; }
 .content-list li span { font-size:18px; line-height:1.7; color:#4a5c5e; text-align:left; }
 @media(min-width:769px) { .content-list li span { font-size:21px; } }
+.content-ol { list-style:decimal; margin:16px 0 0; padding-left:24px; display:flex; flex-direction:column; gap:12px; }
+.content-ol li { font-size:18px; line-height:1.85; color:#4a5c5e; text-align:left; padding-left:4px; }
+@media(min-width:769px) { .content-ol li { font-size:21px; } }
 
 /* HELP SECTION (How We Help) */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -632,9 +635,10 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
         <p>California's Probate Code gives beneficiaries the right to:</p>
         <ul class="content-list">
           <li><span>Be kept reasonably informed about the trust or estate's administration.</span></li>
-          <li><span>Receive accountings, when entitled under California law, showing how assets have been managed.</span></li>
+          <li><span>Receive accountings showing how assets have been managed.</span></li>
           <li><span>Receive their inheritance without unreasonable delay.</span></li>
         </ul>
+        <p>Whether a formal accounting is owed to you, and how much detail it must include, depends on your relationship to the trust or estate and the terms of the instrument itself, so the exact scope of these rights can vary by circumstance.</p>
         <p class="mlg-vecinas">When a trustee ignores those protections, the same facts frequently support trustee removal or a claim for trustee breach of fiduciary duty.</p>
       </div>
       <div class="content-card reveal reveal-d3">
@@ -644,6 +648,15 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
       <div class="content-card reveal reveal-d4">
         <p class="content-lead">Enforcing these rights often uncovers larger problems.</p>
         <p>An incomplete accounting can reveal mismanagement, and a stalled distribution can point to a trustee acting in their own interest rather than the beneficiaries'. Beneficiaries who assert their rights early are in a far stronger position to recover their full inheritance and hold a noncompliant trustee accountable.</p>
+      </div>
+      <div class="content-card reveal reveal-d4">
+        <p class="content-lead">What to Do When a Trustee Ignores You</p>
+        <ol class="content-ol">
+          <li>One, put the request in writing and keep a copy, because a verbal request is very hard to prove later.</li>
+          <li>Two, be specific about what you are asking for and give a reasonable deadline.</li>
+          <li>Three, keep every response, including the ones that say nothing.</li>
+          <li>Four, if the deadline passes, talk to a lawyer before sending anything angrier, because the record you are building may end up in front of a judge and it should read as reasonable throughout.</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -848,6 +861,7 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
 <section class="cta-banner" id="contact">
   <h2 class="reveal">Being Kept in the Dark?<em>Know Your Rights.</em></h2>
   <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <p class="reveal reveal-d1">Tell us what's happening with the trust or estate using the form below. Submitting it starts a free, no-obligation review of your situation, and we'll follow up to discuss your options.</p>
   <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fbeneficiary-rights&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
 </section>
 
