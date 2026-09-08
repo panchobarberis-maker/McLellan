@@ -126,12 +126,12 @@
         <div class="faq-item reveal reveal-d2">
           <h3 class="faq-h">
             <button class="faq-question" type="button" id="faq-can-my-employer-stop-me-from-talking-h" aria-expanded="false" aria-controls="faq-can-my-employer-stop-me-from-talking" onclick="toggleFaq(this)">
-              Can my employer stop me from talking about what happened at my job?
+              What can't I be asked to give up in a severance agreement?
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
           </h3>
           <div class="faq-answer" id="faq-can-my-employer-stop-me-from-talking" role="region" aria-labelledby="faq-can-my-employer-stop-me-from-talking-h">
-            <p>Not entirely. California's Silenced No More Act (SB 331), effective 2022, prohibits employers from using non-disparagement or confidentiality provisions in severance agreements to prevent employees from disclosing information about unlawful workplace acts, including discrimination, harassment, and retaliation. Employers can still protect legitimate trade secrets and the confidential terms of the settlement amount itself, but broad clauses attempting to silence you about illegal conduct may be unenforceable under California law.</p>
+            <p>More than most people expect, and the details matter. California law does not let an employer require you to release a claim for wages you already earned unless it actually pays those wages, so a release cannot quietly wipe out unpaid wages the agreement does not pay you for. Non-disparagement and confidentiality clauses cannot be used to stop you from disclosing factual information about workplace harassment, discrimination, or retaliation, and a severance agreement generally cannot bar you from reporting a suspected legal violation to a government agency. A settlement of an employment dispute also cannot include a provision barring you from ever being rehired, with a narrow exception. One caution worth understanding: keeping the right to report something to an agency is not the same as keeping the right to collect money on a claim you released. If any of this is in play in your agreement, it is worth an hour of review before you sign.</p>
           </div>
         </div>
 
@@ -353,7 +353,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -361,11 +365,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
@@ -410,10 +420,10 @@ setTimeout(function(){
     },
     {
       "@type": "Question",
-      "name": "Can my employer stop me from talking about what happened at my job?",
+      "name": "What can't I be asked to give up in a severance agreement?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not entirely. California's Silenced No More Act (SB 331), effective 2022, prohibits employers from using non-disparagement or confidentiality provisions in severance agreements to prevent employees from disclosing information about unlawful workplace acts, including discrimination, harassment, and retaliation. Employers can still protect legitimate trade secrets and the confidential terms of the settlement amount itself, but broad clauses attempting to silence you about illegal conduct may be unenforceable under California law."
+        "text": "More than most people expect, and the details matter. California law does not let an employer require you to release a claim for wages you already earned unless it actually pays those wages, so a release cannot quietly wipe out unpaid wages the agreement does not pay you for. Non-disparagement and confidentiality clauses cannot be used to stop you from disclosing factual information about workplace harassment, discrimination, or retaliation, and a severance agreement generally cannot bar you from reporting a suspected legal violation to a government agency. A settlement of an employment dispute also cannot include a provision barring you from ever being rehired, with a narrow exception. One caution worth understanding: keeping the right to report something to an agency is not the same as keeping the right to collect money on a claim you released. If any of this is in play in your agreement, it is worth an hour of review before you sign."
       }
     },
     {

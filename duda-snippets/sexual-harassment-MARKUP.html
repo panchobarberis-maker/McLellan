@@ -42,6 +42,10 @@
         </ul>
       </div>
       <div class="content-card reveal reveal-d4">
+        <p class="content-lead">California law is unusually favorable to employees on how a hostile work environment is measured.</p>
+        <p>Whether conduct adds up to a hostile work environment depends on the totality of the circumstances rather than on any single factor, and California law is unusually favorable to employees on how that is measured. The Legislature has directed that you do not have to prove your productivity declined. It is enough that a reasonable person in your position would find the harassment so altered working conditions as to make it more difficult to do the job. Comments count even when they came from someone with no authority over you and were not made in the course of a decision about your job, because they can still be circumstantial evidence of discrimination. And the standard does not soften because of where you work. California has expressly rejected the idea that an occupation with a history of crude or sexualized talk gets more latitude than any other workplace.</p>
+      </div>
+      <div class="content-card reveal reveal-d5">
         <p class="content-lead">McLellan Law Group offers a confidential consultation to help you understand your rights.</p>
         <p>If you have experienced sexual harassment at work in Silicon Valley, McLellan Law Group offers a confidential consultation to help you understand your rights and options.</p>
       </div>
@@ -375,7 +379,11 @@ function toggleFaq(btn) {
   function fit(){
     hero.style.minHeight = '';
     var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    hero.style.minHeight = 'calc(100svh - ' + Math.max(0, Math.round(arriba)) + 'px)';
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
   }
   fit();
   window.addEventListener('load', fit);
@@ -383,11 +391,17 @@ function toggleFaq(btn) {
 })();
 
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-setTimeout(function(){
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
   document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}, 1200);
+}
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:
