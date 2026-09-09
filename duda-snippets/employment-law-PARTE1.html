@@ -591,6 +591,8 @@ function toggleFaq(btn) {
 
 (function(){
   var track = document.getElementById('empTrack');
+  var el = document.getElementById('empCarousel');
+  if (!track || !el) return;
   var dots = document.querySelectorAll('#empDots .emp-dot');
   var current = 0, total = dots.length, startX = 0, timer;
   function goToEmp(n){
@@ -601,7 +603,6 @@ function toggleFaq(btn) {
   window.goToEmp = goToEmp;
   function next(){ goToEmp(current+1); }
   timer = setInterval(next, 5000);
-  var el = document.getElementById('empCarousel');
   el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
   el.addEventListener('touchend', function(e){
     var dx = e.changedTouches[0].clientX - startX;
