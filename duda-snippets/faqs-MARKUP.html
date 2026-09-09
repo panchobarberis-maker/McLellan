@@ -1,7 +1,218 @@
-<style>html, body { overflow-x:hidden; }</style>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+html, body { overflow-x:hidden; }
+#mlgE-faqs { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
 
 
-<div class="mlgP">
+#mlgE-faqs *, #mlgE-faqs *::before, #mlgE-faqs *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlgE-faqs { scroll-behavior:smooth; }
+#mlgE-faqs { font-family:'Barlow',sans-serif !important; background:#fff !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased; font-weight:500 !important; }
+#mlgE-faqs .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlgE-faqs .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlgE-faqs .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlgE-faqs .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlgE-faqs .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlgE-faqs .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlgE-faqs .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+#mlgE-faqs .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlgE-faqs .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlgE-faqs .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlgE-faqs .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlgE-faqs .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlgE-faqs .emp-hero {
+  position:relative !important; overflow:hidden;
+  min-height:calc(100svh - 53px) !important; display:flex !important; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center !important; padding:0 28px 10px !important;
+  background:#1e3a3e !important;
+  border-bottom:12px solid #c9a96e !important;
+}
+@media(min-width:769px) {
+#mlgE-faqs .emp-hero { min-height:calc(100svh - 62px) !important; padding:0 80px 12px !important; }
+}
+#mlgE-faqs .emp-hero-img {
+  position:absolute !important; inset:0; width:100% !important; height:100% !important;
+  object-fit:cover; object-position:center 30%;
+  filter:brightness(0.7) saturate(1.1);
+}
+#mlgE-faqs .emp-hero-overlay {
+  position:absolute !important; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(20,45,50,0.55) 40%, rgba(20,45,50,0.95) 100%) !important;
+}
+#mlgE-faqs .emp-hero-overlay::before { content:''; position:absolute !important; inset:0; background:rgba(20,48,52,0.55) !important; }
+#mlgE-faqs .video-mobile { display:none !important; }
+@media(max-width:768px) {
+#mlgE-faqs .video-desktop { display:none !important; }
+#mlgE-faqs .video-mobile { display:block !important; }
+}
+#mlgE-faqs .emp-hero h1 {
+  position:relative !important; z-index:2;
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(26px, 6.5vw, 62px) !important; font-weight:900 !important; line-height:0.98 !important; overflow-wrap:break-word;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
+  margin:0 auto 18px !important; max-width:900px !important;
+}
+#mlgE-faqs .emp-hero h1 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.75em !important; letter-spacing:0 !important;
+}
+#mlgE-faqs .emp-hero-sub {
+  position:relative !important; z-index:2;
+  font-size:17px !important; color:rgba(255,255,255,0.85) !important; max-width:640px !important;
+  line-height:1.7 !important; margin:0 auto 28px !important;
+}
+@media(min-width:769px) {
+#mlgE-faqs .emp-hero-sub { font-size:20px !important; max-width:760px !important; }
+}
+#mlgE-faqs .btn-gold {
+  display:inline-flex !important; align-items:center; gap:8px !important;
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important; font-weight:700 !important; font-size:14px !important;
+  padding:13px 28px !important; border-radius:28px !important; text-decoration:none !important;
+  position:relative !important; z-index:2; width:max-content !important;
+}
+#mlgE-faqs .hero-pill {
+  position:relative !important; z-index:2;
+  display:inline-flex !important; align-items:center; gap:10px !important; width:max-content !important; max-width:100% !important;
+  box-sizing:border-box; white-space:normal;
+  background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
+  border-radius:26px !important; padding:9px 16px !important; margin-bottom:24px !important;
+  font-size:15px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  font-weight:700 !important; color:#e8cc8a !important;
+}
+@media(max-width:400px) {
+#mlgE-faqs .hero-pill { font-size:10px !important; letter-spacing:1px !important; padding:8px 14px !important; }
+}
+#mlgE-faqs .hero-pill::before { content:''; width:7px !important; height:7px !important; background:#c9a96e !important; border-radius:50% !important; flex-shrink:0; }
+#mlgE-faqs .faq-nav { background:#fbf6ef !important; padding:28px 20px !important; border-bottom:1px solid #e8e3da !important; }
+#mlgE-faqs .faq-nav-grid { max-width:920px !important; margin:0 auto !important; display:flex !important; flex-wrap:wrap; justify-content:center; gap:10px !important; }
+#mlgE-faqs .faq-nav-grid a {
+  display:inline-block !important; padding:9px 18px !important; border:1.5px solid #c9a96e !important; border-radius:24px !important;
+  color:#1e3a3e !important; text-decoration:none !important; font-size:13px !important; font-weight:700 !important; letter-spacing:0.2px !important;
+  transition:background 0.15s, color 0.15s;
+}
+#mlgE-faqs .faq-nav-grid a:hover { background:#1e3a3e !important; color:#fff !important; border-color:#1e3a3e !important; }
+#mlgE-faqs .faqp-section { padding:60px 24px !important; scroll-margin-top:70px; background:#1e3a3e !important; }
+@media(min-width:769px) {
+#mlgE-faqs .faqp-section { padding:84px 28px !important; }
+}
+#mlgE-faqs .faqp-section--light { background:#fbf6ef !important; }
+#mlgE-faqs .faq-eyebrow {
+  display:block !important; text-align:center !important; font-size:13px !important; font-weight:800 !important;
+  letter-spacing:2px !important; color:#c9a96e !important; margin-bottom:10px !important;
+}
+#mlgE-faqs .faq-eyebrow::before { content:'FAQ '; }
+#mlgE-faqs .faqp-section--light .faq-eyebrow { color:#a9822f !important; }
+#mlgE-faqs .faqp-section h2 {
+  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
+  font-size:clamp(28px, 4.5vw, 42px) !important; font-weight:900 !important; line-height:1.05 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:36px !important;
+}
+#mlgE-faqs .faqp-section--light h2 { color:#1e3a3e !important; }
+#mlgE-faqs .faq-list { max-width:760px !important; margin:0 auto !important; display:flex !important; flex-direction:column; }
+#mlgE-faqs .faqp-item { border-bottom:1px solid rgba(255,255,255,0.16) !important; }
+#mlgE-faqs .faqp-section--light .faqp-item { border-bottom-color:rgba(30,58,62,0.14); }
+#mlgE-faqs .faqp-item:first-child { border-top:1px solid rgba(255,255,255,0.16) !important; }
+#mlgE-faqs .faqp-section--light .faqp-item:first-child { border-top-color:rgba(30,58,62,0.14); }
+#mlgE-faqs .faqp-question {
+  width:100% !important; background:none !important; border:none !important; text-align:left !important;
+  padding:22px 4px !important; font-family:'Barlow',sans-serif !important; font-size:16px !important;
+  font-weight:600 !important; color:#fff !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center; gap:16px !important;
+  transition:opacity 0.15s;
+}
+#mlgE-faqs .faqp-section--light .faqp-question { color:#1e3a3e !important; }
+#mlgE-faqs .faqp-question:hover { opacity:0.72; }
+#mlgE-faqs .faqp-question .faqp-icon {
+  flex-shrink:0; width:26px !important; height:26px !important; border-radius:50% !important;
+  border:1.5px solid #c9a96e !important; color:#c9a96e !important;
+  display:flex !important; align-items:center; justify-content:center;
+  font-size:15px !important; line-height:1 !important; transition:transform 0.3s;
+}
+#mlgE-faqs .faqp-item.open .faqp-icon { transform:rotate(45deg); }
+#mlgE-faqs .faqp-answer { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+#mlgE-faqs .faqp-answer p { font-size:15px !important; line-height:1.75 !important; color:rgba(255,255,255,0.72) !important; padding:0 4px 24px !important; margin:0 !important; text-align:left !important; }
+#mlgE-faqs .faqp-section--light .faqp-answer p { color:#5a6e70 !important; }
+@media(min-width:769px) {
+#mlgE-faqs .faqp-question { font-size:18px !important; padding:24px 4px !important; }
+#mlgE-faqs .faqp-answer p { font-size:16px !important; }
+}
+#mlgE-faqs .cta-banner { background:#fbf6ef !important; padding:72px 28px !important; text-align:center !important; border-top:1px solid #e8e3da !important; }
+@media(min-width:769px) {
+#mlgE-faqs .cta-banner { padding:100px 28px !important; }
+}
+#mlgE-faqs .cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(32px, 5vw, 52px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:12px !important;
+}
+@media(min-width:769px) {
+#mlgE-faqs .cta-banner h2 { font-size:clamp(48px, 6vw, 80px) !important; }
+}
+#mlgE-faqs .cta-banner h2 em {
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; display:block !important;
+}
+#mlgE-faqs .cta-banner p { font-size:16px !important; color:#5a6e70 !important; margin-bottom:28px !important; line-height:1.65 !important; }
+@media(min-width:769px) {
+#mlgE-faqs .cta-banner p { font-size:22px !important; }
+}
+#mlgE-faqs .cta-banner .btn-gold { font-size:15px !important; padding:15px 36px !important; margin:0 auto !important; }
+@media(min-width:769px) {
+#mlgE-faqs .cta-banner .btn-gold { font-size:18px !important; padding:18px 44px !important; }
+}
+@keyframes navBtnShimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+@keyframes navBtnPulse { 0% { box-shadow:0 0 0 0 rgba(201,169,110,0.6); } 70% { box-shadow:0 0 0 10px rgba(201,169,110,0); } 100% { box-shadow:0 0 0 0 rgba(201,169,110,0); } }
+#mlgE-faqs .btn-gold, #mlgE-faqs .contact-btn {
+  background:linear-gradient(90deg,#c9a96e 0%,#e8cc8a 40%,#c9a96e 60%,#b8933a 100%) !important;
+  background-size:200% auto !important;
+  color:#1e3a3e !important;
+  animation:navBtnShimmer 2s linear infinite, navBtnPulse 2.5s ease-out infinite;
+}
+#mlgE-faqs .maps-section { width:100% !important; line-height:0 !important; }
+@media(min-width:769px) {
+#mlgE-faqs .maps-section iframe { height:400px !important; }
+}
+#mlgE-faqs a:focus-visible, #mlgE-faqs button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-radius:4px !important; }
+#mlgE-faqs .mlg-salto {
+  position:absolute !important; left:-9999px; top:0; z-index:100000;
+  background:#1e3a3e !important; color:#fff !important; padding:12px 20px !important; border-radius:0 0 8px 0 !important;
+  font-family:'Barlow',sans-serif !important; font-size:15px !important; font-weight:700 !important; text-decoration:none !important;
+}
+#mlgE-faqs .mlg-salto:focus { left:0; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlgE-faqs > section, #mlgE-faqs > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlgE-faqs > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlgE-faqs > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+
+</style>
+
+<div id="mlgE-faqs">
 
 <a class="mlg-salto" href="#faq-appeals">Skip to content</a>
 
@@ -10,7 +221,7 @@
 
 <!-- HERO -->
 <section class="emp-hero">
-  <video class="emp-hero-img video-desktop" muted loop playsinline preload="none"><source data-src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" muted loop playsinline preload="none"><source data-src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
+  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
   <div class="emp-hero-overlay"></div>
   <div class="hero-pill">FAQs · Saratoga, California</div>
   <h1>Frequently Asked <em>Questions</em></h1>
@@ -340,8 +551,6 @@
 </div>
 
 <script>
-(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.querySelector(".emp-hero");if(!hero)return;var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
-
 function toggleFaq(btn) {
   var item = btn.closest('.faqp-item');
   var answer = item.querySelector('.faqp-answer');
@@ -387,38 +596,12 @@ function toggleFaq(btn) {
   window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
 })();
 
-// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
-// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
-// fijo medimos cuanto hay por encima y lo descontamos.
-(function(){
-  var hero = document.querySelector('.mlgP .emp-hero');
-  if (!hero) return;
-  function fit(){
-    hero.style.minHeight = '';
-    var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    // Si la medicion da un numero raro (el header de Duda no termino de
-    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
-    // se infle a casi toda la pantalla o se achique a casi nada.
-    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
-    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
-  }
-  fit();
-  window.addEventListener('load', fit);
-  window.addEventListener('resize', fit);
-})();
-
 // Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
-// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
-// de la pantalla en ese momento, y quedaba invisible para siempre porque
-// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
-function mlgForzarVisibles(){
-  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+setTimeout(function(){
+  document.querySelectorAll('#mlgE-faqs .reveal:not(.in-view)').forEach(function(el){
     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
   });
-}
-setTimeout(mlgForzarVisibles, 1200);
-window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
+}, 1200);
 </script>
 
 <!-- Datos estructurados de esta pagina. Ya van incluidos aca:

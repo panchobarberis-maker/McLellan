@@ -56,3 +56,30 @@ Son siete pasos y ninguno necesita tocar código.
 - Buscar `application/ld+json`: **dos bloques**, un `LegalService` (del sitio)
   y un `FAQPage` (de la página).
 - Probar la URL en el Rich Results Test de Google.
+
+## Video de fondo del hero: NO usar script de carga
+
+Versión vieja (rota): dos `<video>` con `data-src` en vez de `src`, más un
+`<script>` que elegía cuál video cargar según el ancho de pantalla usando
+`document.currentScript.closest(".emp-hero")`. Duda mueve ese script fuera
+de `.emp-hero` al armar el widget, `closest()` no lo encuentra, y como es
+el primer statement de un bloque `<script>` que también arma el sistema de
+reveal (la animación de aparición) y el carousel de testimonios, el error
+aborta TODO el bloque: video que no carga, texto que nunca aparece, FAQ que
+no abre. Pasó en `/retaliation`, `/sexual-harassment` y
+`/severance-negotiation` recién pegadas y probablemente en cualquier
+página que se vuelva a generar con el patrón viejo.
+
+Versión correcta (la que hay que usar siempre): los dos `<video>` con
+`src` directo (no `data-src`) y `autoplay`, sin ningún script asociado.
+El CSS del Site Head (`.mlgP .video-mobile { display:none }` +
+`@media(max-width:768px)`) ya se encarga de mostrar el que corresponde
+según el tamaño de pantalla. No hace falta JS para esto.
+
+```html
+<video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="URL_DESKTOP" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="URL_MOBILE" type="video/mp4"></video>
+```
+
+Si en algún momento se arma una página nueva a mano (copiando otra vieja
+como base), verificar que el hero no tenga el script viejo. Buscar
+`document.currentScript` en el archivo: si aparece, hay que sacarlo.
