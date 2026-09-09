@@ -1,68 +1,12 @@
-<style>
-html, body { overflow-x:hidden; }
-/* El hero de esta pagina tiene que medir igual que el del home (100svh
-   completo), no el calc(100svh - Xpx) que usan las subpaginas de practicas. */
-.mlgP .emp-hero { min-height:100svh !important; }
-/* El Site Head solo define el checkmark y el texto de .help-item (pensado
-   para las 38 subpaginas, que no llevan titulo). Esta pagina si necesita
-   un titulo (Predictability, Savings...) arriba del texto, y sin estas
-   reglas ese <strong> queda con el color oscuro por defecto sobre el
-   fondo verde oscuro de la tarjeta -> invisible, y encima empuja la
-   primera linea del parrafo hacia la derecha (parecia texto centrado). */
-.mlgP .help-item {
-  display:block !important; position:relative !important;
-  padding-left:52px !important;
-}
-.mlgP .help-item::before { position:absolute !important; left:24px !important; top:24px !important; }
-.mlgP .help-item strong {
-  display:block !important; font-family:'Barlow Condensed',sans-serif !important;
-  font-size:13px !important; font-weight:800 !important; letter-spacing:1.5px !important;
-  text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:6px !important;
-}
-.mlgP .help-item span { display:block !important; }
-/* Reglas propias de esta pagina, no viven en el Site Head porque no las
-   comparte ninguna otra de las 38 subpaginas. */
-.mlgP .content-section p.content-note {
-  font-size:15px !important; font-weight:600 !important; color:#6b7c7e !important;
-  border-top:1px solid rgba(30,58,62,0.15) !important;
-  padding-top:18px !important; margin-top:20px !important; text-align:left !important;
-}
-@media(min-width:769px) { .mlgP .content-section p.content-note { font-size:16px !important; } }
-.mlgP .tiers-section { background:#fbf6ef !important; padding:64px 28px !important; }
-@media(min-width:769px) { .mlgP .tiers-section { padding:88px 80px !important; } }
-.mlgP .tiers-section .section-eyebrow { color:#1e3a3e !important; }
-.mlgP .tiers-section .section-eyebrow::before { background:#1e3a3e !important; }
-.mlgP .tiers-section h2 {
-  font-family:'Barlow Condensed',sans-serif !important; text-align:center !important;
-  font-size:clamp(30px, 5vw, 48px) !important; font-weight:900 !important; line-height:1.05 !important;
-  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:40px !important;
-}
-.mlgP .tiers-grid { display:flex !important; flex-direction:column; gap:20px !important; max-width:1100px !important; margin:0 auto !important; }
-@media(min-width:769px) { .mlgP .tiers-grid { display:grid !important; grid-template-columns:repeat(2,1fr); gap:24px !important; } }
-.mlgP .tier-card {
-  background:#1e3a3e !important; border-radius:16px !important; padding:28px 26px !important;
-  border:2.5px solid rgba(201,169,110,0.45) !important;
-  box-shadow:0 8px 24px rgba(0,0,0,0.15);
-  display:flex !important; flex-direction:column; gap:14px !important;
-}
-@media(min-width:769px) { .mlgP .tier-card { padding:36px 34px !important; } }
-.mlgP .tier-card .tier-label {
-  font-family:'Barlow Condensed',sans-serif !important; font-size:14px !important; font-weight:800 !important;
-  letter-spacing:2px !important; text-transform:uppercase !important; color:#c9a96e !important;
-}
-.mlgP .tier-card h3 {
-  font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(24px,3vw,30px) !important;
-  font-weight:900 !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; color:#fff !important; line-height:1.1 !important;
-}
-.mlgP .tier-card p { font-size:16px !important; line-height:1.65 !important; color:rgba(255,255,255,0.8) !important; flex-grow:1; text-align:left !important; }
-@media(min-width:769px) { .mlgP .tier-card p { font-size:17px !important; } }
-.mlgP .tier-card .btn-gold { align-self:flex-start !important; margin-top:6px !important; font-size:13px !important; padding:11px 24px !important; }
-</style>
+<style>html, body { overflow-x:hidden; }</style>
 
 
 <div class="mlgP">
 
 <a class="mlg-salto" href="#contenido">Skip to content</a>
+
+
+
 
 <!-- HERO -->
 <section class="emp-hero">
@@ -192,22 +136,10 @@ html, body { overflow-x:hidden; }
 </div>
 
 <script>
-(function(){
-  var heroes = document.querySelectorAll('.mlgP .emp-hero');
-  heroes.forEach(function(hero){
-    var chico = window.matchMedia("(max-width:768px)").matches;
-    var activo = hero.querySelector(chico ? ".video-mobile" : ".video-desktop");
-    var otro = hero.querySelector(chico ? ".video-desktop" : ".video-mobile");
-    if (otro) otro.remove();
-    if (activo) {
-      var f = activo.querySelector("source");
-      if (f && f.dataset.src) { f.src = f.dataset.src; activo.load(); activo.play().catch(function(){}); }
-    }
-  });
-})();
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.querySelector(".emp-hero");if(!hero)return;var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
 
 (function(){
-  var els = document.querySelectorAll('.mlgP .reveal');
+  var els = document.querySelectorAll('.reveal');
   if (!els.length) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     els.forEach(function(el){ el.classList.add('in-view'); });
@@ -227,35 +159,51 @@ html, body { overflow-x:hidden; }
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el){ observer.observe(el); });
 })();
-</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "McLellan Law Group: General Counsel Subscription Plans",
-  "description": "Flexible monthly general counsel subscription plans for California entrepreneurs, employers, and real estate investors.",
-  "url": "https://www.mclellanlawgroup.com/subscription-plans",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "20665 4th St #202",
-    "addressLocality": "Saratoga",
-    "addressRegion": "CA",
-    "postalCode": "95070",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    "Silicon Valley",
-    "Santa Clara County",
-    "Bay Area",
-    "Saratoga CA"
-  ],
-  "knowsAbout": [
-    "General Counsel Services",
-    "Business Law",
-    "Contract Review",
-    "Employment Law Compliance",
-    "Real Estate Law"
-  ]
+
+(function(){
+  var hero = document.querySelector('.emp-hero');
+  var nav = document.querySelector('.nav');
+  if (!hero || !nav) return;
+  function ajustar(){
+    var altoNav = nav.getBoundingClientRect().height;
+    hero.style.minHeight = (window.innerHeight - altoNav) + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
+})();
+
+// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
+// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
+// fijo medimos cuanto hay por encima y lo descontamos.
+(function(){
+  var hero = document.querySelector('.mlgP .emp-hero');
+  if (!hero) return;
+  function fit(){
+    hero.style.minHeight = '';
+    var arriba = hero.getBoundingClientRect().top + window.scrollY;
+    // Si la medicion da un numero raro (el header de Duda no termino de
+    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
+    // se infle a casi toda la pantalla o se achique a casi nada.
+    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
+    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+})();
+
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
+// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
+// de la pantalla en ese momento, y quedaba invisible para siempre porque
+// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
+function mlgForzarVisibles(){
+  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
 }
+setTimeout(mlgForzarVisibles, 1200);
+window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
 </script>

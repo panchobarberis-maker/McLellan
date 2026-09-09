@@ -1,0 +1,229 @@
+<div class="mlgE-employment-law">
+<!-- TESTIMONIALS -->
+<section class="emp-testimonials">
+  <div class="section-eyebrow reveal">Client Reviews</div>
+  <h2 class="reveal reveal-d1">What Our Clients Say</h2>
+  <div class="emp-carousel reveal reveal-d2" id="empCarousel">
+    <div class="emp-carousel-track" id="empTrack">
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Steven's ability to bring my case to settlement while keeping my focus on the bigger picture was most impressive. I would hire Steven again in a heartbeat."</span>
+        <span class="author">Benjamin · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire was nothing short of incredible. Always available, prompt, organized, and strategic. She won me a large settlement and I would highly recommend her."</span>
+        <span class="author">Pete · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution."</span>
+        <span class="author">Anonymous · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"We worked with Claire and Steven and were very impressed with their professionalism and patience. They were quick to get the facts and helped us get a clear game plan figured out for a complicated situation."</span>
+        <span class="author">Wendy · Employment Law</span>
+      </div>
+      <div class="emp-test-card">
+        <div class="stars">★★★★★</div>
+        <span class="quote">"Claire and Steven are not only incredibly knowledgeable but very supportive. They actually consider the issues and advise you on what's best for you, not just what costs the most. I feel very fortunate to have worked with them."</span>
+        <span class="author">Jordan · Employment Law</span>
+      </div>
+    </div>
+  </div>
+  <div class="emp-carousel-dots" id="empDots">
+    <button class="emp-dot active" onclick="goToEmp(0)"></button>
+    <button class="emp-dot" onclick="goToEmp(1)"></button>
+    <button class="emp-dot" onclick="goToEmp(2)"></button>
+    <button class="emp-dot" onclick="goToEmp(3)"></button>
+    <button class="emp-dot" onclick="goToEmp(4)"></button>
+  </div>
+  <p class="mlg-aviso-resultados">Results depend on the specific facts and law of each matter. Prior results do not guarantee or predict a similar outcome in any other case.</p>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="why-us-inner">
+    <div class="section-eyebrow reveal" style="color:#c9a96e !important;">Why McLellan Law Group</div>
+    <h2 class="why-us-title reveal reveal-d1">Results-Driven.<em>Personally Invested.</em></h2>
+    <div class="why-us-grid">
+      <div class="why-us-item reveal reveal-d1">
+        <div class="why-us-num">01</div>
+        <strong>Boutique Firm Attention</strong>
+        <span>You work directly with an attorney, not a paralegal or case manager. We keep our caseload intentionally small so every client gets full attention.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d2">
+        <div class="why-us-num">02</div>
+        <strong>Silicon Valley Focus</strong>
+        <span>Based in Saratoga, we know California employment law and the local court landscape inside out, from Santa Clara County to the broader Bay Area.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d3">
+        <div class="why-us-num">03</div>
+        <strong>Proven Track Record</strong>
+        <span>Our attorneys have represented employees and employers across Silicon Valley in wrongful termination, discrimination, harassment, wage and hour, and PAGA matters, in negotiation, arbitration, and California state and federal court.</span>
+      </div>
+      <div class="why-us-item reveal reveal-d4">
+        <div class="why-us-num">04</div>
+        <strong>Free Consultation</strong>
+        <span>We offer a complimentary initial consultation so you can understand your rights and options before making any commitment.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Ready to Talk?<br><em>We're Here.</em></h2>
+  <p class="reveal reveal-d1">Based in Saratoga, serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Femployment-law&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+</section>
+</div>
+
+<script>
+
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var hero=document.querySelector(".emp-hero");if(!hero)return;var activo=hero.querySelector(chico?".video-mobile":".video-desktop");var otro=hero.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
+
+function toggleFaq(btn) {
+  // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
+  // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
+  var item = btn.closest('.faq-item');
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = null;
+    // Sin esto el lector de pantalla sigue anunciando "expandido".
+    var b = el.querySelector('.faq-question');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// Si la URL trae el ancla de una pregunta, se abre sola y queda a la vista.
+// Es lo que hace util tener un link por pregunta.
+(function(){
+  function abrirDelHash(){
+    var h = location.hash.slice(1);
+    if (!h) return;
+    var a = document.getElementById(h) || document.getElementById(h.replace(/-h$/, ''));
+    if (!a || !a.classList.contains('faq-answer')) return;
+    var b = document.getElementById(a.id + '-h');
+    if (b && b.getAttribute('aria-expanded') !== 'true') b.click();
+    setTimeout(function(){ a.scrollIntoView({block: 'center'}); }, 60);
+  }
+  window.addEventListener('hashchange', abrirDelHash);
+  window.addEventListener('load', abrirDelHash);
+})();
+
+(function(){
+  var track = document.getElementById('empTrack');
+  var dots = document.querySelectorAll('#empDots .emp-dot');
+  var current = 0, total = dots.length, startX = 0, timer;
+  function goToEmp(n){
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+  }
+  window.goToEmp = goToEmp;
+  function next(){ goToEmp(current+1); }
+  timer = setInterval(next, 5000);
+  var el = document.getElementById('empCarousel');
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40){ goToEmp(dx<0 ? current+1 : current-1); }
+    timer = setInterval(next, 5000);
+  }, {passive:true});
+})();
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
+setTimeout(function(){
+  document.querySelectorAll('.mlgE-employment-law .reveal:not(.in-view)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
+  });
+}, 1200);
+</script>
+
+<!-- Datos estructurados de esta pagina. Ya van incluidos aca:
+     no hace falta un widget aparte. Si la pagina ya tiene uno con
+     este mismo JSON, borralo, o Google va a leer el FAQ dos veces. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you handle employment cases in Saratoga, California?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. McLellan Law Group is based in Saratoga, CA and represents employees and employers throughout Silicon Valley, Santa Clara County, and the Bay Area."}
+    },
+    {
+      "@type": "Question",
+      "name": "What employment law cases do you handle?",
+      "acceptedAnswer": {"@type": "Answer", "text": "We handle wrongful termination, retaliation, wage and hour disputes, discrimination, sexual harassment, and PAGA claims."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you represent both employers and employees?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. We represent both employers defending against claims and employees pursuing their rights under California employment law."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is a PAGA claim in California?",
+      "acceptedAnswer": {"@type": "Answer", "text": "PAGA (Private Attorneys General Act) allows employees to sue employers for labor code violations on behalf of themselves and other employees. McLellan Law Group defends California employers against PAGA claims, advising on notice responses, asserting available defenses, and pursuing early resolution strategies to minimize per-violation penalties."}
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to speak with an employment attorney?",
+      "acceptedAnswer": {"@type": "Answer", "text": "We offer a free initial consultation. Many employee-side cases are handled on a contingency fee basis, meaning you pay nothing unless we recover for you."}
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if I receive a PAGA notice in California?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Contact a California employment attorney immediately. A PAGA notice triggers a 65-day LWDA window. Under the 2024 PAGA reforms, employers who demonstrate early corrective action can significantly reduce penalties. Do not ignore the notice, and do not retaliate against the employee who filed it. McLellan Law Group LLP represents California employers in PAGA defense throughout Silicon Valley and the Bay Area."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I be sued for wrongful termination if I have an at-will employment policy?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. California is at-will, but you cannot terminate someone for a reason that violates public policy, is based on a protected characteristic under FEHA, constitutes retaliation for protected activity, or breaches an implied contract created by your handbook or offer letter. At-will employment is a starting point, not a shield."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a PAGA claim and a class action?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A class action requires court certification, which is a significant hurdle and can end the case if certification is denied. A PAGA claim does not. The employee acts on behalf of the State of California, and no certification is required. PAGA penalties are calculated per employee, per pay period. Under the 2024 reforms, 65 percent of civil penalties go to the Labor and Workforce Development Agency and 35 percent is distributed to the aggrieved employees, up from 25 percent before the reforms. PAGA claims also cannot be fully compelled into arbitration, which makes early strategy critical."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an employment attorney to draft a severance agreement in California?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You are not legally required to, but getting it wrong is costly. For employees 40 or older, federal law requires specific language and timing. California requires a proper Civil Code §1542 waiver. Recent state law changes restrict certain non-disparagement and confidentiality clauses. McLellan Law Group LLP drafts and reviews severance agreements for employers and advises employees and executives before they sign."}
+    }
+  ]
+}
+</script>
