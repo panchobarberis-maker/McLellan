@@ -269,7 +269,12 @@ def con_enlaces(body, name):
                   lambda m: miga + m.group(0), body, count=1)
 
     # 3. Paginas relacionadas, justo antes del cierre con el formulario.
-    vecinas = en.hermanas(name)
+    # Las paginas de employer (wrongful-termination-defense y compania) ya
+    # traen su propia linea "Related:" a mano, del Build-Ready Copy deck.
+    # Si ya esta, no hay que agregar el bloque de tarjetas: quedaria
+    # duplicado, un "related" chiquito arriba y toda una seccion abajo
+    # diciendo lo mismo.
+    vecinas = en.hermanas(name) if '<strong>Related:</strong>' not in body else []
     if vecinas:
         tarjetas = '\n'.join(
             f'    <a href="/{v}">{en.etiqueta(v)}</a>' for v in vecinas)
