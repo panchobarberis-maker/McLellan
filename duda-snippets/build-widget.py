@@ -29,8 +29,17 @@ FORCE = {
 NAV = ('.nav', '.logo-link', '.logo-img', '.dropdown', '.mobile-menu', '.mobile-accordion',
        '.nav-links', '.nav-hamburger', '.nav-logo-center', '.nav-contact-mobile', '.mobile-menu-close')
 
-FONTS = ("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800"
-         "&family=Barlow+Condensed:wght@700;800;900&family=DM+Serif+Display:ital@0;1&display=swap")
+# Tres @import separados, cada uno con un solo "family=" y sin "&display=swap".
+# Duda escapa el "&" cuando guarda el widget (lo convierte en "&amp;" o peor), lo
+# que rompe cualquier URL de Google Fonts que combine varias familias con "&".
+# Sin "&" en la URL el problema desaparece de raiz, aunque se pierda el
+# font-display:swap (efecto minimo: un parpadeo de texto invisible mientras
+# carga, en vez de texto de respaldo; mucho mejor que la fuente nunca cargando).
+FONTS = [
+    "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800",
+    "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900",
+    "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1",
+]
 
 
 # Rutas reales en Duda. Por defecto el slug es el nombre del archivo; aca van
@@ -157,8 +166,9 @@ def build(path, scope):
     scripts = re.findall(r'<script>(.*?)</script>', body, re.S)
     body = re.sub(r'<script>.*?</script>', '', body, flags=re.S).strip()
 
+    imports = '\n'.join(f"@import url('{f}');" for f in FONTS)
     widget = f"""<style>
-@import url('{FONTS}');
+{imports}
 html, body {{ overflow-x:hidden; }}
 #{scope} {{ font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
   -webkit-font-smoothing:antialiased; font-weight:500; }}
