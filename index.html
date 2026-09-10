@@ -144,7 +144,7 @@ html.js .pop.visible { opacity:1; transform:none; }
   width:100%; height:100%;
   min-width:100%; min-height:100%;
   transform:translate(-50%,-50%);
-  object-fit:cover;
+  object-fit:cover; object-position:center 30%;
 }
 .video-mobile { display:none; }
 @media(max-width:768px) {
@@ -227,7 +227,7 @@ html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
 .marquee-track span, .marquee-track em {
   font-family:'Barlow Condensed',sans-serif; font-size:clamp(48px,8vw,100px);
   font-weight:800; letter-spacing:-2px; text-transform:uppercase;
-  white-space:nowrap; padding:0 24px; line-height:1.1; color:#1e3a3e;
+  white-space:nowrap; padding:0 24px; line-height:1.35; color:#1e3a3e;
 }
 .marquee-track em {
   font-style:italic; font-family:'DM Serif Display',serif; font-weight:400;
@@ -271,12 +271,14 @@ html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
 .gc-tier-card .gc-tier-label { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#c9a96e; }
 .gc-tier-card .gc-tier-name { font-family:'Barlow',sans-serif; font-size:19px; font-weight:700; color:#fff; margin-top:4px; }
 .gc-tier-card .gc-tier-desc { font-size:14px; color:rgba(255,255,255,0.75); margin-top:6px; line-height:1.5; }
-.btn-outline-gold {
-  display:inline-flex; align-items:center; gap:10px; background:#1e3a3e; color:#fff;
+a.btn-outline-gold {
+  display:inline-flex; align-items:center; gap:10px;
+  background:#1e3a3e !important; background-color:#1e3a3e !important;
+  color:#fff !important; -webkit-text-fill-color:#fff !important;
   font-weight:700; font-size:15px; padding:14px 34px; border-radius:32px; text-decoration:none;
-  border:2px solid #1e3a3e; transition:background 0.2s, transform 0.15s;
+  border:2px solid #c9a96e !important; transition:background 0.2s, transform 0.15s;
 }
-.btn-outline-gold:hover { background:#264a4f; transform:translateY(-1px); }
+a.btn-outline-gold:hover { background:#264a4f !important; background-color:#264a4f !important; transform:translateY(-1px); }
 
 /* ══ TESTIMONIALS ══ */
 .testimonials { padding:48px 20px; background:#faf8f3; }
@@ -362,8 +364,6 @@ html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
 .team-dot { width:6px; height:6px; border-radius:50%; background:#ccc; border:none; cursor:pointer; padding:0; transition:background 0.2s; }
 .team-dot.active { background:#c9a96e; }
 
-.maps-section { width:100%; line-height:0; }
-
 /* ══ DESKTOP ══ */
 @media(min-width:769px) {
   .nav { padding:16px 64px; }
@@ -418,7 +418,6 @@ html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
   .team-arrow { display:none; }
   .team-dots { display:none; }
 
-  .maps-section iframe { height:420px; }
 }
 
 /* Mini-titulos (eyebrows) legibles en mobile */
@@ -696,7 +695,7 @@ html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
         </div>
         <div class="testimonial-card">
           <span class="quote-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg></span>
-          <span class="practice-tag">Employment Law</span>
+          <span class="practice-tag">Civil Litigation</span>
           <p class="quote"><strong>Claire was nothing short of incredible with how she represented me and my interests.</strong> She was always available, super prompt, organized, tactful, and strategic throughout the entire process. Claire was also very empathetic and practical which was super important at various times throughout my case and trial. Ultimately, Claire won me a large settlement and won my case. I would highly and confidently recommend Ms. Melehani to anyone and I would absolutely hire her again!</p>
           <span class="author">Pete</span>
         </div>
@@ -752,13 +751,6 @@ html.js .stat-item { opacity:0; transform:scale(0.6) translateY(48px); }
   <p>Based in Saratoga. Serving Silicon Valley, Santa Clara County, and the Bay Area.</p>
   <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2F&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-cta">Get My Free Consultation →</a>
 </section>
-
-<!-- MAP -->
-<div class="maps-section">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5!2d-122.0231!3d37.2638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5b5b5b5b5%3A0x0!2s20665+4th+St+%23202%2C+Saratoga%2C+CA+95070!5e0!3m2!1sen!2sus!4v1"
-    width="100%" height="300" style="border:0;display:block;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group"></iframe>
-</div>
 
 <script>
 // Marks that JS actually ran, so the CSS only hides .fade/.pop/.stat-item etc.
