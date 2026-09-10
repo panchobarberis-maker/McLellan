@@ -222,6 +222,35 @@
 
 
   </script>
+  <!-- Boton del hero -> link de reserva de lawbrokr.
+       Va UNA sola vez aca y corre en todas las paginas (subpaginas y hub).
+       El link de cada pagina sigue siempre el mismo patron (landed_url es la
+       URL actual, engaged_url siempre /contact-us), asi que no hace falta
+       pegarlo a mano en cada widget: este script arma la URL sola y la pone
+       en el boton "Free Consultation" del hero al cargar. El boton de mas
+       abajo (banner del fondo) ya trae ese link escrito a mano en el
+       markup, este script no lo toca. -->
+  <script>
+(function(){
+  var RAIZ = 'https://www.mclellanlawgroup.com';
+  function armarUrl(){
+    var landed = encodeURIComponent(RAIZ + location.pathname);
+    var engaged = encodeURIComponent(RAIZ + '/contact-us');
+    return 'https://mclellanlawgroup.lawbrokr.com/?landed_url=' + landed + '&engaged_url=' + engaged;
+  }
+  function arreglar(){
+    var url = armarUrl();
+    document.querySelectorAll('.emp-hero .btn-gold[href="#contact"], .emp-hero-ctas .btn-gold[href="#contact"]').forEach(function(a){
+      a.href = url;
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', arreglar);
+  } else {
+    arreglar();
+  }
+})();
+  </script>
   <!-- Diseno de las 38 subpaginas. Todo acotado a .mlgP. -->  <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;amp;family=Barlow+Condensed:wght@700;800;900&amp;amp;family=DM+Serif+Display:ital@0;1&amp;amp;display=swap');
