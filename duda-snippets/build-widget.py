@@ -212,8 +212,16 @@ def schema(path, madre=None, nombre_madre=None, etiqueta=None):
     import json
     src = open(path, encoding='utf-8').read()
     head = src[:src.index('</head>')]
+    excluir = ['"LegalService"']
+    # Si la pagina ya trae su propio BreadcrumbList/Service a mano en el head
+    # (las 6 de employer lo tienen, de antes de que existiera este generador),
+    # y ademas esta registrada como hija en enlaces.py, mas abajo se arma un
+    # par nuevo. Si no se descartan aca los viejos, el widget termina con dos
+    # BreadcrumbList y dos Service, uno de cada version.
+    if madre:
+        excluir += ['"BreadcrumbList"', '"@type": "Service"']
     bloques = [b for b in re.findall(r'<script type="application/ld\+json">.*?</script>', head, re.S)
-               if '"LegalService"' not in b]
+               if not any(e in b for e in excluir)]
 
     if madre:
         slug = SLUGS.get(os.path.splitext(os.path.basename(path))[0],
