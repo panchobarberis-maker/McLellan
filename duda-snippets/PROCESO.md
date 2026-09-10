@@ -83,3 +83,24 @@ según el tamaño de pantalla. No hace falta JS para esto.
 Si en algún momento se arma una página nueva a mano (copiando otra vieja
 como base), verificar que el hero no tenga el script viejo. Buscar
 `document.currentScript` en el archivo: si aparece, hay que sacarlo.
+
+## Hero-pill invisible por un link interno adentro
+
+El auto-linker de `build-practice.py` (`con_enlaces()`) busca menciones a
+paginas hermanas en el texto del body y las envuelve en
+`<a class="mlg-link-tema">`. En `/wrongful-termination-defense` y
+`/retaliation-defense`, la primera mencion de "Wrongful Termination" /
+"Retaliation" en el body es el propio texto del hero-pill (el badge de
+arriba de todo), asi que el auto-linker lo agarro ahi. `.mlg-link-tema`
+tiene su propio color (verde oscuro, el de fondo del hero), asi que esa
+parte del badge quedaba practicamente invisible.
+
+Arreglado en el generador (`salteable()` en build-practice.py), no en
+Site Head: el auto-linker ahora tambien evita el `<div class="hero-pill">`,
+igual que ya evitaba los `<h1-h3>` y lo que ya esta dentro de un link. Asi
+no hace falta tocar CSS compartido ni pisar el problema con `!important`
+en cada pagina, y ninguna subpagina nueva puede volver a pisar este palo.
+
+Preferencia del estudio: evitar tocar el Site Head de Duda salvo que
+sea estrictamente necesario. Si un bug se puede resolver en el generador
+o en el widget de una sola pagina, priorizar esa via.

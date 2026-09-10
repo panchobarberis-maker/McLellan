@@ -214,7 +214,7 @@ def con_enlaces(body, name):
     partes = re.split(r'(<[^>]*>)', body)
 
     def salteable(i):
-        prof_a = prof_h = 0
+        prof_a = prof_h = prof_pill = 0
         for p in partes[:i]:
             if not p.startswith('<'):
                 continue
@@ -222,7 +222,12 @@ def con_enlaces(body, name):
             elif p.startswith('</a'):   prof_a -= 1
             elif re.match(r'<h[1-3]\b', p): prof_h += 1
             elif re.match(r'</h[1-3]', p):  prof_h -= 1
-        return prof_a > 0 or prof_h > 0
+            # El hero-pill es un badge, no un parrafo: un link ahi adentro
+            # hereda el color de mlg-link-tema en vez del dorado del pill,
+            # y contra el fondo oscuro del hero queda practicamente invisible.
+            elif re.match(r'<div class="hero-pill"', p): prof_pill += 1
+            elif p.startswith('</div') and prof_pill > 0: prof_pill -= 1
+        return prof_a > 0 or prof_h > 0 or prof_pill > 0
 
     puestos = 0
     for v in en.GRUPOS[madre]:
