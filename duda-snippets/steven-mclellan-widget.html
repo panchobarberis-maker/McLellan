@@ -187,7 +187,7 @@ html, body { overflow-x:hidden; }
 }
 #mlg-steven-mclellan .award-box .years { font-size:12px !important; letter-spacing:2px !important; color:rgba(30,58,62,0.55) !important; }
 #mlg-steven-mclellan .foot-cta {
-  border-top:1px solid rgba(255,255,255,0.06) !important;
+  background:#f0ece4 !important;
   padding:96px 64px !important; text-align:center !important;
 }
 @media(max-width:768px) {
@@ -197,13 +197,27 @@ html, body { overflow-x:hidden; }
   font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
   text-transform:uppercase !important; letter-spacing:-0.5px !important;
   font-size:clamp(36px, 4.5vw, 56px) !important; line-height:1.1 !important; margin-bottom:16px !important;
-  color:#f0ece4 !important;
+  color:#1e3a3e !important;
 }
 #mlg-steven-mclellan .foot-cta h2 em {
   font-style:italic !important; color:#b9986a !important;
   font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important;
 }
-#mlg-steven-mclellan .foot-cta p { font-size:15px !important; color:rgba(255,255,255,0.5) !important; margin-bottom:40px !important; }
+#mlg-steven-mclellan .foot-cta p { font-size:15px !important; color:rgba(30,58,62,0.6) !important; margin-bottom:40px !important; }
+#mlg-steven-mclellan .testimonials-section { padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important; }
+#mlg-steven-mclellan .testimonial-grid { display:grid !important; grid-template-columns:1fr 1fr 1fr; gap:24px !important; margin-top:40px !important; }
+@media(max-width:900px) {
+#mlg-steven-mclellan .testimonial-grid { grid-template-columns:1fr; }
+#mlg-steven-mclellan .testimonials-section { padding:64px 24px !important; }
+}
+#mlg-steven-mclellan .testimonial-card {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  background:#fbf6ef !important;
+}
+#mlg-steven-mclellan .testimonial-card p { font-size:17px !important; line-height:1.75 !important; color:rgba(30,58,62,0.85) !important; margin-bottom:20px !important; }
+#mlg-steven-mclellan .testimonial-card .author { font-size:13px !important; letter-spacing:1px !important; text-transform:uppercase !important; color:#8a6d43 !important; font-weight:700 !important; }
 #mlg-steven-mclellan .lead {
   border:2.5px solid rgba(185,152,106,0.5) !important;
   border-left:8px solid #b9986a !important;
@@ -251,7 +265,7 @@ html, body { overflow-x:hidden; }
 #mlg-steven-mclellan .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
 #mlg-steven-mclellan .hero-cta { font-size:16px !important; padding:26px 52px !important; }
 #mlg-steven-mclellan .award-box .years { font-size:14px !important; color:rgba(30,58,62,0.55) !important; }
-#mlg-steven-mclellan .foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+#mlg-steven-mclellan .foot-cta p { font-size:19px !important; color:rgba(30,58,62,0.65) !important; }
 @media(min-width:769px) {
 #mlg-steven-mclellan .lead { font-size:clamp(28px,2.8vw,36px) !important; }
 #mlg-steven-mclellan .about-copy p { font-size:21px !important; line-height:1.95 !important; }
@@ -401,6 +415,25 @@ html, body { overflow-x:hidden; }
       <div class="years">2022 &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; 2025</div>
     </div>
   </aside>
+</section>
+
+<!-- CLIENT REVIEWS -->
+<section class="testimonials-section">
+  <div class="section-label reveal">Client Reviews</div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal reveal-d1">
+      <p>"Steven's legal expertise and sophistication were tremendous in resolving key issues in my case. Most important of all, Steven's ability to bring my case to settlement with eloquent presentation while keeping my focus on the bigger picture was most impressive to me. If ever needed, I would hire Steven for his services in a heartbeat."</p>
+      <div class="author">Benjamin &middot; Civil Litigation</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d2">
+      <p>"We worked with Claire and Steven on a living trust issue that we had, and were very impressed with their professionalism and patience in handling everything. The situation we were dealing with was complicated, but both Claire and Steven were quick to get all the facts and wonderful in helping us get a clear game plan figured out. It is reassuring to know that we can always reach out to them for additional help if needed."</p>
+      <div class="author">Wendy &middot; Trust &amp; Probate</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d3">
+      <p>"Claire and Steven are not only incredibly knowledgeable but very supportive. They won't simply recommend a course of action that will cost the most money, but actually consider the issues and advise you on what's best for YOU. I feel very fortunate I was able to work with them for a difficult issue!"</p>
+      <div class="author">Jordan &middot; Civil Litigation</div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOT CTA -->
