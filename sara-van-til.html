@@ -138,8 +138,9 @@ a { text-decoration:none; color:inherit; }
 .hero-name {
   font-family:'Barlow Condensed',sans-serif; font-weight:900;
   text-transform:uppercase; letter-spacing:-1px;
-  font-size:clamp(90px, 13vw, 200px); line-height:0.9;
-  margin-bottom:24px;
+  font-size:clamp(40px, 6vw, 90px); line-height:0.9;
+  margin-bottom:24px; color:#f0ece4;
+  white-space:nowrap; overflow-wrap:normal; word-break:keep-all;
 }
 .hero-name .first {
   display:block; font-style:italic; color:#b9986a;
@@ -212,7 +213,7 @@ a { text-decoration:none; color:inherit; }
 
 /* ── FOOT CTA ── */
 .foot-cta {
-  border-top:1px solid rgba(255,255,255,0.06);
+  background:#f0ece4;
   padding:96px 64px; text-align:center;
 }
 @media(max-width:768px) { .foot-cta { padding:64px 24px; } }
@@ -220,12 +221,13 @@ a { text-decoration:none; color:inherit; }
   font-family:'Barlow Condensed',sans-serif; font-weight:900;
   text-transform:uppercase; letter-spacing:-0.5px;
   font-size:clamp(36px, 4.5vw, 56px); line-height:1.1; margin-bottom:16px;
+  color:#1e3a3e;
 }
 .foot-cta h2 em {
   font-style:italic; color:#b9986a;
   font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
 }
-.foot-cta p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:40px; }
+.foot-cta p { font-size:15px; color:rgba(30,58,62,0.6); margin-bottom:40px; }
 
 /* ── Boxes + dorado en el body ── */
 .lead {
@@ -263,7 +265,7 @@ a { text-decoration:none; color:inherit; }
 .hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
 .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
 .hero-cta { font-size:16px !important; padding:26px 52px !important; }
-.foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+.foot-cta p { font-size:19px !important; color:rgba(30,58,62,0.65) !important; }
 
 /* Info mas grande en desktop */
 @media(min-width:769px) {
