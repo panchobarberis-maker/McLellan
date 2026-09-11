@@ -1,0 +1,466 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1');
+html, body { overflow-x:hidden; }
+#mlg-steven-mclellan { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
+
+
+#mlg-steven-mclellan *, #mlg-steven-mclellan *::before, #mlg-steven-mclellan *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlg-steven-mclellan { scroll-behavior:smooth; }
+#mlg-steven-mclellan {
+  font-family:'Barlow',sans-serif !important; font-weight:400 !important;
+  background:#1e3a3e !important; color:#f0ece4 !important;
+  -webkit-font-smoothing:antialiased;
+}
+#mlg-steven-mclellan a { text-decoration:none !important; color:inherit !important; }
+#mlg-steven-mclellan .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlg-steven-mclellan .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlg-steven-mclellan .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlg-steven-mclellan .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlg-steven-mclellan .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlg-steven-mclellan .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlg-steven-mclellan .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlg-steven-mclellan .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlg-steven-mclellan .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlg-steven-mclellan .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlg-steven-mclellan .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlg-steven-mclellan .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlg-steven-mclellan .hero {
+  display:grid !important; grid-template-columns:55% 45%;
+}
+@media(max-width:900px) {
+#mlg-steven-mclellan .hero { grid-template-columns:1fr; }
+}
+#mlg-steven-mclellan .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
+#mlg-steven-mclellan .hero-photo::before {
+  content:''; position:absolute !important; inset:50px;
+  border:3px solid #b9986a !important;
+  z-index:3; pointer-events:none;
+}
+#mlg-steven-mclellan .hero-photo img {
+  width:100% !important; height:100% !important; object-fit:cover; object-position:center 0%;
+  filter:grayscale(10%) brightness(0.85);
+  display:block !important;
+}
+#mlg-steven-mclellan .hero-photo::after {
+  content:''; position:absolute !important; inset:0; z-index:2;
+  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
+}
+@media(max-width:900px) {
+#mlg-steven-mclellan .hero-photo { height:60vh !important; }
+#mlg-steven-mclellan .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
+#mlg-steven-mclellan .hero-photo::before { inset:8px; }
+}
+#mlg-steven-mclellan .hero-info {
+  padding:80px 64px 80px 48px !important;
+  display:flex !important; flex-direction:column; justify-content:center;
+}
+@media(max-width:900px) {
+#mlg-steven-mclellan .hero-info { padding:40px 24px 64px !important; }
+}
+#mlg-steven-mclellan .breadcrumb {
+  font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.4) !important; font-weight:500 !important; margin-bottom:36px !important;
+}
+#mlg-steven-mclellan .breadcrumb em { font-style:normal !important; color:rgba(255,255,255,0.6) !important; }
+#mlg-steven-mclellan .hero-name {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:-1px !important;
+  font-size:clamp(90px, 13vw, 200px) !important; line-height:0.9 !important;
+  margin-bottom:24px !important; color:#f0ece4 !important;
+}
+#mlg-steven-mclellan .hero-name .first {
+  display:block !important; font-style:italic !important; color:#b9986a !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; letter-spacing:0 !important; font-size:0.85em !important;
+}
+#mlg-steven-mclellan .hero-role {
+  font-size:12px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.5) !important; font-weight:500 !important;
+  padding-bottom:36px !important; margin-bottom:36px !important;
+  border-bottom:1px solid rgba(255,255,255,0.08) !important;
+}
+#mlg-steven-mclellan .hero-stats { display:flex !important; gap:48px !important; flex-wrap:wrap; margin-bottom:48px !important; }
+#mlg-steven-mclellan .stat .num {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  font-size:56px !important; line-height:1 !important; color:#b9986a !important; display:block !important; margin-bottom:10px !important;
+}
+#mlg-steven-mclellan .stat .label {
+  font-size:10px !important; letter-spacing:2px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.45) !important; font-weight:500 !important; line-height:1.6 !important; display:block !important;
+}
+#mlg-steven-mclellan .hero-cta {
+  display:inline-flex !important; align-items:center; gap:14px !important; align-self:flex-start;
+  background:#b9986a !important; color:#1e3a3e !important;
+  font-size:14px !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  padding:24px 48px !important; transition:background 0.25s;
+}
+#mlg-steven-mclellan .hero-cta:hover { background:#cbb084 !important; }
+#mlg-steven-mclellan .hero-cta span { font-size:18px !important; }
+#mlg-steven-mclellan .hero-contact { display:flex !important; gap:32px !important; flex-wrap:wrap; margin-top:36px !important; }
+#mlg-steven-mclellan .hero-contact a {
+  font-size:13px !important; letter-spacing:0.5px !important; color:rgba(255,255,255,0.55) !important;
+  border-bottom:1px solid rgba(185,152,106,0.4) !important; padding-bottom:3px !important;
+  transition:color 0.2s;
+}
+#mlg-steven-mclellan .hero-contact a:hover { color:#b9986a !important; }
+#mlg-steven-mclellan .body-section {
+  display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
+  padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
+}
+@media(max-width:900px) {
+#mlg-steven-mclellan .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
+}
+#mlg-steven-mclellan .section-label {
+  font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:#b9986a !important; font-weight:600 !important; margin-bottom:32px !important;
+}
+#mlg-steven-mclellan .lead {
+  font-family:'Barlow',sans-serif !important; font-style:normal !important; font-weight:600 !important;
+  font-size:clamp(24px, 2.6vw, 32px) !important; line-height:1.55 !important; color:#8a6d43 !important;
+  margin-bottom:40px !important;
+}
+#mlg-steven-mclellan .about-copy { display:flex !important; flex-direction:column; gap:20px !important; }
+#mlg-steven-mclellan .about-copy p {
+  font-size:16px !important; line-height:1.9 !important; color:rgba(30,58,62,0.7) !important;
+  text-align:justify !important;
+}
+#mlg-steven-mclellan .results { margin-top:72px !important; }
+#mlg-steven-mclellan .result-item {
+  border-top:1px solid rgba(30,58,62,0.1) !important;
+  padding:32px 0 !important;
+  display:grid !important; grid-template-columns:1fr auto; gap:8px 32px !important;
+}
+#mlg-steven-mclellan .result-item h3 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  text-transform:uppercase !important; letter-spacing:0.5px !important;
+  font-size:26px !important; color:#1e3a3e !important;
+}
+#mlg-steven-mclellan .result-item .tag {
+  font-size:10px !important; letter-spacing:2px !important; text-transform:uppercase !important;
+  color:#8a6d43 !important; font-weight:600 !important; align-self:start; padding-top:8px !important;
+}
+#mlg-steven-mclellan .result-item p {
+  grid-column:1 / -1;
+  font-size:15px !important; line-height:1.8 !important; color:rgba(30,58,62,0.6) !important; text-align:justify !important;
+}
+#mlg-steven-mclellan .acc-item { border-bottom:1px solid rgba(30,58,62,0.1) !important; }
+#mlg-steven-mclellan .acc-btn {
+  width:100% !important; background:none !important; border:none !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center;
+  padding:22px 0 !important; text-align:left !important;
+  font-family:'Barlow',sans-serif !important;
+  font-size:12px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; font-weight:600 !important;
+}
+#mlg-steven-mclellan .acc-btn .icon { color:#8a6d43 !important; font-size:16px !important; font-weight:400 !important; transition:transform 0.3s; }
+#mlg-steven-mclellan .acc-body { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+#mlg-steven-mclellan .acc-body ul { list-style:none !important; padding:0 0 24px !important; }
+#mlg-steven-mclellan .acc-body li {
+  font-size:14px !important; line-height:1.7 !important; color:rgba(30,58,62,0.65) !important;
+  padding:6px 0 !important;
+}
+#mlg-steven-mclellan .award-box {
+  margin-top:48px !important; padding:32px 28px !important;
+  border:1px solid rgba(185,152,106,0.35) !important;
+}
+#mlg-steven-mclellan .award-box .section-label { margin-bottom:14px !important; color:#8a6d43 !important; }
+#mlg-steven-mclellan .award-box h4 {
+  font-family:'DM Serif Display',serif !important; font-style:italic !important; font-weight:400 !important;
+  font-size:24px !important; line-height:1.3 !important; color:#1e3a3e !important; margin-bottom:10px !important;
+}
+#mlg-steven-mclellan .award-box .years { font-size:12px !important; letter-spacing:2px !important; color:rgba(30,58,62,0.55) !important; }
+#mlg-steven-mclellan .foot-cta {
+  border-top:1px solid rgba(255,255,255,0.06) !important;
+  padding:96px 64px !important; text-align:center !important;
+}
+@media(max-width:768px) {
+#mlg-steven-mclellan .foot-cta { padding:64px 24px !important; }
+}
+#mlg-steven-mclellan .foot-cta h2 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:-0.5px !important;
+  font-size:clamp(36px, 4.5vw, 56px) !important; line-height:1.1 !important; margin-bottom:16px !important;
+  color:#f0ece4 !important;
+}
+#mlg-steven-mclellan .foot-cta h2 em {
+  font-style:italic !important; color:#b9986a !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important;
+}
+#mlg-steven-mclellan .foot-cta p { font-size:15px !important; color:rgba(255,255,255,0.5) !important; margin-bottom:40px !important; }
+#mlg-steven-mclellan .lead {
+  border:2.5px solid rgba(185,152,106,0.5) !important;
+  border-left:8px solid #b9986a !important;
+  padding:32px 36px !important;
+  background:#fbf6ef !important;
+}
+#mlg-steven-mclellan .about-copy p {
+  border:2.5px solid rgba(185,152,106,0.35) !important;
+  padding:28px 32px !important;
+  background:#fbf6ef !important;
+}
+#mlg-steven-mclellan .result-item {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  margin-bottom:20px !important;
+  background:#fbf6ef !important;
+}
+#mlg-steven-mclellan .results .result-item + .result-item { border-top:2.5px solid rgba(185,152,106,0.45) !important; }
+#mlg-steven-mclellan .acc-item {
+  border:5px solid rgba(185,152,106,0.6) !important;
+  margin-bottom:14px !important;
+  padding:0 22px !important;
+  background:#fbf6ef !important;
+}
+#mlg-steven-mclellan .acc-btn .icon { font-size:18px !important; }
+#mlg-steven-mclellan .award-box {
+  border:2.5px solid #b9986a !important;
+  background:#fbf6ef !important;
+  box-shadow:0 0 0 4px rgba(185,152,106,0.08);
+}
+#mlg-steven-mclellan .section-label::after {
+  content:''; display:inline-block !important; vertical-align:middle;
+  width:36px !important; height:1px !important; background:#b9986a !important; margin-left:14px !important; opacity:0.6;
+}
+#mlg-steven-mclellan .about-copy p { font-size:19px !important; line-height:1.9 !important; color:rgba(30,58,62,0.85) !important; }
+#mlg-steven-mclellan .result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
+#mlg-steven-mclellan .result-item .tag { font-size:13px !important; }
+#mlg-steven-mclellan .acc-btn { font-size:15px !important; letter-spacing:2px !important; }
+#mlg-steven-mclellan .acc-body li { font-size:17px !important; color:rgba(30,58,62,0.75) !important; padding:8px 0 !important; }
+#mlg-steven-mclellan .section-label { font-size:14px !important; color:#c9a96e !important; }
+#mlg-steven-mclellan .breadcrumb { font-size:13px !important; color:rgba(255,255,255,0.65) !important; }
+#mlg-steven-mclellan .breadcrumb em { color:rgba(255,255,255,0.85) !important; }
+#mlg-steven-mclellan .hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
+#mlg-steven-mclellan .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
+#mlg-steven-mclellan .hero-cta { font-size:16px !important; padding:26px 52px !important; }
+#mlg-steven-mclellan .award-box .years { font-size:14px !important; color:rgba(30,58,62,0.55) !important; }
+#mlg-steven-mclellan .foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+@media(min-width:769px) {
+#mlg-steven-mclellan .lead { font-size:clamp(28px,2.8vw,36px) !important; }
+#mlg-steven-mclellan .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+#mlg-steven-mclellan .result-item h3 { font-size:30px !important; }
+#mlg-steven-mclellan .result-item p { font-size:20px !important; }
+#mlg-steven-mclellan .result-item .tag { font-size:14px !important; }
+#mlg-steven-mclellan .acc-btn { font-size:16px !important; }
+#mlg-steven-mclellan .acc-body li { font-size:18px !important; }
+#mlg-steven-mclellan .section-label { font-size:15px !important; }
+#mlg-steven-mclellan .hero-role { font-size:16px !important; }
+#mlg-steven-mclellan .stat .num { font-size:64px !important; }
+#mlg-steven-mclellan .stat .label { font-size:14px !important; }
+#mlg-steven-mclellan .award-box h4 { font-size:26px !important; }
+#mlg-steven-mclellan .foot-cta p { font-size:21px !important; }
+}
+#mlg-steven-mclellan .body-sidebar { position:sticky !important; top:96px; align-self:start; }
+#mlg-steven-mclellan .body-sidebar .section-label { margin-bottom:24px !important; }
+#mlg-steven-mclellan .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlg-steven-mclellan .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlg-steven-mclellan .reveal-d1 { transition-delay:0.08s; }
+#mlg-steven-mclellan .reveal-d2 { transition-delay:0.16s; }
+#mlg-steven-mclellan .reveal-d3 { transition-delay:0.24s; }
+#mlg-steven-mclellan .reveal-d4 { transition-delay:0.32s; }
+#mlg-steven-mclellan .reveal-d5 { transition-delay:0.4s; }
+#mlg-steven-mclellan .reveal-d6 { transition-delay:0.48s; }
+#mlg-steven-mclellan .reveal-d7 { transition-delay:0.56s; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlg-steven-mclellan > section, #mlg-steven-mclellan > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlg-steven-mclellan > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlg-steven-mclellan > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+</style>
+
+<div id="mlg-steven-mclellan">
+<!-- NAV -->
+
+
+<!-- MOBILE MENU -->
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="steven.jpg" alt="Steven McLellan, Partner at McLellan Law Group" class="reveal">
+  </div>
+  <div class="hero-info">
+    <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Partner</em></div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Steven</span>McLellan</h1>
+    <div class="hero-role reveal reveal-d3">Partner &nbsp;,&nbsp; Business &amp; Employment Litigation</div>
+    <div class="hero-stats">
+      <div class="stat reveal reveal-d4">
+        <span class="num">4×</span>
+        <span class="label">Super Lawyers<br>Rising Star</span>
+      </div>
+      <div class="stat reveal reveal-d5">
+        <span class="num">2</span>
+        <span class="label">Trial<br>Victories</span>
+      </div>
+      <div class="stat reveal reveal-d6">
+        <span class="num">CA</span>
+        <span class="label">State Bar<br>Admitted</span>
+      </div>
+    </div>
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsteven-mclellan&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="body-section">
+  <div>
+    <div class="section-label reveal">About</div>
+    <p class="lead reveal reveal-d1">"Steven McLellan brings tenacity and strategic clarity to every case, from trial courts to appellate courts across California."</p>
+    <div class="about-copy">
+      <p class="reveal reveal-d2">He has the knowledge and experience to help clients get a favorable result whether filing a lawsuit or defending against one. His practice focuses on business litigation, real estate disputes, financial elder abuse, and landlord-tenant matters.</p>
+      <p class="reveal reveal-d3">During law school, Steven externed with the Honorable Patricia Lucas and the Honorable Peter Kirwan at the Superior Court of California, Santa Clara County, and later worked at an international law firm handling securities and intellectual property litigation.</p>
+    </div>
+
+    <div class="results">
+      <div class="section-label reveal">Notable Results</div>
+      <div class="result-item reveal reveal-d1">
+        <h3>Jury Trial Victory</h3>
+        <span class="tag">Jury Trial</span>
+        <p>Represented client in a two-week jury trial concerning breach of fiduciary duty. Jury issued verdict in favor of client.</p>
+      </div>
+      <div class="result-item reveal reveal-d2">
+        <h3>Court Trial Victory</h3>
+        <span class="tag">Court Trial</span>
+        <p>Represented client in a four-day court trial concerning financial elder abuse. Court issued award in favor of client.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="body-sidebar">
+    <div class="section-label reveal">Credentials</div>
+    <div class="acc-item open reveal">
+      <button class="acc-btn" onclick="toggleAcc(this)">Bar Admissions <span class="icon">×</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>California</li>
+          <li>Ninth Circuit Court of Appeals</li>
+          <li>U.S. District Court, Northern District of California</li>
+          <li>U.S. District Court, Southern District of California</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d1">
+      <button class="acc-btn" onclick="toggleAcc(this)">Bar Associations <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>Santa Clara County Bar Association</li>
+          <li>American Bar Association</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d2">
+      <button class="acc-btn" onclick="toggleAcc(this)">Education <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>UC Berkeley Law School, J.D. (2016)</li>
+          <li>San Jose State University, M.B.A. (2013)</li>
+          <li>UC Irvine, B.A., magna cum laude (2012)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="award-box reveal reveal-d3">
+      <div class="section-label">Recognition</div>
+      <h4>Super Lawyers. Rising Star</h4>
+      <div class="years">2022 &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; 2025</div>
+    </div>
+  </aside>
+</section>
+
+<!-- FOOT CTA -->
+<section class="foot-cta">
+  <h2 class="reveal">Work with <em>Steven.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsteven-mclellan&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex !important;">Get My Free Consultation <span>→</span></a>
+</section>
+</div>
+
+<script>
+
+// El acordeon que arranca abierto se mide solo. Una altura fija se queda corta
+// cuando cambia la fuente, el tamano de letra o el ancho de la columna.
+function mlgSizeOpenAcc() {
+  document.querySelectorAll('.acc-item.open .acc-body').forEach(function(b){
+    b.style.maxHeight = b.scrollHeight + 'px';
+  });
+}
+mlgSizeOpenAcc();
+window.addEventListener('load', mlgSizeOpenAcc);
+window.addEventListener('resize', mlgSizeOpenAcc);
+if (document.fonts && document.fonts.ready) { document.fonts.ready.then(mlgSizeOpenAcc); }
+
+function toggleAcc(btn) {
+  var item = btn.parentElement;
+  var body = item.querySelector('.acc-body');
+  var icon = btn.querySelector('.icon');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.acc-body').style.maxHeight = null;
+    el.querySelector('.icon').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    icon.textContent = '×';
+  }
+}
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+</script>
