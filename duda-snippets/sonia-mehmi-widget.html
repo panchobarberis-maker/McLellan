@@ -1,0 +1,311 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1');
+html, body { overflow-x:hidden; }
+#mlg-sonia-mehmi { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
+
+
+#mlg-sonia-mehmi * { text-wrap:pretty; }
+#mlg-sonia-mehmi .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlg-sonia-mehmi .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlg-sonia-mehmi .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlg-sonia-mehmi .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlg-sonia-mehmi .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlg-sonia-mehmi .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlg-sonia-mehmi .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlg-sonia-mehmi .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlg-sonia-mehmi .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlg-sonia-mehmi .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlg-sonia-mehmi .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlg-sonia-mehmi .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlg-sonia-mehmi .atty-hero {
+  background:#1e3a3e !important; border-bottom:12px solid #c9a96e !important;
+  padding:56px 24px !important;
+}
+#mlg-sonia-mehmi .atty-hero-inner {
+  max-width:1200px !important; margin:0 auto !important;
+  display:grid !important; grid-template-columns:1fr; gap:36px !important; align-items:center;
+}
+@media(min-width:900px) {
+#mlg-sonia-mehmi .atty-hero { padding:88px 48px !important; }
+#mlg-sonia-mehmi .atty-hero-inner { grid-template-columns:1.1fr 1fr; gap:64px !important; }
+}
+#mlg-sonia-mehmi .atty-hero h1 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(44px, 6vw, 76px) !important; font-weight:900 !important; line-height:0.95 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:8px !important;
+}
+#mlg-sonia-mehmi .atty-role {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(20px, 2.5vw, 28px) !important; font-weight:800 !important; letter-spacing:3px !important;
+  text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:24px !important;
+}
+#mlg-sonia-mehmi .atty-hero p { font-size:18px !important; line-height:1.75 !important; color:rgba(255,255,255,0.85) !important; max-width:560px !important; margin-bottom:28px !important; }
+#mlg-sonia-mehmi .atty-contact { display:flex !important; flex-direction:column; gap:12px !important; margin-bottom:32px !important; }
+#mlg-sonia-mehmi .atty-contact a {
+  display:inline-flex !important; align-items:center; gap:12px !important;
+  color:#fff !important; font-weight:700 !important; font-size:17px !important; text-decoration:none !important;
+}
+#mlg-sonia-mehmi .atty-contact a:hover { color:#c9a96e !important; }
+#mlg-sonia-mehmi .atty-contact svg { flex-shrink:0; }
+#mlg-sonia-mehmi .atty-photo {
+  width:calc(100% - 24px) !important; max-height:560px !important; object-fit:cover; object-position:center 15%;
+  border-radius:6px !important; display:block !important;
+  box-shadow:
+    24px 24px 0 -6px #c9a96e,
+    0 24px 64px rgba(0,0,0,0.4);
+}
+@keyframes ctaBreath {
+  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
+  50%      { box-shadow:0 0 28px 6px rgba(201,169,110,0.55), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.03); }
+}
+#mlg-sonia-mehmi .btn-gold {
+  display:inline-flex !important; align-items:center; gap:10px !important;
+  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%) !important;
+  color:#1e3a3e !important; font-weight:800 !important; font-size:16px !important;
+  padding:16px 36px !important; border-radius:32px !important; text-decoration:none !important;
+  animation:ctaBreath 2.6s ease-in-out infinite;
+}
+#mlg-sonia-mehmi .atty-bio { background:#fbf6ef !important; padding:56px 24px !important; }
+#mlg-sonia-mehmi .atty-bio-inner { max-width:1200px !important; margin:0 auto !important; display:grid !important; grid-template-columns:1fr; gap:32px !important; }
+@media(min-width:900px) {
+#mlg-sonia-mehmi .atty-bio { padding:88px 48px !important; }
+#mlg-sonia-mehmi .atty-bio-inner { grid-template-columns:1fr 1.4fr; gap:56px !important; align-items:start; }
+}
+#mlg-sonia-mehmi .bio-block {
+  background:#1e3a3e !important; border-radius:16px !important; padding:36px 32px !important;
+  box-shadow:0 8px 28px rgba(0,0,0,0.12); margin-bottom:24px !important;
+}
+#mlg-sonia-mehmi .bio-block p { font-size:17px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important; margin-bottom:18px !important; }
+#mlg-sonia-mehmi .bio-block p:last-child { margin-bottom:0 !important; }
+#mlg-sonia-mehmi .bio-block a { color:#c9a96e !important; font-weight:700 !important; }
+#mlg-sonia-mehmi .bio-eyebrow {
+  display:inline-flex !important; align-items:center; gap:10px !important;
+  font-size:15px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:#c9a96e !important; font-weight:700 !important; margin-bottom:16px !important;
+}
+#mlg-sonia-mehmi .bio-eyebrow::before { content:''; width:24px !important; height:1px !important; background:#c9a96e !important; }
+#mlg-sonia-mehmi .result-card {
+  background:#1e3a3e !important; border-radius:14px !important; padding:28px !important;
+  margin-bottom:16px !important; border-left:5px solid #c9a96e !important;
+}
+#mlg-sonia-mehmi .result-card strong { display:block !important; color:#c9a96e !important; font-family:'Barlow Condensed',sans-serif !important; font-size:20px !important; text-transform:uppercase !important; letter-spacing:1px !important; margin-bottom:8px !important; }
+#mlg-sonia-mehmi .result-card span { color:rgba(255,255,255,0.85) !important; font-size:16px !important; line-height:1.7 !important; }
+#mlg-sonia-mehmi .cred-item { margin-bottom:14px !important; border-radius:12px !important; overflow:hidden; }
+#mlg-sonia-mehmi .cred-question {
+  width:100% !important; background:linear-gradient(180deg,#d3b483 0%,#c2a06a 100%) !important;
+  border:none !important; text-align:left !important; cursor:pointer;
+  padding:20px 24px !important; font-family:'Barlow Condensed',sans-serif !important;
+  font-size:20px !important; font-weight:800 !important; letter-spacing:1.5px !important; text-transform:uppercase !important;
+  color:#fff !important; display:flex !important; justify-content:space-between; align-items:center; gap:12px !important;
+}
+#mlg-sonia-mehmi .cred-question .cred-icon { font-size:24px !important; transition:transform 0.3s; }
+#mlg-sonia-mehmi .cred-answer { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; background:#fff !important; }
+#mlg-sonia-mehmi .cred-answer ul { list-style:none !important; padding:20px 26px !important; }
+#mlg-sonia-mehmi .cred-answer li { font-size:16px !important; color:#3a5254 !important; padding:7px 0 !important; padding-left:22px !important; position:relative !important; line-height:1.6 !important; }
+#mlg-sonia-mehmi .cred-answer li::before { content:'•'; color:#c9a96e !important; font-weight:900 !important; position:absolute !important; left:0; }
+#mlg-sonia-mehmi .cred-item.open .cred-icon { transform:rotate(45deg); }
+#mlg-sonia-mehmi .cta-banner { background:#f0ece4 !important; padding:72px 24px !important; text-align:center !important; border-top:12px solid #c9a96e !important; }
+#mlg-sonia-mehmi .cta-banner h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(40px, 6vw, 80px) !important; font-weight:900 !important;
+  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:14px !important;
+}
+#mlg-sonia-mehmi .cta-banner h2 em { font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#b9986a !important; }
+#mlg-sonia-mehmi .cta-banner p { font-size:19px !important; color:rgba(30,58,62,0.6) !important; margin-bottom:32px !important; }
+#mlg-sonia-mehmi .atty-hero p {
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+  font-size:21px !important; line-height:1.8 !important;
+  color:rgba(255,255,255,0.9) !important;
+}
+#mlg-sonia-mehmi .atty-role { position:relative !important; padding-bottom:18px !important; }
+#mlg-sonia-mehmi .atty-role::after { content:''; position:absolute !important; left:0; bottom:0; width:56px !important; height:2px !important; background:#c9a96e !important; }
+#mlg-sonia-mehmi .atty-contact a { font-size:19px !important; letter-spacing:0.3px !important; }
+#mlg-sonia-mehmi .atty-bio { padding:80px 24px !important; }
+@media(min-width:900px) {
+#mlg-sonia-mehmi .atty-bio { padding:120px 48px !important; }
+}
+#mlg-sonia-mehmi .bio-block { padding:48px 44px !important; border-radius:4px !important; }
+#mlg-sonia-mehmi .bio-block p { font-size:19px !important; line-height:1.95 !important; }
+#mlg-sonia-mehmi .bio-block p:first-of-type::first-letter {
+  font-family:'DM Serif Display',serif !important;
+  font-size:64px !important; line-height:0.8 !important; float:left;
+  padding:8px 12px 0 0 !important; color:#c9a96e !important;
+}
+#mlg-sonia-mehmi .bio-eyebrow { font-size:16px !important; letter-spacing:4px !important; }
+#mlg-sonia-mehmi .cred-question { font-size:23px !important; padding:24px 28px !important; letter-spacing:2px !important; }
+#mlg-sonia-mehmi .cred-answer li { font-size:18px !important; padding:9px 0 9px 24px !important; line-height:1.7 !important; }
+#mlg-sonia-mehmi .result-card { padding:32px !important; }
+#mlg-sonia-mehmi .result-card strong { font-size:24px !important; }
+#mlg-sonia-mehmi .result-card span { font-size:17.5px !important; line-height:1.75 !important; }
+#mlg-sonia-mehmi .cta-banner p { font-size:22px !important; font-family:'DM Serif Display',serif !important; font-style:italic !important; }
+#mlg-sonia-mehmi .bio-block p, #mlg-sonia-mehmi .result-card span, #mlg-sonia-mehmi .atty-hero p, #mlg-sonia-mehmi .cred-answer li { text-align:justify !important; }
+#mlg-sonia-mehmi .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlg-sonia-mehmi .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlg-sonia-mehmi .reveal-d1 { transition-delay:0.08s; }
+#mlg-sonia-mehmi .reveal-d2 { transition-delay:0.16s; }
+#mlg-sonia-mehmi .reveal-d3 { transition-delay:0.24s; }
+#mlg-sonia-mehmi .reveal-d4 { transition-delay:0.32s; }
+#mlg-sonia-mehmi .reveal-d5 { transition-delay:0.4s; }
+#mlg-sonia-mehmi .reveal-d6 { transition-delay:0.48s; }
+#mlg-sonia-mehmi .reveal-d7 { transition-delay:0.56s; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlg-sonia-mehmi > section, #mlg-sonia-mehmi > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlg-sonia-mehmi > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlg-sonia-mehmi > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+</style>
+
+<div id="mlg-sonia-mehmi">
+<!-- NAV -->
+
+
+<!-- MOBILE MENU -->
+
+<!-- HERO -->
+<section class="atty-hero">
+  <div class="atty-hero-inner">
+    <div>
+      <h1 class="reveal">Sonia Mehmi</h1>
+      <div class="atty-role reveal reveal-d1">Law Clerk</div>
+      <p class="reveal reveal-d2">Sonia Mehmi supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a J.D. candidate at Santa Clara University School of Law and a registered Patent Agent.</p>
+      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsonia-mehmi&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d3">Request a Free Consultation →</a>
+    </div>
+    <img class="atty-photo reveal reveal-d2" style="height:480px !important;" src="https://irp.cdn-website.com/9df80dfc/dms3rep/multi/4abff101-c9c1-4769-880a-5512c622e2fb---Edited.webp" alt="Sonia Mehmi, Law Clerk at McLellan Law Group">
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="atty-bio">
+  <div class="atty-bio-inner">
+
+    <div>
+      <div class="cred-item reveal">
+        <button class="cred-question" onclick="toggleCred(this)">Education <span class="cred-icon">+</span></button>
+        <div class="cred-answer">
+          <ul>
+            <li>Santa Clara University School of Law, J.D. candidate. CALI Award in Civil Procedure; Law Faculty Scholarship</li>
+            <li>Columbia University, M.S. in Bioethics</li>
+            <li>University of California, Davis. B.S. in Biochemistry and Molecular Biology</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cred-item reveal reveal-d1">
+        <button class="cred-question" onclick="toggleCred(this)">Memberships &amp; Languages <span class="cred-icon">+</span></button>
+        <div class="cred-answer">
+          <ul>
+            <li>South Asian Law School Association</li>
+            <li>Women in Law</li>
+            <li>South Asian Bar Association</li>
+            <li>Fluent in English, Punjabi, and Hindi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:28px !important;">
+        <div class="result-card reveal reveal-d2">
+          <strong>Registered Patent Agent</strong>
+          <span>Licensed to practice before the United States Patent and Trademark Office.</span>
+        </div>
+        <div class="result-card reveal reveal-d3">
+          <strong>Science-Driven Analysis</strong>
+          <span>A background in biochemistry and bioethics gives her a distinctive analytical lens for matters involving technical evidence, healthcare, and regulatory issues.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <div class="bio-block">
+        <div class="bio-eyebrow reveal">About Sonia</div>
+        <p class="reveal reveal-d1">Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at Santa Clara University School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
+        <p class="reveal reveal-d2">Before law school, Sonia earned a Master of Science in Bioethics from Columbia University, where she studied the intersection of law, ethics, and regulation in medicine and biotechnology. She holds a Bachelor of Science in Biochemistry and Molecular Biology from the University of California, Davis. Her background in the sciences gives her a distinctive analytical lens, particularly in matters involving technical evidence, healthcare, and regulatory issues.</p>
+        <p class="reveal reveal-d3">Sonia is an active member of the South Asian Law School Association, Women in Law, and the South Asian Bar Association. She is fluent in English, Punjabi, and Hindi.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <h2 class="reveal">Work With<em> Our Team.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsonia-mehmi&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+</section>
+</div>
+
+<script>
+
+function toggleCred(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.cred-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.cred-item.open').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.cred-answer').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+</script>
