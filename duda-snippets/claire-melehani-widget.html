@@ -1,0 +1,535 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1');
+html, body { overflow-x:hidden; }
+#mlg-claire-melehani { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
+
+
+#mlg-claire-melehani *, #mlg-claire-melehani *::before, #mlg-claire-melehani *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlg-claire-melehani { scroll-behavior:smooth; }
+#mlg-claire-melehani {
+  font-family:'Barlow',sans-serif !important; font-weight:400 !important;
+  background:#1e3a3e !important; color:#f0ece4 !important;
+  -webkit-font-smoothing:antialiased;
+}
+#mlg-claire-melehani a { text-decoration:none !important; color:inherit !important; }
+#mlg-claire-melehani .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlg-claire-melehani .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlg-claire-melehani .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlg-claire-melehani .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlg-claire-melehani .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlg-claire-melehani .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlg-claire-melehani .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlg-claire-melehani .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlg-claire-melehani .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlg-claire-melehani .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlg-claire-melehani .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlg-claire-melehani .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlg-claire-melehani .hero {
+  display:grid !important; grid-template-columns:55% 45%;
+}
+@media(max-width:900px) {
+#mlg-claire-melehani .hero { grid-template-columns:1fr; }
+}
+#mlg-claire-melehani .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
+#mlg-claire-melehani .hero-photo::before {
+  content:''; position:absolute !important; inset:50px;
+  border:3px solid #b9986a !important;
+  z-index:3; pointer-events:none;
+}
+#mlg-claire-melehani .hero-photo img {
+  width:100% !important; height:100% !important; object-fit:cover; object-position:center 0%;
+  filter:grayscale(10%) brightness(0.85);
+  display:block !important;
+}
+#mlg-claire-melehani .hero-photo::after {
+  content:''; position:absolute !important; inset:0; z-index:2;
+  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
+}
+@media(max-width:900px) {
+#mlg-claire-melehani .hero-photo { height:60vh !important; }
+#mlg-claire-melehani .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
+#mlg-claire-melehani .hero-photo::before { inset:8px; }
+}
+#mlg-claire-melehani .hero-info {
+  padding:80px 64px 80px 48px !important;
+  display:flex !important; flex-direction:column; justify-content:center;
+}
+@media(max-width:900px) {
+#mlg-claire-melehani .hero-info { padding:40px 24px 64px !important; }
+}
+#mlg-claire-melehani .breadcrumb {
+  font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.4) !important; font-weight:500 !important; margin-bottom:36px !important;
+}
+#mlg-claire-melehani .breadcrumb em { font-style:normal !important; color:rgba(255,255,255,0.6) !important; }
+#mlg-claire-melehani .hero-name {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:-1px !important;
+  font-size:clamp(40px, 6vw, 90px) !important; line-height:0.9 !important;
+  margin-bottom:24px !important;
+  white-space:nowrap; overflow-wrap:normal; word-break:keep-all;
+}
+#mlg-claire-melehani .hero-name .first {
+  display:block !important; font-style:italic !important; color:#b9986a !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; letter-spacing:0 !important; font-size:0.85em !important;
+}
+#mlg-claire-melehani .hero-role {
+  font-size:12px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.5) !important; font-weight:500 !important;
+  padding-bottom:36px !important; margin-bottom:36px !important;
+  border-bottom:1px solid rgba(255,255,255,0.08) !important;
+}
+#mlg-claire-melehani .hero-stats { display:flex !important; gap:48px !important; flex-wrap:wrap; margin-bottom:48px !important; }
+#mlg-claire-melehani .stat .num {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  font-size:56px !important; line-height:1 !important; color:#b9986a !important; display:block !important; margin-bottom:10px !important;
+}
+#mlg-claire-melehani .stat .label {
+  font-size:10px !important; letter-spacing:2px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.45) !important; font-weight:500 !important; line-height:1.6 !important; display:block !important;
+}
+#mlg-claire-melehani .hero-cta {
+  display:inline-flex !important; align-items:center; gap:14px !important; align-self:flex-start;
+  background:#b9986a !important; color:#1e3a3e !important;
+  font-size:14px !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  padding:24px 48px !important; transition:background 0.25s;
+}
+#mlg-claire-melehani .hero-cta:hover { background:#cbb084 !important; }
+#mlg-claire-melehani .hero-cta span { font-size:18px !important; }
+#mlg-claire-melehani .body-section {
+  display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
+  padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
+}
+@media(max-width:900px) {
+#mlg-claire-melehani .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
+}
+#mlg-claire-melehani .section-label {
+  font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:#b9986a !important; font-weight:600 !important; margin-bottom:32px !important;
+}
+#mlg-claire-melehani .lead {
+  font-family:'DM Serif Display',serif !important; font-style:italic !important; font-weight:400 !important;
+  font-size:clamp(24px, 2.6vw, 32px) !important; line-height:1.5 !important; color:#1e3a3e !important;
+  margin-bottom:40px !important;
+}
+#mlg-claire-melehani .about-copy { display:flex !important; flex-direction:column; gap:20px !important; }
+#mlg-claire-melehani .about-copy p {
+  font-size:16px !important; line-height:1.9 !important; color:rgba(30,58,62,0.7) !important;
+  text-align:justify !important;
+}
+#mlg-claire-melehani .results { margin-top:72px !important; }
+#mlg-claire-melehani .result-item {
+  border-top:1px solid rgba(30,58,62,0.1) !important;
+  padding:32px 0 !important;
+  display:grid !important; grid-template-columns:1fr auto; gap:8px 32px !important;
+}
+#mlg-claire-melehani .result-item h3 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  text-transform:uppercase !important; letter-spacing:0.5px !important;
+  font-size:26px !important; color:#1e3a3e !important;
+}
+#mlg-claire-melehani .result-item .tag {
+  font-size:10px !important; letter-spacing:2px !important; text-transform:uppercase !important;
+  color:#8a6d43 !important; font-weight:600 !important; align-self:start; padding-top:8px !important;
+}
+#mlg-claire-melehani .result-item p {
+  grid-column:1 / -1;
+  font-size:15px !important; line-height:1.8 !important; color:rgba(30,58,62,0.6) !important; text-align:justify !important;
+}
+#mlg-claire-melehani .acc-item { border-bottom:1px solid rgba(30,58,62,0.1) !important; }
+#mlg-claire-melehani .acc-btn {
+  width:100% !important; background:none !important; border:none !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center;
+  padding:22px 0 !important; text-align:left !important;
+  font-family:'Barlow',sans-serif !important;
+  font-size:12px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; font-weight:600 !important;
+}
+#mlg-claire-melehani .acc-btn .icon { color:#8a6d43 !important; font-size:16px !important; font-weight:400 !important; transition:transform 0.3s; }
+#mlg-claire-melehani .acc-body { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+#mlg-claire-melehani .acc-body ul { list-style:none !important; padding:0 0 24px !important; }
+#mlg-claire-melehani .acc-body li {
+  font-size:14px !important; line-height:1.7 !important; color:rgba(30,58,62,0.65) !important;
+  padding:6px 0 !important;
+}
+#mlg-claire-melehani .award-box {
+  margin-top:48px !important; padding:32px 28px !important;
+  border:1px solid rgba(185,152,106,0.35) !important;
+}
+#mlg-claire-melehani .award-box .section-label { margin-bottom:14px !important; color:#8a6d43 !important; }
+#mlg-claire-melehani .award-box h4 {
+  font-family:'DM Serif Display',serif !important; font-style:italic !important; font-weight:400 !important;
+  font-size:24px !important; line-height:1.3 !important; color:#1e3a3e !important; margin-bottom:10px !important;
+}
+#mlg-claire-melehani .award-box .years { font-size:12px !important; letter-spacing:2px !important; color:rgba(30,58,62,0.55) !important; }
+#mlg-claire-melehani .foot-cta {
+  background:#f0ece4 !important;
+  padding:96px 64px !important; text-align:center !important;
+}
+@media(max-width:768px) {
+#mlg-claire-melehani .foot-cta { padding:64px 24px !important; }
+}
+#mlg-claire-melehani .foot-cta h2 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:-0.5px !important;
+  font-size:clamp(36px, 4.5vw, 56px) !important; line-height:1.1 !important; margin-bottom:16px !important;
+  color:#1e3a3e !important;
+}
+#mlg-claire-melehani .foot-cta h2 em {
+  font-style:italic !important; color:#b9986a !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important;
+}
+#mlg-claire-melehani .foot-cta p { font-size:15px !important; color:rgba(30,58,62,0.6) !important; margin-bottom:40px !important; }
+#mlg-claire-melehani .testimonials-section { padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important; }
+#mlg-claire-melehani .testimonial-grid { display:grid !important; grid-template-columns:1fr 1fr 1fr; gap:24px !important; margin-top:40px !important; }
+@media(max-width:900px) {
+#mlg-claire-melehani .testimonial-grid { grid-template-columns:1fr; }
+#mlg-claire-melehani .testimonials-section { padding:64px 24px !important; }
+}
+#mlg-claire-melehani .testimonial-card {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  background:#fbf6ef !important;
+}
+#mlg-claire-melehani .testimonial-card p { font-size:17px !important; line-height:1.75 !important; color:rgba(30,58,62,0.85) !important; margin-bottom:20px !important; }
+#mlg-claire-melehani .testimonial-card .author { font-size:13px !important; letter-spacing:1px !important; text-transform:uppercase !important; color:#8a6d43 !important; font-weight:700 !important; }
+#mlg-claire-melehani .lead {
+  border:2.5px solid rgba(185,152,106,0.5) !important;
+  border-left:8px solid #b9986a !important;
+  padding:32px 36px !important;
+  background:#fbf6ef !important;
+}
+#mlg-claire-melehani .about-copy p {
+  border:2.5px solid rgba(185,152,106,0.35) !important;
+  padding:28px 32px !important;
+  background:#fbf6ef !important;
+}
+#mlg-claire-melehani .result-item {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  margin-bottom:20px !important;
+  background:#fbf6ef !important;
+}
+#mlg-claire-melehani .results .result-item + .result-item { border-top:2.5px solid rgba(185,152,106,0.45) !important; }
+#mlg-claire-melehani .acc-item {
+  border:5px solid rgba(185,152,106,0.6) !important;
+  margin-bottom:14px !important;
+  padding:0 22px !important;
+  background:#fbf6ef !important;
+}
+#mlg-claire-melehani .acc-btn .icon { font-size:18px !important; }
+#mlg-claire-melehani .award-box {
+  border:2.5px solid #b9986a !important;
+  background:#fbf6ef !important;
+  box-shadow:0 0 0 4px rgba(185,152,106,0.08);
+}
+#mlg-claire-melehani .section-label::after {
+  content:''; display:inline-block !important; vertical-align:middle;
+  width:36px !important; height:1px !important; background:#b9986a !important; margin-left:14px !important; opacity:0.6;
+}
+#mlg-claire-melehani .about-copy p { font-size:19px !important; line-height:1.9 !important; color:rgba(30,58,62,0.85) !important; }
+#mlg-claire-melehani .result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
+#mlg-claire-melehani .result-item .tag { font-size:13px !important; }
+#mlg-claire-melehani .acc-btn { font-size:15px !important; letter-spacing:2px !important; }
+#mlg-claire-melehani .acc-body li { font-size:17px !important; color:rgba(30,58,62,0.75) !important; padding:8px 0 !important; }
+#mlg-claire-melehani .section-label { font-size:14px !important; color:#c9a96e !important; }
+#mlg-claire-melehani .breadcrumb { font-size:13px !important; color:rgba(255,255,255,0.65) !important; }
+#mlg-claire-melehani .breadcrumb em { color:rgba(255,255,255,0.85) !important; }
+#mlg-claire-melehani .hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
+#mlg-claire-melehani .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
+#mlg-claire-melehani .hero-cta { font-size:16px !important; padding:26px 52px !important; }
+#mlg-claire-melehani .award-box .years { font-size:14px !important; color:rgba(30,58,62,0.55) !important; }
+#mlg-claire-melehani .foot-cta p { font-size:19px !important; color:rgba(30,58,62,0.65) !important; }
+@media(min-width:769px) {
+#mlg-claire-melehani .lead { font-size:clamp(28px,2.8vw,36px) !important; }
+#mlg-claire-melehani .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+#mlg-claire-melehani .result-item h3 { font-size:30px !important; }
+#mlg-claire-melehani .result-item p { font-size:20px !important; }
+#mlg-claire-melehani .result-item .tag { font-size:14px !important; }
+#mlg-claire-melehani .acc-btn { font-size:16px !important; }
+#mlg-claire-melehani .acc-body li { font-size:18px !important; }
+#mlg-claire-melehani .section-label { font-size:15px !important; }
+#mlg-claire-melehani .hero-role { font-size:16px !important; }
+#mlg-claire-melehani .stat .num { font-size:64px !important; }
+#mlg-claire-melehani .stat .label { font-size:14px !important; }
+#mlg-claire-melehani .award-box h4 { font-size:26px !important; }
+#mlg-claire-melehani .foot-cta p { font-size:21px !important; }
+}
+#mlg-claire-melehani .body-sidebar { position:sticky !important; top:96px; align-self:start; }
+#mlg-claire-melehani .body-sidebar .section-label { margin-bottom:24px !important; }
+#mlg-claire-melehani .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlg-claire-melehani .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlg-claire-melehani .reveal-d1 { transition-delay:0.08s; }
+#mlg-claire-melehani .reveal-d2 { transition-delay:0.16s; }
+#mlg-claire-melehani .reveal-d3 { transition-delay:0.24s; }
+#mlg-claire-melehani .reveal-d4 { transition-delay:0.32s; }
+#mlg-claire-melehani .reveal-d5 { transition-delay:0.4s; }
+#mlg-claire-melehani .reveal-d6 { transition-delay:0.48s; }
+#mlg-claire-melehani .reveal-d7 { transition-delay:0.56s; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlg-claire-melehani > section, #mlg-claire-melehani > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlg-claire-melehani > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlg-claire-melehani > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+</style>
+
+<div id="mlg-claire-melehani">
+<!-- NAV -->
+
+
+<!-- MOBILE MENU -->
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="claire.jpg" alt="Claire Melehani, Partner at McLellan Law Group" class="reveal">
+  </div>
+  <div class="hero-info">
+    <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Partner</em></div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Claire</span>Melehani</h1>
+    <div class="hero-role reveal reveal-d3">Partner &nbsp;,&nbsp; Complex Civil Litigation</div>
+    <div class="hero-stats">
+      <div class="stat reveal reveal-d4">
+        <span class="num">4×</span>
+        <span class="label">Super Lawyers<br>Rising Star</span>
+      </div>
+      <div class="stat reveal reveal-d5">
+        <span class="num">2026</span>
+        <span class="label">SCCBA<br>President</span>
+      </div>
+      <div class="stat reveal reveal-d6">
+        <span class="num">Top 40</span>
+        <span class="label">ABA Young<br>Lawyers</span>
+      </div>
+    </div>
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fclaire-melehani&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="body-section">
+  <div>
+    <div class="results">
+      <div class="section-label reveal">Notable Results</div>
+      <div class="result-item reveal reveal-d1">
+        <h3>ABA Top 40 Young Lawyers</h3>
+        <span class="tag">National Recognition</span>
+        <p>Named to the American Bar Association's "On The Rise. Top 40 Young Lawyers" class of 2023, a national recognition of achievement, leadership, and service.</p>
+      </div>
+      <div class="result-item reveal reveal-d2">
+        <h3>Super Lawyers Rising Star</h3>
+        <span class="tag">California Rising Star</span>
+        <p>Selected as a California Super Lawyers Rising Star every year since 2021, an honor conferred upon the top 2.5% of rising attorneys in California.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="body-sidebar">
+    <div class="section-label reveal">Credentials</div>
+    <div class="acc-item open reveal">
+      <button class="acc-btn" onclick="toggleAcc(this)">Bar Admissions <span class="icon">×</span></button>
+      <div class="acc-body" style="max-height:220px !important;">
+        <ul>
+          <li>California</li>
+          <li>United States District Court, Northern District of California</li>
+          <li>United States Court of Appeals, Ninth Circuit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d1">
+      <button class="acc-btn" onclick="toggleAcc(this)">Honors <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>2021,2024 Super Lawyer's Rising Star, Northern California (Civil Litigation, Plaintiffs' Side), top 2.5% of rising attorneys in California.</li>
+          <li>2021,2024 Top Women Attorneys in Northern California (Rising Star in Civil Litigation). San Francisco Magazine.</li>
+          <li>2023 Unsung Heroes Award Recipient. SCCBA Barristers Section Volunteer of the Year.</li>
+          <li>2023 "On the Rise, Top 40 Young Lawyers" Award, American Bar Association.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d2">
+      <button class="acc-btn" onclick="toggleAcc(this)">Education <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>University of North Carolina School of Law (Chapel Hill), J.D. (2018)</li>
+          <li>Duke University, Certificate in Nonprofit Management (2015)</li>
+          <li>Duke University, B.S. in Economics (2014)</li>
+          <li>Duke University, Certificate in Markets and Management (2014)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d3">
+      <button class="acc-btn" onclick="toggleAcc(this)">Professional Memberships <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>Santa Clara County Bar Association</li>
+          <li>San Mateo County Bar Association</li>
+          <li>Monterey County Bar Association</li>
+          <li>American Bar Association (ABA)</li>
+          <li>California Lawyers Association (CLA)</li>
+          <li>California Women Lawyers (CWL)</li>
+          <li>American Inns of Court</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d4">
+      <button class="acc-btn" onclick="toggleAcc(this)">Professional Activities <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>California Women Lawyers (CWL), Board of Governors (2023,2024)</li>
+          <li>SCCBA Board of Trustees, elected two-year term beginning 2023</li>
+          <li>SCCBA Barristers, Former President (2022) &amp; Vice President (2021)</li>
+          <li>SCCBA Women Lawyers Section, Former Co-chair (2023,2024)</li>
+          <li>SCCBA Diversity, Equity, Inclusion Committee</li>
+          <li>American Inns of Court, Hon. William A. Ingram Inn</li>
+          <li>ABA Young Lawyers' Division. Affiliates Team Member &amp; Assembly Delegate</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d5">
+      <button class="acc-btn" onclick="toggleAcc(this)">Select Publications <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>"Law In The Age of Covid-19: Depose Your Own Witness To Preserve Their Testimony". PLI 2021 coursebook for trial attorneys.</li>
+          <li>"Seven Tips for Success When Joining an All-Male Law Firm". Her Legal Global.</li>
+          <li>"Maintaining Client Trust", advice for lawyers during lengthy legal battles.</li>
+          <li>"11 Essential Tips for New Business Owners on Handling Employee Conflict"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d6">
+      <button class="acc-btn" onclick="toggleAcc(this)">Speaking Engagements <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>Moderator, "Dobbs v. Whole Woman's Health Discussion Panel" (Oct. 2022)</li>
+          <li>Moderator, "Unprecedented: Navigating Legal and Health Issues in a Post-Dobbs World". SCCBA (Jul. 2022)</li>
+          <li>Panelist, "Strategies for Developing a Legacy of Values and Finances". Lockheed Martin (Feb. 2022)</li>
+          <li>Speaker, "Social Media for Lawyers: Avoiding Ethical Pitfalls". Barristers Bootcamp (Feb. 2022)</li>
+          <li>Panelist, "Finding that First Job and Setting Yourself Up for Success". NCBA YLD (Sep. 2021)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="award-box reveal reveal-d3">
+      <div class="section-label">Recognition</div>
+      <h4>Santa Clara County Bar Association</h4>
+      <div class="years">President &nbsp;·&nbsp; 2026</div>
+    </div>
+  </aside>
+</section>
+
+<!-- CLIENT REVIEWS -->
+<section class="testimonials-section">
+  <div class="section-label reveal">Client Reviews</div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal reveal-d1">
+      <p>"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Throughout her personal and team efforts, Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution to an unfolding disruptive and stressful situation. Much appreciation and gratitude."</p>
+      <div class="author">Anonymous &middot; Civil Litigation</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d2">
+      <p>"Claire was nothing short of incredible with how she represented me and my interests. She was always available, super prompt, organized, tactful, and strategic throughout the entire process. Claire was also very empathetic and practical which was super important at various times throughout my case and trial. Ultimately, Claire won me a large settlement and won my case. I would highly and confidently recommend Ms. Melehani to anyone and I would absolutely hire her again!"</p>
+      <div class="author">Pete &middot; Civil Litigation</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d3">
+      <p>"Excellent Attorney, Amazing Human Being. I had the pleasure of being represented by Mrs. Melehani during a very dark and extremely litigious phase of my custody case. Claire went above and beyond to ensure no detail was missed in my very laborious and exhaustive case. Further, her candor was always professional and extremely empathetic which went a long way to making me feel I was in good hands."</p>
+      <div class="author">Raffaello &middot; Family Law</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d4">
+      <p>"We worked with Claire and Steven on a living trust issue that we had, and were very impressed with their professionalism and patience in handling everything. Claire was highly recommended from another firm we had reached out to, and we certainly understand why. It is reassuring to know that we can always reach out to them for additional help if needed."</p>
+      <div class="author">Wendy &middot; Trust &amp; Probate</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d5">
+      <p>"Claire and Steven are not only incredibly knowledgeable but very supportive. They won't simply recommend a course of action that will cost the most money, but actually consider the issues and advise you on what's best for YOU. I feel very fortunate I was able to work with them for a difficult issue!"</p>
+      <div class="author">Jordan &middot; Civil Litigation</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOT CTA -->
+<section class="foot-cta">
+  <h2 class="reveal">Work with <em>Claire.</em></h2>
+  <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fclaire-melehani&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex !important;">Get My Free Consultation <span>→</span></a>
+</section>
+</div>
+
+<script>
+
+function toggleAcc(btn) {
+  var item = btn.parentElement;
+  var body = item.querySelector('.acc-body');
+  var icon = btn.querySelector('.icon');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(function(el){
+    el.classList.remove('open');
+    el.querySelector('.acc-body').style.maxHeight = null;
+    el.querySelector('.icon').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    icon.textContent = '×';
+  }
+}
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+</script>

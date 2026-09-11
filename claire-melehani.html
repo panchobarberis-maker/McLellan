@@ -12,6 +12,49 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Claire Melehani","jobTitle":"Partner","worksFor":{"@type":"LegalService","name":"McLellan Law Group"},"email":"claire@mclellanlawgroup.com","telephone":"650-383-1266","url":"https://www.mclellanlawgroup.com/claire-melehani","alumniOf":["University of North Carolina School of Law","Duke University"]}
 </script>
+<!-- Review schema: para GEO/AEO (ChatGPT, Perplexity, AI Overviews). No apto para rich snippet en Google Search (self-serving), por eso no lleva reviewRating. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Review",
+      "itemReviewed": {"@type": "Person", "name": "Claire Melehani", "url": "https://www.mclellanlawgroup.com/claire-melehani"},
+      "author": {"@type": "Person", "name": "Anonymous"},
+      "about": "Civil Litigation",
+      "reviewBody": "I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Throughout her personal and team efforts, Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution to an unfolding disruptive and stressful situation. Much appreciation and gratitude."
+    },
+    {
+      "@type": "Review",
+      "itemReviewed": {"@type": "Person", "name": "Claire Melehani", "url": "https://www.mclellanlawgroup.com/claire-melehani"},
+      "author": {"@type": "Person", "name": "Pete"},
+      "about": "Civil Litigation",
+      "reviewBody": "Claire was nothing short of incredible with how she represented me and my interests. She was always available, super prompt, organized, tactful, and strategic throughout the entire process. Claire was also very empathetic and practical which was super important at various times throughout my case and trial. Ultimately, Claire won me a large settlement and won my case. I would highly and confidently recommend Ms. Melehani to anyone and I would absolutely hire her again!"
+    },
+    {
+      "@type": "Review",
+      "itemReviewed": {"@type": "Person", "name": "Claire Melehani", "url": "https://www.mclellanlawgroup.com/claire-melehani"},
+      "author": {"@type": "Person", "name": "Raffaello"},
+      "about": "Family Law",
+      "reviewBody": "Excellent Attorney, Amazing Human Being. I had the pleasure of being represented by Mrs. Melehani during a very dark and extremely litigious phase of my custody case. Claire went above and beyond to ensure no detail was missed in my very laborious and exhaustive case. Further, her candor was always professional and extremely empathetic which went a long way to making me feel I was in good hands."
+    },
+    {
+      "@type": "Review",
+      "itemReviewed": {"@type": "Person", "name": "Claire Melehani", "url": "https://www.mclellanlawgroup.com/claire-melehani"},
+      "author": {"@type": "Person", "name": "Wendy"},
+      "about": "Trust & Probate",
+      "reviewBody": "We worked with Claire and Steven on a living trust issue that we had, and were very impressed with their professionalism and patience in handling everything. Claire was highly recommended from another firm we had reached out to, and we certainly understand why. It is reassuring to know that we can always reach out to them for additional help if needed."
+    },
+    {
+      "@type": "Review",
+      "itemReviewed": {"@type": "Person", "name": "Claire Melehani", "url": "https://www.mclellanlawgroup.com/claire-melehani"},
+      "author": {"@type": "Person", "name": "Jordan"},
+      "about": "Civil Litigation",
+      "reviewBody": "Claire and Steven are not only incredibly knowledgeable but very supportive. They won't simply recommend a course of action that will cost the most money, but actually consider the issues and advise you on what's best for YOU. I feel very fortunate I was able to work with them for a difficult issue!"
+    }
+  ]
+}
+</script>
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; text-wrap:pretty; }
 html { scroll-behavior:smooth; }
@@ -138,8 +181,9 @@ a { text-decoration:none; color:inherit; }
 .hero-name {
   font-family:'Barlow Condensed',sans-serif; font-weight:900;
   text-transform:uppercase; letter-spacing:-1px;
-  font-size:clamp(90px, 13vw, 200px); line-height:0.9;
+  font-size:clamp(40px, 6vw, 90px); line-height:0.9;
   margin-bottom:24px;
+  white-space:nowrap; overflow-wrap:normal; word-break:keep-all;
 }
 .hero-name .first {
   display:block; font-style:italic; color:#b9986a;
@@ -240,7 +284,7 @@ a { text-decoration:none; color:inherit; }
 
 /* ── FOOT CTA ── */
 .foot-cta {
-  border-top:1px solid rgba(255,255,255,0.06);
+  background:#f0ece4;
   padding:96px 64px; text-align:center;
 }
 @media(max-width:768px) { .foot-cta { padding:64px 24px; } }
@@ -248,12 +292,26 @@ a { text-decoration:none; color:inherit; }
   font-family:'Barlow Condensed',sans-serif; font-weight:900;
   text-transform:uppercase; letter-spacing:-0.5px;
   font-size:clamp(36px, 4.5vw, 56px); line-height:1.1; margin-bottom:16px;
+  color:#1e3a3e;
 }
 .foot-cta h2 em {
   font-style:italic; color:#b9986a;
   font-family:'DM Serif Display',serif; font-weight:400; text-transform:none;
 }
-.foot-cta p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:40px; }
+.foot-cta p { font-size:15px; color:rgba(30,58,62,0.6); margin-bottom:40px; }
+
+/* ── Client reviews ── */
+.testimonials-section { padding:96px 64px; max-width:1360px; margin:0 auto; }
+.testimonial-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-top:40px; }
+@media(max-width:900px) { .testimonial-grid { grid-template-columns:1fr; } .testimonials-section { padding:64px 24px; } }
+.testimonial-card {
+  border:2.5px solid rgba(185,152,106,0.45);
+  border-left:8px solid #b9986a;
+  padding:28px 32px;
+  background:#fbf6ef;
+}
+.testimonial-card p { font-size:17px; line-height:1.75; color:rgba(30,58,62,0.85); margin-bottom:20px; }
+.testimonial-card .author { font-size:13px; letter-spacing:1px; text-transform:uppercase; color:#8a6d43; font-weight:700; }
 
 /* ── Boxes + dorado en el body ── */
 .lead {
@@ -306,7 +364,7 @@ a { text-decoration:none; color:inherit; }
 .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
 .hero-cta { font-size:16px !important; padding:26px 52px !important; }
 .award-box .years { font-size:14px !important; color:rgba(30,58,62,0.55) !important; }
-.foot-cta p { font-size:19px !important; color:rgba(255,255,255,0.75) !important; }
+.foot-cta p { font-size:19px !important; color:rgba(30,58,62,0.65) !important; }
 
 /* Info mas grande en desktop */
 @media(min-width:769px) {
@@ -456,16 +514,6 @@ a { text-decoration:none; color:inherit; }
 <!-- BODY -->
 <section class="body-section">
   <div>
-    <div class="section-label reveal">About</div>
-    <p class="lead reveal reveal-d1">"Claire Melehani pairs sharp financial fluency with courtroom instinct, representing high-net-worth individuals, executives, and companies through California's most complex disputes."</p>
-    <div class="about-copy">
-      <p class="reveal reveal-d2">Claire Melehani is a founding partner at McLellan Law Group LLP and a civil trial attorney focused on complex litigation for high-net-worth individuals, executives, and companies throughout California. Her practice spans business and commercial disputes, trust and estate litigation, employment law, and real estate litigation, with significant depth in matters involving financial elder abuse.</p>
-      <p class="reveal reveal-d3">Before co-founding McLellan Law Group, Claire spent nearly four years as a trial and appellate attorney at Gates Eisenhart Dawson, a Silicon Valley boutique firm handling high-conflict civil proceedings for high-net-worth clients. Prior to that, she represented clients in complex, contested divorce and asset division matters at a prominent Bay Area family law firm, experience that sharpened her instincts for high-stakes negotiations and the particular demands of sophisticated clientele.</p>
-      <p class="reveal reveal-d4">Claire's litigation practice is distinguished by uncommon financial fluency. Her background as an investment banking analyst at a global investment bank gives her command of financial analysis, valuation, and business strategy that directly informs her courtroom approach and the practical counsel she provides to executives and entrepreneurs navigating contentious disputes.</p>
-      <p class="reveal reveal-d5">A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association, having previously served as Treasurer, Secretary, and elected Trustee. Claire has also served on the Board of Governors of California Women Lawyers. She was named to the American Bar Association's "On The Rise. Top 40 Young Lawyers" class of 2023, has been selected as a California Super Lawyers Rising Star every year since 2021, and has been recognized as a Top Women Attorney in Northern California by San Francisco Magazine. Claire is admitted to practice in all California state courts, the U.S. District Court for the Northern District of California, and the U.S. Court of Appeals for the Ninth Circuit.</p>
-      <p class="reveal reveal-d6">Outside the courtroom, Claire maintains an active pro bono practice, mentors students in the legal community, and publishes Legally Speaking, a weekly newsletter on California law.</p>
-    </div>
-
     <div class="results">
       <div class="section-label reveal">Notable Results</div>
       <div class="result-item reveal reveal-d1">
@@ -572,6 +620,33 @@ a { text-decoration:none; color:inherit; }
       <div class="years">President &nbsp;·&nbsp; 2026</div>
     </div>
   </aside>
+</section>
+
+<!-- CLIENT REVIEWS -->
+<section class="testimonials-section">
+  <div class="section-label reveal">Client Reviews</div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal reveal-d1">
+      <p>"I recommend Attorney Claire Melehani, whose efforts were immediate, determined, analytical, well considered, and constant. Throughout her personal and team efforts, Claire worked hard to build a strong, strategic, and effective case to ensure a positive resolution to an unfolding disruptive and stressful situation. Much appreciation and gratitude."</p>
+      <div class="author">Anonymous &middot; Civil Litigation</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d2">
+      <p>"Claire was nothing short of incredible with how she represented me and my interests. She was always available, super prompt, organized, tactful, and strategic throughout the entire process. Claire was also very empathetic and practical which was super important at various times throughout my case and trial. Ultimately, Claire won me a large settlement and won my case. I would highly and confidently recommend Ms. Melehani to anyone and I would absolutely hire her again!"</p>
+      <div class="author">Pete &middot; Civil Litigation</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d3">
+      <p>"Excellent Attorney, Amazing Human Being. I had the pleasure of being represented by Mrs. Melehani during a very dark and extremely litigious phase of my custody case. Claire went above and beyond to ensure no detail was missed in my very laborious and exhaustive case. Further, her candor was always professional and extremely empathetic which went a long way to making me feel I was in good hands."</p>
+      <div class="author">Raffaello &middot; Family Law</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d4">
+      <p>"We worked with Claire and Steven on a living trust issue that we had, and were very impressed with their professionalism and patience in handling everything. Claire was highly recommended from another firm we had reached out to, and we certainly understand why. It is reassuring to know that we can always reach out to them for additional help if needed."</p>
+      <div class="author">Wendy &middot; Trust &amp; Probate</div>
+    </div>
+    <div class="testimonial-card reveal reveal-d5">
+      <p>"Claire and Steven are not only incredibly knowledgeable but very supportive. They won't simply recommend a course of action that will cost the most money, but actually consider the issues and advise you on what's best for YOU. I feel very fortunate I was able to work with them for a difficult issue!"</p>
+      <div class="author">Jordan &middot; Civil Litigation</div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOT CTA -->
