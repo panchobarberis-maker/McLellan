@@ -7,7 +7,14 @@ html, body { overflow-x:hidden; }
   -webkit-font-smoothing:antialiased; font-weight:500; }
 
 
-#mlg-sonia-mehmi * { text-wrap:pretty; }
+#mlg-sonia-mehmi *, #mlg-sonia-mehmi *::before, #mlg-sonia-mehmi *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlg-sonia-mehmi { scroll-behavior:smooth; }
+#mlg-sonia-mehmi {
+  font-family:'Barlow',sans-serif !important; font-weight:400 !important;
+  background:#1e3a3e !important; color:#f0ece4 !important;
+  -webkit-font-smoothing:antialiased;
+}
+#mlg-sonia-mehmi a { text-decoration:none !important; color:inherit !important; }
 #mlg-sonia-mehmi .logo-img-mobile { height:28px !important; width:auto !important; }
 #mlg-sonia-mehmi .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
 #mlg-sonia-mehmi .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
@@ -33,128 +40,227 @@ html, body { overflow-x:hidden; }
 }
 @media(min-width:769px) {
 }
-#mlg-sonia-mehmi .atty-hero {
-  background:#1e3a3e !important; border-bottom:12px solid #c9a96e !important;
-  padding:56px 24px !important;
+#mlg-sonia-mehmi .hero {
+  display:grid !important; grid-template-columns:55% 45%;
 }
-#mlg-sonia-mehmi .atty-hero-inner {
-  max-width:1200px !important; margin:0 auto !important;
-  display:grid !important; grid-template-columns:1fr; gap:36px !important; align-items:center;
+@media(max-width:900px) {
+#mlg-sonia-mehmi .hero { grid-template-columns:1fr; }
 }
-@media(min-width:900px) {
-#mlg-sonia-mehmi .atty-hero { padding:88px 48px !important; }
-#mlg-sonia-mehmi .atty-hero-inner { grid-template-columns:1.1fr 1fr; gap:64px !important; }
+#mlg-sonia-mehmi .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
+#mlg-sonia-mehmi .hero-photo::before {
+  content:''; position:absolute !important; inset:50px;
+  border:3px solid #b9986a !important;
+  z-index:3; pointer-events:none;
 }
-#mlg-sonia-mehmi .atty-hero h1 {
-  font-family:'Barlow Condensed',sans-serif !important;
-  font-size:clamp(44px, 6vw, 76px) !important; font-weight:900 !important; line-height:0.95 !important;
-  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:8px !important;
+#mlg-sonia-mehmi .hero-photo img {
+  width:100% !important; height:100% !important; object-fit:cover; object-position:center 0%;
+  filter:grayscale(10%) brightness(0.85);
+  display:block !important;
 }
-#mlg-sonia-mehmi .atty-role {
-  font-family:'Barlow Condensed',sans-serif !important;
-  font-size:clamp(20px, 2.5vw, 28px) !important; font-weight:800 !important; letter-spacing:3px !important;
-  text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:24px !important;
+#mlg-sonia-mehmi .hero-photo::after {
+  content:''; position:absolute !important; inset:0; z-index:2;
+  background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
 }
-#mlg-sonia-mehmi .atty-hero p { font-size:18px !important; line-height:1.75 !important; color:rgba(255,255,255,0.85) !important; max-width:560px !important; margin-bottom:28px !important; }
-#mlg-sonia-mehmi .atty-contact { display:flex !important; flex-direction:column; gap:12px !important; margin-bottom:32px !important; }
-#mlg-sonia-mehmi .atty-contact a {
-  display:inline-flex !important; align-items:center; gap:12px !important;
-  color:#fff !important; font-weight:700 !important; font-size:17px !important; text-decoration:none !important;
+@media(max-width:900px) {
+#mlg-sonia-mehmi .hero-photo { height:60vh !important; }
+#mlg-sonia-mehmi .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
+#mlg-sonia-mehmi .hero-photo::before { inset:8px; }
 }
-#mlg-sonia-mehmi .atty-contact a:hover { color:#c9a96e !important; }
-#mlg-sonia-mehmi .atty-contact svg { flex-shrink:0; }
-#mlg-sonia-mehmi .atty-photo {
-  width:calc(100% - 24px) !important; max-height:560px !important; object-fit:cover; object-position:center 15%;
-  border-radius:6px !important; display:block !important;
-  box-shadow:
-    24px 24px 0 -6px #c9a96e,
-    0 24px 64px rgba(0,0,0,0.4);
+#mlg-sonia-mehmi .hero-info {
+  padding:80px 64px 80px 48px !important;
+  display:flex !important; flex-direction:column; justify-content:center;
 }
-@keyframes ctaBreath {
-  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
-  50%      { box-shadow:0 0 28px 6px rgba(201,169,110,0.55), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.03); }
+@media(max-width:900px) {
+#mlg-sonia-mehmi .hero-info { padding:40px 24px 64px !important; }
 }
-#mlg-sonia-mehmi .btn-gold {
-  display:inline-flex !important; align-items:center; gap:10px !important;
-  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%) !important;
-  color:#1e3a3e !important; font-weight:800 !important; font-size:16px !important;
-  padding:16px 36px !important; border-radius:32px !important; text-decoration:none !important;
-  animation:ctaBreath 2.6s ease-in-out infinite;
+#mlg-sonia-mehmi .breadcrumb {
+  font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.4) !important; font-weight:500 !important; margin-bottom:36px !important;
 }
-#mlg-sonia-mehmi .atty-bio { background:#fbf6ef !important; padding:56px 24px !important; }
-#mlg-sonia-mehmi .atty-bio-inner { max-width:1200px !important; margin:0 auto !important; display:grid !important; grid-template-columns:1fr; gap:32px !important; }
-@media(min-width:900px) {
-#mlg-sonia-mehmi .atty-bio { padding:88px 48px !important; }
-#mlg-sonia-mehmi .atty-bio-inner { grid-template-columns:1fr 1.4fr; gap:56px !important; align-items:start; }
+#mlg-sonia-mehmi .breadcrumb em { font-style:normal !important; color:rgba(255,255,255,0.6) !important; }
+#mlg-sonia-mehmi .hero-name {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:-1px !important;
+  font-size:clamp(40px, 6vw, 90px) !important; line-height:0.9 !important;
+  margin-bottom:24px !important; color:#f0ece4 !important;
+  white-space:nowrap; overflow-wrap:normal; word-break:keep-all;
 }
-#mlg-sonia-mehmi .bio-block {
-  background:#1e3a3e !important; border-radius:16px !important; padding:36px 32px !important;
-  box-shadow:0 8px 28px rgba(0,0,0,0.12); margin-bottom:24px !important;
+#mlg-sonia-mehmi .hero-name .first {
+  display:block !important; font-style:italic !important; color:#b9986a !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; letter-spacing:0 !important; font-size:0.85em !important;
 }
-#mlg-sonia-mehmi .bio-block p { font-size:17px !important; line-height:1.8 !important; color:rgba(255,255,255,0.85) !important; margin-bottom:18px !important; }
-#mlg-sonia-mehmi .bio-block p:last-child { margin-bottom:0 !important; }
-#mlg-sonia-mehmi .bio-block a { color:#c9a96e !important; font-weight:700 !important; }
-#mlg-sonia-mehmi .bio-eyebrow {
-  display:inline-flex !important; align-items:center; gap:10px !important;
-  font-size:15px !important; letter-spacing:3px !important; text-transform:uppercase !important;
-  color:#c9a96e !important; font-weight:700 !important; margin-bottom:16px !important;
+#mlg-sonia-mehmi .hero-role {
+  font-size:12px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.5) !important; font-weight:500 !important;
+  padding-bottom:36px !important; margin-bottom:36px !important;
+  border-bottom:1px solid rgba(255,255,255,0.08) !important;
 }
-#mlg-sonia-mehmi .bio-eyebrow::before { content:''; width:24px !important; height:1px !important; background:#c9a96e !important; }
-#mlg-sonia-mehmi .result-card {
-  background:#1e3a3e !important; border-radius:14px !important; padding:28px !important;
-  margin-bottom:16px !important; border-left:5px solid #c9a96e !important;
+#mlg-sonia-mehmi .hero-stats { display:flex !important; gap:48px !important; flex-wrap:wrap; margin-bottom:48px !important; }
+#mlg-sonia-mehmi .stat .num {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  font-size:56px !important; line-height:1 !important; color:#b9986a !important; display:block !important; margin-bottom:10px !important;
 }
-#mlg-sonia-mehmi .result-card strong { display:block !important; color:#c9a96e !important; font-family:'Barlow Condensed',sans-serif !important; font-size:20px !important; text-transform:uppercase !important; letter-spacing:1px !important; margin-bottom:8px !important; }
-#mlg-sonia-mehmi .result-card span { color:rgba(255,255,255,0.85) !important; font-size:16px !important; line-height:1.7 !important; }
-#mlg-sonia-mehmi .cred-item { margin-bottom:14px !important; border-radius:12px !important; overflow:hidden; }
-#mlg-sonia-mehmi .cred-question {
-  width:100% !important; background:linear-gradient(180deg,#d3b483 0%,#c2a06a 100%) !important;
-  border:none !important; text-align:left !important; cursor:pointer;
-  padding:20px 24px !important; font-family:'Barlow Condensed',sans-serif !important;
-  font-size:20px !important; font-weight:800 !important; letter-spacing:1.5px !important; text-transform:uppercase !important;
-  color:#fff !important; display:flex !important; justify-content:space-between; align-items:center; gap:12px !important;
+#mlg-sonia-mehmi .stat .label {
+  font-size:10px !important; letter-spacing:2px !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,0.45) !important; font-weight:500 !important; line-height:1.6 !important; display:block !important;
 }
-#mlg-sonia-mehmi .cred-question .cred-icon { font-size:24px !important; transition:transform 0.3s; }
-#mlg-sonia-mehmi .cred-answer { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; background:#fff !important; }
-#mlg-sonia-mehmi .cred-answer ul { list-style:none !important; padding:20px 26px !important; }
-#mlg-sonia-mehmi .cred-answer li { font-size:16px !important; color:#3a5254 !important; padding:7px 0 !important; padding-left:22px !important; position:relative !important; line-height:1.6 !important; }
-#mlg-sonia-mehmi .cred-answer li::before { content:'•'; color:#c9a96e !important; font-weight:900 !important; position:absolute !important; left:0; }
-#mlg-sonia-mehmi .cred-item.open .cred-icon { transform:rotate(45deg); }
-#mlg-sonia-mehmi .cta-banner { background:#f0ece4 !important; padding:72px 24px !important; text-align:center !important; border-top:12px solid #c9a96e !important; }
-#mlg-sonia-mehmi .cta-banner h2 {
-  font-family:'Barlow Condensed',sans-serif !important;
-  font-size:clamp(40px, 6vw, 80px) !important; font-weight:900 !important;
-  color:#1e3a3e !important; text-transform:uppercase !important; letter-spacing:-1px !important; margin-bottom:14px !important;
+#mlg-sonia-mehmi .hero-cta {
+  display:inline-flex !important; align-items:center; gap:14px !important; align-self:flex-start;
+  background:#b9986a !important; color:#1e3a3e !important;
+  font-size:14px !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  padding:24px 48px !important; transition:background 0.25s;
 }
-#mlg-sonia-mehmi .cta-banner h2 em { font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#b9986a !important; }
-#mlg-sonia-mehmi .cta-banner p { font-size:19px !important; color:rgba(30,58,62,0.6) !important; margin-bottom:32px !important; }
-#mlg-sonia-mehmi .atty-hero p {
-  font-family:'DM Serif Display',serif !important; font-style:italic !important;
-  font-size:21px !important; line-height:1.8 !important;
-  color:rgba(255,255,255,0.9) !important;
+#mlg-sonia-mehmi .hero-cta:hover { background:#cbb084 !important; }
+#mlg-sonia-mehmi .hero-cta span { font-size:18px !important; }
+#mlg-sonia-mehmi .body-section {
+  display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
+  padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
 }
-#mlg-sonia-mehmi .atty-role { position:relative !important; padding-bottom:18px !important; }
-#mlg-sonia-mehmi .atty-role::after { content:''; position:absolute !important; left:0; bottom:0; width:56px !important; height:2px !important; background:#c9a96e !important; }
-#mlg-sonia-mehmi .atty-contact a { font-size:19px !important; letter-spacing:0.3px !important; }
-#mlg-sonia-mehmi .atty-bio { padding:80px 24px !important; }
-@media(min-width:900px) {
-#mlg-sonia-mehmi .atty-bio { padding:120px 48px !important; }
+@media(max-width:900px) {
+#mlg-sonia-mehmi .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
 }
-#mlg-sonia-mehmi .bio-block { padding:48px 44px !important; border-radius:4px !important; }
-#mlg-sonia-mehmi .bio-block p { font-size:19px !important; line-height:1.95 !important; }
-#mlg-sonia-mehmi .bio-block p:first-of-type::first-letter {
-  font-family:'DM Serif Display',serif !important;
-  font-size:64px !important; line-height:0.8 !important; float:left;
-  padding:8px 12px 0 0 !important; color:#c9a96e !important;
+#mlg-sonia-mehmi .section-label {
+  font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
+  color:#b9986a !important; font-weight:600 !important; margin-bottom:32px !important;
 }
-#mlg-sonia-mehmi .bio-eyebrow { font-size:16px !important; letter-spacing:4px !important; }
-#mlg-sonia-mehmi .cred-question { font-size:23px !important; padding:24px 28px !important; letter-spacing:2px !important; }
-#mlg-sonia-mehmi .cred-answer li { font-size:18px !important; padding:9px 0 9px 24px !important; line-height:1.7 !important; }
-#mlg-sonia-mehmi .result-card { padding:32px !important; }
-#mlg-sonia-mehmi .result-card strong { font-size:24px !important; }
-#mlg-sonia-mehmi .result-card span { font-size:17.5px !important; line-height:1.75 !important; }
-#mlg-sonia-mehmi .cta-banner p { font-size:22px !important; font-family:'DM Serif Display',serif !important; font-style:italic !important; }
-#mlg-sonia-mehmi .bio-block p, #mlg-sonia-mehmi .result-card span, #mlg-sonia-mehmi .atty-hero p, #mlg-sonia-mehmi .cred-answer li { text-align:justify !important; }
+#mlg-sonia-mehmi .lead {
+  font-family:'DM Serif Display',serif !important; font-style:italic !important; font-weight:400 !important;
+  font-size:clamp(24px, 2.6vw, 32px) !important; line-height:1.5 !important; color:#1e3a3e !important;
+  margin-bottom:40px !important;
+}
+#mlg-sonia-mehmi .about-copy { display:flex !important; flex-direction:column; gap:20px !important; }
+#mlg-sonia-mehmi .about-copy p {
+  font-size:16px !important; line-height:1.9 !important; color:rgba(30,58,62,0.7) !important;
+  text-align:justify !important;
+}
+#mlg-sonia-mehmi .results { margin-top:72px !important; }
+#mlg-sonia-mehmi .result-item {
+  border-top:1px solid rgba(30,58,62,0.1) !important;
+  padding:32px 0 !important;
+  display:grid !important; grid-template-columns:1fr auto; gap:8px 32px !important;
+}
+#mlg-sonia-mehmi .result-item h3 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:800 !important;
+  text-transform:uppercase !important; letter-spacing:0.5px !important;
+  font-size:26px !important; color:#1e3a3e !important;
+}
+#mlg-sonia-mehmi .result-item .tag {
+  font-size:10px !important; letter-spacing:2px !important; text-transform:uppercase !important;
+  color:#8a6d43 !important; font-weight:600 !important; align-self:start; padding-top:8px !important;
+}
+#mlg-sonia-mehmi .result-item p {
+  grid-column:1 / -1;
+  font-size:15px !important; line-height:1.8 !important; color:rgba(30,58,62,0.6) !important; text-align:justify !important;
+}
+#mlg-sonia-mehmi .acc-item { border-bottom:1px solid rgba(30,58,62,0.1) !important; }
+#mlg-sonia-mehmi .acc-btn {
+  width:100% !important; background:none !important; border:none !important; cursor:pointer;
+  display:flex !important; justify-content:space-between; align-items:center;
+  padding:22px 0 !important; text-align:left !important;
+  font-family:'Barlow',sans-serif !important;
+  font-size:12px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; font-weight:600 !important;
+}
+#mlg-sonia-mehmi .acc-btn .icon { color:#8a6d43 !important; font-size:16px !important; font-weight:400 !important; transition:transform 0.3s; }
+#mlg-sonia-mehmi .acc-body { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
+#mlg-sonia-mehmi .acc-body ul { list-style:none !important; padding:0 0 24px !important; }
+#mlg-sonia-mehmi .acc-body li {
+  font-size:14px !important; line-height:1.7 !important; color:rgba(30,58,62,0.65) !important;
+  padding:6px 0 !important;
+}
+#mlg-sonia-mehmi .award-box {
+  margin-top:48px !important; padding:32px 28px !important;
+  border:1px solid rgba(185,152,106,0.35) !important;
+}
+#mlg-sonia-mehmi .award-box .section-label { margin-bottom:14px !important; color:#8a6d43 !important; }
+#mlg-sonia-mehmi .award-box h4 {
+  font-family:'DM Serif Display',serif !important; font-style:italic !important; font-weight:400 !important;
+  font-size:24px !important; line-height:1.3 !important; color:#1e3a3e !important; margin-bottom:10px !important;
+}
+#mlg-sonia-mehmi .award-box .years { font-size:12px !important; letter-spacing:2px !important; color:rgba(30,58,62,0.55) !important; }
+#mlg-sonia-mehmi .foot-cta {
+  background:#f0ece4 !important;
+  padding:96px 64px !important; text-align:center !important;
+}
+@media(max-width:768px) {
+#mlg-sonia-mehmi .foot-cta { padding:64px 24px !important; }
+}
+#mlg-sonia-mehmi .foot-cta h2 {
+  font-family:'Barlow Condensed',sans-serif !important; font-weight:900 !important;
+  text-transform:uppercase !important; letter-spacing:-0.5px !important;
+  font-size:clamp(36px, 4.5vw, 56px) !important; line-height:1.1 !important; margin-bottom:16px !important;
+  color:#1e3a3e !important;
+}
+#mlg-sonia-mehmi .foot-cta h2 em {
+  font-style:italic !important; color:#b9986a !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important;
+}
+#mlg-sonia-mehmi .foot-cta p { font-size:15px !important; color:rgba(30,58,62,0.6) !important; margin-bottom:40px !important; }
+#mlg-sonia-mehmi .lead {
+  border:2.5px solid rgba(185,152,106,0.5) !important;
+  border-left:8px solid #b9986a !important;
+  padding:32px 36px !important;
+  background:#fbf6ef !important;
+}
+#mlg-sonia-mehmi .about-copy p {
+  border:2.5px solid rgba(185,152,106,0.35) !important;
+  padding:28px 32px !important;
+  background:#fbf6ef !important;
+}
+#mlg-sonia-mehmi .result-item {
+  border:2.5px solid rgba(185,152,106,0.45) !important;
+  border-left:8px solid #b9986a !important;
+  padding:28px 32px !important;
+  margin-bottom:20px !important;
+  background:#fbf6ef !important;
+}
+#mlg-sonia-mehmi .results .result-item + .result-item { border-top:2.5px solid rgba(185,152,106,0.45) !important; }
+#mlg-sonia-mehmi .acc-item {
+  border:5px solid rgba(185,152,106,0.6) !important;
+  margin-bottom:14px !important;
+  padding:0 22px !important;
+  background:#fbf6ef !important;
+}
+#mlg-sonia-mehmi .acc-btn .icon { font-size:18px !important; }
+#mlg-sonia-mehmi .award-box {
+  border:2.5px solid #b9986a !important;
+  background:#fbf6ef !important;
+  box-shadow:0 0 0 4px rgba(185,152,106,0.08);
+}
+#mlg-sonia-mehmi .section-label::after {
+  content:''; display:inline-block !important; vertical-align:middle;
+  width:36px !important; height:1px !important; background:#b9986a !important; margin-left:14px !important; opacity:0.6;
+}
+#mlg-sonia-mehmi .about-copy p { font-size:19px !important; line-height:1.9 !important; color:rgba(30,58,62,0.85) !important; }
+#mlg-sonia-mehmi .result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
+#mlg-sonia-mehmi .result-item .tag { font-size:13px !important; }
+#mlg-sonia-mehmi .acc-btn { font-size:15px !important; letter-spacing:2px !important; }
+#mlg-sonia-mehmi .acc-body li { font-size:17px !important; color:rgba(30,58,62,0.75) !important; padding:8px 0 !important; }
+#mlg-sonia-mehmi .section-label { font-size:14px !important; color:#c9a96e !important; }
+#mlg-sonia-mehmi .breadcrumb { font-size:13px !important; color:rgba(255,255,255,0.65) !important; }
+#mlg-sonia-mehmi .breadcrumb em { color:rgba(255,255,255,0.85) !important; }
+#mlg-sonia-mehmi .hero-role { font-size:15px !important; color:rgba(255,255,255,0.8) !important; }
+#mlg-sonia-mehmi .stat .label { font-size:13px !important; color:rgba(255,255,255,0.75) !important; }
+#mlg-sonia-mehmi .hero-cta { font-size:16px !important; padding:26px 52px !important; }
+#mlg-sonia-mehmi .foot-cta p { font-size:19px !important; color:rgba(30,58,62,0.65) !important; }
+@media(min-width:769px) {
+#mlg-sonia-mehmi .lead { font-size:clamp(28px,2.8vw,36px) !important; }
+#mlg-sonia-mehmi .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+#mlg-sonia-mehmi .result-item h3 { font-size:30px !important; }
+#mlg-sonia-mehmi .result-item p { font-size:20px !important; }
+#mlg-sonia-mehmi .result-item .tag { font-size:14px !important; }
+#mlg-sonia-mehmi .acc-btn { font-size:16px !important; }
+#mlg-sonia-mehmi .acc-body li { font-size:18px !important; }
+#mlg-sonia-mehmi .section-label { font-size:15px !important; }
+#mlg-sonia-mehmi .hero-role { font-size:16px !important; }
+#mlg-sonia-mehmi .stat .num { font-size:64px !important; }
+#mlg-sonia-mehmi .stat .label { font-size:14px !important; }
+#mlg-sonia-mehmi .award-box h4 { font-size:26px !important; }
+#mlg-sonia-mehmi .foot-cta p { font-size:21px !important; }
+}
+#mlg-sonia-mehmi .body-sidebar { position:sticky !important; top:96px; align-self:start; }
+#mlg-sonia-mehmi .body-sidebar .section-label { margin-bottom:24px !important; }
 #mlg-sonia-mehmi .reveal {
   opacity:0; transform:translateY(28px);
   transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
@@ -198,91 +304,108 @@ html, body { overflow-x:hidden; }
 <!-- MOBILE MENU -->
 
 <!-- HERO -->
-<section class="atty-hero">
-  <div class="atty-hero-inner">
-    <div>
-      <h1 class="reveal">Sonia Mehmi</h1>
-      <div class="atty-role reveal reveal-d1">Law Clerk</div>
-      <p class="reveal reveal-d2">Sonia Mehmi supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a J.D. candidate at Santa Clara University School of Law and a registered Patent Agent.</p>
-      <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsonia-mehmi&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d3">Request a Free Consultation →</a>
+<section class="hero">
+  <div class="hero-photo">
+    <img src="https://irp.cdn-website.com/9df80dfc/dms3rep/multi/4abff101-c9c1-4769-880a-5512c622e2fb---Edited.webp" alt="Sonia Mehmi, Law Clerk at McLellan Law Group" class="reveal">
+  </div>
+  <div class="hero-info">
+    <div class="breadcrumb reveal reveal-d1">Our Team &nbsp;/&nbsp; <em>Law Clerk</em></div>
+    <h1 class="hero-name reveal reveal-d2"><span class="first">Sonia</span>Mehmi</h1>
+    <div class="hero-role reveal reveal-d3">Law Clerk</div>
+    <div class="hero-stats">
+      <div class="stat reveal reveal-d4">
+        <span class="num">J.D.</span>
+        <span class="label">Candidate,<br>Santa Clara Law</span>
+      </div>
+      <div class="stat reveal reveal-d5">
+        <span class="num">Patent</span>
+        <span class="label">Registered<br>USPTO Agent</span>
+      </div>
+      <div class="stat reveal reveal-d6">
+        <span class="num">M.S.</span>
+        <span class="label">Bioethics,<br>Columbia</span>
+      </div>
     </div>
-    <img class="atty-photo reveal reveal-d2" style="height:480px !important;" src="https://irp.cdn-website.com/9df80dfc/dms3rep/multi/4abff101-c9c1-4769-880a-5512c622e2fb---Edited.webp" alt="Sonia Mehmi, Law Clerk at McLellan Law Group">
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsonia-mehmi&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d7">Get My Free Consultation <span>→</span></a>
   </div>
 </section>
 
-<!-- BIO -->
-<section class="atty-bio">
-  <div class="atty-bio-inner">
-
-    <div>
-      <div class="cred-item reveal">
-        <button class="cred-question" onclick="toggleCred(this)">Education <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li>Santa Clara University School of Law, J.D. candidate. CALI Award in Civil Procedure; Law Faculty Scholarship</li>
-            <li>Columbia University, M.S. in Bioethics</li>
-            <li>University of California, Davis. B.S. in Biochemistry and Molecular Biology</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cred-item reveal reveal-d1">
-        <button class="cred-question" onclick="toggleCred(this)">Memberships &amp; Languages <span class="cred-icon">+</span></button>
-        <div class="cred-answer">
-          <ul>
-            <li>South Asian Law School Association</li>
-            <li>Women in Law</li>
-            <li>South Asian Bar Association</li>
-            <li>Fluent in English, Punjabi, and Hindi</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="margin-top:28px !important;">
-        <div class="result-card reveal reveal-d2">
-          <strong>Registered Patent Agent</strong>
-          <span>Licensed to practice before the United States Patent and Trademark Office.</span>
-        </div>
-        <div class="result-card reveal reveal-d3">
-          <strong>Science-Driven Analysis</strong>
-          <span>A background in biochemistry and bioethics gives her a distinctive analytical lens for matters involving technical evidence, healthcare, and regulatory issues.</span>
-        </div>
-      </div>
-
+<!-- BODY -->
+<section class="body-section">
+  <div>
+    <div class="section-label reveal">About</div>
+    <p class="lead reveal reveal-d1">"Sonia Mehmi pairs a scientist's precision with a litigator's instinct, bringing rigorous research and a distinctive analytical lens to every matter she supports."</p>
+    <div class="about-copy">
+      <p class="reveal reveal-d2">Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at Santa Clara University School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
+      <p class="reveal reveal-d3">Before law school, Sonia earned a Master of Science in Bioethics from Columbia University, where she studied the intersection of law, ethics, and regulation in medicine and biotechnology. She holds a Bachelor of Science in Biochemistry and Molecular Biology from the University of California, Davis. Her background in the sciences gives her a distinctive analytical lens, particularly in matters involving technical evidence, healthcare, and regulatory issues.</p>
+      <p class="reveal reveal-d4">Sonia is an active member of the South Asian Law School Association, Women in Law, and the South Asian Bar Association. She is fluent in English, Punjabi, and Hindi.</p>
     </div>
 
-    <div>
-      <div class="bio-block">
-        <div class="bio-eyebrow reveal">About Sonia</div>
-        <p class="reveal reveal-d1">Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at Santa Clara University School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
-        <p class="reveal reveal-d2">Before law school, Sonia earned a Master of Science in Bioethics from Columbia University, where she studied the intersection of law, ethics, and regulation in medicine and biotechnology. She holds a Bachelor of Science in Biochemistry and Molecular Biology from the University of California, Davis. Her background in the sciences gives her a distinctive analytical lens, particularly in matters involving technical evidence, healthcare, and regulatory issues.</p>
-        <p class="reveal reveal-d3">Sonia is an active member of the South Asian Law School Association, Women in Law, and the South Asian Bar Association. She is fluent in English, Punjabi, and Hindi.</p>
+    <div class="results">
+      <div class="section-label reveal">Notable Results</div>
+      <div class="result-item reveal reveal-d1">
+        <h3>Registered Patent Agent</h3>
+        <span class="tag">Credential</span>
+        <p>Licensed to practice before the United States Patent and Trademark Office.</p>
+      </div>
+      <div class="result-item reveal reveal-d2">
+        <h3>Science-Driven Analysis</h3>
+        <span class="tag">Case Work</span>
+        <p>A background in biochemistry and bioethics gives her a distinctive analytical lens for matters involving technical evidence, healthcare, and regulatory issues.</p>
       </div>
     </div>
-
   </div>
+
+  <aside class="body-sidebar">
+    <div class="section-label reveal">Credentials</div>
+    <div class="acc-item open reveal">
+      <button class="acc-btn" onclick="toggleAcc(this)">Education <span class="icon">×</span></button>
+      <div class="acc-body" style="max-height:220px !important;">
+        <ul>
+          <li>Santa Clara University School of Law, J.D. candidate. CALI Award in Civil Procedure; Law Faculty Scholarship</li>
+          <li>Columbia University, M.S. in Bioethics</li>
+          <li>University of California, Davis. B.S. in Biochemistry and Molecular Biology</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item reveal reveal-d1">
+      <button class="acc-btn" onclick="toggleAcc(this)">Memberships &amp; Languages <span class="icon">+</span></button>
+      <div class="acc-body">
+        <ul>
+          <li>South Asian Law School Association</li>
+          <li>Women in Law</li>
+          <li>South Asian Bar Association</li>
+          <li>Fluent in English, Punjabi, and Hindi</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 </section>
 
-<!-- CTA -->
-<section class="cta-banner">
-  <h2 class="reveal">Work With<em> Our Team.</em></h2>
+<!-- FOOT CTA -->
+<section class="foot-cta">
+  <h2 class="reveal">Work with <em>Our Team.</em></h2>
   <p class="reveal reveal-d1">Free consultation. No obligation. We respond within one business day.</p>
-  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsonia-mehmi&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="btn-gold reveal reveal-d2">Request a Free Consultation →</a>
+  <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fsonia-mehmi&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="hero-cta reveal reveal-d2" style="display:inline-flex !important;">Get My Free Consultation <span>→</span></a>
 </section>
 </div>
 
 <script>
 
-function toggleCred(btn) {
+function toggleAcc(btn) {
   var item = btn.parentElement;
-  var answer = item.querySelector('.cred-answer');
+  var body = item.querySelector('.acc-body');
+  var icon = btn.querySelector('.icon');
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.cred-item.open').forEach(function(el) {
+  document.querySelectorAll('.acc-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.cred-answer').style.maxHeight = null;
+    el.querySelector('.acc-body').style.maxHeight = null;
+    el.querySelector('.icon').textContent = '+';
   });
   if (!isOpen) {
     item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    body.style.maxHeight = body.scrollHeight + 'px';
+    icon.textContent = '×';
   }
 }
 
