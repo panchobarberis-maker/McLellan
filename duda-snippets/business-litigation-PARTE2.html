@@ -1,26 +1,4 @@
-<style>html, body { overflow-x:hidden; }</style>
-
-
-<div class="mlgP">
-
-<a class="mlg-salto" href="#contenido">Skip to content</a>
-
-
-
-
-<!-- HERO -->
-<section class="emp-hero">
-  <video class="emp-hero-img video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video><video class="emp-hero-img video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
-  <div class="emp-hero-overlay"></div>
-  <div class="hero-pill reveal">Business Litigation · Saratoga, California</div>
-  <h1 class="reveal reveal-d1">California Business Litigation <em>Attorneys</em></h1>
-  <p class="emp-hero-sub reveal reveal-d2">Protecting companies, owners, and executives throughout Silicon Valley &amp; the Bay Area.</p>
-  <div class="emp-hero-ctas">
-    <a href="#contact" class="btn-gold reveal reveal-d3">Get My Free Consultation →</a>
-    <a href="#disputes" class="btn-ghost reveal reveal-d4">What We Handle ↓</a>
-  </div>
-</section>
-
+<div class="mlgE-business-litigation">
 <!-- DISPUTES SECTION -->
 <section id="contenido" class="employers-section" id="disputes">
   <div class="employers-intro">
@@ -335,10 +313,11 @@
     referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group, 20665 4th St #202, Saratoga, CA 95070">
   </iframe>
 </div>
-
 </div>
 
 <script>
+
+
 function toggleFaq(btn) {
   // El boton ahora vive dentro de un H3, asi que el contenedor ya no es el
   // padre directo. closest() lo encuentra sin importar cuantos niveles haya.
@@ -418,93 +397,4 @@ function toggleFaq(btn) {
   els.forEach(function(el){ observer.observe(el); });
 })();
 
-// El hero tiene que entrar en la primera vista. Arriba suyo esta el header de
-// Duda, que mide distinto en desktop y en mobile, asi que en vez de un numero
-// fijo medimos cuanto hay por encima y lo descontamos.
-(function(){
-  var hero = document.querySelector('.mlgP .emp-hero');
-  if (!hero) return;
-  function fit(){
-    hero.style.minHeight = '';
-    var arriba = hero.getBoundingClientRect().top + window.scrollY;
-    // Si la medicion da un numero raro (el header de Duda no termino de
-    // pintar, el widget vive en un iframe, etc.) esto evita que el hero
-    // se infle a casi toda la pantalla o se achique a casi nada.
-    arriba = Math.min(Math.max(Math.round(arriba), 40), 200);
-    hero.style.minHeight = 'calc(100svh - ' + arriba + 'px)';
-  }
-  fit();
-  window.addEventListener('load', fit);
-  window.addEventListener('resize', fit);
-})();
-
-// Red de seguridad: si el observador no llega a disparar, nada queda invisible.
-// No alcanza con chequear una sola vez a los 1200ms: en una pagina larga (como
-// FAQs, con doce categorias) la mayor parte del contenido todavia esta fuera
-// de la pantalla en ese momento, y quedaba invisible para siempre porque
-// nunca se volvia a mirar. Ahora se revisa de nuevo en cada scroll.
-function mlgForzarVisibles(){
-  document.querySelectorAll('.mlgP .reveal:not(.in-view)').forEach(function(el){
-    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view');
-  });
-}
-setTimeout(mlgForzarVisibles, 1200);
-window.addEventListener('scroll', mlgForzarVisibles, {passive:true});
-</script>
-
-<!-- Datos estructurados de esta pagina. Ya van incluidos aca:
-     no hace falta un widget aparte. Si la pagina ya tiene uno con
-     este mismo JSON, borralo, o Google va a leer el FAQ dos veces. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you handle business litigation cases in Saratoga, California?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. McLellan Law Group is based in Saratoga, CA and represents businesses and executives throughout Silicon Valley, Santa Clara County, and the Bay Area."}
-    },
-    {
-      "@type": "Question",
-      "name": "Could I face personal liability in a business litigation matter?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Potentially yes. In California, owners and executives can face personal liability if they personally guaranteed a contract, breached a fiduciary duty, committed fraud, or if a court pierces the corporate veil due to improper business practices. We assess your exposure early and build a strategy to protect you."}
-    },
-    {
-      "@type": "Question",
-      "name": "What damages can I recover in a business litigation case?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Recoverable damages depend on your claims but can include compensatory damages for financial losses, lost profits, consequential damages, attorney's fees where authorized by contract, statute, or another applicable legal basis, punitive damages for fraudulent or malicious conduct, and injunctive relief to stop ongoing harm."}
-    },
-    {
-      "@type": "Question",
-      "name": "What is a breach of fiduciary duty between business partners?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Partners, corporate officers and directors, and certain LLC members and managers can owe each other duties of loyalty and care, though whether a particular person owes them depends on the entity, the governing documents, and that person's actual role in the business. Where the duty exists, a breach occurs when someone in a position of trust puts their own interests ahead of the business, through self-dealing, diverting opportunities, misusing company funds, or making unauthorized decisions."}
-    },
-    {
-      "@type": "Question",
-      "name": "How long does business litigation take in California?",
-      "acceptedAnswer": {"@type": "Answer", "text": "It depends on complexity and whether the case settles. Many commercial disputes resolve in 6 to 18 months through negotiation or mediation. Fully litigated cases can take 2 to 4 years. McLellan Law Group pursues early resolution strategies where possible to reduce cost and disruption."}
-    },
-    {
-      "@type": "Question",
-      "name": "How much does it cost to sue another business?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Costs vary widely with complexity and how far the case goes before it resolves. Filing fees, discovery, and expert costs add up quickly in commercial litigation, which is why we discuss likely cost against likely recovery before you commit to filing, and revisit that math as the case develops."}
-    },
-    {
-      "@type": "Question",
-      "name": "Can I recover my attorney fees in a business lawsuit?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Only where authorized by contract, statute, or another applicable legal basis. California follows the rule that each side generally bears its own fees unless a specific exception applies, so we check your contract and claims early for a fee-shifting provision rather than assuming one exists."}
-    },
-    {
-      "@type": "Question",
-      "name": "Should I sue or try to settle first?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Often settle first, or at least try. Litigation is usually the more expensive and slower path, so we typically start with a demand or negotiation where it has a realistic chance of working, and prepare to litigate in parallel so you are not negotiating from a position of delay."}
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if the other company has no money?",
-      "acceptedAnswer": {"@type": "Answer", "text": "A judgment against a company with no assets is difficult to collect, so we evaluate collectability early, including whether an individual owner could be personally liable. That assessment can change whether litigation is worth pursuing at all, and it is better to know before you file than after you win."}
-    }
-  ]
-}
 </script>
