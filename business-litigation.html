@@ -593,13 +593,15 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 /* Badge dorado del hero */
 .hero-pill {
   position:relative; z-index:2;
-  display:inline-flex; align-items:center; gap:10px; width:max-content;
+  display:inline-flex; align-items:center; gap:10px; width:max-content; max-width:100%;
+  box-sizing:border-box; white-space:normal;
   background:rgba(201,169,110,0.15); border:1.5px solid rgba(201,169,110,0.6);
   border-radius:26px; padding:9px 20px; margin-bottom:24px;
   font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
   font-weight:700; color:#e8cc8a;
 }
 .hero-pill::before { content:''; width:7px; height:7px; background:#c9a96e; border-radius:50%; flex-shrink:0; }
+@media(max-width:400px) { .hero-pill { font-size:10px; letter-spacing:1px; padding:8px 14px; } }
 @media(min-width:769px) { .hero-pill { font-size:15px; } }
 
 
@@ -737,12 +739,12 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
   <p class="emp-hero-sub reveal reveal-d2">Protecting companies, owners, and executives throughout Silicon Valley &amp; the Bay Area.</p>
   <div class="emp-hero-ctas">
     <a href="#contact" class="btn-gold reveal reveal-d3">Get My Free Consultation →</a>
-    <a href="#disputes" class="btn-ghost reveal reveal-d4">What We Handle ↓</a>
+    <a href="#contenido" class="btn-ghost reveal reveal-d4">What We Handle ↓</a>
   </div>
 </section>
 
 <!-- DISPUTES SECTION -->
-<section id="contenido" class="employers-section" id="disputes">
+<section id="contenido" class="employers-section">
   <div class="employers-intro">
     <div class="employers-intro-text">
       <div class="section-eyebrow reveal">What We Handle</div>

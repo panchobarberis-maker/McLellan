@@ -404,13 +404,17 @@ html, body { overflow-x:hidden; }
 .mlgE-business-litigation .reveal-d7 { transition-delay:0.56s; }
 .mlgE-business-litigation .hero-pill {
   position:relative !important; z-index:2;
-  display:inline-flex !important; align-items:center; gap:10px !important; width:max-content !important;
+  display:inline-flex !important; align-items:center; gap:10px !important; width:max-content !important; max-width:100% !important;
+  box-sizing:border-box; white-space:normal;
   background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.6) !important;
   border-radius:26px !important; padding:9px 20px !important; margin-bottom:24px !important;
   font-size:13px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
   font-weight:700 !important; color:#e8cc8a !important;
 }
 .mlgE-business-litigation .hero-pill::before { content:''; width:7px !important; height:7px !important; background:#c9a96e !important; border-radius:50% !important; flex-shrink:0; }
+@media(max-width:400px) {
+.mlgE-business-litigation .hero-pill { font-size:10px !important; letter-spacing:1px !important; padding:8px 14px !important; }
+}
 @media(min-width:769px) {
 .mlgE-business-litigation .hero-pill { font-size:15px !important; }
 }
@@ -484,7 +488,7 @@ html, body { overflow-x:hidden; }
   <p class="emp-hero-sub reveal reveal-d2">Protecting companies, owners, and executives throughout Silicon Valley &amp; the Bay Area.</p>
   <div class="emp-hero-ctas">
     <a href="#contact" class="btn-gold reveal reveal-d3">Get My Free Consultation →</a>
-    <a href="#disputes" class="btn-ghost reveal reveal-d4">What We Handle ↓</a>
+    <a href="#contenido" class="btn-ghost reveal reveal-d4">What We Handle ↓</a>
   </div>
 </section>
 </div>
