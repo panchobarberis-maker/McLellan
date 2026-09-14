@@ -23,7 +23,22 @@
   <div class="help-inner">
     <div class="section-eyebrow reveal">Act Fast</div>
     <h2 class="reveal reveal-d1">What to Do in the First 48 Hours</h2>
-    <p style="font-size:18px !important; line-height:1.85 !important; color:#4a5c5e !important; max-width:820px !important;" class="reveal reveal-d2">Preserve everything before you do anything else. Do not wipe or reissue the departing employee's laptop or phone, do not close their email account, and tell your IT people in writing to preserve logs and backups rather than following the usual offboarding routine. Write down what you know and when you learned it. Do not send an angry message to the person or their new employer, because that message will be read aloud in a deposition and it rarely helps. Then call us. Whether emergency relief is available usually depends on evidence that exists right now and will not exist in two weeks.</p>
+    <style>
+      .biz-48h { counter-reset:biz48; list-style:none; margin:16px 0 18px; max-width:820px; }
+      .biz-48h li { counter-increment:biz48; display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid rgba(30,58,62,0.1); }
+      .biz-48h li:last-child { border-bottom:none; }
+      .biz-48h li::before { content:counter(biz48); flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#1e3a3e; color:#c9a96e; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; }
+      .biz-48h li span { font-size:17px; line-height:1.7; color:#4a5c5e; }
+      @media(min-width:769px) { .biz-48h li span { font-size:19px; } }
+    </style>
+    <ol class="biz-48h reveal reveal-d2">
+      <li><span>Preserve everything before you do anything else.</span></li>
+      <li><span>Do not wipe or reissue the departing employee's laptop or phone, and do not close their email account.</span></li>
+      <li><span>Tell your IT people in writing to preserve logs and backups rather than following the usual offboarding routine.</span></li>
+      <li><span>Write down what you know and when you learned it.</span></li>
+      <li><span>Do not send an angry message to the person or their new employer, because that message will be read aloud in a deposition and it rarely helps.</span></li>
+      <li><span>Then call us. Whether emergency relief is available usually depends on evidence that exists right now and will not exist in two weeks.</span></li>
+    </ol>
   </div>
 </section>
 
