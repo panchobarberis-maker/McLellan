@@ -634,6 +634,38 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
   font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
 }
 .mlg-salto:focus { left:0; }
+
+/* TABLAS (revision del estudio) */
+.mlg-tabla-caja {
+  overflow-x:auto; margin:26px 0 0;
+  border:2.5px solid rgba(201,169,110,0.55); border-radius:14px; background:#fff;
+}
+.mlg-tabla { width:100%; border-collapse:collapse; min-width:520px; }
+.mlg-tabla caption {
+  text-align:left; padding:18px 20px 0;
+  font-size:15px; color:#6b7c7e; font-weight:600;
+}
+.mlg-tabla th, .mlg-tabla td {
+  padding:14px 18px; text-align:left; vertical-align:top;
+  font-size:16px; line-height:1.55; color:#4a5c5e;
+  border-bottom:1px solid rgba(30,58,62,0.12);
+}
+.mlg-tabla th {
+  background:#1e3a3e; color:#fff; font-weight:700;
+  font-size:15px; letter-spacing:0.4px;
+}
+.mlg-tabla tbody tr:last-child td { border-bottom:none; }
+.mlg-tabla tbody tr:nth-child(even) td { background:#fbf6ef; }
+@media(min-width:769px) {
+  .mlg-tabla th, .mlg-tabla td { font-size:18px; padding:16px 22px; }
+}
+.mlg-tabla caption { padding-bottom:14px; }
+.mlg-tabla-nota { display:none; }
+@media(max-width:768px) {
+  .mlg-tabla-nota {
+    display:block; margin:14px 0 0; font-size:15px; font-weight:600; color:#6b7c7e;
+  }
+}
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
@@ -794,6 +826,21 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
       <div class="section-eyebrow">Deadlines</div>
       <h2>Deadlines in Trust and Probate Cases</h2>
       <p>Deadlines in trust and probate cases are shorter than people expect. If you received a formal notification from a trustee that a trust has become irrevocable, you generally have 120 days from the date that notification was served to bring a contest. That is a short window and it does not extend because you were gathering information or waiting on a family member to decide. Other deadlines in this area run on their own schedules, and some of them start from a date you may not have noticed at the time. If you have received anything on letterhead from a trustee, an executor, or a probate court, treat it as time sensitive and let us look at it.</p>
+      <div class="mlg-tabla-caja">
+        <table class="mlg-tabla">
+          <caption>Typical deadlines in California trust and probate matters</caption>
+          <thead><tr><th>Type of matter</th><th>Deadline</th><th>When the clock generally starts</th></tr></thead>
+          <tbody>
+            <tr><td>Trust contest</td><td>120 days (or 60 days from delivery of trust terms during that window, if later)</td><td>Service of the trustee's notification</td></tr>
+            <tr><td>Will contest, before admission</td><td>No fixed day count</td><td>Must be raised before the will is admitted to probate</td></tr>
+            <tr><td>Will contest, after admission</td><td>120 days (extended until final distribution for a minor or incompetent contestant)</td><td>The will being admitted to probate</td></tr>
+            <tr><td>Breach of trust or accounting claims</td><td>3 years</td><td>Receipt of an adequately disclosing account, or discovery if no adequate account was given</td></tr>
+            <tr><td>Financial elder abuse</td><td>4 years</td><td>Discovery of the abuse</td></tr>
+            <tr><td>Creditor claims against the estate</td><td>The later of 4 months after letters issued, or 60 days after notice mailed or delivered</td><td>Issuance of letters, or notice to the creditor</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mlg-tabla-nota">Scroll the table sideways to see every column.</p>
     </div>
 
     <div class="detail-block reveal">

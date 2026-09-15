@@ -633,6 +633,34 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
   font-family:'Barlow',sans-serif; font-size:15px; font-weight:700; text-decoration:none;
 }
 .mlg-salto:focus { left:0; }
+
+/* TABLAS (revision del estudio) */
+.mlg-tabla-caja {
+  overflow-x:auto; margin:26px 0 0;
+  border:2.5px solid rgba(201,169,110,0.55); border-radius:14px; background:#fff;
+}
+.mlg-tabla { width:100%; border-collapse:collapse; min-width:520px; }
+.mlg-tabla caption {
+  text-align:left; padding:18px 20px 0;
+  font-size:15px; color:#6b7c7e; font-weight:600;
+}
+.mlg-tabla th, .mlg-tabla td {
+  padding:14px 18px; text-align:left; vertical-align:top;
+  font-size:16px; line-height:1.55; color:#4a5c5e;
+  border-bottom:1px solid rgba(30,58,62,0.12);
+}
+.mlg-tabla th {
+  background:#1e3a3e; color:#fff; font-weight:700;
+  font-size:15px; letter-spacing:0.4px;
+}
+.mlg-tabla tbody tr:last-child td { border-bottom:none; }
+.mlg-tabla tbody tr:nth-child(even) td { background:#fbf6ef; }
+@media(min-width:769px) {
+  .mlg-tabla th, .mlg-tabla td { font-size:18px; padding:16px 22px; }
+}
+.mlg-tabla caption { padding-bottom:14px; }
+.mlg-tabla--2col { min-width:0; }
+.faq-answer .mlg-tabla-caja { margin-bottom:20px; }
 </style>
 <script src="/assets/barra-progreso.js" defer></script>
 </head>
@@ -900,6 +928,16 @@ button:focus-visible { outline:3px solid #c9a96e; outline-offset:3px; border-rad
           </h3>
           <div class="faq-answer" id="faq-what-is-the-statute-of-limitations-in" role="region" aria-labelledby="faq-what-is-the-statute-of-limitations-in-h">
       <p>The statute of limitations refers to the time limit within which a lawsuit must be filed. In California, a breach-of-written-contract claim is generally subject to a four-year limitations period, while an oral-contract claim generally has a two-year period. The limitations period ordinarily runs from the breach, although accrual or tolling may differ in particular circumstances. If the lawsuit is not filed within this timeframe, the right to sue may be lost. Understanding these deadlines is crucial to protect your legal rights in contract disputes. The clock generally starts at breach, not at signing, and not when you discovered the breach. That distinction matters most in cases involving payment over time, because a contract that has been breached repeatedly may have more than one accrual date and some claims may still be live even if the earliest ones are not. If you are close to a deadline, that is a reason to call now rather than a reason not to.</p>
+      <div class="mlg-tabla-caja">
+        <table class="mlg-tabla mlg-tabla--2col">
+          <caption>Contract dispute filing deadlines in California</caption>
+          <thead><tr><th>Type of contract</th><th>Deadline</th><th>When the clock generally starts</th></tr></thead>
+          <tbody>
+            <tr><td>Written contract</td><td>4 years</td><td>At breach</td></tr>
+            <tr><td>Oral contract</td><td>2 years</td><td>At breach</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
