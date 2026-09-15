@@ -230,7 +230,7 @@ a { text-decoration:none; color:inherit; }
   margin-bottom:40px;
 }
 .about-copy { display:flex; flex-direction:column; gap:20px; }
-.about-copy p {
+.about-copy > p, .about-copy .rec-block {
   font-size:16px; line-height:1.9; color:rgba(30,58,62,0.7);
   text-align:justify;
 }
@@ -320,7 +320,7 @@ a { text-decoration:none; color:inherit; }
   padding:32px 36px;
   background:#fbf6ef;
 }
-.about-copy p {
+.about-copy > p, .about-copy .rec-block {
   border:2.5px solid rgba(185,152,106,0.35);
   padding:28px 32px;
   background:#fbf6ef;
@@ -352,7 +352,11 @@ a { text-decoration:none; color:inherit; }
 
 
 /* ── Legibilidad publico adulto: letra clara, sin excederse ── */
-.about-copy p { font-size:17px !important; line-height:1.75 !important; color:rgba(30,58,62,0.85) !important; }
+.about-copy > p, .about-copy .rec-block { font-size:17px !important; line-height:1.75 !important; color:rgba(30,58,62,0.85) !important; }
+.rec-block p { margin-bottom:16px; }
+.rec-block ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.rec-block li { position:relative; padding-left:20px; }
+.rec-block li::before { content:'•'; position:absolute; left:0; color:#b9986a; font-weight:700; }
 .result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
 .result-item .tag { font-size:13px !important; }
 .acc-btn { font-size:15px !important; letter-spacing:2px !important; }
@@ -369,7 +373,7 @@ a { text-decoration:none; color:inherit; }
 /* Info mas grande en desktop */
 @media(min-width:769px) {
   .lead { font-size:clamp(28px,2.8vw,36px) !important; }
-  .about-copy p { font-size:18px !important; line-height:1.8 !important; }
+  .about-copy > p, .about-copy .rec-block { font-size:18px !important; line-height:1.8 !important; }
   .result-item h3 { font-size:30px !important; }
   .result-item p { font-size:20px !important; }
   .result-item .tag { font-size:14px !important; }
@@ -520,7 +524,17 @@ a { text-decoration:none; color:inherit; }
       <p class="reveal reveal-d2">Claire Melehani is a founding partner at McLellan Law Group LLP and a civil trial attorney focused on complex litigation for high-net-worth individuals, executives, and companies throughout California. Her practice spans business and commercial disputes, trust and estate litigation, employment law, and real estate litigation, with significant depth in matters involving financial elder abuse.</p>
       <p class="reveal reveal-d3">Before co-founding McLellan Law Group, Claire spent nearly four years as a trial and appellate attorney at Gates Eisenhart Dawson, a Silicon Valley boutique firm handling high-conflict civil proceedings for high-net-worth clients. Prior to that, she represented clients in complex, contested divorce and asset division matters at a prominent Bay Area family law firm, experience that sharpened her instincts for high-stakes negotiations and the particular demands of sophisticated clientele.</p>
       <p class="reveal reveal-d4">Claire's litigation practice is distinguished by uncommon financial fluency. Her background as an investment banking analyst at a global investment bank gives her command of financial analysis, valuation, and business strategy that directly informs her courtroom approach and the practical counsel she provides to executives and entrepreneurs navigating contentious disputes.</p>
-      <p class="reveal reveal-d5">A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association, having previously served as Treasurer, Secretary, and elected Trustee. Claire has also served on the Board of Governors of California Women Lawyers. She was named to the American Bar Association's "On The Rise. Top 40 Young Lawyers" class of 2023, has been selected as a California Super Lawyers Rising Star every year since 2021, and has been recognized as a Top Women Attorney in Northern California by San Francisco Magazine. Claire is admitted to practice in all California state courts, the U.S. District Court for the Northern District of California, and the U.S. Court of Appeals for the Ninth Circuit.</p>
+      <div class="rec-block reveal reveal-d5">
+        <p>A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association.</p>
+        <ul>
+          <li>Previously served the SCCBA as Treasurer, Secretary, and elected Trustee</li>
+          <li>Board of Governors, California Women Lawyers</li>
+          <li>ABA "On The Rise. Top 40 Young Lawyers," class of 2023</li>
+          <li>California Super Lawyers Rising Star, every year since 2021</li>
+          <li>Top Women Attorney in Northern California, San Francisco Magazine</li>
+          <li>Admitted in all California state courts, the U.S. District Court (N.D. Cal.), and the U.S. Court of Appeals for the Ninth Circuit</li>
+        </ul>
+      </div>
       <p class="reveal reveal-d6">Outside the courtroom, Claire maintains an active pro bono practice, mentors students in the legal community, and publishes Legally Speaking, a weekly newsletter on California law.</p>
     </div>
 
