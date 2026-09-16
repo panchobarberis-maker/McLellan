@@ -218,7 +218,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(max-width:768px) { .video-desktop { display:none; } .video-mobile { display:block; } }
 
 /* SECTION EYEBROW (shared) */
-.section-eyebrow { display:flex; width:max-content; margin:0 auto 20px; align-items:center; gap:10px; text-align:center; font-size:14px !important; letter-spacing:3px !important; text-transform:uppercase; color:#1e3a3e; font-weight:700 !important; }
+.section-eyebrow { display:flex; width:max-content; max-width:100%; margin:0 auto 20px; align-items:center; gap:10px; text-align:center; font-size:14px !important; letter-spacing:3px !important; text-transform:uppercase; color:#1e3a3e; font-weight:700 !important; }
 .section-eyebrow::before { content:''; width:24px; height:1px; background:#1e3a3e; }
 @media(min-width:769px) { .section-eyebrow { font-size:16px !important; letter-spacing:4px !important; } }
 
@@ -229,7 +229,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .get-section .section-eyebrow { color:#c9a96e; }
 .get-section .section-eyebrow::before { background:#c9a96e; }
 .get-section h2 { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05; color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:48px; }
-.get-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
+.get-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
 @media(max-width:600px) { .get-grid { grid-template-columns:1fr; } }
 .get-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:12px; transition:background 0.2s; }
 @media(min-width:769px) { .get-item { padding:44px 40px; } }
@@ -274,7 +274,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 @media(min-width:769px) { .faq-section { padding:88px 80px; } }
 .faq-section h2 { font-family:'Barlow Condensed',sans-serif; text-align:center; font-size:clamp(30px, 5vw, 48px); font-weight:900; line-height:1.05; color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px; }
 .faq-columns { display:flex; flex-direction:column; gap:14px; max-width:1120px; margin:0 auto; }
-@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:start; } }
+@media(min-width:769px) { .faq-columns { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:24px; align-items:start; } }
 .faq-col { display:flex; flex-direction:column; gap:14px; }
 .faq-item { background:#fbf6ef; border-radius:16px; padding:4px 24px; box-shadow:0 8px 24px rgba(0,0,0,0.18); }
 .faq-question { width:100%; background:none; border:none; text-align:left; padding:20px 0; font-family:'Barlow',sans-serif; font-size:16px; font-weight:600; color:#1e3a3e; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; transition:opacity 0.15s; }

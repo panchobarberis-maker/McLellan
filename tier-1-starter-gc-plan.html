@@ -157,7 +157,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   background-size:200% auto;
   color:#1e3a3e; font-weight:700; font-size:14px;
   padding:13px 28px; border-radius:28px; text-decoration:none;
-  position:relative; z-index:2; width:max-content;
+  position:relative; z-index:2; width:max-content; max-width:100%;
 }
 .hero-pill {
   position:relative; z-index:2;
@@ -181,7 +181,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 /* SECTION EYEBROW */
 .section-eyebrow {
-  display:flex; width:max-content; margin:0 auto 20px;
+  display:flex; width:max-content; max-width:100%; margin:0 auto 20px;
   align-items:center; gap:10px; text-align:center;
   font-size:15px !important; letter-spacing:3px !important; text-transform:uppercase;
   color:#1e3a3e; font-weight:700 !important;
@@ -262,7 +262,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   color:#fff; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
 .help-columns { display:flex; flex-direction:column; gap:14px; }
-@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+@media(min-width:600px) { .help-columns { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; } }
 .help-item {
   background:#fbf6ef; border-radius:16px; padding:22px 24px;
   box-shadow:0 8px 24px rgba(0,0,0,0.15);
@@ -289,7 +289,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   color:#1e3a3e; text-transform:uppercase; letter-spacing:-1px; margin-bottom:32px;
 }
 .terms-columns { display:flex; flex-direction:column; gap:14px; }
-@media(min-width:600px) { .terms-columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } }
+@media(min-width:600px) { .terms-columns { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; } }
 .terms-item {
   background:#1e3a3e; border-radius:16px; padding:22px 24px;
   box-shadow:0 8px 24px rgba(0,0,0,0.15);

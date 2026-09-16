@@ -16,7 +16,7 @@
   .pa-wrap { padding:32px 20px; }
   .pa-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border-left:3px solid; padding-left:8px; margin-bottom:12px; }
   .pa-title { font-size:20px; font-weight:700; margin-bottom:18px; text-align:center; text-transform:uppercase; letter-spacing:1px; }
-  .pa-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .pa-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; }
   @media(min-width:500px) { .pa-grid { grid-template-columns:1fr 1fr 1fr; gap:12px; } }
   .pa-item { display:flex; flex-direction:column; justify-content:space-between; padding:14px 12px; border:1px solid; border-radius:8px; text-decoration:none; min-height:82px; }
   .pa-item .name { font-size:12px; font-weight:700; line-height:1.3; }

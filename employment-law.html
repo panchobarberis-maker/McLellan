@@ -229,7 +229,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 /* AUDIENCE SWITCHER */
 .audience-switch {
-  display:grid; grid-template-columns:1fr 1fr;
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   background:#1e3a3e;
 }
 .audience-tab {
@@ -277,7 +277,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
   line-height:1.75; margin-bottom:40px;
 }
 .employers-grid {
-  display:grid; grid-template-columns:1fr 1fr;
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:14px; background:transparent;
   border:none; border-radius:0;
   overflow:visible; margin-bottom:40px;
@@ -428,7 +428,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .why-us-eyebrow { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#c9a96e; margin-bottom:16px; }
 .why-us-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(36px,5vw,56px); font-weight:800; color:#fff; line-height:1.05; letter-spacing:-1px; text-transform:uppercase; margin-bottom:48px; }
 .why-us-title em { display:block; font-style:italic; font-family:'DM Serif Display',serif; font-weight:400; text-transform:none; color:#c9a96e; letter-spacing:-0.5px; }
-.why-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
+.why-us-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2px; background:rgba(255,255,255,0.25); border:2px solid rgba(255,255,255,0.25); border-radius:16px; overflow:hidden; }
 @media(max-width:600px) { .why-us-grid { grid-template-columns:1fr; } }
 .why-us-item { background:#fbf6ef; padding:32px 28px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
 .why-us-item:hover { background:#f3ece0; }
@@ -492,7 +492,7 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 
 /* FAQ 2-column table layout on desktop */
 @media(min-width:769px) {
-  .employer-faq { display:grid; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+  .employer-faq { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:48px; align-items:start; }
   .employer-faq h2, .employer-faq h3 { grid-column:1 / -1; }
 }
 
