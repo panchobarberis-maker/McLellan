@@ -138,7 +138,7 @@ a { text-decoration:none; color:inherit; }
 .hero-photo::before {
   content:''; position:absolute; inset:50px;
   border:3px solid #b9986a;
-  z-index:3; pointer-events:none;
+  pointer-events:none;
 }
 .hero-photo img {
   width:100%; height:100%; object-fit:cover; object-position:center 0%;
@@ -146,7 +146,7 @@ a { text-decoration:none; color:inherit; }
   display:block;
 }
 .hero-photo::after {
-  content:''; position:absolute; inset:0; z-index:2;
+  content:''; position:absolute; inset:0;
   background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%);
 }
 @media(max-width:768px) {
