@@ -120,7 +120,6 @@ a { text-decoration:none; color:inherit; }
   .video-desktop { display:none; }
   .video-mobile { display:block; }
 }
-@media(max-width:900px) { .hero-stats { display:none; } }
 .hero-pill {
   position:relative; z-index:2;
   display:inline-flex; align-items:center; gap:10px; width:max-content; max-width:100%;
@@ -149,15 +148,6 @@ a { text-decoration:none; color:inherit; }
   max-width:540px; margin:0 auto 28px;
 }
 @media(min-width:769px) { .hero-sub { font-size:25px !important; max-width:760px; } }
-.hero-stats { position:relative; z-index:2; display:flex; gap:40px; flex-wrap:wrap; justify-content:center; margin-top:8px; }
-.hero-stats .stat .num {
-  font-family:'Barlow Condensed',sans-serif; font-weight:800;
-  font-size:44px; line-height:1; color:#c9a96e; display:block; margin-bottom:8px;
-}
-.hero-stats .stat .label {
-  font-size:10px; letter-spacing:2px; text-transform:uppercase;
-  color:rgba(255,255,255,0.55); font-weight:600; line-height:1.5; display:block;
-}
 
 /* ── STATS BAR (same component as the home page) ── */
 .stats-bar { background:#1e3a3e; padding:0 24px; display:flex; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,0.08); border-bottom:8px solid #c9a96e; }
@@ -357,20 +347,6 @@ a { text-decoration:none; color:inherit; }
   <div class="hero-pill">Our Story · Saratoga, California</div>
   <h1>Why We Started This Firm <em>And Who We Built It For</em></h1>
   <p class="hero-sub">We built this firm because we've seen what happens when people find legal guidance that actually fits their story.</p>
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="num">5.0★</span>
-      <span class="label">Google<br>Reviews</span>
-    </div>
-    <div class="stat">
-      <span class="num">8+</span>
-      <span class="label">Practice<br>Areas</span>
-    </div>
-    <div class="stat">
-      <span class="num">3</span>
-      <span class="label">Trial<br>Attorneys</span>
-    </div>
-  </div>
 </section>
 
 <!-- STATS BAR -->
