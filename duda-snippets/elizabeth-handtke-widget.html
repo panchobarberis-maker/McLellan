@@ -43,7 +43,7 @@ html, body { overflow-x:hidden; }
 #mlg-elizabeth-handtke .hero {
   display:grid !important; grid-template-columns:55% 45%;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-elizabeth-handtke .hero { grid-template-columns:1fr; }
 }
 #mlg-elizabeth-handtke .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
@@ -61,7 +61,7 @@ html, body { overflow-x:hidden; }
   content:''; position:absolute !important; inset:0; z-index:2;
   background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-elizabeth-handtke .hero-photo { height:60vh !important; }
 #mlg-elizabeth-handtke .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
 #mlg-elizabeth-handtke .hero-photo::before { inset:8px; }
@@ -70,7 +70,7 @@ html, body { overflow-x:hidden; }
   padding:80px 64px 80px 48px !important;
   display:flex !important; flex-direction:column; justify-content:center;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-elizabeth-handtke .hero-info { padding:40px 24px 64px !important; }
 }
 #mlg-elizabeth-handtke .breadcrumb {
@@ -117,8 +117,8 @@ html, body { overflow-x:hidden; }
   display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
   padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
 }
-@media(max-width:900px) {
-#mlg-elizabeth-handtke .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
+@media(max-width:768px) {
+#mlg-elizabeth-handtke .body-section { grid-template-columns:minmax(0,1fr); gap:64px !important; padding:64px 24px !important; }
 }
 #mlg-elizabeth-handtke .section-label {
   font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;

@@ -43,7 +43,7 @@ html, body { overflow-x:hidden; }
 #mlg-sara-van-til .hero {
   display:grid !important; grid-template-columns:55% 45%;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-sara-van-til .hero { grid-template-columns:1fr; }
 }
 #mlg-sara-van-til .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
@@ -61,7 +61,7 @@ html, body { overflow-x:hidden; }
   content:''; position:absolute !important; inset:0; z-index:2;
   background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-sara-van-til .hero-photo { height:60vh !important; }
 #mlg-sara-van-til .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
 #mlg-sara-van-til .hero-photo::before { inset:8px; }
@@ -70,7 +70,7 @@ html, body { overflow-x:hidden; }
   padding:80px 64px 80px 48px !important;
   display:flex !important; flex-direction:column; justify-content:center;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-sara-van-til .hero-info { padding:40px 24px 64px !important; }
 }
 #mlg-sara-van-til .breadcrumb {
@@ -117,8 +117,8 @@ html, body { overflow-x:hidden; }
   display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
   padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
 }
-@media(max-width:900px) {
-#mlg-sara-van-til .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
+@media(max-width:768px) {
+#mlg-sara-van-til .body-section { grid-template-columns:minmax(0,1fr); gap:64px !important; padding:64px 24px !important; }
 }
 #mlg-sara-van-til .section-label {
   font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
@@ -132,7 +132,7 @@ html, body { overflow-x:hidden; }
 #mlg-sara-van-til .about-copy { display:flex !important; flex-direction:column; gap:20px !important; }
 #mlg-sara-van-til .about-copy p {
   font-size:16px !important; line-height:1.9 !important; color:rgba(30,58,62,0.7) !important;
-  text-align:justify !important;
+  text-align:left !important;
 }
 #mlg-sara-van-til .results { margin-top:72px !important; }
 #mlg-sara-van-til .result-item {
@@ -216,7 +216,7 @@ html, body { overflow-x:hidden; }
 #mlg-sara-van-til .stat .label { font-size:14px !important; }
 #mlg-sara-van-til .foot-cta p { font-size:21px !important; }
 }
-#mlg-sara-van-til .body-section { grid-template-columns:1fr !important; max-width:900px !important; }
+#mlg-sara-van-til .body-section { grid-template-columns:minmax(0,1fr) !important; max-width:768px !important; }
 #mlg-sara-van-til .reveal {
   opacity:0; transform:translateY(28px);
   transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
@@ -292,7 +292,7 @@ html, body { overflow-x:hidden; }
     <div class="section-label reveal">About</div>
     <p class="lead reveal reveal-d1">"Sara Van Til brings the discipline of military service and the precision of federal record-keeping to every case she supports."</p>
     <div class="about-copy">
-      <p class="reveal reveal-d2">Sara Van Til brings valuable experience from her previous role as an administrative assistant at Elevate Community Center, a legal aid organization we proudly support. Her background also includes service with the Air Force, specifically in the Air Guard pararescue's 131st squadron.</p>
+      <p class="reveal reveal-d2">Sara Van Til brings valuable experience from her previous role as an administrative assistant at Elevate Community Center, a legal aid organization. Her background also includes service with the Air Force, specifically in the Air Guard pararescue's 131st squadron.</p>
       <p class="reveal reveal-d3">Before that, she contributed to NASA's flight operations department, where she implemented an organizational system for the department's historical federal records.</p>
       <p class="reveal reveal-d4">Ms. Van Til's exceptional organizational skills and readiness to tackle challenges make her a valuable asset to our team.</p>
     </div>
@@ -312,7 +312,7 @@ html, body { overflow-x:hidden; }
       <div class="result-item reveal reveal-d3">
         <h3>Legal Aid Experience</h3>
         <span class="tag">Community Service</span>
-        <p>Administrative assistant at Elevate Community Center, a legal aid organization McLellan Law Group proudly supports.</p>
+        <p>Administrative assistant at Elevate Community Center, a legal aid organization.</p>
       </div>
     </div>
   </div>

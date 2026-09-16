@@ -43,7 +43,7 @@ html, body { overflow-x:hidden; }
 #mlg-sonia-mehmi .hero {
   display:grid !important; grid-template-columns:55% 45%;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-sonia-mehmi .hero { grid-template-columns:1fr; }
 }
 #mlg-sonia-mehmi .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
@@ -61,7 +61,7 @@ html, body { overflow-x:hidden; }
   content:''; position:absolute !important; inset:0; z-index:2;
   background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-sonia-mehmi .hero-photo { height:60vh !important; }
 #mlg-sonia-mehmi .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
 #mlg-sonia-mehmi .hero-photo::before { inset:8px; }
@@ -70,7 +70,7 @@ html, body { overflow-x:hidden; }
   padding:80px 64px 80px 48px !important;
   display:flex !important; flex-direction:column; justify-content:center;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-sonia-mehmi .hero-info { padding:40px 24px 64px !important; }
 }
 #mlg-sonia-mehmi .breadcrumb {
@@ -117,8 +117,8 @@ html, body { overflow-x:hidden; }
   display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
   padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
 }
-@media(max-width:900px) {
-#mlg-sonia-mehmi .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
+@media(max-width:768px) {
+#mlg-sonia-mehmi .body-section { grid-template-columns:minmax(0,1fr); gap:64px !important; padding:64px 24px !important; }
 }
 #mlg-sonia-mehmi .section-label {
   font-size:11px !important; letter-spacing:3px !important; text-transform:uppercase !important;
@@ -132,7 +132,7 @@ html, body { overflow-x:hidden; }
 #mlg-sonia-mehmi .about-copy { display:flex !important; flex-direction:column; gap:20px !important; }
 #mlg-sonia-mehmi .about-copy p {
   font-size:16px !important; line-height:1.9 !important; color:rgba(30,58,62,0.7) !important;
-  text-align:justify !important;
+  text-align:left !important;
 }
 #mlg-sonia-mehmi .results { margin-top:72px !important; }
 #mlg-sonia-mehmi .result-item {
@@ -336,7 +336,7 @@ html, body { overflow-x:hidden; }
     <div class="section-label reveal">About</div>
     <p class="lead reveal reveal-d1">"Sonia Mehmi pairs a scientist's precision with a litigator's instinct, bringing rigorous research and a distinctive analytical lens to every matter she supports."</p>
     <div class="about-copy">
-      <p class="reveal reveal-d2">Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at Santa Clara University School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
+      <p class="reveal reveal-d2">Sonia Mehmi is a law clerk at McLellan Law Group, where she supports the firm's civil litigation practice with legal research, drafting, and case preparation. She is a Juris Doctor candidate at UCLA School of Law, where she earned a CALI Award in Civil Procedure and was selected for a Law Faculty Scholarship. Sonia is also a registered Patent Agent.</p>
       <p class="reveal reveal-d3">Before law school, Sonia earned a Master of Science in Bioethics from Columbia University, where she studied the intersection of law, ethics, and regulation in medicine and biotechnology. She holds a Bachelor of Science in Biochemistry and Molecular Biology from the University of California, Davis. Her background in the sciences gives her a distinctive analytical lens, particularly in matters involving technical evidence, healthcare, and regulatory issues.</p>
       <p class="reveal reveal-d4">Sonia is an active member of the South Asian Law School Association, Women in Law, and the South Asian Bar Association. She is fluent in English, Punjabi, and Hindi.</p>
     </div>
@@ -362,7 +362,7 @@ html, body { overflow-x:hidden; }
       <button class="acc-btn" onclick="toggleAcc(this)">Education <span class="icon">×</span></button>
       <div class="acc-body" style="max-height:220px !important;">
         <ul>
-          <li>Santa Clara University School of Law, J.D. candidate. CALI Award in Civil Procedure; Law Faculty Scholarship</li>
+          <li>UCLA School of Law, J.D. candidate. CALI Award in Civil Procedure; Law Faculty Scholarship</li>
           <li>Columbia University, M.S. in Bioethics</li>
           <li>University of California, Davis. B.S. in Biochemistry and Molecular Biology</li>
         </ul>

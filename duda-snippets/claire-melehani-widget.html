@@ -43,7 +43,7 @@ html, body { overflow-x:hidden; }
 #mlg-claire-melehani .hero {
   display:grid !important; grid-template-columns:55% 45%;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-claire-melehani .hero { grid-template-columns:1fr; }
 }
 #mlg-claire-melehani .hero-photo { position:relative !important; overflow:hidden; height:calc(100svh - 62px) !important; }
@@ -61,7 +61,7 @@ html, body { overflow-x:hidden; }
   content:''; position:absolute !important; inset:0; z-index:2;
   background:linear-gradient(to right, rgba(30,58,62,0.15) 0%, rgba(30,58,62,0.0) 40%, rgba(30,58,62,0.55) 82%, #1e3a3e 100%) !important;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-claire-melehani .hero-photo { height:60vh !important; }
 #mlg-claire-melehani .hero-photo::after { background:linear-gradient(to bottom, rgba(30,58,62,0.05) 55%, #1e3a3e 100%) !important; }
 #mlg-claire-melehani .hero-photo::before { inset:8px; }
@@ -70,7 +70,7 @@ html, body { overflow-x:hidden; }
   padding:80px 64px 80px 48px !important;
   display:flex !important; flex-direction:column; justify-content:center;
 }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-claire-melehani .hero-info { padding:40px 24px 64px !important; }
 }
 #mlg-claire-melehani .breadcrumb {
@@ -114,10 +114,11 @@ html, body { overflow-x:hidden; }
 #mlg-claire-melehani .hero-cta:hover { background:#cbb084 !important; }
 #mlg-claire-melehani .hero-cta span { font-size:18px !important; }
 #mlg-claire-melehani .body-section {
-  display:grid !important; grid-template-columns:1fr 340px; gap:96px !important;
-  padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important;
+  display:grid !important; grid-template-columns:1fr 380px; gap:96px !important;
+  padding:96px 80px !important; max-width:1560px !important; margin:0 auto !important;
 }
-@media(max-width:900px) {
+#mlg-claire-melehani .lead, #mlg-claire-melehani .about-copy { max-width:760px !important; }
+@media(max-width:768px) {
 #mlg-claire-melehani .body-section { grid-template-columns:1fr; gap:64px !important; padding:64px 24px !important; }
 }
 #mlg-claire-melehani .section-label {
@@ -130,9 +131,9 @@ html, body { overflow-x:hidden; }
   margin-bottom:40px !important;
 }
 #mlg-claire-melehani .about-copy { display:flex !important; flex-direction:column; gap:20px !important; }
-#mlg-claire-melehani .about-copy p {
+#mlg-claire-melehani .about-copy > p, #mlg-claire-melehani .about-copy .rec-block {
   font-size:16px !important; line-height:1.9 !important; color:rgba(30,58,62,0.7) !important;
-  text-align:justify !important;
+  text-align:left !important;
 }
 #mlg-claire-melehani .results { margin-top:72px !important; }
 #mlg-claire-melehani .result-item {
@@ -151,7 +152,7 @@ html, body { overflow-x:hidden; }
 }
 #mlg-claire-melehani .result-item p {
   grid-column:1 / -1;
-  font-size:15px !important; line-height:1.8 !important; color:rgba(30,58,62,0.6) !important; text-align:justify !important;
+  font-size:15px !important; line-height:1.8 !important; color:rgba(30,58,62,0.6) !important; text-align:left !important;
 }
 #mlg-claire-melehani .acc-item { border-bottom:1px solid rgba(30,58,62,0.1) !important; }
 #mlg-claire-melehani .acc-btn {
@@ -199,7 +200,7 @@ html, body { overflow-x:hidden; }
 #mlg-claire-melehani .foot-cta p { font-size:15px !important; color:rgba(30,58,62,0.6) !important; margin-bottom:40px !important; }
 #mlg-claire-melehani .testimonials-section { padding:96px 64px !important; max-width:1360px !important; margin:0 auto !important; }
 #mlg-claire-melehani .testimonial-grid { display:grid !important; grid-template-columns:1fr 1fr 1fr; gap:24px !important; margin-top:40px !important; }
-@media(max-width:900px) {
+@media(max-width:768px) {
 #mlg-claire-melehani .testimonial-grid { grid-template-columns:1fr; }
 #mlg-claire-melehani .testimonials-section { padding:64px 24px !important; }
 }
@@ -217,7 +218,7 @@ html, body { overflow-x:hidden; }
   padding:32px 36px !important;
   background:#fbf6ef !important;
 }
-#mlg-claire-melehani .about-copy p {
+#mlg-claire-melehani .about-copy > p, #mlg-claire-melehani .about-copy .rec-block {
   border:2.5px solid rgba(185,152,106,0.35) !important;
   padding:28px 32px !important;
   background:#fbf6ef !important;
@@ -246,7 +247,12 @@ html, body { overflow-x:hidden; }
   content:''; display:inline-block !important; vertical-align:middle;
   width:36px !important; height:1px !important; background:#b9986a !important; margin-left:14px !important; opacity:0.6;
 }
-#mlg-claire-melehani .about-copy p { font-size:19px !important; line-height:1.9 !important; color:rgba(30,58,62,0.85) !important; }
+#mlg-claire-melehani .about-copy > p, #mlg-claire-melehani .about-copy .rec-block { font-size:17px !important; line-height:1.75 !important; color:rgba(30,58,62,0.85) !important; }
+#mlg-claire-melehani .about-copy > p strong { color:#8a6d43 !important; font-weight:700 !important; }
+#mlg-claire-melehani .rec-block p { margin-bottom:16px !important; }
+#mlg-claire-melehani .rec-block ul { list-style:none !important; display:flex !important; flex-direction:column; gap:10px !important; }
+#mlg-claire-melehani .rec-block li { position:relative !important; padding-left:20px !important; }
+#mlg-claire-melehani .rec-block li::before { content:'•'; position:absolute !important; left:0; color:#b9986a !important; font-weight:700 !important; }
 #mlg-claire-melehani .result-item p { font-size:18px !important; color:rgba(30,58,62,0.75) !important; }
 #mlg-claire-melehani .result-item .tag { font-size:13px !important; }
 #mlg-claire-melehani .acc-btn { font-size:15px !important; letter-spacing:2px !important; }
@@ -261,7 +267,7 @@ html, body { overflow-x:hidden; }
 #mlg-claire-melehani .foot-cta p { font-size:19px !important; color:rgba(30,58,62,0.65) !important; }
 @media(min-width:769px) {
 #mlg-claire-melehani .lead { font-size:clamp(28px,2.8vw,36px) !important; }
-#mlg-claire-melehani .about-copy p { font-size:21px !important; line-height:1.95 !important; }
+#mlg-claire-melehani .about-copy > p, #mlg-claire-melehani .about-copy .rec-block { font-size:18px !important; line-height:1.8 !important; }
 #mlg-claire-melehani .result-item h3 { font-size:30px !important; }
 #mlg-claire-melehani .result-item p { font-size:20px !important; }
 #mlg-claire-melehani .result-item .tag { font-size:14px !important; }
@@ -329,7 +335,7 @@ html, body { overflow-x:hidden; }
     <div class="hero-role reveal reveal-d3">Partner &nbsp;,&nbsp; Complex Civil Litigation</div>
     <div class="hero-stats">
       <div class="stat reveal reveal-d4">
-        <span class="num">4×</span>
+        <span class="num">5×</span>
         <span class="label">Super Lawyers<br>Rising Star</span>
       </div>
       <div class="stat reveal reveal-d5">
@@ -351,11 +357,24 @@ html, body { overflow-x:hidden; }
     <div class="section-label reveal">About</div>
     <p class="lead reveal reveal-d1">"Claire Melehani pairs sharp financial fluency with courtroom instinct, representing high-net-worth individuals, executives, and companies through California's most complex disputes."</p>
     <div class="about-copy">
-      <p class="reveal reveal-d2">Claire Melehani is a founding partner at McLellan Law Group LLP and a civil trial attorney focused on complex litigation for high-net-worth individuals, executives, and companies throughout California. Her practice spans business and commercial disputes, trust and estate litigation, employment law, and real estate litigation, with significant depth in matters involving financial elder abuse.</p>
-      <p class="reveal reveal-d3">Before co-founding McLellan Law Group, Claire spent nearly four years as a trial and appellate attorney at Gates Eisenhart Dawson, a Silicon Valley boutique firm handling high-conflict civil proceedings for high-net-worth clients. Prior to that, she represented clients in complex, contested divorce and asset division matters at a prominent Bay Area family law firm, experience that sharpened her instincts for high-stakes negotiations and the particular demands of sophisticated clientele.</p>
-      <p class="reveal reveal-d4">Claire's litigation practice is distinguished by uncommon financial fluency. Her background as an investment banking analyst at a global investment bank gives her command of financial analysis, valuation, and business strategy that directly informs her courtroom approach and the practical counsel she provides to executives and entrepreneurs navigating contentious disputes.</p>
-      <p class="reveal reveal-d5">A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association, having previously served as Treasurer, Secretary, and elected Trustee. Claire has also served on the Board of Governors of California Women Lawyers. She was named to the American Bar Association's "On The Rise. Top 40 Young Lawyers" class of 2023, has been selected as a California Super Lawyers Rising Star every year since 2021, and has been recognized as a Top Women Attorney in Northern California by San Francisco Magazine. Claire is admitted to practice in all California state courts, the U.S. District Court for the Northern District of California, and the U.S. Court of Appeals for the Ninth Circuit.</p>
-      <p class="reveal reveal-d6">Outside the courtroom, Claire maintains an active pro bono practice, mentors students in the legal community, and publishes Legally Speaking, a weekly newsletter on California law.</p>
+      <p class="reveal reveal-d2"><strong>Founding partner and civil trial attorney.</strong> Claire Melehani focuses on complex litigation for high-net-worth individuals, executives, and companies throughout California.</p>
+      <p class="reveal reveal-d3">Her practice spans business and commercial disputes, trust and estate litigation, employment law, and real estate litigation, with significant depth in matters involving financial elder abuse.</p>
+      <p class="reveal reveal-d4"><strong>Before co-founding McLellan Law Group.</strong> Claire spent nearly four years as a trial and appellate attorney at Gates Eisenhart Dawson, a Silicon Valley boutique firm handling high-conflict civil proceedings for high-net-worth clients.</p>
+      <p class="reveal reveal-d5">Prior to that, she represented clients in complex, contested divorce and asset division matters at a prominent Bay Area family law firm, experience that sharpened her instincts for high-stakes negotiations and the demands of sophisticated clientele.</p>
+      <p class="reveal reveal-d6"><strong>Uncommon financial fluency.</strong> Claire's litigation practice is distinguished by her background as an investment banking analyst at a global investment bank.</p>
+      <p class="reveal reveal-d7">That experience gives her command of financial analysis, valuation, and business strategy that directly informs her courtroom approach and the practical counsel she provides to executives and entrepreneurs navigating contentious disputes.</p>
+      <div class="rec-block reveal reveal-d7">
+        <p>A recognized leader in the California legal community, Claire currently serves as President of the Santa Clara County Bar Association.</p>
+        <ul>
+          <li>Serves on the SCCBA Board of Trustees since 2022; previously served as Treasurer and Secretary</li>
+          <li>Board of Governors, California Women Lawyers</li>
+          <li>ABA "On The Rise. Top 40 Young Lawyers," class of 2023</li>
+          <li>California Super Lawyers Rising Star, every year since 2021</li>
+          <li>Top Women Attorney in Northern California, San Francisco Magazine</li>
+          <li>Admitted in all California state courts, the U.S. District Court (N.D. Cal.), and the U.S. Court of Appeals for the Ninth Circuit</li>
+        </ul>
+      </div>
+      <p class="reveal reveal-d7">Outside the courtroom, Claire maintains an active pro bono practice, mentors students in the legal community, and publishes Legally Speaking, a weekly newsletter on California law.</p>
     </div>
 
     <div class="results">
@@ -389,10 +408,16 @@ html, body { overflow-x:hidden; }
       <button class="acc-btn" onclick="toggleAcc(this)">Honors <span class="icon">+</span></button>
       <div class="acc-body">
         <ul>
-          <li>2021,2024 Super Lawyer's Rising Star, Northern California (Civil Litigation, Plaintiffs' Side), top 2.5% of rising attorneys in California.</li>
-          <li>2021,2024 Top Women Attorneys in Northern California (Rising Star in Civil Litigation). San Francisco Magazine.</li>
+          <li>2026 Super Lawyers Rising Star, Northern California, top 2.5% of rising attorneys in California.</li>
+          <li>2026 Volunteer of the Year, Santa Clara County Bar Association.</li>
+          <li>2025 Super Lawyers Rising Star, Northern California, top 2.5% of rising attorneys in California.</li>
+          <li>2024 Super Lawyers Rising Star, Northern California (Civil Litigation, Plaintiffs' Side), top 2.5% of rising attorneys in California.</li>
+          <li>2024 Top Women Attorneys in Northern California (Rising Star in Civil Litigation). San Francisco Magazine.</li>
+          <li>2023 Super Lawyers Rising Star, Northern California, top 2.5% of rising attorneys in California.</li>
           <li>2023 Unsung Heroes Award Recipient. SCCBA Barristers Section Volunteer of the Year.</li>
           <li>2023 "On the Rise, Top 40 Young Lawyers" Award, American Bar Association.</li>
+          <li>2021 Super Lawyers Rising Star, Northern California (Civil Litigation, Plaintiffs' Side), top 2.5% of rising attorneys in California.</li>
+          <li>2021 Top Women Attorneys in Northern California (Rising Star in Civil Litigation). San Francisco Magazine.</li>
         </ul>
       </div>
     </div>
@@ -425,8 +450,9 @@ html, body { overflow-x:hidden; }
       <button class="acc-btn" onclick="toggleAcc(this)">Professional Activities <span class="icon">+</span></button>
       <div class="acc-body">
         <ul>
+          <li>Santa Clara County Bar Association, President (since 2026)</li>
+          <li>SCCBA Board of Trustees, Trustee (since 2022)</li>
           <li>California Women Lawyers (CWL), Board of Governors (2023,2024)</li>
-          <li>SCCBA Board of Trustees, elected two-year term beginning 2023</li>
           <li>SCCBA Barristers, Former President (2022) &amp; Vice President (2021)</li>
           <li>SCCBA Women Lawyers Section, Former Co-chair (2023,2024)</li>
           <li>SCCBA Diversity, Equity, Inclusion Committee</li>
