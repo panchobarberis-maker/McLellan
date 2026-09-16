@@ -705,6 +705,13 @@
   .mlgP .mlg-relacionadas h2 { font-size:30px !important; }
   .mlgP .mlg-relacionadas a { font-size:18px !important; padding:20px 18px !important; }
 }
+/* Saca el contorno azul de foco del navegador en el logo/links del header
+   nativo de Duda. Sin scope a proposito: el header de Duda vive afuera de
+   #mlgP y de cualquiera de nuestros widgets, asi que la unica forma de
+   llegar a el es una regla global aca en el Site Head. */
+a:focus, a:focus-visible, img:focus {
+  outline: none !important;
+}
 
 
   </style>
