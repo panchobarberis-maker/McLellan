@@ -180,6 +180,15 @@ html, body { overflow-x:hidden !important; }
    asi el CSS propio de Flodesk aplica sin competencia. */
 /* corta la herencia de fuente/color: adentro manda Flodesk */
 .mlg-nl-subscribe-embed { font-family:revert; color:revert; text-align:center; margin-top:14px; }
+/* El heading que arma Flodesk adentro del embed rompe "NEWSLETTER" a mitad de
+   palabra en mobile (deja la "R" sola en su propia linea) porque su font-size
+   fijo no reduce con el viewport. No controlamos su markup, pero si cae
+   dentro de nuestro .mlg-nl-subscribe-embed heredamos la cascada igual. */
+.mlg-nl-subscribe-embed * { overflow-wrap:normal !important; word-break:normal !important; hyphens:none !important; }
+.mlg-nl-subscribe-embed h1,
+.mlg-nl-subscribe-embed h2,
+.mlg-nl-subscribe-embed h3,
+.mlg-nl-subscribe-embed strong { font-size:clamp(17px, 5.6vw, 28px) !important; line-height:1.18 !important; }
 .mlg-nl-subscribe-note { margin-top:20px !important; font-size:11px !important; letter-spacing:1.5px !important; text-transform:uppercase !important; color:#8a9698 !important; }
 
 /* FAQ */
