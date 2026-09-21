@@ -112,7 +112,7 @@ html, body { overflow-x:hidden; }
   line-height:1.75 !important; margin-bottom:40px !important;
 }
 #mlgE-real-estate-litigation .employers-grid {
-  display:grid !important; grid-template-columns:1fr 1fr;
+  display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:14px !important; background:transparent !important;
   border:none !important; border-radius:0 !important;
   overflow:visible; margin-bottom:40px !important;
@@ -232,7 +232,7 @@ html, body { overflow-x:hidden; }
 #mlgE-real-estate-litigation .why-us-eyebrow { font-size:11px !important; font-weight:700 !important; letter-spacing:2.5px !important; text-transform:uppercase !important; color:#c9a96e !important; margin-bottom:16px !important; }
 #mlgE-real-estate-litigation .why-us-title { font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(36px,5vw,56px) !important; font-weight:800 !important; color:#fff !important; line-height:1.05 !important; letter-spacing:-1px !important; text-transform:uppercase !important; margin-bottom:48px !important; }
 #mlgE-real-estate-litigation .why-us-title em { display:block !important; font-style:italic !important; font-family:'DM Serif Display',serif !important; font-weight:400 !important; text-transform:none !important; color:#c9a96e !important; letter-spacing:-0.5px !important; }
-#mlgE-real-estate-litigation .why-us-grid { display:grid !important; grid-template-columns:1fr 1fr; gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden; }
+#mlgE-real-estate-litigation .why-us-grid { display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2px !important; background:rgba(255,255,255,0.25) !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:16px !important; overflow:hidden; }
 @media(max-width:600px) {
 #mlgE-real-estate-litigation .why-us-grid { grid-template-columns:1fr; }
 }
@@ -338,7 +338,7 @@ html, body { overflow-x:hidden; }
 }
 #mlgE-real-estate-litigation .emp-testimonials h2, #mlgE-real-estate-litigation .employee-faq h2, #mlgE-real-estate-litigation .why-us-title { text-align:center !important; }
 #mlgE-real-estate-litigation .emp-testimonials .section-eyebrow, #mlgE-real-estate-litigation .why-us-eyebrow {
-  display:flex !important; width:max-content !important;
+  display:flex !important; width:max-content !important; max-width:100% !important;
   margin-left:auto !important; margin-right:auto !important;
 }
 #mlgE-real-estate-litigation .employers-intro-text { text-align:left !important; }
@@ -365,7 +365,7 @@ html, body { overflow-x:hidden; }
 #mlgE-real-estate-litigation .emp-dot.active { background:#c9a96e !important; }
 @media(min-width:769px) {
 #mlgE-real-estate-litigation .employee-faq { max-width:1440px !important; }
-#mlgE-real-estate-litigation .employee-faq .faq-list { display:grid !important; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+#mlgE-real-estate-litigation .employee-faq .faq-list { display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:48px; align-items:start; }
 }
 #mlgE-real-estate-litigation .emp-hero { min-height:calc(100svh - 56px) !important; }
 @media(min-width:769px) {
