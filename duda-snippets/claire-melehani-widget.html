@@ -164,6 +164,7 @@ html, body { overflow-x:hidden; }
   color:#1e3a3e !important; font-weight:600 !important;
 }
 #mlg-claire-melehani .acc-btn .icon { color:#8a6d43 !important; font-size:16px !important; font-weight:400 !important; transition:transform 0.3s; }
+#mlg-claire-melehani .acc-btn:focus, #mlg-claire-melehani .acc-btn:focus-visible { outline:none; }
 #mlg-claire-melehani .acc-body { max-height:0 !important; overflow:hidden; transition:max-height 0.35s ease; }
 #mlg-claire-melehani .acc-body ul { list-style:none !important; padding:0 0 24px !important; }
 #mlg-claire-melehani .acc-body li {
@@ -536,12 +537,12 @@ function toggleAcc(btn) {
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.acc-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.acc-body').style.maxHeight = null;
+    el.querySelector('.acc-body').style.setProperty('max-height', '0px', 'important');
     el.querySelector('.icon').textContent = '+';
   });
   if (!isOpen) {
     item.classList.add('open');
-    body.style.maxHeight = body.scrollHeight + 'px';
+    body.style.setProperty('max-height', body.scrollHeight + 'px', 'important');
     icon.textContent = '×';
   }
 }

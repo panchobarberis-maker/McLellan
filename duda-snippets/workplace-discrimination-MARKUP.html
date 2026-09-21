@@ -268,14 +268,14 @@ function toggleFaq(btn) {
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.faq-answer').style.maxHeight = null;
+    el.querySelector('.faq-answer').style.setProperty('max-height', '0px', 'important');
     // Sin esto el lector de pantalla sigue anunciando "expandido".
     var b = el.querySelector('.faq-question');
     if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.style.setProperty('max-height', answer.scrollHeight + 'px', 'important');
     btn.setAttribute('aria-expanded', 'true');
   }
 }

@@ -124,13 +124,13 @@ function toggleFaq(btn) {
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faqp-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.faqp-answer').style.maxHeight = null;
+    el.querySelector('.faqp-answer').style.setProperty('max-height', '0px', 'important');
     var b = el.querySelector('.faqp-question');
     if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.style.setProperty('max-height', answer.scrollHeight + 'px', 'important');
     btn.setAttribute('aria-expanded', 'true');
   }
 }

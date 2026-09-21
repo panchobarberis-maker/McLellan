@@ -258,6 +258,7 @@ a { text-decoration:none; color:inherit; }
   color:#1e3a3e; font-weight:600;
 }
 .acc-btn .icon { color:#8a6d43; font-size:16px; font-weight:400; transition:transform 0.3s; }
+.acc-btn:focus, .acc-btn:focus-visible { outline:none; }
 .acc-body { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .acc-body ul { list-style:none; padding:0 0 24px; }
 .acc-body li {
@@ -595,7 +596,7 @@ a { text-decoration:none; color:inherit; }
 // cuando cambia la fuente, el tamano de letra o el ancho de la columna.
 function mlgSizeOpenAcc() {
   document.querySelectorAll('.acc-item.open .acc-body').forEach(function(b){
-    b.style.maxHeight = b.scrollHeight + 'px';
+    b.style.setProperty('max-height', b.scrollHeight + 'px', 'important');
   });
 }
 mlgSizeOpenAcc();
@@ -610,12 +611,12 @@ function toggleAcc(btn) {
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.acc-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.acc-body').style.maxHeight = null;
+    el.querySelector('.acc-body').style.setProperty('max-height', '0px', 'important');
     el.querySelector('.icon').textContent = '+';
   });
   if (!isOpen) {
     item.classList.add('open');
-    body.style.maxHeight = body.scrollHeight + 'px';
+    body.style.setProperty('max-height', body.scrollHeight + 'px', 'important');
     icon.textContent = '×';
   }
 }

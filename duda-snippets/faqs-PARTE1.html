@@ -131,6 +131,7 @@ html, body { overflow-x:hidden; }
 }
 .mlgE-faqs .faqp-section--light .faqp-question { color:#1e3a3e !important; }
 .mlgE-faqs .faqp-question:hover { opacity:0.72; }
+.mlgE-faqs .faqp-question:focus, .mlgE-faqs .faqp-question:focus-visible { outline:none; }
 .mlgE-faqs .faqp-question .faqp-icon {
   flex-shrink:0; width:26px !important; height:26px !important; border-radius:50% !important;
   border:1.5px solid #c9a96e !important; color:#c9a96e !important;
@@ -280,13 +281,13 @@ function toggleFaq(btn) {
   var isOpen = item.classList.contains('open');
   document.querySelectorAll('.faqp-item.open').forEach(function(el){
     el.classList.remove('open');
-    el.querySelector('.faqp-answer').style.maxHeight = null;
+    el.querySelector('.faqp-answer').style.setProperty('max-height', '0px', 'important');
     var b = el.querySelector('.faqp-question');
     if (b) b.setAttribute('aria-expanded', 'false');
   });
   if (!isOpen) {
     item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.style.setProperty('max-height', answer.scrollHeight + 'px', 'important');
     btn.setAttribute('aria-expanded', 'true');
   }
 }

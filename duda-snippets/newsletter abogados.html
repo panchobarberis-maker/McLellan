@@ -201,6 +201,7 @@ html, body { overflow-x:hidden !important; }
 .mlg-nl-faq-item { background:#fbf6ef !important; border-radius:16px !important; padding:4px 24px !important; box-shadow:0 8px 24px rgba(0,0,0,0.18) !important; }
 .mlg-nl-faq-question { width:100% !important; background:none !important; border:none !important; text-align:left !important; padding:20px 0 !important; font-family:'Barlow',sans-serif !important; font-size:16px !important; font-weight:600 !important; color:#1e3a3e !important; cursor:pointer !important; display:flex !important; justify-content:space-between !important; align-items:center !important; gap:12px !important; transition:opacity 0.15s !important; }
 .mlg-nl-faq-question:hover { opacity:0.7 !important; }
+.mlg-nl-faq-question:focus, .mlg-nl-faq-question:focus-visible { outline:none !important; }
 .mlg-nl-faq-question .mlg-nl-faq-icon { font-size:20px !important; color:#c9a96e !important; flex-shrink:0 !important; transition:transform 0.3s !important; }
 .mlg-nl-faq-answer { max-height:0 !important; overflow:hidden !important; transition:max-height 0.35s ease !important; }
 .mlg-nl-faq-answer p { font-size:15px !important; line-height:1.75 !important; color:#5a6e70 !important; padding-bottom:20px !important; margin:0 !important; text-align:justify !important; }
@@ -417,11 +418,11 @@ function mlgNlToggleFaq(btn) {
   var isOpen = item.classList.contains('mlg-nl-open');
   document.querySelectorAll('.mlg-nl-faq-item.mlg-nl-open').forEach(function(el){
     el.classList.remove('mlg-nl-open');
-    el.querySelector('.mlg-nl-faq-answer').style.maxHeight = null;
+    el.querySelector('.mlg-nl-faq-answer').style.setProperty('max-height', '0px', 'important');
   });
   if (!isOpen) {
     item.classList.add('mlg-nl-open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.style.setProperty('max-height', answer.scrollHeight + 'px', 'important');
   }
 }
 </script>
