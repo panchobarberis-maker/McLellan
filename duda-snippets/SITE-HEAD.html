@@ -705,20 +705,28 @@
   .mlgP .mlg-relacionadas h2 { font-size:30px !important; }
   .mlgP .mlg-relacionadas a { font-size:18px !important; padding:20px 18px !important; }
 }
-/* Saca el contorno azul de foco del navegador de CUALQUIER elemento
-   clickeable en todo el sitio (links, logo, botones de acordeon/FAQ,
-   inputs). Sin scope a proposito: cubre el header nativo de Duda (que
-   vive afuera de #mlgP) y de paso todos nuestros widgets a la vez, asi
-   no hay que repetir esta regla adentro de cada uno. */
-a:focus, a:focus-visible,
-button:focus, button:focus-visible,
-img:focus,
-input:focus, input:focus-visible,
-select:focus, select:focus-visible,
-textarea:focus, textarea:focus-visible,
-[tabindex]:focus, [tabindex]:focus-visible {
-  outline: none !important;
-}
+/* Saca el contorno/anillo azul de foco del navegador de cualquier
+   elemento clickeable en todo el sitio (links, logo, botones de
+   acordeon/FAQ, inputs). Sin scope a proposito: cubre el header nativo
+   de Duda (que vive afuera de #mlgP) y de paso todos nuestros widgets
+   a la vez, asi no hay que repetir esta regla adentro de cada uno.
+   Cada selector va en su propia regla, no juntos con coma: si Duda
+   corrompe UN solo selector al guardar (nos paso antes con el ">"),
+   CSS descarta la regla entera cuando queda invalida, y se pierden
+   todas las demas de un saque. Separadas, una rota no tira las otras.
+   outline y box-shadow los dos en :none por si el anillo azul de Duda
+   esta hecho con box-shadow en vez de outline nativo. */
+a:focus { outline:none !important; box-shadow:none !important; }
+a:focus-visible { outline:none !important; box-shadow:none !important; }
+button:focus { outline:none !important; box-shadow:none !important; }
+button:focus-visible { outline:none !important; box-shadow:none !important; }
+img:focus { outline:none !important; box-shadow:none !important; }
+input:focus { outline:none !important; box-shadow:none !important; }
+input:focus-visible { outline:none !important; box-shadow:none !important; }
+select:focus { outline:none !important; box-shadow:none !important; }
+select:focus-visible { outline:none !important; box-shadow:none !important; }
+textarea:focus { outline:none !important; box-shadow:none !important; }
+textarea:focus-visible { outline:none !important; box-shadow:none !important; }
 
 
   </style>
