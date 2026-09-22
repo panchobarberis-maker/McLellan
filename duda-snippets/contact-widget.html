@@ -42,23 +42,18 @@ html, body { overflow-x:hidden; }
   padding:88px 24px 72px !important; text-align:center !important;
   border-bottom:12px solid #c9a96e !important;
 }
-#mlg-contact .contact-hero-video {
-  position:absolute !important; inset:0; z-index:1; pointer-events:none; overflow:hidden;
-}
-#mlg-contact .contact-hero-video video {
-  position:absolute !important; top:50%; left:50%;
-  width:100% !important; height:100% !important; min-width:100% !important; min-height:100% !important;
-  transform:translate(-50%,-50%); object-fit:cover;
-  object-position:center 15%;
+#mlg-contact .contact-hero-bg {
+  position:absolute !important; inset:0; width:100% !important; height:100% !important;
+  object-fit:cover; object-position:center 15%;
 }
 #mlg-contact .video-mobile { display:none !important; }
 @media(max-width:768px) {
 #mlg-contact .video-desktop { display:none !important; }
 #mlg-contact .video-mobile { display:block !important; }
 }
-#mlg-contact .contact-hero-overlay { position:absolute !important; inset:0; z-index:2; background:rgba(20,48,52,0.82) !important; }
-#mlg-contact .contact-hero > *:not(.contact-hero-video):not(.contact-hero-overlay) { position:relative !important; z-index:3; }
+#mlg-contact .contact-hero-overlay { position:absolute !important; inset:0; z-index:1; background:rgba(20,48,52,0.82) !important; }
 #mlg-contact .contact-hero h1 {
+  position:relative !important; z-index:2;
   font-family:'Barlow Condensed',sans-serif !important;
   font-size:clamp(44px, 7vw, 84px) !important; font-weight:900 !important; line-height:0.95 !important;
   color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
@@ -70,10 +65,12 @@ html, body { overflow-x:hidden; }
   text-transform:none !important; color:#c9a96e !important; font-size:0.72em !important; letter-spacing:0 !important;
 }
 #mlg-contact .contact-hero p {
+  position:relative !important; z-index:2;
   font-size:17px !important; color:rgba(255,255,255,0.8) !important; max-width:560px !important;
   margin:0 auto !important; line-height:1.7 !important;
   font-family:'DM Serif Display',serif !important; font-style:italic !important;
 }
+#mlg-contact .contact-hero-ctas { position:relative !important; z-index:2; }
 @media(min-width:769px) {
 #mlg-contact .contact-hero { min-height:calc(100svh - 62px) !important; padding:120px 24px 100px !important; }
 #mlg-contact .contact-hero p { font-size:20px !important; }
@@ -273,19 +270,12 @@ html, body { overflow-x:hidden; }
 
 <!-- HERO -->
 <section class="contact-hero">
-  <div class="contact-hero-video">
-    <video class="video-desktop" muted loop playsinline preload="none">
-      <source data-src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4">
-    </video>
-    <video class="video-mobile" muted loop playsinline preload="none">
-      <source data-src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4">
-    </video>
-    
-  </div>
+  <video class="contact-hero-bg video-desktop" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4"></video>
+  <video class="contact-hero-bg video-mobile" autoplay muted loop playsinline preload="auto"><source src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4"></video>
   <div class="contact-hero-overlay"></div>
   <h1>Request Your<em>Free Consultation.</em></h1>
   <p class="contact-hero-sub">Tell us about your situation, it takes two minutes.</p>
-  <div style="max-width:680px !important; margin:24px auto 0 !important;">
+  <div class="contact-hero-ctas" style="max-width:680px !important; margin:24px auto 0 !important;">
     <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="form-submit" style="text-decoration:none !important;">Get My Free Consultation →</a>
     <p class="mlg-aviso-conflictos">Contacting the firm does not create an attorney client relationship.</p>
   </div>
@@ -350,7 +340,6 @@ html, body { overflow-x:hidden; }
 </div>
 
 <script>
-(function(){var chico=window.matchMedia("(max-width:768px)").matches;var wrap=document.querySelector(".contact-hero-video");if(!wrap)return;var activo=wrap.querySelector(chico?".video-mobile":".video-desktop");var otro=wrap.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
 
 // El calc(100svh - Xpx) del CSS asume que la barra de direcciones del
 // celular ya esta colapsada, y en la primera carga no lo esta todavia: eso
