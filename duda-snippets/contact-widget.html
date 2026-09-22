@@ -1,0 +1,396 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1');
+html, body { overflow-x:hidden; }
+#mlg-contact { font-family:'Barlow',sans-serif !important; color:#1e3a3e !important;
+  -webkit-font-smoothing:antialiased; font-weight:500; }
+
+
+#mlg-contact *, #mlg-contact *::before, #mlg-contact *::after { margin:0 !important; padding:0 !important; box-sizing:border-box; text-wrap:pretty; }
+#mlg-contact { scroll-behavior:smooth; }
+#mlg-contact { font-family:'Barlow',sans-serif !important; background:#faf8f3 !important; color:#1e3a3e !important; -webkit-font-smoothing:antialiased; font-weight:500 !important; }
+#mlg-contact .logo-img-mobile { height:28px !important; width:auto !important; }
+#mlg-contact .dropdown-toggle::after { content:' ▾'; font-size:9px !important; opacity:0.5; }
+#mlg-contact .dropdown-menu { display:none !important; position:absolute !important; top:calc(100% + 12px); left:50%; transform:translateX(-50%); background:#fff !important; border:1px solid #e0ddd6 !important; border-radius:10px !important; min-width:230px !important; padding:8px 0 !important; box-shadow:0 8px 32px rgba(0,0,0,0.1); list-style:none !important; }
+#mlg-contact .dropdown-menu li a { display:block !important; padding:10px 20px !important; color:#333 !important; text-decoration:none !important; font-size:13px !important; font-weight:400 !important; transition:background 0.15s,color 0.15s; border-radius:6px !important; margin:2px 6px !important; }
+#mlg-contact .dropdown-menu li a:hover { background:#f0f5f5 !important; color:#1e3a3e !important; }
+#mlg-contact .dropdown-menu li a.featured { font-weight:600 !important; color:#1e3a3e !important; }
+#mlg-contact .dropdown-divider { height:1px !important; background:#f0ede6 !important; margin:5px 0 !important; }
+@keyframes navBtnShimmer {
+  0%   { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes navBtnPulse {
+  0%   { box-shadow:0 0 0 0 rgba(201,169,110,0.6); }
+  70%  { box-shadow:0 0 0 10px rgba(201,169,110,0); }
+  100% { box-shadow:0 0 0 0 rgba(201,169,110,0); }
+}
+#mlg-contact .mobile-accordion-btn { display:flex !important; justify-content:space-between; align-items:center; width:100% !important; background:none !important; border:none !important; padding:15px 0 !important; color:rgba(255,255,255,0.85) !important; font-size:17px !important; font-weight:500 !important; cursor:pointer; text-align:left !important; }
+#mlg-contact .mobile-accordion-arrow { transition:transform 0.2s; font-size:18px !important; color:#c9a96e !important; }
+#mlg-contact .mobile-accordion-menu { display:none !important; list-style:none !important; padding-left:16px !important; }
+#mlg-contact .mobile-accordion-menu li { border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+#mlg-contact .mobile-accordion-menu li a { padding:11px 0 !important; font-size:14px !important; font-weight:400 !important; }
+@media(max-width:768px) {
+}
+@media(min-width:769px) {
+}
+#mlg-contact .contact-hero {
+  position:relative !important; overflow:hidden;
+  background:#1e3a3e !important;
+  min-height:calc(100svh - 53px) !important; display:flex !important; flex-direction:column; justify-content:center;
+  padding:88px 24px 72px !important; text-align:center !important;
+  border-bottom:12px solid #c9a96e !important;
+}
+#mlg-contact .contact-hero-video {
+  position:absolute !important; inset:0; z-index:1; pointer-events:none; overflow:hidden;
+}
+#mlg-contact .contact-hero-video video {
+  position:absolute !important; top:50%; left:50%;
+  width:100% !important; height:100% !important; min-width:100% !important; min-height:100% !important;
+  transform:translate(-50%,-50%); object-fit:cover;
+  object-position:center 15%;
+}
+#mlg-contact .video-mobile { display:none !important; }
+@media(max-width:768px) {
+#mlg-contact .video-desktop { display:none !important; }
+#mlg-contact .video-mobile { display:block !important; }
+}
+#mlg-contact .contact-hero-overlay { position:absolute !important; inset:0; z-index:2; background:rgba(20,48,52,0.82) !important; }
+#mlg-contact .contact-hero > *:not(.contact-hero-video):not(.contact-hero-overlay) { position:relative !important; z-index:3; }
+#mlg-contact .contact-hero h1 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(44px, 7vw, 84px) !important; font-weight:900 !important; line-height:0.95 !important;
+  color:#fff !important; text-transform:uppercase !important; letter-spacing:-1px !important;
+  margin-bottom:14px !important;
+}
+#mlg-contact .contact-hero h1 em {
+  display:block !important; font-style:italic !important;
+  font-family:'DM Serif Display',serif !important; font-weight:400 !important;
+  text-transform:none !important; color:#c9a96e !important; font-size:0.72em !important; letter-spacing:0 !important;
+}
+#mlg-contact .contact-hero p {
+  font-size:17px !important; color:rgba(255,255,255,0.8) !important; max-width:560px !important;
+  margin:0 auto !important; line-height:1.7 !important;
+  font-family:'DM Serif Display',serif !important; font-style:italic !important;
+}
+@media(min-width:769px) {
+#mlg-contact .contact-hero { min-height:calc(100svh - 62px) !important; padding:120px 24px 100px !important; }
+#mlg-contact .contact-hero p { font-size:20px !important; }
+}
+#mlg-contact .contact-main { padding:56px 24px !important; background:#1e3a3e !important; }
+#mlg-contact .contact-main-inner {
+  max-width:1200px !important; margin:0 auto !important;
+  display:grid !important; grid-template-columns:1fr; gap:32px !important;
+}
+@media(min-width:900px) {
+#mlg-contact .contact-main { padding:88px 12px !important; }
+#mlg-contact .contact-main-inner { grid-template-columns:1fr; gap:36px !important; max-width:1600px !important; }
+#mlg-contact .contact-info { display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px !important; align-items:stretch; }
+#mlg-contact .info-card-visit { grid-column:1 / -1; }
+#mlg-contact .contact-form-card { display:flex !important; flex-direction:column; align-items:stretch; text-align:center !important; }
+#mlg-contact .contact-form-card > p { max-width:760px !important; }
+}
+#mlg-contact .contact-form-card {
+  background:#fbf6ef !important; border-radius:20px !important;
+  padding:36px 28px !important;
+  box-shadow:0 16px 48px rgba(0,0,0,0.14);
+  border:8px solid #c9a96e !important;
+}
+@media(min-width:769px) {
+#mlg-contact .contact-form-card { padding:56px !important; }
+}
+#mlg-contact .contact-form-card h2 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:clamp(30px,3.5vw,44px) !important; font-weight:800 !important; color:#1e3a3e !important;
+  text-transform:uppercase !important; letter-spacing:-0.5px !important; margin-bottom:8px !important;
+}
+#mlg-contact .contact-form-card h2 em {
+  font-style:italic !important; font-family:'DM Serif Display',serif !important;
+  font-weight:400 !important; text-transform:none !important; color:#b8933a !important;
+}
+#mlg-contact .contact-form-card > p { font-size:18px !important; color:#4c6062 !important; margin-bottom:32px !important; line-height:1.65 !important; }
+#mlg-contact .form-row { display:grid !important; grid-template-columns:1fr; gap:16px !important; margin-bottom:16px !important; }
+@media(min-width:600px) {
+#mlg-contact .form-row.two { grid-template-columns:1fr 1fr; }
+}
+#mlg-contact .form-field label {
+  display:block !important; font-size:12px !important; font-weight:700 !important;
+  letter-spacing:1.5px !important; text-transform:uppercase !important;
+  color:#1e3a3e !important; margin-bottom:8px !important;
+}
+#mlg-contact .form-field input, #mlg-contact .form-field select, #mlg-contact .form-field textarea {
+  width:100% !important; background:#fff !important;
+  border:1.5px solid rgba(30,58,62,0.18) !important; border-radius:10px !important;
+  padding:14px 16px !important; color:#1e3a3e !important; font-family:'Barlow',sans-serif !important;
+  font-size:15px !important; font-weight:500 !important; outline:none;
+  transition:border-color 0.2s, background 0.2s;
+}
+#mlg-contact .form-field input::placeholder, #mlg-contact .form-field textarea::placeholder { color:rgba(30,58,62,0.4) !important; }
+#mlg-contact .form-field input:focus, #mlg-contact .form-field select:focus, #mlg-contact .form-field textarea:focus {
+  border-color:#c9a96e !important; background:#fff !important;
+}
+#mlg-contact .form-field select { appearance:none; cursor:pointer; }
+#mlg-contact .form-field select option { color:#1e3a3e !important; background:#fff !important; }
+#mlg-contact .form-field textarea { resize:vertical; min-height:120px !important; }
+@keyframes ctaBreath {
+  0%, 100% { box-shadow:0 0 0 0 rgba(201,169,110,0.0), 0 4px 14px rgba(0,0,0,0.2); transform:scale(1); }
+  50%      { box-shadow:0 0 28px 6px rgba(201,169,110,0.55), 0 4px 18px rgba(0,0,0,0.25); transform:scale(1.02); }
+}
+#mlg-contact .form-submit {
+  display:inline-flex !important; align-items:center; justify-content:center; gap:10px !important;
+  width:100% !important; margin-top:12px !important;
+  background:linear-gradient(180deg,#e8cc8a 0%,#c9a96e 55%,#b8933a 100%) !important;
+  color:#1e3a3e !important; font-weight:800 !important; font-size:18px !important; letter-spacing:0.3px !important;
+  padding:17px 36px !important; border-radius:32px !important; border:none !important; cursor:pointer;
+  font-family:'Barlow',sans-serif !important;
+  animation:ctaBreath 2.6s ease-in-out infinite;
+  transition:transform 0.15s;
+}
+#mlg-contact .form-submit:hover { transform:scale(1.02); }
+#mlg-contact .form-note { font-size:12px !important; color:#6b7c7e !important; margin-top:16px !important; line-height:1.6 !important; text-align:center !important; }
+#mlg-contact .contact-info { display:flex !important; flex-direction:column; gap:20px !important; }
+#mlg-contact .info-card {
+  background:#fbf6ef !important; border:8px solid #1e3a3e !important; border-radius:20px !important;
+  padding:32px !important;
+}
+#mlg-contact .info-card-label {
+  display:inline-flex !important; align-items:center; gap:10px !important;
+  font-size:13px !important; letter-spacing:2.5px !important; text-transform:uppercase !important;
+  color:#c9a96e !important; font-weight:700 !important; margin-bottom:14px !important;
+}
+#mlg-contact .info-card-label::before { content:''; width:22px !important; height:1px !important; background:#c9a96e !important; }
+#mlg-contact .info-card h3 {
+  font-family:'Barlow Condensed',sans-serif !important;
+  font-size:26px !important; font-weight:800 !important; color:#1e3a3e !important;
+  text-transform:uppercase !important; margin-bottom:10px !important;
+}
+#mlg-contact .info-card p { font-size:19px !important; color:#4c6062 !important; line-height:1.7 !important; }
+#mlg-contact .info-card a { color:#1e3a3e !important; font-weight:700 !important; text-decoration:none !important; border-bottom:2px solid #c9a96e !important; }
+#mlg-contact .info-card a:hover { color:#b8933a !important; }
+#mlg-contact .info-hours { display:grid !important; grid-template-columns:1fr auto; gap:6px 24px !important; font-size:15px !important; color:#5a6e70 !important; }
+#mlg-contact .info-hours strong { color:#1e3a3e !important; font-weight:700 !important; }
+#mlg-contact .badge-row { display:flex !important; flex-wrap:wrap; gap:10px !important; margin-top:6px !important; }
+#mlg-contact .mini-badge {
+  display:inline-flex !important; align-items:center; gap:10px !important;
+  background:#1e3a3e !important; color:#fff !important; font-size:20px !important; font-weight:700 !important;
+  padding:17px 28px !important; border-radius:30px !important;
+}
+#mlg-contact .mini-badge::before { content:'✓'; color:#c9a96e !important; }
+#mlg-contact .maps-section { width:100% !important; line-height:0 !important; }
+#mlg-contact .maps-section iframe { width:100% !important; height:340px !important; border:0 !important; display:block !important; }
+@media(min-width:769px) {
+#mlg-contact .maps-section iframe { height:440px !important; }
+}
+@media(min-width:900px) {
+#mlg-contact .contact-info { display:grid !important; grid-template-columns:1fr 1fr !important; gap:20px !important; align-items:stretch !important; }
+#mlg-contact .info-card-visit { grid-column:1 / -1 !important; }
+}
+#mlg-contact .hours-row {
+  display:flex !important; align-items:center; gap:16px !important;
+  background:#1e3a3e !important; border-radius:12px !important;
+  padding:16px 20px !important; margin-bottom:12px !important;
+}
+#mlg-contact .hours-icon {
+  width:44px !important; height:44px !important; border-radius:50% !important; flex-shrink:0;
+  background:rgba(201,169,110,0.15) !important; border:1.5px solid rgba(201,169,110,0.4) !important;
+  display:flex !important; align-items:center; justify-content:center;
+}
+#mlg-contact .hours-text { display:flex !important; flex-direction:column; gap:2px !important; }
+#mlg-contact .hours-text strong { color:#fff !important; font-size:19px !important; font-weight:700 !important; }
+#mlg-contact .hours-text span { color:#e8cc8a !important; font-size:19px !important; font-weight:600 !important; letter-spacing:0.5px !important; }
+#mlg-contact .hours-note {
+  font-size:17px !important; color:#4c6062 !important; font-style:italic !important; line-height:1.55 !important;
+  margin-top:16px !important; padding-left:4px !important;
+}
+#mlg-contact .form-note { font-size:18px !important; color:#4c6062 !important; max-width:680px !important; margin-left:auto !important; margin-right:auto !important; line-height:1.6 !important; }
+#mlg-contact .mlg-aviso-conflictos {
+  max-width:680px !important; margin:28px auto 0 !important; font-size:14px !important; line-height:1.6 !important;
+  color:rgba(255,255,255,0.6) !important; text-align:center !important;
+}
+@media(min-width:769px) {
+#mlg-contact .mlg-aviso-conflictos { font-size:15px !important; }
+}
+#mlg-contact .form-subnote { font-size:18px !important; color:rgba(255,255,255,0.55) !important; font-style:italic !important; margin-top:8px !important; line-height:1.6 !important; text-align:center !important; }
+#mlg-contact .mini-badge { font-size:20px !important; padding:17px 28px !important; border-radius:30px !important; white-space:nowrap; }
+#mlg-contact .badge-row { gap:12px !important; }
+@media(max-width:520px) {
+#mlg-contact .mini-badge { white-space:normal; text-align:left !important; }
+}
+@media(max-width:768px) {
+#mlg-contact .contact-hero { padding:24px 20px 30px !important; border-bottom-width:8px !important; }
+#mlg-contact .contact-hero h1 { font-size:clamp(38px, 11vw, 48px) !important; margin-bottom:10px !important; }
+#mlg-contact .contact-hero p { font-size:16px !important; }
+#mlg-contact .contact-main { padding:24px 14px !important; }
+#mlg-contact .form-submit { font-size:19px !important; padding:16px 32px !important; margin-top:6px !important; }
+#mlg-contact .form-note { font-size:19px !important; margin-top:14px !important; }
+#mlg-contact .form-subnote { font-size:19px !important; }
+}
+#mlg-contact .detail-block p, #mlg-contact .employers-section > p, #mlg-contact .employers-intro-text p, #mlg-contact .employees-intro-text p, #mlg-contact .employees-section > p, #mlg-contact .faq-answer p, #mlg-contact .emp-test-card .quote, #mlg-contact .why-us-item span, #mlg-contact .paga-alert p, #mlg-contact .employer-item-text span, #mlg-contact .about p, #mlg-contact .mlg-quote, #mlg-contact .quote, #mlg-contact .lawsuits p, #mlg-contact .detail-section p, #mlg-contact .bio-block p, #mlg-contact .result-card span, #mlg-contact .atty-hero p {
+  text-align:justify !important;
+}
+#mlg-contact .reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#mlg-contact .reveal.in-view { opacity:1; transform:translateY(0); }
+#mlg-contact .reveal-d1 { transition-delay:0.08s; }
+#mlg-contact .reveal-d2 { transition-delay:0.16s; }
+#mlg-contact .reveal-d3 { transition-delay:0.24s; }
+#mlg-contact .reveal-d4 { transition-delay:0.32s; }
+#mlg-contact .reveal-d5 { transition-delay:0.4s; }
+#mlg-contact .reveal-d6 { transition-delay:0.48s; }
+#mlg-contact .reveal-d7 { transition-delay:0.56s; }
+
+/* Misma receta que el widget del Appellate Digest, que en Duda funciona bien:
+   secciones a 100vw exacto; el hero desborda 2vw por lado solo en desktop y
+   tapa con sombras arriba y abajo; en mobile vuelve a 100vw para no empujar
+   los botones fuera de pantalla. */
+#mlg-contact > section, #mlg-contact > div {
+  margin-left:calc(-50vw + 50%) !important;
+  width:100vw !important; max-width:100vw !important;
+}
+/* Sin box-shadow: esa franja verde de 60px por encima del primer elemento
+   se leia como un segundo hero en cualquier pagina que llevara el wrapper. */
+#mlg-contact > *:first-child {
+  margin-top:-8px !important;
+  margin-left:calc(-52vw + 50%) !important;
+  width:104vw !important; max-width:104vw !important;
+}
+@media(max-width:768px) {
+  #mlg-contact > *:first-child {
+    margin-left:calc(-50vw + 50%) !important;
+    width:100vw !important; max-width:100vw !important;
+  }
+}
+</style>
+
+<div id="mlg-contact">
+<!-- NAV -->
+
+
+<!-- MOBILE MENU -->
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-hero-video">
+    <video class="video-desktop" muted loop playsinline preload="none">
+      <source data-src="https://vid.cdn-website.com/9df80dfc/videos/RvNk8sW9RoeNLVMnGe2t_video-mclellan-para-duda-v.mp4" type="video/mp4">
+    </video>
+    <video class="video-mobile" muted loop playsinline preload="none">
+      <source data-src="https://vid.cdn-website.com/9df80dfc/videos/v6p2xYTECGVqRjvAzOkw_video-mclellan-mobile-para-duda-CORRECTO-v.mp4" type="video/mp4">
+    </video>
+    
+  </div>
+  <div class="contact-hero-overlay"></div>
+  <h1 class="reveal reveal-d1">Request Your<em>Free Consultation.</em></h1>
+  <p class="reveal reveal-d2 contact-hero-sub">Tell us about your situation, it takes two minutes.</p>
+  <div class="reveal reveal-d3" style="max-width:680px !important; margin:24px auto 0 !important;">
+    <a href="https://mclellanlawgroup.lawbrokr.com/?landed_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us&engaged_url=https%3A%2F%2Fwww.mclellanlawgroup.com%2Fcontact-us" class="form-submit" style="text-decoration:none !important;">Get My Free Consultation →</a>
+    <p class="mlg-aviso-conflictos">Contacting the firm does not create an attorney client relationship.</p>
+  </div>
+</section>
+
+
+<!-- MAIN -->
+<section class="contact-main" id="form">
+  <div class="contact-main-inner">
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <div class="info-card reveal">
+        <div class="info-card-label">Office Hours</div>
+        <h3>When We're Available</h3>
+        <div class="hours-row">
+          <div class="hours-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#c9a96e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="hours-text"><strong>Monday, Friday</strong><span>9:00 AM, 5:00 PM</span></div>
+        </div>
+        <div class="hours-row">
+          <div class="hours-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#c9a96e" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <div class="hours-text"><strong>Saturday, Sunday</strong><span>By appointment</span></div>
+        </div>
+        <div class="hours-note">You can send us your case details any time, we reply within one business day.</div>
+      </div>
+      <div class="info-card reveal reveal-d1">
+        <div class="info-card-label">Why McLellan</div>
+        <h3>What You Can Expect</h3>
+        <div class="badge-row">
+          <span class="mini-badge">Free Consultation</span>
+          <span class="mini-badge">Response Within 1 Business Day</span>
+          <span class="mini-badge">Direct Attorney Access</span>
+          <span class="mini-badge">Contingency Options</span>
+        </div>
+      </div>
+      <div class="info-card info-card-visit reveal reveal-d2">
+        <div class="info-card-label">Visit Us</div>
+        <h3>Saratoga Office</h3>
+        <p style="margin-bottom:16px !important;">20665 4th St #202<br>Saratoga, CA 95070</p>
+        <iframe
+          src="https://www.google.com/maps?q=McLellan+Law+Group,+20665+4th+St+%23202,+Saratoga,+CA+95070&output=embed"
+          style="width:100% !important; height:220px !important; border:0 !important; border-radius:12px !important; display:block !important;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="McLellan Law Group on Google Maps"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FIRM PHOTO -->
+<section style="position:relative !important; overflow:hidden; border-top:12px solid #c9a96e !important;">
+  <img src="Estudio foto.png" alt="McLellan Law Group team"
+    style="width:100% !important; height:420px !important; object-fit:cover; object-position:center 25%; display:block !important; filter:brightness(0.55);">
+  <div style="position:absolute !important; inset:0; display:flex !important; flex-direction:column; align-items:center; justify-content:flex-end; text-align:center !important; padding:24px 24px 44px !important; background:linear-gradient(to bottom, transparent 55%, rgba(20,48,52,0.9) 100%) !important;">
+    <div class="reveal" style="font-family:'Barlow Condensed',sans-serif !important; font-size:clamp(28px,3.5vw,44px) !important; font-weight:900 !important; color:#fff !important; text-transform:uppercase !important; letter-spacing:-0.5px !important; line-height:1 !important;">We're Here <em style="font-family:'DM Serif Display',serif !important; font-weight:400 !important; font-style:italic !important; text-transform:none !important; color:#c9a96e !important;">For You.</em></div>
+    <p class="reveal reveal-d1" style="font-family:'DM Serif Display',serif !important; font-style:italic !important; font-size:20px !important; color:rgba(255,255,255,0.95) !important; line-height:1.5 !important; margin-top:8px !important; max-width:560px !important;">Whenever you're ready to talk,<br>our team is at your disposal.</p>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){var chico=window.matchMedia("(max-width:768px)").matches;var wrap=document.querySelector(".contact-hero-video");if(!wrap)return;var activo=wrap.querySelector(chico?".video-mobile":".video-desktop");var otro=wrap.querySelector(chico?".video-desktop":".video-mobile");if(otro)otro.remove();if(activo){var f=activo.querySelector("source");if(f&&f.dataset.src){f.src=f.dataset.src;activo.load();activo.play().catch(function(){});}}})();
+
+// El calc(100svh - Xpx) del CSS asume que la barra de direcciones del
+// celular ya esta colapsada, y en la primera carga no lo esta todavia: eso
+// dejaba asomar la seccion de abajo en vez de que el hero ocupe toda la
+// vista. Se mide el alto real disponible (innerHeight menos lo que ocupa el
+// nav) y se lo fuerza por JS, que no depende de esa suposicion.
+(function(){
+  var hero = document.querySelector('.contact-hero');
+  var nav = document.querySelector('.nav');
+  if (!hero || !nav) return;
+  function ajustar(){
+    var altoNav = nav.getBoundingClientRect().height;
+    hero.style.minHeight = (window.innerHeight - altoNav) + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', function(){ setTimeout(ajustar, 50); });
+})();
+
+
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+</script>
