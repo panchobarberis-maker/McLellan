@@ -733,6 +733,12 @@ textarea:focus-visible { outline:none !important; box-shadow:none !important; }
    su propio CSS local con scope propio (#mlgE-.../.mlgE-...), sin
    tener que repetir la regla adentro de cada una. */
 .emp-test-card .quote { text-align:left !important; }
+/* Mismo backstop pero para el carrusel de reviews del Home, que usa
+   sus propias clases (.mlg-testimonial-card .mlg-quote) en vez de
+   .emp-test-card por ser una pagina con arquitectura propia, aparte
+   de .mlgP y de las 5 legacy. Sin scope tambien, asi si el Home se
+   reconstruye o se toca a mano de nuevo, no se puede volver a romper. */
+.mlg-testimonial-card .mlg-quote { text-align:left !important; }
 
 
   </style>
