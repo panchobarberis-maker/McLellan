@@ -166,6 +166,12 @@ body { font-family:'Barlow',sans-serif; background:#fff; color:#1e3a3e; -webkit-
 .content-section p { font-size:18px; line-height:1.85; color:#4a5c5e; margin-bottom:16px; text-align:justify; }
 .content-section p:last-child { margin-bottom:0; }
 @media(min-width:769px) { .content-section p { font-size:21px; } }
+.content-cards { display:flex; flex-direction:column; gap:24px; }
+.content-card {
+  background:#fbf6ef; border-radius:20px;
+  padding:32px 28px; box-shadow:0 10px 32px rgba(0,0,0,0.2);
+}
+@media(min-width:769px) { .content-card { padding:48px 56px; } }
 
 /* HELP SECTION */
 .help-section { background:#fbf6ef; padding:64px 28px; }
@@ -473,8 +479,12 @@ a:focus-visible, button:focus-visible { outline:3px solid #c9a96e; outline-offse
   <div class="content-inner">
     <div class="section-eyebrow reveal">How We Work</div>
     <h2 class="reveal reveal-d1">Client-Centric Approach</h2>
-    <p class="reveal reveal-d2">We believe that the cornerstone of successful legal representation is a client-centric approach. We work closely with our clients to understand their objectives and tailor our strategies to meet their specific needs.</p>
-    <p class="reveal reveal-d3">Our attorneys are not just litigators; they are problem solvers who seek the most effective and efficient resolutions for our clients, whether through negotiation, mediation, arbitration, or litigation.</p>
+    <div class="content-cards">
+      <div class="content-card reveal reveal-d2">
+        <p>We believe that the cornerstone of successful legal representation is a client-centric approach. We work closely with our clients to understand their objectives and tailor our strategies to meet their specific needs.</p>
+        <p>Our attorneys are not just litigators; they are problem solvers who seek the most effective and efficient resolutions for our clients, whether through negotiation, mediation, arbitration, or litigation.</p>
+      </div>
+    </div>
   </div>
 </section>
 
